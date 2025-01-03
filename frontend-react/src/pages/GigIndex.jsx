@@ -43,8 +43,11 @@ export function GigIndex() {
 
     return (
         <main className="Gig-index main-layout">
-            <GigFilter filterBy={filterBy} onSetFilter={onSetFilter} />
-            <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onAddGig={onAddGig} />
+            <div className="gigless">
+                <GigFilter filterBy={filterBy} onSetFilter={onSetFilter} />
+                <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} onAddGig={onAddGig} />
+            </div>
         </main>
     )
 }
+
