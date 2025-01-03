@@ -1,18 +1,42 @@
+
 .gig-index {
-    header {
+    .gigless {
+        height: 100%;
+        margin: 1em auto;
+        padding: 1em;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
 
-        padding-block: .3em;
-    }
+        .clr-filter {
+            width: fit-content;
+            margin: 1em auto;
+            padding: 0.75em 1em;
+            background: $bgColor3;
+            color: $clrPrimary1;
+            border-radius: 0.25em;
+            text-transform: uppercase;
+            font-family: 'macan-bold';
+            box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
 
-    h2 {
-        margin: 0;
-        font-size: 1.3em;
-    }
+            &:hover {
+                background-color: $clr10;
+                transform: translateY(-2px);
+            }
 
-    button {
-        margin-inline-end: 0;
+            &:active {
+                transform: translateY(1px);
+            }
+        }
+
+        img {
+            align-self: center;
+            justify-self: center;
+            max-width: 500px;
+            height: auto;
+            margin-block-end: auto;
+        }
     }
 }
