@@ -22,7 +22,11 @@ export function AppHeader() {
 		<header className="app-header full">
 			<nav>
 				<NavLink to="/" className="logo">
-					E2E Demo
+				<img 
+          src="src\services\imgs\design.imgs\logo.png" 
+          alt="Navigate to Target Page" 
+          style={{ width: "90px", height: "70px" }} 
+        />
 				</NavLink>
 				<NavLink to="about">About</NavLink>
 				<NavLink to="gig">explore</NavLink>
