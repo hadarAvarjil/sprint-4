@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function CarFilter({ filterBy, setFilterBy }) {
+export function GigFilter({ filterBy, setFilterBy }) {
     const [ filterToEdit, setFilterToEdit ] = useState(structuredClone(filterBy))
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export function CarFilter({ filterBy, setFilterBy }) {
         setFilterToEdit({ ...filterToEdit, sortField: '', sortDir: '' })
     }
 
-    return <section className="car-filter">
+    return <section className="gig-filter">
             <h3>Filter:</h3>
             <input
                 type="text"
