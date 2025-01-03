@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 export function GigPreview({ gig }) {
+    console.log('Hi')
     return (
         <>
             <Link className="link-gig-img" to={`/gigdetails/${gig._id}`}>

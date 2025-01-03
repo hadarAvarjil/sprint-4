@@ -10,7 +10,7 @@ export function GigIndex() {
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const gigs = useSelector((storeState) => storeState.gigModule.gigs)
     const dispatch = useDispatch() 
-
+ 
     useEffect(() => {
         loadGigs(filterBy).catch(() => showErrorMsg('Cannot load gigs'))
     }, [filterBy]) 
@@ -20,6 +20,7 @@ export function GigIndex() {
             .then(() => showSuccessMsg('Gig removed'))
             .catch(() => showErrorMsg('Cannot remove gig'))
     }
+    console.log('Hi')
 
     function onAddGig() {
         const gig = gigService.getEmptyGig()

@@ -22,7 +22,7 @@ export function GigList({ gigs, onRemoveGig, onUpdateGig, onAddGig }) {
   
     const sortedGigs = _.orderBy(gigs, sortBy, sortOrder)
 
-
+    console.log('Hi')
     
     function shouldShowActionBtns(gig) {
         const user = userService.getLoggedinUser()
