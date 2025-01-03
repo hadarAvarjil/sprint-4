@@ -20,12 +20,21 @@ import { useNavigate } from "react-router-dom";
                 <button onClick={() => handleNavigation('/gig')}>music</button>
                 <button onClick={() => handleNavigation('/gig')}>consulting</button>
             </div>
+
             <div className="ad-pro"
     ><img 
     src="src\services\imgs\design.imgs\ad.jpeg"  
-    style={{ width: "100%" }} 
+    style={{ width: "100%" }}
   />
       <button className="ad-btn" onClick={() => handleNavigation('about')}>Try Now</button>
+    </div>
+
+    <div className="signup-ad">
+    <img 
+    src="src\services\imgs\design.imgs\signup.jpeg"  
+    style={{ width: "100%" }}
+  />
+      <button className="signup-ad-btn" onClick={() => handleNavigation('login')}>Join Gigster</button>
     </div>
         </section >
     )
