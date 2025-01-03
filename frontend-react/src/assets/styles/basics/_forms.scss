@@ -22,3 +22,17 @@ form > * {
 .btn-link:hover {
 	background-color: $clr1;
 }
+
+.ad-btn{
+	background-color: #222325;
+	padding: 12px;
+	border-radius: 10%;
+position: absolute;
+bottom: 20px;
+left: 20px;
+}
+
+.ad-btn:hover{
+	 background-color: #404145;
+	 
+}
