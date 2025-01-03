@@ -15,7 +15,7 @@ export const gigService = {
     addGigMsg,
 }
 window.cs = gigService
-
+console.log('Hi')
 
 async function query(filterBy = { txt: '', price: 0 }) {
     var gigs = await storageService.query(STORAGE_KEY)

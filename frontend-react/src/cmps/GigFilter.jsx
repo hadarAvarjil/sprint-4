@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 export function GigFilter({ filterBy, onSetFilter }) {
     const [ filterToEdit, setFilterToEdit ] = useState(structuredClone(filterBy))
-
+    console.log('Hi')
     useEffect(() => {
         onSetFilter(filterToEdit)
     }, [filterToEdit])

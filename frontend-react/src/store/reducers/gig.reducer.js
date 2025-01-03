@@ -10,6 +10,7 @@ const initialState = {
     gig: null
 }
 
+
 export function gigReducer(state = initialState, action) {
     var newState = state
     var gigs
