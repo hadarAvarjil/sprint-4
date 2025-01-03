@@ -1,3 +1,13 @@
+export const utilService = {
+    makeId,
+    makeLorem,
+    getRandomIntInclusive,
+    randomPastTime,
+    debounce,
+    saveToStorage,
+    loadFromStorage
+}
+
 export function makeId(length = 6) {
     var txt = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -34,6 +44,7 @@ export function randomPastTime() {
     const pastTime = getRandomIntInclusive(HOUR, WEEK)
     return Date.now() - pastTime
 }
+
 
 export function debounce(func, timeout = 300) {
     let timer

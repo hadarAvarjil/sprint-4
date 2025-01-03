@@ -1,22 +1,19 @@
 import { useState, useEffect } from 'react'
 
-export function GigFilter({ filterBy, setFilterBy }) {
+export function GigFilter({ filterBy, onSetFilter }) {
     const [ filterToEdit, setFilterToEdit ] = useState(structuredClone(filterBy))
-
+    console.log('Hi')
     useEffect(() => {
-        setFilterBy(filterToEdit)
+        onSetFilter(filterToEdit)
     }, [filterToEdit])
 
     function handleChange(ev) {
-        const type = ev.target.type
         const field = ev.target.name
         let value
 
-        switch (type) {
+        switch (ev.target.type) {
             case 'text':
-            case 'radio':
-                value = field === 'sortDir' ? +ev.target.value : ev.target.value
-                if(!filterToEdit.sortDir) filterToEdit.sortDir = 1
+                value = ev.target.value
                 break
             case 'number':
                 value = +ev.target.value || ''
@@ -26,92 +23,29 @@ export function GigFilter({ filterBy, setFilterBy }) {
     }
 
     function clearFilter() {
-        setFilterToEdit({ ...filterToEdit, txt: '', minSpeed: '', maxPrice: '' })
-    }
-    
-    function clearSort() {
-        setFilterToEdit({ ...filterToEdit, sortField: '', sortDir: '' })
+        setFilterToEdit({ txt: '', price: '' })
     }
 
-    return <section className="gig-filter">
+    return (
+        <section className="gig-filter">
             <h3>Filter:</h3>
             <input
                 type="text"
                 name="txt"
-                value={filterToEdit.txt}
-                placeholder="Free text"
+                value={filterBy ? filterBy.txt : ''}
                 onChange={handleChange}
-                required
+                placeholder="Search gigs"
             />
             <input
                 type="number"
-                min="0"
-                name="minSpeed"
-                value={filterToEdit.minSpeed}
-                placeholder="min. speed"
+                name="price"
+                value={filterBy ? filterBy.price : ''}
                 onChange={handleChange}
-                required
+                placeholder="Max Price"
             />
             <button 
                 className="btn-clear" 
                 onClick={clearFilter}>Clear</button>
-            <h3>Sort:</h3>
-            <div className="sort-field">
-                <label>
-                    <span>Speed</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="speed"
-                        checked={filterToEdit.sortField === 'speed'}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    <span>Vendor</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="vendor"
-                        checked={filterToEdit.sortField === 'vendor'}            
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    <span>Owner</span>
-                    <input
-                        type="radio"
-                        name="sortField"
-                        value="owner"
-                        checked={filterToEdit.sortField === 'owner'}                        
-                        onChange={handleChange}
-                    />
-                </label>
-            </div>
-            <div className="sort-dir">
-                <label>
-                    <span>Asce</span>
-                    <input
-                        type="radio"
-                        name="sortDir"
-                        value="1"
-                        checked={filterToEdit.sortDir === 1}                        
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    <span>Desc</span>
-                    <input
-                        type="radio"
-                        name="sortDir"
-                        value="-1"
-                        onChange={handleChange}
-                        checked={filterToEdit.sortDir === -1}                        
-                    />
-                </label>
-            </div>
-            <button 
-                className="btn-clear" 
-                onClick={clearSort}>Clear</button>
-    </section>
+        </section>
+    )
 }
