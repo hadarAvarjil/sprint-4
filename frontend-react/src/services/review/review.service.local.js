@@ -1,35 +1,31 @@
-import { storageService } from '../async-storage.service'
-import { userService } from '../user'
+import { httpService } from '../http.service.js'
+const BASE_URL = 'review/'
 
 export const reviewService = {
-	add,
-	query,
-	remove,
+    query,
+    remove,
+    save,
+    getById
 }
 
-function query(filterBy) {
-	return storageService.query('review')
+function query(filterBy = {}) {
+    return httpService.get(BASE_URL, filterBy)
 }
 
-async function remove(reviewId) {
-	await storageService.remove('review', reviewId)
+function getById(reviewId) {
+    return httpService.get(BASE_URL + reviewId)
 }
 
-async function add({ txt, aboutUserId }) {
-	const aboutUser = await userService.getById(aboutUserId)
-	const reviewToAdd = {
-		txt,
-		byUser: userService.getLoggedinUser(),
-		aboutUser: {
-			_id: aboutUser._id,
-			fullname: aboutUser.fullname,
-			imgUrl: aboutUser.imgUrl,
-		},
-	}
+function remove(reviewId) {
+    return httpService.delete(BASE_URL + reviewId)
+}
 
-	reviewToAdd.byUser.score += 10
-	await userService.update(reviewToAdd.byUser)
-
-	const addedReview = await storageService.post('review', reviewToAdd)
-	return addedReview
+function save(review) {
+    if (review._id) {
+        console.log('changed review')
+        return httpService.put(BASE_URL, review)
+    } else {
+        console.log('created review')
+        return httpService.post(BASE_URL, review)
+    }
 }
