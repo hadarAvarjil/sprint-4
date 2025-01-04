@@ -8,7 +8,7 @@ import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { ChatApp } from './pages/Chat.jsx'
 import { AdminIndex } from './pages/AdminIndex.jsx'
 
-import { GigDetails } from './pages/GigDetailsHeadaer.jsx'
+import { GigDetails } from './pages/GigDetails.jsx'
 import { UserDetails } from './pages/UserDetails'
 
 import { AppHeader } from './cmps/AppHeader'
