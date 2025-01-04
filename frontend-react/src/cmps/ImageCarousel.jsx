@@ -1,7 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import { useDeviceType } from '../customHooks/DeviceTypeContext.jsx'
-
 import SvgIcon from './SvgIcon.jsx'
 
 export function ImageCarousel({
@@ -17,7 +15,6 @@ export function ImageCarousel({
   const [touchEnd, setTouchEnd] = useState(null)
 
   const carouselRef = useRef()
-  // const deviceType = useDeviceType()
 
   const numImages = images.length
   let imageWidth = parentWidth

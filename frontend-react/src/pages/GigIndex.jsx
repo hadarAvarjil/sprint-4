@@ -146,7 +146,7 @@ export function GigIndex() {
         </>
       ) : (
         <section className="gigless">
-          <h2>We couldn't find Gigs that match your search</h2>
+          <h2>The Page Not Load? Try Clear Filter's</h2>
           <button
             className="clr-filter"
             onClick={() => setFilter({ page: 1 })}
