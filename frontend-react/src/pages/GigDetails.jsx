@@ -7,6 +7,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { addGigMsg } from '../store/actions/gig.actions'
 import { loadUser } from '../store/actions/user.actions.js'
 import { GigDetailsHeader } from '../cmps/GigDetailsHeader'
+import { ImageCarousel } from '../cmps/ImageCarousel';
 
 
 export function GigDetails() {
@@ -14,6 +15,7 @@ export function GigDetails() {
   const [gigOwner, setGigOwner] = useState(null)
   const { gigId } = useParams()
   const navigate = useNavigate()
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
     loadGigDetails()
@@ -57,11 +59,13 @@ export function GigDetails() {
           gig={gig}
           owner={gigOwner}
         />
-        <img
-          className="avatar"
-          src={gig.owner.imgUrl}
-          alt={`${gig.owner.fullName} gig avatar`}
-        />
+         <ImageCarousel
+            isFrom="gig-details"
+            images={gig.imgUrls || []} 
+            gigId={gig._id}
+            newImgIndex={currentImageIndex}
+            setNewImgIndex={setCurrentImageIndex}
+          />
         <h3>About This Gig</h3>
         <p>{gig.description}</p>
       </div>
