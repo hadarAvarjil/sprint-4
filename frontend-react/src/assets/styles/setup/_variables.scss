@@ -4,6 +4,9 @@ $clrPrimary5: #555;
 $clrPrimary4: #333;
 $clrPrimary2: #222325;
 $clrPrimary3: #000;
+$clrPrimary1: #3498db;
+$clrPrimary2: #2ecc71;
+$clrPrimary3: #34495e;
 
 $clrSecondary0: #FAFAFA;
 $clrSecondary12: #f7f7f7;
@@ -22,6 +25,14 @@ $clrSecondary6: #62646a;
 $clrSecondary7: #575353;
 $clrSecondary8: #404145;
 
+
+$clrPrimary1: #3498db; // צבע ראשוני לדוגמה
+$clrPrimary2: #2ecc71; // צבע שני לדוגמה
+$clrSecondary1: #ffffff; // צבע משני לדוגמה
+$clrPrimary3: #34495e;
+$clrPrimary5: #e74c3c;
+$clrSecondary4: #f39c12;
+
 $bgColor1: #0a4226;
 $bgColor2: #2dd12d;
 $bgColor3: #1dbf73;
@@ -30,19 +41,15 @@ $bgColor5: #19a463;
 $bgColor6: #c00d0d;
 $bgColor7: #df6e6e;
 
-$gray1: #f0f0f0;
-$gray1: #dcdcdc;
-$gray2: #e0e0e0; 
+$gray1: #f0f0f0;  // דאג למחוק את הגדרת ה-gray1 הכפולה
+$gray2: #e0e0e0;
 $gray4: #1a1515;
-$gray1: #ccc;    
 $gray3: #333;
 
 $clr1: #19a463;
 $clr2: #78cdd2;
 $clr3: #29bd49; 
-$clr3: #4caf50;  
-$clr4: #d83b3b;
-$clr4: #f9f9f9;   
+$clr4: #d83b3b;  // דאג למחוק את הגדרת ה-clr4 הכפולה
 $clr5: #0070ba;
 $clr6: #ffff54; 
 $clr7: #ffbe5b;
@@ -58,6 +65,6 @@ $clr16: #f96363;
 $clr17: #2e25ad;
 
 // Breakpoints
-$mobile-breakpoint: 460px; 
-$narrow-breakpoint: 720px; 
-$normal-breakpoint: 960px; 
+$mobile-breakpoint: 460px;
+$narrow-breakpoint: 720px;
+$normal-breakpoint: 960px;

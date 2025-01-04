@@ -71,60 +71,155 @@ function getEmptyGig() {
     }
 }
 
-
 function _createGigs() {
-    let gigs = utilService.loadFromStorage(STORAGE_KEY)
-    if (!gigs || !gigs.length) {
-      gigs = [
-        {
-          _id: 'g101',
-          title: 'I will take unique photos of Spiderman',
-          price: 99,
-          owner: {
-            _id: 'u101',
-            fullName: 'Peter Parker',
-            imgUrl:
-              'https://qph.cf2.quoracdn.net/main-qimg-9fde28d147c243b690bdf975f8474145-lq',
-            level: 'level 2',
-            rate: 4.9,
+  let gigs = utilService.loadFromStorage(STORAGE_KEY);
+  if (!gigs || !gigs.length) {
+    gigs = [
+      {
+        _id: "g101",
+        title: "I will create logos for your company",
+        category: "Graphics & Design",
+        tags: ["Logo & Brand Identity", "Art & Illustration", "Marketing Design"],
+        price: 45.99,
+        description: "I will design a unique and eye-catching logo for your brand.",
+        daysToMake: 3,
+        ownerId: "u101",
+        imgUrls: [
+          
+                      "https://images.unsplash.com/photo-1627163439134-7a8c47e08208?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                      "https://images.unsplash.com/photo-1625014618427-fbc980b974f5?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                      "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                      "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                      "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  ],
+        likedByUsers: [],
+        reviews: [
+          {
+            id: "101",
+            userName: "HappyClient123",
+            rating: 5,
+            text: "Fantastic work! Highly recommended.",
           },
-          daysToMake: 3,
-          description: 'I am actually the real Spiderman...',
-          imgUrls: [
-            'https://cdn.britannica.com/54/93454-050-5AC49E5E/Spider-Man-Tobey-Maguire-2.jpg',
-            'https://i.insider.com/5d5d70df4afbf9310528d139?width=750&format=jpeg&auto=webp',
-            'https://assets-prd.ignimgs.com/2022/03/18/spidermannowayhomeexclusivefirst10minutesignblogroll-1647047297213-1647633871978.jpeg',
-            'https://www.gamespot.com/a/uploads/scale_medium/1582/15828986/3552444-spider%20train%202.jpg',
-            'https://www.gamespot.com/a/uploads/screen_kubrick/1582/15828986/3552441-hed.jpg',
-          ],
-          tags: ['logo-design', 'artisitic', 'proffesional', 'accessible'],
-          likedByUsers: ['mini-user'],
-        },
-        {
-          _id: 'g102',
-          title: 'I will design your logo',
-          price: 49,
-          owner: {
-            _id: 'u102',
-            fullName: 'Jane Doe',
-            imgUrl:
-              'https://img.freepik.com/premium-photo/robot-face-with-green-eyes-black-face_14865-1671.jpg?w=2000',
-            level: 'level 1',
-            rate: 4.9,
+        ],
+      },
+      {
+        _id: "g102",
+        title: "I will design stunning website templates",
+        category: "Graphics & Design",
+        tags: ["Web & App Design", "Product & Gaming"],
+        price: 59.99,
+        description: "I specialize in creating beautiful and responsive website templates.",
+        daysToMake: 7,
+        ownerId: "u102",
+        imgUrls: [
+          "https://via.placeholder.com/400x300?text=Template1",
+          "https://via.placeholder.com/400x300?text=Template2",
+        ],
+        likedByUsers: [],
+        reviews: [
+          {
+            id: "201",
+            userName: "WebsiteOwner789",
+            rating: 4.5,
+            text: "Great templates for my online store.",
           },
-          daysToMake: 1,
-          description: 'I will design your robot logo in 24 hours or less...',
-          imgUrls: [
-            'https://img.freepik.com/premium-vector/cute-robot-mascot-logo-cartoon-character-illustration_8169-227.jpg',
-            'https://img.freepik.com/premium-vector/cute-robot-logo-vector-design-template_612390-492.jpg',
-            'https://img.freepik.com/free-vector/hand-drawn-data-logo-template_23-2149203374.jpg?size=626&ext=jpg&ga=GA1.1.1028445320.1691753202&semt=ais',
-            'https://img.freepik.com/free-vector/cute-bot-say-users-hello-chatbot-greets-online-consultation_80328-195.jpg?size=626&ext=jpg&ga=GA1.1.1028445320.1691753202&semt=ais',
-            'https://img.freepik.com/free-vector/cute-robot-holding-clipboard-cartoon-vector-icon-illustration-science-technology-icon-isolated_138676-5184.jpg?size=626&ext=jpg&ga=GA1.1.1028445320.1691753202&semt=ais',
-          ],
-          tags: ['logo-design', 'artisitic', 'proffesional', 'accessible'],
-          likedByUsers: ['mini-user'],
-        },
-      ]
-      utilService.saveToStorage(STORAGE_KEY, gigs)
-    }
+        ],
+      },
+      {
+        _id: "g103",
+        title: "I will write engaging blog articles for your niche",
+        category: "Writing & Translation",
+        tags: ["Content Writing", "Editing & Critique"],
+        price: 29.99,
+        description: "High-quality blog articles to boost your website's SEO.",
+        daysToMake: 3,
+        ownerId: "u103",
+        imgUrls: [
+          "https://via.placeholder.com/400x300?text=Article1",
+          "https://via.placeholder.com/400x300?text=Article2",
+        ],
+        likedByUsers: [],
+        reviews: [
+          {
+            id: "301",
+            userName: "WebsiteOwnerXYZ",
+            rating: 4,
+            text: "Informative and SEO-friendly articles.",
+          },
+        ],
+      },
+      {
+        _id: "g104",
+        title: "I will compose a personalized song for your special occasion",
+        category: "Music & Audio",
+        tags: ["Music Production", "Audio Engineering"],
+        price: 69.99,
+        description: "Celebrate your moments with a custom song.",
+        daysToMake: 7,
+        ownerId: "u104",
+        imgUrls: [
+          "https://via.placeholder.com/400x300?text=Song1",
+          "https://via.placeholder.com/400x300?text=Song2",
+        ],
+        likedByUsers: [],
+        reviews: [
+          {
+            id: "401",
+            userName: "HappyCouple123",
+            rating: 5,
+            text: "Beautiful custom song for our wedding.",
+          },
+        ],
+      },
+      {
+        _id: "g105",
+        title: "I will create custom 3D animations for your project",
+        category: "Video & Animation",
+        tags: ["3D Animation", "Visual Effects"],
+        price: 99.99,
+        description: "Transform your ideas into stunning 3D animations.",
+        daysToMake: 7,
+        ownerId: "u105",
+        imgUrls: [
+          "https://via.placeholder.com/400x300?text=Animation1",
+          "https://via.placeholder.com/400x300?text=Animation2",
+        ],
+        likedByUsers: [],
+        reviews: [
+          {
+            id: "501",
+            userName: "MarketingGuru123",
+            rating: 5,
+            text: "Amazing 3D animations for our marketing video.",
+          },
+        ],
+      },
+      {
+        _id: "g106",
+        title: "I will provide coaching for your business growth",
+        category: "Business",
+        tags: ["Business Formation", "Growth"],
+        price: 49.99,
+        description: "Achieve your business goals with personalized coaching.",
+        daysToMake: 3,
+        ownerId: "u106",
+        imgUrls: [
+          "https://via.placeholder.com/400x300?text=Coaching1",
+          "https://via.placeholder.com/400x300?text=Coaching2",
+        ],
+        likedByUsers: [],
+        reviews: [
+          {
+            id: "601",
+            userName: "GoalAchieverXYZ",
+            rating: 5,
+            text: "Sophie's coaching was transformative for my business.",
+          },
+        ],
+      },
+    ];
+    utilService.saveToStorage(STORAGE_KEY, gigs);
   }
+}
+
+
