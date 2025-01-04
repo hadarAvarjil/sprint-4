@@ -1,20 +1,42 @@
-import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { loadGig, addGigMsg } from '../store/actions/gig.actions'
+import { addGigMsg } from '../store/actions/gig.actions'
+import { loadUser } from '../store/actions/user.actions.js'
+import { GigDetailsHeader } from '../cmps/GigDetailsHeader'
 
 
 export function GigDetails() {
-
+  const [gig, setGig] = useState(null)
+  const [gigOwner, setGigOwner] = useState(null)
   const { gigId } = useParams()
-  const gig = useSelector(storeState => storeState.gigModule.gig)
+  const navigate = useNavigate()
 
   useEffect(() => {
-    loadGig(gigId)
+    loadGigDetails()
   }, [gigId])
+
+  async function loadGigDetails() {
+    try {
+      const loadedGig = await gigService.getById(gigId)
+      console.log('Loaded gig:', loadedGig)
+      setGig(loadedGig)
+      
+
+      if (loadedGig && loadedGig.owner) {
+        const owner = await loadUser(loadedGig.owner._id)
+        console.log(owner);
+        setGigOwner(owner)
+      }
+    } catch (err) {
+      console.error('Error loading gig:', err)
+      showErrorMsg('Cannot load gig')
+      navigate('/gig')
+    }
+  }
 
   async function onaddGigMsg(gigId) {
     try {
@@ -29,10 +51,12 @@ export function GigDetails() {
   return (
     <section className="gig-details">
       <Link to="/gig">Back to list</Link>
-      <h1>Gig Details</h1>
       {gig && <div>
         <a>{gig.tags}</a>
-        <h2>{gig.title}</h2>
+        <GigDetailsHeader
+          gig={gig}
+          owner={gigOwner}
+        />
         <img
           className="avatar"
           src={gig.owner.imgUrl}
