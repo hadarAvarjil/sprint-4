@@ -4,10 +4,8 @@ import SvgIcon from './SvgIcon.jsx';
 import { ImageCarousel } from './ImageCarousel.jsx';
 
 export function GigPreview({ gig }) {
-    // יצירת מצב לאינדקס של התמונה הנוכחית
-    const [newImgIndex, setNewImgIndex] = useState(0);
 
-    // בדיקות קיום פרמטרים ספציפיים
+    const [newImgIndex, setNewImgIndex] = useState(0);
     const { owner, imgUrls, _id, title, price } = gig || {};
     const { imgUrl, fullName, level, rate } = owner || {};
 
@@ -15,8 +13,8 @@ export function GigPreview({ gig }) {
         <>
             {imgUrls && imgUrls.length > 0 && (
                 <ImageCarousel
-                    images={imgUrls} // השתמש במערך התמונות של gig
-                    gigId={_id} // השתמש ב-_id של gig
+                    images={imgUrls} 
+                    gigId={_id} 
                     newImgIndex={newImgIndex}
                     setNewImgIndex={setNewImgIndex}
                 />
@@ -26,7 +24,7 @@ export function GigPreview({ gig }) {
                     {imgUrl && (
                         <img
                             className="avatar"
-                            src={imgUrl} // השתמש ב-imgUrl של owner
+                            src={imgUrl} 
                             alt={`${fullName || 'User'} gig avatar`}
                         />
                     )}
