@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import _ from 'lodash'
+import { UserPreviewGigDetails } from '../cmps/UserPreviewGigDetails'
 
-
-export function GigDetailsHeader ({gig, owner}){
+export function GigDetailsHeader({ gig, owner }) {
+    const isFrom = "gig-details"
 
     return (
-        <>
-        <section className= "gig-details-header">
-        <h2>{gig.title}</h2>
+        <section className="gig-details-header">
+   
+            <h2>{gig.title}</h2>
+            <UserPreviewGigDetails
+                key={gig._id}
+                owner={owner} 
+                isFrom={isFrom}
+            />
         </section>
-        </>
     )
 }
