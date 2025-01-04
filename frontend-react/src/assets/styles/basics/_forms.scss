@@ -23,20 +23,20 @@ form > * {
 	background-color: $clr1;
 }
 
-.ad-btn{
+.blk-btn{
 	background-color: #222325;
 	padding: 12px;
 	border-radius: 10%;
 position: absolute;
 bottom: 20px;
-left: 20px;
+left: 20px; 
 }
 
-.ad-btn:hover{
+.blk-btn:hover{
 	 background-color: #404145;
 	 
 }
-.signup-ad-btn{
+.white-join-btn{
 	display: flex;
 	height: 30px;
 	color: rgba(0, 0, 0, 0.822);
@@ -48,11 +48,23 @@ bottom: 10%;
 left: 43%;
 align-items: center;
 font-weight: bold;
-
-
 };
 	
-	.signup-ad-btn:hover{
+	.white-join-btn:hover{
 		background-color: #404145;
 
 }
+
+.blk-join-btn{
+background-color: #222325;
+display: flex;
+height: 30px;
+width: 79px;
+padding: 12px;
+border-radius: 10%;
+position:relative;
+left: 43%;
+align-items: center;
+font-weight: bold;
+}
+
