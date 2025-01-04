@@ -1,23 +1,85 @@
 .list {
-    --min-column-size: 220px;
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-size), 1fr));
-    gap: .5em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // עיצוב גריד עם עמודות גמישות
+    gap: 1.5em; // מרווחים בין הכרטיסים
+    padding: 1em;
 
     li {
-        display: grid;
-        grid-template-columns: max-content auto;
-        padding: .5em;
-        background-color: $clr2;
+        list-style: none;
+        padding: 0;
+    }
 
-        color: $clr6;
+    .gig-preview {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff; // רקע לבן
+        border-radius: 8px; // פינות מעוגלות
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // הצללה קלה
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
 
-        .actions {
-            justify-self: end;
+        &:hover {
+            transform: translateY(-5px); // אפקט ריחוף
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); // הצללה חזקה יותר
+        }
 
-            button {
-                padding: .3em .5em;
+        img.gig-preview-img {
+            width: 100%; // התאמת רוחב התמונה
+            height: 200px; // גובה קבוע לתמונה
+            object-fit: cover; // חיתוך התמונה בצורה אחידה
+        }
+
+        .preview-userinfo {
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+
+            .preview-user-info {
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+
+                .avatar {
+                    width: 40px; // גודל האווטאר
+                    height: 40px;
+                    border-radius: 50%; // עיגול
+                    object-fit: cover;
+                }
+
+                .full-name {
+                    font-weight: bold;
+                    font-size: 1rem;
+                    color: #333; // צבע טקסט כהה
+                }
+
+                .level {
+                    font-size: 0.85rem;
+                    color: #666; // צבע טקסט משני
+                }
+            }
+
+            .user-rating {
+                font-size: 0.9rem;
+                color: #ffa500; // צבע צהוב לדירוג
+                font-weight: bold;
+            }
+
+            .link-gig-details {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #007bff; // כחול קישור
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .price {
+                margin-top: 0.5em;
+                font-weight: bold;
+                color: #28a745; // צבע ירוק למחיר
             }
         }
     }

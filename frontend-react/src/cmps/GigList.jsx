@@ -1,50 +1,62 @@
-import { userService } from '../services/user'
-import { GigPreview } from './GigPreview'
-import { useState, useEffect } from 'react'
-import _ from 'lodash'
+import { userService } from '../services/user';
+import { GigPreview } from './GigPreview';
+import { useState, useEffect, useMemo } from 'react';
+import _ from 'lodash';
 
 export function GigList({ gigs, onRemoveGig, onUpdateGig, onAddGig }) {
-    const [sortBy, setSortBy] = useState(null)
-    const [sortOrder, setSortOrder] = useState('asc')
-  
-    const handleSort = (criteria) => {
-      if (sortBy === criteria) {
-        setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
-      } else {
-        setSortBy(criteria)
-        setSortOrder('asc')
-      }
-    }
-  
-    const toggleSortOrder = () => {
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
-    }
-  
-    const sortedGigs = _.orderBy(gigs, sortBy, sortOrder)
+  const [sortBy, setSortBy] = useState(null);
+  const [sortOrder, setSortOrder] = useState('asc');
+  const [isVisible, setIsVisible] = useState(false);
 
-    console.log('Hi')
-    
-    function shouldShowActionBtns(gig) {
-        const user = userService.getLoggedinUser()
-        
-        if (!user) return false
-        if (user.isAdmin) return true
-        return gig.owner?._id === user._id
-    }
+  useEffect(() => {
+    // Delay to show animation when component is loaded
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
-    return (
-        <section className="main-gig-list">
-          <ul className="gig-list">
-            {sortedGigs.map((gig) => (
-              <li className="gig-preview" key={gig._id}>
-                   <GigPreview
-              onRemoveGig={onRemoveGig}
-              onUpdateGig={onUpdateGig}
-              gig={gig}
-            />
-              </li>
-            ))}
-          </ul>
-        </section>
-      )
+  const handleSort = (criteria) => {
+    if (sortBy === criteria) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortBy(criteria);
+      setSortOrder('asc');
+    }
+  };
+
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+  };
+
+  const sortedGigs = useMemo(() => {
+    return _.orderBy(gigs, sortBy, sortOrder);
+  }, [gigs, sortBy, sortOrder]);
+
+  function shouldShowActionBtns(gig) {
+    const user = userService.getLoggedinUser();
+    return user && (user.isAdmin || gig.owner?._id === user._id);
+  }
+
+  return (
+    <section className="main-gig-list">
+      <div className="sort-buttons">
+        <button onClick={() => handleSort('name')}>Sort by Name</button>
+        <button onClick={() => handleSort('price')}>Sort by Price</button>
+        <button onClick={() => handleSort('createdAt')}>Sort by Date</button>
+        <button onClick={toggleSortOrder}>
+          {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
+        </button>
+      </div>
+      <div className={`gig-list ${isVisible ? 'show' : ''}`}>
+        {sortedGigs.map((gig) => (
+          <GigPreview
+            key={gig._id}
+            onRemoveGig={onRemoveGig}
+            onUpdateGig={onUpdateGig}
+            gig={gig}
+            canEdit={shouldShowActionBtns(gig)}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }
