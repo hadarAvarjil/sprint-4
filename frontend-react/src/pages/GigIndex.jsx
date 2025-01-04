@@ -1,85 +1,160 @@
-import { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { loadGigs, addGig, updateGig, removeGig } from '../store/actions/gig.actions'
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { gigService } from '../services/gig/'
-import { GigList } from '../cmps/GigList'
-import { GigFilter } from '../cmps/GigFilter'
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  loadGigs,
+  addGig,
+  updateGig,
+  removeGig,
+  setFilter as setFilterAction,
+} from '../store/actions/gig.actions';
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service';
+import { gigService } from '../services/gig/';
+import { GigList } from '../cmps/GigList';
+import { GigFilter } from '../cmps/GigFilter';
+import { Pagination } from '../cmps/Pagination.jsx';
 
 export function GigIndex() {
-  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
-  const gigs = useSelector((storeState) => storeState.gigModule.gigs)
-  const dispatch = useDispatch()
+  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy) || { page: 1 };
+  const gigs = useSelector((storeState) => storeState.gigModule.gigs);
+  const dispatch = useDispatch();
+  const [isRenderedChoice, setIsRenderedChoice] = useState([false, '']);
 
-  const [currentPage, setCurrentPage] = useState(1)
-  const gigsPerPage = 12
+  const currentPage = parseInt(filterBy.page) || 1;
+  const totalGigsPerPage = 12;
+  const totalPages = Math.ceil(gigs.length / totalGigsPerPage);
 
-  // calc for future pagination
-  const totalPages = Math.ceil(gigs.length / gigsPerPage)
-  const startIndex = (currentPage - 1) * gigsPerPage
-  const currentGigs = gigs.slice(startIndex, startIndex + gigsPerPage)
+  const startIndex = (currentPage - 1) * totalGigsPerPage;
+  const endIndex = startIndex + totalGigsPerPage;
+  const currentGigs = gigs.slice(startIndex, endIndex);
 
   useEffect(() => {
-    loadGigs(filterBy).catch(() => showErrorMsg('Cannot load gigs'))
-  }, [filterBy])
+    const fetchData = async () => {
+      try {
+        const gigs = await gigService.query(filterBy); 
+        dispatch({ type: 'SET_GIGS', gigs }); 
+      } catch (error) {
+        console.error('Failed to load gigs:', error);
+        showErrorMsg('Cannot load gigs');
+      }
+    };
+    fetchData();
+  }, [filterBy, dispatch]);
 
-  function onRemoveGig(gigId) {
-    removeGig(gigId)
-      .then(() => showSuccessMsg('Gig removed'))
-      .catch(() => showErrorMsg('Cannot remove gig'))
-  }
 
-  function onAddGig() {
-    const gig = gigService.getEmptyGig()
-    gig.title = prompt('Title?')
-    addGig(gig)
-      .then((savedGig) => showSuccessMsg(`Gig added (id: ${savedGig._id})`))
-      .catch(() => showErrorMsg('Cannot add gig'))
-  }
+  const onRemoveGig = async (gigId) => {
+    try {
+      await removeGig(gigId);
+      showSuccessMsg('Gig removed');
+    } catch (error) {
+      console.error('Failed to remove gig:', error);
+      showErrorMsg('Cannot remove gig');
+    }
+  };
 
-  function onUpdateGig(gig) {
-    const price = +prompt('New price?')
-    const gigToSave = { ...gig, price }
-    updateGig(gigToSave)
-      .then((savedGig) => showSuccessMsg(`Gig updated, new price: ${savedGig.price}`))
-      .catch(() => showErrorMsg('Cannot update gig'))
-  }
+  const onAddGig = async () => {
+    try {
+      const gig = gigService.getEmptyGig();
+      gig.title = prompt('Title?');
+      if (!gig.title) return;
+      const savedGig = await addGig(gig);
+      showSuccessMsg(`Gig added (id: ${savedGig._id})`);
+    } catch (error) {
+      console.error('Failed to add gig:', error);
+      showErrorMsg('Cannot add gig');
+    }
+  };
 
-  function onSetFilter(filterBy) {
-    dispatch({ type: 'SET_GIGS_FILTER', filterBy })
-  }
+  const onUpdateGig = async (gig) => {
+    try {
+      const price = +prompt('New price?');
+      if (isNaN(price)) return;
+      const gigToSave = { ...gig, price };
+      const savedGig = await updateGig(gigToSave);
+      showSuccessMsg(`Gig updated, new price: ${savedGig.price}`);
+    } catch (error) {
+      console.error('Failed to update gig:', error);
+      showErrorMsg('Cannot update gig');
+    }
+  };
 
-  function handlePageChange(newPage) {
-    setCurrentPage(newPage)
-  }
+  const setFilter = (newFilter) => {
+    dispatch(setFilterAction({ ...filterBy, ...newFilter }));
+  };
+
+  const handlePageChange = (newPage) => {
+    setFilter({ page: newPage });
+  };
+
+  const setMenuFilter = (event, selectedOption) => {
+    event.preventDefault();
+    let updatedFilterBy = { ...filterBy, page: 1 };
+
+    switch (isRenderedChoice[1]) {
+      case 'budget':
+        if (selectedOption.min) updatedFilterBy.min = selectedOption.min;
+        if (selectedOption.max) updatedFilterBy.max = selectedOption.max;
+        break;
+      case 'seller_level':
+        updatedFilterBy.level = selectedOption;
+        break;
+      case 'category':
+        updatedFilterBy.cat = selectedOption;
+        break;
+      default:
+        break;
+    }
+    setFilter(updatedFilterBy);
+    setIsRenderedChoice([false, '']);
+  };
+
+  const onDeleteFilter = (filterToDelete) => {
+    const updatedFilter = { ...filterBy };
+    if (filterToDelete === 'min' || filterToDelete === 'max') {
+      updatedFilter[filterToDelete] = undefined;
+    } else {
+      updatedFilter[filterToDelete] = '';
+    }
+    setFilter(updatedFilter);
+  };
+
+  const onHandleChoice = (renderedChoice) => {
+    if (isRenderedChoice[1] === renderedChoice && isRenderedChoice[0]) {
+      setIsRenderedChoice([false, '']);
+      return;
+    }
+    setIsRenderedChoice([true, renderedChoice]);
+  };
 
   return (
     <main className="gig-index main-layout">
-      <GigFilter filterBy={filterBy} onSetFilter={onSetFilter} />
+      <GigFilter
+        filterBy={filterBy}
+        setMenuFilter={setMenuFilter}
+        onHandleChoice={onHandleChoice}
+        isRenderedChoice={isRenderedChoice}
+        setIsRenderedChoice={setIsRenderedChoice}
+        onDeleteFilter={onDeleteFilter}
+      />
       {currentGigs.length ? (
         <>
           <GigList gigs={currentGigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
-          {/*    Pagination in future   */}
-          <div className="pagination">
-            {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                key={i}
-                className={currentPage === i + 1 ? 'active' : ''}
-                onClick={() => handlePageChange(i + 1)}
-              >
-                {i + 1}
-              </button>
-            ))}
-          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         </>
       ) : (
         <section className="gigless">
           <h2>We couldn't find Gigs that match your search</h2>
-          <button className="clr-filter" onClick={() => dispatch({ type: 'SET_GIGS_FILTER', filterBy: {} })}>
+          <button
+            className="clr-filter"
+            onClick={() => setFilter({ page: 1 })}
+          >
             Clear all filters
           </button>
         </section>
       )}
     </main>
-  )
+  );
 }
