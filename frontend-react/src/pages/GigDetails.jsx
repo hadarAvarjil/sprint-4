@@ -15,7 +15,7 @@ export function GigDetails() {
   const [gigOwner, setGigOwner] = useState(null)
   const { gigId } = useParams()
   const navigate = useNavigate()
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [newImgIndex, setNewImgIndex] = useState(0)
 
   useEffect(() => {
     loadGigDetails()
@@ -26,7 +26,7 @@ export function GigDetails() {
       const loadedGig = await gigService.getById(gigId)
       console.log('Loaded gig:', loadedGig)
       setGig(loadedGig)
-      
+
 
       if (loadedGig && loadedGig.ownerId) {
         const owner = await loadUser(loadedGig.ownerId)
@@ -52,20 +52,18 @@ export function GigDetails() {
 
   return (
     <section className="gig-details">
-      <Link to="/gig">Back to list</Link>
       {gig && <div>
-        <a>{gig.tags}</a>
         <GigDetailsHeader
           gig={gig}
           owner={gigOwner}
         />
-         <ImageCarousel
-            isFrom="gig-details"
-            images={gig.imgUrls || []} 
-            gigId={gig._id}
-            newImgIndex={currentImageIndex}
-            setNewImgIndex={setCurrentImageIndex}
-          />
+        <ImageCarousel
+          // isFrom="gig-details"
+          images={gig.imgUrls || []}
+          gigId={gig._id}
+          newImgIndex={newImgIndex}
+          setNewImgIndex={setNewImgIndex}
+        />
         <h3>About This Gig</h3>
         <p>{gig.description}</p>
       </div>
