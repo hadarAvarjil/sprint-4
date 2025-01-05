@@ -20,7 +20,7 @@ export function GigIndex() {
   const [isRenderedChoice, setIsRenderedChoice] = useState([true, 'category'])
 
   const currentPage = parseInt(filterBy.page) || 1
-  const totalGigsPerPage = 12;
+  const totalGigsPerPage = 12
   const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
 
   const startIndex = (currentPage - 1) * totalGigsPerPage
