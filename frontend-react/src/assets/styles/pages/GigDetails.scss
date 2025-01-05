@@ -1,0 +1,15 @@
+.gig-details-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    .gig-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #333;
+        margin-top: 1rem;
+    }
+}
