@@ -18,9 +18,9 @@ export function AppFooter() {
 		  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">in</a>
             
             
-            {import.meta.env.VITE_LOCAL ? 
+            {/* {import.meta.env.VITE_LOCAL ? 
                 <span className="local-services">Local Services</span> : 
-                <span className="remote-services">Remote Services</span>}
+                <span className="remote-services">Remote Services</span>} */}
 		</footer>
 	)
 }
