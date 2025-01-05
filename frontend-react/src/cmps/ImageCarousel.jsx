@@ -86,15 +86,14 @@ export function ImageCarousel({
 
   return (
     <div
-      className="carousel-container"
-      style={{ borderRadius: isFrom === 'gig-details' ? '0' : '0.5em' }}
+      className={`carousel-container ${isFrom === 'gig-details' ? 'gig-details' : ''}`}
     >
       <button
         className={`arrow${isFrom === 'gig-details' ? '-gig-details' : ''
           } left`}
         onClick={(e) => prevImage(e)}
       >
-        <SvgIcon iconName={'arrowDown'} />
+        <SvgIcon iconName={'leftArrow'} />
       </button>
       <div className="carousel-wrapper">
         <div
@@ -110,10 +109,9 @@ export function ImageCarousel({
           {images.map((image, index) => (
             <div
               key={index}
-              className="carousel-item"
+              className={`carousel-item ${isFrom === 'gig-details' ? 'gig-details' : ''}`}
               style={{
                 width: `${imageWidth}px`,
-                borderRadius: isFrom === 'gig-details' ? '0 !important' : '0.5em',
               }}
             >
               {isFrom !== 'gig-details' ? (
@@ -143,7 +141,7 @@ export function ImageCarousel({
           } right`}
         onClick={(e) => nextImage(e)}
       >
-        <SvgIcon iconName={'arrowDown'} />
+        <SvgIcon iconName={'rightArrow'} /> 
       </button>
       {isFrom !== 'gig-details' && (
         <ul className="dot-container">

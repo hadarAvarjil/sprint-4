@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import SvgIcon from './SvgIcon.jsx'
 
 export function UserPreviewGigDetails({ owner }) {
     const [user, setUser] = useState(null)
@@ -40,6 +41,7 @@ export function UserPreviewGigDetails({ owner }) {
                         <span className="stars">
                             {"★".repeat(Math.floor(user.rating))}
                             {"☆".repeat(5 - Math.floor(user.rating))}
+                            <SvgIcon iconName="homeBlack" />
                         </span>
                         <span className="rating-score">{user.rating.toFixed(1)}</span>
                         <span className="rating-count">
