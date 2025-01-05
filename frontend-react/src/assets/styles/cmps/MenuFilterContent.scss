@@ -1,32 +1,71 @@
 .menu-filter-content {
   background-color: #fff;
   border-bottom: 1px solid #e4e5e7;
+  border-top: 1px solid #e4e5e7;
   display: flex;
-  align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 0 16px;
   color:$clrSecondary5;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+  
+  // white-space: nowrap;
+  justify-content: center; 
+  align-items: center; 
+  background-color: #fff;
+  border-bottom: 1px solid #e4e5e7;
+  position: relative; 
+
 
   .content-scroll {
     display: flex;
+    justify-content: center; 
     align-items: center;
-    gap: 24px;
-    margin: 0;
-    padding: 12px 0;
+    gap: 24px; 
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding: 12px 16px;
+    max-width: 50%; 
+    padding: 12px 16px;
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+   
+  .arrow {
+    border: 1px solid red; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #95979d;
+    z-index: 10;
+
+    &:hover {
+      color: #000;
+    }
+
+    &.arrow-left {
+      left: 3px;
+    }
+
+    &.arrow-right {
+      right: 3px;
+    }
+
+    &:disabled {
+      color: #e4e5e7;
+      cursor: not-allowed;
+    }
+  }
   
       .radio-list {
-        display: flex; // מסדר את האלמנטים בשורה
-        flex-wrap: wrap; // עוטף לשורה חדשה אם אין מקום
-        flex-direction: row-reverse; // מסדר מימין לשמאל
-        gap: 16px; // רווחים בין הקטגוריות
-        justify-content: flex-end; // יישור לימין
-        align-items: center; // יישור אנכי במרכז
+        display: flex;
+        gap: 16px;
+        justify-content: center; 
+        align-items: center;
         
         .radio-item-wrapper {
           display: flex;
@@ -41,6 +80,7 @@
             white-space: nowrap;
             text-decoration: none;
             transition: color 0.2s ease;
+            
             &:hover {
               color: $clrSecondary8;
             }
