@@ -11,24 +11,27 @@ import { useNavigate } from "react-router-dom";
           };
         return (
         <section>
-            <div>
-              {/* <div onClick={() => handleNavigation('/gig')}>
-                <img src="src\services\imgs\design.imgs\graphics.jpeg" alt="" />
-                graphic</div> */}
 
-                <button onClick={() => handleNavigation('/gig')}>graphic</button>
-                <button onClick={() => handleNavigation('/gig')}>programming</button>
-                <button onClick={() => handleNavigation('/gig')}>marketing</button>
-                <button onClick={() => handleNavigation('/gig')}>animation</button>
-                <button onClick={() => handleNavigation('/gig')}>translation</button>
-                <button onClick={() => handleNavigation('/gig')}>music</button>
-                <button onClick={() => handleNavigation('/gig')}>consulting</button>
+<div style={{width:'100%', height:'50px', backgroundColor:'lightgrey'}} className="cat-menu"> cat menu</div>
+          <div className="green-div" style={{backgroundColor:"green"}}> green div with search and moving pics</div>
+            <div className="cat-divs-container">
+        
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\graphics.jpeg" alt="" /> graphic</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\programming.jpeg" alt="" /> programming</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\marketing.jpeg" alt="" /> marketing</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\animation.jpeg" alt="" /> animation</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\translation.jpeg" alt="" /> translation</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\music.jpeg" alt="" /> music</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\consulting.jpeg" alt="" /> consulting</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\ai.jpeg" alt="" /> AI</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\buisness.jpeg" alt="" /> buisness</div>
+
             </div>
+
 <div style={{ backgroundColor:"#FFF6F2" }}  className="canAd-container"> 
 
   <div className="canAd-text-container">
    <h1 style={{ color:"#222325", fontWeight:'150' }}><span style={{ fontWeight:'600', fontSize:'35px' }}> gigster</span> logo maker.</h1>
-   {/* <h1 style={{ color:"#3F3F40" }}> <span style={{ color:"#222325" }} >gigster</span> logo maker.</h1> */}
    <p style={{ color:"#404145" , fontSize:'35px' }} >Make an incredible <br />
    logo <span style={{ color:"#FC842D" }}>in seconds</span></p>
    <button className="can-blk-btn" onClick={() => handleNavigation('/gig')}> Try Fiverr Logo Maker</button>
