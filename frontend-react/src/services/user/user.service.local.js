@@ -105,6 +105,7 @@ const users = [
       rating: 4.9,
       ratingCount: 250,
       isAdmin: false,
+      ordersInQueue: 350,
     },
     {
       _id: 'u102',
@@ -117,6 +118,7 @@ const users = [
       rating: 4.8,
       ratingCount: 300,
       isAdmin: false,
+      ordersInQueue: 500,
     },
     {
       _id: 'u103',
@@ -129,6 +131,7 @@ const users = [
       rating: 4.7,
       ratingCount: 150,
       isAdmin: false,
+      ordersInQueue: 350,
     },
     {
       _id: 'u104',
@@ -141,6 +144,7 @@ const users = [
       rating: 4.9,
       ratingCount: 200,
       isAdmin: false,
+      ordersInQueue: 350,
     },
     {
       _id: 'u105',
@@ -153,6 +157,7 @@ const users = [
       rating: 4.8,
       ratingCount: 220,
       isAdmin: false,
+      ordersInQueue: 350,
     },
     {
       _id: 'u106',
@@ -165,6 +170,7 @@ const users = [
       rating: 4.6,
       ratingCount: 130,
       isAdmin: false,
+      ordersInQueue: 350,
     },
     {
       _id: 'u108',
@@ -177,6 +183,7 @@ const users = [
       rating: 4.9,
       ratingCount: 200,
       isAdmin: true,
+      ordersInQueue: 350,
     },
   ]
   
