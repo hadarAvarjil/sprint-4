@@ -15,20 +15,26 @@ export const gigService = {
     addGigMsg,
 }
 window.cs = gigService
-console.log('Hi')
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    var gigs = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-      const regex = new RegExp(filterBy.title, 'i')
+async function query(filterBy = { txt: '', price: 0, cat: '' }) {
+  var gigs = await storageService.query(STORAGE_KEY)
+
+  if (filterBy.txt) {
+      const regex = new RegExp(filterBy.txt, 'i')
       gigs = gigs.filter(
-        (gig) => regex.test(gig.title) || regex.test(gig.description)
+          (gig) => regex.test(gig.title) || regex.test(gig.description)
       )
-    }
-    if (filterBy.price) {
+  }
+
+  if (filterBy.price) {
       gigs = gigs.filter((gig) => gig.price <= filterBy.price)
-    }
-    return gigs
+  }
+
+  if (filterBy.cat) {
+      gigs = gigs.filter((gig) => gig.category === filterBy.cat)
+  }
+
+  return gigs
 }
 
 function getById(gigId) {
@@ -36,7 +42,6 @@ function getById(gigId) {
 }
 
 async function remove(gigId) {
-    // throw new Error('Nope')
     await storageService.remove(STORAGE_KEY, gigId)
 }
 
@@ -102,6 +107,34 @@ function _createGigs() {
           },
         ],
       },
+       {
+        _id: "g110",
+        title: "I will create personalized workout planed videos for your fitness journey",
+        category: "Video & Animation",
+        tags: [
+            "Filmed Video Production",
+            "Explainer Videos",
+            "Product Videos"
+        ],
+        price: 40,
+        description: "Achieve your fitness goals with customized workout plans tailored to your needs. Whether you want to lose weight, build muscle, or improve your overall health, I'll help you get there.",
+        daysToMake: "Up to 3 days",
+        ownerId: "u108",
+        imgUrls: [
+            "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&q=80&w=1925&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://plus.unsplash.com/premium_photo-1672280783572-4a254a8e71d5?auto=format&fit=crop&q=80&w=1973&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&q=80&w=1982&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
+        likedByUsers: [],
+        reviews: [
+            "801",
+            "802",
+            "803"
+        ],
+        createdAt: 1696852712145
+    },
       {
         _id: "g102",
         title: "I will design stunning website templates",
@@ -135,8 +168,11 @@ function _createGigs() {
         daysToMake: 3,
         ownerId: "u103",
         imgUrls: [
-          "https://via.placeholder.com/400x300?text=Article1",
-          "https://via.placeholder.com/400x300?text=Article2",
+          "https://i.pinimg.com/736x/18/56/ec/1856ec9952897140028e99266db376c7.jpg",
+          "https://i.ytimg.com/vi/e_654r3-RDw/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/_PAvtT0oRxA/maxresdefault.jpg",
+          "https://i.pinimg.com/originals/e0/b0/b9/e0b0b9aed78851f9b5d6e3de764fc931.jpg",
+          "https://photoshopcafe.com/wp-content/uploads/2019/01/comic-book.jpg"
         ],
         likedByUsers: [],
         reviews: [
@@ -158,8 +194,11 @@ function _createGigs() {
         daysToMake: 7,
         ownerId: "u104",
         imgUrls: [
-          "https://via.placeholder.com/400x300?text=Song1",
-          "https://via.placeholder.com/400x300?text=Song2",
+          "https://plus.unsplash.com/premium_photo-1661301044600-8856088002c7?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1518117940395-1ac64e773a75?auto=format&fit=crop&q=80&w=2076&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1661270443731-c45d03f37d93?auto=format&fit=crop&q=80&w=2069&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
         likedByUsers: [],
         reviews: [
@@ -181,8 +220,11 @@ function _createGigs() {
         daysToMake: 7,
         ownerId: "u105",
         imgUrls: [
-          "https://via.placeholder.com/400x300?text=Animation1",
-          "https://via.placeholder.com/400x300?text=Animation2",
+          "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&q=80&w=1925&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1672280783572-4a254a8e71d5?auto=format&fit=crop&q=80&w=1973&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&q=80&w=1982&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
         likedByUsers: [],
         reviews: [
@@ -201,11 +243,14 @@ function _createGigs() {
         tags: ["Business Formation", "Growth"],
         price: 49.99,
         description: "Achieve your business goals with personalized coaching.",
-        daysToMake: 3,
+        daysToMake: "Up to 3 days",
         ownerId: "u106",
         imgUrls: [
-          "https://via.placeholder.com/400x300?text=Coaching1",
-          "https://via.placeholder.com/400x300?text=Coaching2",
+          "https://plus.unsplash.com/premium_photo-1661662844210-319fa8ee7fd1?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1661604346220-5208d18cb34e?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&q=80&w=2069&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&q=80&w=2002&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
         likedByUsers: [],
         reviews: [

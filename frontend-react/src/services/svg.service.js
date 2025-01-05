@@ -17,36 +17,11 @@ const ICONS = {
     <path fill="#fff" fill-rule="evenodd" clip-rule="evenodd" d="M12 4.36c0 .127-.093.247-.188.34L9.194 7.208l.62 3.545c.008.05.008.093.008.143 0 .183-.087.354-.295.354a.594.594 0 0 1-.289-.085L6.001 9.492l-3.237 1.673a.617.617 0 0 1-.289.086c-.209 0-.303-.17-.303-.355 0-.049.008-.092.015-.142l.62-3.545L.181 4.701C.093 4.608 0 4.487 0 4.36c0-.213.223-.298.403-.326l3.621-.517L5.647.291C5.711.156 5.834 0 6 0c.166 0 .289.156.353.291l1.623 3.225 3.62.517c.173.029.404.113.404.326Z"/>
   </svg>`,
 
-  heartEmptyDesktopIcon: `<svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_4_20)">
-      <g filter="url(#a)">
-        <path d="M5 11.333c0 2.193.926 4.223 2.399 5.515L17 26l9.55-9.155A7.374 7.374 0 0 0 29 11.333C29 7.283 25.776 4 21.8 4A7.1 7.1 0 0 0 17 5.867 7.1 7.1 0 0 0 12.2 4C8.224 4 5 7.283 5 11.333z" fill="#404145" fill-opacity=".3"/>
-      </g>
-      <g filter="url(#b)">
-        <path d="m7.916 16.305-.011-.01-.012-.01C6.592 15.141 5.75 13.32 5.75 11.332c0-3.649 2.9-6.583 6.45-6.583a6.35 6.35 0 0 1 4.295 1.672l.505.46.505-.46A6.35 6.35 0 0 1 21.8 4.75c3.55 0 6.45 2.934 6.45 6.583a6.624 6.624 0 0 1-2.2 4.953l-.01.009-.01.009-9.032 8.658-9.082-8.657z" stroke="#fff" stroke-width="1.5"/>
-      </g>
-    </g>
-    <defs>
-      <filter id="a" x="0" y="0" width="34" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-        <feOffset dy="1"/>
-        <feGaussianBlur stdDeviation="2.5"/>
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.11 0"/>
-        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_4_20"/>
-        <feBlend in="SourceGraphic" in2="effect1_dropShadow_4_20" result="shape"/>
-      </filter>
-      <filter id="b" x="0" y="0" width="34" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-        <feOffset dy="1"/>
-        <feGaussianBlur stdDeviation="2.5"/>
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.11 0"/>
-        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_4_20"/>
-        <feBlend in="SourceGraphic" in2="effect1_dropShadow_4_20" result="shape"/>
-      </filter>
-    </defs>
-  </svg>`,
+  heartOutlineDesktopIcon: `<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <g transform="translate(0 -1028.4)">
+  <path d="m7 1031.4c-1.5355 0-3.0784 0.5-4.25 1.7-2.3431 2.4-2.2788 6.1 0 8.5l9.25 9.8 9.25-9.8c2.279-2.4 2.343-6.1 0-8.5-2.343-2.3-6.157-2.3-8.5 0l-0.75 0.8-0.75-0.8c-1.172-1.2-2.7145-1.7-4.25-1.7z" fill="#e74c3c"/>
+ </g>
+</svg>`,
 
   heartLikedDesktopIcon: `<svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_4_20)">
@@ -79,9 +54,7 @@ const ICONS = {
     </defs>
   </svg>`,
 
-  heartEmptyMobileIcon: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 4.528a6 6 0 0 0-8.243 8.715l6.829 6.828a2 2 0 0 0 2.828 0l6.829-6.828A6 6 0 0 0 12 4.528zm-1.172 1.644.465.464a1 1 0 0 0 1.414 0l.465-.464a4 4 0 1 1 5.656 5.656L12 18.657l-6.828-6.829a4 4 0 0 1 5.656-5.656z" fill="black"/>
-  </svg>`,
+  transparentHeart: `<svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000"><path d="M14.88 4.78a3.489 3.489 0 0 0-.37-.9 3.24 3.24 0 0 0-.6-.79 3.78 3.78 0 0 0-1.21-.81 3.74 3.74 0 0 0-2.84 0 4 4 0 0 0-1.16.75l-.05.06-.65.65-.65-.65-.05-.06a4 4 0 0 0-1.16-.75 3.74 3.74 0 0 0-2.84 0 3.78 3.78 0 0 0-1.21.81 3.55 3.55 0 0 0-.97 1.69 3.75 3.75 0 0 0-.12 1c0 .317.04.633.12.94a4 4 0 0 0 .36.89 3.8 3.8 0 0 0 .61.79L8 14.31l5.91-5.91c.237-.233.44-.5.6-.79A3.578 3.578 0 0 0 15 5.78a3.747 3.747 0 0 0-.12-1zm-1 1.63a2.69 2.69 0 0 1-.69 1.21l-5.21 5.2-5.21-5.2a2.9 2.9 0 0 1-.44-.57 3 3 0 0 1-.27-.65 3.25 3.25 0 0 1-.08-.69A3.36 3.36 0 0 1 2.06 5a2.8 2.8 0 0 1 .27-.65c.12-.21.268-.4.44-.57a2.91 2.91 0 0 1 .89-.6 2.8 2.8 0 0 1 2.08 0c.33.137.628.338.88.59l1.36 1.37 1.36-1.37a2.72 2.72 0 0 1 .88-.59 2.8 2.8 0 0 1 2.08 0c.331.143.633.347.89.6.174.165.32.357.43.57a2.69 2.69 0 0 1 .35 1.34 2.6 2.6 0 0 1-.06.72h-.03z"/></svg>`,
 
   heartLikedMobileIcon: `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path style="fill: #e74c3c;" d="M7 3c-1.536 0-3.078.5-4.25 1.7-2.343 2.4-2.279 6.1 0 8.5L12 23l9.25-9.8c2.279-2.4 2.343-6.1 0-8.5-2.343-2.3-6.157-2.3-8.5 0l-.75.8-.75-.8C10.078 3.5 8.535 3 7 3z"/>

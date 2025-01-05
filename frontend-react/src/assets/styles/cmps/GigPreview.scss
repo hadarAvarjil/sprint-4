@@ -1,112 +1,106 @@
 .gig-preview {
-  display: grid;
-  background-color: $clrPrimary1;
-  border-radius: 0.5em;
-  min-width: 245px;
-  width: 100%;
-  height: fit-content;
-  position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  &.hovered {
+  &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   }
 
-  .gig-image {
+  .image-container {
+    position: relative;
+
     img {
-      aspect-ratio: 5/3;
-      border-radius: 0.5em 0.5em 0 0;
-      background: $clrSecondary5;
-      object-fit: cover;
       width: 100%;
+      height: auto;
+    }
+
+    .heart-icon {
+      position: absolute; 
+      top: 10px; 
+      right: 10px;
+      z-index: 10; 
+      background: none; 
+      border: none; 
+      cursor: pointer; 
+    
+      svg {
+        width: 30px; 
+        height: 30px;
+        fill: #b4adad; 
+        transition: transform 0.2s ease, fill 0.2s ease;
+    
+        &:hover {
+          transform: scale(1.2);
+          fill: #ff0000; 
+        }
+      }
     }
   }
 
-  .preview-body {
-    padding: 1em;
+  .gig-details {
+    padding: 15px;
 
-    .gig-owner {
+    .user-info {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
 
-      .owner-avatar {
+      .avatar {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         margin-right: 10px;
-        object-fit: cover;
+        border: 2px solid #ddd;
       }
 
-      .owner-details {
+      .user-text {
         display: flex;
         flex-direction: column;
+        font-size: 14px;
 
-        .owner-name {
+        .full-name {
           font-weight: bold;
         }
 
-        .owner-level {
-          font-size: 0.9rem;
-          color: $clrSecondary5;
+        .level {
+          font-size: 12px;
+          color: #888;
         }
       }
     }
 
-    .gig-title {
+    .link-gig-details {
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 10px;
       display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-height: 2.4em;
-      line-height: 1.2;
-      max-height: 2.4em;
-      margin: 0.5em 0;
-    }
 
-    .user-rating-order {
-      display: flex;
-      align-items: baseline;
-
-      .rating-score {
-        font-weight: bold;
-
-        .rate {
-          margin-right: 5px;
-        }
-
-        .rate-count {
-          font-size: 0.9rem;
-          color: $clrSecondary5;
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
 
-    .gig-price {
+    .gig-meta {
       display: flex;
       justify-content: space-between;
-      margin-top: 0.5em;
-      font-size: 0.9rem;
-      color: $clrSecondary5;
+      font-size: 14px;
+
+      .rating-score {
+        color: #fbb034;
+      }
 
       .price {
         font-weight: bold;
-        font-size: 1.1rem;
-        color: $clrPrimary1;
+        color: #4caf50;
       }
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .gig-preview {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .gig-preview {
-    padding: 0.5em;
   }
 }

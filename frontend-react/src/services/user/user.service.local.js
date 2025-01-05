@@ -103,6 +103,7 @@ const users = [
         password: '123',
         level: 'level 2',
         rating: 4.9,
+        ratingCount: 250,
         isAdmin: false
     },
     {
@@ -114,6 +115,7 @@ const users = [
             'https://img.freepik.com/premium-photo/robot-face-with-green-eyes-black-face_14865-1671.jpg?w=2000',
         level: 'level 1',
         rating: 4.9,
+        ratingCount: 200,
         isAdmin: true
     },
 ]

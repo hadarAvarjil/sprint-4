@@ -58,7 +58,7 @@ export function setFilter(filterBy) {
     return {
       type: 'SET_FILTER',
       filterBy,
-    };
+    }
   }
 
 export async function addGigMsg(gigId, txt) {
