@@ -76,10 +76,10 @@ import { useNavigate } from "react-router-dom";
 
 
 
-<div style={{backgroundColor:'blue'}} className="try-now-ad"> 
+{/* <div style={{backgroundColor:'blue'}} className="try-now-ad"> 
 <h1>div try now --- lead to explore</h1>
 <button>try now </button>
-</div>
+</div> */}
 
     <div className="signup-ad">
     <img 
