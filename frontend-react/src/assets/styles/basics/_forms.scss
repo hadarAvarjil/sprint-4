@@ -36,3 +36,23 @@ left: 20px;
 	 background-color: #404145;
 	 
 }
+.signup-ad-btn{
+	display: flex;
+	height: 30px;
+	color: rgba(0, 0, 0, 0.822);
+	background-color: white;
+	padding: 12px;
+	border-radius: 10%;
+position: absolute;
+bottom: 10%;
+left: 43%;
+align-items: center;
+font-weight: bold;
+
+
+};
+	
+	.signup-ad-btn:hover{
+		background-color: #404145;
+
+}
