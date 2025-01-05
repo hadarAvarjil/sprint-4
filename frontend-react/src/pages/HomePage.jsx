@@ -12,6 +12,10 @@ import { useNavigate } from "react-router-dom";
         return (
         <section>
             <div>
+              {/* <div onClick={() => handleNavigation('/gig')}>
+                <img src="src\services\imgs\design.imgs\graphics.jpeg" alt="" />
+                graphic</div> */}
+
                 <button onClick={() => handleNavigation('/gig')}>graphic</button>
                 <button onClick={() => handleNavigation('/gig')}>programming</button>
                 <button onClick={() => handleNavigation('/gig')}>marketing</button>
@@ -20,7 +24,20 @@ import { useNavigate } from "react-router-dom";
                 <button onClick={() => handleNavigation('/gig')}>music</button>
                 <button onClick={() => handleNavigation('/gig')}>consulting</button>
             </div>
+<div style={{ backgroundColor:"#FFF6F2" }}  className="canAd-container"> 
 
+  <div className="canAd-text-container">
+   <h1 style={{ color:"#222325", fontWeight:'150' }}><span style={{ fontWeight:'600', fontSize:'35px' }}> gigster</span> logo maker.</h1>
+   {/* <h1 style={{ color:"#3F3F40" }}> <span style={{ color:"#222325" }} >gigster</span> logo maker.</h1> */}
+   <p style={{ color:"#404145" , fontSize:'35px' }} >Make an incredible <br />
+   logo <span style={{ color:"#FC842D" }}>in seconds</span></p>
+   <button className="can-blk-btn" onClick={() => handleNavigation('/gig')}> Try Fiverr Logo Maker</button>
+</div>
+
+<img src="src\services\imgs\design.imgs\canAd.png" alt="" />
+</div>
+            
+            
             <div className="ad-pro"
     ><img 
     src="src\services\imgs\design.imgs\ad.jpeg"  
