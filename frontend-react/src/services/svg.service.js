@@ -17,36 +17,11 @@ const ICONS = {
     <path fill="#fff" fill-rule="evenodd" clip-rule="evenodd" d="M12 4.36c0 .127-.093.247-.188.34L9.194 7.208l.62 3.545c.008.05.008.093.008.143 0 .183-.087.354-.295.354a.594.594 0 0 1-.289-.085L6.001 9.492l-3.237 1.673a.617.617 0 0 1-.289.086c-.209 0-.303-.17-.303-.355 0-.049.008-.092.015-.142l.62-3.545L.181 4.701C.093 4.608 0 4.487 0 4.36c0-.213.223-.298.403-.326l3.621-.517L5.647.291C5.711.156 5.834 0 6 0c.166 0 .289.156.353.291l1.623 3.225 3.62.517c.173.029.404.113.404.326Z"/>
   </svg>`,
 
-  heartEmptyDesktopIcon: `<svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_4_20)">
-      <g filter="url(#a)">
-        <path d="M5 11.333c0 2.193.926 4.223 2.399 5.515L17 26l9.55-9.155A7.374 7.374 0 0 0 29 11.333C29 7.283 25.776 4 21.8 4A7.1 7.1 0 0 0 17 5.867 7.1 7.1 0 0 0 12.2 4C8.224 4 5 7.283 5 11.333z" fill="#404145" fill-opacity=".3"/>
-      </g>
-      <g filter="url(#b)">
-        <path d="m7.916 16.305-.011-.01-.012-.01C6.592 15.141 5.75 13.32 5.75 11.332c0-3.649 2.9-6.583 6.45-6.583a6.35 6.35 0 0 1 4.295 1.672l.505.46.505-.46A6.35 6.35 0 0 1 21.8 4.75c3.55 0 6.45 2.934 6.45 6.583a6.624 6.624 0 0 1-2.2 4.953l-.01.009-.01.009-9.032 8.658-9.082-8.657z" stroke="#fff" stroke-width="1.5"/>
-      </g>
-    </g>
-    <defs>
-      <filter id="a" x="0" y="0" width="34" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-        <feOffset dy="1"/>
-        <feGaussianBlur stdDeviation="2.5"/>
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.11 0"/>
-        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_4_20"/>
-        <feBlend in="SourceGraphic" in2="effect1_dropShadow_4_20" result="shape"/>
-      </filter>
-      <filter id="b" x="0" y="0" width="34" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-        <feOffset dy="1"/>
-        <feGaussianBlur stdDeviation="2.5"/>
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.11 0"/>
-        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_4_20"/>
-        <feBlend in="SourceGraphic" in2="effect1_dropShadow_4_20" result="shape"/>
-      </filter>
-    </defs>
-  </svg>`,
+  heartOutlineDesktopIcon: `<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <g transform="translate(0 -1028.4)">
+  <path d="m7 1031.4c-1.5355 0-3.0784 0.5-4.25 1.7-2.3431 2.4-2.2788 6.1 0 8.5l9.25 9.8 9.25-9.8c2.279-2.4 2.343-6.1 0-8.5-2.343-2.3-6.157-2.3-8.5 0l-0.75 0.8-0.75-0.8c-1.172-1.2-2.7145-1.7-4.25-1.7z" fill="#e74c3c"/>
+ </g>
+</svg>`,
 
   heartLikedDesktopIcon: `<svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_4_20)">

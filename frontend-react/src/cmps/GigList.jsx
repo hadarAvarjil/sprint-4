@@ -7,12 +7,21 @@ export function GigList({ gigs, onRemoveGig = () => {}, onUpdateGig = () => {}, 
   const [sortBy, setSortBy] = useState(null)
   const [sortOrder, setSortOrder] = useState('asc')
   const [isVisible, setIsVisible] = useState(false)
+  const [likedGigs, setLikedGigs] = useState([])
   const isFrom = 'explore'
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100)
     return () => clearTimeout(timer)
-  }, []);
+  }, [])
+
+  const toggleLike = (gigId) => {
+    setLikedGigs((prevLikedGigs) =>
+      prevLikedGigs.includes(gigId)
+        ? prevLikedGigs.filter((id) => id !== gigId) 
+        : [...prevLikedGigs, gigId] 
+    )
+  }
 
   const handleSort = (criteria) => {
     if (sortBy === criteria) {
@@ -59,6 +68,8 @@ export function GigList({ gigs, onRemoveGig = () => {}, onUpdateGig = () => {}, 
             onRemoveGig={onRemoveGig}
             onUpdateGig={onUpdateGig}
             gig={gig}
+            isLiked={likedGigs.includes(gig._id)}
+            onToggleLike={toggleLike} 
             canEdit={shouldShowActionBtns(gig)}
             isFrom={isFrom}
           />
