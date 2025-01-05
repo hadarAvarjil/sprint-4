@@ -15,20 +15,26 @@ export const gigService = {
     addGigMsg,
 }
 window.cs = gigService
-console.log('Hi')
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    var gigs = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-      const regex = new RegExp(filterBy.title, 'i')
+async function query(filterBy = { txt: '', price: 0, cat: '' }) {
+  var gigs = await storageService.query(STORAGE_KEY)
+
+  if (filterBy.txt) {
+      const regex = new RegExp(filterBy.txt, 'i')
       gigs = gigs.filter(
-        (gig) => regex.test(gig.title) || regex.test(gig.description)
+          (gig) => regex.test(gig.title) || regex.test(gig.description)
       )
-    }
-    if (filterBy.price) {
+  }
+
+  if (filterBy.price) {
       gigs = gigs.filter((gig) => gig.price <= filterBy.price)
-    }
-    return gigs
+  }
+
+  if (filterBy.cat) {
+      gigs = gigs.filter((gig) => gig.category === filterBy.cat)
+  }
+
+  return gigs
 }
 
 function getById(gigId) {
@@ -36,7 +42,6 @@ function getById(gigId) {
 }
 
 async function remove(gigId) {
-    // throw new Error('Nope')
     await storageService.remove(STORAGE_KEY, gigId)
 }
 

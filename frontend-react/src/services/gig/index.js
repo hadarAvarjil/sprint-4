@@ -16,10 +16,14 @@ function getEmptyGig() {
 function getDefaultFilter() {
     return {
         txt: '',
-        minSpeed: '',
-        sortField: '',
-        sortDir: '',
-    }
+        cat: '',
+        min: '',
+        max: '',
+        level: '',
+        tag: '',
+        time: '',
+        page: 1,
+    };
 }
 
 const service = VITE_LOCAL === 'true' ? local : remote
