@@ -1,86 +1,102 @@
-.list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 1.5em; 
-    padding: 1em;
-
-    li {
-        list-style: none;
-        padding: 0;
-    }
-
-    .gig-preview {
-        display: flex;
-        flex-direction: column;
-        background-color: #fff; 
-        border-radius: 8px; 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+.main-gig-list {
+    width: 100%;
+    max-width: 1200px; // הגבלת הרוחב
+    margin: 0 auto; // מרכז התוכן
+    padding: 20px 40px;
+    display: grid; // גריד במקום פלקס
+    grid-template-rows: auto auto; // שורה אחת לקטגוריות ואחת לגיגים
+    gap: 1.5em; // רווחים בין השורות
+    background-color: #fff;
+  
+    .gig-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // התאמה לגודל רספונסיבי
+      gap: 1.5em; // רווחים בין האלמנטים
+      width: 100%;
+      padding: 0;
+  
+      &.show {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+  
+      .gig-preview {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         transition: transform 0.3s, box-shadow 0.3s;
-
+  
         &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+          transform: translateY(-5px);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-
-        img.gig-preview-img {
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
+  
+        img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover; // תמונה תותאם לגבולות הכרטיס
         }
-
-        .preview-userinfo {
-            padding: 1em;
+  
+        .details {
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+  
+          .user-info {
             display: flex;
-            flex-direction: column;
-            gap: 0.5em;
-
-            .preview-user-info {
-                display: flex;
-                align-items: center;
-                gap: 0.5em;
-
-                .avatar {
-                    width: 40px; 
-                    height: 40px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
-
-                .full-name {
-                    font-weight: bold;
-                    font-size: 1rem;
-                    color: #333; 
-                }
-
-                .level {
-                    font-size: 0.85rem;
-                    color: #666; 
-                }
+            align-items: center;
+            gap: 10px;
+  
+            .avatar {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
             }
-
-            .user-rating {
-                font-size: 0.9rem;
-                color: #ffa500; 
-                font-weight: bold;
+  
+            .name {
+              font-weight: bold;
+              font-size: 16px;
+              color: #333;
             }
-
-            .link-gig-details {
-                font-size: 1rem;
-                font-weight: bold;
-                color: #007bff; 
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-
-            .price {
-                margin-top: 0.5em;
-                font-weight: bold;
-                color: #28a745; 
-            }
+          }
+  
+          .description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+          }
+  
+          .price {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 16px;
+            margin-top: 10px;
+          }
         }
+      }
     }
-}
+  }
+  
+  .list {
+    max-width: 1200px; // הגבלת הרוחב
+    margin: 0 auto; // מרכז התוכן
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* רשת גמישה */
+    gap: 1.5em;
+    padding: 1em;
+  
+    li {
+      list-style: none;
+      padding: 0;
+    }
+  
+    @media (max-width: 768px) {
+      .list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* להתאמה למסכים קטנים */
+      }
+    }
+  }
+  
