@@ -49,15 +49,15 @@ function save(gig) {
 
 function getDefaultFilter() {
   return {
-    search: '',
-    cat: '',
-    tag: '',
-    level: '',
-    min: '',
-    max: '',
-    time: '',
-    page: 1,
-  }
+      txt: '',
+      cat: '',
+      min: '',
+      max: '',
+      level: '',
+      tag: '',
+      time: '',
+      page: 1,
+  };
 }
 
 export const filterKeyMap = {
@@ -72,6 +72,7 @@ export const filterKeyMap = {
 export const deliveryTime = ['Express 24H', 'Up to 3 days', 'Up to 7 days']
 export const levels = ['New Seller', 'Level 1', 'Level 2', 'Pro Talent']
 export const budget = ['min', 'max']
+
 export const category = [
   'Graphics & Design',
   'Programming & Tech',

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 
-import { ApplyFilterBtn } from './ApplyFilterBtn.jsx'
+import { FilterBtn } from './FilterBtn.jsx'
 import { RenderRadioButtons } from './RenderRadioButtons.jsx'
 import outsideClick from '../customHooks/outsideClick.js'
 
@@ -12,22 +12,21 @@ import {
   subcategories,
 } from '../services/gig.service.js'
 
-export function MenuFilterContent({
-  renderedChoice,
-  setMenuFilter,
-  setIsRenderedChoice,
-}) {
+export function MenuFilterContent({renderedChoice,setMenuFilter,setIsRenderedChoice,}) {
   const [selectedOption, setSelectedOption] = useState('')
   const [selectedFilter, setSelectedFilter] = useState({
     min: '',
     max: '',
   })
+
   const filterRef = useRef(null)
 
   outsideClick(filterRef, () => {
-    setIsRenderedChoice(false, '')
+    if (!filterRef.current) return;
+    setIsRenderedChoice([false, ''])
   })
 
+ 
   function onHandleBudgetChange(event) {
     if (!event.target.value) return
     switch (event.target.name) {
@@ -53,10 +52,13 @@ export function MenuFilterContent({
                         options={deliveryTime}
                         groupName="delivery_time"
                         selectedOption={selectedOption}
-                        onOptionChange={setSelectedOption}
+                        onOptionChange={(selectedOption) => {
+                          console.log('Selected option:', selectedOption);
+                          setMenuFilter({ preventDefault: () => {} }, { cat: selectedOption }); 
+                        }}
                       />
                     </div>
-                    <ApplyFilterBtn
+                    <FilterBtn
                       setMenuFilter={setMenuFilter}
                       selectedOption={selectedOption}
                     />
@@ -91,9 +93,6 @@ export function MenuFilterContent({
                       </div>
                     </div>
                     <div className="apply-row">
-                      <button className="apply bg-co-black co-white">
-                        Apply
-                      </button>
                     </div>
                   </form>
                 )
@@ -105,10 +104,13 @@ export function MenuFilterContent({
                         options={levels}
                         groupName="seller_level"
                         selectedOption={selectedOption}
-                        onOptionChange={setSelectedOption}
+                        onOptionChange={(selectedOption) => {
+                          console.log('Selected option:', selectedOption);
+                          setMenuFilter({ preventDefault: () => {} }, { cat: selectedOption }); 
+                        }}
                       />
                     </div>
-                    <ApplyFilterBtn
+                    <FilterBtn
                       setMenuFilter={setMenuFilter}
                       selectedOption={selectedOption}
                     />
@@ -117,15 +119,18 @@ export function MenuFilterContent({
               case 'category':
                 return (
                   <>
-                    <div className="content-scroll">
-                      <RenderRadioButtons
-                        options={category}
-                        groupName="category"
-                        selectedOption={selectedOption}
-                        onOptionChange={setSelectedOption}
-                      />
+                   <div className="content-scroll">
+                    <RenderRadioButtons
+                      options={category}
+                      groupName="category"
+                      selectedOption={selectedOption}
+                      onOptionChange={(selectedOption) => {
+                        console.log('Selected option:', selectedOption);
+                        setMenuFilter({ preventDefault: () => {} }, { cat: selectedOption }); 
+                      }}
+                    />
                     </div>
-                    <ApplyFilterBtn
+                    <FilterBtn
                       setMenuFilter={setMenuFilter}
                       selectedOption={selectedOption}
                     />
@@ -152,10 +157,13 @@ export function MenuFilterContent({
                         options={subcategories[subcategory]}
                         groupName={renderedChoice}
                         selectedOption={selectedOption}
-                        onOptionChange={setSelectedOption}
+                        onOptionChange={(selectedOption) => {
+                          console.log('Selected option:', selectedOption);
+                          setMenuFilter({ preventDefault: () => {} }, { cat: selectedOption }); 
+                        }}
                       />
                     </div>
-                    <ApplyFilterBtn
+                    <FilterBtn
                       setMenuFilter={setMenuFilter}
                       selectedOption={selectedOption}
                     />

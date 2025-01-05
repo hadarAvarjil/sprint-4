@@ -37,6 +37,9 @@ export function gigReducer(state = initialState, action) {
         case ADD_GIG_MSG:
             newState = { ...state, gig: { ...state.gig, msgs: [...state.gig.msgs || [], action.msg] } }
             break
+        case 'SET_FILTER': 
+            newState = { ...state, filterBy: action.filterBy }
+            break
         default:
     }
     return newState
