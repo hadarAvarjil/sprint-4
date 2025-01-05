@@ -28,8 +28,8 @@ export function GigDetails() {
       setGig(loadedGig)
       
 
-      if (loadedGig && loadedGig.owner) {
-        const owner = await loadUser(loadedGig.owner._id)
+      if (loadedGig && loadedGig.ownerId) {
+        const owner = await loadUser(loadedGig.ownerId)
         console.log(owner);
         setGigOwner(owner)
       }

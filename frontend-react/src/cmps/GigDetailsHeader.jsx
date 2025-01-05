@@ -5,8 +5,7 @@ export function GigDetailsHeader({ gig, owner }) {
 
     return (
         <section className="gig-details-header">
-   
-            <h2>{gig.title}</h2>
+            <h2 className="gig-title">{gig.title}</h2>
             <UserPreviewGigDetails
                 key={gig._id}
                 owner={owner} 
