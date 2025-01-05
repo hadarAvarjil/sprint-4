@@ -95,30 +95,91 @@ async function _createAdmin() {
 
 const users = [
     {
-        _id: 'u101',
-        fullName: 'Peter Parker',
-        avatar:
-            'https://qph.cf2.quoracdn.net/main-qimg-9fde28d147c243b690bdf975f8474145-lq',
-        username: 'peter123',
-        password: '123',
-        level: 'level 2',
-        rating: 4.9,
-        ratingCount: 250,
-        isAdmin: false
+      _id: 'u101',
+      fullName: 'Michael Johnson',
+      avatar:
+        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
+      username: 'michael123',
+      password: '123',
+      level: 'level 2',
+      rating: 4.9,
+      ratingCount: 250,
+      isAdmin: false,
     },
     {
-        _id: 'u002',
-        fullName: 'Jane Doe',
-        username: 'jane123',
-        password: '123',
-        avatar:
-            'https://img.freepik.com/premium-photo/robot-face-with-green-eyes-black-face_14865-1671.jpg?w=2000',
-        level: 'level 1',
-        rating: 4.9,
-        ratingCount: 200,
-        isAdmin: true
+      _id: 'u102',
+      fullName: 'Sarah Thompson',
+      avatar:
+        'https://cdn.pixabay.com/photo/2017/09/12/22/49/avatar-2746943_960_720.png',
+      username: 'sarah123',
+      password: '123',
+      level: 'level 3',
+      rating: 4.8,
+      ratingCount: 300,
+      isAdmin: false,
     },
-]
+    {
+      _id: 'u103',
+      fullName: 'James Smith',
+      avatar:
+        'https://cdn.pixabay.com/photo/2016/03/31/19/57/avatar-1295404_960_720.png',
+      username: 'james123',
+      password: '123',
+      level: 'level 1',
+      rating: 4.7,
+      ratingCount: 150,
+      isAdmin: false,
+    },
+    {
+      _id: 'u104',
+      fullName: 'Emily Davis',
+      avatar:
+        'https://cdn.pixabay.com/photo/2021/08/12/14/47/woman-6547399_960_720.png',
+      username: 'emily123',
+      password: '123',
+      level: 'level 2',
+      rating: 4.9,
+      ratingCount: 200,
+      isAdmin: false,
+    },
+    {
+      _id: 'u105',
+      fullName: 'Robert Brown',
+      avatar:
+        'https://cdn.pixabay.com/photo/2016/03/31/19/57/avatar-1295404_960_720.png',
+      username: 'robert123',
+      password: '123',
+      level: 'level 2',
+      rating: 4.8,
+      ratingCount: 220,
+      isAdmin: false,
+    },
+    {
+      _id: 'u106',
+      fullName: 'Sophia Wilson',
+      avatar:
+        'https://cdn.pixabay.com/photo/2021/02/10/15/29/man-6005338_960_720.png',
+      username: 'sophia123',
+      password: '123',
+      level: 'level 1',
+      rating: 4.6,
+      ratingCount: 130,
+      isAdmin: false,
+    },
+    {
+      _id: 'u108',
+      fullName: 'Jane Foster',
+      avatar:
+        'https://img.freepik.com/premium-photo/robot-face-with-green-eyes-black-face_14865-1671.jpg?w=2000',
+      username: 'jane123',
+      password: '123',
+      level: 'level 1',
+      rating: 4.9,
+      ratingCount: 200,
+      isAdmin: true,
+    },
+  ]
+  
 _createUsers()
 
 async function _createUsers() {
