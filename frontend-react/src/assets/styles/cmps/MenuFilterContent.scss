@@ -1,33 +1,24 @@
 .menu-filter-content {
-    // background: $clrPrimary1;
-    border: 1px solid $clrSecondary10;
-    border-radius: 8px;
-    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.14);
-    box-sizing: border-box;
-    font-size: 14px;
-    line-height: 22px;
-    margin-top: 60px;
-    width: 116%;
-    opacity: 1;
-    // position: absolute;
-    position: relative;
-    top: 100%;
-    transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1),
-      opacity 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-delay: 0.12s;
-    z-index: 3;
-  
-    .content-scroll {
-      height: fit-content;
-      max-height: 26vh;
-      width: fit-content;
-      overflow-y: scroll;
-      padding: 24px;
-      top: -8px;
-      transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transition-delay: 0.24s;
-  
-      min-height: 150px; // only if .grouped
+  background-color: #fff;
+  border-bottom: 1px solid #e4e5e7;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 16px;
+  color:$clrSecondary5;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+
+  .content-scroll {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 12px 0;
   
       .radio-list {
         display: flex; // מסדר את האלמנטים בשורה
@@ -38,13 +29,34 @@
         align-items: center; // יישור אנכי במרכז
         
         .radio-item-wrapper {
-            flex: 0 1 auto; // התאמה של הגודל בהתאם לתוכן
-            text-align: right; // יישור טקסט לימין
+          display: flex;
+          align-items: center;
   
           .radio-item {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end; // מיישר את האייקון עם הטקסט
+            font-size: 14px;
+            font-weight: 400;
+            color: $clrSecondary8;
+            cursor: pointer;
+            padding: 8px 4px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            &:hover {
+              color: $clrSecondary8;
+            }
+    
+            &.selected {
+              color: #000;
+              font-weight: 500;
+            }
+            &::-webkit-scrollbar {
+              height: 4px;
+            }
+          
+            &::-webkit-scrollbar-thumb {
+              background-color: #ddd;
+              border-radius: 4px;
+            }
             span {
 
               white-space: nowrap;
@@ -130,35 +142,5 @@
         }
       }
     }
-  
-    // .apply-row {
-    //   display: flex;
-    //   align-items: center;
-    //   border-top: 1px solid $clrSecondary10;
-    //   box-shadow: 0 0.75em rem(18px) rgba(0, 0, 0, 0.14);
-    //   gap: 16px;
-    //   justify-content: end;
-    //   padding: 1em 1.5em;
-    //   user-select: none;
-  
-    //   .apply {
-    //     border: 1px solid transparent;
-    //     border-radius: 0.25em;
-    //     display: inline-block;
-    //     font-family: inherit;
-    //     font-size: 16px;
-    //     font-weight: 600;
-    //     line-height: 100%;
-    //     padding: 0.75em 1.5em;
-    //     position: relative;
-    //     text-align: center;
-    //     text-decoration: none;
-    //     transition: 70ms cubic-bezier(0.75, 0, 0.25, 1);
-    //   }
-  
-    //   .apply:hover {
-    //     background: $clrSecondary8;
-    //   }
-    // }
   }
   
