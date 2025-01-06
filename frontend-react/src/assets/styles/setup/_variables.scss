@@ -12,7 +12,21 @@ $gray2: #aaa;
 $gray3: #777;
 $gray4: #333;
 
+$black-btn: #222325;//כפתור שחור כמו join
+$black-btn-hover: #404145; // 
+$green-dark:#003912;//רקע דיב
+$green-dark-hover:#126f43;//רקע דיב
+$green-light:#00732e;//רקע דיב
+$green-shrek:#687200; //רקע דיב
+$green-fiverr:#1dbf73; //הנקודה בלוגו, הובר מתחת לקטגוריות
+
+
+
 // Breakpoints
 $mobile-breakpoint: 460px;
 $narrow-breakpoint: 720px;
 $normal-breakpoint: 960px;
+
+// fonts
+$fiverr-defult-font:'Macan, "Helvetica Neue", Helvetica, Arial, sans-serif';//הפונט הנפוץ ביותר באתר
+$fiverr-leaning-font:'DomaineDisplay, "Helvetica Neue", Helvetica, Arial, sans-serif';// פונט מיוחד שבחלק מהפרסומות

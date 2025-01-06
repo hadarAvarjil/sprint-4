@@ -28,10 +28,10 @@ export function AppHeader() {
           style={{ width: "90px", height: "70px" }} 
         />
 				</NavLink>
-				<NavLink to="about">About</NavLink>
+				{/* <NavLink to="about">About</NavLink> */}
 				<NavLink to="gig">explore</NavLink>
-				<NavLink to="chat">Chat</NavLink>
-				<NavLink to="review">Review</NavLink>
+				{/* <NavLink to="chat">Chat</NavLink> */}
+				{/* <NavLink to="review">Review</NavLink> */}
 
                 {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 

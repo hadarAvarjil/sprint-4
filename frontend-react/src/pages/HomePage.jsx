@@ -12,8 +12,6 @@ import { useNavigate } from "react-router-dom";
         return (
         <section>
 
-<div style={{width:'100%', height:'50px', backgroundColor:'lightgrey'}} className="cat-menu"> cat menu</div>
-          <div className="green-div" style={{backgroundColor:"green"}}> green div with search and moving pics</div>
             <div className="cat-divs-container">
         
 <div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\graphics.jpeg" alt="" /> graphic</div>
@@ -39,15 +37,17 @@ import { useNavigate } from "react-router-dom";
 
 <img src="src\services\imgs\design.imgs\canAd.png" alt="" />
 </div>
+
+         <div style={{fontFamily:
+'Macan, "Helvetica Neue", Helvetica, Arial, sans-serif', fontSize:'16px', lineHeight:'26px'}}>fiverr Make it all happen with freelancers</div>   
             
-            
-            <div className="ad-pro"
+            {/* <div className="ad-pro"
     ><img 
     src="src\services\imgs\design.imgs\ad.jpeg"  
     style={{ width: "100%" }}
   />
       <button className="blk-btn" onClick={() => handleNavigation('about')}>Try Now</button>
-    </div>
+    </div> */}
 
 <div className="divs-container">
 <h1> Make it all happen with freelancers</h1>
