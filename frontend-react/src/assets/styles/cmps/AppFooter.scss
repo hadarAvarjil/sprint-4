@@ -12,6 +12,17 @@
     border-bottom: 2px solid #F2F2F4;
     border-top: 2px solid #F2F2F4;
     
+    margin-left: -60px;
+  margin-right: -60px;
+  width: calc(100% + 120px);
+  margin-top: 80px;
+  
+  .logo {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-inline-end: 2em;
+    margin-left: 59px;
+}
 
     p {
         margin: 0;

@@ -12,24 +12,39 @@
   justify-content: space-between;
   padding: 12px;
   width: 100%;
-  gap: 15px;
+  gap: 20px;
   
 }
 
 .cat-div{
-  padding: 6px;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  width: 118px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px;
+  border-radius: 16px;;
+  width: 129px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+  gap: 17px;
+  flex-direction: column;
+
+  font-size: 14px;
+  line-height:22px;
+  text-align:start;
+  letter-spacing: normal;
+
+}
+.cat-div:hover{
+  cursor: pointer;
 }
 
 
-.ad-pro{
-margin-top: 30px;
-position:relative;
-border-radius: 30px;
+// .ad-pro{
+// margin-top: 30px;
+// position:relative;
+// border-radius: 30px;
 
-}
+// }
  
 .signup-ad{
   margin-top: 50px;
@@ -75,22 +90,61 @@ margin-top: 30px;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
+justify-content: space-between;
 }
+
 .canAd-text-container{
   display: flex;
   flex-direction: column;
-  font-family: "Helvetica Neue" ;
+  font-family: $generic-font ;
   font-weight: bold;
   padding-top: 56px;
   padding-bottom: 56px;
   padding-right: 40px;
   padding-left: 40px;
   gap: 40px;
+  font-size:48px;
+line-height:48px;
+text-align:start;
+letter-spacing:-0.96px;
   
 }
 .canAd-text-container h1 span{
   font-weight: 800;
+}
+.canAd-pic{
+  margin-right: 80px;
+}
 
+.purple-signup-ad{
+  color: white;
+  background-color: $purple;
+  // margin: 59px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  // height: 246px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* Ensures padding is included in size calculations */
+
+  column-gap: 40px;
+  align-items: center;
+  border-radius: 12px;
+  position: relative;
+  font-size: 40px;
+  font-stretch: 100%;
+  font-weight: 400;
+  font-family: Macan, "Helvetica Neue", Helvetica, Aria;
+  letter-spacing: -1.28px;
+  line-height: 38px;
+  // justify-content: space-between;
+  
+  h1 span{
+color: $orange;
+  }
 }
 
 // Monaco

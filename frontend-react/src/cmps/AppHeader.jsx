@@ -21,21 +21,25 @@ export function AppHeader() {
 	return (
 		<header className="app-header full">
 			<nav>
-				<NavLink to="/" className="logo">
-				<img 
+				<NavLink to="/" >
+				<img className="logo"
           src="src\services\imgs\design.imgs\logo.png" 
           alt="Navigate to Target Page" 
           style={{ width: "90px", height: "70px" }} 
         />
 				</NavLink>
+				<div className='header-options'>
 				{/* <NavLink to="about">About</NavLink> */}
-				<NavLink to="gig">explore</NavLink>
+				<NavLink to="gig"><div className='sign-header-btn'>Explore</div></NavLink>
+				<NavLink to="gig"><div className='sign-header-btn'>Sign in</div></NavLink>
+				<NavLink to="gig"><div className='join-btn'>Join</div></NavLink>
 				{/* <NavLink to="chat">Chat</NavLink> */}
 				{/* <NavLink to="review">Review</NavLink> */}
 
                 {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 
-				{!user && <NavLink to="login" className="login-link">Login</NavLink>}
+				{/* {!user && <NavLink to="login" className="login-link">Login</NavLink>} */}
+				</div>
 				{user && (
 					<div className="user-info">
 						<Link to={`user/${user._id}`}>

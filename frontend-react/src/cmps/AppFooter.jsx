@@ -6,7 +6,7 @@ export function AppFooter() {
 	return (
 		<footer className="app-footer full">
 			{/* <p>Coffeerights &copy; 2024</p> */}
-			<img 
+			<img className="logo"
           src="src\services\imgs\design.imgs\logo.png" 
           alt="Navigate to Target Page" 
           style={{ width: "90px", height: "70px" }} 

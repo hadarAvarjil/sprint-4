@@ -14,15 +14,15 @@ import { useNavigate } from "react-router-dom";
 
             <div className="cat-divs-container">
         
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\graphics.jpeg" alt="" /> graphic</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\programming.jpeg" alt="" /> programming</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\marketing.jpeg" alt="" /> marketing</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\animation.jpeg" alt="" /> animation</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\translation.jpeg" alt="" /> translation</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\music.jpeg" alt="" /> music</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\consulting.jpeg" alt="" /> consulting</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\ai.jpeg" alt="" /> AI</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'40px'}} src="src\services\imgs\design.imgs\buisness.jpeg" alt="" /> buisness</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\programming.jpeg" alt="" /> Programming & Tech</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\graphics.jpeg" alt="" /> Graphic & Design</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\marketing.jpeg" alt="" /> Digital Marketing</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\translation.jpeg" alt="" />Writing & Translation</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\animation.jpeg" alt="" /> Video &Animation</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\ai.jpeg" alt="" /> AI Services</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\music.jpeg" alt="" /> Music & Audio</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\consulting.jpeg" alt="" /> Consulting</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\buisness.jpeg" alt="" /> Business</div>
 
             </div>
 
@@ -30,17 +30,17 @@ import { useNavigate } from "react-router-dom";
 
   <div className="canAd-text-container">
    <h1 style={{ color:"#222325", fontWeight:'150' }}><span style={{ fontWeight:'600', fontSize:'35px' }}> gigster</span> logo maker.</h1>
-   <p style={{ color:"#404145" , fontSize:'35px' }} >Make an incredible <br />
+   <p style={{ color:"#404145", maxWidth:'1336px' }} >Make an incredible <br />
    logo <span style={{ color:"#FC842D" }}>in seconds</span></p>
    <button className="can-blk-btn" onClick={() => handleNavigation('/gig')}> Try Fiverr Logo Maker</button>
 </div>
 
-<img src="src\services\imgs\design.imgs\canAd.png" alt="" />
+<img className="canAd-pic" src="src\services\imgs\design.imgs\canAd.png" alt="" />
 </div>
 
-         <div style={{fontFamily:
+         {/* <div style={{backgroundColor:'#4d1727', fontFamily:
 'Macan, "Helvetica Neue", Helvetica, Arial, sans-serif', fontSize:'16px', lineHeight:'26px'}}>fiverr Make it all happen with freelancers</div>   
-            
+             */}
             {/* <div className="ad-pro"
     ><img 
     src="src\services\imgs\design.imgs\ad.jpeg"  
@@ -84,12 +84,14 @@ import { useNavigate } from "react-router-dom";
 <button>try now </button>
 </div> */}
 
-    <div className="signup-ad">
-    <img 
+    <div className="purple-signup-ad">
+   <h1> Freelance services at your <span>fingertips</span> </h1>
+
+    {/* <img 
     src="src\services\imgs\design.imgs\signup.jpeg"  
     style={{ width: "100%" }}
-  />
-      <button className="white-join-btn" onClick={() => handleNavigation('login')}>Join Gigster</button>
+  /> */}
+      <button style={{width:'115px', height:'41px'}} className="white-join-btn" onClick={() => handleNavigation('login')}>Join Gigster</button>
     </div>
         </section >
     )
