@@ -1,16 +1,70 @@
 // Colors
-$clr1: #ce2e6c;
-$clr2: #4f3a65;
-$clr3: #574f7d;
-$clr4: #95adbe;
-$clr5: #dff0ea;
-$clr6: #fff;
-$clr7: #222;
+$clrPrimary1: #fff;
+$clrPrimary5: #555;
+$clrPrimary4: #333;
+$clrPrimary2: #222325;
+$clrPrimary3: #000;
+$clrPrimary1: #3498db;
+$clrPrimary2: #2ecc71;
+$clrPrimary3: #34495e;
 
-$gray1: #ddd;
-$gray2: #aaa;
-$gray3: #777;
-$gray4: #333;
+$clrSecondary0: #FAFAFA;
+$clrSecondary12: #f7f7f7;
+$clrSecondary1: #f5f5f5;
+$clrSecondary9: #f1fdf7;
+$clrSecondary14: #efeff0;
+$clrSecondary10: #e4e5e7;
+$clrSecondary13: #e0e0e0;
+$clrSecondary2: #dadbdd;
+$clrSecondary3: #ced1d6;
+$clrSecondary45: #c5c6c9;
+$clrSecondary4: #b5b6ba;
+$clrSecondary11: #95979d;
+$clrSecondary5: #74767e;
+$clrSecondary6: #62646a;
+$clrSecondary7: #575353;
+$clrSecondary8: #404145;
+
+
+$clrPrimary1: #3498db; // צבע ראשוני לדוגמה
+$clrPrimary2: #2ecc71; // צבע שני לדוגמה
+$clrSecondary1: #ffffff; // צבע משני לדוגמה
+$clrPrimary3: #34495e;
+$clrPrimary5: #e74c3c;
+$clrSecondary4: #f39c12;
+
+$bgColor1: #0a4226;
+$bgColor2: #2dd12d;
+$bgColor3: #1dbf73;
+$bgColor4: #45091b;
+$bgColor5: #19a463;
+$bgColor6: #c00d0d;
+$bgColor7: #df6e6e;
+
+$gray1: #f0f0f0;  // דאג למחוק את הגדרת ה-gray1 הכפולה
+$gray2: #e0e0e0;
+$gray4: #1a1515;
+$gray3: #333;
+
+$clr1: #19a463;
+$clr2: #78cdd2;
+$clr3: #29bd49; 
+$clr4: #d83b3b;  // דאג למחוק את הגדרת ה-clr4 הכפולה
+$clr5: #0070ba;
+$clr6: #ffff54; 
+$clr7: #ffbe5b;
+$clr8: #ff8a8a;
+$clr9: #fa3232;
+$clr10: #22dd86;
+$clr11: #148550;
+$clr12: #81e0fd;
+$clr13: #2890af;
+$clr14: #ffdf80;
+$clr15: #ca9800;
+$clr16: #f96363;
+$clr17: #2e25ad;
+
+
 
 $black-btn: #222325;//כפתור שחור כמו join
 $black-btn-hover: #404145; // 
@@ -21,12 +75,11 @@ $green-shrek:#687200; //רקע דיב
 $green-fiverr:#1dbf73; //הנקודה בלוגו, הובר מתחת לקטגוריות
 
 
+// fonts
+$fiverr-defult-font:'Macan, "Helvetica Neue", Helvetica, Arial, sans-serif';//הפונט הנפוץ ביותר באתר
+$fiverr-leaning-font:'DomaineDisplay, "Helvetica Neue", Helvetica, Arial, sans-serif';// פונט מיוחד שבחלק מהפרסומות
 
 // Breakpoints
 $mobile-breakpoint: 460px;
 $narrow-breakpoint: 720px;
 $normal-breakpoint: 960px;
-
-// fonts
-$fiverr-defult-font:'Macan, "Helvetica Neue", Helvetica, Arial, sans-serif';//הפונט הנפוץ ביותר באתר
-$fiverr-leaning-font:'DomaineDisplay, "Helvetica Neue", Helvetica, Arial, sans-serif';// פונט מיוחד שבחלק מהפרסומות

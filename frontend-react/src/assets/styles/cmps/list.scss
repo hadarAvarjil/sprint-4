@@ -1,23 +1,85 @@
 .list {
-    --min-column-size: 220px;
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-size), 1fr));
-    gap: .5em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 1.5em; 
+    padding: 1em;
 
     li {
-        display: grid;
-        grid-template-columns: max-content auto;
-        padding: .5em;
-        background-color: $clr2;
+        list-style: none;
+        padding: 0;
+    }
 
-        color: $clr6;
+    .gig-preview {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
 
-        .actions {
-            justify-self: end;
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+        }
 
-            button {
-                padding: .3em .5em;
+        img.gig-preview-img {
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+        }
+
+        .preview-userinfo {
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+
+            .preview-user-info {
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+
+                .avatar {
+                    width: 40px; 
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .full-name {
+                    font-weight: bold;
+                    font-size: 1rem;
+                    color: #333; 
+                }
+
+                .level {
+                    font-size: 0.85rem;
+                    color: #666; 
+                }
+            }
+
+            .user-rating {
+                font-size: 0.9rem;
+                color: #ffa500; 
+                font-weight: bold;
+            }
+
+            .link-gig-details {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #007bff; 
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .price {
+                margin-top: 0.5em;
+                font-weight: bold;
+                color: #28a745; 
             }
         }
     }

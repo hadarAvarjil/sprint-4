@@ -4,11 +4,13 @@ export const REMOVE_GIG = 'REMOVE_GIG'
 export const ADD_GIG = 'ADD_GIG'
 export const UPDATE_GIG = 'UPDATE_GIG'
 export const ADD_GIG_MSG = 'ADD_GIG_MSG'
+export const SET_FILTER = 'SET_FILTER'
 
 const initialState = {
     gigs: [],
     gig: null
 }
+
 
 export function gigReducer(state = initialState, action) {
     var newState = state
@@ -34,6 +36,9 @@ export function gigReducer(state = initialState, action) {
             break
         case ADD_GIG_MSG:
             newState = { ...state, gig: { ...state.gig, msgs: [...state.gig.msgs || [], action.msg] } }
+            break
+        case 'SET_FILTER': 
+            newState = { ...state, filterBy: action.filterBy }
             break
         default:
     }

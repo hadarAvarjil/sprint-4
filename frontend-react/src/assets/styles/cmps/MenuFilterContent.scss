@@ -1,0 +1,164 @@
+.menu-filter-content {
+    // background: $clrPrimary1;
+    border: 1px solid $clrSecondary10;
+    border-radius: 8px;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.14);
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 60px;
+    width: 116%;
+    opacity: 1;
+    // position: absolute;
+    position: relative;
+    top: 100%;
+    transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1),
+      opacity 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-delay: 0.12s;
+    z-index: 3;
+  
+    .content-scroll {
+      height: fit-content;
+      max-height: 26vh;
+      width: fit-content;
+      overflow-y: scroll;
+      padding: 24px;
+      top: -8px;
+      transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition-delay: 0.24s;
+  
+      min-height: 150px; // only if .grouped
+  
+      .radio-list {
+        display: flex; // מסדר את האלמנטים בשורה
+        flex-wrap: wrap; // עוטף לשורה חדשה אם אין מקום
+        flex-direction: row-reverse; // מסדר מימין לשמאל
+        gap: 16px; // רווחים בין הקטגוריות
+        justify-content: flex-end; // יישור לימין
+        align-items: center; // יישור אנכי במרכז
+        
+        .radio-item-wrapper {
+            flex: 0 1 auto; // התאמה של הגודל בהתאם לתוכן
+            text-align: right; // יישור טקסט לימין
+  
+          .radio-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; // מיישר את האייקון עם הטקסט
+            span {
+
+              white-space: nowrap;
+            }
+  
+            .radio-btn {
+              display: inline-block;
+              border: 1px solid $clrSecondary4;
+              border-radius: 50%;
+              cursor: pointer;
+              height: 22px;
+              width: 22px;
+              margin-right: 8px;
+              position: relative;
+            }
+  
+            .radio-btn::after {
+              content: '';
+              background: transparent;
+              position: absolute;
+              height: 0.5em;
+              width: 0.5em;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              border-radius: 50%;
+              display: inline-block;
+              transition: all 0.15s ease-in-out;
+            }
+          }
+  
+          .radio-item.selected {
+            .radio-btn {
+              border: 2px solid $clrPrimary2;
+            }
+  
+            .radio-btn::after {
+              background: $clrPrimary2;
+            }
+          }
+        }
+      }
+  
+      .budget-filter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+  
+        .input-wrapper {
+          label {
+            color: $clrSecondary11;
+          }
+          input[type='number'] {
+            border: 1px solid $clrSecondary2;
+            appearance: textfield;
+  
+            &:hover {
+              border: 1px solid $clrSecondary5;
+            }
+  
+            &:focus {
+              border: 1px solid $clrSecondary5 !important;
+            }
+          }
+  
+          i {
+            color: $clrSecondary4;
+            font-style: normal;
+            position: absolute;
+            right: 65.7%;
+  
+            &.min {
+              right: 15.5%;
+            }
+  
+            top: 31.5px;
+            z-index: 1;
+          }
+        }
+  
+        .input-wrapper:first-child {
+          margin-right: 12px;
+        }
+      }
+    }
+  
+    // .apply-row {
+    //   display: flex;
+    //   align-items: center;
+    //   border-top: 1px solid $clrSecondary10;
+    //   box-shadow: 0 0.75em rem(18px) rgba(0, 0, 0, 0.14);
+    //   gap: 16px;
+    //   justify-content: end;
+    //   padding: 1em 1.5em;
+    //   user-select: none;
+  
+    //   .apply {
+    //     border: 1px solid transparent;
+    //     border-radius: 0.25em;
+    //     display: inline-block;
+    //     font-family: inherit;
+    //     font-size: 16px;
+    //     font-weight: 600;
+    //     line-height: 100%;
+    //     padding: 0.75em 1.5em;
+    //     position: relative;
+    //     text-align: center;
+    //     text-decoration: none;
+    //     transition: 70ms cubic-bezier(0.75, 0, 0.25, 1);
+    //   }
+  
+    //   .apply:hover {
+    //     background: $clrSecondary8;
+    //   }
+    // }
+  }
+  

@@ -1,0 +1,92 @@
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 8px;
+  background-color: #fff;
+
+  .carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+
+      .carousel-item {
+        position: relative;
+        width: 100%;
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    &:hover {
+      background: #444;
+    }
+
+    &.left {
+      left: 10px;
+    }
+
+    &.right {
+      right: 10px;
+    }
+  }
+
+  .dot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background-color: #3498db;
+        transform: scale(1.2);
+      }
+
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+}
