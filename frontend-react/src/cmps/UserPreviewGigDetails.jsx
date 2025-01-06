@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import SvgIcon from './SvgIcon.jsx'
 
-export function UserPreviewGigDetails({ owner }) {
+export function UserPreviewGigDetails({ owner, gig }) {
     const [user, setUser] = useState(null)
 
     useEffect(() => {
@@ -44,8 +44,8 @@ export function UserPreviewGigDetails({ owner }) {
                                 {"☆".repeat(5 - Math.floor(user.rating))}
                             </span>
                             <span className="rating-score">{user.rating.toFixed(1)}</span>
-                            <span className="rating-count">
-                                ({user.rating.toLocaleString()} reviews)
+                            <span className="reviews-count">
+                                ({gig.reviews.length} reviews)
                             </span>
                         </div>
                     </div>

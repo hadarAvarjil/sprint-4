@@ -7,7 +7,8 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { addGigMsg } from '../store/actions/gig.actions'
 import { loadUser } from '../store/actions/user.actions.js'
 import { GigDetailsHeader } from '../cmps/GigDetailsHeader'
-import { ImageCarousel } from '../cmps/ImageCarousel';
+import { ImageCarousel } from '../cmps/ImageCarousel'
+import { AboutGigSeller } from '../cmps/AboutGigSeller'
 
 
 export function GigDetails() {
@@ -66,6 +67,7 @@ export function GigDetails() {
         />
         <h3>About This Gig</h3>
         <p>{gig.description}</p>
+        <AboutGigSeller owner={gigOwner} />
       </div>
       }
       <button onClick={() => { onaddGigMsg(gig._id) }}>Add gig msg</button>

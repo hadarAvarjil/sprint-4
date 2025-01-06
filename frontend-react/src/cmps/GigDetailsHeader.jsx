@@ -22,6 +22,7 @@ export function GigDetailsHeader({ gig, owner }) {
             <UserPreviewGigDetails
                 key={gig._id}
                 owner={owner}
+                gig={gig}
                 isFrom={isFrom}
             />
         </section>

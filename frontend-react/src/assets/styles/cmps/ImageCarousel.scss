@@ -148,3 +148,130 @@
     }
   }
 }
+
+.carousel-container.gig-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Space between main image and thumbnails */
+  max-width: 800px; /* Control the width of the carousel */
+  margin: 0 auto; /* Center the carousel */
+
+  /* Main image section */
+  .carousel-wrapper {
+    position: relative;
+    width: 100%; /* Adjust the size dynamically */
+    height: 450px; /* Set a fixed height for the main image */
+    background-color: #f5f5f5; /* Light background for the image */
+    border-radius: 8px;
+    overflow: hidden;
+
+    .carousel {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .carousel-item {
+      flex: 0 0 100%; /* Make each item take the full width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Ensure the image fits nicely */
+      }
+    }
+
+    /* Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+
+      &.left {
+        left: 10px;
+      }
+
+      &.right {
+        right: 10px;
+      }
+    }
+  }
+
+  /* Thumbnail array section */
+  .carousel-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* Space between thumbnails */
+    overflow-x: auto; /* Allow scrolling if too many thumbnails */
+
+    .thumbnail-item {
+      flex: 0 0 auto;
+      width: 80px;
+      height: 60px;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &.active {
+        border-color: #0073e6; /* Highlight active thumbnail */
+      }
+
+      &:hover {
+        border-color: #ccc; /* Hover effect for thumbnails */
+      }
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .carousel-wrapper {
+      height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .arrow {
+      width: 30px;
+      height: 30px;
+    }
+
+    .carousel-thumbnails .thumbnail-item {
+      width: 60px;
+      height: 45px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-wrapper {
+      height: 200px; /* Further adjustment for small screens */
+    }
+
+    .carousel-thumbnails .thumbnail-item {
+      width: 50px;
+      height: 40px;
+    }
+  }
+}
