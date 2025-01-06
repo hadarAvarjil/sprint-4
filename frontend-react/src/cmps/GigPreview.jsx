@@ -1,12 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SvgIcon from './SvgIcon.jsx'
 import { ImageCarousel } from './ImageCarousel.jsx'
+import { userService } from '../services/user/user.service.local.js' 
 
-export function GigPreview({ gig,isLiked, onToggleLike }) {
+export function GigPreview({ gig, isLiked, onToggleLike }) {
   const [newImgIndex, setNewImgIndex] = useState(0)
-  const { owner, imgUrls, _id, title, price, level, rate } = gig || {}
-  const { imgUrl, fullName } = owner || {}
+  const [ownerDetails, setOwnerDetails] = useState(null) 
+  const { imgUrls, _id, title, price, rate, ownerId } = gig || {}
+  const { avatar, fullName, level } = ownerDetails || {}
+
+
+  useEffect(() => {
+    if (ownerId) {
+      fetchOwnerDetails(ownerId)
+    }
+  }, [ownerId])
+
+  const fetchOwnerDetails = async (ownerId) => {
+    try {
+      const ownerData = await userService.getById(ownerId) 
+      setOwnerDetails(ownerData)
+    } catch (err) {
+      console.error('Failed to fetch owner details:', err)
+    }
+  }
 
   const handleLikeClick = () => {
     onToggleLike(_id)
@@ -31,11 +49,11 @@ export function GigPreview({ gig,isLiked, onToggleLike }) {
         </button>
       </div>
       <div className="gig-details">
-        <div className="user-info">
-          {imgUrl && (
+      <div className="user-info">
+          {avatar && (
             <img
               className="avatar"
-              src={imgUrl}
+              src={avatar}
               alt={`${fullName || 'User'} avatar`}
             />
           )}
@@ -43,13 +61,11 @@ export function GigPreview({ gig,isLiked, onToggleLike }) {
             <span className="full-name">{`Ad by ${fullName || 'Unknown User'}`}</span>
             <span className="level">
               {level || 'No Level'}
-              {level === 'Pro Talent' && <SvgIcon iconName="customCheckMarkSunIcon" />}
-              {level === 'New Seller' && <SvgIcon iconName="newSeedlingIcon" />}
             </span>
           </div>
         </div>
         {title && (
-          <Link className="link-gig-details" to={`/gigdetails/${_id}`}>
+          <Link className="gig-title" to={`/gigdetails/${_id}`}>
             {title}
           </Link>
         )}
