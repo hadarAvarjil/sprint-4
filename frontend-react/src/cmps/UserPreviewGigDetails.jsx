@@ -45,7 +45,7 @@ export function UserPreviewGigDetails({ owner }) {
                             </span>
                             <span className="rating-score">{user.rating.toFixed(1)}</span>
                             <span className="rating-count">
-                                ({user.ratingCount.toLocaleString()} reviews)
+                                ({user.rating.toLocaleString()} reviews)
                             </span>
                         </div>
                     </div>
