@@ -1,4 +1,5 @@
 import { storageService } from '../async-storage.service'
+import { utilService } from '../util.service.js'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 const BASE_URL = 'user'
@@ -14,6 +15,7 @@ export const userService = {
     getLoggedinUser,
     saveLoggedinUser,
 }
+window.userService = userService
 
 async function getUsers() {
     const users = await storageService.query(BASE_URL)
@@ -93,6 +95,27 @@ async function _createAdmin() {
     console.log('newUser: ', newUser)
 }
 
+function getUserRatingCount(user) {
+  let countMax = 1000
+  let countMin = 1
+  switch (user.level) {
+      case 'Level 1':
+          countMax = 100
+          break
+      case 'Level 2':
+          countMin = 101
+          countMax = 500
+          break
+      case 'Pro Talent':
+          countMin = 501
+          break
+
+      default:
+          break
+  }
+  return utilService.getRandomIntInclusive(countMin, countMax)
+}
+
 const users = [
     {
       _id: 'u101',
@@ -103,12 +126,11 @@ const users = [
       password: '123',
       level: 'level 2',
       rating: 4.9,
-      ratingCount: 250,
       isAdmin: false,
       ordersInQueue: 350,
     },
     {
-      _id: 'u102',
+      _id: 'u108',
       fullName: 'Sarah Thompson',
       avatar:
         'https://cdn.pixabay.com/photo/2017/09/12/22/49/avatar-2746943_960_720.png',
@@ -116,7 +138,6 @@ const users = [
       password: '123',
       level: 'level 3',
       rating: 4.8,
-      ratingCount: 300,
       isAdmin: false,
       ordersInQueue: 500,
     },
@@ -129,7 +150,6 @@ const users = [
       password: '123',
       level: 'level 1',
       rating: 4.7,
-      ratingCount: 150,
       isAdmin: false,
       ordersInQueue: 350,
     },
@@ -142,7 +162,6 @@ const users = [
       password: '123',
       level: 'level 2',
       rating: 4.9,
-      ratingCount: 200,
       isAdmin: false,
       ordersInQueue: 350,
     },
@@ -155,7 +174,6 @@ const users = [
       password: '123',
       level: 'level 2',
       rating: 4.8,
-      ratingCount: 220,
       isAdmin: false,
       ordersInQueue: 350,
     },
@@ -168,7 +186,6 @@ const users = [
       password: '123',
       level: 'level 1',
       rating: 4.6,
-      ratingCount: 130,
       isAdmin: false,
       ordersInQueue: 350,
     },
@@ -181,7 +198,6 @@ const users = [
       password: '123',
       level: 'level 1',
       rating: 4.9,
-      ratingCount: 200,
       isAdmin: true,
       ordersInQueue: 350,
     },
