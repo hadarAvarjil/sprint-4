@@ -7,7 +7,8 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { addGigMsg } from '../store/actions/gig.actions'
 import { loadUser } from '../store/actions/user.actions.js'
 import { GigDetailsHeader } from '../cmps/GigDetailsHeader'
-import { ImageCarousel } from '../cmps/ImageCarousel';
+import { ImageCarousel } from '../cmps/ImageCarousel'
+import { AboutGigSeller } from '../cmps/AboutGigSeller'
 
 
 export function GigDetails() {
@@ -15,7 +16,7 @@ export function GigDetails() {
   const [gigOwner, setGigOwner] = useState(null)
   const { gigId } = useParams()
   const navigate = useNavigate()
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [newImgIndex, setNewImgIndex] = useState(0)
 
   useEffect(() => {
     loadGigDetails()
@@ -26,10 +27,10 @@ export function GigDetails() {
       const loadedGig = await gigService.getById(gigId)
       console.log('Loaded gig:', loadedGig)
       setGig(loadedGig)
-      
 
-      if (loadedGig && loadedGig.owner) {
-        const owner = await loadUser(loadedGig.owner._id)
+
+      if (loadedGig && loadedGig.ownerId) {
+        const owner = await loadUser(loadedGig.ownerId)
         console.log(owner);
         setGigOwner(owner)
       }
@@ -52,22 +53,21 @@ export function GigDetails() {
 
   return (
     <section className="gig-details">
-      <Link to="/gig">Back to list</Link>
       {gig && <div>
-        <a>{gig.tags}</a>
         <GigDetailsHeader
           gig={gig}
           owner={gigOwner}
         />
-         <ImageCarousel
-            isFrom="gig-details"
-            images={gig.imgUrls || []} 
-            gigId={gig._id}
-            newImgIndex={currentImageIndex}
-            setNewImgIndex={setCurrentImageIndex}
-          />
+        <ImageCarousel
+          // isFrom="gig-details"
+          images={gig.imgUrls || []}
+          gigId={gig._id}
+          newImgIndex={newImgIndex}
+          setNewImgIndex={setNewImgIndex}
+        />
         <h3>About This Gig</h3>
         <p>{gig.description}</p>
+        <AboutGigSeller owner={gigOwner} />
       </div>
       }
       <button onClick={() => { onaddGigMsg(gig._id) }}>Add gig msg</button>

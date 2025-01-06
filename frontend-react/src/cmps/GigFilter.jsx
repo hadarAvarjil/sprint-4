@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { MenuFilterContent } from './MenuFilterContent.jsx'
 import { SelectedFilters } from './SelectedFilters.jsx'
+import { CategoryBreadcrumb } from './Breadcrumb.jsx'
 
 export function GigFilter({ filterBy = {}, setMenuFilter = () => {}, onDeleteFilter = () => {}, setIsRenderedChoice = () => {} }) {
   const [filterToEdit, setFilterToEdit] = useState({ ...filterBy })
@@ -38,16 +39,25 @@ export function GigFilter({ filterBy = {}, setMenuFilter = () => {}, onDeleteFil
       <main className={`gig-filter ${isSticky ? 'shadow' : ''}`}>
         <section className="floating-top-bar layout-row">
           <div className="filter-nav">
-            <div className= "filter-categories floating-menu">      
+            <div className="filter-categories floating-menu">      
                 <MenuFilterContent
-                renderedChoice="category"
-                setMenuFilter={setMenuFilter}
-                setIsRenderedChoice={setIsRenderedChoice}
+                  renderedChoice="category"
+                  setMenuFilter={setMenuFilter}
+                  setIsRenderedChoice={setIsRenderedChoice}
                 />
             </div>
           </div>
         </section>
+        
+        <section className="breadcrumb-wrapper">
+          <CategoryBreadcrumb
+            isFrom="explore"
+            category={filterBy.cat || 'Explore Categories'}
+            tag={filterBy.tag || null}
+          />
+        </section>
       </main>
+
       <SelectedFilters filterBy={filterToEdit} onDeleteFilter={onDeleteFilter} />
     </>
   )
