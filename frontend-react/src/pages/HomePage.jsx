@@ -12,17 +12,18 @@ import { useNavigate } from "react-router-dom";
         return (
         <section>
 
+{/* <div className="tester-div">kdsmsvmdfokvkmdf</div> */}
             <div className="cat-divs-container">
         
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\programming.jpeg" alt="" /> Programming & Tech</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\graphics.jpeg" alt="" /> Graphic & Design</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\marketing.jpeg" alt="" /> Digital Marketing</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\translation.jpeg" alt="" />Writing & Translation</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\animation.jpeg" alt="" /> Video &Animation</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\ai.jpeg" alt="" /> AI Services</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\music.jpeg" alt="" /> Music & Audio</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\consulting.jpeg" alt="" /> Consulting</div>
-<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\buisness.jpeg" alt="" /> Business</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\programming.svg" alt="" /> Programming & Tech</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\graphics.svg" alt="" /> Graphic & Design</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\marketing.svg" alt="" /> Digital Marketing</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\translation.svg" alt="" />Writing & Translation</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\animation.svg" alt="" /> Video &Animation</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\ai.svg" alt="" /> AI Services</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\music.svg" alt="" /> Music & Audio</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\consulting.svg" alt="" /> Consulting</div>
+<div className="cat-div" onClick={() => handleNavigation('/gig')}> <img style={{width:'29px'}} src="src\services\imgs\design.imgs\business.svg" alt="" /> Business</div>
 
             </div>
 
