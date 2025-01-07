@@ -1,17 +1,18 @@
 .main-gig-list {
     width: 100%;
-    max-width: 1200px; // הגבלת הרוחב
-    margin: 0 auto; // מרכז התוכן
+    max-width: 1200px; 
+    margin: 0 auto; 
     padding: 20px 40px;
-    display: grid; // גריד במקום פלקס
-    grid-template-rows: auto auto; // שורה אחת לקטגוריות ואחת לגיגים
-    gap: 1.5em; // רווחים בין השורות
+    display: grid; 
+    grid-template-rows: auto auto; 
+    gap: 1.5em; 
     background-color: #fff;
   
     .gig-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // התאמה לגודל רספונסיבי
-      gap: 1.5em; // רווחים בין האלמנטים
+      grid-template-columns: repeat(4, 1fr);
+    //   gap: 1.5em; 
+      row-gap: 40px;
       width: 100%;
       padding: 0;
   
@@ -21,11 +22,11 @@
       }
   
     //   .gig-preview {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: transform 0.3s, box-shadow 0.3s;
+        // background-color: #fff;
+        // border-radius: 8px;
+        // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        // overflow: hidden;
+        // transition: transform 0.3s, box-shadow 0.3s;
   
         &:hover {
           transform: translateY(-5px);
@@ -35,7 +36,7 @@
         img {
           width: 100%;
           height: 180px;
-          object-fit: cover; // תמונה תותאם לגבולות הכרטיס
+          object-fit: cover; 
         }
   
         .details {
