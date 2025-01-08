@@ -100,7 +100,21 @@ function _createGigs() {
         likedByUsers: [],
         reviews: [
           {
-            id: "101",
+            id: "r101",
+            userId: "u101",
+            userName: "HappyClient123",
+            rating: 5,
+            text: "Fantastic work! Highly recommended.",
+          },
+          {
+            id: "r102",
+            userId: "u102",
+            userName: "HappyClient123",
+            rating: 5,
+            text: "Fantastic work! Highly recommended.",
+          },  {
+            id: "r103",
+            userId: "u103",
             userName: "HappyClient123",
             rating: 5,
             text: "Fantastic work! Highly recommended.",
@@ -129,9 +143,26 @@ function _createGigs() {
         ],
         likedByUsers: [],
         reviews: [
-            "801",
-            "802",
-            "803"
+          {
+            id: "r101",
+            userId: "u103",
+            userName: "HappyClient123",
+            rating: 5,
+            text: "Fantastic work! Highly recommended.",
+          },
+          {
+            id: "r102",
+            userId: "u103",
+            userName: "HappyClient123",
+            rating: 5,
+            text: "Fantastic work! Highly recommended.",
+          },  {
+            id: "r103",
+            userId: "u102",
+            userName: "HappyClient123",
+            rating: 5,
+            text: "Fantastic work! Highly recommended.",
+          },
         ],
         createdAt: 1696852712145
     },
@@ -151,7 +182,7 @@ function _createGigs() {
         likedByUsers: [],
         reviews: [
           {
-            id: "201",
+            id: "r104",
             userName: "WebsiteOwner789",
             rating: 4.5,
             text: "Great templates for my online store.",
@@ -177,7 +208,8 @@ function _createGigs() {
         likedByUsers: [],
         reviews: [
           {
-            id: "301",
+            id: "r105",
+            userId: "u105",
             userName: "WebsiteOwnerXYZ",
             rating: 4,
             text: "Informative and SEO-friendly articles.",
@@ -203,7 +235,8 @@ function _createGigs() {
         likedByUsers: [],
         reviews: [
           {
-            id: "401",
+            id: "r106",
+            userId: "u105",
             userName: "HappyCouple123",
             rating: 5,
             text: "Beautiful custom song for our wedding.",
@@ -229,7 +262,8 @@ function _createGigs() {
         likedByUsers: [],
         reviews: [
           {
-            id: "501",
+            id: "r107",
+            userId: "u105",
             userName: "MarketingGuru123",
             rating: 5,
             text: "Amazing 3D animations for our marketing video.",
@@ -255,15 +289,16 @@ function _createGigs() {
         likedByUsers: [],
         reviews: [
           {
-            id: "601",
+            id: "r108",
+            userId: "u102",
             userName: "GoalAchieverXYZ",
             rating: 5,
             text: "Sophie's coaching was transformative for my business.",
           },
         ],
       },
-    ];
-    utilService.saveToStorage(STORAGE_KEY, gigs);
+    ]
+    utilService.saveToStorage(STORAGE_KEY, gigs)
   }
 }
 

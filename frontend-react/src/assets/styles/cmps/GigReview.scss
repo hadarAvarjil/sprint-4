@@ -1,0 +1,77 @@
+.gig-review {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+
+    .review-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .reviewer-img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            h4 {
+                margin: 0;
+            }
+
+            .review-country {
+                font-size: 0.9rem;
+                color: gray;
+            }
+        }
+
+        .repeat-client {
+            font-size: 0.9rem;
+            color: #444;
+        }
+    }
+
+    .review-content {
+        margin-top: 1rem;
+
+        .review-rating {
+            font-size: 1.2rem;
+            color: #ffa500;
+
+            .review-date {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+                color: gray;
+            }
+        }
+
+        .review-text {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    }
+
+    .review-footer {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        color: gray;
+
+        .review-price {
+            font-weight: bold;
+        }
+
+        .review-duration {
+            font-style: italic;
+        }
+    }
+}

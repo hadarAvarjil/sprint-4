@@ -9,6 +9,7 @@ import { loadUser } from '../store/actions/user.actions.js'
 import { GigDetailsHeader } from '../cmps/GigDetailsHeader'
 import { ImageCarousel } from '../cmps/ImageCarousel'
 import { AboutGigSeller } from '../cmps/AboutGigSeller'
+import { GigReviewsList } from '../cmps/GigReviewsList.jsx'
 
 
 export function GigDetails() {
@@ -25,13 +26,11 @@ export function GigDetails() {
   async function loadGigDetails() {
     try {
       const loadedGig = await gigService.getById(gigId)
-      console.log('Loaded gig:', loadedGig)
       setGig(loadedGig)
 
 
       if (loadedGig && loadedGig.ownerId) {
         const owner = await loadUser(loadedGig.ownerId)
-        console.log(owner);
         setGigOwner(owner)
       }
     } catch (err) {
@@ -68,6 +67,7 @@ export function GigDetails() {
         <h3>About This Gig</h3>
         <p>{gig.description}</p>
         <AboutGigSeller owner={gigOwner} />
+        <GigReviewsList gig={gig} />
       </div>
       }
       <button onClick={() => { onaddGigMsg(gig._id) }}>Add gig msg</button>

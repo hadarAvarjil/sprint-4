@@ -133,7 +133,7 @@ const users = [
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
-    _id: 'u108',
+    _id: 'u102',
     fullName: 'Sarah Thompson',
     avatar:
       'https://cdn.pixabay.com/photo/2017/09/12/22/49/avatar-2746943_960_720.png',
@@ -208,7 +208,7 @@ const users = [
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
-    _id: 'u108',
+    _id: 'u107',
     fullName: 'Jane Foster',
     avatar:
       'https://img.freepik.com/premium-photo/robot-face-with-green-eyes-black-face_14865-1671.jpg?w=2000',
