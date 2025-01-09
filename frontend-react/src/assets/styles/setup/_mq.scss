@@ -1,0 +1,19 @@
+// Gig details page media query
+
+.gig-details {
+    @media (min-width: 600px) {
+        max-width: 1400px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.5%;
+
+        main {
+            grid-column: 1/3;
+        }
+
+        .gig-details-order {
+            top: 0;
+             position: sticky;
+            grid-column: 3/4;
+        }
+    }
+}

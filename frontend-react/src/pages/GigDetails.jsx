@@ -9,7 +9,9 @@ import { loadUser } from '../store/actions/user.actions.js'
 import { GigDetailsHeader } from '../cmps/GigDetailsHeader'
 import { ImageCarousel } from '../cmps/ImageCarousel'
 import { AboutGigSeller } from '../cmps/AboutGigSeller'
-import { GigReviewsList } from '../cmps/GigReviewsList.jsx'
+import { GigReviewsList } from '../cmps/GigReviewsList'
+import { GigDetailsOrder } from '../cmps/GigDetailsOrder'
+
 
 
 export function GigDetails() {
@@ -51,27 +53,29 @@ export function GigDetails() {
   }
 
   return (
-    <section className="gig-details">
-      {gig && <div>
-        <GigDetailsHeader
-          gig={gig}
-          owner={gigOwner}
-        />
-        <ImageCarousel
-          // isFrom="gig-details"
-          images={gig.imgUrls || []}
-          gigId={gig._id}
-          newImgIndex={newImgIndex}
-          setNewImgIndex={setNewImgIndex}
-        />
-        <h3>About This Gig</h3>
-        <p>{gig.description}</p>
-        <AboutGigSeller owner={gigOwner} />
-        <GigReviewsList gig={gig} />
-      </div>
-      }
-      <button onClick={() => { onaddGigMsg(gig._id) }}>Add gig msg</button>
-
-    </section>
+    <section className="gig-details grid">
+    {gig && (
+      <>
+        <main>
+          <GigDetailsHeader
+            gig={gig}
+            owner={gigOwner}
+          />
+          <ImageCarousel
+            images={gig.imgUrls || []}
+            gigId={gig._id}
+            newImgIndex={newImgIndex}
+            setNewImgIndex={setNewImgIndex}
+          />
+  
+          <h3>About This Gig</h3>
+          <p>{gig.description}</p>
+          <AboutGigSeller owner={gigOwner} />
+          <GigReviewsList gig={gig} />
+        </main>
+        <GigDetailsOrder owner={gigOwner} gig={gig} />
+      </>
+    )}
+  </section>
   )
 }

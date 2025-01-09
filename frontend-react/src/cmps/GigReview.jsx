@@ -11,6 +11,9 @@ export function GigReview({ review }) {
         duration,
     } = review
 
+    console.log('review', review);
+    
+
     return (
         <div className="gig-review">
             <header className="review-header">
