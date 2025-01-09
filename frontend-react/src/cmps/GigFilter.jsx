@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import { MenuFilterContent } from './MenuFilterContent.jsx'
 import { SelectedFilters } from './SelectedFilters.jsx'
 import { CategoryBreadcrumb } from './Breadcrumb.jsx'
+import SvgIcon from './SvgIcon.jsx'
 
 export function GigFilter({ filterBy = {}, setMenuFilter = () => {}, onDeleteFilter = () => {}, setIsRenderedChoice = () => {} }) {
   const [filterToEdit, setFilterToEdit] = useState({ ...filterBy })
   const [isSticky, setIsSticky] = useState(false)
+   const categorySelect = filterBy.cat ? filterBy.cat : 'category'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,8 +25,36 @@ export function GigFilter({ filterBy = {}, setMenuFilter = () => {}, onDeleteFil
     setIsRenderedChoice([true, 'category'])
   }, [])
 
+  function checkFilter() {
+    return (
+      filterBy.search ||
+      filterBy.cat ||
+      filterBy.tag ||
+      filterBy.level ||
+      filterBy.min ||
+      filterBy.max ||
+      filterBy.time ||
+      filterBy.page !== 1
+    )
+  }
   return (
     <>
+      <section className="floating-top-bar layout-row">
+        {checkFilter() && (
+          <button
+            onClick={() => onHandleChoice('clear')}
+            className="btn clear-filter"
+            title="Clear all filters"
+          >
+            Clear filter
+          </button>
+        )}
+        <div className="filter-section">
+          Select Filter
+          <SvgIcon iconName="filterIcon" />
+        </div>
+      </section>
+  
       <div className="gig-results-title layout-row">
         {filterBy?.search && (
           <section className="search-param">
@@ -35,20 +65,20 @@ export function GigFilter({ filterBy = {}, setMenuFilter = () => {}, onDeleteFil
           </section>
         )}
       </div>
-
+  
       <main className={`gig-filter ${isSticky ? 'shadow' : ''}`}>
         <section className="floating-top-bar layout-row">
           <div className="filter-nav">
-            <div className="filter-categories floating-menu">      
-                <MenuFilterContent
-                  renderedChoice="category"
-                  setMenuFilter={setMenuFilter}
-                  setIsRenderedChoice={setIsRenderedChoice}
-                />
+            <div className="filter-categories floating-menu">
+              <MenuFilterContent
+                renderedChoice="category"
+                setMenuFilter={setMenuFilter}
+                setIsRenderedChoice={setIsRenderedChoice}
+              />
             </div>
           </div>
         </section>
-        
+  
         <section className="breadcrumb-wrapper">
           <CategoryBreadcrumb
             isFrom="explore"
@@ -57,8 +87,9 @@ export function GigFilter({ filterBy = {}, setMenuFilter = () => {}, onDeleteFil
           />
         </section>
       </main>
-
+  
       <SelectedFilters filterBy={filterToEdit} onDeleteFilter={onDeleteFilter} />
     </>
-  )
+  );
+  
 }
