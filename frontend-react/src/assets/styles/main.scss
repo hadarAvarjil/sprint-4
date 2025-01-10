@@ -11,8 +11,9 @@
 @import "basics/layout";
 
 // Components
-@import "cmps/AppHeader";
-@import "cmps/AppFooter";
+// @import "cmps/AppHeader";
+@import "cmps/AppHeaderExplor";
+@import "cmps/AppFooter"; //HA
 @import "cmps/WelcomeSection";
 @import "cmps/SearchBar";
 @import "cmps/LoginSignup";
@@ -20,10 +21,12 @@
 @import "cmps/CategoryNavbar";
 @import "cmps/AsideMenu";
 
-@import "cmps/AboutSeller";
-@import "cmps/GigDetailsAside";
+@import "cmps/AboutGigSeller"; //HA
+@import "cmps/GigDetailsHeader"; //HA
+@import "cmps/GigDetailsOrder"; //HA
+@import "cmps/UserPreviewGigDetails"; //HA
+
 @import "cmps/ReviewBreakdown";
-@import "cmps/GigReviews";
 @import "cmps/ShareGigModal";
 @import "cmps/InvoiceModal";
 @import "cmps/ReviewModal";
