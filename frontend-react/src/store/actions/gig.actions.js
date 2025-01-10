@@ -56,10 +56,11 @@ export async function updateGig(gig) {
 }
 export function setFilter(filterBy) {
     return {
-      type: 'SET_FILTER',
+      type: SET_FILTER,
       filterBy,
     }
   }
+
 
 export async function addGigMsg(gigId, txt) {
     try {
