@@ -1,107 +1,113 @@
 .gig-index {
-    width: 100%;
-  
-    .gigless {
-      height: 100%;
-      margin: 1em auto;
-      padding: 1em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-  
-      .clr-filter {
-        width: fit-content;
-        margin: 1em auto;
-        padding: 0.75em 1em;
-        background: $bgColor3;
-        color: $clrPrimary1;
-        border-radius: 0.25em;
-        text-transform: uppercase;
-        font-family: 'macan-bold';
-        box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.2);
-        transition: background-color 0.3s, transform 0.3s;
-  
-        &:hover {
-          background-color: $clr10;
-          transform: translateY(-2px);
-        }
-  
-        &:active {
-          transform: translateY(1px);
-        }
-      }
-  
-      img {
-        align-self: center;
-        justify-self: center;
-        max-width: 500px;
-        height: auto;
-        margin-block-end: auto;
-      }
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+
+  .gig-header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h1 {
+      font-size: 24px;
+      color: #333;
     }
-  
-    .pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 0;
-      color: $clrSecondary6;
-  
-      .page-number {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-  
-        span {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          height: 2.625em;
-          width: 2.625em;
-        }
-  
-        &:after {
-          border-bottom: 1px solid transparent;
-          content: '';
-          display: block;
-          position: relative;
-          width: 1em;
-        }
-  
-        &.active {
-          color: $clrPrimary2;
-  
-          &:after {
-            border-bottom-color: $clrPrimary2;
-          }
-        }
-  
-        &:hover {
-          color: $clrPrimary2;
-  
-          &:after {
-            border-bottom-color: $clrPrimary2;
-          }
-        }
-  
-        transition: color 0.2s;
-      }
-  
-      .pagination-arrows {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        height: 2.625em;
-        width: 2.625em;
-  
-        i {
-          display: flex;
-          align-items: center;
-        }
+
+    p {
+      font-size: 16px;
+      color: #666;
+    }
+  }
+
+  .filter-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .filter-option {
+      padding: 10px 20px;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        background: #ddd;
       }
     }
   }
-  
+
+  .filter-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .filter-dropdown,
+    .sort-dropdown select {
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #fff;
+    }
+
+    .pro-toggle label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+  }
+
+  .gig-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+
+    .gig-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+
+      .gig-card-image {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .gig-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .gig-seller {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .gig-price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #4caf50;
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    button,
+    span {
+      padding: 10px 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f5f5f5;
+      cursor: pointer;
+
+      &:hover {
+        background: #ddd;
+      }
+    }
+  }
+}

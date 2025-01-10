@@ -121,17 +121,57 @@ export function GigIndex() {
     }
     setIsRenderedChoice([true, renderedChoice]);
   };
-
   return (
     <main className="gig-index main-layout">
-      <GigFilter
-        filterBy={filterBy}
-        setMenuFilter={setMenuFilter}
-        onHandleChoice={onHandleChoice}
-        isRenderedChoice={isRenderedChoice}
-        setIsRenderedChoice={setIsRenderedChoice}
-        onDeleteFilter={onDeleteFilter}
-      />
+      {/* קטע הקטגוריות - מועבר לראש העמוד */}
+      <nav className="filter-bar">
+        <button className="filter-option">Web Application</button>
+        <button className="filter-option">Convert PSD</button>
+        <button className="filter-option">Bug Fixes</button>
+        <button className="filter-option">Email Template</button>
+        <button className="filter-option">API & Integrations</button>
+        <button className="filter-option">Desktop Applications</button>
+      </nav>
+
+      {/* Header Section */}
+      <header className="gig-header">
+        <h1>HTML & CSS Developers</h1>
+        <p>Find the best HTML & CSS developers services you need...</p>
+      </header>
+
+      {/* Filter Controls */}
+      <div className="filter-controls">
+        <GigFilter
+          filterBy={filterBy}
+          setMenuFilter={setMenuFilter}
+          onHandleChoice={onHandleChoice}
+          isRenderedChoice={isRenderedChoice}
+          setIsRenderedChoice={setIsRenderedChoice}
+          onDeleteFilter={onDeleteFilter}
+        />
+        <div className="additional-filters">
+          <button className="filter-dropdown">Service options</button>
+          <button className="filter-dropdown">Seller details</button>
+          <button className="filter-dropdown">Budget</button>
+          <button className="filter-dropdown">Delivery time</button>
+          <div className="pro-toggle">
+            <label>
+              Pro services
+              <input type="checkbox" />
+            </label>
+          </div>
+          <div className="sort-dropdown">
+            Sort by:
+            <select>
+              <option value="best-selling">Best Selling</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {/* Gig List Section */}
       {currentGigs.length ? (
         <>
           <GigList gigs={currentGigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
@@ -143,12 +183,36 @@ export function GigIndex() {
         </>
       ) : (
         <section className="gigless">
-          <h2>The Page Not Load? Try Clear Filter's</h2>
+          <h2>The Page Did Not Load? Try Clearing Filters</h2>
           <button className="clr-filter" onClick={clearAllFilters}>
             Clear all filters
           </button>
         </section>
       )}
+
+      {/* Pagination Footer */}
+      {currentGigs.length > 0 && (
+        <footer className="pagination">
+          <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+            Prev
+          </button>
+          {[...Array(totalPages)].map((_, index) => (
+            <span
+              key={index + 1}
+              className={currentPage === index + 1 ? 'active' : ''}
+              onClick={() => handlePageChange(index + 1)}
+            >
+              {index + 1}
+            </span>
+          ))}
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </footer>
+      )}
     </main>
-  )
+  );
 }

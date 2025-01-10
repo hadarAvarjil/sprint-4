@@ -23,7 +23,7 @@ export function GigFilter({ filterBy = {}, setMenuFilter = () => {}, onDeleteFil
 
   useEffect(() => {
     setIsRenderedChoice([true, 'category'])
-  }, [])
+  }, [setIsRenderedChoice])
 
   function checkFilter() {
     return (
@@ -49,10 +49,6 @@ export function GigFilter({ filterBy = {}, setMenuFilter = () => {}, onDeleteFil
             Clear filter
           </button>
         )}
-        <div className="filter-section">
-          Select Filter
-          <SvgIcon iconName="filterIcon" />
-        </div>
       </section>
   
       <div className="gig-results-title layout-row">
