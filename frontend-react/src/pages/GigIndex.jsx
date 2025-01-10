@@ -1,7 +1,7 @@
 const noResultsImg = 'https://res.cloudinary.com/dgwgcf6mk/image/upload/v1701539881/gigster/other/bzqrborygalzssnmogax.png'
 
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 
 import { Pagination } from '../cmps/Pagination.jsx'
@@ -18,7 +18,7 @@ export function GigIndex() {
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)  || gigService.getDefaultFilter()
   const [isRenderedChoice, setIsRenderedChoice] = useState([false, ''])
   const [mobileState, setMobileState] = useState(false)
-
+  const dispatch = useDispatch()
   const currentPage = filterBy.page || 1
   const totalGigsPerPage = 12
   const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
@@ -134,27 +134,15 @@ export function GigIndex() {
   }
 
   function clearAllFilters() {
-    setFilter(gigService.getDefaultFilter())
+    console.log('Clearing filters - old filterBy:', filterBy)
+    dispatch(setFilter(gigService.getDefaultFilter()))
+    console.log('Clearing filters - new filterBy:', gigService.getDefaultFilter())
   }
-
   function handlePageChange(newPage) {
     setFilter({ ...filterBy, page: newPage })
   }
 
-  function onMobileFilterState() {
-    setMobileState((prevState) => !prevState)
-  }
-
   const categorySelect = filterBy.cat ? filterBy.cat : 'category'
-
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     const timeout = setTimeout(() => {
-  //       onFooterUpdate()
-  //     }, 1000)
-  //     return () => clearTimeout(timeout)
-  //   }
-  // }, [isLoading, onFooterUpdate])
 
   return (
     <main

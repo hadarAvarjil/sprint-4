@@ -31,7 +31,7 @@ async function query(filterBy = { txt: '', price: 0, cat: '' }) {
   }
 
   if (filterBy.cat) {
-    gigs = gigs.filter((gig) => gig.category === filterBy.cat)
+    gigs = gigs.filter(gig => gig.category === filterBy.cat)
   }
 
   return gigs

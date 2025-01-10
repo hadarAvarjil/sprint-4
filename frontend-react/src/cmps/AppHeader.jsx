@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { useModal } from '../customHooks/ModalContext.jsx'
 import { useDeviceType } from '../customHooks/DeviceTypeContext.jsx'
 import outsideClick from '../customHooks/outsideClick.js'
@@ -28,7 +28,8 @@ export function AppHeader() {
   const userInfoRef = useRef(null)
   const ordersRef = useRef(null)
   const asideMenuRef = useRef(null)
-  
+  const dispatch = useDispatch()
+
   // טיפול בקליקים מחוץ לאזורים מסוימים
   outsideClick(userInfoRef, () => setShowUserDropdown(false))
   outsideClick(ordersRef, () => setShowOrdersDropdown(false))
@@ -107,7 +108,7 @@ export function AppHeader() {
   }
 
   function setCatFilter(category) {
-    setFilter({ ...filterBy, cat: category })
+    dispatch(setFilter({ ...filterBy, cat: category }))
   }
 
   // פונקציית הלוגאוט
