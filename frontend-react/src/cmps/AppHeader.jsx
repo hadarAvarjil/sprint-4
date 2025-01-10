@@ -7,8 +7,6 @@ import outsideClick from '../customHooks/outsideClick.js'
 
 import { SearchBar } from './SearchBar.jsx'
 import { NavBar } from './NavBar.jsx'
-// import { UserDropdown } from './UserDropdown.jsx'
-// import { BuyerOrdersDropdown } from './BuyerOrdersDropdown.jsx'
 import { AsideMenu } from '../cmps/AsideMenu.jsx'
 import SvgIcon from './SvgIcon.jsx'
 import { category } from '../services/gig.service.js'
@@ -104,7 +102,7 @@ export function AppHeader() {
     e.preventDefault()
     if (!searchQuery) return
     setFilter({ ...filterBy, search: searchQuery })
-    navigate(`/explore`)
+    // navigate(`/explore`)
     setSearchQuery('')
   }
 
@@ -180,8 +178,6 @@ export function AppHeader() {
             onSearchSubmit={handleSearchSubmit}
             visibility={headerStage >= 1 ? 'visible' : 'hidden'}
           />
-
-          {/* קישורים בניווט */}
           <ul className="nav-links flex">
             <li>
               <NavLink to="/explore" style={{ color: headerStyles.color }}>
