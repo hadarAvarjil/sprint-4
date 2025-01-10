@@ -27,13 +27,13 @@
 @import "cmps/UserPreviewGigDetails"; //HA
 
 @import "cmps/ReviewBreakdown";
-@import "cmps/ShareGigModal";
-@import "cmps/InvoiceModal";
+
+
 @import "cmps/ReviewModal";
-@import "cmps/GigDetailsInteractions";
+
 
 @import "cmps/GigFilter";
-@import "cmps/MobileFilter";
+
 @import "cmps/MenuFilterContent";
 @import "cmps/GigList";
 @import "cmps/GigPreview";
@@ -42,19 +42,12 @@
 
 @import "cmps/UserModal";
 @import "cmps/UserGigs";
-@import "cmps/DenyModal";
 
 @import "cmps/ImageCarousel";
-@import "cmps/ShoppingCart";
 @import "cmps/UserMsg";
 @import "cmps/Loader";
 
-@import "cmps/PurchaseMain";
-@import "cmps/PurchaseAside";
 
-@import "cmps/UserChat";
-@import "cmps/TypingLoader";
-@import "cmps/SmileyChoice";
 
 // Pages
 @import "pages/HomePage";
@@ -66,4 +59,3 @@
 @import "pages/GigPurchase";
 @import "pages/SellerDashboard";
 @import "pages/BuyerDashboard.scss";
-@import "pages/Chat";
