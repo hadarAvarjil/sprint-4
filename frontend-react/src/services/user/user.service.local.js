@@ -129,7 +129,7 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
@@ -144,7 +144,7 @@ const users = [
     isAdmin: false,
     ordersInQueue: 500,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
@@ -159,7 +159,7 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'Italy',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
@@ -174,7 +174,7 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'France',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
@@ -189,7 +189,7 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
@@ -204,7 +204,7 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'France',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
@@ -219,7 +219,7 @@ const users = [
     isAdmin: true,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'France',
     languages: ['English', 'Hebrew', 'Russian']
   },
 ]

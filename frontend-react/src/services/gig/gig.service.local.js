@@ -7,12 +7,12 @@ const STORAGE_KEY = 'gig'
 _createGigs()
 
 export const gigService = {
-    query,
-    getById,
-    save,
-    remove,
-    getEmptyGig,
-    addGigMsg,
+  query,
+  getById,
+  save,
+  remove,
+  getEmptyGig,
+  addGigMsg,
 }
 window.cs = gigService
 
@@ -20,33 +20,33 @@ async function query(filterBy = { txt: '', price: 0, cat: '' }) {
   var gigs = await storageService.query(STORAGE_KEY)
 
   if (filterBy.txt) {
-      const regex = new RegExp(filterBy.txt, 'i')
-      gigs = gigs.filter(
-          (gig) => regex.test(gig.title) || regex.test(gig.description)
-      )
+    const regex = new RegExp(filterBy.txt, 'i')
+    gigs = gigs.filter(
+      (gig) => regex.test(gig.title) || regex.test(gig.description)
+    )
   }
 
   if (filterBy.price) {
-      gigs = gigs.filter((gig) => gig.price <= filterBy.price)
+    gigs = gigs.filter((gig) => gig.price <= filterBy.price)
   }
 
   if (filterBy.cat) {
-      gigs = gigs.filter((gig) => gig.category === filterBy.cat)
+    gigs = gigs.filter((gig) => gig.category === filterBy.cat)
   }
 
   return gigs
 }
 
 function getById(gigId) {
-    return storageService.get(STORAGE_KEY, gigId)
+  return storageService.get(STORAGE_KEY, gigId)
 }
 
 async function remove(gigId) {
-    await storageService.remove(STORAGE_KEY, gigId)
+  await storageService.remove(STORAGE_KEY, gigId)
 }
 
 async function save(gig) {
-    var savedGig
+  var savedGig
   if (gig._id) {
     savedGig = await storageService.put(STORAGE_KEY, gig)
   } else {
@@ -57,23 +57,23 @@ async function save(gig) {
 }
 
 async function addGigMsg(gigId, txt) {
-    const gig = await getById(gigId)
-    if (!gig.msgs) gig.msgs = []
-    const msg = {
-      id: utilService.makeId(),
-      by: userService.getLoggedinUser(),
-      txt,
-    }
-    gig.msgs.push(msg)
-    await storageService.put(STORAGE_KEY, gig)
-    return msg
+  const gig = await getById(gigId)
+  if (!gig.msgs) gig.msgs = []
+  const msg = {
+    id: utilService.makeId(),
+    by: userService.getLoggedinUser(),
+    txt,
+  }
+  gig.msgs.push(msg)
+  await storageService.put(STORAGE_KEY, gig)
+  return msg
 }
 
 function getEmptyGig() {
-    return {
-        title: 'Gig-' + (Date.now() % 1000),
-        price: utilService.getRandomIntInclusive(30, 600),
-    }
+  return {
+    title: 'Gig-' + (Date.now() % 1000),
+    price: utilService.getRandomIntInclusive(30, 600),
+  }
 }
 
 function _createGigs() {
@@ -90,82 +90,99 @@ function _createGigs() {
         daysToMake: 3,
         ownerId: "u101",
         imgUrls: [
-          
-                      "https://images.unsplash.com/photo-1627163439134-7a8c47e08208?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                      "https://images.unsplash.com/photo-1625014618427-fbc980b974f5?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                      "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                      "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                      "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  ],
+
+          "https://images.unsplash.com/photo-1627163439134-7a8c47e08208?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1625014618427-fbc980b974f5?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ],
         likedByUsers: [],
         reviews: [
           {
             id: "r101",
-            userId: "u101",
-            userName: "HappyClient123",
+            userId: "u107",
             rating: 5,
             text: "Fantastic work! Highly recommended.",
+            duration: "5 days",
+            price: 27,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
+
           },
           {
             id: "r102",
             userId: "u102",
-            userName: "HappyClient123",
             rating: 5,
             text: "Fantastic work! Highly recommended.",
-          },  {
+            duration: "4 days",
+            price: 55,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
+
+          },
+          {
             id: "r103",
             userId: "u103",
-            userName: "HappyClient123",
             rating: 5,
             text: "Fantastic work! Highly recommended.",
+            duration: "6 days",
+            price: 57,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
+
           },
         ],
       },
-       {
+      {
         _id: "g110",
         title: "I will create personalized workout planed videos for your fitness journey",
         category: "Video & Animation",
         tags: [
-            "Filmed Video Production",
-            "Explainer Videos",
-            "Product Videos"
+          "Filmed Video Production",
+          "Explainer Videos",
+          "Product Videos"
         ],
         price: 40,
         description: "Achieve your fitness goals with customized workout plans tailored to your needs. Whether you want to lose weight, build muscle, or improve your overall health, I'll help you get there.",
         daysToMake: "Up to 3 days",
         ownerId: "u108",
         imgUrls: [
-            "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&q=80&w=1925&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://plus.unsplash.com/premium_photo-1672280783572-4a254a8e71d5?auto=format&fit=crop&q=80&w=1973&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&q=80&w=1982&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&q=80&w=1925&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1672280783572-4a254a8e71d5?auto=format&fit=crop&q=80&w=1973&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&q=80&w=1982&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
         likedByUsers: [],
         reviews: [
           {
             id: "r101",
             userId: "u103",
-            userName: "HappyClient123",
             rating: 5,
             text: "Fantastic work! Highly recommended.",
+            duration: "6 days",
+            price: 22,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
+
           },
           {
             id: "r102",
             userId: "u103",
-            userName: "HappyClient123",
             rating: 5,
             text: "Fantastic work! Highly recommended.",
-          },  {
+            duration: "11 days",
+            price: 27,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
+          },
+          {
             id: "r103",
             userId: "u102",
-            userName: "HappyClient123",
             rating: 5,
             text: "Fantastic work! Highly recommended.",
+            duration: "15 days",
+            price: 20,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
-        createdAt: 1696852712145
-    },
+      },
       {
         _id: "g102",
         title: "I will design stunning website templates",
@@ -183,9 +200,11 @@ function _createGigs() {
         reviews: [
           {
             id: "r104",
-            userName: "WebsiteOwner789",
             rating: 4.5,
             text: "Great templates for my online store.",
+            duration: "10 days",
+            price: 120,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
       },
@@ -209,10 +228,11 @@ function _createGigs() {
         reviews: [
           {
             id: "r105",
-            userId: "u105",
-            userName: "WebsiteOwnerXYZ",
             rating: 4,
             text: "Informative and SEO-friendly articles.",
+            duration: "12 days",
+            price: 220,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
       },
@@ -237,9 +257,11 @@ function _createGigs() {
           {
             id: "r106",
             userId: "u105",
-            userName: "HappyCouple123",
             rating: 5,
             text: "Beautiful custom song for our wedding.",
+            duration: "10 days",
+            price: 230,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
       },
@@ -264,9 +286,11 @@ function _createGigs() {
           {
             id: "r107",
             userId: "u105",
-            userName: "MarketingGuru123",
             rating: 5,
             text: "Amazing 3D animations for our marketing video.",
+            duration: "6 days",
+            price: 250,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
       },
@@ -291,9 +315,11 @@ function _createGigs() {
           {
             id: "r108",
             userId: "u102",
-            userName: "GoalAchieverXYZ",
             rating: 5,
             text: "Sophie's coaching was transformative for my business.",
+            duration: "3 days",
+            price: 200,
+            createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
       },

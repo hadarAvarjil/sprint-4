@@ -14,32 +14,18 @@ export function GigReviewsList({ gig }) {
     }, [gig])
 
     async function loadGigReviews() {
-        const storedReviews = JSON.parse(localStorage.getItem("review"));
-        console.log("Stored Reviews:", storedReviews);
-        if (!gig || gig.reviews.length === 0) return;
-    
-        try {
-          
-            const loadedGigReviews = await Promise.all(
-                gig.reviews.map((review) => {
-                    const reviewId = typeof review === 'string' ? review : review.id
-                    console.log('Fetching review with ID:', reviewId)
-                    return reviewService.getById(reviewId)
-                })
-            );
+        if (!gig || !Array.isArray(gig.reviews) || gig.reviews.length === 0) return;
 
-            console.log('Loaded Gig Reviews:', loadedGigReviews)
-    
-            // Fetch user details for each review
+        try {
             const reviewsByUsers = await Promise.all(
-                loadedGigReviews.map(async (review) => {
+                gig.reviews.map(async (review) => {
                     try {
-                        const user = await userService.getById(review.userId)
+                        const user = await userService.getById(review.userId);
                         return {
                             ...review,
                             username: user.username,
-                            imgUrl: user.imgUrl,
-                            country: user.country,
+                            imgUrl: user.avatar,
+                            country: user.from,
                         };
                     } catch (err) {
                         console.error(`Error fetching user with ID ${review.userId}:`, err);
@@ -52,7 +38,7 @@ export function GigReviewsList({ gig }) {
                     }
                 })
             )
-    
+
             setGigReviews(reviewsByUsers);
         } catch (err) {
             console.error('Unexpected error while loading gig reviews:', err)
