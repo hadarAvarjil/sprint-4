@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { ImgUploader } from "../cmps/ImgUploader";
 
 export function HomePage() {
   // const myImg='src\services\imgs\design.imgs\ad.jpeg'
@@ -94,6 +95,11 @@ export function HomePage() {
           Business
         </div>
       </div>
+
+      <div className="green-search-div">
+dfjdhfkdj
+      </div>
+      <div> <img src="${imgUpLoader}`" alt="" /></div>
 
       <div style={{ backgroundColor: "#FFF6F2" }} className="canAd-container">
         <div className="canAd-text-container">

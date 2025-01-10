@@ -83,7 +83,7 @@
 }
 
 .signup-ad h1 {
-  position: absolute;
+  position: relative;
 }
 
 
@@ -95,7 +95,8 @@
 
 .divs-container h1 {
   position: absolute;
-  font-weight: 400
+  font-weight: 400;
+  margin-bottom: 64px;
 }
 
 .icons-div {
@@ -109,6 +110,11 @@
   margin-top: 50px;
   margin-bottom: 50px;
   flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  justify-content: space-between;
+  height: 365px;
+  width: 100%;
 }
 
 .icons-div img {
