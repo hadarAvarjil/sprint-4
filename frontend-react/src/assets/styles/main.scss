@@ -12,7 +12,7 @@
 
 // Components
 @import "cmps/AppHeader";
-@import "cmps/AppFooter";
+@import "cmps/AppFooter"; //HA
 @import "cmps/WelcomeSection";
 @import "cmps/SearchBar";
 @import "cmps/LoginSignup";
@@ -21,6 +21,7 @@
 @import "cmps/AsideMenu";
 
 @import "cmps/AboutGigSeller"; //HA
+@import "cmps/GigDetailsHeader"; //HA
 @import "cmps/GigDetailsAside";
 @import "cmps/ReviewBreakdown";
 @import "cmps/GigReviews";
