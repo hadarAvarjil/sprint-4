@@ -11,7 +11,7 @@ import { GigFilter } from '../cmps/GigFilter.jsx'
 import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
 import { gigService } from '../services/gig.service.js'
 
-export function GigIndex({ onMobileFilter, onFooterUpdate }) {
+export function GigIndex() {
   const { gigs } = useSelector((storeState) => storeState.gigModule)
   const isLoading = useSelector(storeState => storeState.gigModule.isLoading)
   const [searchParams, setSearchparams] = useSearchParams()
@@ -28,7 +28,6 @@ export function GigIndex({ onMobileFilter, onFooterUpdate }) {
   const currentGigs = gigs.slice(startIndex, endIndex)
 
   useEffect(() => {
-    loadSetParams()
     loadsGigs()
   }, [filterBy])
 
@@ -38,14 +37,6 @@ export function GigIndex({ onMobileFilter, onFooterUpdate }) {
     } catch (err) {
       console.log('Error getting gigs to gigIndex: ', err)
     }
-  }
-
-  function loadSetParams() {
-    const newQueryParam = {}
-    Object.keys(filterBy).map((key) => {
-      if (filterBy[key]) newQueryParam[key] = filterBy[key]
-    })
-    setSearchparams(newQueryParam)
   }
 
   function setMenuFilter(event, selectedOption) {
@@ -156,14 +147,14 @@ export function GigIndex({ onMobileFilter, onFooterUpdate }) {
 
   const categorySelect = filterBy.cat ? filterBy.cat : 'category'
 
-  useEffect(() => {
-    if (!isLoading) {
-      const timeout = setTimeout(() => {
-        onFooterUpdate()
-      }, 1000)
-      return () => clearTimeout(timeout)
-    }
-  }, [isLoading, onFooterUpdate])
+  // useEffect(() => {
+  //   if (!isLoading) {
+  //     const timeout = setTimeout(() => {
+  //       onFooterUpdate()
+  //     }, 1000)
+  //     return () => clearTimeout(timeout)
+  //   }
+  // }, [isLoading, onFooterUpdate])
 
   return (
     <main
@@ -177,10 +168,6 @@ export function GigIndex({ onMobileFilter, onFooterUpdate }) {
         isRenderedChoice={isRenderedChoice}
         setIsRenderedChoice={setIsRenderedChoice}
         onDeleteFilter={onDeleteFilter}
-        onMobileFilter={onMobileFilter}
-        setMobileFilter={setMobileFilter}
-        mobileState={mobileState}
-        onMobileFilterState={onMobileFilterState}
       />
       {currentGigs.length ? (
         <>
