@@ -222,6 +222,22 @@ const users = [
     from: 'France',
     languages: ['English', 'Hebrew', 'Russian']
   },
+  {
+    _id: 'u1011',
+    fullName: 'Coding Foster',
+    avatar:
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
+    username: 'jane123',
+    password: '123',
+    level: 'level 3',
+    rating: 4.2,
+    isAdmin: true,
+    ordersInQueue: 350,
+    createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
+    from: 'France',
+    languages: ['English', 'Hebrew', 'Italian']
+  },
+  
 ]
 
 _createUsers()
