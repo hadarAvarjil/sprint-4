@@ -41,7 +41,7 @@ export function NavBar({ categories, display, headerStage, setCatFilter, style }
             )}
             <div className={`container flex ${display === 'none' ? 'hidden' : ''}`} ref={carouselRef}>
                 {categories.map(category => (
-                    <NavLink key={category} onClick={() => setCatFilter(category)} to={`/explore`}>
+                    <NavLink key={category} onClick={() => setCatFilter(category)} to={`/gig`}>
                         {category}
                     </NavLink>
                 ))}
