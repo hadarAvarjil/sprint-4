@@ -1,0 +1,71 @@
+.app-header {
+    .category-nav {
+        position: relative;
+        overflow: hidden;
+        color: $clrSecondary7;
+
+        .container {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+
+            .hidden {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            a {
+                flex: 0 0 auto;
+                color: inherit;
+                line-height: 24px;
+                padding: 8px 0px;
+                position: relative;
+                color: $clrSecondary6;
+
+                &:not(:first-child) {
+                    margin-left: 1.25em;
+                }
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 3px;
+                    background: $bgColor2;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transform: scaleX(0);
+                    transition: transform 0.3s ease-in-out;
+                    transform-origin: bottom right;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 30%;
+            cursor: pointer;
+            z-index: 1;
+            background: $clrPrimary1;
+            width: 15px;
+
+            &.left-side {
+                left: 30px;
+                box-shadow: 0px 0px 20px 20px $clrPrimary1;
+            }
+
+            &.right-side {
+                right: 30px;
+                box-shadow: 0px 0px 20px 20px $clrPrimary1;
+            }
+        }
+    }
+}

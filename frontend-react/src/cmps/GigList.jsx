@@ -1,52 +1,24 @@
-import { userService } from '../services/user'
-import { GigPreview } from './GigPreview'
-import { useState, useEffect } from 'react'
 
-export function GigList({ gigs, onRemoveGig = () => {}, onUpdateGig = () => {}, isLoading }) {
-  const [isVisible, setIsVisible] = useState(false)
-  const [likedGigs, setLikedGigs] = useState([])
-  const isFrom = 'explore'
+import React, { useState, useEffect } from "react"
+
+import { GigPreview } from "../cmps/GigPreview.jsx"
+
+export function GigList({ gigs, isLoading }) {
+  const [showGigs, setShowGigs] = useState(false)
+  const isFrom = "explore"
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 100)
-    return () => clearTimeout(timer)
+    const timeout = setTimeout(() => {
+      setShowGigs(true)
+    }, 500)
+    return () => clearTimeout(timeout)
   }, [])
 
-  const toggleLike = (gigId) => {
-    setLikedGigs((prevLikedGigs) =>
-      prevLikedGigs.includes(gigId)
-        ? prevLikedGigs.filter((id) => id !== gigId) 
-        : [...prevLikedGigs, gigId]
-    )
-  }
-
-  const uniqueGigs = gigs.filter(
-    (gig, index, self) => index === self.findIndex((g) => g._id === gig._id)
-  )
-
-  function shouldShowActionBtns(gig) {
-    const user = userService.getLoggedinUser()
-    return user && (user.isAdmin || gig.owner?._id === user._id)
-  }
-
-  if (isLoading) return <div className="loader">Loading...</div>
-
   return (
-    <section className="main-gig-list">
-      <div className={`gig-list layout-row ${isVisible ? 'show' : ''}`}>
-        {uniqueGigs.map((gig) => (
-          <GigPreview
-            key={gig._id}
-            onRemoveGig={onRemoveGig}
-            onUpdateGig={onUpdateGig}
-            gig={gig}
-            isLiked={likedGigs.includes(gig._id)}
-            onToggleLike={toggleLike}
-            canEdit={shouldShowActionBtns(gig)}
-            isFrom={isFrom}
-          />
-        ))}
-      </div>
-    </section>
+    <ul className={`gig-list layout-row ${showGigs ? "show" : ""}`}>
+      {gigs.map((gig) => (
+        <GigPreview isFrom={isFrom} gig={gig} key={gig._id} />
+      ))}
+    </ul>
   )
 }

@@ -6,46 +6,61 @@
 @import "setup/mq";
 
 // Basics
+@import "basics/base";
 @import "basics/helpers";
 @import "basics/layout";
-@import "basics/base";
-// @import "basics/links";
-@import "basics/forms";
-
-
-// pages
-@import "RootCmp";
-
-@import "pages/AboutUs";
-@import "pages/GigIndex";
-@import "pages/ReviewIndex";
-@import "pages/UserDetails";
-@import "pages/TaskDetails";
-@import "pages/LoginSignup";
-@import "pages/HomePage";
-
 
 // Components
-@import "cmps/list";
-@import "cmps/preview";
-
-
-// @import "cmps/carousel";
-@import "cmps/Breadcrumb";
-@import "cmps/ImageCarousel";
 @import "cmps/AppHeader";
 @import "cmps/AppFooter";
-@import "cmps/UserMsg";
+@import "cmps/WelcomeSection";
+@import "cmps/SearchBar";
+@import "cmps/LoginSignup";
+@import "cmps/ServicesCarousel";
+@import "cmps/CategoryNavbar";
+@import "cmps/AsideMenu";
+
+@import "cmps/AboutSeller";
+@import "cmps/GigDetailsAside";
+@import "cmps/ReviewBreakdown";
+@import "cmps/GigReviews";
+@import "cmps/ShareGigModal";
+@import "cmps/InvoiceModal";
+@import "cmps/ReviewModal";
+@import "cmps/GigDetailsInteractions";
 
 @import "cmps/GigFilter";
+@import "cmps/MobileFilter";
 @import "cmps/MenuFilterContent";
-@import "cmps/ReviewEdit";
-@import "cmps/ReviewList";
-@import "cmps/ReviewPreview";
 @import "cmps/GigList";
 @import "cmps/GigPreview";
-@import "cmps/UserPreviewGigDetails";
-@import "cmps/GigDetailsHeader";
-@import "cmps/AboutGigSeller";
-@import "cmps/GigReview";
-@import "cmps/GigDetailsOrder";
+@import "cmps/UserPreview";
+@import "cmps/Pagination";
+
+@import "cmps/UserModal";
+@import "cmps/UserGigs";
+@import "cmps/DenyModal";
+
+@import "cmps/ImageCarousel";
+@import "cmps/ShoppingCart";
+@import "cmps/UserMsg";
+@import "cmps/Loader";
+
+@import "cmps/PurchaseMain";
+@import "cmps/PurchaseAside";
+
+@import "cmps/UserChat";
+@import "cmps/TypingLoader";
+@import "cmps/SmileyChoice";
+
+// Pages
+@import "pages/HomePage";
+@import "pages/About";
+@import "pages/GigIndex";
+@import "pages/GigDetails";
+@import "pages/UserProfile";
+@import "pages/GigEdit";
+@import "pages/GigPurchase";
+@import "pages/SellerDashboard";
+@import "pages/BuyerDashboard.scss";
+@import "pages/Chat";

@@ -1,0 +1,235 @@
+.profile-page {
+  background-color: $clrSecondary12;
+  padding: 3.125em 0 2.5em;
+
+  @media screen and (max-width: 900px) {
+    padding: 0;
+  }
+
+  .user-profile {
+    justify-content: space-between;
+    max-width: 1240px;
+
+    .user-info {
+      color: $clrSecondary6;
+      max-width: 450px;
+
+      .info-block {
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: fit-content;
+        padding: 30px;
+        background-color: $clrPrimary1;
+        border: 1px solid $clrSecondary2;
+        margin-block-end: 1.25em;
+
+        @media screen and (max-width: 900px) {
+          border: 0;
+          padding: 2em 0.5em 4em;
+        }
+
+        .profile-picture {
+          position: relative;
+          height: 150px;
+          width: 150px;
+
+          img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          i {
+            position: absolute;
+            bottom: 0px;
+            left: 96px;
+          }
+
+          svg {
+            position: relative;
+            width: 54px;
+            height: 54px;
+          }
+
+          .background {
+            display: none;
+
+            svg {
+              position: relative;
+            }
+          }
+        }
+
+        .stars {
+          align-items: baseline;
+          margin-block-end: 1.25em;
+
+          .rating {
+            padding: 0 0.25em;
+            font-weight: 700;
+          }
+
+          .review-count {
+            color: $clrSecondary11;
+          }
+        }
+
+        h2 {
+          text-align: center;
+          width: 100%;
+          text-transform: capitalize;
+          color: $clrPrimary2;
+          font-weight: 700;
+        }
+
+        .username {
+          text-align: center;
+          width: 100%;
+          margin-block-end: 1.25em;
+        }
+
+        .location-and-time {
+          width: 100%;
+          padding-block-start: 1.25em;
+          border-top: 1px solid $clrSecondary2;
+
+          .info-line {
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-block-end: 1em;
+
+            .data {
+              align-items: center;
+
+              span {
+                font-weight: 100;
+              }
+
+              svg {
+                margin-inline-end: em(12px);
+              }
+            }
+
+            .bold {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+    }
+
+    .description {
+      text-align: start;
+      justify-content: start;
+      align-items: start;
+      color: $clrSecondary8;
+      padding: 1.875em;
+
+      .description-title {
+        width: 100%;
+        font-weight: 700;
+        margin-block-end: 1em;
+      }
+
+      .description-box {
+        margin-block-end: 1.875em;
+        width: 100%;
+        color: $clrSecondary6;
+      }
+
+      .languages {
+        width: 100%;
+        padding-block-start: 30px;
+        padding-block-end: 30px;
+        border-block-start: 1px solid $clrSecondary2;
+        border-block-end: 1px solid $clrSecondary2;
+
+        .title {
+          font-weight: 700;
+          margin-block-end: 1em;
+        }
+
+        .the-languages {
+          color: $clrSecondary6;
+          margin-block-start: 1em;
+
+          .language {
+            margin-block-end: 0.625em;
+
+            :nth-child(3) {
+              color: $clrSecondary4;
+            }
+          }
+        }
+      }
+
+      .skills {
+        width: 100%;
+        padding-block-start: 1.875em;
+        padding-block-end: 1.875em;
+        border-block-start: 1px solid $clrSecondary2;
+        border-block-end: 1px solid $clrSecondary2;
+
+        .title {
+          font-weight: 700;
+          margin-block-end: 1em;
+        }
+
+        .the-skills {
+          color: $clrSecondary6;
+          margin-block-start: 1em;
+          flex-wrap: wrap;
+
+          .skill {
+            min-width: 2.5em;
+            margin-inline-end: 0.625em;
+            margin-block-end: 0.625em;
+            border: 1px solid $clrSecondary10;
+            border-radius: 15px;
+            padding: 5px 0.75em;
+          }
+        }
+      }
+
+      .educations {
+        width: 100%;
+        padding-block-start: 30px;
+        border-block-start: 1px solid $clrSecondary2;
+
+        .title {
+          font-weight: 700;
+          margin-block-end: 1em;
+        }
+
+        .the-educations {
+          color: $clrSecondary6;
+          margin-block-start: 1em;
+
+          .education {
+            margin-block-end: 0.625em;
+
+            :nth-child(2) {
+              margin-block-start: 5px;
+              color: $clrSecondary4;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  &.visitor {
+    background-color: $clrPrimary1;
+  }
+}
