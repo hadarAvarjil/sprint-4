@@ -1,0 +1,137 @@
+.desktop-footer {
+    color: $clrSecondary7;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    border-top: 1px solid $clrSecondary4;
+    background: $clrPrimary1;
+
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &.relative {
+        position: relative;
+    }
+
+    .footer-part {
+        h1 {
+            font-family: arial;
+            font-size: 30.5px;
+            letter-spacing: -3px;
+        }
+
+        h2 {
+            font-family: 'macan-regular';
+            color: $clrSecondary4;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .social-icons {
+            gap: 1em;
+
+            .icon-container {
+                display: flex;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.3s;
+                padding: 0.5em;
+
+                &:hover {
+                    background: $clrSecondary3;
+                }
+
+                a {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+
+        .other-icons {
+            gap: 1em;
+            align-self: center;
+
+            .access-icon,
+            .about-icon {
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+                align-self: center;
+
+                .circle-wrapper {
+                    fill: $clrSecondary1;
+                    stroke: $clrSecondary5;
+                }
+
+                &:hover {
+                    .circle-wrapper {
+                        fill: $clrSecondary45;
+                        stroke: none;
+                    }
+                }
+
+                i {
+                    svg {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+
+            .about-icon {
+                i {
+                    svg {
+                        fill: $clrSecondary4;
+
+                        &:hover {
+                            fill: $clrSecondary6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobile-footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    background-color: $clrPrimary1;
+    padding: 0.5em 0 1em 0;
+    border-top: 1px solid $clrSecondary2;
+    justify-items: center;
+    z-index: 20;
+
+    a {
+        min-width: 48px;
+        display: flex;
+        justify-content: center;
+
+        &.active {
+            svg {
+                fill: $bgColor3;
+            }
+
+            background: $clrSecondary14;
+            border-radius: 0.5em;
+        }
+
+        svg {
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+}

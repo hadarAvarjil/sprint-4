@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import {
-  loadGigs,
-  addGig,
-  updateGig,
-  removeGig,
-  setFilter as setFilterAction,
-} from '../store/actions/gig.actions'
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { gigService } from '../services/gig/'
-import { GigList } from '../cmps/GigList'
-import { GigFilter } from '../cmps/GigFilter'
+const noResultsImg = 'https://res.cloudinary.com/dgwgcf6mk/image/upload/v1701539881/gigster/other/bzqrborygalzssnmogax.png'
+
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
+
 import { Pagination } from '../cmps/Pagination.jsx'
+import { GigList } from '../cmps/GigList.jsx'
+import { GigFilter } from '../cmps/GigFilter.jsx'
 
-export function GigIndex() {
-  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy) || { page: 1 }
-  const gigs = useSelector((storeState) => storeState.gigModule.gigs)
-  const dispatch = useDispatch()
-  const [isRenderedChoice, setIsRenderedChoice] = useState([true, 'category'])
+import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
+import { gigService } from '../services/gig.service.js'
 
-  const currentPage = parseInt(filterBy.page) || 1
+export function GigIndex({ onMobileFilter, onFooterUpdate }) {
+  const { gigs } = useSelector((storeState) => storeState.gigModule)
+  const isLoading = useSelector(storeState => storeState.gigModule.isLoading)
+  const [searchParams, setSearchparams] = useSearchParams()
+  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)  || gigService.getDefaultFilter()
+  const [isRenderedChoice, setIsRenderedChoice] = useState([false, ''])
+  const [mobileState, setMobileState] = useState(false)
+
+  const currentPage = filterBy.page || 1
   const totalGigsPerPage = 12
   const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
 
@@ -28,191 +28,178 @@ export function GigIndex() {
   const currentGigs = gigs.slice(startIndex, endIndex)
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const gigs = await gigService.query(filterBy);
-        dispatch({ type: 'SET_GIGS', gigs });
-      } catch (error) {
-        console.error('Failed to load gigs:', error)
-        showErrorMsg('Cannot load gigs')
-      }
-    };
-    fetchData()
-  }, [filterBy, dispatch])
+    loadSetParams()
+    loadsGigs()
+  }, [filterBy])
 
-
-  const onRemoveGig = async (gigId) => {
+  async function loadsGigs() {
     try {
-      await removeGig(gigId)
-      showSuccessMsg('Gig removed')
-    } catch (error) {
-      console.error('Failed to remove gig:', error)
-      showErrorMsg('Cannot remove gig')
+      await loadGigs(filterBy)
+    } catch (err) {
+      console.log('Error getting gigs to gigIndex: ', err)
     }
   }
 
-  const onUpdateGig = async (gig) => {
-    try {
-      const price = +prompt('New price?')
-      if (isNaN(price)) return
-      const gigToSave = { ...gig, price }
-      const savedGig = await updateGig(gigToSave)
-      showSuccessMsg(`Gig updated, new price: ${savedGig.price}`)
-    } catch (error) {
-      console.error('Failed to update gig:', error)
-      showErrorMsg('Cannot update gig')
-    }
+  function loadSetParams() {
+    const newQueryParam = {}
+    Object.keys(filterBy).map((key) => {
+      if (filterBy[key]) newQueryParam[key] = filterBy[key]
+    })
+    setSearchparams(newQueryParam)
   }
 
-  const setFilter = (newFilter) => {
-    dispatch(setFilterAction({ ...filterBy, ...newFilter }))
-  }
-
-  const clearAllFilters = () => {
-    const defaultFilter = gigService.getDefaultFilter() 
-    setFilter(defaultFilter);
-    setIsRenderedChoice([true, 'category'])
-};
-
-  const handlePageChange = (newPage) => {
-    setFilter({ page: newPage })
-  };
-
-  const setMenuFilter = (event, selectedOption) => {
+  function setMenuFilter(event, selectedOption) {
+    event.preventDefault()
     let updatedFilterBy = { ...filterBy, page: 1 }
-  
+
     switch (isRenderedChoice[1]) {
+      case 'delivery_time':
+        updatedFilterBy = { ...filterBy, time: selectedOption }
+        break
+
       case 'budget':
-        if (selectedOption.min) updatedFilterBy.min = selectedOption.min
-        if (selectedOption.max) updatedFilterBy.max = selectedOption.max
-        break;
-      case 'seller_level':
-        updatedFilterBy.level = selectedOption
-        break;
-      case 'category':
-        if (typeof selectedOption === 'object' && selectedOption.cat) {
-          updatedFilterBy.cat = selectedOption.cat
-        } else {
-          updatedFilterBy.cat = selectedOption
+        if (selectedOption.min) {
+          updatedFilterBy = { ...updatedFilterBy, min: selectedOption.min }
+        }
+        if (selectedOption.max) {
+          updatedFilterBy = { ...updatedFilterBy, max: selectedOption.max }
         }
         break
+
+      case 'seller_level':
+        updatedFilterBy = { ...updatedFilterBy, level: selectedOption }
+        break
+
+      case 'category':
+        updatedFilterBy = { ...updatedFilterBy, cat: selectedOption }
+        break
+
+      // Handle subcategories
+      case 'Graphics & Design':
+      case 'Programming & Tech':
+      case 'Digital Marketing':
+      case 'Video & Animation':
+      case 'Writing & Translation':
+      case 'Music & Audio':
+      case 'Business':
+      case 'Data':
+      case 'Photography':
+      case 'AI Services':
+        updatedFilterBy = { ...updatedFilterBy, tag: selectedOption }
+        break
+
+      case 'clear':
+        updatedFilterBy = gigService.getDefaultFilter()
+        break
+
       default:
         break
     }
-  
-    console.log('Updated Filter:', updatedFilterBy)
     setFilter(updatedFilterBy)
+    setIsRenderedChoice([false, ''])
   }
 
-  const onDeleteFilter = (filterToDelete) => {
-    const updatedFilter = { ...filterBy };
-    if (filterToDelete === 'min' || filterToDelete === 'max') {
-      updatedFilter[filterToDelete] = undefined;
-    } else {
-      updatedFilter[filterToDelete] = '';
-    }
-    setFilter(updatedFilter);
-  };
+  function onDeleteFilter(filterToDelete) {
+    if (filterToDelete === ('min' || 'max'))
+      setFilter({ ...filterBy, [filterToDelete]: undefined })
 
-  const onHandleChoice = (renderedChoice) => {
-    if (isRenderedChoice[1] === renderedChoice && isRenderedChoice[0]) {
-      setIsRenderedChoice([false, '']);
-      return;
+    setFilter({ ...filterBy, [filterToDelete]: '' })
+  }
+
+  function onHandleChoice(renderedChoice) {
+    if (
+      (renderedChoice === isRenderedChoice[1] && isRenderedChoice[0]) ||
+      (renderedChoice === 'category' && isRenderedChoice[0])
+    ) {
+      setIsRenderedChoice([false, ''])
+      return
     }
-    setIsRenderedChoice([true, renderedChoice]);
-  };
+
+    switch (renderedChoice) {
+      case 'seller_level':
+        setIsRenderedChoice([true, 'seller_level'])
+        break
+      case 'delivery_time':
+        setIsRenderedChoice([true, 'delivery_time'])
+        break
+      case 'budget':
+        setIsRenderedChoice([true, 'budget'])
+        break
+      case 'category':
+        setIsRenderedChoice([true, categorySelect.trim()])
+        break
+      case 'clear':
+        setFilter(gigService.getDefaultFilter())
+        setIsRenderedChoice([false, 'clear'])
+        break
+      default:
+        console.log('default switch in onHandleChoice')
+        break
+    }
+  }
+
+  function setMobileFilter(mobileFilter) {
+    setFilter({ ...filterBy, ...mobileFilter })
+  }
+
+  function clearAllFilters() {
+    setFilter(gigService.getDefaultFilter())
+  }
+
+  function handlePageChange(newPage) {
+    setFilter({ ...filterBy, page: newPage })
+  }
+
+  function onMobileFilterState() {
+    setMobileState((prevState) => !prevState)
+  }
+
+  const categorySelect = filterBy.cat ? filterBy.cat : 'category'
+
+  useEffect(() => {
+    if (!isLoading) {
+      const timeout = setTimeout(() => {
+        onFooterUpdate()
+      }, 1000)
+      return () => clearTimeout(timeout)
+    }
+  }, [isLoading, onFooterUpdate])
+
   return (
-    <main className="gig-index main-layout">
-      {/* קטע הקטגוריות - מועבר לראש העמוד */}
-      <nav className="filter-bar">
-        <button className="filter-option">Web Application</button>
-        <button className="filter-option">Convert PSD</button>
-        <button className="filter-option">Bug Fixes</button>
-        <button className="filter-option">Email Template</button>
-        <button className="filter-option">API & Integrations</button>
-        <button className="filter-option">Desktop Applications</button>
-      </nav>
-
-      {/* Header Section */}
-      <header className="gig-header">
-        <h1>HTML & CSS Developers</h1>
-        <p>Find the best HTML & CSS developers services you need...</p>
-      </header>
-
-      {/* Filter Controls */}
-      <div className="filter-controls">
-        <GigFilter
-          filterBy={filterBy}
-          setMenuFilter={setMenuFilter}
-          onHandleChoice={onHandleChoice}
-          isRenderedChoice={isRenderedChoice}
-          setIsRenderedChoice={setIsRenderedChoice}
-          onDeleteFilter={onDeleteFilter}
-        />
-        <div className="additional-filters">
-          <button className="filter-dropdown">Service options</button>
-          <button className="filter-dropdown">Seller details</button>
-          <button className="filter-dropdown">Budget</button>
-          <button className="filter-dropdown">Delivery time</button>
-          <div className="pro-toggle">
-            <label>
-              Pro services
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="sort-dropdown">
-            Sort by:
-            <select>
-              <option value="best-selling">Best Selling</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      {/* Gig List Section */}
+    <main
+      className="gig-index flex column full"
+      style={mobileState ? { zIndex: 50 } : {}}
+    >
+      <GigFilter
+        filterBy={filterBy}
+        setMenuFilter={setMenuFilter}
+        onHandleChoice={onHandleChoice}
+        isRenderedChoice={isRenderedChoice}
+        setIsRenderedChoice={setIsRenderedChoice}
+        onDeleteFilter={onDeleteFilter}
+        onMobileFilter={onMobileFilter}
+        setMobileFilter={setMobileFilter}
+        mobileState={mobileState}
+        onMobileFilterState={onMobileFilterState}
+      />
       {currentGigs.length ? (
         <>
-          <GigList gigs={currentGigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+          <GigList gigs={currentGigs} isLoading={isLoading} />
           <Pagination
-            currentPage={currentPage}
+            currentPage={filterBy.page}
             totalPages={totalPages}
             onPageChange={handlePageChange}
           />
         </>
       ) : (
         <section className="gigless">
-          <h2>The Page Did Not Load? Try Clearing Filters</h2>
-          <button className="clr-filter" onClick={clearAllFilters}>
-            Clear all filters
+          <h2>We couldn't find Gigs that match your search</h2>
+          <button className="clr-filter" onClick={() => clearAllFilters()}>
+            clear all filters
           </button>
+          <img src={noResultsImg} />
         </section>
       )}
-
-      {/* Pagination Footer */}
-      {currentGigs.length > 0 && (
-        <footer className="pagination">
-          <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-            Prev
-          </button>
-          {[...Array(totalPages)].map((_, index) => (
-            <span
-              key={index + 1}
-              className={currentPage === index + 1 ? 'active' : ''}
-              onClick={() => handlePageChange(index + 1)}
-            >
-              {index + 1}
-            </span>
-          ))}
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          >
-            Next
-          </button>
-        </footer>
-      )}
     </main>
-  );
+  )
 }

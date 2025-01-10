@@ -1,0 +1,64 @@
+.modal-wrapper {
+    .invoice-modal {
+        border-radius: 0.5em;
+        max-width: 620px;
+        background-color: $clrPrimary1;
+        position: relative;
+        z-index: 10;
+        padding: 0.75em;
+
+        .invoice-header {
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            width: 90%;
+            border-bottom: 1px solid $clrSecondary4;
+            justify-content: space-between;
+
+            h1 {
+                letter-spacing: -3px;
+                color: $clrSecondary8;
+                height: fit-content;
+                align-self: center;
+
+                .dot {
+                    margin: 0;
+
+                    i {
+                        align-self: flex-end;
+                        cursor: default;
+                        margin-bottom: 0.25em;
+                    }
+                }
+            }
+
+            button {
+                background: none;
+                height: fit-content;
+                align-self: center;
+            }
+
+            h3 {
+                height: fit-content;
+                align-self: center;
+                color: $clrSecondary5;
+                text-align: center;
+            }
+        }
+
+        .invoice-body {
+            margin-top: 3.5em;
+
+            h2 {
+                font-size: 16px;
+                width: fit-content;
+                color: $clrSecondary5;
+            }
+
+            p {
+                color: $clrSecondary6;
+                margin: 0;
+            }
+        }
+    }
+}
