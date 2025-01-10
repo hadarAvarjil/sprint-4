@@ -102,7 +102,7 @@ export function AppHeader() {
     e.preventDefault()
     if (!searchQuery) return
     setFilter({ ...filterBy, search: searchQuery })
-    // navigate(`/explore`)
+    navigate(`/gig`)
     setSearchQuery('')
   }
 
@@ -180,7 +180,7 @@ export function AppHeader() {
           />
           <ul className="nav-links flex">
             <li>
-              <NavLink to="/explore" style={{ color: headerStyles.color }}>
+              <NavLink to="/gig" style={{ color: headerStyles.color }}>
                 Explore
               </NavLink>
             </li>

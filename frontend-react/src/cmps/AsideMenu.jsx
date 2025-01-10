@@ -45,7 +45,7 @@ export function AsideMenu({ loggedInUser, onClose }) {
               Profile
             </Link>
 
-            <Link to="/explore" onClick={onClose}>
+            <Link to="/gig" onClick={onClose}>
               {' '}
               Explore{' '}
             </Link>
@@ -86,7 +86,7 @@ export function AsideMenu({ loggedInUser, onClose }) {
             >
               Sign In
             </button>
-            <Link to="/explore" onClick={onClose}>
+            <Link to="/gig" onClick={onClose}>
               {' '}
               Explore{' '}
             </Link>
