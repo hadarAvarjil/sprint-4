@@ -22,61 +22,72 @@
     right: 4%;
     top: 13%;
   }
-  .yellowGirl-img{
+
+  .yellowGirl-img {
     position: absolute;
     border-radius: 15px;
     width: 12%;
     left: 7.5%;
     top: -0.1%;
   }
-  .purpleGuy-img{
+
+  .purpleGuy-img {
     position: absolute;
     border-radius: 15px;
     width: 9.8%;
     left: 4%;
     bottom: 7.5%;
+    z-index: 9;
   }
-  .greenGirl-img{
+
+  .greenGirl-img {
     position: absolute;
     border-radius: 15px;
     width: 9.3%;
     right: 7.5%;
     bottom: 0%;
+    z-index: 9;
   }
-  .blurredGirl-img{
+
+  .blurredGirl-img {
     position: absolute;
     width: 8%;
     right: 22.5%;
     top: 0%;
   }
-  .trustedBy-img{
+
+  .trustedBy-img {
     position: absolute;
-    width: 60%;
-    left: 19%;
+    width: 20%;
+    left: 10%;
     bottom: -0.31%;
+    z-index: 0;
   }
-  .green-search-div-inner-box{
+
+  .green-search-div-inner-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    h1{
+    h1 {
       font-family: $fiverr-defult-font;
       font-size: 60px;
       line-height: 69px;
       text-align: center;
       letter-spacing: -1.2px;
-      span{
+
+      span {
         // background-color: black;
-    font-size: 62px;
-    line-height: 72px;
-    letter-spacing: 1.55px;
-    font-family: $fiverr-leaning-font;
+        font-size: 62px;
+        line-height: 72px;
+        letter-spacing: 1.55px;
+        font-family: $fiverr-leaning-font;
       }
-      
+
     }
   }
-  .search-bar-div{
+
+  .search-bar-div {
     background-color: white;
     // padding: 10px;
     width: 93%;
@@ -89,16 +100,19 @@
     border-radius: 10px;
     padding-left: 10px;
     gap: 0px;
-    input{
+
+    input {
       width: 100%;
       height: 100%;
       margin: 0;
       border: white;
     }
+
     input:focus {
       outline: none;
     }
-    .search-btn{
+
+    .search-btn {
       width: 11%;
       background-color: white;
       height: 100%;
@@ -111,81 +125,103 @@
     }
   }
 }
-.big-search-img{
+
+.big-search-img {
   background-color: $green-dark;
   border-radius: 5px;
   padding-left: 5px;
 }
-.big-search-img:hover{
+
+.big-search-img:hover {
   background-color: $green-dark-hover;
 }
 
-.home-carousel-container{
+.home-carousel-container {
   width: 100%;
-  h1{
+
+  h1 {
     color: #404145;
     font-size: 48px;
     line-height: 50.4px;
     letter-spacing: -1.44px;
     text-align: start;
   }
-  .home-carousel{
+
+  .home-carousel {
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: 22px;
 
-      .popular-div{
-        color: white;
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        background-color: blue;
-   width: 15%;
-   height: calc(100vw * 0.174);
-padding: 6px;
-padding-top: 25px;
-margin-top: 12px;
-margin-bottom: 12px;
-   border-radius: 15px;
-   .pop-inner-pic{
-    position: absolute;
-    border-radius: 10%;
-    bottom: 6px;
-   }
-  }
-  .light-green-div{
-    background-color: $green-light;
-  }
-  .orange-div{
-    background-color: $orange;
-  }
-  .dark-green-div{
-    background-color: $green-dark;
-  }
-  .purple-div{
-    background-color: $purple;
-  }
-  .green-swamp-div{
-    background-color: $green-swamp;
-  }
-  .brown-div{
-    background-color: $brown;
-  }
-  .purple-div{
-    background-color: $purple;
-  }
-  .light-brown-div{
-    background-color: $brown-light;
-  }
-  .green-shrek-div{
-    background-color: $green-shrek;
-  }
-  .pink-div{
-    background-color: $pink;
-  }
+    .popular-div {
+      color: white;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      width: 15%;
+      max-width: 202px;
+      height: calc(100vw * 0.14);
+      padding: 6px;
+      padding-top: 25px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      border-radius: 15px;
 
-}
+      h3{
+      font-size: 18px;
+      line-height: 28px;
+      text-align: start;
+      letter-spacing: normal;
+      }
+
+      .pop-inner-pic {
+        position: absolute;
+        border-radius: 10%;
+        bottom: 6px;
+      }
+    }
+
+    .light-green-div {
+      background-color: $green-light;
+    }
+
+    .orange-div {
+      background-color: $orange;
+    }
+
+    .dark-green-div {
+      background-color: $green-dark;
+    }
+
+    .purple-div {
+      background-color: $purple;
+    }
+
+    .green-swamp-div {
+      background-color: $green-swamp;
+    }
+
+    .brown-div {
+      background-color: $brown;
+    }
+
+    .purple-div {
+      background-color: $purple;
+    }
+
+    .light-brown-div {
+      background-color: $brown-light;
+    }
+
+    .green-shrek-div {
+      background-color: $green-shrek;
+    }
+
+    .pink-div {
+      background-color: $pink;
+    }
+
+  }
 }
 
 
@@ -331,7 +367,7 @@ margin-bottom: 12px;
 }
 
 .canAd-text-container h1 span {
-margin-right: 0.2em;
+  margin-right: 0.2em;
 }
 
 .canAd-pic {

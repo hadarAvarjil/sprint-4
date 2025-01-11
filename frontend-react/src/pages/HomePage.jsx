@@ -122,18 +122,18 @@ export function HomePage() {
 
   <button class="home-carousel-arrow left">⬅</button>
   <div class="home-carousel">
-    <div class="popular-div light-green-div">Website Development<div className="pop-inner-pic website-development-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551937/website-development_gig20i.webp'}/></div></div>
-    <div class="popular-div orange-div">Logo Design <div className="pop-inner-pic logo-design-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551938/logo-design_xgy1r3.webp'}/></div></div>
-    <div class="popular-div dark-green-div">SEO <div className="pop-inner-pic seo-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551932/seo_dsq2bi.webp'}/></div></div>
-    <div class="popular-div purple-div">Archlterctur & Interior Design <div className="pop-inner-pic Archlterctur-Interior-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551927/architecture-design_jrrbas.webp'}/></div></div>
-    <div class="popular-div green-shrek-div">Social Media Marketing <div className="pop-inner-pic social-media-marketing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551929/social-media-marketing_iqwnam.webp'}/></div></div>
-    <div class="popular-div brown-div">Voice Over <div className="voice-over-img pop-inner-pic"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551933/voice-over_uhjbg2.webp'}/></div></div>
-    {/* <div class="Popular-div pink-div">UGC Videos <div className="pop-inner-pic ugc-videos-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/UGC_Video_img_zhwx4i.webp'}/></div></div>
-    <div class="Popular-div green-swamp-div">Software Development <div className="pop-inner-pic software-development-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/software-development_y9qxvb.webp'}/></div></div>
-    <div class="Popular-div light-brown-div">Data Science & ML <div className="pop-inner-pic data-science-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551930/data-science_nhnvos.webp'}/></div></div>
-    <div class="Popular-div green-shrek-div">Product Photography <div className="pop-inner-pic photography-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551931/product-photography_qofjrg.webp'}/></div></div>
-    <div class="Popular-div light-green-div">E-Commerce Marketing <div className="pop-inner-pic e-commerce-marketing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551934/e-commerce_ozwc08.webp'}/></div></div>
-    <div class="Popular-div pink-div">Video Editing <div className="pop-inner-pic video-editing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551935/video-editing_xcfy43.webp'}/></div></div> */}
+    <div class="popular-div light-green-div"><h3>Website Development</h3><div className="pop-inner-pic website-development-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551937/website-development_gig20i.webp'}/></div></div>
+    <div class="popular-div orange-div"><h3>Logo Design</h3> <div className="pop-inner-pic logo-design-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551938/logo-design_xgy1r3.webp'}/></div></div>
+    <div class="popular-div dark-green-div"><h3>SEO</h3> <div className="pop-inner-pic seo-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551932/seo_dsq2bi.webp'}/></div></div>
+    <div class="popular-div purple-div"><h3>Archlterctur & Interior Design</h3> <div className="pop-inner-pic Archlterctur-Interior-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551927/architecture-design_jrrbas.webp'}/></div></div>
+    <div class="popular-div green-shrek-div"><h3>Social Media Marketing</h3> <div className="pop-inner-pic social-media-marketing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551929/social-media-marketing_iqwnam.webp'}/></div></div>
+    <div class="popular-div brown-div"><h3>Voice Over</h3> <div className="voice-over-img pop-inner-pic"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551933/voice-over_uhjbg2.webp'}/></div></div>
+    {/* <div class="Popular-div pink-div"><h3>UGC Videos</h3> <div className="pop-inner-pic ugc-videos-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/UGC_Video_img_zhwx4i.webp'}/></div></div>
+    <div class="Popular-div green-swamp-div"><h3>Software Development</h3> <div className="pop-inner-pic software-development-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/software-development_y9qxvb.webp'}/></div></div>
+    <div class="Popular-div light-brown-div"><h3>Data Science & ML</h3> <div className="pop-inner-pic data-science-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551930/data-science_nhnvos.webp'}/></div></div>
+    <div class="Popular-div green-shrek-div"><h3>Product Photography</h3> <div className="pop-inner-pic photography-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551931/product-photography_qofjrg.webp'}/></div></div>
+    <div class="Popular-div light-green-div"><h3>E-Commerce Marketing </h3><div className="pop-inner-pic e-commerce-marketing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551934/e-commerce_ozwc08.webp'}/></div></div>
+    <div class="Popular-div pink-div"><h3>Video Editing </h3><div className="pop-inner-pic video-editing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551935/video-editing_xcfy43.webp'}/></div></div> */}
   </div>
   <button class="home-carousel-arrow-right" id="home-carousel-arrow-right">➡</button>
 </div>
