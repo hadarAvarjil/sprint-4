@@ -1,54 +1,54 @@
 .about-gig-seller {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-        "from member-since"
-        "avg-time last-delivery"
-        "languages languages";
-    gap: 1.5rem;
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 1px;
-    background-color: #fff;
-    max-width: 600px;
-    font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+      "from member-since"
+      "avg-time last-delivery"
+      "languages languages";
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  background-color: #fff;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
 
-    .gig-seller-row-from {
-        grid-area: from;
-    }
+  .gig-seller-row-from {
+      grid-area: from;
+  }
 
-    .gig-seller-row-member-since {
-        grid-area: member-since;
-    }
+  .gig-seller-row-member-since {
+      grid-area: member-since;
+  }
 
-    .gig-seller-row-avg {
-        grid-area: avg-time;
-    }
+  .gig-seller-row-avg {
+      grid-area: avg-time;
+  }
 
-    .gig-seller-row-last-delivery {
-        grid-area: last-delivery;
-    }
+  .gig-seller-row-last-delivery {
+      grid-area: last-delivery;
+  }
 
-    .gig-seller-row-languages {
-        grid-area: languages;
-    }
+  .gig-seller-row-languages {
+      grid-area: languages;
+  }
 
-    div {
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
+  div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
 
-        strong {
-            font-size: 0.85rem;
-            color: #666;
-            font-weight: normal;
-        }
+      strong {
+          font-size: 0.85rem;
+          color: #666;
+          font-weight: normal;
+      }
 
-        p {
-            font-size: 0.85rem;
-            color: #333;
-            font-weight: bold;
-            margin: 0;
-        }
-    }
+      p {
+          font-size: 0.85rem;
+          color: #333;
+          font-weight: bold;
+          margin: 0;
+      }
+  }
 }

@@ -1,0 +1,261 @@
+.gig-edit-container {
+    width: 100%;
+
+    .gig-edit {
+        p {
+            margin: 0;
+        }
+
+        form {
+            .form-inputs {
+                gap: 1em;
+                width: 100%;
+                background: $clrSecondary0;
+                border: 1px solid $clrSecondary4;
+                border-radius: 0.5em;
+
+                .input-group {
+                    gap: 1em;
+                    grid-template-columns: 1fr;
+
+                    .info {
+                        position: relative;
+                        gap: 0.25em;
+
+                        label {
+                            font-family: 'macan-bold';
+                        }
+
+                        p {
+                            font-size: 0.9em;
+                            color: $clrSecondary6;
+                        }
+
+                        .character-counter {
+                            position: absolute;
+                            bottom: 5px;
+                            right: 25px;
+                        }
+                    }
+
+                    input,
+                    textarea,
+                    select {
+                        min-height: 30px;
+                        height: fit-content;
+                        border: 1px solid $clrSecondary4;
+                        appearance: textfield;
+                        width: 100%;
+                        border-radius: 0.5em;
+                        padding: 0.25em 0.5em;
+
+                        &:focus {
+                            outline: none;
+                            border: 1px solid $clrSecondary5;
+                        }
+                    }
+
+                    .multi-select {
+                        max-height: 64px;
+                        padding: 0;
+                    }
+
+                    &:nth-of-type(4) {
+                        input {
+                            max-height: 30px;
+                            width: 90px;
+                        }
+                    }
+
+                    &:nth-of-type(5) {
+                        .info {
+                            gap: 0.5em;
+
+                            p {
+                                grid-column: 1 / -1;
+                            }
+
+                            .upload-preview {
+                                .file-upload-container {
+                                    height: 100%;
+
+                                    .custom-file-upload {
+                                        cursor: pointer;
+                                        background-color: #f0f0f0;
+                                        border: 1px solid #ddd;
+                                        border-radius: 0.5em;
+                                        transition: all 0.2s;
+                                        align-items: center;
+                                        justify-content: center;
+                                        height: 120px;
+                                        text-align: center;
+
+                                        &:hover {
+                                            background-color: #e0e0e0;
+                                            color: $bgColor5;
+                                        }
+
+                                        img {
+                                            border-radius: 0 0 0.5em 0.5em;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .actions {
+                justify-content: space-between;
+                gap: 1em;
+                width: 100%;
+                margin-block-end: 1em;
+
+                button {
+                    font-weight: bold;
+                    font-size: 1rem;
+                    padding: 0.75em;
+                    border-radius: 0.5em;
+                    transition: all 0.3s;
+                    gap: 0.25em;
+                    align-items: center;
+
+                    &:first-child {
+                        background: $clrSecondary3;
+                        color: $clrPrimary2;
+
+                        i {
+                            transform: rotate(90deg);
+                            margin-block-end: 2px;
+
+                            svg {
+                                fill: $clrPrimary2;
+                                transition: all 0.3s;
+                            }
+                        }
+
+                        &:hover {
+                            background: $clrSecondary6;
+                            color: $clrPrimary1;
+
+                            i {
+                                svg {
+                                    fill: $clr4;
+                                }
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        background: $bgColor2;
+                        color: $clrPrimary1;
+
+                        i {
+                            margin-block-end: 2px;
+
+                            svg {
+                                fill: $clrPrimary1;
+                                transition: all 0.3s;
+                            }
+                        }
+
+                        &:hover {
+                            color: $bgColor2;
+                            background: $clrSecondary1;
+
+                            i {
+                                svg {
+                                    fill: $clrPrimary2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .gig-preview-container {
+            background: $clrSecondary0;
+            border: 1px solid $clrSecondary4;
+            border-radius: 0.5em;
+            gap: 0.5em;
+            height: fit-content;
+
+            .gig-preview-header {
+                justify-content: space-between;
+
+                p {
+                    font-family: 'macan-bold';
+                }
+
+                h3 {
+                    color: $clrSecondary8;
+                }
+            }
+
+            .user-preview {
+                margin: 0.5em 0;
+            }
+
+            .gig-preview-images {
+                border-top: 1px solid $clrSecondary3;
+                border-bottom: 1px solid $clrSecondary3;
+
+                .images-selection {
+                    width: fit-content;
+
+                    img {
+                        object-fit: cover;
+                        aspect-ratio: 5/3;
+                        width: 20%;
+                        opacity: 0.6;
+                        padding: 1% 1% 1% 0;
+                        cursor: pointer;
+
+                        &:last-child {
+                            padding-inline-end: 0;
+                        }
+                    }
+                }
+            }
+
+            .gig-preview-filters {
+                margin-top: 2em;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1em;
+
+                h3 {
+                    grid-column: 1 / -1;
+                    color: $clrSecondary6;
+                }
+
+                .info {
+                    h4 {
+                        border-bottom: 1px solid $clrSecondary4;
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            h3,
+            h2,
+            p {
+                font-size: 20px;
+            }
+
+            h2 {
+                margin: auto;
+                font-size: 24px;
+            }
+
+            .gig-description {
+                color: $clrSecondary8;
+            }
+        }
+    }
+}

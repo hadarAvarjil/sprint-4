@@ -1,0 +1,128 @@
+.gig-results-title {
+  width: 100%;
+
+  .search-param {
+    h1 {
+      font-size: rem(28px);
+      font-family: 'macan-light';
+      font-weight: 400;
+      line-height: 36px;
+      color: $clrPrimary2;
+      padding: 1rem 0;
+    }
+  }
+
+  .explore-category {
+    padding: 0.75em 0;
+    color: $clrSecondary8;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      i {
+        display: block;
+      }
+    }
+
+    Link {
+      padding: rem(9px);
+    }
+
+    .divider {
+      color: $clrSecondary45;
+      margin: 0 0.5em;
+    }
+  }
+}
+
+.gig-filter {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  // background-color: $clrPrimary1;
+  padding-block-start: 1em;
+
+  .floating-top-bar {
+    display: flex;
+    gap: 0.5em;
+    .btn-mobile-filter {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 0.5em;
+      align-items: center;
+      border: 1px solid $clrSecondary45;
+      border-radius: rem(24px);
+      color: $clrPrimary2;
+      font-weight: 600;
+      font-size: 1rem;
+      background: none;
+      padding: rem(8px) rem(12px);
+      margin: 0.25em 0;
+      transition: border-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .clear-filter {
+      border-radius: 1.5em;
+      border: 1px solid $clrPrimary2;
+      padding: 0.5em 0.75em;
+      margin: 0.25em 0;
+      min-height: fit-content;
+    }
+
+    .floating-menu {
+      position: relative;
+    }
+
+    .filter-nav {
+      display: flex;
+
+      .btn {
+        span {
+          transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    height: 1em;
+    width: 100%;
+    // background-color: $clrPrimary1;
+  }
+}
+
+.selected-filters-wrapper {
+  width: 100%;
+
+  .selected-filters {
+    .select-filter {
+      background-color: $clrSecondary1;
+      border: none;
+      border-radius: 56px;
+      color: $clrPrimary2;
+      margin: 0 rem(10px) rem(10px) 0;
+      padding: 0.25em 1em;
+      transition: border-color 0.35s ease;
+      cursor: pointer;
+      font-family: 'macan-bold';
+      width: fit-content;
+      align-items: center;
+
+      .remove-icon {
+        svg {
+          fill: $clrSecondary6;
+        }
+
+        margin-left: 12px;
+        position: relative;
+      }
+    }
+
+    .select-filter:hover {
+      color: $clrSecondary6;
+    }
+  }
+}

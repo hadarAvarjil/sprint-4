@@ -121,7 +121,7 @@ const users = [
     _id: 'u101',
     fullName: 'Michael Johnson',
     avatar:
-      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/user5_q3foea.webp',
     username: 'michael123',
     password: '123',
     level: 'level 2',
@@ -129,14 +129,14 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
     _id: 'u102',
     fullName: 'Sarah Thompson',
     avatar:
-      'https://cdn.pixabay.com/photo/2017/09/12/22/49/avatar-2746943_960_720.png',
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/user6_kleh1k.webp',
     username: 'sarah123',
     password: '123',
     level: 'level 3',
@@ -144,14 +144,14 @@ const users = [
     isAdmin: false,
     ordersInQueue: 500,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
     _id: 'u103',
     fullName: 'James Smith',
     avatar:
-      'https://cdn.pixabay.com/photo/2016/03/31/19/57/avatar-1295404_960_720.png',
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/user2_ya4saz.webp',
     username: 'james123',
     password: '123',
     level: 'level 1',
@@ -159,14 +159,14 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'Italy',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
     _id: 'u104',
     fullName: 'Emily Davis',
     avatar:
-      'https://cdn.pixabay.com/photo/2021/08/12/14/47/woman-6547399_960_720.png',
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/User1_mvlgj7.webp',
     username: 'emily123',
     password: '123',
     level: 'level 2',
@@ -174,14 +174,14 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'France',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
     _id: 'u105',
     fullName: 'Robert Brown',
     avatar:
-      'https://cdn.pixabay.com/photo/2016/03/31/19/57/avatar-1295404_960_720.png',
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/user4_yak6fe.webp',
     username: 'robert123',
     password: '123',
     level: 'level 2',
@@ -189,7 +189,7 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
@@ -204,14 +204,14 @@ const users = [
     isAdmin: false,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'France',
     languages: ['English', 'Hebrew', 'Russian']
   },
   {
     _id: 'u107',
     fullName: 'Jane Foster',
     avatar:
-      'https://img.freepik.com/premium-photo/robot-face-with-green-eyes-black-face_14865-1671.jpg?w=2000',
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
     username: 'jane123',
     password: '123',
     level: 'level 1',
@@ -219,9 +219,25 @@ const users = [
     isAdmin: true,
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
-    from: 'United States',
+    from: 'France',
     languages: ['English', 'Hebrew', 'Russian']
   },
+  {
+    _id: 'u1011',
+    fullName: 'Coding Foster',
+    avatar:
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
+    username: 'jane123',
+    password: '123',
+    level: 'level 3',
+    rating: 4.2,
+    isAdmin: true,
+    ordersInQueue: 350,
+    createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
+    from: 'France',
+    languages: ['English', 'Hebrew', 'Italian']
+  },
+  
 ]
 
 _createUsers()

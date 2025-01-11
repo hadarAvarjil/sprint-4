@@ -1,0 +1,220 @@
+.profile-content {
+  align-items: center;
+  margin-block-end: 20px;
+  height: 100%;
+  width: 100%;
+  gap: 1em;
+  padding-inline-start: 1.25em;
+  color: $clrPrimary2;
+
+  .title {
+    width: 100%;
+  }
+
+  .user-gigs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+    height: 100%;
+
+    .carousel-container:hover~.preview-body .gig-title {
+      text-decoration: none;
+      color: $bgColor3;
+    }
+
+    .gig-changes {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.625em 0.75em;
+      border-block-start: 1px solid $clrSecondary14;
+
+      .gig-btns {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .gig-btn {
+          background-color: $clrPrimary1;
+
+          svg {
+            width: 16px;
+            height: 16px;
+            background-color: $clrPrimary1;
+            fill: $clrSecondary4;
+          }
+
+          :hover svg {
+            fill: $bgColor3;
+          }
+        }
+      }
+
+      .price {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: end;
+        font-size: 18px;
+        height: 100%;
+        color: $clrSecondary8;
+
+        .starting {
+          font-size: 10px;
+          font-weight: 700;
+          color: $clrSecondary5;
+          text-transform: uppercase;
+        }
+      }
+
+      &.right {
+        justify-content: end;
+      }
+    }
+  }
+
+  .profile {
+    padding: 0.75em;
+
+    .user-preview {
+      display: flex;
+      align-items: center;
+      height: 58px;
+      padding-block-end: 0.75em;
+      margin: 0;
+
+      .avatar-userProfile {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .name-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        margin-inline-start: 0.5em;
+
+        .user-level {
+          font-weight: 500;
+          color: $clrSecondary5;
+
+          &.top {
+            color: $clr7;
+          }
+        }
+      }
+    }
+
+    .gig-title {
+      overflow: hidden;
+      font-weight: 400;
+      word-wrap: break-word;
+      word-break: break-word;
+      color: $clrPrimary2;
+      margin-inline-end: 5px;
+      margin-block-end: 10px;
+
+      &:hover {
+        color: $bgColor3;
+        text-decoration: none;
+      }
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      color: $clrSecondary8;
+
+      svg {
+        margin-inline-end: 5px;
+      }
+
+      span {
+        height: fit-content;
+        font-weight: bold;
+      }
+
+      .reviews {
+        color: $clrSecondary6;
+        font-weight: 400;
+        margin: 0;
+        margin-inline-start: 0.25em;
+      }
+    }
+  }
+
+  .info-block {
+    border: 1px solid $clrSecondary14;
+    background-color: $clrPrimary1;
+
+    @media screen and (max-width: 900px) {
+      border: 0;
+    }
+
+
+    &.gig {
+      justify-content: center;
+      align-items: center;
+      // margin-top: -2.5em;
+
+      .gig-creation-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $clrPrimary2;
+        padding-block-start: 95px;
+        padding-block-end: 120px;
+        font-weight: 600;
+
+        &.old {
+          padding: 1em 0;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        button {
+          height: 65px;
+          width: 65px;
+          border-radius: 50%;
+          font-size: 36px;
+          padding: 0;
+          background-color: $clr2;
+        }
+
+        svg {
+          width: 250px;
+        }
+
+        .ready {
+          margin: 1.5em 0;
+          color: $clrSecondary8;
+        }
+
+        .become-seller {
+          text-align: center;
+          line-height: 1.5em;
+          padding: 9px 1.5em;
+          color: $clrPrimary1;
+          background-color: $bgColor3;
+          border-radius: 3px;
+          // margin-block-end: 0.5em;
+        }
+      }
+    }
+
+    &.seller {
+      width: 100%;
+    }
+  }
+
+  @media (max-width:900px) {
+    padding: 0;
+  }
+}

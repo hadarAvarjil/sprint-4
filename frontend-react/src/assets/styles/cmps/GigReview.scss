@@ -1,77 +1,157 @@
 .gig-review {
     border: 1px solid #ddd;
-    padding: 1rem;
-    margin-bottom: 1rem;
     border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
     background-color: #fff;
+    font-family: Arial, sans-serif;
 
     .review-header {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        margin-bottom: 16px;
 
         .reviewer-info {
             display: flex;
             align-items: center;
-            gap: 1rem;
 
             .reviewer-img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
+                margin-right: 16px;
                 object-fit: cover;
+                border: 2px solid #eee;
             }
 
             h4 {
+                font-size: 1.2rem;
+                font-weight: bold;
                 margin: 0;
+                color: #333;
             }
 
-            .review-country {
-                font-size: 0.9rem;
-                color: gray;
-            }
-        }
+            .country-info {
+                display: flex;
+                gap: 8px;
 
-        .repeat-client {
-            font-size: 0.9rem;
-            color: #444;
+                .review-country {
+                    margin-right: 8px;
+                    font-size: 0.9rem;
+                    color: #888;
+                    vertical-align: middle;
+                }
+
+                .reviewer-country-img {
+                    width: 25px;
+                    height: 16px;
+                    border-radius: 2px;
+                    object-fit: contain;
+                    display: inline-block;
+                    margin-top: 5px;
+                }
+            }
         }
     }
 
     .review-content {
-        margin-top: 1rem;
+        margin-bottom: 16px;
+
+        .rating-line {
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            margin-bottom: 8px;
+        }
 
         .review-rating {
-            font-size: 1.2rem;
-            color: #ffa500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+
+            .review-rating-label {
+                font-size: 1rem;
+                color: #333;
+            }
+
+            .circle-separator {
+                width: 4px;
+                height: 4px;
+                background-color: #888;
+                border-radius: 50%;
+                display: inline-block;
+            }
+
+            .stars {
+                font-size: 1.2rem;
+                margin-right: 12px;
+            }
 
             .review-date {
-                margin-left: 1rem;
                 font-size: 0.9rem;
-                color: gray;
+                color: #888;
             }
         }
 
         .review-text {
-            margin-top: 0.5rem;
             font-size: 1rem;
             line-height: 1.5;
+            color: #555;
         }
     }
 
     .review-footer {
-        margin-top: 1rem;
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        font-size: 0.9rem;
-        color: gray;
+        gap: 16px;
 
-        .review-price {
-            font-weight: bold;
+        .price-info,
+        .review-duration {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-info {
+            margin-right: 8px;
         }
 
         .review-duration {
-            font-style: italic;
+            margin-left: 8px;
+        }
+
+        .price-label,
+        .duration-label {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .vertical-line {
+            width: 3px;
+            height: 50%;
+            background-color: #ddd;
+            margin: 0 8px;
         }
     }
+}
+
+
+.review-list li {
+    grid-template-columns: 1fr 2.5em;
+    align-items: start;
+
+    >* {
+        grid-row: 1;
+    }
+
+    .actions {
+        grid-column: 2;
+
+        button {
+            margin: 0;
+        }
+    }
+
 }

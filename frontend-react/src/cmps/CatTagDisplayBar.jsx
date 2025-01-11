@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import SvgIcon from './SvgIcon.jsx'
 
-
-export function CategoryBreadcrumb({ isFrom, category, tag }) {
+export function CatTagDisplayBar({ isFrom, category, tag }) {
   return (
     <section className="explore-category flex">
       <Link to="/">
@@ -24,4 +23,3 @@ export function CategoryBreadcrumb({ isFrom, category, tag }) {
     </section>
   )
 }
-

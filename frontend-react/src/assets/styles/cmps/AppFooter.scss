@@ -1,4 +1,4 @@
-.app-footer{
+.app-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,15 +33,15 @@
     p {
         margin: 0;
     }
-    
+
     span {
         font-size: .8em;
-        
+
         &.local-services {
             // color: $clr1;
             color: black;
         }
-        
+
         &.remote-services {
             // color: $clr5;
             color: black;

@@ -1,18 +1,22 @@
 
 export function GigReview({ review }) {
     const {
-        userName,
+        username,
         imgUrl,
         country,
         rating,
-        createdAt,
-        txt,
-        priceRange,
+        createAt,
+        text,
+        price,
         duration,
     } = review
 
-    console.log('review', review);
-    
+
+    const flagImages = {
+        Germany: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736502946/flag_Germany_yebov4.png',
+        France: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736503610/Flag_France_s39umw.png',
+        Italy: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736503614/Flag_Italy_ws6uah.png',
+    }
 
     return (
         <div className="gig-review">
@@ -21,28 +25,43 @@ export function GigReview({ review }) {
                     <img
                         className="reviewer-img"
                         src={imgUrl || '/path/to/default-avatar.png'}
-                        alt={`${userName}'s profile`}
+                        alt={`${username}'s profile`}
                     />
                     <div>
-                        <h4>{userName}</h4>
-                        <p className="review-country">{country}</p>
+                        <h4>{username}</h4>
+                        <div class="country-info">
+                            <img
+                                className="reviewer-country-img"
+                                src={flagImages[country] || '/path/to/default-flag.png'}
+                                alt={`${country}'s flag`}
+                            />
+                            <p className="review-country">{country}</p>
+                        </div>
                     </div>
                 </div>
-                <span className="repeat-client">{/* Repeat Client Badge if applicable */}</span>
             </header>
-
             <div className="review-content">
+                <div className="rating-line"></div>
                 <div className="review-rating">
                     {'★'.repeat(rating)}{'☆'.repeat(5 - rating)}
-                    <span className="review-date">{new Date(createdAt).toLocaleDateString()}</span>
+                    <label className="review-rating-span">{rating}</label>
+                    <div className="circle-separator"></div>
+                    <span className="review-date">2 months ago</span>
                 </div>
-                <p className="review-text">{txt}</p>
+                <p className="review-text">{text}</p>
             </div>
 
             <footer className="review-footer">
-                <div className="review-price">₪{priceRange}</div>
-                <div className="review-duration">{duration}</div>
+                <div className="price-info">
+                    <span className="review-price">{price}</span>
+                    <label className="price-label">Price</label>
+                </div>
+                <div className="review-duration">
+                    <div className="vertical-line"></div>
+                    <span>{duration}</span>
+                    <label className="duration-label">Duration</label>
+                </div>
             </footer>
         </div>
-    );
+    )
 }
