@@ -14,7 +14,7 @@ import { ImageCarousel } from './ImageCarousel.jsx'
 import { loadReviews } from '../store/actions/review.actions.js'
 import { utilService } from '../services/util.service.js'
 
-export function GigPreview({ isFrom, gig }) {
+export function GigPreview({ isFrom, gig, suppressOwner = false}) {
   const navigate = useNavigate()
   const params = useParams()
   const loggedInUserId = params.id
@@ -30,13 +30,17 @@ export function GigPreview({ isFrom, gig }) {
   )
 
   useEffect(() => {
-    async function fetchOwnerDetails() {
-      const ownerData = await userService.getById(updatedGig.ownerId)
-      setOwner(ownerData)
+    if (!suppressOwner) {
+      async function fetchOwnerDetails() {
+        const ownerData = await userService.getById(updatedGig.ownerId)
+        setOwner(ownerData)
+      }
+      fetchOwnerDetails()
     }
     loadReviews()
-    fetchOwnerDetails()
-  }, [updatedGig.ownerId])
+  }, [updatedGig.ownerId, suppressOwner])
+
+  
 
   useEffect(() => {
     setIsLiked(loggedInUser && gig.likedByUsers.includes(loggedInUser._id))

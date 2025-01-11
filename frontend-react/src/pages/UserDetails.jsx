@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-
+import { GigPreview } from '../cmps/GigPreview.jsx';
+import { gigService } from '../services/gig/gig.service.local.js';
 import { loadUser } from '../store/actions/user.actions';
 import { store } from '../store/store';
 import { showSuccessMsg } from '../services/event-bus.service';
@@ -10,7 +11,30 @@ import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from
 export function UserDetails() {
   const params = useParams();
   const user = useSelector(storeState => storeState.userModule.watchedUser);
+  const [allGigs, setAllGigs] = useState([]); 
+  const [userGigs, setUserGigs] = useState([]);
 
+
+
+  useEffect(() => {
+
+    async function fetchAllGigs() {
+      try {
+        const gigs = await gigService.query(); 
+        setAllGigs(gigs);
+      } catch (err) {
+        console.error('Failed to load gigs:', err);
+      }
+    }
+    fetchAllGigs();
+  }, []);
+
+  useEffect(() => {
+    if (user && user._id) {
+      const filteredGigs = allGigs.filter((gig) => gig.ownerId === user._id); 
+      setUserGigs(filteredGigs);
+    }
+  }, [user, allGigs]);
   useEffect(() => {
     loadUser(params.id);
 
@@ -69,6 +93,15 @@ export function UserDetails() {
       <button className="contact-btn">Contact me</button>
       <p className="response-time">Average response time: 1 hour</p>
     </div>
+  </div>
+
+  <div className="user-gigs">
+    <h2>My Gigs</h2>
+    <ul className="gigs-list">
+      {userGigs.map((gig) => (
+        <GigPreview key={gig._id} gig={gig} isFrom="userProfile" suppressOwner={true} />
+      ))}
+    </ul>
   </div>
     </section>
   );
