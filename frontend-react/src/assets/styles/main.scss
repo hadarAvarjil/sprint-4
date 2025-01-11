@@ -14,7 +14,6 @@
 // @import "cmps/AppHeader";
 @import "cmps/AppHeaderExplor";
 @import "cmps/AppFooter"; //HA
-@import "cmps/WelcomeSection";
 @import "cmps/SearchBar";
 @import "cmps/LoginSignup";
 @import "cmps/ServicesCarousel";
@@ -41,8 +40,6 @@
 @import "cmps/UserPreview";
 @import "cmps/Pagination";
 
-@import "cmps/UserModal";
-@import "cmps/UserGigs";
 
 @import "cmps/ImageCarousel";
 @import "cmps/UserMsg";
@@ -57,6 +54,5 @@
 @import "pages/GigDetails";
 @import "pages/UserProfile";
 @import "pages/GigEdit";
-@import "pages/GigPurchase";
 @import "pages/SellerDashboard";
 @import "pages/BuyerDashboard.scss";
