@@ -103,37 +103,43 @@
 
     .review-footer {
         display: flex;
+        /* Arrange items in a row */
         align-items: center;
-        justify-content: space-between;
+        /* Vertically align items */
         gap: 16px;
+        /* Space between sections */
+    }
 
-        .price-info,
-        .review-duration {
-            display: flex;
-            flex-direction: column;
-        }
+    .price-info,
+    .review-duration {
+        display: flex;
+        flex-direction: column;
+    }
 
-        .price-info {
-            margin-right: 8px;
-        }
+    .vertical-line {
+        width: 1.5px;
+        height: 20px;
+        background-color: #ddd;
+        margin: -1.5px 8px;
+    }
 
-        .review-duration {
-            margin-left: 8px;
-        }
+    .review-price {
+        font-weight: bold;
+        font-size: 1rem;
+        color: #333;
+    }
 
-        .price-label,
-        .duration-label {
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 2px;
-        }
+    .price-label,
+    .duration-label {
+        font-size: 0.9rem;
+        color: #888;
+        margin-top: 4px;
+    }
 
-        .vertical-line {
-            width: 3px;
-            height: 50%;
-            background-color: #ddd;
-            margin: 0 8px;
-        }
+    .review-duration span {
+        font-weight: bold;
+        font-size: 1rem;
+        color: #333;
     }
 }
 
