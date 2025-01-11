@@ -93,7 +93,7 @@ export function ImageCarousel({
           } left`}
         onClick={(e) => prevImage(e)}
       >
-        <SvgIcon iconName={'leftArrow'} />
+        <SvgIcon iconName={'arrowDown'} />
       </button>
       <div className="carousel-wrapper">
         <div
@@ -140,7 +140,7 @@ export function ImageCarousel({
         className={"arrow right"}
         onClick={(e) => nextImage(e)}
       >
-        <SvgIcon iconName={'rightArrow'} /> 
+        <SvgIcon iconName={'arrowDown'} /> 
       </button>
       {isFrom !== 'gig-details' && (
         <ul className="dot-container">
