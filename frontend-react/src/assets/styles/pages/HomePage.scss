@@ -120,6 +120,76 @@
   background-color: $green-dark-hover;
 }
 
+.home-carousel-container{
+  width: 100%;
+  h1{
+    color: #404145;
+    font-size: 48px;
+    line-height: 50.4px;
+    letter-spacing: -1.44px;
+    text-align: start;
+  }
+  .home-carousel{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 22px;
+
+      .popular-div{
+        color: white;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        background-color: blue;
+   width: 15%;
+   height: calc(100vw * 0.174);
+padding: 6px;
+padding-top: 25px;
+margin-top: 12px;
+margin-bottom: 12px;
+   border-radius: 15px;
+   .pop-inner-pic{
+    position: absolute;
+    border-radius: 10%;
+    bottom: 6px;
+   }
+  }
+  .light-green-div{
+    background-color: $green-light;
+  }
+  .orange-div{
+    background-color: $orange;
+  }
+  .dark-green-div{
+    background-color: $green-dark;
+  }
+  .purple-div{
+    background-color: $purple;
+  }
+  .green-swamp-div{
+    background-color: $green-swamp;
+  }
+  .brown-div{
+    background-color: $brown;
+  }
+  .purple-div{
+    background-color: $purple;
+  }
+  .light-brown-div{
+    background-color: $brown-light;
+  }
+  .green-shrek-div{
+    background-color: $green-shrek;
+  }
+  .pink-div{
+    background-color: $pink;
+  }
+
+}
+}
+
+
+
 .cat-divs-container {
   display: flex;
   justify-content: space-between;
@@ -203,18 +273,18 @@
 .icons-divs-container {
   position: relative;
   display: flex;
-  margin-top: 30px;
+  margin-top: 64px;
+
 }
 
 .divs-container h1 {
-  position: absolute;
+  position: relative;
   font-weight: 400;
-  margin-bottom: 64px;
+
 }
 
 .icons-div {
   width: 30%;
-  margin-top: 30px;
 
 }
 
@@ -226,7 +296,7 @@
   padding-top: 40px;
   padding-bottom: 40px;
   justify-content: space-between;
-  height: 365px;
+  height: calc(100vw * 0.3626);
   width: 100%;
 }
 
