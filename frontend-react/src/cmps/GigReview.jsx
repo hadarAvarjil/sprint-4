@@ -41,7 +41,7 @@ export function GigReview({ review }) {
                 </div>
             </header>
             <div className="review-content">
-                <div class="rating-line"></div>
+                <div className="rating-line"></div>
                 <div className="review-rating">
                     {'★'.repeat(rating)}{'☆'.repeat(5 - rating)}
                     <label className="review-rating-span">{rating}</label>
