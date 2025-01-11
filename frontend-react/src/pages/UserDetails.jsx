@@ -1,44 +1,77 @@
-import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-import { loadUser } from '../store/actions/user.actions'
-import { store } from '../store/store'
-import { showSuccessMsg } from '../services/event-bus.service'
-import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
+import { loadUser } from '../store/actions/user.actions';
+import { store } from '../store/store';
+import { showSuccessMsg } from '../services/event-bus.service';
+import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service';
 
 export function UserDetails() {
-
-  const params = useParams()
-  const user = useSelector(storeState => storeState.userModule.watchedUser)
+  const params = useParams();
+  const user = useSelector(storeState => storeState.userModule.watchedUser);
 
   useEffect(() => {
-    loadUser(params.id)
+    loadUser(params.id);
 
-    socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
-    socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
+    socketService.emit(SOCKET_EMIT_USER_WATCH, params.id);
+    socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate);
 
     return () => {
-      socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
-    }
-
-  }, [params.id])
+      socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate);
+    };
+  }, [params.id]);
 
   function onUserUpdate(user) {
-    showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
-    store.dispatch({ type: 'SET_WATCHED_USER', user })
+    showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`);
+    store.dispatch({ type: 'SET_WATCHED_USER', user });
   }
 
+  if (!user) return <div>Loading...</div>;
+
   return (
-    <section className="user-details">
-      <h1>User Details</h1>
-      {user && <div>
-        <h3>
-          {user.fullname}
-        </h3>
-        <img src={user.imgUrl} style={{ width: '100px' }} />
-        <pre> {JSON.stringify(user, null, 2)} </pre>
-      </div>}
+    <section className="user-details-specific">
+   <div className="user-details-wrapper">
+    <div className="user-main-info">
+      <div className="user-header flex align-start">
+        <img
+          className="user-avatar-specific"
+          src={user.avatar}
+          alt={`${user.fullName}'s avatar`}
+        />
+        <div className="user-info">
+          <h1>{user.fullName}</h1>
+          <p className="username">@{user.username}</p>
+          <div className="rating">
+            <span>⭐ {user.rating}</span>
+            <span>({user.reviewsCount || 0})</span>
+            <span className="top-rated-badge">Top Rated ✦✦✦</span>
+          </div>
+          <p className="user-bio">{user.bio || "Rain, just rain"}</p>
+          <p className="user-location">
+            📍 {user.from} | 🗣️ {user.languages.join(', ')}
+          </p>
+        </div>
+      </div>
+
+      <div className="user-about">
+        <h2>About me</h2>
+        <p>{user.about || "No additional details provided."}</p>
+      </div>
+    </div>
+
+    <div className="user-contact-card">
+      <div className="contact-header">
+        <img className="avatar" src={user.avatar} alt="user-avatar" />
+        <h3>{user.fullName}</h3>
+        <p>Offline • {new Date().toLocaleTimeString()} local time</p>
+      </div>
+      <button className="contact-btn">Contact me</button>
+      <p className="response-time">Average response time: 1 hour</p>
+    </div>
+  </div>
     </section>
-  )
+  );
+  
+  
 }
