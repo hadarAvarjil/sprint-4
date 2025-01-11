@@ -105,7 +105,7 @@ function _createGigs() {
             rating: 5,
             text: "Fantastic work! Highly recommended.",
             duration: "5 days",
-            price: 27,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
 
           },
@@ -115,7 +115,7 @@ function _createGigs() {
             rating: 5,
             text: "Fantastic work! Highly recommended.",
             duration: "4 days",
-            price: 55,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
 
           },
@@ -125,7 +125,7 @@ function _createGigs() {
             rating: 5,
             text: "Fantastic work! Highly recommended.",
             duration: "6 days",
-            price: 57,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
 
           },
@@ -159,7 +159,7 @@ function _createGigs() {
             rating: 5,
             text: "Fantastic work! Highly recommended.",
             duration: "6 days",
-            price: 22,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
 
           },
@@ -169,7 +169,7 @@ function _createGigs() {
             rating: 5,
             text: "Fantastic work! Highly recommended.",
             duration: "11 days",
-            price: 27,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
           {
@@ -178,7 +178,7 @@ function _createGigs() {
             rating: 5,
             text: "Fantastic work! Highly recommended.",
             duration: "15 days",
-            price: 20,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
@@ -203,7 +203,7 @@ function _createGigs() {
             rating: 4.5,
             text: "Great templates for my online store.",
             duration: "10 days",
-            price: 120,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
@@ -231,7 +231,7 @@ function _createGigs() {
             rating: 4,
             text: "Informative and SEO-friendly articles.",
             duration: "12 days",
-            price: 220,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
@@ -260,7 +260,7 @@ function _createGigs() {
             rating: 5,
             text: "Beautiful custom song for our wedding.",
             duration: "10 days",
-            price: 230,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
@@ -289,7 +289,7 @@ function _createGigs() {
             rating: 5,
             text: "Amazing 3D animations for our marketing video.",
             duration: "6 days",
-            price: 250,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
@@ -318,7 +318,7 @@ function _createGigs() {
             rating: 5,
             text: "Sophie's coaching was transformative for my business.",
             duration: "3 days",
-            price: 200,
+            price: '$100 - $200',
             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })
           },
         ],
