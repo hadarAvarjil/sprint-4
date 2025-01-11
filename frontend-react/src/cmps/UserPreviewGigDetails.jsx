@@ -30,12 +30,13 @@ export function UserPreviewGigDetails({ owner, gig }) {
                         {user.isTopRated && (
                             <span className="top-rated-badge">Top Rated ✦✦✦</span>
                         )}
+                        <div class="line-divider"></div>
+                        {user.ordersInQueue && (
+                            <span className="orders-queue">
+                                {user.ordersInQueue} orders in queue
+                            </span>
+                        )}
                     </div>
-                    {user.ordersInQueue && (
-                        <span className="orders-queue">
-                            {user.ordersInQueue} orders in queue
-                        </span>
-                    )}
                     <div className="user-info-row flex align-center">
                         <span className="user-role">Graphic Designer</span>
                         <div className="rating flex align-center">

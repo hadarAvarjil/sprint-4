@@ -29,7 +29,7 @@ export function GigReview({ review }) {
                     />
                     <div>
                         <h4>{username}</h4>
-                        <div class="country-info">
+                        <div className="country-info">
                             <img
                                 className="reviewer-country-img"
                                 src={flagImages[country] || '/path/to/default-flag.png'}
