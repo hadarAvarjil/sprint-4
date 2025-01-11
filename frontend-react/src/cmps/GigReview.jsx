@@ -29,26 +29,38 @@ export function GigReview({ review }) {
                     />
                     <div>
                         <h4>{username}</h4>
-                        <p className="review-country">{country}</p>
-                        <img
-                            className="reviewer-country-img"
-                            src={flagImages[country] || '/path/to/default-flag.png'}
-                            alt={`${country}'s flag`}
-                        />
+                        <div class="country-info">
+                            <img
+                                className="reviewer-country-img"
+                                src={flagImages[country] || '/path/to/default-flag.png'}
+                                alt={`${country}'s flag`}
+                            />
+                            <p className="review-country">{country}</p>
+                        </div>
                     </div>
                 </div>
             </header>
             <div className="review-content">
+                <div class="rating-line"></div>
                 <div className="review-rating">
                     {'★'.repeat(rating)}{'☆'.repeat(5 - rating)}
-                    <span className="review-date">{createAt}</span>
+                    <label className="review-rating-span">{rating}</label>
+                    <div className="circle-separator"></div>
+                    <span className="review-date">2 months ago</span>
                 </div>
                 <p className="review-text">{text}</p>
             </div>
 
             <footer className="review-footer">
-                <div className="review-price">₪ {price}</div>
-                <div className="review-duration">{duration}</div>
+                <div className="price-info">
+                    <span className="review-price">{price}</span>
+                    <label className="price-label">Price</label>
+                </div>
+                <div className="review-duration">
+                    <div className="vertical-line"></div>
+                    <span>{duration}</span>
+                    <label className="duration-label">Duration</label>
+                </div>
             </footer>
         </div>
     )
