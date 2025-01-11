@@ -69,7 +69,7 @@ export function GigDetails() {
             />
 
             <div className='about-gig'>
-              <h3 className='gig-details-header-About-Gig'>About This Gig</h3>
+              <h3 className='gig-details-header-About-Gig'>About this gig</h3>
               <p className='gig-description' > {gig.description}</p>
             </div>
 
