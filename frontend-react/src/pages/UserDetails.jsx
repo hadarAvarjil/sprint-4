@@ -209,12 +209,12 @@ export function UserDetails() {
   {ratingStats.totalReviews > 0 && (
     <div className="reviews-summary">
       <div className="average-rating">
-        <span className="rating-number">{ratingStats.averageRating.toFixed(1)}</span>
+        {/* <span className="rating-number">{ratingStats.averageRating.toFixed(1)}</span> */}
         <span className="stars">
           {'★'.repeat(Math.round(ratingStats.averageRating))}
           {'☆'.repeat(5 - Math.round(ratingStats.averageRating))}
         </span>
-        <p>{ratingStats.totalReviews} Reviews</p>
+        {/* <p>{ratingStats.totalReviews} Reviews</p> */}
       </div>
       <div className="stars-breakdown">
         {ratingStats.starCounts.map((count, index) => (
