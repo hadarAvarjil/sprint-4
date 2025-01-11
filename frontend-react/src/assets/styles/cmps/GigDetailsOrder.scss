@@ -1,12 +1,14 @@
 .gig-details-order {
+    position: sticky;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-height: 40%;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    top: 50px;
 
     .tabs {
         display: flex;
@@ -136,6 +138,80 @@
 
             &:hover {
                 text-decoration: underline;
+            }
+        }
+    }
+}
+
+.tab-content {
+    padding: 16px;
+    background-color: #fff;
+
+    .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+    }
+
+    .description {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 16px;
+        line-height: 1.5;
+    }
+
+    .details-container {
+        display: flex;
+        /* Align items horizontally */
+        gap: 16px;
+        /* Add space between delivery and revisions */
+        align-items: center;
+        /* Vertically center icons and text */
+        margin-bottom: 16px;
+
+        .detail-item {
+            display: flex;
+            /* Align icon and text in a row */
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+
+            svg {
+                margin-right: 8px;
+                /* Add space between icon and text */
+                color: #0073e6;
+                /* Icon color */
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .button-container {
+        text-align: center;
+        /* Center align the button */
+        margin-top: 16px;
+
+        .continue-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            font-size: 1rem;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #333;
+            }
+
+            svg {
+                margin-left: 8px;
+                font-size: 1rem;
             }
         }
     }

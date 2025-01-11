@@ -56,8 +56,8 @@ export function GigReview({ review }) {
                     <span className="review-price">{price}</span>
                     <label className="price-label">Price</label>
                 </div>
+                <div className="vertical-line"></div>
                 <div className="review-duration">
-                    <div className="vertical-line"></div>
                     <span>{duration}</span>
                     <label className="duration-label">Duration</label>
                 </div>
