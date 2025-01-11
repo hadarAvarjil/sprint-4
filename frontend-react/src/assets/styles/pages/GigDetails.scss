@@ -1,6 +1,8 @@
 .gig-details {
   max-width: 1304px;
   // color: $clrPrimary2;
+ 
+    
 
   main {
     // background-color: $clrPrimary1;
@@ -59,6 +61,179 @@
     }
   }
 }
+
+.user-details-specific {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  gap: 20px;
+  margin-left: 17.5%;
+  padding: 20px;
+  background-color: $clrPrimary1;
+  border-radius: 10px;
+
+  .user-details-wrapper {
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+  }
+
+  .user-main-info {
+    flex: 3;
+  }
+
+  .user-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .user-avatar-specific {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 2px solid $clrSecondary4;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: bold;
+        color: $clrSecondary8;
+      }
+
+      .username {
+        font-size: 1rem;
+        color: $clrSecondary6;
+        margin: 5px 0;
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
+
+        span {
+          color: $clrSecondary8;
+
+          &:nth-child(1) {
+            font-weight: bold;
+            color: gold;
+          }
+
+          &:nth-child(3) {
+            background-color: $clrSecondary4;
+            padding: 2px 5px;
+            border-radius: 5px;
+            color: $clrSecondary8;
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      .user-bio {
+        font-size: 0.9rem;
+        color: $clrSecondary6;
+        margin: 10px 0;
+      }
+
+      .user-location {
+        display: flex;
+        gap: 10px;
+        font-size: 0.9rem;
+        color: $clrSecondary8;
+
+        span {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .user-about {
+    margin-top: 20px;
+
+    h2 {
+      font-size: 1.4rem;
+      color: $clrSecondary8;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $clrSecondary6;
+    }
+  }
+
+  .user-contact-card {
+    flex: 1.5;
+    margin-top: 10%;
+    background-color: $clrPrimary1;
+    padding: 20px;
+    
+    border: 1px solid $clrSecondary4;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
+
+    .contact-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+
+      .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: $clrSecondary8;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $clrSecondary6;
+      }
+    }
+
+    .contact-btn {
+      width: 100%;
+      background-color: $clrPrimary2;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+
+      &:hover {
+        background-color: darken($clrPrimary2, 10%);
+      }
+    }
+
+    .response-time {
+      font-size: 0.8rem;
+      color: $clrSecondary6;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}
+
+
 
 .mini-message-bar {
   bottom: 3.5em;
