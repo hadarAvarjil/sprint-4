@@ -231,6 +231,91 @@
       margin-top: 10px;
     }
   }
+  .gigs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1200px; /* מגביל את הרוחב של הגיגים לרוחב העמוד */
+
+    .gig-preview {
+      max-width: 300px; /* רוחב מקסימלי לכל גיג */
+      margin: 0 auto; /* מרכז את הגיגים ברשת */
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+        width: 100%;
+        height: 180px; 
+        object-fit: cover; 
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .preview-body {
+        padding: 15px;
+
+        .gig-title {
+            font-size: 1.1rem; 
+          font-weight: normal;
+          color: #333;
+          margin-bottom: 10px;
+          text-decoration: none;
+          line-height: 1.4;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .gig-price {
+          font-size: 1rem;
+          font-weight: 700;
+          color: #27ae60;
+          margin-top: 10px;
+        }
+
+        .rating {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          font-size: 0.9rem;
+          color: #f1c40f;
+
+          .reviews {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            color: #888;
+          }
+        }
+      }
+
+      .heart {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #fff;
+        border-radius: 50%;
+        padding: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+
+        svg {
+          fill: #e74c3c;
+        }
+      }
+    }
+  }
 }
 
 
