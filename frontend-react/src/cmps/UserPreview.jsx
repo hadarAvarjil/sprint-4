@@ -72,26 +72,7 @@ export function UserPreview({ isFrom, owner, children }) {
                 {user.level}
               </span>}
           </span>
-          {isFrom === 'gig-details-2' && (
-            <span className="saying">
-              {`Work Hard\, Work Fast and Cater Your needs as imagined`}
-            </span>
-          )}
-          {(isFrom === 'gig-details' || isFrom === 'gig-details-2') && (
-            <div className="rating-order-wrapper">
-              <span className="rating-score flex">
-                <SvgIcon iconName="star" />
-                <span className="rate b" title='user rating'>{user.rating}</span>
-                <span className="rate-count"> {`(${ratingCount})`}</span>
-              </span>
-              {isFrom === 'gig-details' && (
-                <span className="active-orders" title='active orders'>
-                  {`${completedOrders} Order${completedOrders !== 1 ? 's' : ''} in Queue`}
-                </span>
-              )}
-            </div>
-          )}
-        </div>
+              </div>
         {isFrom === 'explore' &&
           <span className="level flex row" data-level={user.level} title='user level'>
             {user.level === 'Pro Talent' && <SvgIcon iconName="customCheckMarkSunIcon" />}

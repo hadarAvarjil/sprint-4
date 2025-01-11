@@ -5,7 +5,7 @@ import { useModal } from '../customHooks/ModalContext.jsx'
 import { useDeviceType } from '../customHooks/DeviceTypeContext.jsx'
 
 import { gigService } from '../services/gig.service'
-import { userService } from '../services/user/user.service.local.js' 
+import { userService } from '../services/user/user.service.local.js'
 import { removeGig } from '../store/actions/gig.actions.js'
 
 import SvgIcon from './SvgIcon.jsx'
@@ -14,7 +14,7 @@ import { ImageCarousel } from './ImageCarousel.jsx'
 import { loadReviews } from '../store/actions/review.actions.js'
 import { utilService } from '../services/util.service.js'
 
-export function GigPreview({ isFrom, gig, suppressOwner = false}) {
+export function GigPreview({ isFrom, gig, suppressOwner = false }) {
   const navigate = useNavigate()
   const params = useParams()
   const loggedInUserId = params.id
@@ -40,7 +40,7 @@ export function GigPreview({ isFrom, gig, suppressOwner = false}) {
     loadReviews()
   }, [updatedGig.ownerId, suppressOwner])
 
-  
+
 
   useEffect(() => {
     setIsLiked(loggedInUser && gig.likedByUsers.includes(loggedInUser._id))
