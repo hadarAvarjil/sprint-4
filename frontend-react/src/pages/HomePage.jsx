@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { AddImg } from "../cmps/AddImg.jsx";
+
 
 export function HomePage() {
   // const myImg='src\services\imgs\design.imgs\ad.jpeg'
@@ -10,37 +12,57 @@ export function HomePage() {
   };
   return (
     <section>
-      {/* <div className="tester-div">kdsmsvmdfokvkmdf</div> */}
+
+
+
+      <div className="green-search-div">
+      <div className="pinkGuy-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736532566/pinkGuy_olm97w.png'}/></div>
+      <div className="yellowGirl-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736540342/yellowGirl-img_ibw5hf.png'}/></div>
+      <div className="purpleGuy-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736540770/purpleGuy-img_xhgyeo.png'}/></div>
+      <div className="greenGirl-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736539911/greenGirl_dusi9w.png'}/></div>
+      <div className="blurredGirl-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736543803/blurred_v7mnmx.png'}/></div>
+      <div className="trustedBy-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736548563/trustedBy-img_q3gqes.png'}/></div>
+      <div className="green-search-div-inner-box"><h1>Scale your professional <br/> workforce with <span>freelancers</span></h1>
+      
+      <div className="search-bar-div">
+      <input type="search" class="long-placeholder"  placeholder="Search for any service..." value=""></input>
+      <div className="search-btn">
+      <div className="big-search-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736546208/big-search_e0nw3p.svg'}/></div>
+      </div>
+      </div>
+      </div>
+      </div>
+
       <div className="cat-divs-container">
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\programming.svg"
             alt=""
-          />{" "}
+          />
           Programming & Tech
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\graphics.svg"
             alt=""
-          />{" "}
+          />
           Graphic & Design
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\marketing.svg"
             alt=""
-          />{" "}
+          />
           Digital Marketing
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\translation.svg"
@@ -49,60 +71,80 @@ export function HomePage() {
           Writing & Translation
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\animation.svg"
             alt=""
-          />{" "}
+          />
           Video &Animation
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\ai.svg"
             alt=""
-          />{" "}
+          />
           AI Services
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\music.svg"
             alt=""
-          />{" "}
+          />
           Music & Audio
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\consulting.svg"
             alt=""
-          />{" "}
+          />
           Consulting
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          {" "}
+          
           <img
             style={{ width: "29px" }}
             src="src\services\imgs\design.imgs\business.svg"
             alt=""
-          />{" "}
+          />
           Business
         </div>
       </div>
 
+      <div class="home-carousel-container">
+<h1> Popular Services</h1>
+
+  <button class="home-carousel-arrow left">⬅</button>
+  <div class="home-carousel">
+    <div class="popular-div light-green-div">Website Development<div className="pop-inner-pic website-development-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551937/website-development_gig20i.webp'}/></div></div>
+    <div class="popular-div orange-div">Logo Design <div className="pop-inner-pic logo-design-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551938/logo-design_xgy1r3.webp'}/></div></div>
+    <div class="popular-div dark-green-div">SEO <div className="pop-inner-pic seo-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551932/seo_dsq2bi.webp'}/></div></div>
+    <div class="popular-div purple-div">Archlterctur & Interior Design <div className="pop-inner-pic Archlterctur-Interior-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551927/architecture-design_jrrbas.webp'}/></div></div>
+    <div class="popular-div green-shrek-div">Social Media Marketing <div className="pop-inner-pic social-media-marketing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551929/social-media-marketing_iqwnam.webp'}/></div></div>
+    <div class="popular-div brown-div">Voice Over <div className="voice-over-img pop-inner-pic"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551933/voice-over_uhjbg2.webp'}/></div></div>
+    {/* <div class="Popular-div pink-div">UGC Videos <div className="pop-inner-pic ugc-videos-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/UGC_Video_img_zhwx4i.webp'}/></div></div>
+    <div class="Popular-div green-swamp-div">Software Development <div className="pop-inner-pic software-development-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/software-development_y9qxvb.webp'}/></div></div>
+    <div class="Popular-div light-brown-div">Data Science & ML <div className="pop-inner-pic data-science-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551930/data-science_nhnvos.webp'}/></div></div>
+    <div class="Popular-div green-shrek-div">Product Photography <div className="pop-inner-pic photography-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551931/product-photography_qofjrg.webp'}/></div></div>
+    <div class="Popular-div light-green-div">E-Commerce Marketing <div className="pop-inner-pic e-commerce-marketing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551934/e-commerce_ozwc08.webp'}/></div></div>
+    <div class="Popular-div pink-div">Video Editing <div className="pop-inner-pic video-editing-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551935/video-editing_xcfy43.webp'}/></div></div> */}
+  </div>
+  <button class="home-carousel-arrow-right" id="home-carousel-arrow-right">➡</button>
+</div>
+
       <div style={{ backgroundColor: "#FFF6F2" }} className="canAd-container">
         <div className="canAd-text-container">
           <h1 style={{ color: "#222325", fontWeight: "150" }}>
-            <span style={{ fontWeight: "600", fontSize: "35px" }}>
-              {" "}
+            <span style={{ fontWeight: "600"}}>
               gigster
-            </span>{" "}
-            logo maker.
+            </span>
+              logo maker.
           </h1>
           <p style={{ color: "#404145", maxWidth: "1336px" }}>
             Make an incredible <br />
@@ -112,7 +154,7 @@ export function HomePage() {
             className="can-blk-btn"
             onClick={() => handleNavigation("/gig")}
           >
-            {" "}
+            
             Try Fiverr Logo Maker
           </button>
         </div>
@@ -124,16 +166,6 @@ export function HomePage() {
         />
       </div>
 
-      {/* <div style={{backgroundColor:'#4d1727', fontFamily:
-'Macan, "Helvetica Neue", Helvetica, Arial, sans-serif', fontSize:'16px', lineHeight:'26px'}}>fiverr Make it all happen with freelancers</div>   
-             */}
-      {/* <div className="ad-pro"
-    ><img 
-    src="src\services\imgs\design.imgs\ad.jpeg"  
-    style={{ width: "100%" }}
-  />
-      <button className="blk-btn" onClick={() => handleNavigation('about')}>Try Now</button>
-    </div> */}
 
       <div className="divs-container">
         <h1> Make it all happen with freelancers</h1>
@@ -184,21 +216,14 @@ export function HomePage() {
         </button>
       </div>
 
-      {/* <div style={{backgroundColor:'blue'}} className="try-now-ad"> 
-<h1>div try now --- lead to explore</h1>
-<button>try now </button>
-</div> */}
+
 
       <div className="purple-signup-ad">
         <h1>
-          {" "}
-          Freelance services at your <span>fingertips</span>{" "}
+          
+          Freelance services at your <span>fingertips</span>
         </h1>
 
-        {/* <img 
-    src="src\services\imgs\design.imgs\signup.jpeg"  
-    style={{ width: "100%" }}
-  /> */}
         <button
           style={{ width: "115px", height: "41px" }}
           className="white-join-btn"

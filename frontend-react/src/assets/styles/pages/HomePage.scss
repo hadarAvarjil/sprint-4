@@ -1,11 +1,194 @@
 .green-search-div {
+  margin-top: 40px;
   margin-bottom: 16px;
   background-color: #013A12;
   width: 100%;
-  height: 350px;
+
   border-radius: 15px;
   z-index: 999;
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  height: calc(100vw * 0.5);
+  max-height: 500px;
+  justify-content: center;
+  color: white;
+
+  .pinkGuy-img {
+    position: absolute;
+    border-radius: 10px;
+    width: 11%;
+    right: 4%;
+    top: 13%;
+  }
+  .yellowGirl-img{
+    position: absolute;
+    border-radius: 15px;
+    width: 12%;
+    left: 7.5%;
+    top: -0.1%;
+  }
+  .purpleGuy-img{
+    position: absolute;
+    border-radius: 15px;
+    width: 9.8%;
+    left: 4%;
+    bottom: 7.5%;
+  }
+  .greenGirl-img{
+    position: absolute;
+    border-radius: 15px;
+    width: 9.3%;
+    right: 7.5%;
+    bottom: 0%;
+  }
+  .blurredGirl-img{
+    position: absolute;
+    width: 8%;
+    right: 22.5%;
+    top: 0%;
+  }
+  .trustedBy-img{
+    position: absolute;
+    width: 60%;
+    left: 19%;
+    bottom: -0.31%;
+  }
+  .green-search-div-inner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1{
+      font-family: $fiverr-defult-font;
+      font-size: 60px;
+      line-height: 69px;
+      text-align: center;
+      letter-spacing: -1.2px;
+      span{
+        // background-color: black;
+    font-size: 62px;
+    line-height: 72px;
+    letter-spacing: 1.55px;
+    font-family: $fiverr-leaning-font;
+      }
+      
+    }
+  }
+  .search-bar-div{
+    background-color: white;
+    // padding: 10px;
+    width: 93%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    justify-items: center;
+    border-radius: 10px;
+    padding-left: 10px;
+    gap: 0px;
+    input{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border: white;
+    }
+    input:focus {
+      outline: none;
+    }
+    .search-btn{
+      width: 11%;
+      background-color: white;
+      height: 100%;
+      margin: 0;
+      border: white;
+      border-style: solid;
+      border-radius: 20px;
+      border-width: 5px;
+      padding: 5px;
+    }
+  }
 }
+.big-search-img{
+  background-color: $green-dark;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+.big-search-img:hover{
+  background-color: $green-dark-hover;
+}
+
+.home-carousel-container{
+  width: 100%;
+  h1{
+    color: #404145;
+    font-size: 48px;
+    line-height: 50.4px;
+    letter-spacing: -1.44px;
+    text-align: start;
+  }
+  .home-carousel{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 22px;
+
+      .popular-div{
+        color: white;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        background-color: blue;
+   width: 15%;
+   height: calc(100vw * 0.174);
+padding: 6px;
+padding-top: 25px;
+margin-top: 12px;
+margin-bottom: 12px;
+   border-radius: 15px;
+   .pop-inner-pic{
+    position: absolute;
+    border-radius: 10%;
+    bottom: 6px;
+   }
+  }
+  .light-green-div{
+    background-color: $green-light;
+  }
+  .orange-div{
+    background-color: $orange;
+  }
+  .dark-green-div{
+    background-color: $green-dark;
+  }
+  .purple-div{
+    background-color: $purple;
+  }
+  .green-swamp-div{
+    background-color: $green-swamp;
+  }
+  .brown-div{
+    background-color: $brown;
+  }
+  .purple-div{
+    background-color: $purple;
+  }
+  .light-brown-div{
+    background-color: $brown-light;
+  }
+  .green-shrek-div{
+    background-color: $green-shrek;
+  }
+  .pink-div{
+    background-color: $pink;
+  }
+
+}
+}
+
+
 
 .cat-divs-container {
   display: flex;
@@ -83,24 +266,25 @@
 }
 
 .signup-ad h1 {
-  position: absolute;
+  position: relative;
 }
 
 
 .icons-divs-container {
   position: relative;
   display: flex;
-  margin-top: 30px;
+  margin-top: 64px;
+
 }
 
 .divs-container h1 {
-  position: absolute;
-  font-weight: 400
+  position: relative;
+  font-weight: 400;
+
 }
 
 .icons-div {
   width: 30%;
-  margin-top: 30px;
 
 }
 
@@ -109,6 +293,11 @@
   margin-top: 50px;
   margin-bottom: 50px;
   flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  justify-content: space-between;
+  height: calc(100vw * 0.3626);
+  width: 100%;
 }
 
 .icons-div img {
@@ -142,7 +331,7 @@
 }
 
 .canAd-text-container h1 span {
-  font-weight: 800;
+margin-right: 0.2em;
 }
 
 .canAd-pic {
