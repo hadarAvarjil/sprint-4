@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
+import { useLocation } from 'react-router-dom';
+
 
 import { HomePage } from './pages/HomePage'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
@@ -11,6 +13,7 @@ import { AdminIndex } from './pages/AdminIndex.jsx'
 import { GigDetails } from './pages/GigDetails.jsx'
 import { UserDetails } from './pages/UserDetails'
 
+import { HomeAppHeader } from './cmps/HomeAppHeader.jsx'
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { UserMsg } from './cmps/UserMsg.jsx'
@@ -19,9 +22,14 @@ import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
 
 export function RootCmp() {
+    const location = useLocation();
     return (
         <div className="main-container">
-            <AppHeader />
+   {/* Conditionally render the AppHeader based on the current route */}
+   {location.pathname === '/' ? <HomeAppHeader /> : <AppHeader />}
+           
+            {/* <HomeAppHeader/> */}
+            {/* <AppHeader /> */}
             <UserMsg />
 
             <main>
