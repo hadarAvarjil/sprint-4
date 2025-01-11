@@ -130,7 +130,8 @@ const users = [
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'Germany',
-    languages: ['English', 'Hebrew', 'Russian']
+    languages: ['English', 'Hebrew', 'Russian'],
+    isTopRated: true,
   },
   {
     _id: 'u102',
@@ -145,7 +146,8 @@ const users = [
     ordersInQueue: 500,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'Germany',
-    languages: ['English', 'Hebrew', 'Russian']
+    languages: ['English', 'Hebrew', 'Russian'],
+    isTopRated: true,
   },
   {
     _id: 'u103',
@@ -160,7 +162,8 @@ const users = [
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'Italy',
-    languages: ['English', 'Hebrew', 'Russian']
+    languages: ['English', 'Hebrew', 'Russian'],
+    isTopRated: true,
   },
   {
     _id: 'u104',
@@ -175,7 +178,8 @@ const users = [
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'France',
-    languages: ['English', 'Hebrew', 'Russian']
+    languages: ['English', 'Hebrew', 'Russian'],
+    isTopRated: true,
   },
   {
     _id: 'u105',
@@ -190,7 +194,8 @@ const users = [
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'Germany',
-    languages: ['English', 'Hebrew', 'Russian']
+    languages: ['English', 'Hebrew', 'Russian'],
+    isTopRated: true,
   },
   {
     _id: 'u106',
@@ -205,7 +210,8 @@ const users = [
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'France',
-    languages: ['English', 'Hebrew', 'Russian']
+    languages: ['English', 'Hebrew', 'Russian'],
+    isTopRated: true,
   },
   {
     _id: 'u107',
@@ -220,7 +226,8 @@ const users = [
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'France',
-    languages: ['English', 'Hebrew', 'Russian']
+    languages: ['English', 'Hebrew', 'Russian'],
+    isTopRated: true,
   },
   {
     _id: 'u1011',
@@ -235,7 +242,8 @@ const users = [
     ordersInQueue: 350,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'France',
-    languages: ['English', 'Hebrew', 'Italian']
+    languages: ['English', 'Hebrew', 'Italian'],
+    isTopRated: true,
   },
   
 ]

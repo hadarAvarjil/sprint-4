@@ -2,6 +2,7 @@
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
+    font-family: 'macan-bold', sans-serif;
 
     .avatar {
         width: 60px;
@@ -26,21 +27,31 @@
             .fullname {
                 font-size: 1.2rem;
                 font-weight: bold;
-                color: #1c1e1e;
+                color: #404145;
+                cursor: pointer;
+                font-weight: 700;
+                margin-right: 8px;
             }
 
             .top-rated-badge {
                 background-color: #ffebcd;
                 color: #a0522d;
-                font-size: 0.85rem;
+                font-size: rem(12px);
                 font-weight: bold;
-                padding: 0.2rem 0.4rem;
+                padding: 0.1rem 0.1rem;
                 border-radius: 5px;
             }
         }
 
+        .line-divider {
+            width: 1px; 
+            height: 24px; 
+            background-color: #ddd; 
+            margin: 0 8px; 
+        }
+
         .orders-queue {
-            font-size: 0.85rem;
+            font-size: rem(16px);
             color: #6f6f6e;
             margin-top: 0rem;
         }
@@ -87,7 +98,7 @@
                 }
 
                 .reviews-count {
-                    font-size: 0.9rem;
+                    font-size: rem(16px);
                     color: #888;
                     text-decoration: underline;
                 }

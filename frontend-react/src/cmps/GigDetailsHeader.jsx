@@ -6,7 +6,7 @@ export function GigDetailsHeader({ gig, owner }) {
 
     return (
         <section className="gig-details-header">
-            <div className="gig-tags">
+            <div className="gig-tags flex">
                 <span className="home-icon">
                     <SvgIcon iconName="homeBlack" />
                     <span className="separator"> / </span>

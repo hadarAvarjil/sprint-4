@@ -54,28 +54,32 @@ export function GigDetails() {
 
   return (
     <section className="gig-details grid">
-    {gig && (
-      <>
-        <main>
-          <GigDetailsHeader
-            gig={gig}
-            owner={gigOwner}
-          />
-          <ImageCarousel
-            images={gig.imgUrls || []}
-            gigId={gig._id}
-            newImgIndex={newImgIndex}
-            setNewImgIndex={setNewImgIndex}
-          />
-  
-          <h3>About This Gig</h3>
-          <p>{gig.description}</p>
-          <AboutGigSeller owner={gigOwner} />
-          <GigReviewsList gig={gig} />
-        </main>
-        <GigDetailsOrder owner={gigOwner} gig={gig} />
-      </>
-    )}
-  </section>
+      {gig && (
+        <>
+          <main>
+            <GigDetailsHeader
+              gig={gig}
+              owner={gigOwner}
+            />
+            <ImageCarousel
+              images={gig.imgUrls || []}
+              gigId={gig._id}
+              newImgIndex={newImgIndex}
+              setNewImgIndex={setNewImgIndex}
+            />
+
+            <div className='about-gig'>
+              <h3 className='gig-details-header-About-Gig'>About This Gig</h3>
+              <p className='gig-description' > {gig.description}</p>
+            </div>
+
+            <AboutGigSeller owner={gigOwner} />
+            <GigReviewsList gig={gig} />
+          </main>
+          <GigDetailsOrder owner={gigOwner} gig={gig} />
+        </>
+      )}
+    </section>
   )
 }
+

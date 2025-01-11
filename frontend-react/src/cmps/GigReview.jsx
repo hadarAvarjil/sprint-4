@@ -29,7 +29,7 @@ export function GigReview({ review }) {
                     />
                     <div>
                         <h4>{username}</h4>
-                        <div class="country-info">
+                        <div className="country-info">
                             <img
                                 className="reviewer-country-img"
                                 src={flagImages[country] || '/path/to/default-flag.png'}
@@ -41,7 +41,7 @@ export function GigReview({ review }) {
                 </div>
             </header>
             <div className="review-content">
-                <div class="rating-line"></div>
+                <div className="rating-line"></div>
                 <div className="review-rating">
                     {'★'.repeat(rating)}{'☆'.repeat(5 - rating)}
                     <label className="review-rating-span">{rating}</label>

@@ -5,12 +5,16 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    font-family: 'macan-bold', sans-serif;
 
     .gig-title h2 {
-        font-size: 1.8rem;
+        font-size: rem(28px);
         font-weight: bold;
-        color: #333;
+        color: #1c1e1e;
         margin-top: 2rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 
     .gig-details a {
@@ -21,5 +25,29 @@
         border-radius: 5px;
         display: inline-block;
         margin-bottom: 20px;
+        display: flex;
     }
+}
+
+.gig-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 1rem;
+    gap: 4px;
+}
+
+.home-icon {
+    display: flex;
+    align-items: center;
+}
+
+.separator {
+    margin: 0 4px;
+    color: #888;
+}
+
+.tag {
+    white-space: nowrap;
+    font-weight: 400;
 }
