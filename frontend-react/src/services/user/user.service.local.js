@@ -247,10 +247,10 @@ const users = [
   },
   {
     _id: 'g110',
-    fullName: 'Betzalel Aboya',
+    fullName: 'Janny Scarlet',
     avatar:
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
-    username: 'Betzalel123',
+    username: 'Janny123',
     password: '123',
     level: 'level 1',
     rating: 1.2,
