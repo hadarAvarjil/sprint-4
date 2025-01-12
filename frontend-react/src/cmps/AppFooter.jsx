@@ -3,7 +3,7 @@ import { AddImg } from './AddImg.jsx'
 
 export function AppFooter() {
 	const count = useSelector(storeState => storeState.userModule.count)
-
+ 
 	return (
 		<footer className="app-footer full">
 			<div className='bottom-footer-div'>
@@ -18,12 +18,12 @@ export function AppFooter() {
 		  </div>
 
 		  <div className='right-footer-div'>
-		  <a href="https://www.tiktok.com"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549407/tiktok_ff6aqm.svg'}/></a>
-		  <a href="https://www.instagram.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549417/ig_xogguu.svg'}/></a>
-		  <a href="https://www.linkedin.com/" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549413/in_js01lk.svg'}/></a>
-		  <a href="https://www.facebook.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549421/f_fdvgsu.svg'}/></a>
-		  <a href="https://www.pinterest.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549630/pinterest_a3jnxv.svg'}/></a>
-		  <a href="https://www.x.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549399/x_raqcof.svg'}/></a>
+		  <a className='grey-icon' href="https://www.tiktok.com"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549407/tiktok_ff6aqm.svg'}/></a>
+		  <a className='grey-icon' href="https://www.instagram.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549417/ig_xogguu.svg'}/></a>
+		  <a className='grey-icon' href="https://www.linkedin.com/" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549413/in_js01lk.svg'}/></a>
+		  <a className='grey-icon' href="https://www.facebook.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549421/f_fdvgsu.svg'}/></a>
+		  <a className='grey-icon' href="https://www.pinterest.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549630/pinterest_a3jnxv.svg'}/></a>
+		  <a className='grey-icon' href="https://www.x.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549399/x_raqcof.svg'}/></a>
 		  </div>
 		  </div>
         
