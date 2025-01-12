@@ -76,7 +76,7 @@ export function HomeAppHeader() {
           )}
         </nav>
         {showMiniHeader && (
-          <NavBar className='home-mini-header'
+          <NavBar 
             categories={["Graphics & Design", "Programming & Tech", "Digital Marketing", "Video & Animation", "Writing & Translation", "Music & Audio", "Business"]}
             // display="flex"
           />
