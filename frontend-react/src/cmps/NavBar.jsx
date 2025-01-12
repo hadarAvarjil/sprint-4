@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import SvgIcon from './SvgIcon'
-
+ 
 export function NavBar({ categories, display, headerStage, setCatFilter, style }) {
     const carouselRef = useRef(null)
     const [isAtStart, setIsAtStart] = useState(true)
