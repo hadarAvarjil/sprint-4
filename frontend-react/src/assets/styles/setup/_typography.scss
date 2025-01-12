@@ -1,20 +1,25 @@
 @font-face {
     font-family: 'macan-regular';
-    src: url("@/assets/fonts/macan-regular.woff2");
+    src: url('../fonts/macan-regular.woff2');
 } 
 @font-face {
     font-family: 'macan-light';
-    src: url("@/assets/fonts/macan-light.ttf");
+    src: url('../fonts/macan-light.ttf');
 }
 @font-face {
     font-family: 'macan-bold';
-    src: url("@/assets/fonts/macan-bold.ttf");
+    src: url('../fonts/macan-bold.ttf');
 }
 @font-face {
     font-family: 'domain-display-medium';
-    src: url("@/assets/fonts/domain-display-medium-italic.otf");
+    src: url('../fonts/domain-display-medium-italic.otf');
 }
+
+////////
+
 @font-face {
-font-family: 'helvetica-neue';
-src: 'src\assets\fonts\HelveticaNeue.ttf';
+    font-family: 'helvetica-neue';
+    src: url('../fonts/HelveticaNeue.ttf');
 }
+
+
