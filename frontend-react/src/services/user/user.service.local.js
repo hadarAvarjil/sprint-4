@@ -245,6 +245,23 @@ const users = [
     languages: ['English', 'Hebrew', 'Italian'],
     isTopRated: true,
   },
+  {
+    _id: 'g110',
+    fullName: 'Betzalel Aboya',
+    avatar:
+      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
+    username: 'Betzalel123',
+    password: '123',
+    level: 'level 1',
+    rating: 1.2,
+    isAdmin: true,
+    ordersInQueue: 350,
+    createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
+    from: 'France',
+    languages: ['English', 'Hebrew', 'Italian'],
+    isTopRated: true,
+  },
+  
   
 ]
 

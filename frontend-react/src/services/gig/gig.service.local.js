@@ -132,18 +132,14 @@ function _createGigs() {
         ],
       },
       {
-        _id: "g110",
-        title: "I will create personalized workout planed videos for your fitness journey",
-        category: "Video & Animation",
-        tags: [
-          "Filmed Video Production",
-          "Explainer Videos",
-          "Product Videos"
-        ],
-        price: 40,
-        description: "Achieve your fitness goals with customized workout plans tailored to your needs. Whether you want to lose weight, build muscle, or improve your overall health, I'll help you get there.",
-        daysToMake: "Up to 3 days",
-        ownerId: "u108",
+        _id: "g102",
+        title: "I will design stunning website templates",
+        category: "Graphics & Design",
+        tags: ["Web & App Design", "Product & Gaming"],
+        price: 59.99,
+        description: "I specialize in creating beautiful and responsive website templates.",
+        daysToMake: 7,
+        ownerId: "g110",
         imgUrls: [
           "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&q=80&w=1925&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
