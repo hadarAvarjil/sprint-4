@@ -16,6 +16,8 @@ export function UserPreviewGigDetails({ owner, gig }) {
 
     if (!user) return null
 
+    const reviewsText = gig.reviews.length === 1 ? 'Review' : 'Reviews';
+
     return (
         <div className="user-preview-gig-details flex">
             <div className="user-info flex align-start">
@@ -46,7 +48,7 @@ export function UserPreviewGigDetails({ owner, gig }) {
                             </span>
                             <span className="rating-score">{user.rating.toFixed(1)}</span>
                             <span className="reviews-count">
-                                ({gig.reviews.length} reviews)
+                                ({gig.reviews.length} {reviewsText})
                             </span>
                         </div>
                     </div>

@@ -56,6 +56,8 @@
       font-weight: 700;
       line-height: 28px;
       padding-bottom: 25px;
+      margin-top: 3em;
+   
     }
 
     .about-gig .gig-description {
@@ -67,7 +69,12 @@
       overflow: hidden;
       word-break: break-word;
       font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
-
+      display: block;
+      margin-top: 1em;
+      // margin-block-start: 1em;
+      // margin-block-end: 1em;
+      // margin-inline-start: 0px;
+      // margin-inline-end: 0px;
     }
   }
 }
