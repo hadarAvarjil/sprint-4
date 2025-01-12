@@ -153,7 +153,7 @@ const users = [
     _id: 'u103',
     fullName: 'James Smith',
     avatar:
-      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/user2_ya4saz.webp',
+      'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5654d3568f8747212dd091b08fe74c0e-1647431958963/990b0a86-6471-411d-924d-3dc8e36edd84.jpg',
     username: 'james123',
     password: '123',
     level: 'level 1',
@@ -169,7 +169,7 @@ const users = [
     _id: 'u104',
     fullName: 'Emily Davis',
     avatar:
-      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/User1_mvlgj7.webp',
+      'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/22f08dfbaf47e57403f63b2b4907f823-1664365762969/fc9a7ca8-9d41-40d1-93b4-3f5bc9590756.jpg',
     username: 'emily123',
     password: '123',
     level: 'level 2',
@@ -185,7 +185,7 @@ const users = [
     _id: 'u105',
     fullName: 'Robert Brown',
     avatar:
-      'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/user4_yak6fe.webp',
+      'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/92ac15d229eed1f1268a9e4386ab9737-1698169005889/f9e22136-fc15-4815-a21a-1c8888c143b8.jpg',
     username: 'robert123',
     password: '123',
     level: 'level 2',
@@ -201,7 +201,7 @@ const users = [
     _id: 'u106',
     fullName: 'Sophia Wilson',
     avatar:
-      'https://cdn.pixabay.com/photo/2021/02/10/15/29/man-6005338_960_720.png',
+      'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1ac47e17fe087ed4c26ecd9cc76fa610-1540164169333/7b9bde04-bdce-4954-a4c6-5e20fd4a4652.jpg',
     username: 'sophia123',
     password: '123',
     level: 'level 1',
@@ -252,15 +252,31 @@ const users = [
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
     username: 'Janny123',
     password: '123',
-    level: 'level 1',
+    level: 'level 1.4',
     rating: 1.2,
     isAdmin: true,
-    ordersInQueue: 350,
+    ordersInQueue: 10,
     createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
     from: 'France',
     languages: ['English', 'Hebrew', 'Italian'],
     isTopRated: true,
   },
+  {
+    _id: 'u1024',
+    fullName: 'Jessica Kimberly',
+    avatar:
+      'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/32174966/original/13102889_10209675038819539_3441425076441038959_n.jpg',
+    username: 'Jes',
+    password: '123',
+    level: 'level 4',
+    rating: 1.2,
+    isAdmin: true,
+    ordersInQueue: 230,
+    createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' }),
+    from: 'France',
+    languages: ['English', 'Hebrew', 'German'],
+    isTopRated: true,
+  }
   
   
 ]
