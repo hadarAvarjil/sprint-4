@@ -65,7 +65,7 @@ export function UserPreview({ isFrom, owner, children }) {
             )}
             <Link to={`/user/${user._id}`}
               className={`username ${isFrom === 'explore' ? 'b' : ''}`}>
-              {`${isFrom === 'gig-details' ? '@' : isFrom === 'gig-details-2' ? '@' : ''}${user.username}`}
+              {`${isFrom === 'gig-details' ? '@' : isFrom === 'gig-details-2' ? '@' : ''}${user.fullName}`}
             </Link>
             {isFrom === 'userProfile' &&
               <span className={`user-level ${user.level === 'level 3' ? 'top' : ''}`} title='user level'>
