@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
 import { logout } from "../store/actions/user.actions";
 import { NavBar } from "./NavBar";
+import { SignDiv } from "./SignDiv";
 
 export function HomeAppHeader() {
   const user = useSelector((storeState) => storeState.userModule.user);
@@ -38,6 +39,19 @@ export function HomeAppHeader() {
     };
   }, []);
 
+  const [isSignDivVisible, setIsSignDivVisible] = useState(false);
+
+  const handleOpenSignDiv = () => {
+    setIsSignDivVisible(true);
+  };
+
+  const handleCloseSignDiv = (e) => {
+    // Close the modal only if clicking outside the sign-div
+    if (e.target.className === "modal-overlay") {
+      setIsSignDivVisible(false);
+    }
+  };
+
   return (
     <>
       <header className="app-header-home full">
@@ -57,9 +71,19 @@ export function HomeAppHeader() {
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
-            <NavLink to="gig">
-              <div className="sign-header-btn">Sign in</div>
-            </NavLink>
+            
+            {isSignDivVisible && (
+        <div className="modal-overlay" onClick={handleCloseSignDiv}>
+          <SignDiv/>
+         
+        </div>
+            )}
+         <div onClick={handleOpenSignDiv} className="sign-header-btn">Sign in</div>
+
+
+            {/* <NavLink to="gig">
+              <div onClick={handleOpenSignDiv} className="sign-header-btn">Sign in</div>
+            </NavLink> */}
             <NavLink to="gig">
               <div className="join-btn">Join</div>
             </NavLink>

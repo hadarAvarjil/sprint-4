@@ -1,0 +1,132 @@
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .sign-div {
+    width: 42.6vw; /* 50% of the viewport width */
+    height: 66vh; /* Optional height, adjust as needed */
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .left-purple-ad {
+    width: 50%;
+    background: #9c27b0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Ensures content doesn't overflow */
+  }
+  
+  .left-purple-ad .img-container {
+    max-width: 100%; /* Ensure the container doesn't exceed its parent's width */
+    max-height: 100%; /* Prevents overflowing in height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left-purple-ad .img-container img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevents it from being larger than its container */
+    max-height: 100%; /* Ensures the image fits within the container */
+    object-fit: contain; /* Ensures the entire image is visible */
+  }
+  
+  
+  .right-user-sign {
+    width: 50%; /* 50% of the parent (sign-div) width */
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-user-sign form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .right-user-sign form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+  
+  .right-user-sign form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .right-user-sign form button:hover {
+    background-color: #45a049;
+  }
+     
+  .left-purple-ad-ul{
+    
+  }
+
+
+
+
+/* The sign-in div */
+//   .sign-in {
+//     cursor: pointer;
+//     padding: 10px 20px;
+//     background-color: #007bff;
+//     color: #fff;
+//     border-radius: 5px;
+//     text-align: center;
+//     width: 100px;
+//     margin: 20px auto;
+//   }
+  
+//   /* Modal overlay */
+//   .modal-overlay {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 1000;
+//   }
+  
+//   /* The sign-div (modal content) */
+//   .sign-div {
+//     background-color: #fff;
+//     padding: 20px;
+//     border-radius: 10px;
+//     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+//     text-align: center;
+//     width: 50%;
+//   }
+  
