@@ -6,6 +6,7 @@ import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
 import { logout } from "../store/actions/user.actions";
 import { NavBar } from "./NavBar";
 import { SignDiv } from "./SignDiv";
+import { JoinDiv } from "./JoinDiv";
 
 export function HomeAppHeader() {
   const user = useSelector((storeState) => storeState.userModule.user);
@@ -40,15 +41,25 @@ export function HomeAppHeader() {
   }, []);
 
   const [isSignDivVisible, setIsSignDivVisible] = useState(false);
+  const [isJoinDivVisible, setIsJoinDivVisible] = useState(false);
 
   const handleOpenSignDiv = () => {
     setIsSignDivVisible(true);
+  };
+  const handleOpenJoinDiv = () => {
+    setIsJoinDivVisible(true);
   };
 
   const handleCloseSignDiv = (e) => {
     // Close the modal only if clicking outside the sign-div
     if (e.target.className === "modal-overlay") {
       setIsSignDivVisible(false);
+    }
+  };
+  const handleCloseJoinDiv = (e) => {
+    // Close the modal only if clicking outside the sign-div
+    if (e.target.className === "modal-overlay") {
+      setIsJoinDivVisible(false);
     }
   };
 
@@ -78,15 +89,15 @@ export function HomeAppHeader() {
          
         </div>
             )}
+            {isJoinDivVisible && (
+        <div className="modal-overlay" onClick={handleCloseJoinDiv}>
+          <JoinDiv/>
+         
+        </div>
+            )}
          <div onClick={handleOpenSignDiv} className="sign-header-btn">Sign in</div>
 
-
-            {/* <NavLink to="gig">
-              <div onClick={handleOpenSignDiv} className="sign-header-btn">Sign in</div>
-            </NavLink> */}
-            <NavLink to="gig">
-              <div className="join-btn">Join</div>
-            </NavLink>
+              <div onClick={handleOpenJoinDiv} className="join-btn">Join</div>
 
             {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
           </div>
