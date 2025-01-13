@@ -3,12 +3,12 @@ import React from "react";
 
 export function VideoDiv(){
     return(
-    <div style={{ position: "relative", width: "fit-content", borderRadius:'20px' }}>
+    <div style={{ position: "relative", width: "fit-content", }}>
     <video
-     width="90%"
+     width="100%"
      controls
      src="https://res.cloudinary.com/dtpewh2wk/video/upload/v1736687788/vid1_oqigku.mp4"
-     style={{ display: "block", borderRadius:'20px' }}
+     style={{ display: "block", borderRadius:'20px', borderStyle:'solid', borderColor:'#4b3239cb',borderWidth:'1px' }}
    >
       Your browser does not support the video tag.
     </video>
