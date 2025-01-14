@@ -95,23 +95,28 @@
         display: flex;
         gap: 20px;
         align-items: flex-start;
+        margin-top: 20px;
 
         .user-avatar-specific {
-          width: 120px;
-          height: 120px;
+          width: 160px;
+          height: 160px;
           border-radius: 50%;
           object-fit: cover;
         }
 
         .user-info {
           h1 {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 24px;
+            /* font-weight: bold; */
+            line-height: 32px;
+            font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+            color: #222325;
           }
 
           .username {
             color: $clrSecondary6;
             font-size: 1rem;
+            margin-bottom: -3%;
           }
 
           .rating {
@@ -119,13 +124,16 @@
             align-items: center;
             gap: 10px;
             font-size: 1rem;
-
+            margin-bottom: -3%;
+            
             .top-rated-badge {
-              background-color: $clrPrimary2;
-              padding: 4px 8px;
-              border-radius: 4px;
-              color: white;
+              background-color: #f8e5c0;
+              color: #b58900;
+              border-radius: 3px;
+              padding: 0.2rem 0.5rem;
               font-size: 0.9rem;
+              display: inline-block;
+              font-weight: bold;
             }
           }
 
@@ -134,15 +142,17 @@
             margin-top: 10px;
             font-size: 1rem;
             color: $clrSecondary8;
+            margin-bottom: -3%;
+            font:400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
           }
         }
       }
 
       .user-about {
-        margin-top: 20px;
-
+        margin-top: 50px;
+        font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
         h2 {
-          font-size: 1.5rem;
+          font-size: 16px;
           margin-bottom: 10px;
         }
 

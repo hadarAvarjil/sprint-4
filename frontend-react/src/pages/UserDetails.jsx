@@ -5,6 +5,7 @@ import { GigPreview } from '../cmps/GigPreview.jsx';
 import { GigReview } from '../cmps/GigReview.jsx';
 import { gigService } from '../services/gig/gig.service.local.js';
 import { loadUser } from '../store/actions/user.actions';
+import SvgIcon from '../cmps/SvgIcon.jsx'
 import { store } from '../store/store';
 import { showSuccessMsg } from '../services/event-bus.service';
 import {
@@ -167,7 +168,6 @@ export function UserDetails() {
               </div>
               <p className="user-bio">{user.bio || 'Rain, just rain'}</p>
               <p className="user-location">
-                {/* 📍 🗣️  */}
                 {user.from} | {user.languages.join(', ')}
               </p>
             </div>

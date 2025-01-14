@@ -485,6 +485,11 @@ const ICONS = {
     </g>
   </svg>`,
 
+   languageIcon: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-label="Language icon">
+  <path d="M8 1C3.581 1 0 3.91 0 7.5c0 1.488.622 2.85 1.653 3.947-.466 1.231-1.434 2.275-1.45 2.287A.75.75 0 0 0 .75 15c1.922 0 3.438-.803 4.347-1.447A9.65 9.65 0 0 0 8 14c4.419 0 8-2.91 8-6.5S12.419 1 8 1Zm0 11.5a8.12 8.12 0 0 1-2.45-.378l-.71-.225-.609.431a6.718 6.718 0 0 1-1.797.906c.228-.378.45-.803.622-1.256l.332-.878-.644-.681C2.178 9.816 1.5 8.819 1.5 7.5c0-2.756 2.916-5 6.5-5s6.5 2.244 6.5 5-2.916 5-6.5 5Z"/>
+</svg>`,
+
   shareWhatsappIcon: `<svg class="social-medium-image" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
       <circle id="link" cx="28" cy="28" r="28"/>
