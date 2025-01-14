@@ -69,11 +69,11 @@ export function AppHeader() {
     borderColor: headerStage === 0 && isHomePage ? "#fff" : "#1dbf73",
   };
 
-  // שימוש באפקטים
+
   useEffect(() => {
     if (!isHomePage) {
       setHeaderStage(2);
-      setHeaderPlaceholderText("Find services...");
+      setHeaderPlaceholderText("What service are you looking for today?");
     } else {
       setHeaderStage(0);
       setHeaderPlaceholderText("What service are you looking for today?");
