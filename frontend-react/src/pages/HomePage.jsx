@@ -9,18 +9,6 @@ import { PurpleAd } from "../cmps/PurpleSignUpAd.jsx";
 
 export function HomePage() {
  
-    // const [isSignDivVisible, setIsSignDivVisible] = useState(false);
-  
-    // const handleOpenSignDiv = () => {
-    //   setIsSignDivVisible(true);
-    // };
-  
-    // const handleCloseSignDiv = (e) => {
-    //   // Close the modal only if clicking outside the sign-div
-    //   if (e.target.className === "modal-overlay") {
-    //     setIsSignDivVisible(false);
-    //   }
-    // };
   return (
     <div>
    <GreenDiv/>

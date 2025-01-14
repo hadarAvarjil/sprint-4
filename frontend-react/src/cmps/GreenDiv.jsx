@@ -17,7 +17,7 @@ export function GreenDiv(){
           <div className="search-bar-div">
           <input type="search" class="long-placeholder"  placeholder="Search for any service..." value=""></input>
           <div className="search-btn">
-          <div className="big-search-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736546208/big-search_e0nw3p.svg'}/></div>
+          <div className="big-search-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736881540/icon-search_t7onua.svg'}/></div>
           </div>
           </div>
           </div>

@@ -10,7 +10,7 @@ export function PurpleAd(){
         </h1>
 
         <button
-          style={{ width: "115px", height: "41px" }}
+          style={{ width: "115px" }}
           className="white-join-btn"
           onClick={() => handleNavigation("login")}
         >

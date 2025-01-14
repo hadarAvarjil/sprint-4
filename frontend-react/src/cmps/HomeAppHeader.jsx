@@ -7,11 +7,17 @@ import { logout } from "../store/actions/user.actions";
 import { NavBar } from "./NavBar";
 import { SignDiv } from "./SignDiv";
 import { JoinDiv } from "./JoinDiv";
+import SvgIcon from "./SvgIcon.jsx";
 
 export function HomeAppHeader() {
   const user = useSelector((storeState) => storeState.userModule.user);
   const navigate = useNavigate();
   const [showMiniHeader, setShowMiniHeader] = useState(false);
+  // const logoColor = headerStage === 0 ? "#fff" : "#404145";
+  // const headerStyles = {
+  //   backgroundColor: headerStage >= 1 ? "#fff" : "transparent",
+  //   color: isHomePage && headerStage === 0 ? "#fff" : "#62646a",
+  // };
 
   async function onLogout() {
     try {
@@ -66,15 +72,23 @@ export function HomeAppHeader() {
   return (
     <>
       <header className="app-header-home full">
-        <nav className="home-nav-bar">
-          <NavLink to="/">
+        <nav className="home-nav-bar" style={{paddingLeft:'60px'}}>
+        <NavLink to="/" >
+            <h1 style={{ color: '#404145',paddingLeft:'32px',fontSize:'30px',lineHeight:'24px',fontWeight:'900',fontFamily:'$fiverr-defult-font' }} className="flex row">
+              gigster
+              <span className="flex">
+                <SvgIcon iconName={"greenDotIcon"} />
+              </span>
+            </h1>
+          </NavLink>
+          {/* <NavLink to="/">
             <img
               className="logo"
               src="src/services/imgs/design.imgs/logo.png"
               alt="Navigate to Target Page"
               style={{ width: "90px", height: "70px" }}
             />
-          </NavLink>
+          </NavLink> */}
           <div className="header-options">
             <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>

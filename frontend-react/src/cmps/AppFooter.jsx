@@ -19,10 +19,10 @@ export function AppFooter() {
 
 		  <div className='right-footer-div'>
 		  <a className='grey-icon' href="https://www.tiktok.com"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549407/tiktok_ff6aqm.svg'}/></a>
-		  <a className='grey-icon' href="https://www.instagram.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549417/ig_xogguu.svg'}/></a>
-		  <a className='grey-icon' href="https://www.linkedin.com/" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549413/in_js01lk.svg'}/></a>
-		  <a className='grey-icon' href="https://www.facebook.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549421/f_fdvgsu.svg'}/></a>
-		  <a className='grey-icon' href="https://www.pinterest.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549630/pinterest_a3jnxv.svg'}/></a>
+		  <a className='grey-icon' href="https://www.instagram.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736895538/instagram_lpfme5.svg'}/></a>
+		  <a className='grey-icon' href="https://www.linkedin.com/" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736895529/linkedin_mlp4dv.svg'}/></a>
+		  <a className='grey-icon' href="https://www.facebook.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736895531/facebook_p7mx4e.svg'}/></a>
+		  <a className='grey-icon' href="https://www.pinterest.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736895535/pinterest_vjvbap.svg'}/></a>
 		  <a className='grey-icon' href="https://www.x.com" ><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736549399/x_raqcof.svg'}/></a>
 		  </div>
 		  </div>
