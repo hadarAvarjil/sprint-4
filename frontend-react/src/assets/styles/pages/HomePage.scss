@@ -1,5 +1,4 @@
 .green-search-div {
-  // margin-top: 40px;
   margin-bottom: 16px;
   background-color: #013A12;
   width: 100%;
@@ -10,8 +9,7 @@
   position: relative;
   width: 100%;
   padding: 0;
-  height: calc(100vw * 0.5);
-  max-height: 500px;
+  height: calc(100vw * 0.325);
   justify-content: center;
   color: white;
   margin-top: calc(70px + 20px); /* Offset to avoid overlap */
@@ -29,7 +27,7 @@
   .yellowGirl-img {
     position: absolute;
     border-radius: 15px;
-    width: 12%;
+    width: 10%;
     left: 7.5%;
     top: -0.1%;
   }

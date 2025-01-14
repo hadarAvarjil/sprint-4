@@ -39,10 +39,11 @@ import React, { useState } from "react";
          <div className="left-purple-ad">
 
          <div className="left-purple-ad-text">
+            <div className="content">  
             <h2>Success starts here</h2>
             <ul className="flex ">
                 <li>
-                   ✓  Over 700 categories
+                ✓  Over 700 categories
                 </li>
 
                 <li>
@@ -56,8 +57,10 @@ import React, { useState } from "react";
          </div>
         <AddImg  picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736802265/standard.0638957_sespel.png'}/>
          </div>
+         </div>
+
          <div className="right-user-sign">
-           <h2>Sign In</h2>
+           <h2>Sign in to your account</h2>
            <form
              onSubmit={(e) => {
                e.preventDefault(); // Prevents page reload
@@ -65,25 +68,25 @@ import React, { useState } from "react";
              }}
            >
              <div>
-                <section>
-                <h4>Sign in to your account</h4>
-                <p>Don't have an account? <span>Join here</span></p>
-                </section>
 
                <label htmlFor="username">Username:</label>
                <input
                  id="username"
                  type="text"
+                 style={{width:'100%', borderColor:'black'}}
                  value={username}
                  onChange={(e) => setUsername(e.target.value)}
                  required
                />
              </div>
+
              <div>
                <label htmlFor="password">Password:</label>
                <input
                  id="password"
                  type="password"
+                 style={{width:'100%', borderColor:'black'}}
+
                  value={password}
                  onChange={(e) => setPassword(e.target.value)}
                  required
@@ -97,6 +100,7 @@ import React, { useState } from "react";
                Close
              </button>
            </form>
+           <p>By joining, you agree to the Gigster Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
          </div>
        </div>
      </>

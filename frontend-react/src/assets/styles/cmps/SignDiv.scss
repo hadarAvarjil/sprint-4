@@ -13,8 +13,8 @@
   }
   
   .sign-div {
-    width: 42.6vw; /* 50% of the viewport width */
-    height: 66vh; /* Optional height, adjust as needed */
+    width: 57vw; /* 50% of the viewport width */
+    height: 88vh; /* Optional height, adjust as needed */
     background: white;
     border-radius: 10px;
     display: flex;
@@ -29,15 +29,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     // padding: 20px;
-    text-align: center;
+    // text-align: center;
     overflow: hidden; /* Ensures content doesn't overflow */
+    position: relative;
+
   }
   
   .left-purple-ad .img-container {
-    max-width: 100%; /* Ensure the container doesn't exceed its parent's width */
-    max-height: 100%; /* Prevents overflowing in height */
+    width: 100%; /* Ensure the container doesn't exceed its parent's width */
+    height: 100%; /* Prevents overflowing in height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,9 +58,23 @@
     width: 50%; /* 50% of the parent (sign-div) width */
     padding-left: 40px;
     padding-right: 40px;
+    padding-top: 64px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
+    font-size:18px;
+line-height:31.2px;
+text-align:left;
+letter-spacing:normal;
+    
+    p{
+      margin-top: auto;
+      font-size:12px;
+line-height:20px;
+text-align:start;
+letter-spacing:normal;
+color: #74767e;
+    }
   }
   
   .right-user-sign form {
@@ -87,7 +103,62 @@
     background-color: #45a049;
   }
 
+  .left-purple-ad .content {
+    font-family: $fiverr-defult-font;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // text-align: center;
+    height: 50%;
+    width: 100%;
+    padding-top:  54px;
+    // padding-bottom:  54px;
+    padding-left: 40px;
+    padding-right: 40px;
+    // margin-top: 54px;
+    top: 0;
+    left: 0;
+  }
+  
+  .left-purple-ad h2 {
+    // margin-top: 54px; /* Space from the top of the parent */
+    margin-bottom: 24px; /* Space between the h2 and the ul */
+    font-size:32px;
+line-height:38.4px;
+text-align:start;
+letter-spacing:normal;
+  }
+  
+  .left-purple-ad ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between list items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove bullet points */
+    max-height: 50%; /* Ensure it doesn't go past the middle */
+    font-size:18px;
+line-height:26px;
+text-align:left;
+letter-spacing:normal;
 
+  }
+  
+  .left-purple-ad ul li {
+    font-size: 1rem;
+    font-size:20px;
+    line-height:30px;
+    text-align:left;
+    letter-spacing:normal;
+    
+  }
+  
+  .left-purple-ad img {
+    max-height: 50%; /* Ensure the image doesn't take too much space */
+    object-fit: contain; /* Preserve aspect ratio */
+    margin-top: auto; /* Push the image to the bottom if space allows */
+  }
 
 
 /* The sign-in div */
