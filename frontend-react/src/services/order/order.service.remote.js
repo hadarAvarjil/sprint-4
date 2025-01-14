@@ -1,3 +1,5 @@
+console.log("hey brother");
+
 import { storageService } from '../async-storage.service'
 
 const STORAGE_KEY = 'order'
