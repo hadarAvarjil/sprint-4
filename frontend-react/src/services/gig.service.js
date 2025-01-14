@@ -27,7 +27,7 @@ async function query(filterBy = {}) {
     return await httpService.get(BASE_URL, filterBy)
   } catch (error) {
     console.error('Error querying gigs:', error)
-    throw error 
+    throw error
   }
 }
 
@@ -49,14 +49,14 @@ function save(gig) {
 
 function getDefaultFilter() {
   return {
-      txt: '',
-      cat: '',
-      min: '',
-      max: '',
-      level: '',
-      tag: '',
-      time: '',
-      page: 1,
+    txt: '',
+    cat: '',
+    min: '',
+    max: '',
+    level: '',
+    tag: '',
+    time: '',
+    page: 1,
   };
 }
 
@@ -170,51 +170,24 @@ export const subcategories = {
 }
 export const packages = {
   basic: {
-    type: 'Starter Package',
-    price: 1,
-    desc: `2 logo concepts, jpg, transparent png`,
-    time: 'Up to 3 Days',
-    revisions: '8',
-    features: [
-      '2 concepts included',
-      'Logo transparency',
-      'Vector file',
-      'Printable file',
-      'Include 3D mockup',
-      'Include source file',
-    ],
-    featuresCond: [false, true, false, true, true, false],
+    price: '$173.18',
+    description: '3 logo designs with white and transparent backgrounds (JPEG PNG) + Source file (.ai)',
+    delivery: '4-day delivery',
+    revisions: '3 Revisions',
+    features: ['3 logo designs', 'Transparent backgrounds', 'Source file (.ai)'],
   },
   standard: {
-    type: 'Standard Package',
-    price: 2,
-    desc: `2 logo concepts + jpg file, transparent png, source files + 3D Mockup`,
-    time: 'Up to 3 Days',
-    revisions: '16',
-    features: [
-      '2 concepts included',
-      'Logo transparency',
-      'Vector file',
-      'Printable file',
-      'Include 3D mockup',
-      'Include source file',
-    ],
-    featuresCond: [true, true, false, true, true, true],
+    price: '$350.00',
+    description: '5 logo designs with multiple variations, white & transparent backgrounds (JPEG PNG) + Source file (.ai)',
+    delivery: '3-day delivery',
+    revisions: '5 Revisions',
+    features: ['5 logo designs', 'Multiple variations', 'Transparent backgrounds', 'Source file (.ai)'],
   },
   premium: {
-    type: 'Pro Package',
-    price: 3,
-    desc: `3 logo concepts + jpg file, png + all source & vector files + 3D Mockup`,
-    time: 'Up to 3 Days',
-    revisions: 'Unlimited',
-    features: [
-      '3 concepts included',
-      'Logo transparency',
-      'Vector file',
-      'Printable file',
-      'Include 3D mockup',
-      'Include source file',
-    ],
-    featuresCond: [true, true, true, true, true, true],
+    price: '$600.00',
+    description: 'Unlimited logo designs with premium support, white & transparent backgrounds (JPEG PNG) + Source file (.ai)',
+    delivery: '2-day delivery',
+    revisions: 'Unlimited Revisions',
+    features: ['Unlimited designs', 'Premium support', 'Transparent backgrounds', 'Source file (.ai)'],
   },
 }

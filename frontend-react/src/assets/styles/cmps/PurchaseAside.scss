@@ -1,0 +1,128 @@
+.purchase-aside {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+
+    .package-details {
+        margin-bottom: 20px;
+
+        .gig-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            .gig-thumbnail {
+                width: 50px;
+                height: 50px;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+            }
+        }
+
+        .package-name {
+            margin-bottom: 15px;
+
+            h4 {
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            span {
+                font-size: 14px;
+                color: #666;
+            }
+        }
+
+        .package-includes {
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                svg {
+                    margin-right: 8px;
+                }
+
+                span {
+                    font-size: 14px;
+                    color: #333;
+                }
+            }
+        }
+    }
+
+    .promo-code {
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .price-breakdown {
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+
+            &.total {
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+
+        .delivery-time {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    }
+
+    .confirm-pay-btn {
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 20px;
+
+        &:hover {
+            background-color: #333;
+        }
+    }
+
+    .ssl-notice {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: #666;
+        margin-top: 10px;
+
+        svg {
+            margin-right: 5px;
+        }
+    }
+}

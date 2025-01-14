@@ -1,5 +1,5 @@
 import SvgIcon from './SvgIcon.jsx'
-import { packages } from '../services/gig.service.js'
+import { packages } from '../services/gig.service'
 import { Link } from 'react-router-dom'
 
 export function PurchaseAside({
@@ -10,23 +10,22 @@ export function PurchaseAside({
 }) {
     const serviceFee = 30.62
     const vat = 105.63
-    const total = Selectedpackage.price + serviceFee + vat
-    
-    
+    const total = Selectedpackage.price + serviceFee + vat   
+
     return (
-        
+
         <aside className="purchase-aside">
             <div className="package-details">
                 <div className="gig-title">
-                    {/* <img src={gig.imageUrl} alt="Gig Thumbnail" className="gig-thumbnail" /> */}
+                    <img src={gig.imgUrls[0]} alt="Gig Thumbnail" className="gig-thumbnail" />
                     <p>{gig.title}</p>
                 </div>
                 <div className="package-name">
-                    <h4>{Selectedpackage.name}</h4>
-                    <span>₪{Selectedpackage.price}</span>
+                    <h4>{packages[Selectedpackage].type}</h4>
+                    <span>{packages[Selectedpackage].price}</span>
                 </div>
                 <ul className="package-includes">
-                    {Selectedpackage.features.map((feature, idx) => (
+                    {packages[Selectedpackage].features.map((feature, idx) => (
                         <li key={idx}>
                             <SvgIcon iconName="checkmark" />
                             {feature}
@@ -46,11 +45,11 @@ export function PurchaseAside({
                 </div>
                 <div className="price-row">
                     <span>VAT</span>
-                    <span>₪{vat.toFixed(2)}</span>
+                    <span>${vat.toFixed(2)}</span>
                 </div>
                 <div className="price-row total">
                     <span>Total</span>
-                    <span>₪{total.toFixed(2)}</span>
+                    <span>${total.toFixed(2)}</span>
                 </div>
                 <div className="delivery-time">
                     <span>Total delivery time</span>

@@ -5,25 +5,25 @@ import SvgIcon from './SvgIcon.jsx'
 
 export function GigDetailsOrder({ gig, owner }) {
 
-    const [activeTab, setActiveTab] = useState('Basic')
+    const [activeTab, setActiveTab] = useState('basic')
     const navigate = useNavigate()
 
     const packages = {
-        Basic: {
+        basic: {
             price: '$173.18',
             description: '3 logo designs with white and transparent backgrounds (JPEG PNG) + Source file (.ai)',
             delivery: '4-day delivery',
             revisions: '3 Revisions',
             features: ['3 logo designs', 'Transparent backgrounds', 'Source file (.ai)'],
         },
-        Standard: {
+        standard: {
             price: '$350.00',
             description: '5 logo designs with multiple variations, white & transparent backgrounds (JPEG PNG) + Source file (.ai)',
             delivery: '3-day delivery',
             revisions: '5 Revisions',
             features: ['5 logo designs', 'Multiple variations', 'Transparent backgrounds', 'Source file (.ai)'],
         },
-        Premium: {
+        premium: {
             price: '$600.00',
             description: 'Unlimited logo designs with premium support, white & transparent backgrounds (JPEG PNG) + Source file (.ai)',
             delivery: '2-day delivery',

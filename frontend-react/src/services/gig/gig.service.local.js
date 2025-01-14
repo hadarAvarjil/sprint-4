@@ -183,7 +183,7 @@ function _createGigs() {
         _id: "g111",
         title: "I will provide hilarious video game 'assistance",
         category: "Video & Animation",
-        tags: ["Video Game Help", "Editing & Critique","Gaming Shenanigans"],
+        tags: ["Video Game Help", "Editing & Critique", "Gaming Shenanigans"],
         price: 59.99,
         description: "Are you tired of serious video game help? Look no further! I offer 'assistance' that's guaranteed to make you laugh. Expect unexpected in-game antics, questionable advice, and loads of humor. Let's turn your gaming experience into a comedy show!",
         daysToMake: "Express 24H",
@@ -324,48 +324,48 @@ function _createGigs() {
       },
 
       {
-                _id: "g110",
-                title: "I will compose a personalized song for your special occasion",
-                category: "Music & Audio",
-                tags: [
-                  "Lessons & Transcriptions",
-                  "Music Production & Writing",
-                  "Audio Engineering & Post Production"
-                ],
-                price: 69.99,
-                description: "Elevate your online presence with custom digital avatars. Whether you're a content creator, gamer, or social media enthusiast, I'll design unique avatars that represent your personality and style.",
-                daysToMake: 7,
-                ownerId: "u1024",
-                imgUrls: [
-            "https://www.pcworld.com/wp-content/uploads/2023/06/puff-Daniel-Lez%CC%87uch-Unsplash.jpg?resize=1024%2C576&quality=50&strip=all",
-                        "https://i.pcmag.com/imagery/roundups/07zK5ZMCRXxdm3S7ZnlT3Xw-10.fit_lim.size_768x.jpg",
-                        "https://i.pcmag.com/imagery/roundups/05ndzgdtChn6KbVqVnZdaJf-3.fit_lim.size_768x.png",
-            "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_600,dpr_1.0/v1/attachments/generic_asset/asset/089e3bb9352f90802ad07ad9f6a4a450-1599517407052/selling-proposition-still-1400-x1.png",
-            "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_450,dpr_1.0/v1/attachments/generic_asset/asset/42a6fd208670a0361b38bd72b47b9317-1599519173396/testimonial-video-still-lavender.jpg"
-                ],
-                likedByUsers: [],
-                reviews: [
-                  {
-                    id: "401",
-                    userName: "HappyCouple123",
-                    rating: 5,
-                    text: "Sophia composed the most beautiful song for our wedding day. It was incredibly touching and brought tears to our eyes. She captured our love story perfectly, and we couldn't be happier!"
-                  },
-                  {
-                    id: "402",
-                    userName: "AnniversaryBliss456",
-                    rating: 4.8,
-                    text: "We hired Sophia to create a song for our anniversary celebration, and it was a hit! The melody and lyrics were exquisite. Sophia's talent shines through in her work, and we highly recommend her."
-                  },
-                  {
-                    id: "403",
-                    userName: "EventPlannerXYZ",
-                    rating: 4.5,
-                    text: "Sophia's songwriting skills are impressive. She composed a theme song for our corporate event that left a lasting impression on our guests. However, there were minor delays in delivery."
-                  }
-                ]
-              },
-      
+        _id: "g110",
+        title: "I will compose a personalized song for your special occasion",
+        category: "Music & Audio",
+        tags: [
+          "Lessons & Transcriptions",
+          "Music Production & Writing",
+          "Audio Engineering & Post Production"
+        ],
+        price: 69.99,
+        description: "Elevate your online presence with custom digital avatars. Whether you're a content creator, gamer, or social media enthusiast, I'll design unique avatars that represent your personality and style.",
+        daysToMake: 7,
+        ownerId: "u1024",
+        imgUrls: [
+          "https://www.pcworld.com/wp-content/uploads/2023/06/puff-Daniel-Lez%CC%87uch-Unsplash.jpg?resize=1024%2C576&quality=50&strip=all",
+          "https://i.pcmag.com/imagery/roundups/07zK5ZMCRXxdm3S7ZnlT3Xw-10.fit_lim.size_768x.jpg",
+          "https://i.pcmag.com/imagery/roundups/05ndzgdtChn6KbVqVnZdaJf-3.fit_lim.size_768x.png",
+          "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_600,dpr_1.0/v1/attachments/generic_asset/asset/089e3bb9352f90802ad07ad9f6a4a450-1599517407052/selling-proposition-still-1400-x1.png",
+          "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_450,dpr_1.0/v1/attachments/generic_asset/asset/42a6fd208670a0361b38bd72b47b9317-1599519173396/testimonial-video-still-lavender.jpg"
+        ],
+        likedByUsers: [],
+        reviews: [
+          {
+            id: "401",
+            userName: "HappyCouple123",
+            rating: 5,
+            text: "Sophia composed the most beautiful song for our wedding day. It was incredibly touching and brought tears to our eyes. She captured our love story perfectly, and we couldn't be happier!"
+          },
+          {
+            id: "402",
+            userName: "AnniversaryBliss456",
+            rating: 4.8,
+            text: "We hired Sophia to create a song for our anniversary celebration, and it was a hit! The melody and lyrics were exquisite. Sophia's talent shines through in her work, and we highly recommend her."
+          },
+          {
+            id: "403",
+            userName: "EventPlannerXYZ",
+            rating: 4.5,
+            text: "Sophia's songwriting skills are impressive. She composed a theme song for our corporate event that left a lasting impression on our guests. However, there were minor delays in delivery."
+          }
+        ]
+      },
+
     ]
     utilService.saveToStorage(STORAGE_KEY, gigs)
   }
