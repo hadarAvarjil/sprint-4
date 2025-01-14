@@ -12,6 +12,7 @@ import { AdminIndex } from './pages/AdminIndex.jsx'
 
 import { GigDetails } from './pages/GigDetails.jsx'
 import { UserDetails } from './pages/UserDetails'
+import { GigPurchasePage } from './pages/GigPurchasePage'
 
 import { HomeAppHeader } from './cmps/HomeAppHeader.jsx'
 import { AppHeader } from './cmps/AppHeader'
@@ -26,9 +27,9 @@ export function RootCmp() {
     const location = useLocation();
     return (
         <div className="main-container">
-   {/* Conditionally render the AppHeader based on the current route */}
-   {location.pathname === '/' ? <HomeAppHeader /> : <AppHeader />}
-           
+            {/* Conditionally render the AppHeader based on the current route */}
+            {location.pathname === '/' ? <HomeAppHeader /> : <AppHeader />}
+
             {/* <HomeAppHeader/> */}
             {/* <AppHeader /> */}
             <UserMsg />
@@ -42,6 +43,7 @@ export function RootCmp() {
                     </Route>
                     <Route path="gig" element={<GigIndex />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
+                    <Route path="purchase/:gigId" element={<GigPurchasePage />} />
                     <Route path="user/:id" element={<UserDetails />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="chat" element={<ChatApp />} />

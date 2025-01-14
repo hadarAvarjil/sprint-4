@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import SvgIcon from './SvgIcon.jsx'
 
 export function GigDetailsOrder({ gig, owner }) {
 
     const [activeTab, setActiveTab] = useState('Basic')
+    const navigate = useNavigate()
 
     const packages = {
         Basic: {
@@ -27,6 +30,10 @@ export function GigDetailsOrder({ gig, owner }) {
             revisions: 'Unlimited Revisions',
             features: ['Unlimited designs', 'Premium support', 'Transparent backgrounds', 'Source file (.ai)'],
         },
+    }
+
+    function onContinue() {
+        navigate(`/purchase/${gig._id}/?package=${activeTab}`)
     }
 
     return (
@@ -64,7 +71,7 @@ export function GigDetailsOrder({ gig, owner }) {
                     ))}
                 </ul>
                 <div className="button-container">
-                    <button className="continue-button">
+                    <button className="continue-button" onClick={onContinue}>
                         Continue
                         <SvgIcon iconName="pageArrowRight" />
                     </button>

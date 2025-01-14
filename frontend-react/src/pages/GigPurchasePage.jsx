@@ -1,3 +1,77 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+
+import { PurchaseMain } from '../cmps/PurchaseMain.jsx'
+// import { PurchaseAside } from '../cmps/PurchaseAside.jsx'
+
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
+import { orderService } from '../services/order'
+import { userService } from '../services/user'
+
+import { loadGigs } from '../store/actions/gig.actions.js'
+
+
+export function GigPurchasePage() {
+
+    const gigs = useSelector((storeState) => storeState.gigModule.gigs)
+    const navigate = useNavigate()
+    const { gigId } = useParams()
+    const gig = gigs.find((gig) => gig._id === gigId)
+
+    const queryParams = new URLSearchParams(window.location.search)
+    const packageChoice = queryParams.get('package')
+
+    const initPurchaseState = {
+        crdNum: '',
+        expDate: '',
+        pinCode: '',
+        crdName: '',
+    }
+    const [formPaymentData, setFormPaymentData] = useState(initPurchaseState)
+
+
+    useEffect(() => {
+        const loadGigsInfo = async () => {
+            try {
+                await loadGigs()
+            } catch (err) {
+                console.error("Error loading gig: ", err)
+            }
+        }
+        loadGigsInfo()
+    }, [gigId, navigate])
+
+
+    async function createOrder() {
+        const newOrder = orderService.createOrder(
+            loggedInUser._id,
+            gig.ownerId,
+            gig.title,
+            gig.daysToMake,
+            gig._id,
+            gig.price
+        )
+        try {
+            await orderService.save(newOrder)
+        } catch (err) {
+            showErrorMsg('FAILED TO ORDER')
+        }
+    }
+
+    return (
+        <section className="gig-purchase">
+            <PurchaseMain
+                initPurchaseState={initPurchaseState}
+                setFormPaymentData={setFormPaymentData}
+                formPaymentData={formPaymentData}
+            />
+            {/* <PurchaseAside
+                gig={gig}
+                createOrder={createOrder}
+            /> */}
+        </section>
+    )
+
+}
+
