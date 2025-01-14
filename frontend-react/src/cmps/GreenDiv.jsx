@@ -15,7 +15,7 @@ export function GreenDiv(){
     
           <div className="green-search-div-inner-box"><h1>Scale your professional <br/> workforce with <span>freelancers</span></h1>
           <div className="search-bar-div">
-          <input type="search" class="long-placeholder"  placeholder="Search for any service..." value=""></input>
+          <input type="search" className="long-placeholder"  placeholder="Search for any service..." value=""></input>
           <div className="search-btn">
           <div className="big-search-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736546208/big-search_e0nw3p.svg'}/></div>
           </div>
