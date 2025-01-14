@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 
 import { GigPreview } from "../cmps/GigPreview.jsx"
 
-export function GigList({ gigs, isLoading }) {
+export function GigList({ gigs }) {
   const [showGigs, setShowGigs] = useState(false)
   const isFrom = "explore"
 
