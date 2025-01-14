@@ -159,16 +159,19 @@ export function UserDetails() {
               alt={`${user.fullName}'s avatar`}
             />
             <div className="user-info">
-              <h1>{user.fullName}</h1>
-              <p className="username">@{user.username}</p>
+              <h1>{user.fullName} <span className="username">@{user.username}</span></h1>
+              
               <div className="rating">
-                <span>⭐ {user.rating}</span>
-                <span>({user.reviewsCount || 0})</span>
+                <span><SvgIcon iconName="blackStar" />
+                {user.rating}</span>
+                <span>({user.reviewsCount || 0})</span> 
                 <span className="top-rated-badge">Top Rated ✦✦✦</span>
               </div>
               <p className="user-bio">{user.bio || 'Rain, just rain'}</p>
               <p className="user-location">
-                {user.from} | {user.languages.join(', ')}
+              
+              <SvgIcon iconName="locationUser" /> 
+                {user.from}<SvgIcon iconName="languageIcon" />  <span className="languages-text">{user.languages.join(', ')} </span> 
               </p>
             </div>
           </div>
