@@ -180,7 +180,7 @@ function _createGigs() {
         ],
       },
       {
-        _id: "g102",
+        _id: "g111",
         title: "I will provide hilarious video game 'assistance",
         category: "Video & Animation",
         tags: ["Video Game Help", "Editing & Critique","Gaming Shenanigans"],
@@ -324,7 +324,7 @@ function _createGigs() {
       },
 
       {
-                _id: "g104",
+                _id: "g110",
                 title: "I will compose a personalized song for your special occasion",
                 category: "Music & Audio",
                 tags: [
