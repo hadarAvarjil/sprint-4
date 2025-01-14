@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import { PurchaseMain } from '../cmps/PurchaseMain.jsx'
-// import { PurchaseAside } from '../cmps/PurchaseAside.jsx'
+import { PurchaseAside } from '../cmps/PurchaseAside.jsx'
 
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { orderService } from '../services/order'
@@ -20,7 +20,7 @@ export function GigPurchasePage() {
     const gig = gigs.find((gig) => gig._id === gigId)
 
     const queryParams = new URLSearchParams(window.location.search)
-    const packageChoice = queryParams.get('package')
+    const Selectedpackage = queryParams.get('package')
 
     const initPurchaseState = {
         crdNum: '',
@@ -40,7 +40,7 @@ export function GigPurchasePage() {
             }
         }
         loadGigsInfo()
-    }, [gigId, navigate])
+    }, [gig, navigate])
 
 
     async function createOrder() {
@@ -66,10 +66,11 @@ export function GigPurchasePage() {
                 setFormPaymentData={setFormPaymentData}
                 formPaymentData={formPaymentData}
             />
-            {/* <PurchaseAside
+            <PurchaseAside
                 gig={gig}
                 createOrder={createOrder}
-            /> */}
+                Selectedpackage={Selectedpackage}
+            />
         </section>
     )
 
