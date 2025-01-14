@@ -95,23 +95,33 @@
         display: flex;
         gap: 20px;
         align-items: flex-start;
+        margin-top: 20px;
+        align-items: center;
 
         .user-avatar-specific {
-          width: 120px;
-          height: 120px;
+          width: 155px;
+          height: 155px;
           border-radius: 50%;
           object-fit: cover;
         }
 
         .user-info {
           h1 {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 24px;
+            line-height: 32px;
+            // font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font: 400 27px/45px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+            color: #222325;
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
           }
 
           .username {
-            color: $clrSecondary6;
+            color: #74768E;
             font-size: 1rem;
+            font-weight: normal;
+            margin: 0; 
           }
 
           .rating {
@@ -119,30 +129,73 @@
             align-items: center;
             gap: 10px;
             font-size: 1rem;
-
+            margin-bottom: -3%;
+          
+            span {
+              display: flex; 
+              align-items: center;
+              gap: 5px; 
+            }
+          
+            svg {
+              width: 16px; 
+              height: 16px;
+              fill: currentColor; 
+            }
+            
             .top-rated-badge {
-              background-color: $clrPrimary2;
-              padding: 4px 8px;
-              border-radius: 4px;
-              color: white;
-              font-size: 0.9rem;
+              background-color: #f8e5c0;
+              color: rgb(128, 67, 23);
+              border-radius: 3px;
+              padding: 0.1rem 0.34rem;
+              font-size: 14px;
+              display: inline-flex;
+              align-items: center;
+              gap: 4px;
+              font-weight: 600;
+          
+              .active-star {
+                color: #000; /* כוכבים פעילים בצבע שחור */
+              }
+          
+              .inactive-star {
+                color: #ccc; /* כוכבים לא פעילים בצבע אפור */
+              }
             }
           }
+          
 
           .user-bio,
           .user-location {
             margin-top: 10px;
             font-size: 1rem;
             color: $clrSecondary8;
+            margin-bottom: -3%;
+            font: 400 16px/28px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+          
+            svg {
+              width: 16px;
+              height: 16px;
+              fill: currentColor;
+            }
+          
+            span {
+              margin: 0;
+              padding: 0;
+            }
           }
+          
         }
       }
 
       .user-about {
-        margin-top: 20px;
-
+        margin-top: 50px;
+        font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
         h2 {
-          font-size: 1.5rem;
+          font-size: 16px;
           margin-bottom: 10px;
         }
 
@@ -154,7 +207,7 @@
     }
 
     .user-contact-card {
-      flex: 1;
+      // flex: 1;
       background-color: $clrSecondary1;
       padding: 20px;
       border-radius: 10px;
@@ -185,7 +238,8 @@
       .contact-btn {
         display: block;
         width: 100%;
-        background-color: $clrPrimary1;
+        background-color: black;
+
         color: white;
         padding: 10px 0;
         text-align: center;
