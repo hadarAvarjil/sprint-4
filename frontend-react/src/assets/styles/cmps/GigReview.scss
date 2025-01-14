@@ -5,7 +5,7 @@
     margin-bottom: 24px;
     background-color: #fff;
     font-family: Arial, sans-serif;
-    margin-block-start: 3em;
+    // margin-block-start: 3em;
     margin-block-end: 3em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
@@ -171,10 +171,9 @@
     font-size: 20px;
     line-height: 28px;
     color: #404145;
-    margin-bottom: 16px;
     font-family: macan-regular, Helvetica, Arial, sans-serif;
     font-weight: 700;
     line-height: 28px;
-    padding-bottom: 25px;
-    margin-top: 3em;
+    margin-top: rem(66px);
+    margin-bottom: rem(10px);
   }

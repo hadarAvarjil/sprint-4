@@ -53,7 +53,7 @@ export function GigDetails() {
   }
 
   return (
-    <section className="gig-details grid">
+    <section className="gig-details main grid">
       {gig && (
         <>
           <main>

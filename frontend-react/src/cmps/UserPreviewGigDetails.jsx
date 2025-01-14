@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import SvgIcon from './SvgIcon.jsx'
 
 export function UserPreviewGigDetails({ owner, gig }) {
@@ -28,7 +29,9 @@ export function UserPreviewGigDetails({ owner, gig }) {
                 />
                 <div className="user-details flex column">
                     <div className="user-header flex align-center">
-                        <span className="fullname">{user.fullName}</span>
+                        <span className="fullname">
+                            <Link to={`/user/${user._id}`}>{user.fullName}</Link>
+                        </span>
                         {user.isTopRated && (
                             <span className="top-rated-badge">Top Rated ✦✦✦</span>
                         )}

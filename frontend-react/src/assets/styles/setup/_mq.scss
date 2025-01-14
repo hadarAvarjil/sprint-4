@@ -683,7 +683,7 @@
           margin-block-end: 0;
 
           .user-preview {
-            border-bottom: 1px solid $clrSecondary2;
+            // border-bottom: 1px solid $clrSecondary2;
             padding: 8px 16px;
             background: $clrSecondary1;
             margin: 0;
@@ -710,7 +710,7 @@
       }
 
       .gig-reviews {
-        padding: 0 16px;
+        padding: 0 5px;
 
         .title {
           display: none;
