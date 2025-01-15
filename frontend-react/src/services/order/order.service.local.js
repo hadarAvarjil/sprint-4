@@ -57,3 +57,4 @@ async function addOrder(gigId, buyerId, buyerName, sellerId, price) {
     order.price = price
     return order
 }
+ 

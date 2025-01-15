@@ -7,7 +7,7 @@ export function PopularServices(){
     <div className="home-carousel-container">
         <h1 style={{fontFamily:'helvetica-neue'}}> Popular Services</h1>
        
-          <div className="home-carousel">
+          <div className="home-carousel"> 
             <div className="popular-div light-green-div"><h3>Website <br/>Development</h3><div className="pop-inner-pic website-development-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551937/website-development_gig20i.webp'}/></div></div>
             <div className="popular-div orange-div"><h3>Logo Design</h3> <div className="pop-inner-pic logo-design-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551938/logo-design_xgy1r3.webp'}/></div></div>
             <div className="popular-div dark-green-div"><h3>SEO</h3> <div className="pop-inner-pic seo-img"><AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551932/seo_dsq2bi.webp'}/></div></div>

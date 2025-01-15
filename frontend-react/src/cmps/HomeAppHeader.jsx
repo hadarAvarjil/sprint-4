@@ -119,6 +119,9 @@ export function HomeAppHeader() {
           )}
 
           <div className="header-options">
+            <NavLink to="/orders">
+              <div className="sign-header-btn">Orders</div>
+            </NavLink>
             <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
             </NavLink>
