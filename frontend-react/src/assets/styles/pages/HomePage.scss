@@ -12,8 +12,10 @@
   height: calc(100vw * 0.325);
   justify-content: center;
   color: white;
-  margin-top: calc(70px + 20px); /* Offset to avoid overlap */
+  margin-top: calc(70px + 41px); /* Offset to avoid overlap */
+  // margin-top: 40px;
   text-align: center;
+  overflow: hidden;
 
 
   .pinkGuy-img {
@@ -35,7 +37,7 @@
   .purpleGuy-img {
     position: absolute;
     border-radius: 15px;
-    width: 4%;
+    width: 99%;
     left: 4%;
     bottom: 7.5%;
     z-index: 9;
@@ -76,13 +78,16 @@
       line-height: 69px;
       text-align: center;
       letter-spacing: -1.2px;
+      font-weight: 100;
 
       span {
         // background-color: black;
         font-size: 62px;
         line-height: 72px;
-        letter-spacing: 1.55px;
+        letter-spacing: -1.55px;
         font-family: $fiverr-leaning-font;
+        font-style: italic;
+
       }
 
     }
@@ -91,7 +96,7 @@
   .search-bar-div {
     background-color: white;
     // padding: 10px;
-    width: 93%;
+    width: 83%;
     height: 12%;
     display: flex;
     justify-content: center;
@@ -101,6 +106,8 @@
     border-radius: 10px;
     padding-left: 10px;
     gap: 0px;
+    margin-top: 40px;
+    z-index: 99;
 
     input {
       width: 100%;
@@ -114,38 +121,71 @@
     }
 
     .search-btn {
+      display: flex;
       width: 11%;
       background-color: white;
-      height: 100%;
-      margin: 0;
+      // margin-top: 40px;
       border: white;
       border-style: solid;
-      border-radius: 20px;
+      border-radius: 10px;
       border-width: 5px;
-      padding: 5px;
+      // padding: 8px;
+      text-align: center;
+      justify-items: center;
+      justify-content: center;
+      overflow: hidden;
+      
     }
   }
 }
 
+// .big-search-img {
+//   background-color: $green-dark;
+//   // height: 100%;
+//   width: 100%;
+//   border-radius: 5px;
+//   padding: 15px;
+//   object-fit: cover;  
+//   // text-align: center;
+//   justify-items: center;
+//   // justify-content: center;
+// }
 .big-search-img {
-  background-color: $green-dark;
+  display: flex;
+  align-items: center; /* Vertically center the image */
+  justify-content: center; /* Horizontally center the image */
+  background-color: $green-dark; /* Optional: background color */
+  width: 100%; /* Container width */
+  height: 100%; /* Container height */
   border-radius: 5px;
-  padding-left: 5px;
+  overflow: hidden; /* Ensure the image doesn't overflow the container */
+  padding: 15px;
+  border-radius: 10px;
+
 }
+
+.big-search-img img {
+  max-width: 100%; /* Scale the image to fit the container width */
+  max-height: 100%; /* Scale the image to fit the container height */
+  object-fit: contain; /* Ensure the image retains its aspect ratio */
+}
+
 
 .big-search-img:hover {
   background-color: $green-dark-hover;
 }
 
 .home-carousel-container {
+  padding-top: 40px;
   width: 100%;
-
+  
   h1 {
     color: #404145;
     font-size: 48px;
     line-height: 50.4px;
     letter-spacing: -1.44px;
     text-align: start;
+    margin-bottom: 32px;
   }
 
   .home-carousel {
@@ -224,7 +264,17 @@
 
   }
 }
-
+.vid-h1{
+  font-family:$fiverr-defult-font;
+  color: #404145;
+  font-size: 48px;
+  line-height: 50.4px;
+text-align:start;
+letter-spacing:normal;
+font-weight: 300;
+margin-top: 40px;
+margin-bottom: 40px;
+}
 
 
 .cat-divs-container {
@@ -279,24 +329,14 @@
     radial-gradient(circle, rgba(0, 255, 0, 0.03) 0%, rgba(0, 255, 0, 0.03) 75%, transparent 100%),
     radial-gradient(circle, rgba(0, 255, 0, 0.027) 0%, rgba(0, 255, 0, 0.027) 100%, transparent 125%),
     white;
-  /* Inner white effect */
   background-blend-mode: multiply;
   z-index: 0;
-  // rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px,  /* Outer shadow */
-  // inset 0 0 10px white;
+
   color: black;
 }
 
-
-// .ad-pro{
-// margin-top: 30px;
-// position:relative;
-// border-radius: 30px;
-
-// }
-
 .signup-ad {
-  margin-top: 50px;
+  margin-top: 24px;
   position: relative;
   border-radius: 30px;
 
@@ -308,42 +348,54 @@
 
 
 .icons-divs-container {
+  height: calc(100vw * 0.1);
   position: relative;
   display: flex;
-  margin-top: 64px;
+  // margin-top: 24px;
+  padding-top: 40px;
 
 }
 
 .divs-container h1 {
   position: relative;
   font-weight: 400;
+  // margin-bottom: 64px;
+  font-family:$fiverr-defult-font;
+  color: #404145;
+  font-size: 48px;
+  line-height: 50.4px;
+text-align:start;
+letter-spacing:normal;
+font-weight: 300;
+
 
 }
 
 .icons-div {
   width: 30%;
+  margin-bottom: 64px;
 
 }
 
 .divs-container {
   display: flex;
-  margin-top: 50px;
+  // margin-top: 50px;
   margin-bottom: 50px;
   flex-direction: column;
   padding-top: 40px;
-  padding-bottom: 40px;
+  // padding-bottom: 40px;
   justify-content: space-between;
-  height: calc(100vw * 0.3626);
+  height: calc(100vw * 0.2);
   width: 100%;
 }
 
 .icons-div img {
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin-bottom: 12px;
+  // margin-top: 20px;
 }
 
 .canAd-container {
-  margin-top: 50px;
+  margin-top: 80px;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -354,7 +406,7 @@
 .canAd-text-container {
   display: flex;
   flex-direction: column;
-  font-family: $generic-font ;
+  font-family: $fiverr-defult-font ;
   font-weight: bold;
   padding-top: 56px;
   padding-bottom: 56px;
@@ -366,20 +418,45 @@
   text-align: start;
   letter-spacing: -0.96px;
 
+  h1{
+    font-family:$fiverr-defult-font;
+font-size:33.3333px;
+line-height:24px;
+text-align:start;
+letter-spacing:normal;
+font-weight: 400;
+letter-spacing: 0px;
+word-spacing:-10px ;
+  }
+
+  p{
+    color: $black-btn-hover;
+    //  max-width: "1336px" ;
+    font-weight: 200;
+    span{
+      color: #FC842D;
+      // word-spacing:-10px ;
+      letter-spacing: -1px;
+      font-family: $uniqe-font-can-ad;
+
+    }
+  }
+
 }
 
 .canAd-text-container h1 span {
   margin-right: 0.2em;
+  font-weight: bold;
 }
 
 .canAd-pic {
   margin-right: 80px;
-}
+} 
 
 .purple-signup-ad {
   color: white;
   background-color: $purple;
-  // margin: 59px;
+  margin-top: 240px;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 24px;
@@ -395,67 +472,21 @@
   align-items: center;
   border-radius: 12px;
   position: relative;
-  font-size: 40px;
-  font-stretch: 100%;
-  font-weight: 400;
-  font-family: Macan, "Helvetica Neue", Helvetica, Aria;
-  letter-spacing: -1.28px;
-  line-height: 38px;
+  // font-size: 30px;
+  // font-stretch: 100%;
+  // font-weight: 200;
+  font-family: $fiverr-defult-font;
+  // line-height: 38px;
   // justify-content: space-between;
-
+  
+  h1{
+    font-size: 62px;
+    font-stretch: 100%;
+    font-weight: 100;
+    letter-spacing: -1.28px;
+    margin-bottom: 27px;
+  }
   h1 span {
     color: $orange;
   }
 }
-
-// Monaco
-// Palatino Linotype
-// Palatino Linotype
-// Garamond
-// Georgia
-// Times New Roman
-// Book Antiqua
-
-// Serif Fonts
-
-// Times New Roman
-// Georgia
-// Garamond
-// Palatino Linotype
-// Book Antiqua
-
-// Sans-Serif Fonts
-
-// Arial
-// Helvetica
-// Verdana
-// Tahoma
-// Trebuchet MS
-
-// Monospace Fonts
-
-// Courier New
-// Lucida Console
-// Monaco
-
-// Cursive Fonts
-
-// Comic Sans MS
-
-// Fantasy Fonts
-
-// Impact
-// Papyrus
-
-// .tester-div{
-
-//     width: 200px;
-//     height: 200px;
-//     // background-color: white;
-//     box-shadow: inset 0 0 80px 10px #ffffff, inset 0 0 20px 50px #E8FFF4, inset 0 0 0 20px #C8FFE5, inset 0 0 100px 80px #E8FFF4, inset 0 0 100px 80px #1dbf73;
-//     // box-shadow: 
-//     //   inset 0 0 0 20px #ffffff,   
-//     //   inset 0 0 0 20px #E8FFF4,  
-//     //   inset 0 0 0 20px #C8FFE5,   
-//     //   inset 0 0 0 40px #E8FFF4; 
-// }

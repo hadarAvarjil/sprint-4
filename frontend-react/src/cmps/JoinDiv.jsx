@@ -8,7 +8,7 @@ import React, { useState } from "react";
    const [isJoinDivVisible, setIsJoinDivVisible] = useState(true); // State to control visibility
  
    const handleClose = () => {
-     setIsJoinnDivVisible(false); // Hide both the modal and the overlay
+     setIsJoinDivVisible(false); // Hide both the modal and the overlay
    };
  
    const handleSubmit = () => {
@@ -41,33 +41,35 @@ import React, { useState } from "react";
        {/* Modal */}
        <div className="sign-div">
          <div className="left-purple-ad">
-
-         <div className="left-purple-ad-text">
-            <h2>Success starts here</h2>
-            <ul className="flex ">
-                <li>
-                   ✓  Over 700 categories
-                </li>
-
-                <li>
-                ✓  Quality work done faster
-                </li>
-
-                <li>
-                ✓  Access to talent and businesses<br/> across the globe
-                </li>
-            </ul>
-         </div>
-        <AddImg  picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736802265/standard.0638957_sespel.png'}/>
-         </div>
-         <div className="right-user-sign">
+  
+           <div className="left-purple-ad-text">
+              <div className="content">  
+              <h2>Success starts here</h2>
+              <ul className="flex ">
+                  <li>
+                  ✓  Over 700 categories
+                  </li>
+  
+                  <li>
+                  ✓  Quality work done faster
+                  </li>
+  
+                  <li>
+                  ✓  Access to talent and businesses<br/> across the globe
+                  </li>
+              </ul>
+           </div>
+          <AddImg  picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736802265/standard.0638957_sespel.png'}/>
+           </div>
+           </div>
+         <div className="right-user-sign"> 
            <h2>Sign In</h2>
            <form
              onSubmit={(e) => {
                e.preventDefault(); // Prevents page reload
                handleSubmit();
              }}
-           >
+           > 
              <div>
                 <section>
                 <h4>Create a new account</h4>
