@@ -2,6 +2,10 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
+const Visa_MasterCard_Discover_American_Express_Icons = `https://res.cloudinary.com/dtffr5wya/image/upload/v1736956851/Visa_MasterCard_Discover_American_Express_Icons_-_1000x1000_bna1qq.png`
+
+const Paypal = `https://res.cloudinary.com/dtffr5wya/image/upload/v1736966484/paypal_m05ffy.png`
+
 export function PurchaseMain({ setFormPaymentData, formPaymentData }) {
     const validationSchema = Yup.object({
         cardNumber: Yup.string()
@@ -42,6 +46,22 @@ export function PurchaseMain({ setFormPaymentData, formPaymentData }) {
             >
                 {({ isSubmitting }) => (
                     <Form>
+                        <div className="payment-options">
+                            <label >
+                                <Field
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="card"
+                                />
+                                Credit & Debit Cards
+                                <img
+                                    src={Visa_MasterCard_Discover_American_Express_Icons}
+                                    alt="Credit & Debit Cards"
+                                    className="payment-icon"
+                                />
+                            </label>
+                        </div>
+
                         <div className="form-group">
                             <label htmlFor="cardNumber">Card number</label>
                             <Field
@@ -104,6 +124,20 @@ export function PurchaseMain({ setFormPaymentData, formPaymentData }) {
                             <label>
                                 <Field name="saveCard" type="checkbox" />
                                 Save this card for future payments
+                            </label>
+                        </div>
+                        <div className="paypal-section">
+                            <label>
+                                <Field
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="paypal"
+                                />
+                                <img
+                                    src={Paypal}
+                                    alt="PayPal"
+                                    className="paypal payment-icon"
+                                />
                             </label>
                         </div>
 
