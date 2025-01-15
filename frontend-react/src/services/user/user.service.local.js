@@ -132,6 +132,10 @@ const users = [
     from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
+
+    extraSkills: 16
   },
   {
     _id: 'u102',
@@ -260,6 +264,8 @@ const users = [
     from: 'France',
     languages: ['English', 'Hebrew', 'Italian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content. ustomer satisfaction is my top priority. Clients include household names such as Marriott, Microsoft, Coca-Cola, Honda and more!'
+        
   },
   {
     _id: 'u1024',
