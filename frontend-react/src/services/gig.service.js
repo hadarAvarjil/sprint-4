@@ -170,23 +170,26 @@ export const subcategories = {
 }
 export const packages = {
   basic: {
-    price: '$173.18',
+    price: 173.18,
     description: '3 logo designs with white and transparent backgrounds (JPEG PNG) + Source file (.ai)',
     delivery: '4-day delivery',
+    deliveryTime: 4,
     revisions: '3 Revisions',
     features: ['3 logo designs', 'Transparent backgrounds', 'Source file (.ai)'],
   },
   standard: {
-    price: '$350.00',
+    price: 350.00,
     description: '5 logo designs with multiple variations, white & transparent backgrounds (JPEG PNG) + Source file (.ai)',
     delivery: '3-day delivery',
+    deliveryTime: 3,
     revisions: '5 Revisions',
     features: ['5 logo designs', 'Multiple variations', 'Transparent backgrounds', 'Source file (.ai)'],
   },
   premium: {
-    price: '$600.00',
+    price: 600.00,
     description: 'Unlimited logo designs with premium support, white & transparent backgrounds (JPEG PNG) + Source file (.ai)',
     delivery: '2-day delivery',
+    deliveryTime: 2,
     revisions: 'Unlimited Revisions',
     features: ['Unlimited designs', 'Premium support', 'Transparent backgrounds', 'Source file (.ai)'],
   },

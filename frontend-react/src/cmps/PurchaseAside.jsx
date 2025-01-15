@@ -10,7 +10,8 @@ export function PurchaseAside({
 }) {
     const serviceFee = 30.62
     const vat = 105.63
-    const total = Selectedpackage.price + serviceFee + vat   
+    const total = packages[Selectedpackage].price + serviceFee + vat  
+    const packagesType = "Wind - For Start Ups"
 
     return (
 
@@ -20,14 +21,14 @@ export function PurchaseAside({
                     <img src={gig.imgUrls[0]} alt="Gig Thumbnail" className="gig-thumbnail" />
                     <p>{gig.title}</p>
                 </div>
-                <div className="package-name">
-                    <h4>{packages[Selectedpackage].type}</h4>
-                    <span>{packages[Selectedpackage].price}</span>
+                <div className="package-name flex">
+                    <h4>{packagesType}</h4>
+                    <span>${packages[Selectedpackage].price}</span>
                 </div>
                 <ul className="package-includes">
                     {packages[Selectedpackage].features.map((feature, idx) => (
                         <li key={idx}>
-                            <SvgIcon iconName="checkmark" />
+                            <SvgIcon iconName="checkmarkBlackIcon" />
                             {feature}
                         </li>
                     ))}
@@ -41,7 +42,7 @@ export function PurchaseAside({
             <div className="price-breakdown">
                 <div className="price-row">
                     <span>Service fee</span>
-                    <span>₪{serviceFee.toFixed(2)}</span>
+                    <span>${serviceFee.toFixed(2)}</span>
                 </div>
                 <div className="price-row">
                     <span>VAT</span>
@@ -49,11 +50,11 @@ export function PurchaseAside({
                 </div>
                 <div className="price-row total">
                     <span>Total</span>
-                    <span>${total.toFixed(2)}</span>
+                    <span>${total}</span>
                 </div>
                 <div className="delivery-time">
                     <span>Total delivery time</span>
-                    <span>{Selectedpackage.deliveryTime} days</span>
+                    <span>{packages[Selectedpackage].deliveryTime} days</span>
                 </div>
             </div>
 
