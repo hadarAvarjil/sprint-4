@@ -32,15 +32,14 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
 
   function checkFilter() {
     return (
-      filterBy.search ||
-      filterBy.cat ||
-      filterBy.tag ||
-      filterBy.level ||
-      filterBy.min ||
-      filterBy.max ||
-      filterBy.time ||
-      filterBy.page !== 1
-    )
+      filterBy.search !== '' ||
+      filterBy.cat !== '' ||
+      filterBy.tag !== '' ||
+      filterBy.level !== '' ||
+      filterBy.min != null ||
+      filterBy.max != null ||
+      filterBy.time !== ''
+    );
   }
 
   if (deviceType === 'mini-tablet' || deviceType === 'mobile') {

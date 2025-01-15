@@ -1,4 +1,4 @@
-const noResultsImg = 'https://res.cloudinary.com/dgwgcf6mk/image/upload/v1701539881/gigster/other/bzqrborygalzssnmogax.png'
+const noResultsImg = 'https://res.cloudinary.com/dgwgcf6mk/image/upload/v1701539881/Giggler/other/bzqrborygalzssnmogax.png'
 
 import { useEffect, useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
@@ -120,8 +120,8 @@ export function GigIndex() {
         setIsRenderedChoice([true, categorySelect.trim()])
         break
       case 'clear':
-        setFilter(gigService.getDefaultFilter())
-        setIsRenderedChoice([false, 'clear'])
+        dispatch(setFilter(gigService.getDefaultFilter())); 
+        setIsRenderedChoice([false, 'clear']);
         break
       default:
         console.log('default switch in onHandleChoice')
@@ -138,6 +138,7 @@ export function GigIndex() {
     dispatch(setFilter(gigService.getDefaultFilter()))
     console.log('Clearing filters - new filterBy:', gigService.getDefaultFilter())
   }
+
   function handlePageChange(newPage) {
     setFilter({ ...filterBy, page: newPage })
   }
