@@ -122,6 +122,9 @@ export function HomeAppHeader() {
             <NavLink to="/orders">
               <div className="sign-header-btn">Orders</div>
             </NavLink>
+            <NavLink to="/profile">
+              <div className="sign-header-btn">my-profile</div>
+            </NavLink>
             <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
             </NavLink>

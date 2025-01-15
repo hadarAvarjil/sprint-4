@@ -22,6 +22,7 @@ import { LoginSignup } from './pages/LoginSignup.jsx'
 import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
 import { AllOrders } from './pages/AllOrders.jsx';
+import { ProfilePage } from './pages/ProfilePage.jsx';
 
 
 export function RootCmp() {
@@ -50,6 +51,7 @@ export function RootCmp() {
                     <Route path="chat" element={<ChatApp />} />
                     <Route path="admin" element={<AdminIndex />} />
                     <Route path="orders" element={<AllOrders />} />
+                    <Route path="profile" element={<ProfilePage />} />
                     <Route path="login" element={<LoginSignup />}>
                         <Route index element={<Login />} />
                         <Route path="signup" element={<Signup />} />
