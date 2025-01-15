@@ -5,6 +5,7 @@ import { GigPreview } from '../cmps/GigPreview.jsx';
 import { GigReview } from '../cmps/GigReview.jsx';
 import { gigService } from '../services/gig/gig.service.local.js';
 import { loadUser } from '../store/actions/user.actions';
+import { UserSkills } from '../cmps/UserSkills.jsx';
 import SvgIcon from '../cmps/SvgIcon.jsx'
 import { store } from '../store/store';
 import { showSuccessMsg } from '../services/event-bus.service';
@@ -24,7 +25,7 @@ export function UserDetails() {
     totalReviews: 0,
     starCounts: [0, 0, 0, 0, 0],
     averageRating: 0,
-  });
+  })
   const [searchText, setSearchText] = useState('');
   const [showOnlyWithFiles, setShowOnlyWithFiles] = useState(false);
   const [filteredReviews, setFilteredReviews] = useState([]);
@@ -42,39 +43,39 @@ export function UserDetails() {
   }, []);
 
   useEffect(() => {
-  async function fetchReviewsWithUserData() {
-    if (!userGigs.length) return;
+    async function fetchReviewsWithUserData() {
+      if (!userGigs.length) return;
 
-    try {
-      const allReviews = userGigs.flatMap((gig) => gig.reviews || []);
-      const reviewsWithUserData = await Promise.all(
-        allReviews.map(async (review) => {
-          try {
-            const user = await userService.getById(review.userId);
-            return {
-              ...review,
-              username: user.fullName,
-              imgUrl: user.avatar,
-              country: user.from,
-            };
-          } catch (err) {
-            console.error(`Failed to fetch user data for review ${review.id}`, err);
-            return {
-              ...review,
-              username: 'Unknown',
-              imgUrl: '/path/to/default-avatar.png',
-              country: 'Unknown',
-            };
-          }
-        })
-      );
-      setReviews(reviewsWithUserData);
-    } catch (err) {
-      console.error('Failed to fetch reviews with user data:', err);
+      try {
+        const allReviews = userGigs.flatMap((gig) => gig.reviews || []);
+        const reviewsWithUserData = await Promise.all(
+          allReviews.map(async (review) => {
+            try {
+              const user = await userService.getById(review.userId);
+              return {
+                ...review,
+                username: user.fullName,
+                imgUrl: user.avatar,
+                country: user.from,
+              };
+            } catch (err) {
+              console.error(`Failed to fetch user data for review ${review.id}`, err);
+              return {
+                ...review,
+                username: 'Unknown',
+                imgUrl: '/path/to/default-avatar.png',
+                country: 'Unknown',
+              };
+            }
+          })
+        );
+        setReviews(reviewsWithUserData);
+      } catch (err) {
+        console.error('Failed to fetch reviews with user data:', err);
+      }
     }
-  }
-  fetchReviewsWithUserData();
-}, [userGigs]);
+    fetchReviewsWithUserData();
+  }, [userGigs]);
 
   useEffect(() => {
     if (user && user._id) {
@@ -160,18 +161,18 @@ export function UserDetails() {
             />
             <div className="user-info">
               <h1>{user.fullName} <span className="username">@{user.username}</span></h1>
-              
+
               <div className="rating">
                 <span><SvgIcon iconName="blackStar" />
-                {user.rating}</span>
-                <span>({user.reviewsCount || 0})</span> 
+                  {user.rating}</span>
+                <span>({user.reviewsCount || 0})</span>
                 <span className="top-rated-badge">Top Rated ✦✦✦</span>
               </div>
-              <p className="user-bio">{user.bio || 'Rain, just rain'}</p>
+              <p className="user-bio">{user.bio || 'Spokesperson, actress and video producer'}</p>
               <p className="user-location">
-              
-              <SvgIcon iconName="locationUser" /> 
-                {user.from}<SvgIcon iconName="languageIcon" />  <span className="languages-text">{user.languages.join(', ')} </span> 
+
+                <SvgIcon iconName="locationUser" />
+                {user.from}<SvgIcon iconName="languageIcon" />  <span className="languages-text">{user.languages.join(', ')} </span>
               </p>
             </div>
           </div>
@@ -181,6 +182,8 @@ export function UserDetails() {
             <p>{user.about || 'No additional details provided.'}</p>
           </div>
         </div>
+
+
 
         <div className="user-contact-card">
           <div className="contact-header">
@@ -193,6 +196,7 @@ export function UserDetails() {
         </div>
       </div>
 
+      <UserSkills skills={user.skills} />
       <div className="user-gigs">
         <h2>My Gigs</h2>
         <ul className="gigs-list">
@@ -206,39 +210,38 @@ export function UserDetails() {
           ))}
         </ul>
       </div>
-
       <div className="gig-reviews-section">
-  <h2>Reviews</h2>
-  {ratingStats.totalReviews > 0 && (
-    <div className="reviews-summary">
-      <div className="average-rating">
-        {/* <span className="rating-number">{ratingStats.averageRating.toFixed(1)}</span> */}
-        <span className="stars">
-          {'★'.repeat(Math.round(ratingStats.averageRating))}
-          {'☆'.repeat(5 - Math.round(ratingStats.averageRating))}
-        </span>
-        {/* <p>{ratingStats.totalReviews} Reviews</p> */}
-      </div>
-      <div className="stars-breakdown">
-        {ratingStats.starCounts.map((count, index) => (
-          <div key={index} className="star-row">
-            <span>{5 - index} Stars</span>
-            <div className="progress-bar">
-              <div
-                className="progress"
-                style={{
-                  width: `${(count / ratingStats.totalReviews) * 100}%`,
-                }}
-              ></div>
+        <h2>Reviews</h2>
+        {ratingStats.totalReviews > 0 && (
+          <div className="reviews-summary">
+            <div className="average-rating">
+              {/* <span className="rating-number">{ratingStats.averageRating.toFixed(1)}</span> */}
+              <span className="stars">
+                {'★'.repeat(Math.round(ratingStats.averageRating))}
+                {'☆'.repeat(5 - Math.round(ratingStats.averageRating))}
+              </span>
+              {/* <p>{ratingStats.totalReviews} Reviews</p> */}
             </div>
-            <span>({count})</span>
+            <div className="stars-breakdown">
+              {ratingStats.starCounts.map((count, index) => (
+                <div key={index} className="star-row">
+                  <span>{5 - index} Stars</span>
+                  <div className="progress-bar">
+                    <div
+                      className="progress"
+                      style={{
+                        width: `${(count / ratingStats.totalReviews) * 100}%`,
+                      }}
+                    ></div>
+                  </div>
+                  <span>({count})</span>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  )}
+        )}
 
-    {/* <div className="reviews-filters">
+        {/* <div className="reviews-filters">
       <input
         type="text"
         placeholder="Search reviews"
@@ -254,15 +257,15 @@ export function UserDetails() {
         Only show reviews with files
       </label>
     </div> */}
-  
-    <ul className="reviews">
-      {reviews.map((review) => (
-        <li key={review.id}>
-          <GigReview review={review} />
-        </li>
-      ))}
-    </ul>
-    </div>
+
+        <ul className="reviews">
+          {reviews.map((review) => (
+            <li key={review.id}>
+              <GigReview review={review} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

@@ -1,60 +1,57 @@
-import { useEffect, useState, useRef } from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { useModal } from "../customHooks/ModalContext.jsx";
-import { useDeviceType } from "../customHooks/DeviceTypeContext.jsx";
-import outsideClick from "../customHooks/outsideClick.js";
-
-import { SearchBar } from "./SearchBar.jsx";
-import { NavBar } from "./NavBar.jsx";
-import { AsideMenu } from "../cmps/AsideMenu.jsx";
-import SvgIcon from "./SvgIcon.jsx";
-import { category } from "../services/gig.service.js";
-import { setFilter } from "../store/actions/gig.actions.js";
-import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
-import { logout } from "../store/actions/user.actions";
+import { useEffect, useState, useRef } from "react"
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { useModal } from "../customHooks/ModalContext.jsx"
+import { useDeviceType } from "../customHooks/DeviceTypeContext.jsx"
+import outsideClick from "../customHooks/outsideClick.js"
+import { loadGigs } from "../store/actions/gig.actions.js";
+import { SearchBar } from "./SearchBar.jsx"
+import { NavBar } from "./NavBar.jsx"
+import { AsideMenu } from "../cmps/AsideMenu.jsx"
+import SvgIcon from "./SvgIcon.jsx"
+import { category } from "../services/gig.service.js"
+import { setFilter } from "../store/actions/gig.actions.js"
+import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
+import { logout } from "../store/actions/user.actions"
 
 export function AppHeader() {
-  // מצבים מקומיים
-  const [searchQuery, setSearchQuery] = useState("");
-  const [headerStage, setHeaderStage] = useState(0);
-  const [showUserDropdown, setShowUserDropdown] = useState(false);
-  const [showOrdersDropdown, setShowOrdersDropdown] = useState(false);
-  const [showAsideMenu, setShowAsideMenu] = useState(false);
-  const [notification, setNotification] = useState(false);
-  const [headerPlaceholderText, setHeaderPlaceholderText] = useState("");
+  const [searchQuery, setSearchQuery] = useState("")
+  const [headerStage, setHeaderStage] = useState(0)
+  const [showUserDropdown, setShowUserDropdown] = useState(false)
+  const [showOrdersDropdown, setShowOrdersDropdown] = useState(false)
+  const [showAsideMenu, setShowAsideMenu] = useState(false)
+  const [notification, setNotification] = useState(false)
+  const [headerPlaceholderText, setHeaderPlaceholderText] = useState("")
 
-  // רפרנסים
-  const userInfoRef = useRef(null);
-  const ordersRef = useRef(null);
-  const asideMenuRef = useRef(null);
-  const dispatch = useDispatch();
 
-  // טיפול בקליקים מחוץ לאזורים מסוימים
-  outsideClick(userInfoRef, () => setShowUserDropdown(false));
-  outsideClick(ordersRef, () => setShowOrdersDropdown(false));
-  outsideClick(asideMenuRef, () => setShowAsideMenu(false));
+  const userInfoRef = useRef(null)
+  const ordersRef = useRef(null)
+  const asideMenuRef = useRef(null)
+  const dispatch = useDispatch()
 
-  // סטור רדקס
-  const loggedinUser = useSelector((storeState) => storeState.userModule.user);
-  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy);
+ 
+  outsideClick(userInfoRef, () => setShowUserDropdown(false))
+  outsideClick(ordersRef, () => setShowOrdersDropdown(false))
+  outsideClick(asideMenuRef, () => setShowAsideMenu(false))
 
-  // הוקס מותאמים
-  const { openLogin, openSignup } = useModal();
-  const deviceType = useDeviceType();
+  const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
-  // נתיבים ודפים
-  const categories = category;
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
-  const isDashboardSellerPage = location.pathname === "/dashboard";
-  const isDashboardBuyerPage = location.pathname === "/orders";
-  const isGigPage = location.pathname.startsWith("/gig/");
-  const isChatPage = location.pathname.startsWith("/chat/");
-  const navigate = useNavigate();
+  const { openLogin, openSignup } = useModal()
+  const deviceType = useDeviceType()
 
-  // סגנונות דינמיים
-  const logoColor = headerStage === 0 ? "#fff" : "#404145";
+
+  const categories = category
+  const location = useLocation()
+  const isHomePage = location.pathname === "/"
+  const isDashboardSellerPage = location.pathname === "/dashboard"
+  const isDashboardBuyerPage = location.pathname === "/orders"
+  const isGigPage = location.pathname.startsWith("/gig/")
+  const isChatPage = location.pathname.startsWith("/chat/")
+  const navigate = useNavigate()
+
+
+  const logoColor = headerStage === 0 ? "#fff" : "#404145"
   const headerStyles = {
     backgroundColor: headerStage >= 1 ? "#fff" : "transparent",
     color: isHomePage && headerStage === 0 ? "#fff" : "#62646a",
@@ -93,42 +90,48 @@ export function AppHeader() {
     }
   }, [isHomePage, deviceType]);
 
-  // פונקציות טיפול
   function handleSearchChange(e) {
-    const newSearchQuery = e.target.value;
-    setSearchQuery(newSearchQuery);
+    const newSearchQuery = e.target.value
+    setSearchQuery(newSearchQuery)
   }
 
-  function handleSearchSubmit(e) {
-    e.preventDefault();
-    if (!searchQuery) return;
-    setFilter({ ...filterBy, search: searchQuery });
-    navigate(`/gig`);
-    setSearchQuery("");
+  async function handleSearchSubmit(e) {
+    e.preventDefault()
+    if (!searchQuery) return
+
+    const newFilterBy = { ...filterBy, txt: searchQuery }
+    console.log("Setting filter with:", newFilterBy)
+    dispatch(setFilter(newFilterBy))
+
+    try {
+      await loadGigs(newFilterBy)
+      navigate(`/gig`)
+      setSearchQuery("")
+    } catch (err) {
+      console.error("Failed to load filtered gigs:", err)
+    }
   }
 
   function setCatFilter(category) {
     dispatch(setFilter({ ...filterBy, cat: category }));
   }
 
-  // פונקציית הלוגאוט
+
   async function onLogout() {
     try {
-      await logout();
-      navigate("/");
-      showSuccessMsg("Bye now");
+      await logout()
+      navigate("/")
+      showSuccessMsg("Bye now")
     } catch (err) {
-      console.error("Logout error:", err);
-      showErrorMsg("Cannot logout. Please try again.");
+      console.error("Logout error:", err)
+      showErrorMsg("Cannot logout. Please try again.")
     }
   }
-
-  // תנאי רינדור לדפים מסוימים
   if (
     (isGigPage && deviceType === "mobile") ||
     (isChatPage && (deviceType === "mobile" || deviceType === "mini-tablet"))
   ) {
-    return null;
+    return null
   }
 
   return (
@@ -138,7 +141,6 @@ export function AppHeader() {
     >
       <nav className="main-nav">
         <div className="container flex row">
-          {/* כפתור תפריט צדדי */}
           <div
             className={`dropdown flex ${notification ? "notification" : ""}`}
             onClick={(e) => {
@@ -160,8 +162,6 @@ export function AppHeader() {
               />
             )}
           </div>
-
-          {/* לוגו */}
           <Link to="/" style={{ color: headerStyles.color }}>
             <h1 style={{ color: logoColor }} className="flex row">
               gigster
@@ -170,8 +170,6 @@ export function AppHeader() {
               </span>
             </h1>
           </Link>
-
-          {/* סרגל חיפוש */}
           <SearchBar
             placeholder={headerPlaceholderText}
             searchQuery={searchQuery}
@@ -179,7 +177,6 @@ export function AppHeader() {
             onSearchSubmit={handleSearchSubmit}
             visibility={headerStage >= 1 ? "visible" : "hidden"}
           />
-
           <div className="header-options">
             <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
@@ -195,10 +192,7 @@ export function AppHeader() {
             </NavLink>
           </div>
         </div>
-      </nav> 
-      
-
-      {/* סרגל ניווט נוסף */}
+      </nav>
       <NavBar
         categories={categories}
         display={headerStage === 2 ? "flex" : "none"}
