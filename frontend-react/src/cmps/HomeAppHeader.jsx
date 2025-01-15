@@ -8,16 +8,18 @@ import { NavBar } from "./NavBar";
 import { SignDiv } from "./SignDiv";
 import { JoinDiv } from "./JoinDiv";
 import SvgIcon from "./SvgIcon.jsx";
+import { setFilter } from "../store/actions/gig.actions.js";
+import { SearchBar } from "./SearchBar.jsx";
+
+
 
 export function HomeAppHeader() {
+  const [searchQuery, setSearchQuery] = useState("");
+
   const user = useSelector((storeState) => storeState.userModule.user);
   const navigate = useNavigate();
   const [showMiniHeader, setShowMiniHeader] = useState(false);
-  // const logoColor = headerStage === 0 ? "#fff" : "#404145";
-  // const headerStyles = {
-  //   backgroundColor: headerStage >= 1 ? "#fff" : "transparent",
-  //   color: isHomePage && headerStage === 0 ? "#fff" : "#62646a",
-  // };
+  const [searchValue, setSearchValue] = useState("");
 
   async function onLogout() {
     try {
@@ -33,7 +35,7 @@ export function HomeAppHeader() {
     const handleScroll = () => {
       const greenDiv = document.querySelector(".green-search-div");
       const greenDivOffset = greenDiv?.offsetTop || 0;
-      const scrollPosition = window.scrollY-300;
+      const scrollPosition = window.scrollY - 300;
 
       // Toggle the mini-header based on scroll position
       setShowMiniHeader(scrollPosition > greenDivOffset);
@@ -57,38 +59,77 @@ export function HomeAppHeader() {
   };
 
   const handleCloseSignDiv = (e) => {
-    // Close the modal only if clicking outside the sign-div
     if (e.target.className === "modal-overlay") {
       setIsSignDivVisible(false);
     }
   };
+
   const handleCloseJoinDiv = (e) => {
-    // Close the modal only if clicking outside the sign-div
     if (e.target.className === "modal-overlay") {
       setIsJoinDivVisible(false);
     }
   };
+    // פונקציות טיפול
+    function handleSearchChange(e) {
+      const newSearchQuery = e.target.value;
+      setSearchQuery(newSearchQuery);
+    }
+  
+    function handleSearchSubmit(e) {
+      e.preventDefault();
+      if (!searchQuery) return;
+      setFilter({ ...filterBy, search: searchQuery });
+      navigate(`/gig`);
+      setSearchQuery("");
+    }
 
   return (
     <>
       <header className="app-header-home full">
-        <nav className="home-nav-bar" style={{paddingLeft:'60px'}}>
-        <NavLink to="/" >
-            <h1 style={{ color: '#404145',paddingLeft:'32px',fontSize:'30px',lineHeight:'24px',fontWeight:'900',fontFamily:'$fiverr-defult-font' }} className="flex row">
+        <nav className="home-nav-bar" style={{ paddingLeft: "60px" }}>
+          <NavLink to="/">
+            <h1
+              style={{
+                color: "#404145",
+                paddingLeft: "32px",
+                fontSize: "30px",
+                lineHeight: "24px",
+                fontWeight: "900",
+                fontFamily: "$fiverr-defult-font",
+              }}
+              className="flex row"
+            >
               gigster
               <span className="flex">
                 <SvgIcon iconName={"greenDotIcon"} />
               </span>
             </h1>
           </NavLink>
-          {/* <NavLink to="/">
-            <img
-              className="logo"
-              src="src/services/imgs/design.imgs/logo.png"
-              alt="Navigate to Target Page"
-              style={{ width: "90px", height: "70px" }}
-            />
-          </NavLink> */}
+
+          {/* {showMiniHeader && (
+            <div className="app-header-home-search-bar">
+              <input
+                type="text"
+                placeholder="Search for services..."
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+              />
+              <button onClick={() => console.log("Search:", searchValue)}>
+                Search
+              </button>
+            </div>
+          )} */}
+          {showMiniHeader && (
+            <div className="app-header-home-search-bar">
+              <SearchBar
+                placeholder="Search for services..."
+                searchQuery={searchQuery}
+                onSearchChange={handleSearchChange}
+                onSearchSubmit={handleSearchSubmit}
+              />
+            </div>
+          )}
+
           <div className="header-options">
             <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
@@ -96,38 +137,46 @@ export function HomeAppHeader() {
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
-            
+
             {isSignDivVisible && (
-        <div className="modal-overlay" onClick={handleCloseSignDiv}>
-          <SignDiv/>
-         
-        </div>
+              <div className="modal-overlay" onClick={handleCloseSignDiv}>
+                <SignDiv />
+              </div>
             )}
             {isJoinDivVisible && (
-        <div className="modal-overlay" onClick={handleCloseJoinDiv}>
-          <JoinDiv/>
-         
-        </div>
+              <div className="modal-overlay" onClick={handleCloseJoinDiv}>
+                <JoinDiv />
+              </div>
             )}
-         <div onClick={handleOpenSignDiv} className="sign-header-btn">Sign in</div>
 
-              <div onClick={handleOpenJoinDiv} className="join-btn">Join</div>
+            <div onClick={handleOpenSignDiv} className="sign-header-btn">
+              Sign in
+            </div>
+
+            <div onClick={handleOpenJoinDiv} className="join-btn">
+              Join
+            </div>
 
             {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
           </div>
           {user && (
             <div className="user-info">
-              <Link to={`user/${user._id}`}>
-                {user.fullname}
-              </Link>
+              <Link to={`user/${user._id}`}>{user.fullname}</Link>
               <button onClick={onLogout}>logout</button>
             </div>
           )}
         </nav>
         {showMiniHeader && (
-          <NavBar 
-            categories={["Graphics & Design", "Programming & Tech", "Digital Marketing", "Video & Animation", "Writing & Translation", "Music & Audio", "Business"]}
-            // display="flex"
+          <NavBar
+            categories={[
+              "Graphics & Design",
+              "Programming & Tech",
+              "Digital Marketing",
+              "Video & Animation",
+              "Writing & Translation",
+              "Music & Audio",
+              "Business",
+            ]}
           />
         )}
       </header>
@@ -135,18 +184,21 @@ export function HomeAppHeader() {
   );
 }
 
-
-
-
+// import React, { useState, useEffect } from "react";
 // import { Link, NavLink } from "react-router-dom";
 // import { useNavigate } from "react-router";
 // import { useSelector } from "react-redux";
 // import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
 // import { logout } from "../store/actions/user.actions";
+// import { NavBar } from "./NavBar";
+// import { SignDiv } from "./SignDiv";
+// import { JoinDiv } from "./JoinDiv";
+// import SvgIcon from "./SvgIcon.jsx";
 
 // export function HomeAppHeader() {
 //   const user = useSelector((storeState) => storeState.userModule.user);
 //   const navigate = useNavigate();
+//   const [showMiniHeader, setShowMiniHeader] = useState(false);
 
 //   async function onLogout() {
 //     try {
@@ -158,49 +210,100 @@ export function HomeAppHeader() {
 //     }
 //   }
 
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const greenDiv = document.querySelector(".green-search-div");
+//       const greenDivOffset = greenDiv?.offsetTop || 0;
+//       const scrollPosition = window.scrollY-300;
+
+//       // Toggle the mini-header based on scroll position
+//       setShowMiniHeader(scrollPosition > greenDivOffset);
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   const [isSignDivVisible, setIsSignDivVisible] = useState(false);
+//   const [isJoinDivVisible, setIsJoinDivVisible] = useState(false);
+
+//   const handleOpenSignDiv = () => {
+//     setIsSignDivVisible(true);
+//   };
+//   const handleOpenJoinDiv = () => {
+//     setIsJoinDivVisible(true);
+//   };
+
+//   const handleCloseSignDiv = (e) => {
+//     // Close the modal only if clicking outside the sign-div
+//     if (e.target.className === "modal-overlay") {
+//       setIsSignDivVisible(false);
+//     }
+//   };
+//   const handleCloseJoinDiv = (e) => {
+//     // Close the modal only if clicking outside the sign-div
+//     if (e.target.className === "modal-overlay") {
+//       setIsJoinDivVisible(false);
+//     }
+//   };
+
 //   return (
-//     <header className="app-header-home full">
-//       <nav className="home-nav-bar">
-//         <NavLink to="/">
-//           <img
-//             className="logo"
-//             src="src\services\imgs\design.imgs\logo.png"
-//             alt="Navigate to Target Page"
-//             style={{ width: "90px", height: "70px" }}
-//           />
-//         </NavLink>
-//         <div className="header-options">
-//           {/* <NavLink to="about">About</NavLink> */}
-//           <NavLink to="/become-seller">
-//             <div className="sign-header-btn">Become a Seller</div>
+//     <>
+//       <header className="app-header-home full">
+//         <nav className="home-nav-bar" style={{paddingLeft:'60px'}}>
+//         <NavLink to="/" >
+//             <h1 style={{ color: '#404145',paddingLeft:'32px',fontSize:'30px',lineHeight:'24px',fontWeight:'900',fontFamily:'$fiverr-defult-font' }} className="flex row">
+//               gigster
+//               <span className="flex">
+//                 <SvgIcon iconName={"greenDotIcon"} />
+//               </span>
+//             </h1>
 //           </NavLink>
-//           <NavLink to="gig">
-//             <div className="sign-header-btn">Explore</div>
-//           </NavLink>
-//           <NavLink to="gig">
-//             <div className="sign-header-btn">Sign in</div>
-//           </NavLink>
-//           <NavLink to="gig">
-//             <div className="join-btn">Join</div>
-//           </NavLink>
-//           {/* <NavLink to="chat">Chat</NavLink> */}
-//           {/* <NavLink to="review">Review</NavLink> */}
 
-//           {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
+//           <div className="header-options">
+//             <NavLink to="/become-seller">
+//               <div className="sign-header-btn">Become a Seller</div>
+//             </NavLink>
+//             <NavLink to="gig">
+//               <div className="sign-header-btn">Explore</div>
+//             </NavLink>
 
-//           {/* {!user && <NavLink to="login" className="login-link">Login</NavLink>} */}
+//             {isSignDivVisible && (
+//         <div className="modal-overlay" onClick={handleCloseSignDiv}>
+//           <SignDiv/>
+
 //         </div>
-//         {user && (
-//           <div className="user-info">
-//             <Link to={`user/${user._id}`}>
-//               {/* {user.imgUrl && <img src={user.imgUrl} />} */}
-//               {user.fullname}
-//             </Link>
-//             {/* <span className="score">{user.score?.toLocaleString()}</span> */}
-//             <button onClick={onLogout}>logout</button>
+//             )}
+//             {isJoinDivVisible && (
+//         <div className="modal-overlay" onClick={handleCloseJoinDiv}>
+//           <JoinDiv/>
+
+//         </div>
+//             )}
+//          <div onClick={handleOpenSignDiv} className="sign-header-btn">Sign in</div>
+
+//               <div onClick={handleOpenJoinDiv} className="join-btn">Join</div>
+
+//             {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 //           </div>
+//           {user && (
+//             <div className="user-info">
+//               <Link to={`user/${user._id}`}>
+//                 {user.fullname}
+//               </Link>
+//               <button onClick={onLogout}>logout</button>
+//             </div>
+//           )}
+//         </nav>
+//         {showMiniHeader && (
+//           <NavBar
+//             categories={["Graphics & Design", "Programming & Tech", "Digital Marketing", "Video & Animation", "Writing & Translation", "Music & Audio", "Business"]}
+//           />
 //         )}
-//       </nav>
-//     </header>
+//       </header>
+//     </>
 //   );
 // }
