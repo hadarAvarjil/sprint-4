@@ -134,7 +134,6 @@ const users = [
     isTopRated: true,
     about:'I enjoy working with businesses to create high quality promotional content.',
     skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
-
     extraSkills: 16
   },
   {
@@ -152,6 +151,8 @@ const users = [
     from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
   },
   {
     _id: 'u103',
@@ -168,6 +169,8 @@ const users = [
     from: 'Italy',
     languages: ['English', 'Hebrew', 'Russian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
   },
   {
     _id: 'u104',
@@ -184,6 +187,8 @@ const users = [
     from: 'France',
     languages: ['English', 'Hebrew', 'Russian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
   },
   {
     _id: 'u105',
@@ -200,6 +205,8 @@ const users = [
     from: 'Germany',
     languages: ['English', 'Hebrew', 'Russian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
   },
   {
     _id: 'u106',
@@ -216,6 +223,8 @@ const users = [
     from: 'France',
     languages: ['English', 'Hebrew', 'Russian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
   },
   {
     _id: 'u107',
@@ -232,6 +241,8 @@ const users = [
     from: 'France',
     languages: ['English', 'Hebrew', 'Russian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
   },
   {
     _id: 'u1011',
@@ -248,6 +259,8 @@ const users = [
     from: 'France',
     languages: ['English', 'Hebrew', 'Italian'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
   },
   {
     _id: 'g110',
@@ -282,6 +295,8 @@ const users = [
     from: 'France',
     languages: ['English', 'Hebrew', 'German'],
     isTopRated: true,
+    about:'I enjoy working with businesses to create high quality promotional content.',
+    skills: ["Graphic designer", "Responsive designer", "Adobe Photoshop expert", "Website designer", "WordPress expert", "SEO expert", "UI/UX designer"],
   }
   
   
