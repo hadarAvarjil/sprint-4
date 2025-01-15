@@ -195,8 +195,8 @@ export function AppHeader() {
             </NavLink>
           </div>
         </div>
-      </nav> 
-      
+      </nav>
+
 
       {/* סרגל ניווט נוסף */}
       <NavBar

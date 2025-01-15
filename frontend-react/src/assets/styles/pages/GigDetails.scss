@@ -1,8 +1,8 @@
 .gig-details {
   max-width: 1304px;
   // color: $clrPrimary2;
- 
-    
+
+
 
   main {
     // background-color: $clrPrimary1;
@@ -52,11 +52,12 @@
 
     .about-gig h3 {
       color: #404145;
-      font-family: macan-regular, Helvetica, Arial, sans-serif;      font-weight: 700;
+      font-family: macan-regular, Helvetica, Arial, sans-serif;
+      font-weight: 700;
       line-height: 28px;
       margin-top: rem(66px);
       margin-bottom: rem(5px);
-   
+
     }
 
     .about-gig .gig-description {
@@ -112,16 +113,19 @@
             // font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
             font: 400 27px/45px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
             color: #222325;
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px; 
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
           }
 
           .username {
             color: #74768E;
             font-size: 1rem;
             font-weight: normal;
-            margin: 0; 
+            margin: 0;
           }
 
           .rating {
@@ -130,19 +134,19 @@
             gap: 10px;
             font-size: 1rem;
             margin-bottom: -3%;
-          
+
             span {
-              display: flex; 
+              display: flex;
               align-items: center;
-              gap: 5px; 
+              gap: 5px;
             }
-          
+
             svg {
-              width: 16px; 
+              width: 16px;
               height: 16px;
-              fill: currentColor; 
+              fill: currentColor;
             }
-            
+
             .top-rated-badge {
               background-color: #f8e5c0;
               color: rgb(128, 67, 23);
@@ -153,17 +157,17 @@
               align-items: center;
               gap: 4px;
               font-weight: 600;
-          
+
               .active-star {
-                color: #000; /* כוכבים פעילים בצבע שחור */
+                color: #000;
               }
-          
+
               .inactive-star {
-                color: #ccc; /* כוכבים לא פעילים בצבע אפור */
+                color: #ccc;
               }
             }
           }
-          
+
 
           .user-bio,
           .user-location {
@@ -172,28 +176,29 @@
             color: $clrSecondary8;
             margin-bottom: -3%;
             font: 400 16px/28px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
-            display: flex; 
-            align-items: center; 
-            gap: 8px; 
-          
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
             svg {
               width: 16px;
               height: 16px;
               fill: currentColor;
             }
-          
+
             span {
               margin: 0;
               padding: 0;
             }
           }
-          
+
         }
       }
 
       .user-about {
         margin-top: 50px;
-        font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font: 400 16px/24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+
         h2 {
           font-size: 16px;
           margin-bottom: 10px;
@@ -207,11 +212,20 @@
     }
 
     .user-contact-card {
-      // flex: 1;
-      background-color: $clrSecondary1;
-      padding: 20px;
+      display: flex;
+
+      box-sizing: border-box;
+      min-width: 31%;
+      text-align: center;
+      border-radius: 4px;
+      flex-direction: column;
+      margin-left: 10%;
+      margin-top: 10%;
+      background-color: white;
+      padding: 10px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 
       .contact-header {
         text-align: center;
@@ -237,9 +251,8 @@
 
       .contact-btn {
         display: block;
-        width: 100%;
+        // width: 20%;
         background-color: black;
-
         color: white;
         padding: 10px 0;
         text-align: center;
@@ -295,6 +308,7 @@
       align-items: flex-start;
       margin-bottom: 30px;
       flex-direction: row-reverse;
+
       .average-rating {
         text-align: center;
 
@@ -317,6 +331,7 @@
 
       .stars-breakdown {
         flex: 1;
+
         .star-row {
           display: flex;
           align-items: center;
@@ -391,8 +406,8 @@
   }
 }
 
-  
-  
+
+
 
 
 
@@ -467,5 +482,5 @@
       }
     }
   }
-  
+
 }
