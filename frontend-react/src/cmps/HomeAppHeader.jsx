@@ -90,7 +90,7 @@ export function HomeAppHeader() {
             <h1
               style={{
                 color: "#404145",
-                paddingLeft: "32px",
+                paddingLeft: "50px",
                 fontSize: "30px",
                 lineHeight: "24px",
                 fontWeight: "900",
