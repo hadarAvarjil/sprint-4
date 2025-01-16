@@ -1,3 +1,8 @@
+.home-body{
+padding-left: 5.25%;
+}
+
+
 .green-search-div {
   margin-bottom: 16px;
   background-color: #013A12;
@@ -62,7 +67,7 @@
   .trustedBy-img {
     position: absolute;
     width: 20%;
-    left: 10%;
+    left: 20%;
     bottom: -0.31%;
     z-index: 0;
   }
@@ -71,6 +76,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     h1 {
       font-family: $fiverr-defult-font;
@@ -96,7 +102,7 @@
   .search-bar-div {
     background-color: white;
     // padding: 10px;
-    width: 83%;
+    width: 100%;
     height: 12%;
     display: flex;
     justify-content: center;
@@ -213,9 +219,9 @@
       line-height: 28px;
       text-align: start;
       letter-spacing: normal;
-      }
+      } 
 
-      .pop-inner-pic {
+      .pop-inner-pic img {
         position: absolute;
         border-radius: 10%;
         bottom: 6px;

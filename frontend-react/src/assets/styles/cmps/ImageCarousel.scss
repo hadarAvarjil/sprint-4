@@ -20,14 +20,14 @@
       .carousel-item {
         width: 100%;
         position: relative;
-        background: linear-gradient(180deg, $clrPrimary1, $clrSecondary4);
+        background: linear-gradient(180deg, white, white);
         object-fit: contain;
       }
 
       .carousel-item::after {
-        background-image: linear-gradient(0deg,
-            rgba(0, 0, 0, 0.3),
-            hsla(0, 0%, 100%, 0));
+        // background-image: linear-gradient(0deg,
+        //     rgba(0, 0, 0, 0.3),
+        //     hsla(0, 0%, 100%, 0));
         // border-radius: 0.5em;
         bottom: 0;
         content: '';
@@ -184,7 +184,9 @@
 
       &:after {
         content: '\25CF';
-        color: $clrPrimary1;
+        // color: $clrPrimary1;
+        color:#f5f5f57c;
+        ;
       }
     }
 
@@ -193,7 +195,8 @@
       transform: scale(1.2);
 
       &:after {
-        color: $clrPrimary1;
+        // color: $clrPrimary1;
+        color: #F5F5F5;
       }
     }
 
@@ -202,7 +205,7 @@
       transform: scale(1.2);
 
       &:after {
-        color: $clrPrimary1;
+        color:#F5F5F5;
       }
     }
   }
@@ -212,8 +215,10 @@
 .carousel-container:hover {
   .arrow {
     opacity: 1;
-    background: $clrPrimary1;
+    // background: $clrPrimary1;
+    background:#F5F5F5;
     transition: all 0.5s ease-in-out;
+    
 
     &.right {
       right: 12px;

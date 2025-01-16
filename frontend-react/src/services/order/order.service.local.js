@@ -8,7 +8,7 @@ export const orderService = {
     save,
     remove,
     getEmptyOrder,
-    addOrder,
+    createOrder,
 }
 window.cs = orderService
 
@@ -24,23 +24,30 @@ function getById(orderId) {
 async function remove(orderId) {
     await storageService.remove(STORAGE_KEY, orderId)
 }
-
 async function save(order) {
-    let savedOrder
+    // Log before saving
+    console.log('Before saving order:', order);
+
+    let savedOrder;
     if (order._id) {
-        savedOrder = await storageService.put(STORAGE_KEY, order)
+        // Update existing order
+        savedOrder = await storageService.put(STORAGE_KEY, order);
     } else {
-        order.owner = userService.getLoggedinUser()
-        savedOrder = await storageService.post(STORAGE_KEY, order)
+        // Create new order
+        savedOrder = await storageService.post(STORAGE_KEY, order);
     }
-    return savedOrder
+
+    // Log after saving
+    console.log('After saving order:', savedOrder);
+
+    return savedOrder;
 }
 
 function getEmptyOrder() {
     return {
         gigId: '',
-        buyerId: '',
-        buyerName: '',
+        // buyerId: '',
+        // buyerName: '',
         sellerId: '',
         price: 0,
         createdAt: Date.now(),
@@ -48,12 +55,19 @@ function getEmptyOrder() {
     }
 }
 
-async function addOrder(gigId, buyerId, buyerName, sellerId, price) {
-    let order = getEmptyOrder()
-    order.buyerId = buyerId
-    order.buyerName = buyerName
+async function createOrder(gigId, sellerId, price, title, daysToMake) {
+    console.log(gigId, sellerId, price, title, daysToMake);
+
+    const order = getEmptyOrder()
+    // order.buyerId = buyerId
+    // order.buyerName = buyerName
+    order.gigId = gigId
     order.sellerId = sellerId
-    order.orderedGigId = gigId
     order.price = price
+    order.title = title
+    order.daysToMake = daysToMake
+    console.log('order', order);
+
     return order
 }
+

@@ -42,20 +42,19 @@ export function GigPurchasePage() {
         loadGigsInfo()
     }, [gig, navigate])
 
-
     async function createOrder() {
-        const newOrder = orderService.createOrder(
-            loggedInUser._id,
-            gig.ownerId,
-            gig.title,
-            gig.daysToMake,
-            gig._id,
-            gig.price
-        )
         try {
-            await orderService.save(newOrder)
+            const newOrder = await orderService.createOrder(
+                gig._id,
+                gig.ownerId,
+                gig.price,
+                gig.title,
+                gig.daysToMake
+            )
+            await orderService.save(newOrder);
         } catch (err) {
-            showErrorMsg('FAILED TO ORDER')
+            console.error('Error Saving Order:', err);
+            showErrorMsg('FAILED TO ORDER');
         }
     }
 

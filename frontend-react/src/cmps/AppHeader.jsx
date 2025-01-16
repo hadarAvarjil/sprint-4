@@ -178,9 +178,9 @@ export function AppHeader() {
             visibility={headerStage >= 1 ? "visible" : "hidden"}
           />
           <div className="header-options">
-            <NavLink to="/become-seller">
+            {/* <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
