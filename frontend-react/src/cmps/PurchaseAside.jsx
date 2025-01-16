@@ -8,6 +8,11 @@ export function PurchaseAside({
     Selectedpackage,
     handleSubmit,
 }) {
+
+    function onConfirmPayment() {
+        createOrder()
+      }
+
     const serviceFee = 30.62
     const vat = 105.63
     const total = packages[Selectedpackage].price + serviceFee + vat  
@@ -58,7 +63,7 @@ export function PurchaseAside({
                 </div>
             </div>
 
-            <button className="confirm-pay-btn" onClick={handleSubmit}>
+            <button className="confirm-pay-btn" onClick={onConfirmPayment}>
                 Confirm & Pay
             </button>
             <p className="ssl-notice">
