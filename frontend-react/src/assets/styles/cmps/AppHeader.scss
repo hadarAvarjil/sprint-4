@@ -75,15 +75,59 @@ margin-left: -500px;
     margin: auto;
     justify-content: space-between;
   }
-  
-  .category-nav .container a {
-    flex: 0 0 auto;
-    color: inherit;
-    line-height: 24px;
-    padding: 8px 0px;
+
+
+  .category-nav a {
     position: relative;
-    color: $clrSecondary6;
+    color: #404145; /* Adjust the text color as needed */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px 0;
   }
+  
+
+  
+  .category-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Position the line at the bottom of the link */
+    left: 0;
+    width: 0;
+    height: 3px; /* Thickness of the line */
+    background-color: $bgColor2; /* Green color for the line */
+  }
+  
+  .category-nav a:hover::after {
+    width: 100%; /* Make the line fully visible without animation */
+  }
+  
+  // .category-nav .container a {
+  //   flex: 0 0 auto;
+  //   color: inherit;
+  //   line-height: 24px;
+  //   padding: 8px 0px;
+  //   position: relative;
+  //   color: $clrSecondary6;
+  // }
+  
+  // .category-nav a::after {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 0; /* Position the line at the bottom of the link */
+  //   left: 0;
+  //   width: 0;
+  //   height: 2px; /* Thickness of the line */
+  //   background-color: $bgColor2; /* Green color */
+  //   transition: width 0.3s ; /* Smooth animation for the line */
+  // }
+  
+  // .category-nav a:hover::after {
+  //   width: 100%; /* Full width of the link when hovered */
+  // }
+
+
+
+
+
   
   .category-nav .container .carousel-btn {
     position: absolute;

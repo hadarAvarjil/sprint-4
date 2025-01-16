@@ -14,7 +14,7 @@
   
   .sign-div {
     width: 57vw; /* 50% of the viewport width */
-    height: 88vh; /* Optional height, adjust as needed */
+    height: 85vh; /* Optional height, adjust as needed */
     background: white;
     border-radius: 10px;
     display: flex;
@@ -47,7 +47,7 @@
   
   .left-purple-ad .img-container img {
     width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
+    height: 100%; /* Maintain aspect ratio */
     max-width: 100%; /* Prevents it from being larger than its container */
     max-height: 100%; /* Ensures the image fits within the container */
     object-fit: contain; /* Ensures the entire image is visible */

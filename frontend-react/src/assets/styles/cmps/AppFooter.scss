@@ -108,5 +108,15 @@ width: 100%;
        
     }
     }
-
+    .small-img {
+        display: inline-block;
+        vertical-align: baseline; /* Aligns with the baseline of the text */
+      }
+      
+      .small-img img {
+        width: 10px; /* Adjust the size as needed */
+        height: 10px;
+        vertical-align: baseline; /* Aligns the image with the text baseline */
+        margin-bottom: -2px; 
+      }     
     
