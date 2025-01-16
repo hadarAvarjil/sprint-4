@@ -10,7 +10,7 @@ import { PurpleAd } from "../cmps/PurpleSignUpAd.jsx";
 export function HomePage() {
  
   return (
-    <div>
+    <div className="home-body">
       <GreenDiv />
       <CatDivsContainer />
       <PopularServices />
