@@ -29,7 +29,7 @@ export function AppHeader() {
   const asideMenuRef = useRef(null)
   const dispatch = useDispatch()
 
- 
+
   outsideClick(userInfoRef, () => setShowUserDropdown(false))
   outsideClick(ordersRef, () => setShowOrdersDropdown(false))
   outsideClick(asideMenuRef, () => setShowAsideMenu(false))
@@ -184,12 +184,31 @@ export function AppHeader() {
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
+
+            {/* <div className="orders-prereview">
+              <button className="btn-orders-prereview"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setOpenOrdersDropdown(!showOrdersDropdown)
+                }}
+                ref={ordersRef}
+              >
+                Orders
+              </button>
+              {showOrdersDropdown && (
+                <BuyerOrdersDropdown
+                  onClose={() => setOpenOrdersDropdown(false)}
+                />
+              )}
+
+            </div> */}
             <NavLink to="gig">
               <div className="sign-header-btn">Sign in</div>
             </NavLink>
             <NavLink to="gig">
               <div className="join-btn">Join</div>
             </NavLink>
+
           </div>
         </div>
       </nav>

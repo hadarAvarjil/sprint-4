@@ -16,6 +16,9 @@ export function GigReview({ review }) {
         Germany: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736502946/flag_Germany_yebov4.png',
         France: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736503610/Flag_France_s39umw.png',
         Italy: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736503614/Flag_Italy_ws6uah.png',
+        Japan:'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144994/Flag_of_Japan.svg_pmozsw.webp',
+        Israel:'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144932/Israel_jr4jnd.png',
+        Argentina: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144994/Flag_of_Argentina.svg_whdtwz.png'
     }
 
     return (
