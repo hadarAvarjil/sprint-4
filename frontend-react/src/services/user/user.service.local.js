@@ -269,7 +269,7 @@ const users = [
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
     username: 'Janny123',
     password: '123',
-    level: 'level 1.4',
+    level: 'level 1',
     rating: 1.2,
     isAdmin: true,
     ordersInQueue: 10,

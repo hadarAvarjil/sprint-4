@@ -1,8 +1,5 @@
-const noResultsImg = 'https://res.cloudinary.com/dgwgcf6mk/image/upload/v1701539881/Giggler/other/bzqrborygalzssnmogax.png'
-
 import { useEffect, useState } from 'react'
-import { useSelector,useDispatch } from 'react-redux'
-import { useSearchParams } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { Pagination } from '../cmps/Pagination.jsx'
 import { GigList } from '../cmps/GigList.jsx'
@@ -11,14 +8,15 @@ import { GigFilter } from '../cmps/GigFilter.jsx'
 import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
 import { gigService } from '../services/gig.service.js'
 
+const noResultsImg = 'https://res.cloudinary.com/dgwgcf6mk/image/upload/v1701539881/Giggler/other/bzqrborygalzssnmogax.png'
+
 export function GigIndex() {
   const { gigs } = useSelector((storeState) => storeState.gigModule)
-  const isLoading = useSelector(storeState => storeState.gigModule.isLoading)
-  const [searchParams, setSearchparams] = useSearchParams()
-  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)  || gigService.getDefaultFilter()
+  const isLoading = useSelector((storeState) => storeState.gigModule.isLoading)
+  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy) || gigService.getDefaultFilter()
   const [isRenderedChoice, setIsRenderedChoice] = useState([false, ''])
-  const [mobileState, setMobileState] = useState(false)
   const dispatch = useDispatch()
+
   const currentPage = filterBy.page || 1
   const totalGigsPerPage = 12
   const totalPages = Math.ceil(gigs.length / totalGigsPerPage)
@@ -33,9 +31,10 @@ export function GigIndex() {
 
   async function loadsGigs() {
     try {
+      console.log('Loading gigs with filter:', filterBy);// Debugging
       await loadGigs(filterBy)
     } catch (err) {
-      console.log('Error getting gigs to gigIndex: ', err)
+      console.error('Error getting gigs to GigIndex: ', err)
     }
   }
 
@@ -46,7 +45,7 @@ export function GigIndex() {
     switch (isRenderedChoice[1]) {
       case 'delivery_time':
         updatedFilterBy = { ...filterBy, time: selectedOption }
-        break
+        break;
 
       case 'budget':
         if (selectedOption.min) {
@@ -55,17 +54,16 @@ export function GigIndex() {
         if (selectedOption.max) {
           updatedFilterBy = { ...updatedFilterBy, max: selectedOption.max }
         }
-        break
+        break;
 
       case 'seller_level':
         updatedFilterBy = { ...updatedFilterBy, level: selectedOption }
-        break
+        break;
 
       case 'category':
         updatedFilterBy = { ...updatedFilterBy, cat: selectedOption }
-        break
+        break;
 
-      // Handle subcategories
       case 'Graphics & Design':
       case 'Programming & Tech':
       case 'Digital Marketing':
@@ -77,24 +75,28 @@ export function GigIndex() {
       case 'Photography':
       case 'AI Services':
         updatedFilterBy = { ...updatedFilterBy, tag: selectedOption }
-        break
+        break;
 
       case 'clear':
         updatedFilterBy = gigService.getDefaultFilter()
-        break
+        break;
 
       default:
-        break
+        break;
     }
-    setFilter(updatedFilterBy)
+    console.log('Updated filterBy:', updatedFilterBy) // Debugging
+    dispatch(setFilter(updatedFilterBy))
     setIsRenderedChoice([false, ''])
   }
 
   function onDeleteFilter(filterToDelete) {
-    if (filterToDelete === ('min' || 'max'))
-      setFilter({ ...filterBy, [filterToDelete]: undefined })
-
-    setFilter({ ...filterBy, [filterToDelete]: '' })
+    const updatedFilterBy = { ...filterBy }
+    if (filterToDelete === 'min' || filterToDelete === 'max') {
+      delete updatedFilterBy[filterToDelete]
+    } else {
+      updatedFilterBy[filterToDelete] = ''
+    }
+    dispatch(setFilter(updatedFilterBy))
   }
 
   function onHandleChoice(renderedChoice) {
@@ -103,34 +105,30 @@ export function GigIndex() {
       (renderedChoice === 'category' && isRenderedChoice[0])
     ) {
       setIsRenderedChoice([false, ''])
-      return
+      return;
     }
 
     switch (renderedChoice) {
       case 'seller_level':
         setIsRenderedChoice([true, 'seller_level'])
-        break
+        break;
       case 'delivery_time':
         setIsRenderedChoice([true, 'delivery_time'])
-        break
+        break;
       case 'budget':
         setIsRenderedChoice([true, 'budget'])
-        break
+        break;
       case 'category':
-        setIsRenderedChoice([true, categorySelect.trim()])
-        break
+        setIsRenderedChoice([true, 'category'])
+        break;
       case 'clear':
-        dispatch(setFilter(gigService.getDefaultFilter())); 
-        setIsRenderedChoice([false, 'clear']);
-        break
+        dispatch(setFilter(gigService.getDefaultFilter()))
+        setIsRenderedChoice([false, 'clear'])
+        break;
       default:
-        console.log('default switch in onHandleChoice')
-        break
+        console.log('Default case in onHandleChoice')
+        break;
     }
-  }
-
-  function setMobileFilter(mobileFilter) {
-    setFilter({ ...filterBy, ...mobileFilter })
   }
 
   function clearAllFilters() {
@@ -140,15 +138,12 @@ export function GigIndex() {
   }
 
   function handlePageChange(newPage) {
-    setFilter({ ...filterBy, page: newPage })
+    dispatch(setFilter({ ...filterBy, page: newPage }))
   }
-
-  const categorySelect = filterBy.cat ? filterBy.cat : 'category'
 
   return (
     <main
       className="gig-index flex column full"
-      style={mobileState ? { zIndex: 50 } : {}}
     >
       <GigFilter
         filterBy={filterBy}
@@ -173,7 +168,7 @@ export function GigIndex() {
           <button className="clr-filter" onClick={() => clearAllFilters()}>
             clear all filters
           </button>
-          <img src={noResultsImg} />
+          <img src={noResultsImg} alt="No Results" />
         </section>
       )}
     </main>

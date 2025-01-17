@@ -26,8 +26,32 @@ async function query(filterBy = { txt: '', price: 0, cat: '' }) {
     )
   }
 
-  if (filterBy.price) {
-    gigs = gigs.filter((gig) => gig.price <= filterBy.price)
+  if (filterBy.level) {
+    gigs = await Promise.all(
+      gigs.map(async gig => {
+        const seller = await userService.getById(gig.ownerId)
+        if (!seller) {
+          console.warn(`Seller not found for gig ${gig._id}, ownerId: ${gig.ownerId}`)
+          return null
+        }
+        const sellerLevel = seller.level ? seller.level.toLowerCase().trim() : ''
+        const filterLevel = filterBy.level.toLowerCase().trim()
+        console.log(`Gig ${gig._id} - Seller Level: ${sellerLevel}, Filter Level: ${filterLevel}`)
+        return sellerLevel === filterLevel ? gig : null
+      })
+    )
+    gigs = gigs.filter(gig => gig !== null)
+  }
+  
+  if (filterBy.time) {
+    gigs = gigs.filter(gig => gig.daysToMake === filterBy.time)
+  }
+
+  if (filterBy.min) {
+    gigs = gigs.filter(gig => gig.price >= filterBy.min)
+  }
+  if (filterBy.max) {
+    gigs = gigs.filter(gig => gig.price <= filterBy.max)
   }
 
   if (filterBy.cat) {
@@ -36,6 +60,7 @@ async function query(filterBy = { txt: '', price: 0, cat: '' }) {
 
   return gigs
 }
+
 
 function getById(gigId) {
   return storageService.get(STORAGE_KEY, gigId)
