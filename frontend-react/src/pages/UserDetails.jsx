@@ -1,57 +1,59 @@
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { GigPreview } from '../cmps/GigPreview.jsx';
-import { GigReview } from '../cmps/GigReview.jsx';
-import { gigService } from '../services/gig/gig.service.local.js';
-import { loadUser } from '../store/actions/user.actions';
-import { UserSkills } from '../cmps/UserSkills.jsx';
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { GigPreview } from '../cmps/GigPreview.jsx'
+import { GigReview } from '../cmps/GigReview.jsx'
+import { gigService } from '../services/gig/gig.service.local.js'
+import { loadUser } from '../store/actions/user.actions'
+import { UserSkills } from '../cmps/UserSkills.jsx'
 import SvgIcon from '../cmps/SvgIcon.jsx'
-import { store } from '../store/store';
-import { showSuccessMsg } from '../services/event-bus.service';
+import { store } from '../store/store'
+import { showSuccessMsg } from '../services/event-bus.service'
 import {
   socketService,
   SOCKET_EVENT_USER_UPDATED,
   SOCKET_EMIT_USER_WATCH,
-} from '../services/socket.service';
+} from '../services/socket.service'
 
 export function UserDetails() {
-  const params = useParams();
-  const user = useSelector((storeState) => storeState.userModule.watchedUser);
-  const [allGigs, setAllGigs] = useState([]);
-  const [userGigs, setUserGigs] = useState([]);
-  const [reviews, setReviews] = useState([]);
+  const params = useParams()
+  const user = useSelector((storeState) => storeState.userModule.watchedUser)
+  const [allGigs, setAllGigs] = useState([])
+  const [userGigs, setUserGigs] = useState([])
+  const [reviews, setReviews] = useState([])
+  const navigate = useNavigate()
   const [ratingStats, setRatingStats] = useState({
     totalReviews: 0,
     starCounts: [0, 0, 0, 0, 0],
     averageRating: 0,
   })
-  const [searchText, setSearchText] = useState('');
-  const [showOnlyWithFiles, setShowOnlyWithFiles] = useState(false);
-  const [filteredReviews, setFilteredReviews] = useState([]);
+  const [searchText, setSearchText] = useState('')
+  const [showOnlyWithFiles, setShowOnlyWithFiles] = useState(false)
+  const [filteredReviews, setFilteredReviews] = useState([])
 
   useEffect(() => {
     async function fetchAllGigs() {
       try {
-        const gigs = await gigService.query();
-        setAllGigs(gigs);
+        const gigs = await gigService.query()
+        setAllGigs(gigs)
       } catch (err) {
-        console.error('Failed to load gigs:', err);
+        console.error('Failed to load gigs:', err)
       }
     }
-    fetchAllGigs();
-  }, []);
+    fetchAllGigs()
+  }, [])
 
   useEffect(() => {
     async function fetchReviewsWithUserData() {
-      if (!userGigs.length) return;
+      if (!userGigs.length) return
 
       try {
-        const allReviews = userGigs.flatMap((gig) => gig.reviews || []);
+        const allReviews = userGigs.flatMap((gig) => gig.reviews || [])
         const reviewsWithUserData = await Promise.all(
           allReviews.map(async (review) => {
             try {
-              const user = await userService.getById(review.userId);
+              const user = await userService.getById(review.userId)
               return {
                 ...review,
                 username: user.fullName,
@@ -59,7 +61,7 @@ export function UserDetails() {
                 country: user.from,
               };
             } catch (err) {
-              console.error(`Failed to fetch user data for review ${review.id}`, err);
+              console.error(`Failed to fetch user data for review ${review.id}`, err)
               return {
                 ...review,
                 username: 'Unknown',
@@ -69,85 +71,85 @@ export function UserDetails() {
             }
           })
         );
-        setReviews(reviewsWithUserData);
+        setReviews(reviewsWithUserData)
       } catch (err) {
-        console.error('Failed to fetch reviews with user data:', err);
+        console.error('Failed to fetch reviews with user data:', err)
       }
     }
-    fetchReviewsWithUserData();
-  }, [userGigs]);
+    fetchReviewsWithUserData()
+  }, [userGigs])
 
   useEffect(() => {
     if (user && user._id) {
-      const filteredGigs = allGigs.filter((gig) => gig.ownerId === user._id);
-      setUserGigs(filteredGigs);
+      const filteredGigs = allGigs.filter((gig) => gig.ownerId === user._id)
+      setUserGigs(filteredGigs)
     }
-  }, [user, allGigs]);
+  }, [user, allGigs])
 
   useEffect(() => {
-    applyFilters(reviews);
-  }, [searchText, showOnlyWithFiles, reviews]);
+    applyFilters(reviews)
+  }, [searchText, showOnlyWithFiles, reviews])
 
   useEffect(() => {
-    loadUser(params.id);
+    loadUser(params.id)
 
-    socketService.emit(SOCKET_EMIT_USER_WATCH, params.id);
-    socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate);
+    socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
+    socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
 
     return () => {
-      socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate);
-    };
-  }, [params.id]);
+      socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
+    }
+  }, [params.id])
 
   useEffect(() => {
     if (userGigs.length > 0) {
-      const allReviews = userGigs.flatMap((gig) => gig.reviews || []);
-      calculateRatingStats(allReviews);
-      applyFilters(allReviews);
+      const allReviews = userGigs.flatMap((gig) => gig.reviews || [])
+      calculateRatingStats(allReviews)
+      applyFilters(allReviews)
     }
-  }, [userGigs, searchText, showOnlyWithFiles]);
+  }, [userGigs, searchText, showOnlyWithFiles])
 
   function onUserUpdate(user) {
-    showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`);
-    store.dispatch({ type: 'SET_WATCHED_USER', user });
+    showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
+    store.dispatch({ type: 'SET_WATCHED_USER', user })
   }
 
   function calculateRatingStats(reviews) {
-    const totalReviews = reviews.length;
-    const starCounts = [0, 0, 0, 0, 0];
-    let totalRating = 0;
+    const totalReviews = reviews.length
+    const starCounts = [0, 0, 0, 0, 0]
+    let totalRating = 0
 
     reviews.forEach((review) => {
       if (review.rating) {
-        totalRating += review.rating;
-        starCounts[review.rating - 1]++;
+        totalRating += review.rating
+        starCounts[review.rating - 1]++
       }
-    });
+    })
 
     setRatingStats({
       totalReviews,
       starCounts,
       averageRating: totalRating / totalReviews || 0,
-    });
+    })
   }
 
   function applyFilters(reviews) {
-    let filtered = reviews;
+    let filtered = reviews
 
     if (searchText) {
       filtered = filtered.filter((review) =>
         review.text.toLowerCase().includes(searchText.toLowerCase())
-      );
+      )
     }
 
     if (showOnlyWithFiles) {
-      filtered = filtered.filter((review) => review.files && review.files.length > 0);
+      filtered = filtered.filter((review) => review.files && review.files.length > 0)
     }
 
-    setFilteredReviews(filtered);
+    setFilteredReviews(filtered)
   }
 
-  if (!user) return <div>Loading...</div>;
+  if (!user) return <div>Loading...</div>
 
   return (
     <section className="user-details-specific">
@@ -209,6 +211,12 @@ export function UserDetails() {
             />
           ))}
         </ul>
+        <button
+        className="create-gig-btn"
+        onClick={() => navigate('/gig/edit')}
+      >
+        Create Gig
+      </button>
       </div>
       <div className="gig-reviews-section">
         <h2>Reviews</h2>
@@ -241,7 +249,7 @@ export function UserDetails() {
           </div>
         )}
 
-        {/* <div className="reviews-filters">
+        <div className="reviews-filters">
       <input
         type="text"
         placeholder="Search reviews"
@@ -256,7 +264,7 @@ export function UserDetails() {
         />
         Only show reviews with files
       </label>
-    </div> */}
+    </div>
 
         <ul className="reviews">
           {reviews.map((review) => (
