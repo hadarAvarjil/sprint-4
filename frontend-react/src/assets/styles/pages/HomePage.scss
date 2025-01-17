@@ -1,5 +1,6 @@
 .home-body{
-padding-left: 5.25%;
+padding-left: 11.5%;
+padding-right: 11.5%;
 }
 
 
@@ -14,7 +15,7 @@ padding-left: 5.25%;
   position: relative;
   width: 100%;
   padding: 0;
-  height: calc(100vw * 0.325);
+  height: calc(100vw * 0.26);
   justify-content: center;
   color: white;
   margin-top: calc(70px + 41px); /* Offset to avoid overlap */
@@ -26,9 +27,9 @@ padding-left: 5.25%;
   .pinkGuy-img {
     position: absolute;
     border-radius: 10px;
-    width: 11%;
-    right: 4%;
-    top: 13%;
+    width: 8%;
+    right: 9%;
+    top: 9%;
   }
 
   .yellowGirl-img {
@@ -102,7 +103,7 @@ padding-left: 5.25%;
   .search-bar-div {
     background-color: white;
     // padding: 10px;
-    width: 100%;
+    width: 85%;
     height: 12%;
     display: flex;
     justify-content: center;
@@ -184,7 +185,7 @@ padding-left: 5.25%;
 .home-carousel-container {
   padding-top: 40px;
   width: 100%;
-  
+
   h1 {
     color: #404145;
     font-size: 48px;
@@ -194,82 +195,177 @@ padding-left: 5.25%;
     margin-bottom: 32px;
   }
 
+  .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
   .home-carousel {
     display: flex;
-    flex-direction: row;
+    gap: 30px;
+    transition: transform 0.3s ease-in-out;
+    flex-wrap: nowrap;
+  }
+
+  .popular-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 235px; /* Set max-width to 235px */
     width: 100%;
-    gap: 22px;
-
-    .popular-div {
-      color: white;
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      width: 15%;
-      max-width: 202px;
-      height: calc(100vw * 0.14);
-      padding: 6px;
-      padding-top: 25px;
-      margin-top: 12px;
-      margin-bottom: 12px;
-      border-radius: 15px;
-
-      h3{
+    height: calc(100vw * 0.14);
+    padding: 6px;
+    padding-top: 25px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border-radius: 15px;
+    color: white;
+    flex-shrink: 0; /* Prevent shrinking */
+    
+    h3 {
       font-size: 18px;
       line-height: 28px;
       text-align: start;
-      letter-spacing: normal;
-      } 
-
-      .pop-inner-pic img {
-        position: absolute;
-        border-radius: 10%;
-        bottom: 6px;
-      }
     }
 
-    .light-green-div {
-      background-color: $green-light;
+    .pop-inner-pic img {
+      position: absolute;
+      border-radius: 10%;
+      bottom: 6px;
     }
-
-    .orange-div {
-      background-color: $orange;
-    }
-
-    .dark-green-div {
-      background-color: $green-dark;
-    }
-
-    .purple-div {
-      background-color: $purple;
-    }
-
-    .green-swamp-div {
-      background-color: $green-swamp;
-    }
-
-    .brown-div {
-      background-color: $brown;
-    }
-
-    .purple-div {
-      background-color: $purple;
-    }
-
-    .light-brown-div {
-      background-color: $brown-light;
-    }
-
-    .green-shrek-div {
-      background-color: $green-shrek;
-    }
-
-    .pink-div {
-      background-color: $pink;
-    }
-
   }
+
+  .arrow-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    background-color: #013A12;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    transform: translateY(-50%);
+    // opacity: 0;
+    transition: opacity 0.3s;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    &.left-arrow {
+      left: 0;
+    }
+
+    &.right-arrow {
+      right: 0;
+    }
+  }
+
+  .light-green-div { background-color: $green-light; }
+  .orange-div { background-color: $orange; }
+  .dark-green-div { background-color: $green-dark; }
+  .purple-div { background-color: $purple; }
+  .green-swamp-div { background-color: $green-swamp; }
+  .brown-div { background-color: $brown; }
+  .light-brown-div { background-color: $brown-light; }
+  .green-shrek-div { background-color: $green-shrek; }
+  .pink-div { background-color: $pink; }
 }
+
+
+// .home-carousel-container {
+//   padding-top: 40px;
+//   width: 100%;
+  
+//   h1 {
+//     color: #404145;
+//     font-size: 48px;
+//     line-height: 50.4px;
+//     letter-spacing: -1.44px;
+//     text-align: start;
+//     margin-bottom: 32px;
+//   }
+
+//   .home-carousel {
+//     display: flex;
+//     flex-direction: row;
+//     width: 100%;
+//     gap: 22px;
+
+//     .popular-div {
+//       color: white;
+//       display: flex;
+//       position: relative;
+//       flex-direction: column;
+//       width: 15%;
+//       max-width: 202px;
+//       height: calc(100vw * 0.14);
+//       padding: 6px;
+//       padding-top: 25px;
+//       margin-top: 12px;
+//       margin-bottom: 12px;
+//       border-radius: 15px;
+
+//       h3{
+//       font-size: 18px;
+//       line-height: 28px;
+//       text-align: start;
+//       letter-spacing: normal;
+//       } 
+
+//       .pop-inner-pic img {
+//         position: absolute;
+//         border-radius: 10%;
+//         bottom: 6px;
+//       }
+//     }
+
+//     .light-green-div {
+//       background-color: $green-light;
+//     }
+
+//     .orange-div {
+//       background-color: $orange;
+//     }
+
+//     .dark-green-div {
+//       background-color: $green-dark;
+//     }
+
+//     .purple-div {
+//       background-color: $purple;
+//     }
+
+//     .green-swamp-div {
+//       background-color: $green-swamp;
+//     }
+
+//     .brown-div {
+//       background-color: $brown;
+//     }
+
+//     .purple-div {
+//       background-color: $purple;
+//     }
+
+//     .light-brown-div {
+//       background-color: $brown-light;
+//     }
+
+//     .green-shrek-div {
+//       background-color: $green-shrek;
+//     }
+
+//     .pink-div {
+//       background-color: $pink;
+//     }
+
+//   }
+// }
 .vid-h1{
   font-family:$fiverr-defult-font;
   color: #404145;

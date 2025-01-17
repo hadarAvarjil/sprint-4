@@ -85,12 +85,11 @@ export function HomeAppHeader() {
   return (
     <>
       <header className="app-header-home full">
-        <nav className="home-nav-bar" style={{ paddingLeft: "60px" }}>
+        <nav className="home-nav-bar" >
           <NavLink to="/">
             <h1
               style={{
                 color: "#404145",
-                paddingLeft: "50px",
                 fontSize: "30px",
                 lineHeight: "24px",
                 fontWeight: "900",
@@ -119,12 +118,12 @@ export function HomeAppHeader() {
           )}
 
           <div className="header-options">
-            {/* <NavLink to="/orders">
+            <NavLink to="/orders">
               <div className="sign-header-btn">Orders</div>
-            </NavLink> */}
-            {/* <NavLink to="/profile">
+            </NavLink>
+            <NavLink to="/profile">
               <div className="sign-header-btn">my-profile</div>
-            </NavLink> */}
+            </NavLink>
             {/* <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
             </NavLink> */}

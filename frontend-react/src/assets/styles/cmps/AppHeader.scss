@@ -3,16 +3,19 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white;
+    background-color: white; 
     z-index: 1000;
     border-bottom: 1px solid #ccc;
   }
   
-  .home-nav-bar {
+  .home-nav-bar { 
     display: flex;
     justify-content:space-between;
     align-items: center;
     height: 70px;
+    padding-left: 13%;
+    padding-right: 13%;
+
 
     .header-options {
 margin-left: -500px;   
