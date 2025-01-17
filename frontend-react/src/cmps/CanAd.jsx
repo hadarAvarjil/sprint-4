@@ -21,7 +21,7 @@ export function CanAd(){
            onClick={() => handleNavigation("/gig")}
          >
            
-           Try Fiverr Logo Maker
+           Try Gigster Logo Maker
          </button>
        </div>
 
