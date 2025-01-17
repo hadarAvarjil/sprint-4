@@ -25,21 +25,12 @@ async function remove(orderId) {
     await storageService.remove(STORAGE_KEY, orderId)
 }
 async function save(order) {
-    // Log before saving
-    console.log('Before saving order:', order);
-
     let savedOrder;
     if (order._id) {
-        // Update existing order
         savedOrder = await storageService.put(STORAGE_KEY, order);
     } else {
-        // Create new order
         savedOrder = await storageService.post(STORAGE_KEY, order);
     }
-
-    // Log after saving
-    console.log('After saving order:', savedOrder);
-
     return savedOrder;
 }
 

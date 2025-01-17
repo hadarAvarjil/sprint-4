@@ -51,7 +51,8 @@ export function GigPurchasePage() {
                 gig.title,
                 gig.daysToMake
             )
-            await orderService.save(newOrder);
+            await orderService.save(newOrder)
+            navigate('/gig')
         } catch (err) {
             console.error('Error Saving Order:', err);
             showErrorMsg('FAILED TO ORDER');
