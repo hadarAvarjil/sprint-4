@@ -152,8 +152,8 @@
               background-color: rgb(255, 224, 179);
               color: rgb(128, 67, 23);
               border-radius: 3px;
-              padding: 1px 5px;
-              font-size: 14px;
+              padding: 1px 3px;
+              // font-size: 14px;
               display: inline-flex;
               align-items: center;
               gap: 4px;
@@ -377,7 +377,7 @@
 
         .stars {
           font-size: 1.2rem;
-          color: $clrPrimary1;
+          color: black;
           margin: 5px 0;
         }
 
@@ -412,7 +412,7 @@
 
             .progress {
               height: 100%;
-              background-color: $clrPrimary1;
+              background-color: black;
             }
           }
 
