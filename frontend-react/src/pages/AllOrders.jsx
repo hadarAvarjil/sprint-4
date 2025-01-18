@@ -35,7 +35,7 @@ export function AllOrders() {
 
   return (
     <div className="orders-table-container">
-      <h4>Mange Orders</h4>
+      <h4>Mangae Orders</h4>
       <table className="orders-table">
         <thead>
           <tr>
