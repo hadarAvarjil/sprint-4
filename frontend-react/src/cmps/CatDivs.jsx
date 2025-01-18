@@ -2,7 +2,7 @@ import React from "react";
 import { AddImg } from "../cmps/AddImg.jsx";
 import { useNavigate } from "react-router-dom";
 
-
+ 
 
 export function CatDivsContainer(){
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\programming.svg"
                alt=""
              />
-             Programming & Tech
+             <strong>Programming <br /> &  Tech</strong>
            </div>
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
@@ -28,7 +28,7 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\graphics.svg"
                alt=""
              />
-             Graphic & Design
+            <strong> Graphics & Design</strong>
            </div>
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
@@ -37,7 +37,7 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\marketing.svg"
                alt=""
              />
-             Digital Marketing
+            <strong> Digital Marketing</strong>
            </div>
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
@@ -46,7 +46,7 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\translation.svg"
                alt=""
              />
-             Writing & Translation
+            <strong> Writing & Translation</strong>
            </div>
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
@@ -55,7 +55,7 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\animation.svg"
                alt=""
              />
-             Video &Animation
+            <strong> Video & <br />Animation</strong>
            </div>
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
@@ -64,7 +64,7 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\ai.svg"
                alt=""
              />
-             AI Services
+           <strong>  AI Services</strong>
            </div>
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
@@ -73,16 +73,7 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\music.svg"
                alt=""
              />
-             Music & Audio
-           </div>
-           <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-             
-             <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\consulting.svg"
-               alt=""
-             />
-             Consulting
+            <strong> Music & Audio</strong>
            </div>
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
@@ -91,8 +82,17 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\business.svg"
                alt=""
              />
-             Business
+             <strong>Business</strong>
             </div>
+           <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+             
+             <img
+               style={{ width: "29px" }}
+               src="src\services\imgs\design.imgs\consulting.svg"
+               alt=""
+             />
+            <strong> Consulting</strong>
+           </div>
           </div>
     )
 }

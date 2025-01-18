@@ -1,14 +1,16 @@
-.app-header {
+.app-header {  
     .category-nav {
         position: relative;
         overflow: hidden;
         color: $clrSecondary7;
 
         .container {
+            padding-left: 17.6% ;
+            padding-right: 10%;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            margin-left: 18.5%;
-            gap: 24.5px;
+            // margin-left: 18.5%;
+            gap: 10px;
 
             .hidden {
                 visibility: hidden;

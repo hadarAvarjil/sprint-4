@@ -3,8 +3,8 @@ import React from "react";
 
 export function VideoDiv(){
     return(
-    <div style={{ position: "relative", width: "fit-content", }}>
-     <h1 className="vid-h1">What success on fiverr looks like</h1> 
+    <div className="vid-container" style={{ position: "relative", width: "fit-content", }}>
+     <h1 className="vid-h1">What success on gigster looks like</h1> 
     <video
      width="100%"
      controls
