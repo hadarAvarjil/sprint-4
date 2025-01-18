@@ -15,7 +15,7 @@ export function MakeHappenAd(){
               alt=""
               width={"52px"}
             />
-            <p>Access a pool of top talent across 700 categories</p>
+            <p>Access a pool of top talent <br/> across 700 categories</p>
           </div>
 
           <div className="icons-div">
@@ -24,7 +24,7 @@ export function MakeHappenAd(){
               alt=""
               width={"52px"}
             />
-            <p>Enjoy a simple, easy-to-use matching experience</p>
+            <p>Enjoy a simple, easy-to-use<br/> matching experience</p>
           </div>
 
           <div className="icons-div">
@@ -33,14 +33,14 @@ export function MakeHappenAd(){
               alt=""
               width={"52px"}
             />
-            <p>Get quality work done quickly and within budget</p>
+            <p>Get quality work done quickly<br/> and within budget</p>
           </div>
 
           <div className="icons-div">
             <img
               src="src\services\imgs\design.imgs\dollar.jpeg"
               alt=""
-              width={"52px"}
+              width={"75px"}
             />
             <p>Only pay when you’re happy</p>
           </div>

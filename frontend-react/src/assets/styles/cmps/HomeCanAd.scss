@@ -1,0 +1,59 @@
+.canAd-container {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    border-radius: 15px;
+  }
+  
+  .canAd-text-container {
+    display: flex;
+    flex-direction: column;
+    font-family: $fiverr-defult-font ;
+    font-weight: bold;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    padding-right: 40px;
+    padding-left: 40px;
+    gap: 40px;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: start;
+    letter-spacing: -0.96px;
+  
+    h1{
+      font-family:$fiverr-defult-font;
+  font-size:33.3333px;
+  line-height:24px;
+  text-align:start;
+  letter-spacing:normal;
+  font-weight: 400;
+  letter-spacing: 0px;
+  word-spacing:-10px ;
+    }
+  
+    p{
+      color: $black-btn-hover;
+      //  max-width: "1336px" ;
+      font-weight: 200;
+      span{
+        color: #FC842D;
+        // word-spacing:-10px ;
+        letter-spacing: -1px;
+        font-family: $uniqe-font-can-ad;
+  
+      }
+    }
+  
+  }
+  
+  .canAd-text-container h1 span {
+    margin-right: 0.2em;
+    font-weight: bold;
+  }
+  
+  .canAd-pic {
+    margin-right: 80px;
+  } 
