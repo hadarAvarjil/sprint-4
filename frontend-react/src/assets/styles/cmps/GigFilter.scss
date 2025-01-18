@@ -36,6 +36,20 @@
     }
   }
 }
+.gig-category-title {
+  text-align: left; 
+  margin-left: 17.5%;
+
+    h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222325; 
+    padding: 8px 0;
+    line-height: 1.2; 
+    text-transform: none !important;
+    font-family: 'macan-bold';
+  }
+}
 
 .gig-filter {
   position: sticky;
