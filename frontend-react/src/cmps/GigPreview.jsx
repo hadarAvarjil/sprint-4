@@ -88,39 +88,6 @@ export function GigPreview({ isFrom, gig, suppressOwner = false }) {
       setUpdatedGig(gigToSave)
     }
   }
-  if (deviceType === 'mobile' || deviceType === 'mini-tablet') {
-    return (
-      <li className="mobile-gig-preview">
-        <Link className="gig-preview-content grid" to={`/gig/${updatedGig._id}`}>
-          <span className="level flex row" data-level={owner?.level}>
-            {owner?.level === 'Pro Talent' && <SvgIcon iconName="customCheckMarkSunIcon" />}
-            {owner?.level === 'New Seller' && <SvgIcon iconName="newSeedlingIcon" />}
-
-            {owner?.level === 'Pro Talent' ? 'Pro' : owner?.level === 'New Seller' ? 'New' : ''}
-          </span>
-          <img src={updatedGig.imgUrls[0]} alt="gig-img"></img>
-          <div className="mobile-preview-body flex">
-            <UserPreview isFrom={'mobile'} owner={owner} gig={updatedGig}>
-              <span className="gig-title">
-                {updatedGig.title}
-              </span>
-              <div className="gig-price flex">
-                <span className="from">From</span>
-                <span className="price b">{`$${updatedGig.price}`}</span>
-              </div>
-            </UserPreview>
-          </div>
-          <span className="heart" onClick={(e) => likeGig(e)}>
-            {isLiked ? (
-              <SvgIcon iconName={'heartLikedMobileIcon'} />
-            ) : (
-              <SvgIcon iconName={'heartEmptyMobileIcon'} />
-            )}
-          </span>
-        </Link>
-      </li>
-    )
-  }
   return (
     <li className="gig-preview">
       <ImageCarousel

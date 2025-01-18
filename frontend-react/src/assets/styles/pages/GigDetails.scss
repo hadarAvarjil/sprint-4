@@ -1,7 +1,7 @@
 .gig-details {
   max-width: 1304px;
   // color: $clrPrimary2;
-  margin-left: 20%;
+  margin-left: 17%;
 
 
 
@@ -82,7 +82,7 @@
 
 .user-details-specific {
   max-width: 1435px;
-  margin-left: 19.5%;
+  margin-left: 17.5%;
   padding: 20px;
 
   .user-details-wrapper {
@@ -118,7 +118,7 @@
             align-items: center;
             gap: 10px;
             font-weight: 700;
-            font-size: 24px;
+            font-size: 20px;
             line-height: 32px;
           }
 
@@ -152,8 +152,8 @@
               background-color: rgb(255, 224, 179);
               color: rgb(128, 67, 23);
               border-radius: 3px;
-              padding: 1px 5px;
-              font-size: 14px;
+              padding: 1px 3px;
+              // font-size: 14px;
               display: inline-flex;
               align-items: center;
               gap: 4px;
@@ -169,14 +169,58 @@
             }
           }
 
+          .pro-badge {
+            background-color: #2b1dbf;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 8px;
+            svg {
+              width: 14px;
+              height: 14px;
+            }
+          }
+          .new-seller-badge{
+            background-color:#19a463;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 8px;
+            svg {
+              width: 14px;
+              height: 14px;
+            }
+          }
+          
+          .top-rated-badge {
+            background-color: rgb(255, 224, 179);
+            color: rgb(128, 67, 23);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 10px;
+          }
+          
+
 
           .user-bio,
           .user-location {
             margin-top: 10px;
             color: #222325;
             margin-bottom: -3%;
-            font: 400 16px / 28px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font: 400 16px / 28px macan-light;;
+            font-family: macan-light;
             line-height: 24px;
             font-size: 15px;
             font-weight: 400;
@@ -203,7 +247,7 @@
       .user-about {
         margin-top: 50px;
         margin-bottom: 20px; 
-        font: 400 16px/24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font: 400 16px/24px macan-bold;
 
         h2 {
           font-size: 16px;
@@ -214,7 +258,7 @@
           color: #404145;
           line-height: 1.5em;
           word-break: break-word;
-          font: 400 16px / 24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font: 400 16px / 24px macan-light;;
           // font-weight: 300;
         }
       }
@@ -224,7 +268,6 @@
 
     .user-contact-card {
       display: flex;
-
       box-sizing: border-box;
       min-width: 31%;
       text-align: center;
@@ -334,7 +377,7 @@
 
         .stars {
           font-size: 1.2rem;
-          color: $clrPrimary1;
+          color: black;
           margin: 5px 0;
         }
 
@@ -369,7 +412,7 @@
 
             .progress {
               height: 100%;
-              background-color: $clrPrimary1;
+              background-color: black;
             }
           }
 
@@ -429,7 +472,7 @@
       font-weight: 600;
       color: #222325;
       margin-bottom: 15px; 
-      font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: macan-bold;
     }
   
     .skills-list {

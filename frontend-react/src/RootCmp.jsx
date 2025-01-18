@@ -17,6 +17,7 @@ import { GigPurchasePage } from './pages/GigPurchasePage'
 import { HomeAppHeader } from './cmps/HomeAppHeader.jsx'
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
+import { GigEdit } from './pages/GigEdit.jsx'
 import { UserMsg } from './cmps/UserMsg.jsx'
 import { LoginSignup } from './pages/LoginSignup.jsx'
 import { Login } from './pages/Login.jsx'
@@ -47,6 +48,7 @@ export function RootCmp() {
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="purchase/:gigId" element={<GigPurchasePage />} />
                     <Route path="user/:id" element={<UserDetails />} />
+                    <Route path="/gig/edit" element={<GigEdit />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="chat" element={<ChatApp />} />
                     <Route path="admin" element={<AdminIndex />} />

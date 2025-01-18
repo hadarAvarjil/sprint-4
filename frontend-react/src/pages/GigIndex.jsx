@@ -39,8 +39,12 @@ export function GigIndex() {
   }
 
   function setMenuFilter(event, selectedOption) {
-    event.preventDefault()
+    if (event) event.preventDefault();
     let updatedFilterBy = { ...filterBy, page: 1 }
+
+    if (selectedOption.proOnly !== undefined) {
+      updatedFilterBy = { ...updatedFilterBy, proOnly: selectedOption.proOnly };
+    }
 
     switch (isRenderedChoice[1]) {
       case 'delivery_time':

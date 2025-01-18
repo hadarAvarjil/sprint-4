@@ -25,6 +25,20 @@ async function query(filterBy = { txt: '', price: 0, cat: '' }) {
       (gig) => regex.test(gig.title) || regex.test(gig.description)
     )
   }
+  if (filterBy.proOnly) {
+    try {
+      const proGigs = await Promise.all(
+        gigs.map(async (gig) => {
+          const owner = await userService.getById(gig.ownerId)
+          return owner?.level === 'Pro Talent' ? gig : null
+        })
+      );
+      return proGigs.filter(Boolean)
+    } catch (err) {
+      console.error("Error filtering pro gigs:", err)
+      return []
+    }
+  }
 
   if (filterBy.level) {
     gigs = await Promise.all(
