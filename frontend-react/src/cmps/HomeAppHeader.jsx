@@ -34,7 +34,7 @@ export function HomeAppHeader() {
     const handleScroll = () => {
       const greenDiv = document.querySelector(".green-search-div");
       const greenDivOffset = greenDiv?.offsetTop || 0;
-      const scrollPosition = window.scrollY - 300;
+      const scrollPosition = window.scrollY
 
       // Toggle the mini-header based on scroll position
       setShowMiniHeader(scrollPosition > greenDivOffset);
