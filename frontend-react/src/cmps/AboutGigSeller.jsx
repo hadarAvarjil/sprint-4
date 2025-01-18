@@ -28,6 +28,9 @@ export function AboutGigSeller({ owner }) {
                     <strong>Languages</strong>
                     <p>{owner.languages.join(', ')}</p>
                 </div>
+                <div className='gig-seller-row-about'>
+                <p className='gig-seller-row-about'>{owner.about}</p>
+                </div>
             </div>
         </div >
     )

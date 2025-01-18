@@ -11,7 +11,10 @@
         grid-template-areas:
             "from member-since"
             "avg-time last-delivery"
-            "languages languages";
+            "languages languages"
+            "about about"
+        ;
+
         gap: 1.5rem;
         padding: 1.5rem;
         border: 1px solid #ddd;
@@ -40,6 +43,26 @@
         .gig-seller-row-languages {
             grid-area: languages;
         }
+
+        .gig-seller-row-about {
+            grid-area: about;
+            // border-top: 1px solid #ddd;
+            padding-top: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .gig-seller-row-about p {
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        div:not(.gig-seller-row-about) {
+            border-top: none;
+            /* Prevents any unintended borders globally */
+        }
+
 
         div {
             display: flex;
