@@ -168,14 +168,14 @@ margin-left: -500px;
         border: 1px solid $clrSecondary45;
         font-size: 16px;
         max-width: 600px;
-        border-color: black;
+        border-color: rgb(177, 176, 176);
         margin-right: -2px;
         // width: 100%;
 
 
         &:focus {
             outline: none;
-            border: 1px solid $clrPrimary2;
+            border: 1px solid black;
         }
     }
 

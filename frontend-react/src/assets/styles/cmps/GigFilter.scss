@@ -81,7 +81,8 @@
     }
     .clear-filter {
       border-radius: 1.5em;
-      border: 1px solid $clrPrimary2;
+      // border: 1px solid $clrPrimary2;
+      border: 1px solid black;
       padding: 0.5em 0.75em;
       margin: 0.25em 0;
       min-height: fit-content;

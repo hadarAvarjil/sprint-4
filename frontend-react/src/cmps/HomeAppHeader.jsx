@@ -10,8 +10,10 @@ import { JoinDiv } from "./JoinDiv"
 import SvgIcon from "./SvgIcon.jsx"
 import { setFilter } from "../store/actions/gig.actions.js"
 import { SearchBar } from "./SearchBar.jsx"
+import { category } from "../services/gig.service.js"
 
 export function HomeAppHeader() {
+  
   const [searchQuery, setSearchQuery] = useState("")
   const user = useSelector((storeState) => storeState.userModule.user)
   const navigate = useNavigate()
@@ -157,15 +159,7 @@ export function HomeAppHeader() {
         </nav>
         {showCategories && (
           <NavBar
-            categories={[
-              "Graphics & Design",
-              "Programming & Tech",
-              "Digital Marketing",
-              "Video & Animation",
-              "Writing & Translation",
-              "Music & Audio",
-              "Business",
-            ]}
+            categories={category}
           />
         )}
       </header>
