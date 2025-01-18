@@ -143,7 +143,7 @@ const users = [
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/user6_kleh1k.webp',
     username: 'sarah123',
     password: '123',
-    level: 'level 3',
+    level: 'Pro Talent',
     rating: 4.8,
     isAdmin: false,
     ordersInQueue: 500,

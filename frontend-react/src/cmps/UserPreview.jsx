@@ -30,6 +30,7 @@ export function UserPreview({ isFrom, owner, children }) {
   function loadUserData() {
     setUser(owner)
   }
+  
   if (!user) return null
 
   if (isFrom === 'mobile') {
@@ -63,15 +64,16 @@ export function UserPreview({ isFrom, owner, children }) {
             {(isFrom === 'gig-details' || isFrom === 'gig-details-2') && (
               <span className="fullname b">{user.fullName}</span>
             )}
-            <Link to={`/user/${user._id}`}
+        <Link to={`/user/${user._id}`}
               className={`username ${isFrom === 'explore' ? 'b' : ''}`}>
-              {`${isFrom === 'gig-details' ? '@' : isFrom === 'gig-details-2' ? '@' : ''}Ad by${user.fullName}`}
-            </Link>
+          {isFrom === 'gig-details' || isFrom === 'gig-details-2' ? '@' : ''}
+          <span className="ad-by">Ad by</span> {user.fullName}
+        </Link>
             {isFrom === 'userProfile' &&
               <span className={`user-level ${user.level === 'level 3' ? 'top' : ''}`} title='user level'>
                 {user.level}
               </span>}
-          </span>
+           </span>
               </div>
         {isFrom === 'explore' &&
           <span className="level flex row" data-level={user.level} title='user level'>

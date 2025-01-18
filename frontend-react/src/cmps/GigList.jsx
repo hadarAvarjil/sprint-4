@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react"
 
 import { GigPreview } from "../cmps/GigPreview.jsx"
@@ -15,10 +14,17 @@ export function GigList({ gigs }) {
   }, [])
 
   return (
-    <ul className={`gig-list layout-row ${showGigs ? "show" : ""}`}>
-      {gigs.map((gig) => (
-        <GigPreview isFrom={isFrom} gig={gig} key={gig._id} />
-      ))}
-    </ul>
+    <div className="gig-list-container">
+     
+     <div className="results-count">
+        {`${gigs.length}+ results`}
+      </div>
+      <ul className={`gig-list layout-row ${showGigs ? "show" : ""}`}>
+        {gigs.map((gig) => (
+          <GigPreview isFrom={isFrom} gig={gig} key={gig._id} />
+        ))}
+        
+      </ul>
+    </div>
   )
 }

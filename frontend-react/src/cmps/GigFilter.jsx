@@ -7,7 +7,7 @@ import { SelectedFilters } from './SelectedFilters.jsx'
 import SvgIcon from './SvgIcon.jsx'
 
 export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
-  isRenderedChoice, onDeleteFilter, mobileState,
+  isRenderedChoice, onDeleteFilter, 
    setIsRenderedChoice,
 }) {
   const [isSticky, setIsSticky] = useState(false)
