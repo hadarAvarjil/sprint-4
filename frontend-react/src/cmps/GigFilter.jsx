@@ -7,8 +7,8 @@ import { SelectedFilters } from './SelectedFilters.jsx'
 import SvgIcon from './SvgIcon.jsx'
 
 export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
-  isRenderedChoice, onDeleteFilter, 
-   setIsRenderedChoice,
+  isRenderedChoice, onDeleteFilter,
+  setIsRenderedChoice,
 }) {
   const [isSticky, setIsSticky] = useState(false)
   const deviceType = useDeviceType()
@@ -57,7 +57,7 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
                 Clear filter
               </button>
             )}
-  
+
           </section>
         </main>
       </>
@@ -189,18 +189,18 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
                 />
               )}
             </div>
-
-            <div className="pro-services-toggle">
-        <label>
-          <input
-            type="checkbox"
-            checked={filterBy.proOnly || false}
-            onChange={(e) => setMenuFilter(null, { proOnly: e.target.checked })}
-          />
-          <span>Pro services</span>
-        </label>
-      </div>
           </div>
+          <div class="pro-services-toggle">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={filterBy.proOnly || false}
+                  onChange={(e) => setMenuFilter(null, { proOnly: e.target.checked })}
+                />
+                <span class="toggle-switch"></span>
+                <span class="toggle-label">Pro services</span>
+              </label>
+            </div>
         </section>
       </main>
       <SelectedFilters filterBy={filterBy} onDeleteFilter={onDeleteFilter} />
