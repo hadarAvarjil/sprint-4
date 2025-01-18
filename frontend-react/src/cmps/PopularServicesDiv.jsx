@@ -37,7 +37,7 @@ export function PopularServices() {
             }}
           >
             {/* Divs */}
-            <div className="popular-div light-green-div">
+            <div className="popular-div light-green-div first-pop-div">
               <h3>Website Development</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551937/website-development_gig20i.webp" />

@@ -92,12 +92,13 @@ export function HomeAppHeader() {
                 color: "#404145",
                 fontSize: "30px",
                 lineHeight: "24px",
-                fontWeight: "900",
+                fontWeight: "bold",
                 fontFamily: "$fiverr-defult-font",
+               
               }}
               className="flex row"
             >
-              gigster
+              gigster 
               <span className="flex">
                 <SvgIcon iconName={"greenDotIcon"} />
               </span>
