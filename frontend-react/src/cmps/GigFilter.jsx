@@ -67,6 +67,7 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
   return (
     <>
       <div className="gig-results-title layout-row">
+        
         {filterBy.search && (
           <section className="search-param">
             <h1>
@@ -74,6 +75,7 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
               <span className="b">{filterBy.search}</span>
             </h1>
           </section>
+          
         )}
         {filterBy.cat && (
           <CatTagDisplayBar
@@ -83,7 +85,9 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
           />
         )}
       </div>
-
+      <div className="gig-category-title">
+  <h1>{filterBy.cat || 'Explore'}</h1>
+</div>
       <main className={`gig-filter ${isSticky ? 'shadow' : ''}`}>
         <section className="floating-top-bar layout-row">
           <div className="filter-nav">

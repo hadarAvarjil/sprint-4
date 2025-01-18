@@ -1,91 +1,92 @@
-import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { useNavigate } from "react-router";
-import { useSelector } from "react-redux";
-import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
-import { logout } from "../store/actions/user.actions";
-import { NavBar } from "./NavBar";
-import { SignDiv } from "./SignDiv";
-import { JoinDiv } from "./JoinDiv";
-import SvgIcon from "./SvgIcon.jsx";
-import { setFilter } from "../store/actions/gig.actions.js";
-import { SearchBar } from "./SearchBar.jsx";
-
-
+import React, { useState, useEffect } from "react"
+import { Link, NavLink } from "react-router-dom"
+import { useNavigate } from "react-router"
+import { useSelector } from "react-redux"
+import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
+import { logout } from "../store/actions/user.actions"
+import { NavBar } from "./NavBar"
+import { SignDiv } from "./SignDiv"
+import { JoinDiv } from "./JoinDiv"
+import SvgIcon from "./SvgIcon.jsx"
+import { setFilter } from "../store/actions/gig.actions.js"
+import { SearchBar } from "./SearchBar.jsx"
 
 export function HomeAppHeader() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("")
+  const user = useSelector((storeState) => storeState.userModule.user)
+  const navigate = useNavigate()
 
-  const user = useSelector((storeState) => storeState.userModule.user);
-  const navigate = useNavigate();
-  const [showMiniHeader, setShowMiniHeader] = useState(false);
+  const [showMiniHeader, setShowMiniHeader] = useState(false)
+  const [showCategories, setShowCategories] = useState(false)
 
   async function onLogout() {
     try {
-      await logout();
-      navigate("/");
-      showSuccessMsg(`Bye now`);
+      await logout()
+      navigate("/")
+      showSuccessMsg(`Bye now`)
     } catch (err) {
-      showErrorMsg("Cannot logout");
+      showErrorMsg("Cannot logout")
     }
   }
 
   useEffect(() => {
     const handleScroll = () => {
-      const greenDiv = document.querySelector(".green-search-div");
-      const greenDivOffset = greenDiv?.offsetTop || 0;
-      const scrollPosition = window.scrollY - 300;
+      const greenDiv = document.querySelector(".green-search-div")
+      const greenDivOffset = greenDiv?.offsetTop || 0
+      const scrollPosition = window.scrollY-200
 
-      // Toggle the mini-header based on scroll position
-      setShowMiniHeader(scrollPosition > greenDivOffset);
-    };
+      setShowMiniHeader(scrollPosition > greenDivOffset)
 
-    window.addEventListener("scroll", handleScroll);
+      const categoriesOffset = greenDivOffset + 450
+      setShowCategories(scrollPosition > categoriesOffset)
+    }
+
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll)
     };
-  }, []);
+  }, [])
 
-  const [isSignDivVisible, setIsSignDivVisible] = useState(false);
-  const [isJoinDivVisible, setIsJoinDivVisible] = useState(false);
+  const [isSignDivVisible, setIsSignDivVisible] = useState(false)
+  const [isJoinDivVisible, setIsJoinDivVisible] = useState(false)
 
   const handleOpenSignDiv = () => {
-    setIsSignDivVisible(true);
-  };
+    setIsSignDivVisible(true)
+  }
   const handleOpenJoinDiv = () => {
-    setIsJoinDivVisible(true);
-  };
+    setIsJoinDivVisible(true)
+  }
 
   const handleCloseSignDiv = (e) => {
     if (e.target.className === "modal-overlay") {
-      setIsSignDivVisible(false);
+      setIsSignDivVisible(false)
     }
-  };
+  }
 
   const handleCloseJoinDiv = (e) => {
     if (e.target.className === "modal-overlay") {
-      setIsJoinDivVisible(false);
+      setIsJoinDivVisible(false)
     }
-  };
-    // פונקציות טיפול
-    function handleSearchChange(e) {
-      const newSearchQuery = e.target.value;
-      setSearchQuery(newSearchQuery);
-    }
-  
-    function handleSearchSubmit(e) {
-      e.preventDefault();
-      if (!searchQuery) return;
-      setFilter({ ...filterBy, search: searchQuery });
-      navigate(`/gig`);
-      setSearchQuery("");
-    }
+  }
+
+  function handleSearchChange(e) {
+    const newSearchQuery = e.target.value
+    setSearchQuery(newSearchQuery)
+  }
+
+  function handleSearchSubmit(e) {
+    e.preventDefault()
+    if (!searchQuery) return
+    setFilter({ ...filterBy, search: searchQuery })
+    navigate(`/gig`)
+    setSearchQuery("")
+  }
 
   return (
     <>
       <header className="app-header-home full">
-        <nav className="home-nav-bar" >
+        <nav className="home-nav-bar">
           <NavLink to="/">
             <h1
               style={{
@@ -94,17 +95,15 @@ export function HomeAppHeader() {
                 lineHeight: "24px",
                 fontWeight: "bold",
                 fontFamily: "$fiverr-defult-font",
-               
               }}
               className="flex row"
             >
-              gigster 
+              gigster
               <span className="flex">
                 <SvgIcon iconName={"greenDotIcon"} />
               </span>
             </h1>
           </NavLink>
- 
 
           {showMiniHeader && (
             <div className="app-header-home-search-bar">
@@ -113,8 +112,7 @@ export function HomeAppHeader() {
                 searchQuery={searchQuery}
                 onSearchChange={handleSearchChange}
                 onSearchSubmit={handleSearchSubmit}
-
-              /> 
+              />
             </div>
           )}
 
@@ -125,9 +123,6 @@ export function HomeAppHeader() {
             <NavLink to="/profile">
               <div className="sign-header-btn">my-profile</div>
             </NavLink>
-            {/* <NavLink to="/become-seller">
-              <div className="sign-header-btn">Become a Seller</div>
-            </NavLink> */}
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
@@ -160,7 +155,7 @@ export function HomeAppHeader() {
             </div>
           )}
         </nav>
-        {showMiniHeader && (
+        {showCategories && (
           <NavBar
             categories={[
               "Graphics & Design",
@@ -175,6 +170,5 @@ export function HomeAppHeader() {
         )}
       </header>
     </>
-  );
+  )
 }
-
