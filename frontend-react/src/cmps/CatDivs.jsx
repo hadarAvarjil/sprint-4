@@ -2,7 +2,7 @@ import React from "react";
 import { AddImg } from "../cmps/AddImg.jsx";
 import { useNavigate } from "react-router-dom";
 
-
+ 
 
 export function CatDivsContainer(){
     const navigate = useNavigate();
