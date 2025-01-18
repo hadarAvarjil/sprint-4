@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { AddImg } from './AddImg.jsx' 
+
 
 export function PopularServices() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +24,7 @@ export function PopularServices() {
           className={`arrow-btn left-arrow ${currentIndex > 0 ? "visible" : ""}`}
           onClick={() => handleSlide("left")}
         >
-          &#8592;
+          <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737161680/left-arrow_udeeev.svg'}/>
         </button>
 
         {/* Carousel */}
@@ -117,8 +119,8 @@ export function PopularServices() {
           }`}
           onClick={() => handleSlide("right")}
         >
-          &#8594;
-        </button>
+          <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737161680/right-arrow_s1msdo.svg'}/>
+          </button>
       </div>
     </div>
   );

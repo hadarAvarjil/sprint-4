@@ -49,15 +49,27 @@
 }
 
 .arrow-btn {
+  display: flex;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: #013a12;
-  color: white;
+  background:white;
+  color:black;
   font-size: 24px;
   border: none;
   cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+
+  box-shadow:
+  rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px,
+  
 }
 
 .arrow-btn.left-arrow {

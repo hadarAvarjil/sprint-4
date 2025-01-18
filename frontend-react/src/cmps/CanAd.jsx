@@ -16,6 +16,8 @@ export function CanAd(){
            Make an incredible <br />
            logo <span>in seconds</span>
          </p>
+<h2>Pre-designed by top talent. Just add your touch.</h2>
+
           <button
            className="can-blk-btn"
            onClick={() => handleNavigation("/gig")}

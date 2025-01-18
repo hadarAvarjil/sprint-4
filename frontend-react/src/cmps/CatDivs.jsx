@@ -28,7 +28,7 @@ export function CatDivsContainer(){
                src="src\services\imgs\design.imgs\graphics.svg"
                alt=""
              />
-            <strong> Graphic & Design</strong>
+            <strong> Graphics & Design</strong>
            </div>
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
