@@ -31,7 +31,7 @@ export function GigIndex() {
 
   async function loadsGigs() {
     try {
-      console.log('Loading gigs with filter:', filterBy);// Debugging
+      // console.log('Loading gigs with filter:', filterBy);// Debugging
       await loadGigs(filterBy)
     } catch (err) {
       console.error('Error getting gigs to GigIndex: ', err)

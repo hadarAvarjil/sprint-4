@@ -36,18 +36,34 @@
     }
   }
 }
+.gig-category-title {
+  text-align: left; 
+  margin-left: 17.5%;
+
+    h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222325; 
+    padding: 8px 0;
+    line-height: 1.2; 
+    text-transform: none !important;
+    font-family: 'macan-bold';
+  }
+}
 
 .gig-filter {
   position: sticky;
   z-index: 5;
   top: 0;
-  width: 100%;
+  width: 113%;
+  margin-left: -4%;
   // background-color: $clrPrimary1;
   padding-block-start: 1em;
 
   .floating-top-bar {
     display: flex;
     gap: 0.5em;
+    margin-left: 19%;
     .btn-mobile-filter {
       display: grid;
       grid-auto-flow: column;
