@@ -57,6 +57,7 @@ function getDefaultFilter() {
     tag: '',
     time: '',
     page: 1,
+    proOnly: false,
   };
 }
 

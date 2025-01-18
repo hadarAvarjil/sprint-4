@@ -189,6 +189,17 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
                 />
               )}
             </div>
+
+            <div className="pro-services-toggle">
+        <label>
+          <input
+            type="checkbox"
+            checked={filterBy.proOnly || false}
+            onChange={(e) => setMenuFilter(null, { proOnly: e.target.checked })}
+          />
+          <span>Pro services</span>
+        </label>
+      </div>
           </div>
         </section>
       </main>
