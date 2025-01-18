@@ -162,7 +162,19 @@ export function UserDetails() {
               alt={`${user.fullName}'s avatar`}
             />
             <div className="user-info">
-              <h1>{user.fullName} <span className="username">@{user.username}</span></h1>
+              <h1>{user.fullName} <span className="username">@{user.username}</span></h1> 
+              {user.level === 'Pro Talent' && (
+                <span className="pro-badge">
+                  <SvgIcon iconName="customCheckMarkSunIcon" />
+                  Pro
+                </span>
+              )}
+                 {user.level === 'New Seller' && (
+                <span className="new-seller-badge">
+                  <SvgIcon iconName="newSeedlingIcon" />
+                  New Seller
+                </span>
+              )}
 
               <div className="rating">
                 <span><SvgIcon iconName="blackStar" />

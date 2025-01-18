@@ -31,12 +31,12 @@
     align-items: center;
 
     &[data-level="Pro Talent"] {
-      color: $clrPrimary1;
+      color: white;
       background-color: $clr17;
     }
 
     &[data-level="New Seller"] {
-      color: $clrPrimary1;
+      color: white;
       background-color: $bgColor5;
     }
   }
