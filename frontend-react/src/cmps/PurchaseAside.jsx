@@ -7,15 +7,16 @@ export function PurchaseAside({
     createOrder,
     Selectedpackage,
     handleSubmit,
+    total
 }) {
 
     function onConfirmPayment() {
-        createOrder()
+        createOrder(total)
       }
 
     const serviceFee = 30.62
     const vat = 105.63
-    const total = packages[Selectedpackage].price + serviceFee + vat  
+    // let total = packages[Selectedpackage].price + serviceFee + vat  
     const packagesType = "Wind - For Start Ups"
 
     return (

@@ -46,8 +46,8 @@ function getEmptyOrder() {
     }
 }
 
-async function createOrder(gigId, sellerId, price, title, daysToMake) {
-    console.log(gigId, sellerId, price, title, daysToMake);
+async function createOrder(gigId, sellerId, price, title, daysToMake, total) {
+    console.log(total);
 
     const order = getEmptyOrder()
     // order.buyerId = buyerId
@@ -57,6 +57,7 @@ async function createOrder(gigId, sellerId, price, title, daysToMake) {
     order.price = price
     order.title = title
     order.daysToMake = daysToMake
+    order.totalPrice = total
     console.log('order', order);
 
     return order

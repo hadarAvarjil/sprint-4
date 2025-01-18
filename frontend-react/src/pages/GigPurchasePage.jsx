@@ -8,6 +8,8 @@ import { PurchaseAside } from '../cmps/PurchaseAside.jsx'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { orderService } from '../services/order'
 import { userService } from '../services/user'
+import { packages } from '../services/gig.service'
+
 
 import { loadGigs } from '../store/actions/gig.actions.js'
 
@@ -42,14 +44,20 @@ export function GigPurchasePage() {
         loadGigsInfo()
     }, [gig, navigate])
 
-    async function createOrder() {
+    const serviceFee = 30.62
+    const vat = 105.63
+    const total = gig ? packages[Selectedpackage].price + serviceFee + vat : 0
+
+    async function createOrder(total) {
+
         try {
             const newOrder = await orderService.createOrder(
                 gig._id,
                 gig.ownerId,
                 gig.price,
                 gig.title,
-                gig.daysToMake
+                gig.daysToMake,
+                total
             )
             await orderService.save(newOrder)
             navigate('/gig')
@@ -70,6 +78,7 @@ export function GigPurchasePage() {
                 gig={gig}
                 createOrder={createOrder}
                 Selectedpackage={Selectedpackage}
+                total={total}
             />
         </section>
     )
