@@ -17,7 +17,7 @@ export function PopularServices() {
 
   return (
     <div className="home-carousel-container">
-      <h1 style={{ fontFamily: "helvetica-neue" }}>Popular Services</h1>
+      <h1 style={{ fontFamily: "helvetica-neue" }}>Popular services</h1>
       <div className="carousel-wrapper">
         {/* Left Arrow */}
         <button
