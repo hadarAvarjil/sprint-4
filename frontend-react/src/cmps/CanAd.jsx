@@ -2,7 +2,7 @@
 import React from "react";
 
 
-export function CanAd(){
+export function CanAd(){ 
     return(
         <div style={{ backgroundColor: "#FFF6F2" }} className="canAd-container">
         <div className="canAd-text-container">
