@@ -1502,7 +1502,6 @@
 }
 
 //home media;
-
 @media(max-width:480px) {
   .home-body {
 
@@ -1549,8 +1548,9 @@
         padding-left: 10px;
         margin: 0;
         align-items: center;
-        .search-btn{
-        width: 55px;
+
+        .search-btn {
+          width: 55px;
         }
       }
 
@@ -1565,22 +1565,83 @@
           span {
             font-size: 32px;
           }
-          .big-resp-br{display: none;}
-          .small-resp-br{display: block;}
+
+          .big-resp-br {
+            display: none;
+          }
+
+          .small-resp-br {
+            display: block;
+          }
+        }
+      }
+
+      .big-search-img {
+        height: 38.5px;
+        width: 70px;
+        padding: 0px;
+        border-radius: 10px;
+
+        img {
+          width: 20px;
         }
       }
     }
-    .big-search-img{
-      height:38.5px;
-      width: 70px;
-         padding: 0px; 
-         border-radius: 10px; 
-         img{
-          width: 20px;
-         }
+
+    .home-carousel-container {
+      .carousel-wrapper {
+        .home-carousel {
+          overflow-x: scroll;
+          scroll-snap-type: x mandatory;
+
+          .carousel-track {
+            flex-wrap: nowrap;
+            display: inline-flex;
+            // gap: -40px;
+            /* Adjust spacing between items */
+            scroll-behavior: smooth;
+
+            .popular-div {
+              flex: 0 0 auto;
+              /* Allow items to size independently */
+              width: 138px;
+              /* Explicit width for the div */
+              height: 178px;
+              /* Explicit height for the div */
+              margin: 0 10px;
+              /* Adjust margin */
+              padding-left: 4px;
+              padding-right: 4px;
+              padding-bottom: 4px;
+              padding-top: 12px;
+              border-radius: 9.45px;
+
+              h3 {
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 22px;
+                padding: 0 10px;
+              }
+
+            }
+
+          }
+
+          .arrow-btn {
+            display: none;
+            /* Hide the arrow buttons for this view */
+          }
+
+          .home-carousel::-webkit-scrollbar {
+            display: none;
+            /* Hide scroll bar for a cleaner look */
+          }
+        }
+
+      }
     }
   }
-  }
+}
 
 
 

@@ -137,34 +137,6 @@
 
 
 
-@media (max-width: 480px) {
-  .home-carousel {
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-  }
-
-  .carousel-track {
-    flex-wrap: nowrap;
-    display: inline-flex;
-    gap: 10px; /* Adjust spacing between items */
-    scroll-behavior: smooth;
-  }
-
-  .popular-div {
-    flex: 0 0 auto; /* Allow items to size independently */
-    width: 130px; /* Explicit width for the div */
-    height: 160px; /* Explicit height for the div */
-    margin: 0 10px; /* Adjust margin */
-  }
-
-  .arrow-btn {
-    display: none; /* Hide the arrow buttons for this view */
-  }
-
-  .home-carousel::-webkit-scrollbar {
-    display: none; /* Hide scroll bar for a cleaner look */
-  }
-}
 
 
 

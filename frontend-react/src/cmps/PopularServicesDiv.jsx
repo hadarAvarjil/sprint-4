@@ -40,73 +40,73 @@ export function PopularServices() {
             <div className="popular-div light-green-div first-pop-div">
               <h3>Website Development</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551937/website-development_gig20i.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.56_1_pyspmu.jpg'}/>
               </div>
             </div>
             <div className="popular-div orange-div">
               <h3>Logo Design</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551938/logo-design_xgy1r3.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.55_2_hckvzx.jpg'}/>
               </div>
             </div>
             <div className="popular-div dark-green-div">
               <h3>SEO</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551932/seo_dsq2bi.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.54_1_hivb1p.jpg'}/>
               </div>
             </div>
             <div className="popular-div purple-div">
               <h3>Architecture & Interior Design</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551927/architecture-design_jrrbas.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.54_eofkkc.jpg'}/>
               </div>
             </div>
             <div className="popular-div green-shrek-div">
               <h3>Social Media Marketing</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551929/social-media-marketing_iqwnam.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.55_1_pxgamn.jpg'}/>
               </div>
             </div>
             <div className="popular-div brown-div">
               <h3>Voice Over</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551933/voice-over_uhjbg2.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.53_xq2w2p.jpg'}/>
               </div>
             </div>
             <div className="popular-div pink-div">
               <h3>UGC Videos</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/UGC_Video_img_zhwx4i.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.53_1_r1e8aj.jpg'}/>
               </div>
             </div>
             <div className="popular-div green-swamp-div">
               <h3>Software Development</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/software-development_y9qxvb.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.53_2_ndgpxw.jpg'}/>
               </div>
             </div>
             <div className="popular-div light-brown-div">
               <h3>Data Science & ML</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551930/data-science_nhnvos.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.55_zcb4lf.jpg'}/>
               </div>
             </div>
             <div className="popular-div green-shrek-div">
               <h3>Product Photography</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551931/product-photography_qofjrg.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.54_2_st7oyu.jpg'}/>
               </div>
             </div>
             <div className="popular-div light-green-div">
               <h3>E-Commerce Marketing</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551934/e-commerce_ozwc08.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.55_3_aagztg.jpg'}/>
               </div>
             </div>
             <div className="popular-div pink-div">
               <h3>Video Editing</h3>
               <div className="pop-inner-pic">
-                <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551935/video-editing_xcfy43.webp" />
+              <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.56_zhxfha.jpg'}/>
               </div>
             </div>
           </div>
