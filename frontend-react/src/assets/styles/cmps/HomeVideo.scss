@@ -15,3 +15,10 @@
   margin-top: 90px;
   margin-bottom: 40px;
   }
+
+  @media(max-width:480px){
+    .vid-container{
+
+      display: none;
+    }
+  }

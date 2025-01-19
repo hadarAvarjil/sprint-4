@@ -40,3 +40,16 @@
       font-weight: 100;
     }
   }
+
+  @media(max-width:480px){
+    .purple-signup-ad{
+      width: 100vw;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      h1{
+        font-size: 40px;
+        line-height: 38px;
+      }
+    }
+  }
