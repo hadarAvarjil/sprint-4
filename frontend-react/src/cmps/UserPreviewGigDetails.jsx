@@ -18,7 +18,12 @@ export function UserPreviewGigDetails({ owner, gig }) {
     if (!user) return null
 
     const reviewsText = gig.reviews.length === 1 ? 'Review' : 'Reviews';
-
+    function renderStars(rate) {
+        const maxStars = 3; // Total number of stars
+        const filledStars = "✦".repeat(rate);
+        const emptyStars = "✧".repeat(maxStars - rate);
+        return filledStars + emptyStars;
+    }
     return (
         <div className="user-preview-gig-details flex">
             <div className="user-info flex align-start">
@@ -32,8 +37,16 @@ export function UserPreviewGigDetails({ owner, gig }) {
                         <span className="fullname">
                             <Link to={`/user/${user._id}`}>{user.fullName}</Link>
                         </span>
-                        {user.isTopRated && (
-                            <span className="top-rated-badge">Top Rated ✦✦✦</span>
+                        {user.level < 3 ? (
+                            <span className="level-badge">
+                                Level {user.level} {renderStars(user.level)}
+                            </span>
+                        ) : (
+                            user.isTopRated && (
+                                <span className="top-rated-badge">
+                                    Top Rated ✦✦✦
+                                </span>
+                            )
                         )}
                         <div className="line-divider"></div>
                         {user.ordersInQueue && (

@@ -68,7 +68,7 @@ export function GigPurchasePage() {
     }
 
     return (
-        <section className="gig-purchase flex">
+        <section className="gig-purchase main flex ">
             <PurchaseMain
                 initPurchaseState={initPurchaseState}
                 setFormPaymentData={setFormPaymentData}

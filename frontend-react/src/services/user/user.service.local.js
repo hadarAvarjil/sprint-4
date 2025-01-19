@@ -99,14 +99,14 @@ function getUserRatingCount(user) {
   let countMax = 1000
   let countMin = 1
   switch (user.level) {
-    case 'Level 1':
+    case 1:
       countMax = 100
       break
-    case 'Level 2':
+    case 2:
       countMin = 101
       countMax = 500
       break
-    case 'Pro Talent':
+    case 3:
       countMin = 501
       break
 
@@ -124,7 +124,7 @@ const users = [
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1736450821/user5_q3foea.webp',
     username: 'michael123',
     password: '123',
-    level: 'level 5',
+    level: 3,
     rating: 4.9,
     isAdmin: false,
     ordersInQueue: 350,
@@ -179,7 +179,7 @@ const users = [
       'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/22f08dfbaf47e57403f63b2b4907f823-1664365762969/fc9a7ca8-9d41-40d1-93b4-3f5bc9590756.jpg',
     username: 'emily123',
     password: '123',
-    level: 'level 5',
+    level: 2,
     rating: 4.9,
     isAdmin: false,
     ordersInQueue: 350,
@@ -197,7 +197,7 @@ const users = [
       'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/92ac15d229eed1f1268a9e4386ab9737-1698169005889/f9e22136-fc15-4815-a21a-1c8888c143b8.jpg',
     username: 'robert123',
     password: '123',
-    level: 'level 5',
+    level: 3,
     rating: 4.8,
     isAdmin: false,
     ordersInQueue: 350,
@@ -215,7 +215,7 @@ const users = [
       'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1ac47e17fe087ed4c26ecd9cc76fa610-1540164169333/7b9bde04-bdce-4954-a4c6-5e20fd4a4652.jpg',
     username: 'sophia123',
     password: '123',
-    level: 'level 5',
+    level: 3,
     rating: 4.6,
     isAdmin: false,
     ordersInQueue: 350,
@@ -233,7 +233,7 @@ const users = [
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
     username: 'jane123',
     password: '123',
-    level: 'level 5',
+    level: 2,
     rating: 4.9,
     isAdmin: true,
     ordersInQueue: 350,
@@ -251,7 +251,7 @@ const users = [
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
     username: 'jane123',
     password: '123',
-    level: 'level 5',
+    level: 3,
     rating: 4.2,
     isAdmin: true,
     ordersInQueue: 350,
@@ -269,7 +269,7 @@ const users = [
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user16_qzvmct.webp',
     username: 'Janny123',
     password: '123',
-    level: 'level 4',
+    level: 2,
     rating: 1.2,
     isAdmin: true,
     ordersInQueue: 10,
@@ -287,7 +287,7 @@ const users = [
       'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/32174966/original/13102889_10209675038819539_3441425076441038959_n.jpg',
     username: 'Jes',
     password: '123',
-    level: 'level 4',
+    level: 1,
     rating: 1.2,
     isAdmin: true,
     ordersInQueue: 230,
@@ -306,7 +306,7 @@ const users = [
       'https://res.cloudinary.com/dtffr5wya/image/upload/v1737138844/u1026-profile_iiq1iu.webp',
     username: 'emily_designs',
     password: 'design123',
-    level: 'level 5',
+    level: 2,
     rating: 4.9,
     isAdmin: false,
     ordersInQueue: 200,
@@ -331,7 +331,7 @@ const users = [
     avatar: "https://res.cloudinary.com/dtffr5wya/image/upload/v1737145984/u1027_Profile_dnpbdi.webp",
     username: "sophia_ai_pro",
     password: "ai_expert2025",
-    level: "level 4",
+    level: 3,
     rating: 4.8,
     isAdmin: false,
     ordersInQueue: 350,
@@ -356,7 +356,7 @@ const users = [
     avatar: "https://res.cloudinary.com/dtffr5wya/image/upload/v1737146055/u1028_ophcm0.webp",
     username: "ethan_photos",
     password: "photo_master2025",
-    level: "level 4",
+    level: 3,
     rating: 4.7,
     isAdmin: false,
     ordersInQueue: 150,
@@ -381,7 +381,7 @@ const users = [
     avatar: "https://res.cloudinary.com/dtffr5wya/image/upload/v1737147402/u1029_qks4hx.webp",
     username: "olivia_biz_pro",
     password: "business2025",
-    level: "level 5",
+    level: 3,
     rating: 4.9,
     isAdmin: false,
     ordersInQueue: 320,
@@ -406,7 +406,7 @@ const users = [
     avatar: "https://res.cloudinary.com/dtffr5wya/image/upload/v1737148674/u1030_hgz3vs.webp",
     username: "data_master",
     password: "data2025",
-    level: "level 4",
+    level: 3,
     rating: 4.7,
     isAdmin: false,
     ordersInQueue: 180,

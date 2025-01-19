@@ -71,7 +71,7 @@ export function UserPreview({ isFrom, owner, children }) {
         </Link>
             {isFrom === 'userProfile' &&
               <span className={`user-level ${user.level === 'level 3' ? 'top' : ''}`} title='user level'>
-                {user.level}
+                Level {user.level}
               </span>}
            </span>
               </div>
