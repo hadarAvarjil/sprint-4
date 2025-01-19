@@ -38,16 +38,46 @@
                 color: #a0522d;
                 font-size: rem(12px);
                 font-weight: bold;
-                padding: 0.1rem 0.1rem;
+                padding: 0.2rem 0.2rem;
                 border-radius: 5px;
             }
         }
 
+        .pro-talent-badge {
+            background-color: #2e25ad;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white; 
+            padding: 2px 5px;
+            border-radius: 5px;
+
+            svg {
+                margin-right: 0.2rem;
+            }
+        }
+
+        .new-seller-badge {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white; 
+            padding: 2px 5px;
+            border-radius: 5px;
+
+            svg {
+                margin-right: 0.2rem;
+            }
+        }
+
         .line-divider {
-            width: 1px; 
-            height: 24px; 
-            background-color: #ddd; 
-            margin: 0 8px; 
+            width: 1px;
+            height: 24px;
+            background-color: #ddd;
+            margin: 0 8px;
         }
 
         .orders-queue {

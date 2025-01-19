@@ -37,17 +37,25 @@ export function UserPreviewGigDetails({ owner, gig }) {
                         <span className="fullname">
                             <Link to={`/user/${user._id}`}>{user.fullName}</Link>
                         </span>
-                        {user.level < 3 ? (
+                        {user.level === 'Pro Talent' ? (
+                            <span className="pro-talent-badge">
+                                <SvgIcon iconName="customCheckMarkSunIcon" />
+                                Pro
+                            </span>
+                        ) : user.level === 'New Seller' ? (
+                            <span className="new-seller-badge">
+                                <SvgIcon iconName="newSeedlingIcon" />
+                                New Seller
+                            </span>
+                        ) : user.level < 3 ? (
                             <span className="level-badge">
                                 Level {user.level} {renderStars(user.level)}
                             </span>
-                        ) : (
-                            user.isTopRated && (
-                                <span className="top-rated-badge">
-                                    Top Rated ✦✦✦
-                                </span>
-                            )
-                        )}
+                        ) : user.level === 3 ? (
+                            <span className="top-rated-badge">
+                                Top Rated ✦✦✦
+                            </span>
+                        ) : null}
                         <div className="line-divider"></div>
                         {user.ordersInQueue && (
                             <span className="orders-queue">
