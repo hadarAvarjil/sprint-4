@@ -29,18 +29,29 @@
     margin-bottom: 64px;
   
   }
-  
   .divs-container {
     display: flex;
-    // margin-top: 50px;
-    margin-bottom: 50px;
     flex-direction: column;
-    padding-top: 40px;
-    // padding-bottom: 40px;
     justify-content: space-between;
-    height: calc(100vw * 0.2);
+    position: relative; /* Ensure proper stacking context */
+    height: auto; /* Remove fixed height to allow content to grow */
     width: 100%;
+    padding: 40px 20px; /* Add horizontal padding */
+    margin-bottom: 50px; /* Ensure spacing below */
+    background: #fff; /* Optional: Add background to make overlaps visible */
+    z-index: 1; /* Bring this container above others */
   }
+  // .divs-container {
+  //   display: flex;
+  //   // margin-top: 50px;
+  //   margin-bottom: 50px;
+  //   flex-direction: column;
+  //   padding-top: 40px;
+  //   // padding-bottom: 40px;
+  //   justify-content: space-between;
+  //   height: calc(100vw * 0.2);
+  //   width: 100%;
+  // }
   
   .icons-div img {
     margin-bottom: 12px;
@@ -58,40 +69,18 @@
 }
 
 
-@media (max-width: 480px) {
-  .icons-divs-container {
-    display: flex;
-    flex-direction: column; /* Arrange items in a column */
-    gap: 16px; /* Space between each `.icons-div` */
-    width: 100vw;
-  }
 
-  .icons-div {
-    width: 100%; /* Full width of the container */
-    text-align: left; /* Align text to the left */
-    padding: 16px; /* Optional padding for better appearance */
-    box-sizing: border-box; /* Ensure padding doesn't affect the width */
-    border: 1px solid #e0e0e0; /* Optional: Add borders for distinction */
-    border-radius: 8px; /* Optional: Rounded corners */
-  }
+  // .blk-join-btn {
+  //   position: absolute;
+  //   bottom: 16px;
+  //   left: 16px;
+  //   padding: 12px 24px;
+  //   font-size: 16px;
+  //   border-radius: 8px; /* Optional: Rounded button */
+  // }
 
-  .icons-div img {
-    display: block; /* Ensure images stack properly */
-    margin-bottom: 8px; /* Space below images */
-    margin-top: 8px;
-  }
+  // .divs-container {
+  //   position: relative; /* For button positioning */
+  //   padding-bottom: 60px; /* Space for the button */
+  // }
 
-  .blk-join-btn {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px; /* Optional: Rounded button */
-  }
-
-  .divs-container {
-    position: relative; /* For button positioning */
-    padding-bottom: 60px; /* Space for the button */
-  }
-}

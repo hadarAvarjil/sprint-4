@@ -1570,9 +1570,7 @@
             display: none;
           }
 
-          .small-resp-br {
-            display: block;
-          }
+          
         }
       }
 
@@ -1640,6 +1638,58 @@
 
       }
     }
+    .divs-container {
+      padding-bottom: 0px; /* Ensure space for the button */
+      margin-bottom: 0px; /* Avoid overlaps with other sections */
+    height: 590px;
+      h1{
+      font-size: 32px;
+      line-height: 38px;
+    }
+      .icons-divs-container {
+      display: flex;
+      flex-direction: column; /* Arrange items in a column */
+      gap: 0px; /* Space between each `.icons-div` */
+      width: 100vw;
+      height: 589px;
+      padding-top:20px ;
+      
+      .icons-div {
+        display: flex;
+        flex-direction: row; 
+        margin-bottom: 0px;
+        gap: 20px;
+        width: 100%; /* Full width of the container */
+        text-align: left; /* Align text to the left */
+        padding: 16px; /* Optional padding for better appearance */
+        box-sizing: border-box; /* Ensure padding doesn't affect the width */
+        border: 0px; /* Optional: Add borders for distinction */
+        border-radius: 8px; /* Optional: Rounded corners */
+      p{
+        font-size: 16px;
+      }
+      }
+      
+      .icons-div img {
+        display: block; /* Ensure images stack properly */
+        margin-bottom: 8px; /* Space below images */
+height: 52px;   
+width: 52px;
+   }
+      .blk-join-btn {
+        width: 90%; /* Make the button fit better on mobile */
+        margin: 20px auto 0; /* Center the button */
+      }
+    }
+    .signup-ad{
+      margin-bottom: 200px;
+      margin-top: 0px;
+      height: 328px;
+    }
+  }
+  .small-resp-br {
+    display: block;
+  }
   }
 }
 

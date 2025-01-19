@@ -6,7 +6,7 @@ export function MakeHappenAd(){
         
    
         <div className="divs-container">
-        <h1> Make it all happen with freelancers</h1>
+        <h1> Make it all happen with <br className="small-resp-br"/> freelancers</h1>
 
         <div className="signup-ad icons-divs-container">
           <div className="icons-div">
