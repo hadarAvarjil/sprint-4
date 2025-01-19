@@ -1503,19 +1503,56 @@
 
 //home media;
 
-@media(max-width:480px){
-  .home-body{
+@media(max-width:480px) {
+  .home-body {
+
     // padding-top: 10px;
     // padding-left: 20%;
     // padding-right: 20%;
-    .green-search-div{
-      background: linear-gradient(to top, #003912, #0F7D43);
+    .green-search-div {
+      background: linear-gradient(to top, #0F7D43,#003912,#003912);
       width: 100vw;
+      height: 280px;
+      border-radius: 0;
+      margin-top: 63px;
+
+      .pinkGuy-img {
+        display: none;
+      }
+      .yellowGirl-img {
+        display: none;
+      }
+      .purpleGuy-img {
+        display: none;
+      }
+      .greenGirl-img {
+        display: none;
+      }
+      .blurredGirl-img {
+        display: none;
+      }
+      .trustedBy-img {
+        display: none;
+
+        .green-search-div{
+       h1{
+        font-size: 32px;
+        span{
+          font-size: 32px;
+        }
+      }
+    }
+      }
     }
   }
 }
-@media(min-width:481px){}
-@media(min-width:769px){}
-@media(min-width:1025px){}
-@media(min-width:1201px){}
-@media(min-width:1830px){}
+
+  @media(min-width:481px) {}
+
+  @media(min-width:769px) {}
+
+  @media(min-width:1025px) {}
+
+  @media(min-width:1201px) {}
+
+  @media(min-width:1830px) {}
