@@ -70,4 +70,58 @@ margin-bottom: 40px;
   
   .canAd-pic {
     margin-right: 80px;
-  } 
+  }
+  
+  @media (max-width: 480px) {
+    .canAd-container {
+      flex-direction: column; /* Stack elements in a column */
+      align-items: center; /* Center items horizontally */
+      width: 100vw; /* Full width for smaller screens */
+      padding: 16px; /* Reduce padding for smaller screens */
+    }
+  
+    .canAd-pic {
+      margin: 0 0 20px 0; /* Remove side margin, add bottom margin */
+      width: 100%; /* Make the image take full width */
+      max-width: 320px; /* Optional: Limit the maximum width for better scaling */
+      text-align: center; /* Center the image */
+    }
+  
+    .canAd-text-container {
+      padding: 16px; /* Reduce padding for smaller screens */
+      font-size: 16px; /* Adjust text size for readability */
+      line-height: 24px; /* Adjust line spacing for smaller font size */
+      text-align: center; /* Center-align text for mobile view */
+    }
+  
+    .canAd-text-container h1 {
+      font-size: 24px; /* Adjust font size */
+      line-height: 32px; /* Adjust line height */
+      margin-bottom: 16px; /* Reduce spacing for better fit */
+    }
+  
+    .canAd-text-container h2 {
+      font-size: 18px; /* Slightly smaller font */
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+  
+    .canAd-text-container p {
+      font-size: 14px; /* Adjust font size */
+      line-height: 20px;
+    }
+  
+    .canAd-text-container p span {
+      font-size: 28px; /* Scale down the emphasized text */
+    }
+  
+    .blk-join-btn {
+      width: 90%; /* Make the button full width with some margin */
+      max-width: 320px; /* Optional: Limit the maximum width */
+      margin: 20px auto 0 auto; /* Center the button with some margin on top */
+      padding: 10px 20px; /* Adjust padding for smaller buttons */
+      font-size: 16px; /* Adjust font size */
+      border-radius: 8px; /* Keep rounded corners */
+    }
+  }
+  
