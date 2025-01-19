@@ -263,7 +263,7 @@ export function UserDetails() {
         </button>
       </div>
       <div className="gig-reviews-section">
-        <h2>Reviews</h2>
+
         {ratingStats.totalReviews > 0 && (
           <div className="reviews-summary">
             <div className="average-rating">
@@ -300,6 +300,9 @@ export function UserDetails() {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
+          <button className="search-icon">
+            <SvgIcon iconName="search" />
+          </button>
           <label>
             <input
               type="checkbox"
@@ -309,7 +312,7 @@ export function UserDetails() {
             Only show reviews with files
           </label>
         </div>
-
+        <h2>{reviews.length} Reviews</h2>
         <ul className="reviews">
           {filteredReviews.slice(0, visibleCount).map((review) => (
             <li key={review.id}>
