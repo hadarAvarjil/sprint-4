@@ -10,7 +10,7 @@
   
   .home-nav-bar { 
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between; //shinoi from around
     align-items: center;
     height: 70px;
     padding-left:calc( 13% - 5px);
