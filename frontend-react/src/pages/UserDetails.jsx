@@ -31,6 +31,14 @@ export function UserDetails() {
   const [searchText, setSearchText] = useState('')
   const [showOnlyWithFiles, setShowOnlyWithFiles] = useState(false)
   const [filteredReviews, setFilteredReviews] = useState([])
+  const [originalReviews, setOriginalReviews] = useState([])
+
+  useEffect(() => {
+    if (reviews.length > 0) {
+      setFilteredReviews(reviews)
+    setOriginalReviews(reviews);
+    }
+  }, [reviews])
 
   useEffect(() => {
     async function fetchAllGigs() {
@@ -52,32 +60,35 @@ export function UserDetails() {
         const allReviews = userGigs.flatMap((gig) => gig.reviews || [])
         const reviewsWithUserData = await Promise.all(
           allReviews.map(async (review) => {
+            if (review.username && review.imgUrl && review.country) {
+              return review
+            }
             try {
               const user = await userService.getById(review.userId)
               return {
                 ...review,
-                username: user.fullName,
-                imgUrl: user.avatar,
-                country: user.from,
+                username: user?.fullName || "Unknown",
+                imgUrl: user?.avatar || "https://via.placeholder.com/50",
+                country: user?.from || "Unknown",
               };
             } catch (err) {
               console.error(`Failed to fetch user data for review ${review.id}`, err)
-              return {
-                ...review,
-                username: 'Unknown',
-                imgUrl: '/path/to/default-avatar.png',
-                country: 'Unknown',
-              };
+              return review
             }
           })
         );
+        console.log("Enriched reviews:", reviewsWithUserData)
         setReviews(reviewsWithUserData)
+        setOriginalReviews(reviewsWithUserData)
+        setFilteredReviews(reviewsWithUserData)
       } catch (err) {
-        console.error('Failed to fetch reviews with user data:', err)
+        console.error("Failed to fetch reviews with user data:", err)
       }
     }
     fetchReviewsWithUserData()
   }, [userGigs])
+
+
 
   useEffect(() => {
     if (user && user._id) {
@@ -132,22 +143,26 @@ export function UserDetails() {
       averageRating: totalRating / totalReviews || 0,
     })
   }
-
-  function applyFilters(reviews) {
-    let filtered = reviews
-
-    if (searchText) {
+  
+  function applyFilters() {
+    let filtered = [...originalReviews]
+  
+    if (searchText.trim()) {
       filtered = filtered.filter((review) =>
-        review.text.toLowerCase().includes(searchText.toLowerCase())
-      )
+        review.text?.toLowerCase().includes(searchText.toLowerCase())
+      );
     }
-
+  
     if (showOnlyWithFiles) {
       filtered = filtered.filter((review) => review.files && review.files.length > 0)
     }
-
+  
     setFilteredReviews(filtered)
   }
+  
+
+
+
 
   if (!user) return <div>Loading...</div>
 
@@ -162,14 +177,14 @@ export function UserDetails() {
               alt={`${user.fullName}'s avatar`}
             />
             <div className="user-info">
-              <h1>{user.fullName} <span className="username">@{user.username}</span></h1> 
+              <h1>{user.fullName} <span className="username">@{user.username}</span></h1>
               {user.level === 'Pro Talent' && (
                 <span className="pro-badge">
                   <SvgIcon iconName="customCheckMarkSunIcon" />
                   Pro
                 </span>
               )}
-                 {user.level === 'New Seller' && (
+              {user.level === 'New Seller' && (
                 <span className="new-seller-badge">
                   <SvgIcon iconName="newSeedlingIcon" />
                   New Seller
@@ -224,11 +239,11 @@ export function UserDetails() {
           ))}
         </ul>
         <button
-        className="create-gig-btn"
-        onClick={() => navigate('/gig/edit')}
-      >
-        Create Gig
-      </button>
+          className="create-gig-btn"
+          onClick={() => navigate('/gig/edit')}
+        >
+          Create Gig
+        </button>
       </div>
       <div className="gig-reviews-section">
         <h2>Reviews</h2>
@@ -262,24 +277,24 @@ export function UserDetails() {
         )}
 
         <div className="reviews-filters">
-      <input
-        type="text"
-        placeholder="Search reviews"
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-      />
-      <label>
-        <input
-          type="checkbox"
-          checked={showOnlyWithFiles}
-          onChange={(e) => setShowOnlyWithFiles(e.target.checked)}
-        />
-        Only show reviews with files
-      </label>
-    </div>
+          <input
+            type="text"
+            placeholder="Search reviews"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <label>
+            <input
+              type="checkbox"
+              checked={showOnlyWithFiles}
+              onChange={(e) => setShowOnlyWithFiles(e.target.checked)}
+            />
+            Only show reviews with files
+          </label>
+        </div>
 
         <ul className="reviews">
-          {reviews.map((review) => (
+          {filteredReviews.map((review) => (
             <li key={review.id}>
               <GigReview review={review} />
             </li>
