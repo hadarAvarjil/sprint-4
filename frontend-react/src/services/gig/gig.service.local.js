@@ -48,14 +48,16 @@ async function query(filterBy = { txt: '', price: 0, cat: '' }) {
           console.warn(`Seller not found for gig ${gig._id}, ownerId: ${gig.ownerId}`)
           return null
         }
-        const sellerLevel = seller.level ? seller.level.toLowerCase().trim() : ''
-        const filterLevel = filterBy.level.toLowerCase().trim()
+        const sellerLevel = seller.level !== undefined ? String(seller.level).toLowerCase().trim() : '';
+        const filterLevel = filterBy.level.toLowerCase().replace('level', '').trim();
         console.log(`Gig ${gig._id} - Seller Level: ${sellerLevel}, Filter Level: ${filterLevel}`)
         return sellerLevel === filterLevel ? gig : null
       })
     )
     gigs = gigs.filter(gig => gig !== null)
   }
+  
+  
 
   if (filterBy.time) {
     gigs = gigs.filter(gig => gig.daysToMake === filterBy.time)
