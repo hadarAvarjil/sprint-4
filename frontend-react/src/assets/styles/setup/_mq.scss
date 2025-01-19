@@ -1500,3 +1500,22 @@
     }
   }
 }
+
+//home media;
+
+@media(max-width:480px){
+  .home-body{
+    // padding-top: 10px;
+    // padding-left: 20%;
+    // padding-right: 20%;
+    .green-search-div{
+      background: linear-gradient(to top, #003912, #0F7D43);
+      width: 100vw;
+    }
+  }
+}
+@media(min-width:481px){}
+@media(min-width:769px){}
+@media(min-width:1025px){}
+@media(min-width:1201px){}
+@media(min-width:1830px){}
