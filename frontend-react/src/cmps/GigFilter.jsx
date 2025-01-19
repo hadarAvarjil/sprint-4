@@ -86,7 +86,7 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
         )}
       </div>
       <div className="gig-category-title">
-  <h1>{filterBy.cat || 'Explore'}</h1>
+  <h1>{filterBy.cat || 'Discover Our Services'}</h1>
 </div>
       <main className={`gig-filter ${isSticky ? 'shadow' : ''}`}>
         <section className="floating-top-bar layout-row">

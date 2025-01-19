@@ -2,6 +2,7 @@
   max-width: 1304px;
   // color: $clrPrimary2;
   margin-left: 17%;
+  height: auto;
 
 
 
@@ -91,7 +92,7 @@
     margin-bottom: 40px;
 
     .user-main-info {
-      flex: 2;
+      flex: 1;
 
       .user-header {
         display: flex;

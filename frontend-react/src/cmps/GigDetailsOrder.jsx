@@ -45,7 +45,7 @@ export function GigDetailsOrder({ gig, owner }) {
                         className={`tab-button ${activeTab === tab ? 'active' : ''}`}
                         onClick={() => setActiveTab(tab)}
                     >
-                        {tab}
+                         {tab.charAt(0).toUpperCase() + tab.slice(1)}
                     </button>
                 ))}
             </div>
