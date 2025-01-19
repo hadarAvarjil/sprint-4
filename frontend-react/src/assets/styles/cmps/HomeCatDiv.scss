@@ -41,42 +41,6 @@
   color: black;
 }
 
-/* Media Query for screens with max-width: 480px */
-@media (max-width: 480px) {
-  .cat-divs-container {
-    width: 100vw;
-    height: auto;  /* Allow container to adjust height automatically */
-    gap: 10px;  /* Smaller gap between items */
-  }
-
-  .cat-div {
-    width: 30%;  /* 3 items per row */
-    height: 140px; /* Fixed height */
-    padding: 10px;
-  }
-
-  /* Button styling */
-  .view-more-btn {
-    width: 100vw;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #003912;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-  }
-
-  .view-more-btn:hover {
-    background-color: #0F7D43;
-  }
-
-  /* Initially hide the 3rd row of cat-divs */
-  .third-row {
-    display: none;
-  }
-}
 
 
 // .cat-divs-container {

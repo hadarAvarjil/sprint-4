@@ -17,48 +17,48 @@ export function CatDivsContainer() {
     <div className="cat-divs-container">
       {/* First Row */}
       <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\programming.svg" alt="" />
-        <strong>Programming <br /> & Tech</strong>
+       <div className="cat-img-container"> <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\programming.svg" alt="" /></div>
+       <h2> <strong>Programming <br /> & Tech</strong></h2>
       </div>
       <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\graphics.svg" alt="" />
-        <strong>Graphics & Design</strong>
+      <div className="cat-img-container"> <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\graphics.svg" alt="" /></div>
+      <h2> <strong>Graphics & Design</strong></h2>
       </div>
       <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\marketing.svg" alt="" />
-        <strong>Digital Marketing</strong>
+      <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\marketing.svg" alt="" /></div>
+      <h2> <strong>Digital Marketing</strong></h2>
       </div>
 
       {/* Second Row */}
       <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\translation.svg" alt="" />
-        <strong>Writing & Translation</strong>
+      <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\translation.svg" alt="" /></div>
+      <h2>  <strong>Writing & Translation</strong></h2>
       </div>
       <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\animation.svg" alt="" />
-        <strong>Video & <br />Animation</strong>
+      <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\animation.svg" alt="" /></div>
+       <h2> <strong>Video & <br />Animation</strong></h2>
       </div>
       <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\ai.svg" alt="" />
-        <strong>AI Services</strong>
+      <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\ai.svg" alt="" /></div>
+      <h2> <strong>AI Services</strong></h2>
       </div>
 
       {/* Third Row - Initially hidden, will show when toggled */}
       <div className={`cat-divs-container third-row ${showMore ? "show" : ""}`}>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\music.svg" alt="" />
-          <strong>Music & Audio</strong>
+        <div className="cat-img-container"> <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\music.svg" alt="" /></div>
+        <h2>  <strong>Music & Audio</strong></h2>
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\business.svg" alt="" />
-          <strong>Business</strong>
+        <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\business.svg" alt="" /></div>
+        <h2>  <strong>Business</strong></h2>
         </div>
         <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-          <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\consulting.svg" alt="" />
-          <strong>Consulting</strong>
+        <div className="cat-img-container"> <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\consulting.svg" alt="" /></div>
+        <h2>  <strong>Consulting</strong></h2>
         </div>
       </div>
-
+<div className="cat-divs-bottom-border"></div>
       {/* Button to toggle the third row */}
       <button className="view-more-btn" onClick={toggleMore}>
         {showMore ? "View Less" : "View 3 More"}

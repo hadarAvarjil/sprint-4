@@ -1504,6 +1504,12 @@
 //home media;
 @media(max-width:480px) {
   .home-body {
+    .home-nav-bar{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+    }
 
     .green-search-div {
       background: linear-gradient(to top, #0F7D43, #003912, #003912);
@@ -1566,11 +1572,9 @@
             font-size: 32px;
           }
 
-          .big-resp-br {
-            display: none;
-          }
-
           
+
+
         }
       }
 
@@ -1585,6 +1589,73 @@
         }
       }
     }
+    .cat-divs-container {
+      width: 100vw;
+      height: auto;  /* Allow container to adjust height automatically */
+      gap: 10px;  /* Smaller gap between items */
+
+  
+    .cat-div {
+      width: 30%;  /* 3 items per row */
+      height: 152px; /* Fixed height */
+      padding: 10px;
+      box-shadow: none;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      h2{
+        margin-top: 15px;
+        font-size: 14px;
+        color: rgb(34, 35, 37);
+      }
+      .cat-img-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        box-shadow:
+        rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, 
+        rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, 
+        rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, 
+        rgba(0, 0, 0, 0.09) 0px 0px 11px 0px,
+        inset 0 0 10px white;
+      border-radius: 16px;
+      img{
+        width: 40px;
+        height: 40px;
+      }
+      }
+    }
+  
+    .third-row {
+      display: none;
+    }
+    /* Button styling */
+    .view-more-btn {
+      width: 100vw;
+      text-align: center;
+      padding: 10px 0;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      font-size: 16px;
+      // border-radius: 5px;
+    }
+  
+    .view-more-btn:hover {
+      background-color:#F5F5F5;
+    }
+    .cat-divs-bottom-border{
+      height: 1px;
+      width: 100%;
+      background-color: rgba(128, 128, 128, 0.504);
+      // border-bottom: 1px solid grey;
+
+    }
+  
+    /* Initially hide the 3rd row of cat-divs */
+  }
 
     .home-carousel-container {
       .carousel-wrapper {
@@ -1638,112 +1709,166 @@
 
       }
     }
+
     .divs-container {
-      padding-bottom: 0px; /* Ensure space for the button */
-      margin-bottom: 0px; /* Avoid overlaps with other sections */
-    height: 590px;
-      h1{
-      font-size: 32px;
-      line-height: 38px;
-    }
+      padding-bottom: 0px;
+      /* Ensure space for the button */
+      margin-bottom: 0px;
+      /* Avoid overlaps with other sections */
+      height: 590px;
+
+      h1 {
+        font-size: 32px;
+        line-height: 38px;
+      }
+
       .icons-divs-container {
-      display: flex;
-      flex-direction: column; /* Arrange items in a column */
-      gap: 0px; /* Space between each `.icons-div` */
-      width: 100vw;
-      height: 589px;
-      padding-top:20px ;
-      
-      .icons-div {
         display: flex;
-        flex-direction: row; 
-        margin-bottom: 0px;
-        gap: 20px;
-        width: 100%; /* Full width of the container */
-        text-align: left; /* Align text to the left */
-        padding: 16px; /* Optional padding for better appearance */
-        box-sizing: border-box; /* Ensure padding doesn't affect the width */
-        border: 0px; /* Optional: Add borders for distinction */
-        border-radius: 8px; /* Optional: Rounded corners */
-      p{
-        font-size: 16px;
+        flex-direction: column;
+        /* Arrange items in a column */
+        gap: 0px;
+        /* Space between each `.icons-div` */
+        width: 100vw;
+        height: 589px;
+        padding-top: 20px;
+
+        .icons-div {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 0px;
+          gap: 20px;
+          width: 100%;
+          /* Full width of the container */
+          text-align: left;
+          /* Align text to the left */
+          padding: 16px;
+          /* Optional padding for better appearance */
+          box-sizing: border-box;
+          /* Ensure padding doesn't affect the width */
+          border: 0px;
+          /* Optional: Add borders for distinction */
+          border-radius: 8px;
+
+          /* Optional: Rounded corners */
+          p {
+            font-size: 16px;
+          }
+        }
+
+        .icons-div img {
+          display: block;
+          /* Ensure images stack properly */
+          margin-bottom: 8px;
+          /* Space below images */
+          height: 52px;
+          width: 52px;
+        }
+
+        .blk-join-btn {
+          width: 90%;
+          /* Make the button fit better on mobile */
+          margin: 20px auto 0;
+          /* Center the button */
+        }
       }
-      }
-      
-      .icons-div img {
-        display: block; /* Ensure images stack properly */
-        margin-bottom: 8px; /* Space below images */
-height: 52px;   
-width: 52px;
-   }
-      .blk-join-btn {
-        width: 90%; /* Make the button fit better on mobile */
-        margin: 20px auto 0; /* Center the button */
+
+      .signup-ad {
+        margin-bottom: 200px;
+        margin-top: 0px;
+        height: 328px;
       }
     }
-    .signup-ad{
-      margin-bottom: 200px;
-      margin-top: 0px;
-      height: 328px;
-    }
-  }
+
     .canAd-container {
-      flex-direction: column; /* Stack elements in a column */
-      align-items: center; /* Center items horizontally */
-      width: 100vw; /* Full width for smaller screens */
-      padding: 16px; /* Reduce padding for smaller screens */
+      flex-direction: column;
+      /* Stack elements in a column */
+      align-items: center;
+      /* Center items horizontally */
+      width: 100vw;
+      /* Full width for smaller screens */
+      padding: 16px;
+      /* Reduce padding for smaller screens */
       height: 551px;
       padding-left: 24px;
       padding-right: 24px;
       margin-top: 20px;
+
       .canAd-text-container {
         height: 252px;
         width: 100vw;
-        padding: 16px; /* Reduce padding for smaller screens */
-        font-size: 16px; /* Adjust text size for readability */
-        line-height: 24px; /* Adjust line spacing for smaller font size */
-        h1{
-          font-size: 32px; /* Adjust font size */
-          line-height: 32px; /* Adjust line height */
-          margin-bottom: 16px; /* Reduce spacing for better fit */
-        }
-        p{      
-          font-size: 32px; /* Adjust font size */
+        padding: 16px;
+        /* Reduce padding for smaller screens */
+        font-size: 16px;
+        /* Adjust text size for readability */
+        line-height: 24px;
+
+        /* Adjust line spacing for smaller font size */
+        h1 {
+          font-size: 32px;
+          /* Adjust font size */
           line-height: 32px;
-          span{ font-size: 32px;}
+          /* Adjust line height */
+          margin-bottom: 16px;
+          /* Reduce spacing for better fit */
         }
-        h2{      
-          font-size: 20px; /* Slightly smaller font */
+
+        p {
+          font-size: 32px;
+          /* Adjust font size */
+          line-height: 32px;
+
+          span {
+            font-size: 32px;
+          }
+        }
+
+        h2 {
+          font-size: 20px;
+          /* Slightly smaller font */
           line-height: 28px;
           margin-bottom: 16px;
-        font-weight: 400;
-      }
-        .can-blk-btn{      
+          font-weight: 400;
+        }
+
+        .can-blk-btn {
           height: 40px;
-          width: 215px; /* Make the button full width with some margin */
+          width: 215px;
+          /* Make the button full width with some margin */
           // max-width: 320px; /* Optional: Limit the maximum width */
           padding-left: 16px;
           padding-right: 16px;
           // margin: 20px auto 0 auto; /* Center the button with some margin on top */
-          padding-top: 8px; /* Adjust padding for smaller buttons */
-          padding-bottom: 8px; /* Adjust padding for smaller buttons */
-          font-size: 16px; /* Adjust font size */
-          border-radius: 8px; /* Keep rounded corners */
-        font-size: 16px;
+          padding-top: 8px;
+          /* Adjust padding for smaller buttons */
+          padding-bottom: 8px;
+          /* Adjust padding for smaller buttons */
+          font-size: 16px;
+          /* Adjust font size */
+          border-radius: 8px;
+          /* Keep rounded corners */
+          font-size: 16px;
+        }
       }
-      }
+
       .canAd-pic {
-        margin-top: 40px; /* Remove side margin, add bottom margin */
-        width: 100%; /* Make the image take full width */
-        max-width: 320px; /* Optional: Limit the maximum width for better scaling */
-        text-align: center; /* Center the image */
+        margin-top: 40px;
+        /* Remove side margin, add bottom margin */
+        width: 100%;
+        /* Make the image take full width */
+        max-width: 320px;
+        /* Optional: Limit the maximum width for better scaling */
+        text-align: center;
+        /* Center the image */
       }
     }
-  
 
-  .small-resp-br {
-    display: block;
-  }
+
+    .small-resp-br {
+      display: block;
+    }
+    .big-resp-br {
+      display: none;
+    }
   }
 }
 
