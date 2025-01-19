@@ -32,11 +32,12 @@ export function UserDetails() {
   const [showOnlyWithFiles, setShowOnlyWithFiles] = useState(false)
   const [filteredReviews, setFilteredReviews] = useState([])
   const [originalReviews, setOriginalReviews] = useState([])
+  const [visibleCount, setVisibleCount] = useState(2)
 
   useEffect(() => {
     if (reviews.length > 0) {
       setFilteredReviews(reviews)
-    setOriginalReviews(reviews);
+      setOriginalReviews(reviews);
     }
   }, [reviews])
 
@@ -51,6 +52,22 @@ export function UserDetails() {
     }
     fetchAllGigs()
   }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 50) {
+        if (visibleCount < filteredReviews.length) {
+          setVisibleCount((prev) => prev + 2)
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [visibleCount, filteredReviews]);
+
 
   useEffect(() => {
     async function fetchReviewsWithUserData() {
@@ -143,23 +160,23 @@ export function UserDetails() {
       averageRating: totalRating / totalReviews || 0,
     })
   }
-  
+
   function applyFilters() {
     let filtered = [...originalReviews]
-  
+
     if (searchText.trim()) {
       filtered = filtered.filter((review) =>
         review.text?.toLowerCase().includes(searchText.toLowerCase())
       );
     }
-  
+
     if (showOnlyWithFiles) {
       filtered = filtered.filter((review) => review.files && review.files.length > 0)
     }
-  
+
     setFilteredReviews(filtered)
   }
-  
+
 
 
 
@@ -294,12 +311,15 @@ export function UserDetails() {
         </div>
 
         <ul className="reviews">
-          {filteredReviews.map((review) => (
+          {filteredReviews.slice(0, visibleCount).map((review) => (
             <li key={review.id}>
               <GigReview review={review} />
             </li>
           ))}
         </ul>
+        {visibleCount < filteredReviews.length && (
+          <div className="loading-indicator">Loading more reviews...</div>
+        )}
       </div>
     </section>
   );
