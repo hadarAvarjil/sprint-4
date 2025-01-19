@@ -1500,3 +1500,407 @@
     }
   }
 }
+
+
+//home media;
+@media(max-width:480px) { //home
+  .big-resp-br {
+    display: none;
+  }
+  .home-body {
+    padding-left: 0%;
+    padding-right: 0%;
+    max-width: 480px;
+    // grid-column: 2
+  }
+    .home-nav-bar{
+      display: flex;
+      // justify-content: space-around;
+      text-align: center;
+      // width: calc(100% - 32px);
+      max-width: 480px;
+
+    }
+
+    .green-div-container{
+      // grid-column: 1 / -1;
+      width: 480px;
+      max-width: 480px;
+      height: 280px;
+
+    }
+    .green-search-div {
+      background: linear-gradient(to top, #0F7D43, #01280d, #001708);
+      width: 100vw;
+      max-width: 480px;
+      height: 280px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 0;
+      margin-top: 63px;
+
+      .pinkGuy-img {
+        display: none;
+      }
+
+      .yellowGirl-img {
+        display: none;
+      }
+
+      .purpleGuy-img {
+        display: none;
+      }
+
+      .greenGirl-img {
+        display: none;
+      }
+
+      .blurredGirl-img {
+        display: none;
+      }
+
+      .trustedBy-img {
+        display: none;
+      }
+
+      .search-bar-div {
+        height: 50px;
+        width: 326px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        margin: 0;
+        align-items: center;
+
+        .search-btn {
+          width: 55px;
+        }
+      }
+
+      .green-search-div-inner-box {
+        justify-content: space-between;
+
+        h1 {
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: 35px;
+          letter-spacing: -1.28px;
+          font-size: 32px;
+
+          span {
+            font-size: 32px;
+          }
+
+        }
+      }
+
+      .big-search-img {
+        height: 38.5px;
+        width: 70px;
+        padding: 0px;
+        border-radius: 10px;
+
+        img {
+          padding-left: 8px;
+padding-right: 8px;
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+  //   .cat-divs-container {
+  //     width: 100vw;
+  //     height: auto;  /* Allow container to adjust height automatically */
+  //     gap: 10px;  /* Smaller gap between items */
+
+  
+  //   .cat-div {
+  //     width: 30%;  /* 3 items per row */
+  //     height: 152px; /* Fixed height */
+  //     padding: 10px;
+  //     box-shadow: none;
+  //     display: flex;
+  //     justify-content: center;
+  //     text-align: center;
+  //     h2{
+  //       margin-top: 15px;
+  //       font-size: 14px;
+  //       color: rgb(34, 35, 37);
+  //     }
+  //     .cat-img-container{
+  //       display: flex;
+  //       justify-content: center;
+  //       align-items: center;
+  //       width: 100px;
+  //       height: 100px;
+  //       box-shadow:
+  //       rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, 
+  //       rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, 
+  //       rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, 
+  //       rgba(0, 0, 0, 0.09) 0px 0px 11px 0px,
+  //       inset 0 0 10px white;
+  //     border-radius: 16px;
+  //     img{
+  //       width: 40px;
+  //       height: 40px;
+  //     }
+  //     }
+  //   }
+  
+  //   .third-row {
+  //     display: none;
+  //   }
+  //   /* Button styling */
+  //   .view-more-btn {
+  //     width: 100vw;
+  //     text-align: center;
+  //     padding: 10px 0;
+  //     background-color: white;
+  //     color: black;
+  //     cursor: pointer;
+  //     font-size: 16px;
+  //     // border-radius: 5px;
+  //   }
+  
+  //   .view-more-btn:hover {
+  //     background-color:#F5F5F5;
+  //   }
+  //   .cat-divs-bottom-border{
+  //     height: 1px;
+  //     width: 100%;
+  //     background-color: rgba(128, 128, 128, 0.504);
+  //     // border-bottom: 1px solid grey;
+
+  //   }
+  
+  //   /* Initially hide the 3rd row of cat-divs */
+  // }
+
+  //   .home-carousel-container {
+  //     .carousel-wrapper {
+  //       .home-carousel {
+  //         overflow-x: scroll;
+  //         scroll-snap-type: x mandatory;
+
+  //         .carousel-track {
+  //           flex-wrap: nowrap;
+  //           display: inline-flex;
+  //           // gap: -40px;
+  //           /* Adjust spacing between items */
+  //           scroll-behavior: smooth;
+
+  //           .popular-div {
+  //             flex: 0 0 auto;
+  //             /* Allow items to size independently */
+  //             width: 138px;
+  //             /* Explicit width for the div */
+  //             height: 178px;
+  //             /* Explicit height for the div */
+  //             margin: 0 10px;
+  //             /* Adjust margin */
+  //             padding-left: 4px;
+  //             padding-right: 4px;
+  //             padding-bottom: 4px;
+  //             padding-top: 12px;
+  //             border-radius: 9.45px;
+
+  //             h3 {
+  //               font-size: 14px;
+  //               font-weight: 700;
+  //               line-height: 22px;
+  //               padding: 0 10px;
+  //             }
+
+  //           }
+
+  //         }
+
+  //         .arrow-btn {
+  //           display: none;
+  //           /* Hide the arrow buttons for this view */
+  //         }
+
+  //         .home-carousel::-webkit-scrollbar {
+  //           display: none;
+  //           /* Hide scroll bar for a cleaner look */
+  //         }
+  //       }
+
+  //     }
+  //   }
+
+  //   .divs-container {
+  //     padding-bottom: 0px;
+  //     /* Ensure space for the button */
+  //     margin-bottom: 0px;
+  //     /* Avoid overlaps with other sections */
+  //     height: 590px;
+
+  //     h1 {
+  //       font-size: 32px;
+  //       line-height: 38px;
+  //     }
+
+  //     .icons-divs-container {
+  //       display: flex;
+  //       flex-direction: column;
+  //       /* Arrange items in a column */
+  //       gap: 0px;
+  //       /* Space between each `.icons-div` */
+  //       width: 100vw;
+  //       height: 589px;
+  //       padding-top: 20px;
+
+  //       .icons-div {
+  //         display: flex;
+  //         flex-direction: row;
+  //         margin-bottom: 0px;
+  //         gap: 20px;
+  //         width: 100%;
+  //         /* Full width of the container */
+  //         text-align: left;
+  //         /* Align text to the left */
+  //         padding: 16px;
+  //         /* Optional padding for better appearance */
+  //         box-sizing: border-box;
+  //         /* Ensure padding doesn't affect the width */
+  //         border: 0px;
+  //         /* Optional: Add borders for distinction */
+  //         border-radius: 8px;
+
+  //         /* Optional: Rounded corners */
+  //         p {
+  //           font-size: 16px;
+  //         }
+  //       }
+
+  //       .icons-div img {
+  //         display: block;
+  //         /* Ensure images stack properly */
+  //         margin-bottom: 8px;
+  //         /* Space below images */
+  //         height: 52px;
+  //         width: 52px;
+  //       }
+
+  //       .blk-join-btn {
+  //         width: 90%;
+  //         /* Make the button fit better on mobile */
+  //         margin: 20px auto 0;
+  //         /* Center the button */
+  //       }
+  //     }
+
+  //     .signup-ad {
+  //       margin-bottom: 200px;
+  //       margin-top: 0px;
+  //       height: 328px;
+  //     }
+  //   }
+
+  //   .canAd-container {
+  //     flex-direction: column;
+  //     /* Stack elements in a column */
+  //     align-items: center;
+  //     /* Center items horizontally */
+  //     width: 100vw;
+  //     /* Full width for smaller screens */
+  //     padding: 16px;
+  //     /* Reduce padding for smaller screens */
+  //     height: 551px;
+  //     padding-left: 24px;
+  //     padding-right: 24px;
+  //     margin-top: 20px;
+
+  //     .canAd-text-container {
+  //       height: 252px;
+  //       width: 100vw;
+  //       padding: 16px;
+  //       /* Reduce padding for smaller screens */
+  //       font-size: 16px;
+  //       /* Adjust text size for readability */
+  //       line-height: 24px;
+
+  //       /* Adjust line spacing for smaller font size */
+  //       h1 {
+  //         font-size: 32px;
+  //         /* Adjust font size */
+  //         line-height: 32px;
+  //         /* Adjust line height */
+  //         margin-bottom: 16px;
+  //         /* Reduce spacing for better fit */
+  //       }
+
+  //       p {
+  //         font-size: 32px;
+  //         /* Adjust font size */
+  //         line-height: 32px;
+
+  //         span {
+  //           font-size: 32px;
+  //         }
+  //       }
+
+  //       h2 {
+  //         font-size: 20px;
+  //         /* Slightly smaller font */
+  //         line-height: 28px;
+  //         margin-bottom: 16px;
+  //         font-weight: 400;
+  //       }
+
+  //       .can-blk-btn {
+  //         height: 40px;
+  //         width: 215px;
+  //         /* Make the button full width with some margin */
+  //         // max-width: 320px; /* Optional: Limit the maximum width */
+  //         padding-left: 16px;
+  //         padding-right: 16px;
+  //         // margin: 20px auto 0 auto; /* Center the button with some margin on top */
+  //         padding-top: 8px;
+  //         /* Adjust padding for smaller buttons */
+  //         padding-bottom: 8px;
+  //         /* Adjust padding for smaller buttons */
+  //         font-size: 16px;
+  //         /* Adjust font size */
+  //         border-radius: 8px;
+  //         /* Keep rounded corners */
+  //         font-size: 16px;
+  //       }
+  //     }
+
+  //     .canAd-pic {
+  //       margin-top: 40px;
+  //       /* Remove side margin, add bottom margin */
+  //       width: 100%;
+  //       /* Make the image take full width */
+  //       max-width: 320px;
+  //       /* Optional: Limit the maximum width for better scaling */
+  //       text-align: center;
+  //       /* Center the image */
+  //     }
+  //   }
+
+
+    .small-resp-br {
+      display: block;
+    }
+ 
+  
+}
+
+
+
+
+@media(min-width:481px) {}
+
+@media(min-width:769px) {}
+
+// @media(min-width:1025px) {}
+
+@media(min-width:1157px) {}
+
+@media(min-width:1830px) {}

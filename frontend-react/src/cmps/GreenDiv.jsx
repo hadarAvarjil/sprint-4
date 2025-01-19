@@ -37,7 +37,7 @@ export function GreenDiv() {
     setSearchQuery("");
   }
   return (
-    <section>
+    <section className="green-div-container">
       <div className="green-search-div">
         <div className="pinkGuy-img">
           <AddImg
@@ -84,8 +84,8 @@ export function GreenDiv() {
 
         <div className="green-search-div-inner-box">
           <h1>
-            Scale your professional <br /> workforce with{" "}
-            <span>freelancers</span>
+            Scale your <br className="small-resp-br" /> professional <br className="big-resp-br" /> workforce<br className="small-resp-br" /> with 
+            <span> freelancers</span>
           </h1>
           <div className="search-bar-div">
             <input
