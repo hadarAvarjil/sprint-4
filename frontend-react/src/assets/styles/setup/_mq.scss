@@ -1506,53 +1506,90 @@
 @media(max-width:480px) {
   .home-body {
 
-    // padding-top: 10px;
-    // padding-left: 20%;
-    // padding-right: 20%;
     .green-search-div {
-      background: linear-gradient(to top, #0F7D43,#003912,#003912);
+      background: linear-gradient(to top, #0F7D43, #003912, #003912);
       width: 100vw;
       height: 280px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
       border-radius: 0;
       margin-top: 63px;
 
       .pinkGuy-img {
         display: none;
       }
+
       .yellowGirl-img {
         display: none;
       }
+
       .purpleGuy-img {
         display: none;
       }
+
       .greenGirl-img {
         display: none;
       }
+
       .blurredGirl-img {
         display: none;
       }
+
       .trustedBy-img {
         display: none;
+      }
 
-        .green-search-div{
-       h1{
-        font-size: 32px;
-        span{
+      .search-bar-div {
+        height: 50px;
+        width: 326px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        margin: 0;
+        align-items: center;
+        .search-btn{
+        width: 55px;
+        }
+      }
+
+      .green-search-div-inner-box {
+        justify-content: space-between;
+
+        h1 {
+          line-height: 35px;
+          letter-spacing: -1.28px;
           font-size: 32px;
+
+          span {
+            font-size: 32px;
+          }
+          .big-resp-br{display: none;}
+          .small-resp-br{display: block;}
         }
       }
     }
-      }
+    .big-search-img{
+      height:38.5px;
+      width: 70px;
+         padding: 0px; 
+         border-radius: 10px; 
+         img{
+          width: 20px;
+         }
     }
   }
-}
+  }
 
-  @media(min-width:481px) {}
 
-  @media(min-width:769px) {}
 
-  @media(min-width:1025px) {}
+@media(min-width:481px) {}
 
-  @media(min-width:1201px) {}
+@media(min-width:769px) {}
 
-  @media(min-width:1830px) {}
+@media(min-width:1025px) {}
+
+@media(min-width:1201px) {}
+
+@media(min-width:1830px) {}

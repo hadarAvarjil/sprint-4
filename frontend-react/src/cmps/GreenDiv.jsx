@@ -84,7 +84,7 @@ export function GreenDiv() {
 
         <div className="green-search-div-inner-box">
           <h1>
-            Scale your professional <br /> workforce with{" "}
+            Scale your<br className="small-resp-br"/> professional <br className="big-resp-br" /> workforce <br className="small-resp-br"/> with{" "}
             <span>freelancers</span>
           </h1>
           <div className="search-bar-div">
