@@ -15,7 +15,7 @@ export function AddImg({ picUrl }) {
           src={`${picUrl}`}
           alt=''
           onLoad={handleImageLoad}
-          style={{ display: isImgLoading ? 'none' : 'block' }}
+          // style={{ display: isImgLoading ? 'none' : 'block' }} // shinoi
         />
       </div>
     </>

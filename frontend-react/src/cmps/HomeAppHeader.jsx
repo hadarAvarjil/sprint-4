@@ -138,7 +138,7 @@ export function HomeAppHeader() {
               </div>
             )}
 
-            <div onClick={handleOpenSignDiv} className=" big-resp-br sign-header-btn">
+            <div onClick={handleOpenSignDiv} className=" mid-resp-br sign-header-btn">
               Sign in
             </div>
 
