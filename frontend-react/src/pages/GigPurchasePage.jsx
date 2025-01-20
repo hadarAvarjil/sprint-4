@@ -60,7 +60,7 @@ export function GigPurchasePage() {
                 total
             )
             await orderService.save(newOrder)
-            navigate('/gig')
+            navigate('/orders')
         } catch (err) {
             console.error('Error Saving Order:', err);
             showErrorMsg('FAILED TO ORDER');
