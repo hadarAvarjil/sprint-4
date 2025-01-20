@@ -462,6 +462,14 @@
     margin-top: 0px;
 
     .pinkGuy-img {
+      position: absolute;
+      border-radius: 10px;
+      width: 8%;
+      right: 0%;
+      top: 9%;
+      img{
+       width: 100%;
+      }
     }
 
     .yellowGirl-img {
