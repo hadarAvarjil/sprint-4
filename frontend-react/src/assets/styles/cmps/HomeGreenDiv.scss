@@ -189,7 +189,7 @@
 
   .green-div-container {
     grid-column: 1 / -1;
-    width: 100vw;
+    width: 100%;
     max-width: 480px;
     height: 280px;
 
@@ -197,7 +197,7 @@
 
   .green-search-div {
     background: linear-gradient(to top, #0F7D43, #01280d, #001708);
-    width: 100vw;
+    width:100% ;
     max-width: 480px;
     height: 280px;
     padding-top: 40px;
@@ -278,9 +278,7 @@
     }
   }
 
-  .vid-container {
-    display: none;
-  }
+
 }
 
 @media (min-width: 481px) {
