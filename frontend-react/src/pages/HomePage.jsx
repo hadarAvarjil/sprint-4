@@ -12,12 +12,12 @@ export function HomePage() {
   return (
     <div className="home-body">
       <GreenDiv />
-      <CatDivsContainer />
+      {/* <CatDivsContainer />
       <PopularServices />
       <MakeHappenAd />
       <VideoDiv />
       <CanAd />
-      <PurpleAd />
+      <PurpleAd /> */}
     </div>
   );
 }
