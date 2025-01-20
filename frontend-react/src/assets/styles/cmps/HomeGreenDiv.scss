@@ -165,3 +165,124 @@
   .big-search-img:hover {
     background-color: $green-dark-hover;
   }
+
+
+  @media (max-width: 480px){
+    .big-resp-br {
+      display: none;
+    }
+    .mid-resp-br {
+      display: none;
+    }
+  
+    .home-body {
+      padding-left: 0%;
+      padding-right: 0%;
+      max-width: 480px;
+      // grid-column: 2
+    }
+  
+    .home-nav-bar {
+      display: flex;
+      // justify-content: space-around;
+      text-align: center;
+      // width: calc(100% - 32px);
+      max-width: 480px;
+  
+    }
+  
+    .green-div-container {
+      // grid-column: 1 / -1;
+      width: 480px;
+      max-width: 480px;
+      height: 280px;
+  
+    }
+  
+    .green-search-div {
+      background: linear-gradient(to top, #0F7D43, #01280d, #001708);
+      width: 100vw;
+      max-width: 480px;
+      height: 280px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 0;
+      margin-top: 63px;
+  
+      .pinkGuy-img {
+        display: none;
+      }
+  
+      .yellowGirl-img {
+        display: none;
+      }
+  
+      .purpleGuy-img {
+        display: none;
+      }
+  
+      .greenGirl-img {
+        display: none;
+      }
+  
+      .blurredGirl-img {
+        display: none;
+      }
+  
+      .trustedBy-img {
+        display: none;
+      }
+  
+      .search-bar-div {
+        height: 50px;
+        width: 326px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        margin: 0;
+        align-items: center;
+  
+        .search-btn {
+          width: 55px;
+        }
+      }
+  
+      .green-search-div-inner-box {
+        justify-content: space-between;
+  
+        h1 {
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: 35px;
+          letter-spacing: -1.28px;
+          font-size: 32px;
+  
+          span {
+            font-size: 32px;
+          }
+  
+        }
+      }
+  
+      .big-search-img {
+        height: 38.5px;
+        width: 70px;
+        padding: 0px;
+        border-radius: 10px;
+  
+        img {
+          padding-left: 8px;
+          padding-right: 8px;
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+  
+    .vid-container{
+      display: none;
+    }
+  }
