@@ -137,10 +137,12 @@ export function ImageCarousel({
       </div>
 
       <button
-        className={"arrow right"}
+        className={`arrow${isFrom === 'gig-details' ? '-gig-details' : ''
+          } right`}
+        // className={"arrow right"}
         onClick={(e) => nextImage(e)}
       >
-        <SvgIcon iconName={'arrowDown'} /> 
+        <SvgIcon iconName={'arrowDown'} />
       </button>
       {isFrom !== 'gig-details' && (
         <ul className="dot-container">
