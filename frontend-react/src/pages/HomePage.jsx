@@ -13,7 +13,7 @@ export function HomePage() {
     <div className="home-body">
       <GreenDiv />
       <CatDivsContainer />
-      {/* <PopularServices /> */}
+      <PopularServices />
       <MakeHappenAd />
       {/* <VideoDiv /> */}
       <CanAd />
