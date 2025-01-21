@@ -90,7 +90,7 @@ export function GigDetails() {
             </div>
 
             <AboutGigSeller owner={gigOwner} />
-            <GigReviewsList gig={gig} />
+            <GigReviewsList gig={gig} id="reviews-section" />
           </main>
           <aside>
             <GigDetailsLikeAndShare

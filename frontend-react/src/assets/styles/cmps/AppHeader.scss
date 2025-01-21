@@ -202,98 +202,23 @@
 }
 
 
-// .app-header-home {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     background-color: white;
-//     z-index: 1000;
-//     border-bottom: 1px solid #ccc;
+.logo {
+  font-family: poppins-bold;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  display: flex;
+  align-items: flex-end; 
 
-//     .category-nav {
-//         padding-left: 92px;
-//         padding-right: 70px;
-//         position: relative;
-//         overflow: hidden;
-//         color: $clrSecondary7;
+  .dot-icon {
+    display: flex;
+    position: relative; 
+    top: -8px;
+    margin-right: 1px; 
 
-//         .container {
-//             scroll-behavior: smooth;
-//             overflow-x: hidden;
-//             margin-left: 18.5%;
-//             gap: 24.5px;
-//             max-width: 1400px;
-//             margin: auto;
-//             justify-content: space-between;
-
-//             .hidden {
-//                 visibility: hidden;
-//                 opacity: 0;
-//             }
-
-//             a {
-//                 flex: 0 0 auto;
-//                 color: inherit;
-//                 line-height: 24px;
-//                 padding: 8px 0px;
-//                 position: relative;
-//                 color: $clrSecondary6;
-
-//                 &:not(:first-child) {
-//                     margin-left: 1.25em;
-//                 }
-
-//                 &::after {
-//                     content: '';
-//                     width: 100%;
-//                     height: 3px;
-//                     background: $bgColor2;
-//                     position: absolute;
-//                     bottom: 0;
-//                     left: 0;
-//                     transform: scaleX(0);
-//                     transition: transform 0.3s ease-in-out;
-//                     transform-origin: bottom right;
-//                 }
-
-//                 &:hover::after {
-//                     transform: scaleX(1);
-//                     transform-origin: bottom left;
-//                 }
-
-//                 &:hover {
-//                     text-decoration: none;
-//                 }
-//             }
-//         }
-
-//         .carousel-btn {
-//             position: absolute;
-//             top: 30%;
-//             cursor: pointer;
-//             z-index: 1;
-//             // background: $clrPrimary1;
-//             width: 15px;
-
-//             &.left-side {
-//                 left: 30px;
-//                 // box-shadow: 0px 0px 20px 20px $clrPrimary1;
-//             }
-
-//             &.right-side {
-//                 right: 30px;
-//                 // box-shadow: 0px 0px 20px 20px $clrPrimary1;
-//             }
-//         }
-//     }
-
-//   }
-
-//   .home-nav-bar {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     height: 70px; 
-
-// }
+    svg {
+      width: 15px; 
+      height: 15px;
+    }
+  }
+}
