@@ -15,7 +15,7 @@ export function HomePage() {
       <CatDivsContainer />
       <PopularServices />
       <MakeHappenAd />
-      {/* <VideoDiv /> */}
+      <VideoDiv />
       <CanAd />
       <PurpleAd />
     </div>
