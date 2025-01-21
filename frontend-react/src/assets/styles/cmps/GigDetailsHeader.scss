@@ -1,6 +1,4 @@
 .gig-details-header {
-    // padding: .4rem;
-    // border-bottom: 1px solid #ddd;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -40,7 +38,15 @@
 .home-icon {
     display: flex;
     align-items: center;
+    margin-left: 15px;
+    padding: 5px; 
 }
+
+.home-icon a:hover {
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    padding: 5px; 
+  }
 
 .separator {
     margin: 0 4px;

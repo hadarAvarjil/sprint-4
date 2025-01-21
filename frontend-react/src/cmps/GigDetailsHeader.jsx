@@ -1,5 +1,6 @@
 import { UserPreviewGigDetails } from '../cmps/UserPreviewGigDetails'
 import SvgIcon from './SvgIcon.jsx'
+import { Link } from 'react-router-dom';
 
 export function GigDetailsHeader({ gig, owner }) {
     const isFrom = "gig-details"
@@ -8,7 +9,8 @@ export function GigDetailsHeader({ gig, owner }) {
         <section className="gig-details-header">
             <div className="gig-tags flex">
                 <span className="home-icon">
-                    <SvgIcon iconName="homeBlack" />
+
+                    <Link to={`/gig`}> <SvgIcon iconName="homeBlack" /></Link>
                     <span className="separator"> / </span>
                 </span>
                 {gig.tags.map((tag, idx) => (
