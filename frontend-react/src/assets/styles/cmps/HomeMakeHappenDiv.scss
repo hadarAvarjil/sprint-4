@@ -1,58 +1,170 @@
 .icons-divs-container {
-    height: calc(100vw * 0.1);
-    position: relative;
-    display: flex;
-    // margin-top: 24px;
-    padding-top: 40px;
-    
-  }
-  
-  .divs-container h1 {
-    position: relative;
-    font-weight: 400;
-    // margin-bottom: 64px;
-    font-family:$fiverr-defult-font;
-    color: #404145;
-    font-size: 40px;
-    line-height: 50.4px;
-    text-align:start;
-    letter-spacing:0.005px;
-    word-spacing: -2.5px;
-    font-weight: 300;
-    margin-top:40px ;
-  
-  
-  }
-  
-  .icons-div {
-    width: 30%;
-    margin-bottom: 64px;
-  
-  }
-  
-  .divs-container {
-    display: flex;
-    // margin-top: 50px;
-    margin-bottom: 50px;
-    flex-direction: column;
-    padding-top: 40px;
-    // padding-bottom: 40px;
-    justify-content: space-between;
-    height: calc(100vw * 0.2);
-    width: 100%;
-  }
-  
-  .icons-div img {
-    margin-bottom: 12px;
-    // margin-top: 20px;
-  }
-  
+  height: calc(100vw * 0.1);
+  position: relative;
+  display: flex;
+  // margin-top: 24px;
+  padding-top: 40px;
+
+}
+
+.divs-container h1 {
+  position: relative;
+  font-weight: 400;
+  // margin-bottom: 64px;
+  font-family: $fiverr-defult-font;
+  color: #404145;
+  font-size: 40px;
+  line-height: 50.4px;
+  text-align: start;
+  letter-spacing: 0.005px;
+  word-spacing: -2.5px;
+  font-weight: 300;
+  margin-top: 40px;
+
+
+}
+
+.icons-div {
+  width: 30%;
+  margin-bottom: 64px;
+
+}
+
+.divs-container {
+  display: flex;
+  // margin-top: 50px;
+  margin-bottom: 50px;
+  flex-direction: column;
+  padding-top: 40px;
+  // padding-bottom: 40px;
+  justify-content: space-between;
+  height: calc(100vw * 0.2);
+  width: 100%;
+}
+
+.icons-div img {
+  margin-bottom: 12px;
+  // margin-top: 20px;
+}
+
 .signup-ad {
   margin-top: 24px;
   position: relative;
   border-radius: 30px;
+
   h1 {
     position: relative;
   }
 
+}
+
+@media(max-width:900px) {
+  .divs-container {
+    padding-bottom: 0px;
+    /* Ensure space for the button */
+    margin-bottom: 0px;
+    /* Avoid overlaps with other sections */
+    height: auto;
+
+    h1 {
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    .icons-divs-container {
+      display: flex;
+      flex-direction: column;
+      /* Arrange items in a column */
+      gap: 0px;
+      /* Space between each `.icons-div` */
+      width: 100vw;
+      height: auto;
+      padding-top: 20px;
+
+      .icons-div {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0px;
+        gap: 20px;
+        width: 100%;
+        /* Full width of the container */
+        text-align: left;
+        /* Align text to the left */
+        padding: 16px;
+        /* Optional padding for better appearance */
+        box-sizing: border-box;
+        /* Ensure padding doesn't affect the width */
+        border: 0px;
+        /* Optional: Add borders for distinction */
+        border-radius: 8px;
+
+        /* Optional: Rounded corners */
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .icons-div img {
+        display: block;
+        /* Ensure images stack properly */
+        margin-bottom: 8px;
+        /* Space below images */
+        height: 52px;
+        width: 52px;
+      }
+
+    }
+    .blk-join-btn {
+      width: 92px;
+      height: 56px;
+      margin: 20px ;
+      margin-top: 30px;
+      left: 0%;
+
+    }
+
+    .signup-ad {
+      // margin-bottom: 200px;
+      margin-top: 0px;
+      height: auto;
+    }
+  }
+}
+
+@media(min-width:900px){
+  .divs-container{
+    height: auto;
+  }
+  .icons-div{
+    p{
+font-size: 16px;
+    }
+  }
+  .blk-join-btn {
+    width: 100px;
+    height: 56px;
+    margin: 20px ;
+    margin-top: 80px;
+    left: 0%;
+    margin:  auto ;
+
+    margin-bottom: 100px;
+  }
+  .signup-ad {
+    margin-top: 0px;
+    height: auto;
+  }
+}
+
+@media(min-width:1200px){
+  .divs-container{
+    h1{
+      margin-top: 80px;
+    }
+  }
+  .icons-div{
+    p{
+font-size: 16px;
+    }
+  }
 }

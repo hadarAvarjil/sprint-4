@@ -37,7 +37,7 @@ export function GreenDiv() {
     setSearchQuery("");
   }
   return (
-    <section>
+    <section className="green-div-container">
       <div className="green-search-div">
         <div className="pinkGuy-img">
           <AddImg
@@ -77,15 +77,15 @@ export function GreenDiv() {
         <div className="trustedBy-img">
           <AddImg
             picUrl={
-              "https://res.cloudinary.com/dtpewh2wk/image/upload/v1736548563/trustedBy-img_q3gqes.png"
+              "https://res.cloudinary.com/dtpewh2wk/image/upload/v1737495634/Screenshot_2025-01-21_233929_rmooee.png"
             }
           />
         </div>
 
         <div className="green-search-div-inner-box">
           <h1>
-            Scale your professional <br /> workforce with{" "}
-            <span>freelancers</span>
+            Scale your <br className="small-resp-br" /> professional <br className="big-resp-br"/> <br className=" massive-resp-br" /> workforce<br className="small-resp-br " /> with 
+            <span> freelancers</span>
           </h1>
           <div className="search-bar-div">
             <input

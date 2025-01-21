@@ -37,7 +37,8 @@ export function RootCmp() {
             {/* <AppHeader /> */}
             <UserMsg />
 
-            <main>
+{/* shinoi2 */}
+            <main> 
                 <Routes>
                     <Route path="" element={<HomePage />} />
                     <Route path="about" element={<AboutUs />}>
