@@ -17,7 +17,7 @@ export function HomePage() {
       {/* <MakeHappenAd /> */}
       {/* <VideoDiv /> */}
       <CanAd />
-      {/* <PurpleAd /> */}
+      <PurpleAd />
     </div>
   );
 }
