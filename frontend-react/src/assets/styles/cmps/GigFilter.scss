@@ -38,7 +38,6 @@
 }
 .gig-category-title {
   text-align: left; 
-  margin-left: 17.5%;
 
     h1 {
     font-size: 28px;
@@ -56,14 +55,12 @@
   z-index: 5;
   top: 0;
   width: 113%;
-  margin-left: -4%;
   // background-color: $clrPrimary1;
   padding-block-start: 1em;
 
   .floating-top-bar {
     display: flex;
     gap: 0.5em;
-    margin-left: 19%;
     .btn-mobile-filter {
       display: grid;
       grid-auto-flow: column;
@@ -150,19 +147,19 @@
 }
 .pro-services-toggle {
   display: flex;
-  align-items: center;
-  margin-left: auto;
+  
   
   label {
     display: flex;
     align-items: center;
+    
     cursor: pointer;
   }
-
+  
   input[type="checkbox"] {
     display: none;
   }
-
+  
   .toggle-switch {
     width: 40px;
     height: 20px;
@@ -196,5 +193,6 @@
   .toggle-label {
     font-size: 14px;
     color: #62646a;
+    justify-self: flex-end;
   }
 }

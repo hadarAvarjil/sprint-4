@@ -1,8 +1,6 @@
 .main-container {
     display: grid;
-    // background-color: $clrPrimary1;
-    min-height:100vh ;
-
+  
     >* {
         grid-column: 2;
 
@@ -16,7 +14,7 @@
     }
 
     @media (min-width: 481px) {
-        grid-template-columns: 32px 1fr 32px;
+        grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
     }
 }
 

@@ -89,7 +89,7 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
   <h1>{filterBy.cat || 'Discover Our Services'}</h1>
 </div>
       <main className={`gig-filter ${isSticky ? 'shadow' : ''}`}>
-        <section className="floating-top-bar layout-row">
+        <section className="floating-top-bar layout-row flex">
           <div className="filter-nav">
             {checkFilter() && (
               <button
@@ -194,15 +194,15 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
               )}
             </div>
           </div>
-          <div class="pro-services-toggle">
+          <div className="pro-services-toggle">
               <label>
                 <input
                   type="checkbox"
                   checked={filterBy.proOnly || false}
                   onChange={(e) => setMenuFilter(null, { proOnly: e.target.checked })}
                 />
-                <span class="toggle-switch"></span>
-                <span class="toggle-label">Pro services</span>
+                <span className="toggle-switch"></span>
+                <span className="toggle-label">Pro services</span>
               </label>
             </div>
         </section>

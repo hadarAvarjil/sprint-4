@@ -313,7 +313,7 @@
 
   .main-nav {
     @media (max-width: 1400px) {
-      padding: 1em 2em;
+      // padding: 1em 2em;
     }
 
     @media (max-width: 600px) {
@@ -417,7 +417,6 @@
 
   .category-nav {
     @media (max-width: 1400px) {
-      padding: 0 2em;
     }
 
     @media (max-width: 600px) {
@@ -620,12 +619,12 @@
     .gig-results-title,
     .selected-filters-wrapper,
     .gig-list {
-      padding: 0 2em;
+      padding: 0 ;
     }
 
     .gig-filter {
       .floating-top-bar {
-        padding: 0 2em;
+        padding: 0 ;
       }
     }
   }
@@ -810,7 +809,7 @@
       flex-direction: column;
       justify-content: center;
       gap: 1em;
-      padding: 1em 2em;
+      // padding: 1em 2em;
 
       form,
       .gig-preview-container {
@@ -1225,7 +1224,7 @@
 // Footer media query
 .desktop-footer {
   @media (max-width: 1400px) {
-    padding: 1em 2em;
+    // padding: 1em 2em;
   }
 
   @media (max-width: 800px) {

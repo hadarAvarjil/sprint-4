@@ -136,12 +136,11 @@ export function AppHeader() {
 
   return (
     <header
-      className={`app-header flex column full ${isHomePage ? "home-page" : ""}`}
-      // style={headerStyles}
+      className={`app-header flex column full main-container ${isHomePage ? "home-page" : ""}`}
+    // style={headerStyles}
     >
       <nav className="main-nav">
-        <div className="container flex row" style={{paddingLeft: '17.6%',
-    paddingRight: '8.2%'}}>
+        <div className="container flex row">
           <div
             className={`dropdown flex ${notification ? "notification" : ""}`}
             onClick={(e) => {
@@ -182,12 +181,12 @@ export function AppHeader() {
             {/* <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
             </NavLink> */}
-                  <NavLink to="/orders">
-                          <div className="sign-header-btn">Orders</div>
-                        </NavLink>
-                        <NavLink to="/profile">
-                          <div className="sign-header-btn">my-profile</div>
-                        </NavLink>
+            <NavLink to="/orders">
+              <div className="sign-header-btn">Orders</div>
+            </NavLink>
+            <NavLink to="/profile">
+              <div className="sign-header-btn">my-profile</div>
+            </NavLink>
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
