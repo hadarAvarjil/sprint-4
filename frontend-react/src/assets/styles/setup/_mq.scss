@@ -416,8 +416,7 @@
   }
 
   .category-nav {
-    @media (max-width: 1400px) {
-    }
+    @media (max-width: 1400px) {}
 
     @media (max-width: 600px) {
       display: none;
@@ -619,12 +618,12 @@
     .gig-results-title,
     .selected-filters-wrapper,
     .gig-list {
-      padding: 0 ;
+      padding: 0;
     }
 
     .gig-filter {
       .floating-top-bar {
-        padding: 0 ;
+        padding: 0;
       }
     }
   }
@@ -652,6 +651,24 @@
 }
 
 // Gig details page media query
+.gig-purchase {
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+
+    main {
+      grid-column: 1/-1;
+    }
+  }
+
+  @media (min-width: 901px) {
+    grid-template-columns: 1fr 1fr ;
+    gap: 2%;
+
+    main {
+      grid-column: 1/-1;
+    }
+  }
+}
 
 .gig-details {
   @media (max-width: 900px) {
@@ -719,13 +736,10 @@
       }
     }
 
-    // .gig-details-aside {
-    //   margin-block-end: 0;
-    // }
   }
 
   @media (min-width: 481px) {
-    padding: 32px 0px 24px 0px;
+    padding: 32px 0px 32px 0px;
 
     main {
       .gig-details-header {

@@ -68,7 +68,7 @@ export function PurchaseAside({
                 Confirm & Pay
             </button>
             <p className="ssl-notice">
-                <SvgIcon iconName="lock" />
+                <SvgIcon iconName="password" />
                 SSL Secure Payment
             </p>
         </aside>
