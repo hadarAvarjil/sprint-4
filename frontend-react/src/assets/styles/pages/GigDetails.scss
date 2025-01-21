@@ -1,13 +1,11 @@
 .gig-details {
   max-width: 1304px;
-  // color: $clrPrimary2;
-  // margin-left: 17%;
   height: auto;
+  margin-inline: auto;
 
 
 
   main {
-    // background-color: $clrPrimary1;
     height: fit-content;
 
     .explore-category {
@@ -73,18 +71,12 @@
       font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
       display: block;
       margin-top: 1em;
-      // margin-block-start: 1em;
-      // margin-block-end: 1em;
-      // margin-inline-start: 0px;
-      // margin-inline-end: 0px;
     }
   }
 }
 
 .user-details-specific {
-  max-width: 1435px;
-  margin-left: 17.5%;
-  padding: 20px;
+  max-width: 1304px;
 
   .user-details-wrapper {
     display: flex;
@@ -112,7 +104,6 @@
           h1 {
             font-size: 24px;
             line-height: 32px;
-            // font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
             font: 400 27px/45px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
             color: #222325;
             display: inline-flex;
@@ -181,13 +172,15 @@
             align-items: center;
             gap: 5px;
             margin-left: 8px;
+
             svg {
               width: 14px;
               height: 14px;
             }
           }
-          .new-seller-badge{
-            background-color:#19a463;
+
+          .new-seller-badge {
+            background-color: #19a463;
             color: white;
             font-size: 12px;
             font-weight: bold;
@@ -197,12 +190,13 @@
             align-items: center;
             gap: 5px;
             margin-left: 8px;
+
             svg {
               width: 14px;
               height: 14px;
             }
           }
-          
+
           .top-rated-badge {
             background-color: rgb(255, 224, 179);
             color: rgb(128, 67, 23);
@@ -212,7 +206,7 @@
             border-radius: 3px;
             margin-left: 10px;
           }
-          
+
 
 
           .user-bio,
@@ -220,7 +214,8 @@
             margin-top: 10px;
             color: #222325;
             margin-bottom: -3%;
-            font: 400 16px / 28px macan-light;;
+            font: 400 16px / 28px macan-light;
+            ;
             font-family: macan-light;
             line-height: 24px;
             font-size: 15px;
@@ -247,7 +242,7 @@
 
       .user-about {
         margin-top: 50px;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
         font: 400 16px/24px macan-bold;
 
         h2 {
@@ -259,7 +254,8 @@
           color: #404145;
           line-height: 1.5em;
           word-break: break-word;
-          font: 400 16px / 24px macan-light;;
+          font: 400 16px / 24px macan-light;
+          ;
           // font-weight: 300;
         }
       }
@@ -429,7 +425,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 20px;
-    
+
       input[type='text'] {
         width: 30%;
         padding: 10px 12px;
@@ -440,49 +436,49 @@
         background-color: #fff;
         box-shadow: none;
         transition: 0.15s ease-in-out;
-        height: 42px; 
-    
+        height: 42px;
+
         &:focus {
           outline: none;
           border-color: #404145;
         }
       }
-    
+
       .search-icon {
-        height: 42px; 
+        height: 42px;
         background-color: #222325;
         border-radius: 0 5px 5px 0;
         padding: 0;
-        width: 42px; 
-        display: flex; 
+        width: 42px;
+        display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-    
+
         svg {
           fill: #fff;
           width: 16px;
           height: 16px;
         }
-    
+
         &:hover {
           background-color: #404145;
         }
       }
-    
+
       label {
         align-items: center;
         gap: 5px;
         font-size: 1rem;
         color: #74768e;
-    
+
         input {
           margin-right: 5px;
         }
       }
     }
-    
-    
+
+
     .reviews-list {
       list-style: none;
       padding: 0;
@@ -496,49 +492,49 @@
   .user-skills {
     margin-top: -10%;
     margin-bottom: 5%;
-  
+
     h2 {
       font-size: 16px;
       font-weight: 600;
       color: #222325;
-      margin-bottom: 15px; 
+      margin-bottom: 15px;
       font-family: macan-bold;
     }
-  
+
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 20px; 
-      row-gap: 15px; 
+      gap: 10px 20px;
+      row-gap: 15px;
       width: 60%;
     }
-  
+
     .skill {
       display: inline-block;
-      background-color: #ffffff; 
-      color: #404145; 
+      background-color: #ffffff;
+      color: #404145;
       font-size: 14px;
       font-weight: 500;
-      padding: 8px 15px; 
-      border-radius: 20px; 
-      border: 1px solid #e4e5e7; 
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid #e4e5e7;
       white-space: nowrap;
       cursor: default;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
       transition: all 0.2s ease;
-  
+
       &:hover {
-        background-color: #f3f3f3; 
+        background-color: #f3f3f3;
       }
     }
-  
+
     .more-skills {
-      color: #1dbf73; 
+      color: #1dbf73;
       font-weight: 600;
       cursor: pointer;
-  
+
       &:hover {
-        text-decoration: underline; 
+        text-decoration: underline;
       }
     }
   }
