@@ -102,8 +102,9 @@
 .shadow {
   box-shadow: 0 0.266px 1.13052px rgba(0, 0, 0, 0.069),
     0 0.89345px 3.79717px rgba(0, 0, 0, 0.101), 0 5px 17px rgba(0, 0, 0, 0.17);
-    background-color: white;
+  background-color: white;
   grid-column: 1 /-1;
+  padding: 0 10px;
 }
 
 .open {
@@ -144,11 +145,11 @@
   gap: 1em;
 }
 
-.checked {
-}
+.checked {}
 
 .mobileStyles {
   padding: 0 !important;
+
   &:after {
     height: 0 !important;
   }

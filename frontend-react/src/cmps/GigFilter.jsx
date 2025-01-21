@@ -67,7 +67,7 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
   return (
     <>
       <div className="gig-results-title layout-row">
-        
+
         {filterBy.search && (
           <section className="search-param">
             <h1>
@@ -75,7 +75,7 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
               <span className="b">{filterBy.search}</span>
             </h1>
           </section>
-          
+
         )}
         {filterBy.cat && (
           <CatTagDisplayBar
@@ -86,8 +86,8 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
         )}
       </div>
       <div className="gig-category-title">
-  <h1>{filterBy.cat || 'Discover Our Services'}</h1>
-</div>
+        <h1>{filterBy.cat || 'Discover Our Services'}</h1>
+      </div>
       <main className={`gig-filter ${isSticky ? 'shadow' : ''}`}>
         <section className="floating-top-bar layout-row flex">
           <div className="filter-nav">
@@ -195,16 +195,16 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
             </div>
           </div>
           <div className="pro-services-toggle">
-              <label>
-                <input
-                  type="checkbox"
-                  checked={filterBy.proOnly || false}
-                  onChange={(e) => setMenuFilter(null, { proOnly: e.target.checked })}
-                />
-                <span className="toggle-switch"></span>
-                <span className="toggle-label">Pro services</span>
-              </label>
-            </div>
+            <label>
+              <input
+                type="checkbox"
+                checked={filterBy.proOnly || false}
+                onChange={(e) => setMenuFilter(null, { proOnly: e.target.checked })}
+              />
+              <span className="toggle-switch"></span>
+              <span className="toggle-label">Pro services</span>
+            </label>
+          </div>
         </section>
       </main>
       <SelectedFilters filterBy={filterBy} onDeleteFilter={onDeleteFilter} />

@@ -54,12 +54,12 @@
   position: sticky;
   z-index: 5;
   top: 0;
-  width: 113%;
-  // background-color: $clrPrimary1;
   padding-block-start: 1em;
 
   .floating-top-bar {
+    justify-content: space-between;
     display: flex;
+    
     gap: 0.5em;
     .btn-mobile-filter {
       display: grid;
@@ -105,7 +105,7 @@
     content: '';
     display: block;
     height: 1em;
-    width: 100%;
+    padding-inline:0 5px;
     // background-color: $clrPrimary1;
   }
 }
