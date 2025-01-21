@@ -258,6 +258,8 @@
 
         span {
           font-size: 32px;
+          line-height: 35px;
+
         }
 
       }
@@ -344,13 +346,13 @@
     .search-bar-div {
       // height: 50px;
       // width: 80%;
-      max-width: 360px;
+      max-width: 410px;
       // padding-top: 20px;
       // padding-bottom: 20px;
       padding-left: 0px;
       margin: 0;
       align-items: center;
-      height: 30px;
+      height: 50px;
       width: 60vw;
 
       .search-btn {
@@ -359,10 +361,10 @@
 
       .long-placeholder {
         // background-color: black;
-        padding-left: 10px;
+        padding-left: 15px;
         padding-right: 10px;
-        font-size: 10px;
-        height: 10px;
+        font-size: 16px;
+        height: 20px;
 
 
       }
@@ -381,20 +383,33 @@
         text-align: center;
         line-height: 45px;
         letter-spacing: -1.28px;
-        font-size: 30px;
+        font-size: 4ch;
         font-weight: 300;
         letter-spacing: -1.6px;
-        line-height: 30px;
+        line-height: 40px;
 
         span {
           // font-size: 16px;
           font-weight: 300;
-          font-size: 30px;
+          font-size: 40px;
           letter-spacing: -1.6px;
-          line-height: 30px;
+          line-height: 40px;
 
         }
 
+        .small-resp-br{
+          display: block;
+        }
+        .big-resp-br {
+          display: none;
+        }
+      
+        .mid-resp-br {
+          display: none;
+        }
+        .massive-resp-br{
+          display: none;
+        }
       }
 
     }
@@ -404,8 +419,8 @@
     }
 
     .big-search-img {
-      height: 20px;
-      width: 20px;
+      height: 35px;
+      width: 35px;
       padding: 0px;
       border-radius: 5px;
       justify-content: center;
@@ -413,20 +428,14 @@
       text-align: center;
 
       img {
-        padding-left: 3px;
-        padding-right: 3px;
+        padding-left: 5px;
+        padding-right: 5px;
         width: 40px;
         height: 40px;
       }
     }
   }
-  .big-resp-br {
-    display: none;
-  }
 
-  .mid-resp-br {
-    display: none;
-  }
 }
 }
 
@@ -436,7 +445,7 @@
       width: 100%;
     }
   .green-div-container {
-    height: 370px;
+    height: 420px;
     max-width: 1160px;
     width: 100vw;
     margin-top: 63px;
@@ -536,13 +545,13 @@ width: 13vw;
     .search-bar-div {
       // height: 50px;
       // width: 80%;
-      max-width: 360px;
+      max-width: 436px;
       // padding-top: 20px;
       // padding-bottom: 20px;
       padding-left: 0px;
       margin: 0;
       align-items: center;
-      height: 30px;
+      height: 50px;
       width: 60vw;
 
       .search-btn {
@@ -550,11 +559,11 @@ width: 13vw;
       }
 
       .long-placeholder {
-        // background-color: black;
-        padding-left: 10px;
+align-items: center; 
+       padding-left: 15px;
         padding-right: 10px;
-        font-size: 10px;
-        height: 10px;
+        font-size: 16px;
+        height: 30px;
 
 
       }
@@ -573,17 +582,17 @@ width: 13vw;
         text-align: center;
         line-height: 45px;
         letter-spacing: -1.28px;
-        font-size: 30px;
+        font-size: 40px;
         font-weight: 300;
         letter-spacing: -1.6px;
-        line-height: 30px;
+        line-height: 45px;
 
         span {
           // font-size: 16px;
           font-weight: 300;
-          font-size: 30px;
+          font-size: 40px;
           letter-spacing: -1.6px;
-          line-height: 30px;
+          line-height: 45px;
 
         }
 
@@ -596,8 +605,8 @@ width: 13vw;
     }
 
     .big-search-img {
-      height: 20px;
-      width: 20px;
+      height: 35px;
+      width: 35px;
       padding: 0px;
       border-radius: 5px;
       justify-content: center;
@@ -605,8 +614,8 @@ width: 13vw;
       text-align: center;
 
       img {
-        padding-left: 3px;
-        padding-right: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
         width: 40px;
         height: 40px;
       }
@@ -621,7 +630,12 @@ width: 13vw;
     .mid-resp-br {
       display: none;
     }
-
+.massive-resp-br{
+  display: none;
+}
+.small-resp-br{
+  display: none;
+}
 
   }
 
@@ -863,7 +877,8 @@ width: 13vw;
       width: 100%; /* Ensure the div spans the full width of its container */
       // height: 100vh; /* Adjust height as needed, or set a fixed height */
       height: 580px;
-  
+  justify-content: center;
+  align-items: center;
       .pinkGuy-img {
         position: absolute;
         border-radius: 10px;
@@ -931,20 +946,21 @@ width: 13vw;
       }
      
       .trustedBy-img {
-        display: none;  
+        display: block;  
+        bottom: 0px;
+        left: 20%;
+        img{
+          width:95vh;
+        }
       }
   
       .search-bar-div {
-        // height: 50px;
-        // width: 80%;
-        max-width: 550px;
-        // padding-top: 20px;
-        // padding-bottom: 20px;
         padding-left: 0px;
         margin: 0;
         align-items: center;
-        height: 50px;
-        width: 550px;
+        height: 60px;
+        width: 600px;
+        padding-left: 16px;
   
         .search-btn {
           width: 55px;
@@ -972,12 +988,11 @@ width: 13vw;
           justify-content: center;
           align-items: center;
           text-align: center;
-          line-height: 45px;
+          line-height: 30px;
           letter-spacing: -1.28px;
           font-size: 60px;
           font-weight: 300;
           letter-spacing: -1.6px;
-          line-height: 69px;
   
           span {
             // font-size: 16px;
@@ -997,8 +1012,8 @@ width: 13vw;
       }
   
       .big-search-img {
-        height: 35px;
-        width: 35px;
+        height: 45px;
+        width: 50px;
         padding: 0px;
         border-radius: 5px;
         justify-content: center;
@@ -1006,11 +1021,15 @@ width: 13vw;
         text-align: center;
   
         img {
-          padding-left: 3px;
-          padding-right: 3px;
-          width: 40px;
-          height: 40px;
+          padding-left: 10px;
+          padding-right: 10px;
+          width: 60px;
+          height: 50px;
         }
       }
   }
+  .small-resp-br{
+    display: none;
+  }
+  
 }

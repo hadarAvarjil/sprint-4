@@ -150,3 +150,11 @@
     height: auto;
   }
 }
+
+@media(min-width:1200px){
+  .divs-container{
+    h1{
+      margin-top: 80px;
+    }
+  }
+}
