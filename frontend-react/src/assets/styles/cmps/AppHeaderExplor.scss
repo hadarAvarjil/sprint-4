@@ -9,13 +9,18 @@
   }
 
   .container {
-    max-width: 1400px;
-    margin: auto;
+    display: flex;
+    // max-width: 1400px;
+    // margin: auto;
     justify-content: space-between;
-    
+
   }
 
   .main-nav {
+    display: flex;
+    justify-content: space-between;
+
+
     .sign-header-btn {
       // background-color: blue;
       font-size: 16px;
@@ -24,12 +29,13 @@
       letter-spacing: normal;
       color: $black-btn;
       transition-duration: 0.2s;
-  
-  }
-  
-  .sign-header-btn:hover {
+
+    }
+
+    .sign-header-btn:hover {
       color: $green-fiverr;
-  }
+    }
+
     a {
       &:hover {
         text-decoration: none;
@@ -128,7 +134,7 @@
           }
         }
       }
-    
+
 
 
       .join {
@@ -176,7 +182,7 @@
             text-align: center;
 
             i {
-              
+
               width: 120px;
               height: 120px;
               margin: 2em auto 1em auto;
@@ -430,12 +436,13 @@
     }
   }
 }
+
 .header-options {
   display: flex;
   flex-direction: row;
-align-items: center;  
-gap: 20px;
-} 
+  align-items: center;
+  gap: 20px;
+}
 
 .sign-header-btn {
   font-size: 16px;
@@ -453,6 +460,7 @@ gap: 20px;
 .sign-header-btn:hover {
   color: $green-fiverr;
 }
+
 .join-btn {
   width: 62.5px;
   height: 35.6px;
@@ -481,4 +489,14 @@ gap: 20px;
 .join-btn:hover {
   color: white;
   background-color: #19a463;
+}
+
+.main-nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-search-bar-container {
+  display: flex;
+  flex: 3;
 }

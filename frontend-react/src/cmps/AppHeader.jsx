@@ -140,7 +140,7 @@ export function AppHeader() {
     // style={headerStyles}
     >
       <nav className="main-nav">
-        <div className="container flex row">
+        <div className="main-nav-header container flex row">
           <div
             className={`dropdown flex ${notification ? "notification" : ""}`}
             onClick={(e) => {
@@ -162,21 +162,23 @@ export function AppHeader() {
               />
             )}
           </div>
-          <Link to="/" style={{ color: headerStyles.color }}>
-            <h1 style={{ color: logoColor }} className="flex row">
-              gigster
-              <span className="flex">
-                <SvgIcon iconName={"greenDotIcon"} />
-              </span>
-            </h1>
-          </Link>
-          <SearchBar
-            placeholder={headerPlaceholderText}
-            searchQuery={searchQuery}
-            onSearchChange={handleSearchChange}
-            onSearchSubmit={handleSearchSubmit}
-            visibility={headerStage >= 1 ? "visible" : "hidden"}
-          />
+          <div className="logo-search-bar-container flex row">
+            <Link to="/" style={{ color: headerStyles.color }}>
+              <h1 style={{ color: logoColor }} className="flex row">
+                gigster
+                <span className="flex">
+                  <SvgIcon iconName={"greenDotIcon"} />
+                </span>
+              </h1>
+            </Link>
+            <SearchBar
+              placeholder={headerPlaceholderText}
+              searchQuery={searchQuery}
+              onSearchChange={handleSearchChange}
+              onSearchSubmit={handleSearchSubmit}
+              visibility={headerStage >= 1 ? "visible" : "hidden"}
+            />
+          </div>
           <div className="header-options">
             {/* <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
