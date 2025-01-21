@@ -15,8 +15,8 @@ export function CatDivsContainer(){
             <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
               <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\programming.svg"
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\programming.svg"
                alt=""
              />
              <strong>Programming <br /> &  Tech</strong>
@@ -24,8 +24,8 @@ export function CatDivsContainer(){
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
              <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\graphics.svg"
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\graphics.svg"
                alt=""
              />
             <strong> Graphics & Design</strong>
@@ -33,8 +33,8 @@ export function CatDivsContainer(){
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
               <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\marketing.svg"
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\marketing.svg"
                alt=""
              />
             <strong> Digital Marketing</strong>
@@ -42,8 +42,8 @@ export function CatDivsContainer(){
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
              <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\translation.svg"
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\translation.svg"
                alt=""
              />
             <strong> Writing & Translation</strong>
@@ -51,8 +51,8 @@ export function CatDivsContainer(){
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
              <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\animation.svg"
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\animation.svg"
                alt=""
              />
             <strong> Video & <br />Animation</strong>
@@ -60,8 +60,8 @@ export function CatDivsContainer(){
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
              <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\ai.svg"
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\ai.svg"
                alt=""
              />
            <strong>  AI Services</strong>
@@ -69,7 +69,7 @@ export function CatDivsContainer(){
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
              <img
-               style={{ width: "29px" }}
+              //  style={{ width: "29px" }}
                src="src\services\imgs\design.imgs\music.svg"
                alt=""
              />
@@ -78,8 +78,8 @@ export function CatDivsContainer(){
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
              <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\business.svg"
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\business.svg"
                alt=""
              />
              <strong>Business</strong>
@@ -87,8 +87,8 @@ export function CatDivsContainer(){
            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
              
              <img
-               style={{ width: "29px" }}
-               src="src\services\imgs\design.imgs\consulting.svg"
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\consulting.svg"
                alt=""
              />
             <strong> Consulting</strong>
