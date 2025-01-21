@@ -46,3 +46,44 @@
     z-index: 0;
     color: black;
   }
+
+ 
+    @media (max-width: 900px) {
+      .cat-divs-container {
+        display: grid; /* Switch to grid layout for wrapping */
+        grid-template-columns: repeat(auto-fit, 111px); /* Fixed width for each column */
+        justify-content: center; /* Center the grid items horizontally */
+        gap: 16px; /* Space between items */
+      }
+    
+      .cat-div {
+        width: 111px; /* Fixed width */
+        height: 152px; /* Fixed height */
+      }
+    }
+    
+    @media (min-width: 900px) and (max-width: 1250px) {
+      .cat-divs-container {
+        display: flex; /* Use flexbox for horizontal alignment */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Allow horizontal scrolling */
+        gap: 16px; /* Space between items */
+        padding: 12px; /* Optional padding for better appearance */
+        box-sizing: border-box; /* Ensure padding doesn't affect width */
+        max-width: 100vw; /* Ensure it doesn't exceed the viewport */
+      }
+    
+      .cat-div {
+        width: 118px; /* Fixed width for each div */
+        height: 118px; /* Fixed height for each div */
+        flex: 0 0 auto; /* Prevent shrinking or growing */
+      }
+    }
+    @media (min-width:1200px) and (max-width:1400px){
+      .cat-divs-container {
+margin-top: 100px;
+    }
+  }
+    
+    
+  
