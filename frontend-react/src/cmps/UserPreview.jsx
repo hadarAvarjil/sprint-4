@@ -39,21 +39,6 @@ export function UserPreview({ isFrom, owner, children }) {
 
   if (!user) return null
 
-  if (isFrom === 'mobile') {
-    return (
-      <div className="user-mobile-preview grid">
-        <div className="user-rating-order flex">
-          <span className="rating-score flex">
-            <SvgIcon iconName={'star'} tag={'span'} />
-            <span className="rate b" title='user rating'>{user.rating}</span>
-            <span className="rate-count">{`(${ratingCount})`}</span>
-          </span>
-        </div>
-        {children}
-      </div>
-    )
-  }
-
   return (
     <>
       <div
@@ -83,21 +68,15 @@ export function UserPreview({ isFrom, owner, children }) {
         </div>
         {isFrom === 'explore' && (
           <span className="level flex row" data-level={user.level} title="user level">
-            {!isNaN(Number(user.level)) && Number(user.level) <= 3 ? (
-              <>
-                Level {renderStars(Number(user.level))}
-              </>
-            ) : (
-              <>
-                {user.level === 'Pro Talent' && <SvgIcon iconName="customCheckMarkSunIcon" />}
-                {user.level === 'New Seller' && <SvgIcon iconName="newSeedlingIcon" />}
-                {user.level === 'Pro Talent'
-                  ? 'Pro'
-                  : user.level === 'New Seller'
-                    ? 'New'
-                    : user.level}
-              </>
-            )}
+            {!isNaN(Number(user.level)) && Number(user.level) <= 3 ?
+              (<> {user.level === 3 ? (<span className="top-rated-badge"> Top Rated ✦✦✦ </span>
+              ) : (
+                <>Level {renderStars(Number(user.level))}</>)} </>
+              ) : (
+                <>
+                  {user.level === 'Pro Talent' && <SvgIcon iconName="customCheckMarkSunIcon" />}
+                  {user.level === 'New Seller' && <SvgIcon iconName="newSeedlingIcon" />}
+                  {user.level === 'Pro Talent' ? 'Pro' : user.level === 'New Seller' ? 'New' : user.level} </>)}
           </span>
         )}
       </div>

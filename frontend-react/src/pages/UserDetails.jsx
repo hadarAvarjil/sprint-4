@@ -177,6 +177,12 @@ export function UserDetails() {
     setFilteredReviews(filtered)
   }
 
+  function renderStars(rate) {
+    const maxStars = 3; // Total number of stars
+    const filledStars = "✦".repeat(rate);
+    const emptyStars = "✧".repeat(maxStars - rate);
+    return filledStars + emptyStars;
+  }
 
 
 
@@ -207,20 +213,31 @@ export function UserDetails() {
                   New Seller
                 </span>
               )}
-
               <div className="rating">
-                <span><SvgIcon iconName="blackStar" />
-                  {user.rating}</span>
+                <span>
+                  <SvgIcon iconName="blackStar" />
+                  {user.rating}
+                </span>
                 <span>({user.reviewsCount || 0})</span>
-                <span className="top-rated-badge">Top Rated ✦✦✦</span>
+                {user.level === 3 && (
+                <span className="top-rated-badge">
+                  Top Rated ✦✦✦
+                </span>
+              )}
+                {user.level < 3 && (
+                  <span className="level-badge">
+                    Level {user.level} {renderStars(user.level)}
+                  </span>
+                )}
               </div>
               <p className="user-bio">{user.bio || 'Spokesperson, actress and video producer'}</p>
               <p className="user-location">
-
                 <SvgIcon iconName="locationUser" />
-                {user.from}<SvgIcon iconName="languageIcon" />  <span className="languages-text">{user.languages.join(', ')} </span>
+                {user.from}<SvgIcon iconName="languageIcon" />
+                <span className="languages-text">{user.languages.join(', ')} </span>
               </p>
             </div>
+
           </div>
 
           <div className="user-about">
@@ -228,9 +245,6 @@ export function UserDetails() {
             <p>{user.about || 'No additional details provided.'}</p>
           </div>
         </div>
-
-
-
         <div className="user-contact-card">
           <div className="contact-header">
             <img className="avatar" src={user.avatar} alt="user-avatar" />

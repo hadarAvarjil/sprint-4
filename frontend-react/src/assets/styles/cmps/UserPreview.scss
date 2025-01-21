@@ -41,6 +41,15 @@
       color: white;
       background-color: $bgColor5;
     }
+
+    .top-rated-badge {
+      background-color: #ffebcd;
+      color: #a0522d;
+      font-size: rem(12px);
+      font-weight: bold;
+      padding: 0.2rem 0.2rem;
+      border-radius: 5px;
+    }
   }
 
   .username {
