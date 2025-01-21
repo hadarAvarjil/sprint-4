@@ -947,10 +947,12 @@ align-items: center;
      
       .trustedBy-img {
         display: block;  
-        bottom: 0px;
+        bottom: 30px;
         left: 20%;
+        width: 60%;
+        margin: auto;
         img{
-          width:95vh;
+          width:100%;
         }
       }
   

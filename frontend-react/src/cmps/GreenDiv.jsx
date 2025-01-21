@@ -77,7 +77,7 @@ export function GreenDiv() {
         <div className="trustedBy-img">
           <AddImg
             picUrl={
-              "https://res.cloudinary.com/dtpewh2wk/image/upload/v1736548563/trustedBy-img_q3gqes.png"
+              "https://res.cloudinary.com/dtpewh2wk/image/upload/v1737495634/Screenshot_2025-01-21_233929_rmooee.png"
             }
           />
         </div>
