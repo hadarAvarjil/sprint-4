@@ -140,13 +140,13 @@ export function HomeAppHeader() {
 
           <div className="header-options">
             <NavLink to="/orders">
-              <div className="sign-header-btn">Orders</div>
+              <div className="sign-header-btn orders-btn">Orders</div>
             </NavLink>
             <NavLink to="/profile">
-              <div className="sign-header-btn">my-profile</div>
+              <div className="sign-header-btn profile-btn">profile</div>
             </NavLink>
             <NavLink to="gig">
-              <div className="sign-header-btn">Explore</div>
+              <div className="sign-header-btn explore-btn">Explore</div>
             </NavLink>
 
             {isSignDivVisible && (
@@ -160,7 +160,7 @@ export function HomeAppHeader() {
               </div>
             )}
 
-            <div onClick={handleOpenSignDiv} className="sign-header-btn">
+            <div onClick={handleOpenSignDiv} className="sign-header-btn sign-btn">
               Sign in
             </div>
 

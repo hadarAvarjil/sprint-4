@@ -233,3 +233,35 @@
     }
   }
 }
+
+@media(max-width:600px){
+  .sign-btn{
+    display: none;
+  }
+  .app-header-home .app-header-home-search-bar{
+  display: none;
+}
+}
+
+@media(max-width:900px){
+  .orders-btn{
+    display: none;
+  }
+  .profile-btn{
+    display: none;
+  }
+  .explore-btn{
+    display: none;
+  }
+  .app-header-home .app-header-home-search-bar{
+    width: 50%;
+  }
+}
+
+@media(min-width:900px){
+  @media(max-width:1200px){
+    .app-header-home .app-header-home-search-bar{
+      width: 50%;
+    }
+  }
+}
