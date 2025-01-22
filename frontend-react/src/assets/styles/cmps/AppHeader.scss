@@ -271,6 +271,9 @@
   @media(max-width:1200px){
     .home-nav-bar{
       grid-column: 2;
+      .logo{
+        margin:auto;
+      }
 
     }
     .app-header-home .app-header-home-search-bar{
