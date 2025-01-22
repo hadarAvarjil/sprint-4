@@ -1,26 +1,26 @@
 
 //shinoi3
 
-.main-container > main:not(.full) { /* Select the classless main */
-    grid-column: 2 / 3; /* Places it in the second column */
-    display: flex; /* Retains the flex behavior if needed */
-  }
+// .main-container > main:not(.full) { /* Select the classless main */
+//     grid-column: 2 / 3; /* Places it in the second column */
+//     display: flex; /* Retains the flex behavior if needed */
+//   }
 
-  .gig-category-title {
-    text-align: left;
-  }
+//   .gig-category-title {
+//     text-align: left;
+//   }
   
-  .gig-category-title h1 {
-    margin: 0; /* Ensure no additional spacing */
-  }
+//   .gig-category-title h1 {
+//     margin: 0; /* Ensure no additional spacing */
+//   }
 
 
   
-  .full {
-    grid-column: 1 / -1; /* Spans all columns */
-  }
+//   .full {
+//     grid-column: 1 / -1; /* Spans all columns */
+//   }
   
-  .main-container > main:not(.full) { /* Select the classless main */
-    grid-column: 2 / 3; /* Places it in the second column */
-    display: flex; /* Retains the flex behavior if needed */
-  }
+//   .main-container > main:not(.full) { /* Select the classless main */
+//     grid-column: 2 / 3; /* Places it in the second column */
+//     display: flex; /* Retains the flex behavior if needed */
+//   }
