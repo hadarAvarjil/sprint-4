@@ -1,23 +1,11 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-
 import { useState, useEffect } from 'react'
-
 import { useSelector } from 'react-redux'
-
 import { useModal } from '../customHooks/ModalContext.jsx'
-
 import { useDeviceType } from '../customHooks/DeviceTypeContext.jsx'
-
-
-
 import { gigService } from '../services/gig.service'
-
-import { userService } from '../services/user/user.service.local.js'
-
+import { userService } from '../services/user.service.js'
 import { removeGig } from '../store/actions/gig.actions.js'
-
-
-
 import SvgIcon from './SvgIcon.jsx'
 
 import { UserPreview } from './UserPreview.jsx'
