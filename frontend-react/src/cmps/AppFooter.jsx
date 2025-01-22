@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { AddImg } from './AddImg.jsx' 
+import SvgIcon from './SvgIcon.jsx';
 
 export function AppFooter() {
 	const count = useSelector(storeState => storeState.userModule.count)
@@ -8,12 +9,18 @@ export function AppFooter() {
 		<footer className="app-footer full">
 			<div className='bottom-footer-div'>
 			<div className='left-footer-div'>
-			<h1 style={{ color: '#7A7D85' }} className="flex row">
+			<h1 style={{ color: '#7A7D85' }} className="logo flex row">
+                gigster
+                <span className="small-img">
+				<AddImg picUrl="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736973928/R-icon_rlohg0.png" />
+                </span>
+              </h1>
+			{/* <h1 style={{ color: '#7A7D85' }} className="flex row">
   gigster
   <span className="small-img">
     <AddImg picUrl="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736973928/R-icon_rlohg0.png" />
   </span>
-</h1>
+</h1> */}
 
 			{/* <p>Count: {count}</p> */}
 		  <div className='copy-rights-div'>© gigster International Ltd. 2025</div>
