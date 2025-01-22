@@ -48,8 +48,9 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+  
   }
-
+  
   .app-header-home-search-bar button {
     background-color: #013a12;
     color: white;
@@ -58,6 +59,7 @@
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
+    margin-left: -5px;
   }
 
   .app-header-home-search-bar button:hover {
@@ -197,7 +199,7 @@
     }
 
     button {
-      margin: 0;
+      // margin: 0;
       padding: 8px 16px;
       border-radius: 0px 5px 5px 0px;
       border-left: none;
