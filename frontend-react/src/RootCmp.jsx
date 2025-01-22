@@ -37,7 +37,8 @@ export function RootCmp() {
             {/* <AppHeader /> */}
             <UserMsg />
 
-{/* shinoi2 */}
+{/* shinoi3 */}
+            {/* <main className='full'>  */}
             <main> 
                 <Routes>
                     <Route path="" element={<HomePage />} />
