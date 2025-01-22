@@ -66,14 +66,15 @@
 
   .category-nav {
     grid-column: 2; //shinoi4
-    padding-left: 92px;
-    padding-right: 90px;
+    // padding-left: 92px;//shinoi4
+    // padding-right: 90px;//shinoi4
     position: relative;
     overflow: hidden;
     color: $clrSecondary7;
     border-style: solid;
     border-width: 1px;
     border-color: #b5b6ba76;
+    border-style: none; //shnoi4
   }
 
   .category-nav .container {
@@ -115,6 +116,12 @@
     width: 100%;
     /* Make the line fully visible without animation */
   }
+}
+
+.header-inner-border{//shinoi4
+  grid-column: 1/-1; //shinoi4
+  height: 1px;//shinoi4
+  background-color:#CCCCCC;//shinoi4
 }
 
 // .category-nav .container a {
