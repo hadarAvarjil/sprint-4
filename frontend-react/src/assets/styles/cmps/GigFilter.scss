@@ -41,11 +41,13 @@
   text-align: left; 
 
     h1 {
-    font-size: 28px;
+    // font-size: 28px; //shinoi4
+    font-size: 32px; //shinoi4
     font-weight: 700;
     color: #222325; 
     padding: 8px 0;
-    line-height: 1.2; 
+    // line-height: 1.2; //shinoi4
+    line-height: 36px;
     text-transform: none !important;
     font-family: 'macan-bold';
   }
@@ -193,7 +195,9 @@
   }
 
   .toggle-label {
-    font-size: 14px;
+    // font-size: 14px; //shinoi4
+    font-size: 16px; //shinoi4
+    line-height: 24px; //shinoi4
     color: #62646a;
     justify-self: flex-end;
   }
