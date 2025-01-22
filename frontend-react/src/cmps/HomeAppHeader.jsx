@@ -155,6 +155,8 @@ export function HomeAppHeader() {
             </div>
           )}
         </nav>
+        {/* shinoi4 */}
+        <div  className="header-inner-border"></div>
         {showCategories && (
           <NavBar
             categories={[

@@ -1,4 +1,6 @@
 .app-header-home {
+  display: grid; //shinoi4
+  grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr); //shinoi4
   position: fixed;
   top: 0;
   left: 0;
@@ -9,12 +11,13 @@
 
 
   .home-nav-bar {
+    grid-column: 2; //shinoi4
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    padding-left: calc(13% - 5px);
-    padding-right: 13%;
+    // padding-left: calc(13% - 5px);//shinoi4
+    // padding-right: 13%;//shinoi4
 
 
     .header-options {
@@ -62,14 +65,16 @@
   }
 
   .category-nav {
-    padding-left: 92px;
-    padding-right: 90px;
+    grid-column: 2; //shinoi4
+    // padding-left: 92px;//shinoi4
+    // padding-right: 90px;//shinoi4
     position: relative;
     overflow: hidden;
     color: $clrSecondary7;
     border-style: solid;
     border-width: 1px;
     border-color: #b5b6ba76;
+    border-style: none; //shnoi4
   }
 
   .category-nav .container {
@@ -111,6 +116,12 @@
     width: 100%;
     /* Make the line fully visible without animation */
   }
+}
+
+.header-inner-border{//shinoi4
+  grid-column: 1/-1; //shinoi4
+  height: 1px;//shinoi4
+  background-color:#CCCCCC;//shinoi4
 }
 
 // .category-nav .container a {
