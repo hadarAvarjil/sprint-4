@@ -1,5 +1,7 @@
 .app-footer {
-    display: flex;
+    // display: flex; //shinoi4
+    display: grid;
+    grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
@@ -9,9 +11,10 @@
     max-height: 65px;
 
     background-color: white;
-    padding: rem(10px) 1rem;
+    // padding: rem(10px) 1rem; //shinoi4
     width: 100%;
     margin-top: 80px;
+    
 
 
     .grey-icon {
@@ -58,6 +61,7 @@
 }
 
 .bottom-footer-div {
+    grid-column: 2;
     width: 100%;
     display: flex;
     flex-direction: row;
