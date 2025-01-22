@@ -82,18 +82,23 @@
     }
 
     .join {
+      width: 130px;
+      height: 40px;
       padding: 9px 16px;
       border-radius: 5px;
-      font-size: 14px;
-      font-family: 'macan-bold';
-      background: $bgColor3;
-      border: 1px solid $bgColor3;
-      color: $clrPrimary1;
+      font-size: 16px; 
+      font-weight: 600;
+      line-height: 16px;
+      font-family: $fiverr-defult-font;
+      background: black;
+      border: 1px solid black;
+      color: white;
+      margin-bottom: 20px;
 
       &:hover {
-        background-color: $bgColor5;
-        border: 1px solid $bgColor5;
-        color: $clrPrimary1 !important;
+        background-color: #404145;
+        border: 1px solid #404145;
+        color: white !important;
       }
     }
 
