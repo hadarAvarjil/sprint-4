@@ -1,4 +1,6 @@
 .app-header-home {
+  display: grid; //shinoi4
+  grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr); //shinoi4
   position: fixed;
   top: 0;
   left: 0;
@@ -9,12 +11,13 @@
 
 
   .home-nav-bar {
+    grid-column: 2; //shinoi4
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    padding-left: calc(13% - 5px);
-    padding-right: 13%;
+    // padding-left: calc(13% - 5px);//shinoi4
+    // padding-right: 13%;//shinoi4
 
 
     .header-options {
@@ -62,6 +65,7 @@
   }
 
   .category-nav {
+    grid-column: 2; //shinoi4
     padding-left: 92px;
     padding-right: 90px;
     position: relative;
