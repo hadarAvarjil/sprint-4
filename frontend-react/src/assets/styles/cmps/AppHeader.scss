@@ -238,9 +238,18 @@
   .sign-btn{
     display: none;
   }
-  .app-header-home .app-header-home-search-bar{
+  .app-header-home{
+
+ .app-header-home-search-bar{
   display: none;
 }
+.category-nav{
+  display: none;
+}
+.header-inner-border{
+  display: none;
+}
+  }
 }
 
 @media(max-width:900px){
@@ -258,10 +267,37 @@
   }
 }
 
-@media(min-width:900px){
+@media(min-width:900px){ 
   @media(max-width:1200px){
+    .home-nav-bar{
+      grid-column: 2;
+
+    }
     .app-header-home .app-header-home-search-bar{
       width: 50%;
     }
+  }
+}
+@media(min-width:1160px){
+.home-nav-bar{
+  grid-column: 2;
+
+  .dropdown{
+    display: none;
+  }
+}}
+
+@media(min-width:900px){
+@media(max-width:1400px){
+  .home-nav-bar{
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+}
+@media(min-width:1400px){
+  .home-nav-bar{
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }

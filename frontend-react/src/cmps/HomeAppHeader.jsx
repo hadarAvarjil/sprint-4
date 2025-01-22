@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { useNavigate } from "react-router"
-import { useSelector } from "react-redux"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
 import { NavBar } from "./NavBar"
@@ -11,17 +10,35 @@ import SvgIcon from "./SvgIcon.jsx"
 import { setFilter } from "../store/actions/gig.actions.js"
 import { SearchBar } from "./SearchBar.jsx"
 import { category } from "../services/gig.service.js"
+import { useSelector, useDispatch } from "react-redux"
+import { AsideMenu } from "../cmps/AsideMenu.jsx"
+
+
 
 
 
 export function HomeAppHeader() {
   const [searchQuery, setSearchQuery] = useState("")
+  const [headerStage, setHeaderStage] = useState(0)
+  const [showUserDropdown, setShowUserDropdown] = useState(false)
+  const [showOrdersDropdown, setShowOrdersDropdown] = useState(false)
+  const [showAsideMenu, setShowAsideMenu] = useState(false)
+  const [notification, setNotification] = useState(false)
+  const [headerPlaceholderText, setHeaderPlaceholderText] = useState("")
   const user = useSelector((storeState) => storeState.userModule.user)
   const navigate = useNavigate()
 
   const [showMiniHeader, setShowMiniHeader] = useState(false)
   const [showCategories, setShowCategories] = useState(false)
   const categories = category
+
+  const userInfoRef = useRef(null)
+  const ordersRef = useRef(null)
+  const asideMenuRef = useRef(null)
+  const dispatch = useDispatch()  
+
+    const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+    const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
   function setCatFilter(category) {
     dispatch(setFilter({ ...filterBy, cat: category }));
@@ -94,6 +111,27 @@ export function HomeAppHeader() {
     <>
       <header className="app-header-home full">
         <nav className="home-nav-bar">
+        <div
+            className={`dropdown flex ${notification ? "notification" : ""}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowAsideMenu(!showAsideMenu);
+              setNotification(false);
+            }}
+            ref={asideMenuRef}
+          >
+            <SvgIcon
+              iconName={
+                 "headerDropdownGray"
+              }
+            />
+            {showAsideMenu && (
+              <AsideMenu
+                loggedInUser={loggedinUser}
+                onClose={() => setShowAsideMenu(false)}
+              />
+            )}
+          </div>
         <Link to="/" >
               <h1  style={{
                 color: "#404145",
