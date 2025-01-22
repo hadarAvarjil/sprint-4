@@ -10,6 +10,9 @@ import { JoinDiv } from "./JoinDiv"
 import SvgIcon from "./SvgIcon.jsx"
 import { setFilter } from "../store/actions/gig.actions.js"
 import { SearchBar } from "./SearchBar.jsx"
+import { category } from "../services/gig.service.js"
+
+
 
 export function HomeAppHeader() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -18,7 +21,11 @@ export function HomeAppHeader() {
 
   const [showMiniHeader, setShowMiniHeader] = useState(false)
   const [showCategories, setShowCategories] = useState(false)
+  const categories = category
 
+  function setCatFilter(category) {
+    dispatch(setFilter({ ...filterBy, cat: category }));
+  }
   async function onLogout() {
     try {
       await logout()
@@ -174,15 +181,19 @@ export function HomeAppHeader() {
         <div  className="header-inner-border"></div>
         {showCategories && (
           <NavBar
-            categories={[
-              "Graphics & Design",
-              "Programming & Tech",
-              "Digital Marketing",
-              "Video & Animation",
-              "Writing & Translation",
-              "Music & Audio",
-              "Business",
-            ]}
+          categories={categories}
+          setCatFilter={setCatFilter}
+
+
+            // categories={[
+            //   "Graphics & Design",
+            //   "Programming & Tech",
+            //   "Digital Marketing",
+            //   "Video & Animation",
+            //   "Writing & Translation",
+            //   "Music & Audio",
+            //   "Business",
+            // ]}
           />
         )}
       </header>
