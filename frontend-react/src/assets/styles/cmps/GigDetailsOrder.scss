@@ -1,7 +1,8 @@
 .gig-details-order {
     position: sticky;
     width: 100%;
-    max-width: 430px;
+    // max-width: 430px; //shinoi4
+    width: 415px; //shinoi4
     font-family: macan-regular;
     border: 1px solid #ddd;
     max-height: 500px;
@@ -53,6 +54,7 @@
         p {
             margin: 6px 0;
             color: #555;
+            line-height: 21px; //shinoi4
 
             strong {
                 color: #333;
@@ -161,7 +163,9 @@
         .detail-item {
             display: flex;
             align-items: center;
-            font-size: 0.9rem;
+            // font-size: 0.9rem; //shinoi4
+            font-size: 14px;
+            line-height: 24px;
             color: #666;
 
             svg {
@@ -210,7 +214,9 @@
         display: flex;
         align-items: center;
         color: #95979d;
-        font-size: rem(14px);
+        // font-size: rem(14px); //shinoi4
+        font-size: 14px; //shinoi4
+        line-height: 24px; //shinoi4
 
         svg {
             width: 20px;
