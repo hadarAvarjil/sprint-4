@@ -13,7 +13,9 @@ import { category } from "../services/gig.service.js"
 import { setFilter } from "../store/actions/gig.actions.js"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
-
+import { JoinDiv } from "./JoinDiv.jsx"
+import { SignDiv } from "./SignDiv.jsx"
+ 
 export function AppHeader() {
   const [searchQuery, setSearchQuery] = useState("")
   const [headerStage, setHeaderStage] = useState(0)
@@ -114,8 +116,28 @@ export function AppHeader() {
 
   function setCatFilter(category) {
     dispatch(setFilter({ ...filterBy, cat: category }));
+  } 
+
+    const [isSignDivVisible, setIsSignDivVisible] = useState(false)
+    const [isJoinDivVisible, setIsJoinDivVisible] = useState(false)
+  
+    const handleOpenSignDiv = () => {
+      setIsSignDivVisible(true)
+    } 
+    const handleOpenJoinDiv = () => {
+      setIsJoinDivVisible(true)
+    }
+  const handleCloseSignDiv = (e) => {
+    if (e.target.className === "modal-overlay") {
+      setIsSignDivVisible(false)
+    }
   }
 
+  const handleCloseJoinDiv = (e) => {
+    if (e.target.className === "modal-overlay") {
+      setIsJoinDivVisible(false)
+    }
+  }
 
   async function onLogout() {
     try {
@@ -210,12 +232,32 @@ export function AppHeader() {
               )}
 
             </div> */}
-            <NavLink to="gig">
+
+ {isSignDivVisible && (
+              <div className="modal-overlay" onClick={handleCloseSignDiv}>
+                <SignDiv />
+              </div>
+            )}
+            {isJoinDivVisible && (
+              <div className="modal-overlay" onClick={handleCloseJoinDiv}>
+                <JoinDiv />
+              </div>
+            )}
+
+            <div onClick={handleOpenSignDiv} className="sign-header-btn sign-btn">
+              Sign in
+            </div>
+
+            <div onClick={handleOpenJoinDiv} className="join-btn">
+              Join 
+            </div>
+
+            {/* <NavLink to="gig">
               <div className="sign-header-btn">Sign in</div>
             </NavLink>
             <NavLink to="gig">
               <div className="join-btn">Join</div>
-            </NavLink>
+            </NavLink> */}
 
           </div>
         </div>

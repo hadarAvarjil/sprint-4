@@ -187,7 +187,7 @@ export function HomeAppHeader() {
               <div className="sign-header-btn explore-btn">Explore</div>
             </NavLink>
 
-            {isSignDivVisible && (
+            {isSignDivVisible && ( 
               <div className="modal-overlay" onClick={handleCloseSignDiv}>
                 <SignDiv />
               </div>
