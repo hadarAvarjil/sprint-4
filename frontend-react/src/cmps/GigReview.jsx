@@ -31,6 +31,7 @@ export function GigReview({ review }) {
                         alt={`${username}'s profile`}
                     />
                     <div>
+                        
                         <h4>{username}</h4>
                         <div className="country-info">
                             <img
