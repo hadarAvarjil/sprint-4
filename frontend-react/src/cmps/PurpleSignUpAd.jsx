@@ -15,7 +15,7 @@ export function PurpleAd() {
     }
   };
 
-  return (
+  return ( 
     <div className="purple-signup-ad">
       <h1>
         Freelance services at your <span>fingertips</span>

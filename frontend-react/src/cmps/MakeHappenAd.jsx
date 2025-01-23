@@ -1,7 +1,20 @@
 import React from "react";
+import { useState } from 'react'
+import { JoinDiv } from "./JoinDiv"; 
+
 
 
 export function MakeHappenAd(){
+    const [isJoinDivVisible, setIsJoinDivVisible] = useState(false);
+  
+    const handleOpenJoinDiv = () => {
+      setIsJoinDivVisible(true);
+    };
+    const handleCloseJoinDiv = (e) => {
+      if (e.target.className === "modal-overlay") {
+        setIsJoinDivVisible(false);
+      }
+    };
     return(
         
    
@@ -47,11 +60,17 @@ export function MakeHappenAd(){
         </div>
 
         <button
-          onClick={() => handleNavigation("login")}
-          className="blk-join-btn"
+        onClick={handleOpenJoinDiv}
+        className="blk-join-btn"
         >
           join now
         </button>
+           {isJoinDivVisible && (
+                <div className="modal-overlay" onClick={handleCloseJoinDiv}>
+                  <JoinDiv />
+                </div>
+                      )}
+
       </div>
     )
 }
