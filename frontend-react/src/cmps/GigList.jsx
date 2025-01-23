@@ -28,6 +28,6 @@ export function GigList({ gigs }) {
         
       </ul>
     </div>
-    // </div>
+    </div>
   )
 }
