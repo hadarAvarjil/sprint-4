@@ -180,9 +180,9 @@ export function HomeAppHeader() {
             <NavLink to="/orders">
               <div className="sign-header-btn orders-btn">Orders</div>
             </NavLink>
-            <NavLink to="/profile">
-              <div className="sign-header-btn profile-btn">my-profile</div>
-            </NavLink>
+            {/* <NavLink to="/profile"> */}
+              <div className="sign-header-btn profile-btn">profile</div>
+            {/* </NavLink> */}
             <NavLink to="gig">
               <div className="sign-header-btn explore-btn">Explore</div>
             </NavLink>
