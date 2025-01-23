@@ -50,10 +50,10 @@ export function AppHeader() {
   const isChatPage = location.pathname.startsWith("/chat/")
   const navigate = useNavigate()
 
-  const [isJoinShow, setIsJoinShow] = useState(false)
+  const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false)
 
   const handleJoinClick = () => {
-    setIsJoinShow(true)
+    setIsLoginSignUpShow(true)
   }
 
   const logoColor = headerStage === 0 ? "#fff" : "#404145"
@@ -237,7 +237,7 @@ export function AppHeader() {
         setCatFilter={setCatFilter}
         style={navBarStyles}
       />
-       {isJoinShow && <LoginSignup isJoinShow={isJoinShow} setIsJoinShow={setIsJoinShow} />} 
+      {isLoginSignUpShow && <LoginSignup isLoginSignUpShow={isLoginSignUpShow} setIsLoginSignUpShow={setIsLoginSignUpShow} />}
     </header>
-  );
+  )
 }
