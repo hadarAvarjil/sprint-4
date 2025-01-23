@@ -171,8 +171,8 @@
   }
   
   .toggle-switch {
-    width: 40px;
-    height: 20px;
+    width: 31px;
+    height: 18px;
     // background-color: #ccc;// shinoi4
     background-color: #dadbdd;// shinoi4
     border-radius: 20px;
@@ -187,7 +187,8 @@
       background-color: #fff;
       border-radius: 50%;
       position: absolute;
-      top: 3px;
+      top: 2px;
+      // top: 3px; shinoi
       left: 3px;
       transition: transform 0.4s;
     }
