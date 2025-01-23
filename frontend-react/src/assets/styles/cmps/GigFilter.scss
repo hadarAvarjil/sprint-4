@@ -33,14 +33,17 @@
     .divider {
       color: $clrSecondary45;
       margin: 0 0.5em;
-    }
+    } 
   }
 }
 .gig-category-title {
+  display: grid;
+  grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
   grid-column: 2;
   text-align: left; 
 
     h1 {
+      grid-column: 2;
     // font-size: 28px; //shinoi4
     font-size: 32px; //shinoi4
     font-weight: 700;

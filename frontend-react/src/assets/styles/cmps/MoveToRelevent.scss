@@ -1,10 +1,25 @@
 //shinoi4
+.grid-main-container{ 
+    // display: grid;
+    // @media (max-width: 480px) {
+    //     grid-template-columns: 16px 1fr 16px;
+    // }
 
+    // @media (min-width: 481px) {
+    //     grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
+    // }
+}
 .aside-sticky-div{
     width: 415px;
 }
 
-
+ .home-body{ 
+    display: grid;
+    grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
+    .home-body-main{
+        grid-column: 2;
+    }
+}
 
 
 

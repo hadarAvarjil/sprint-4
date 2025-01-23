@@ -25,7 +25,7 @@ import { Signup } from './pages/Signup.jsx'
 import { AllOrders } from './pages/AllOrders.jsx';
 import { ProfilePage } from './pages/ProfilePage.jsx';
 
-
+ 
 export function RootCmp() {
     const location = useLocation();
     return (
@@ -38,8 +38,9 @@ export function RootCmp() {
             <UserMsg />
 
 {/* shinoi3 */}
+{/* shinoi4 */}   
             {/* <main className='full'>  */}
-            <main> 
+            <main className=' full grid-main-container'> 
                 <Routes>
                     <Route path="" element={<HomePage />} />
                     <Route path="about" element={<AboutUs />}>
