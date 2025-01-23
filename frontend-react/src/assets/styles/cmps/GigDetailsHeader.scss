@@ -8,12 +8,13 @@
     .gig-title h2 {
         font-size: rem(28px);
         font-weight: bold;
-        color: #1c1e1e;
+        color: #222325;
         margin-top: 2rem;
         word-break: break-word;
         overflow-wrap: break-word;
         white-space: normal;
         line-height: 36px; //shnoi4
+        font-family: $fiverr-defult-font;
     }
 
     .gig-details a {
