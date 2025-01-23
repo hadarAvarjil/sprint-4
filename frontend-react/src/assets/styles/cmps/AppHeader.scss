@@ -181,11 +181,14 @@
     // margin-right: 3em;
     // border-color: black;
     // padding-left: 2px;
+    font-family: $fiverr-defult-font;
+
 
     input[type="text"] {
       // padding: 10px 2px 10px 16px;
       border: 1px solid $clrSecondary45;
       font-size: 16px;
+      font-family: $fiverr-defult-font;
       // max-width: 600px;
       border-color: black;
       // margin-right: -2px;
@@ -195,6 +198,8 @@
       &:focus {
         outline: none;
         border: 1px solid black;
+        font-family: $fiverr-defult-font;
+
       }
     }
 
