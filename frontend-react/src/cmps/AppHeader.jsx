@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react"
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import { useModal } from "../customHooks/ModalContext.jsx"
 import { useDeviceType } from "../customHooks/DeviceTypeContext.jsx"
 import outsideClick from "../customHooks/outsideClick.js"
 import { loadGigs } from "../store/actions/gig.actions.js";
@@ -13,6 +12,8 @@ import { category } from "../services/gig.service.js"
 import { setFilter } from "../store/actions/gig.actions.js"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
+import { LoginSignup } from "./LoginSignup.jsx"; // Import the modal component
+
 
 export function AppHeader() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -37,7 +38,6 @@ export function AppHeader() {
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
-  const { openLogin, openSignup } = useModal()
   const deviceType = useDeviceType()
 
 
@@ -50,6 +50,11 @@ export function AppHeader() {
   const isChatPage = location.pathname.startsWith("/chat/")
   const navigate = useNavigate()
 
+  const [isJoinShow, setIsJoinShow] = useState(false)
+
+  const handleJoinClick = () => {
+    setIsJoinShow(true)
+  }
 
   const logoColor = headerStage === 0 ? "#fff" : "#404145"
   const headerStyles = {
@@ -213,9 +218,14 @@ export function AppHeader() {
             <NavLink to="gig">
               <div className="sign-header-btn">Sign in</div>
             </NavLink>
-            <NavLink to="gig">
-              <div className="join-btn">Join</div>
-            </NavLink>
+
+            <div className="join-btn" >
+              <button
+                onClick={handleJoinClick}
+              >
+                Join
+              </button>
+            </div>
 
           </div>
         </div>
@@ -227,6 +237,7 @@ export function AppHeader() {
         setCatFilter={setCatFilter}
         style={navBarStyles}
       />
+       {isJoinShow && <LoginSignup isJoinShow={isJoinShow} setIsJoinShow={setIsJoinShow} />} 
     </header>
   );
 }
