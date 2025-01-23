@@ -80,6 +80,10 @@
 
 .user-details-specific {
   max-width: 1304px;
+  height: auto;
+  margin-inline: auto;
+  padding-inline: 32px;
+  padding-top: 44px;
 
   .user-details-wrapper {
     display: flex;
