@@ -233,7 +233,7 @@ export function UserDetails() {
               <p className="user-bio">{user.bio || 'Spokesperson, actress and video producer'}</p>
               <p className="user-location">
                 <SvgIcon iconName="locationUser" />
-                {user.from}<SvgIcon iconName="languageIcon" />
+                {user.country}<SvgIcon iconName="languageIcon" />
                 <span className="languages-text">{user.languages.join(', ')} </span>
               </p>
             </div>

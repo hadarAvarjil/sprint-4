@@ -1,33 +1,14 @@
 [
     {
-        "_id": "r001",
-        "userId": "u001",
-        "gigId": "g001",
-        "userName": "peter123",
-        "imgUrl": "https://qph.cf2.quoracdn.net/main-qimg-9fde28d147c243b690bdf975f8474145-lq",
+        "imgUrl": "https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user9_hfn4yf.webp",
+        "userId": {
+            "$oid": "67911bfcfdc9fab19d7d118a"
+          },
+        "userName": "HappyClient123",
         "rating": 5,
-        "text": "I couldn't be happier with the logo Alice designed for my business. It perfectly captures the essence of my brand, and the attention to detail is outstanding. Alice was a pleasure to work with, and I highly recommend her services!"
-    },
-    {
-        "userId": "u001",
-        "gigId": "g001",
-        "userName": "peter123",
-        "imgUrl": "https://qph.cf2.quoracdn.net/main-qimg-9fde28d147c243b690bdf975f8474145-lq",
-        "rating": "3",
-        "text": "test",
-        "id": "1Dl0wF",
-        "createdAt": 1697456859393,
-        "_id": "yMtJq"
-    },
-    {
-        "userId": "u001",
-        "gigId": "g002",
-        "userName": "peter123",
-        "imgUrl": "https://qph.cf2.quoracdn.net/main-qimg-9fde28d147c243b690bdf975f8474145-lq",
-        "rating": "3",
-        "text": "bread",
-        "id": "0jyuJN",
-        "createdAt": 1697457303713,
-        "_id": "NtvZm"
+        "text": "Fantastic work! Highly recommended.",
+        "gigId": {
+            "$oid": "67911d77fdc9fab19d7d1190"
+          }
     }
 ]

@@ -47,7 +47,7 @@ export function UserPreview({ isFrom, owner, children }) {
       >
         <img
           className={`avatar-${isFrom}`}
-          src={user.avatar}
+          src={user.imgUrl}
           alt={`${user.fullName} gig avatar`}
         />
         <div className={`user-${isFrom}-wrapper`}>
