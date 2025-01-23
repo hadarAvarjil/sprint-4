@@ -186,10 +186,11 @@ export function UserDetails() {
 
 
 
-
+ 
   if (!user) return <div>Loading...</div>
 
   return (
+    <div className='container-user-details-spesific'>
     <section className="user-details-specific">
       <div className="user-details-wrapper">
         <div className="user-main-info">
@@ -339,5 +340,6 @@ export function UserDetails() {
         )}
       </div>
     </section>
+    </div>
   );
 }
