@@ -43,6 +43,7 @@
   text-align: left; 
 
     h1 {
+      margin-top: 44px;
       grid-column: 2;
     // font-size: 28px; //shinoi4
     font-size: 32px; //shinoi4
@@ -52,7 +53,7 @@
     // line-height: 1.2; //shinoi4
     line-height: 36px;
     text-transform: none !important;
-    font-family: 'macan-bold';
+    font-family: $fiverr-defult-font;
   }
 }
 
@@ -170,8 +171,8 @@
   }
   
   .toggle-switch {
-    width: 40px;
-    height: 20px;
+    width: 31px;
+    height: 18px;
     // background-color: #ccc;// shinoi4
     background-color: #dadbdd;// shinoi4
     border-radius: 20px;
@@ -186,7 +187,8 @@
       background-color: #fff;
       border-radius: 50%;
       position: absolute;
-      top: 3px;
+      top: 2px;
+      // top: 3px; shinoi
       left: 3px;
       transition: transform 0.4s;
     }
@@ -196,7 +198,8 @@
     background-color: #1dbf73;
 
     &::after {
-      transform: translateX(20px);
+      transform: translateX(12px);
+      // transform: translateX(20px); shinoi
     }
   }
 
@@ -206,5 +209,6 @@
     line-height: 24px; //shinoi4
     color: #62646a;
     justify-self: flex-end;
+    font-family: $fiverr-defult-font;
   }
 }

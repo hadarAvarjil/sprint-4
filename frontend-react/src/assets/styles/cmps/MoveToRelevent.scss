@@ -22,6 +22,12 @@
     }
 }
 
+.container-user-details-spesific{
+    display: grid;
+    grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
+
+}
+
 
 
 
