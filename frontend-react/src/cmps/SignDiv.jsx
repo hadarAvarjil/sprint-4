@@ -73,7 +73,7 @@ import React, { useState } from "react";
                <input
                  id="username"
                  type="text"
-                 style={{width:'100%', borderColor:'black'}}
+                 style={{width:'100%',}}
                  value={username}
                  onChange={(e) => setUsername(e.target.value)}
                  required
@@ -85,20 +85,20 @@ import React, { useState } from "react";
                <input
                  id="password"
                  type="password"
-                 style={{width:'100%', borderColor:'black'}}
+                 style={{width:'100%', }}
 
                  value={password}
                  onChange={(e) => setPassword(e.target.value)}
                  required
                />
              </div>
-             <button type="submit">Submit</button>
-             <button
+             <button type="submit">Continue</button>
+             {/* <button
                type="button" // Ensure it's not treated as a submit button
                onClick={handleClose}
              >
                Close
-             </button>
+             </button> */}
            </form>
            <p>By joining, you agree to the Gigster Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
          </div>

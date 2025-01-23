@@ -69,15 +69,24 @@ letter-spacing:normal;
 h2{
   font-size: 24px;
   font-weight: 700 ;
+  margin-bottom: 32px;
 }
-
+label{
+  font-size: 16px ;
+  line-height: 24px;
+}
 input{
-border-color: black;
+  font-size: 16px ;
+  line-height: 24px;
+border-color: #858688;
+color: #858688;
 width: 100%;
 }
+
     
     p{
       margin-top: auto;
+      margin-bottom: 32px;
       font-size:12px;
 line-height:20px;
 text-align:start;
@@ -95,14 +104,19 @@ color: #74767e;
   .right-user-sign form label {
     display: flex;
     flex-direction: column;
-    font-size: 14px;
+    // font-size: 14px;
   }
   
   .right-user-sign form button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #4caf50;
-    color: white;
+    width: 356px;
+    height: 40px;
+    margin-top: 44px;
+    padding-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 24px;
+    background-color: #F5F5F5;
+    color:#C5C6C9;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -156,8 +170,8 @@ letter-spacing:normal;
   
   .left-purple-ad ul li {
     font-size: 1rem;
-    font-size:20px;
-    line-height:30px;
+    font-size:18px;
+    line-height:26px;
     text-align:left;
     letter-spacing:normal;
     

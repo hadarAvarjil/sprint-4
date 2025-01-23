@@ -104,12 +104,12 @@ import React, { useState } from "react";
                />
              </div>
              <button type="submit">Submit</button>
-             <button
+             {/* <button
                type="button" // Ensure it's not treated as a submit button
                onClick={handleClose}
              >
                Close
-             </button>
+             </button> */}
            </form>
          </div>
        </div>
