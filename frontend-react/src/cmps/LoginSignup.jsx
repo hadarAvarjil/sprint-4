@@ -43,6 +43,9 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
     }
 
     const _signup = async (credentials) => {
+        const text = credentials.fullName[0].toUpperCase()
+        const purple = '800080';
+        credentials.imgUrl = `https://via.placeholder.com/100/${purple}/ffffff?text=${text}`
         try {
             await signup(credentials)
             showSuccessMsg('Signed up successfully')

@@ -12,10 +12,11 @@ import { category } from "../services/gig.service.js"
 import { setFilter } from "../store/actions/gig.actions.js"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
-import { LoginSignup } from "./LoginSignup.jsx"; // Import the modal component
+import { LoginSignup } from "./LoginSignup.jsx"
 
 
 export function AppHeader() {
+
   const [searchQuery, setSearchQuery] = useState("")
   const [headerStage, setHeaderStage] = useState(0)
   const [showUserDropdown, setShowUserDropdown] = useState(false)
@@ -36,6 +37,8 @@ export function AppHeader() {
   outsideClick(asideMenuRef, () => setShowAsideMenu(false))
 
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+  console.log(loggedinUser);
+
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
   const deviceType = useDeviceType()
@@ -60,16 +63,16 @@ export function AppHeader() {
   const headerStyles = {
     backgroundColor: headerStage >= 1 ? "#fff" : "transparent",
     color: isHomePage && headerStage === 0 ? "#fff" : "#62646a",
-  };
+  }
   const navBarStyles = {
     borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
     borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
     display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
-  };
+  }
   const joinButtonStyles = {
     color: headerStage === 0 && isHomePage ? "#fff" : "#1dbf73",
     borderColor: headerStage === 0 && isHomePage ? "#fff" : "#1dbf73",
-  };
+  }
 
 
   useEffect(() => {
@@ -188,9 +191,9 @@ export function AppHeader() {
             {/* <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
             </NavLink> */}
-            <NavLink to="/orders">
+            {/* <NavLink to="/orders">
               <div className="sign-header-btn">Orders</div>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/profile">
               <div className="sign-header-btn">my-profile</div>
             </NavLink>
@@ -215,21 +218,38 @@ export function AppHeader() {
               )}
 
             </div> */}
-            <NavLink to="gig">
-              <div className="sign-header-btn">Sign in</div>
-            </NavLink>
+            {loggedinUser ? (
+              <>
+                <NavLink to="/orders">
+                  <div className="sign-header-btn">Orders</div>
+                </NavLink>
+                <div className="user-circle">
+                  <img src={loggedinUser.imgUrl} alt="User avatar" />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="signIn-btn" >
+                  <button
+                    onClick={handleJoinClick}
+                  >
+                    Sign In
+                  </button>
+                </div>
 
-            <div className="join-btn" >
-              <button
-                onClick={handleJoinClick}
-              >
-                Join
-              </button>
-            </div>
-
+                <div className="join-btn" >
+                  <button
+                    onClick={handleJoinClick}
+                  >
+                    Join
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </nav>
+
       <NavBar
         categories={categories}
         display={headerStage === 2 ? "flex" : "none"}
