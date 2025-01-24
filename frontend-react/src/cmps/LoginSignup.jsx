@@ -44,8 +44,9 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
 
     const _signup = async (credentials) => {
         const text = credentials.fullName[0].toUpperCase()
-        const purple = '800080';
-        credentials.imgUrl = `https://via.placeholder.com/100/${purple}/ffffff?text=${text}`
+        const purple = '800080'
+        const white = 'ffffff'
+        credentials.imgUrl = `https://ui-avatars.com/api/?name=${text}&background=${purple}&color=${white}`
         try {
             await signup(credentials)
             showSuccessMsg('Signed up successfully')
