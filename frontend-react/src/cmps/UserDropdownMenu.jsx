@@ -1,9 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom'
-
-import { logout } from '../store/user.actions.js'
+import { logout } from '../store/actions/user.actions.js'
 import { showErrorMsg } from '../services/event-bus.service.js'
 
-export function UserDropdown({ loggedInUser, onClose }) {
+
+
+export function UserDropdownMenu({ loggedInUser, onClose }) {
     const navigate = useNavigate()
 
     async function onLogout() {
@@ -14,7 +15,7 @@ export function UserDropdown({ loggedInUser, onClose }) {
             showErrorMsg(
                 {
                     title: 'FAILED TO LOGOUT',
-                    body: `This is awkward...`,
+                    body: `Failed to Logout now...`,
                 },
                 {
                     userMsgLeft: '55%',
@@ -26,7 +27,7 @@ export function UserDropdown({ loggedInUser, onClose }) {
     }
 
     return (
-        <div className="user-dropdown" onClick={onClose}>
+        <div className="user-dropdown-menu" onClick={onClose}>
             <Link to={`/user/${loggedInUser._id}`}>Profile</Link>
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/orders">Orders</Link>

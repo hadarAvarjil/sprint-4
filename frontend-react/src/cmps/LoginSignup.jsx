@@ -3,14 +3,14 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { login, signup } from '../store/actions/user.actions.js'
 import { AddImg } from './AddImg.jsx'
 
-export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
+export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup, setIsSignup }) {
     const [credentials, setCredentials] = useState({
         username: '',
         password: '',
         fullName: '',
         imgUrl: '',
     })
-    const [isSignup, setIsSignup] = useState(true)
+    
 
     const handleClose = () => {
         setIsLoginSignUpShow(false)

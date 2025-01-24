@@ -3,9 +3,10 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { useDeviceType } from "../customHooks/DeviceTypeContext.jsx"
 import outsideClick from "../customHooks/outsideClick.js"
-import { loadGigs } from "../store/actions/gig.actions.js";
+import { loadGigs } from "../store/actions/gig.actions.js"
 import { SearchBar } from "./SearchBar.jsx"
 import { NavBar } from "./NavBar.jsx"
+import { UserDropdownMenu } from "./UserDropdownMenu.jsx"
 import { AsideMenu } from "../cmps/AsideMenu.jsx"
 import SvgIcon from "./SvgIcon.jsx"
 import { category } from "../services/gig.service.js"
@@ -19,25 +20,26 @@ export function AppHeader() {
 
   const [searchQuery, setSearchQuery] = useState("")
   const [headerStage, setHeaderStage] = useState(0)
-  const [showUserDropdown, setShowUserDropdown] = useState(false)
+  const [showUserDropdownMenu, setShowUserDropdownMenu] = useState(false)
   const [showOrdersDropdown, setShowOrdersDropdown] = useState(false)
   const [showAsideMenu, setShowAsideMenu] = useState(false)
   const [notification, setNotification] = useState(false)
   const [headerPlaceholderText, setHeaderPlaceholderText] = useState("")
 
 
-  const userInfoRef = useRef(null)
+  const userRef = useRef(null)
   const ordersRef = useRef(null)
   const asideMenuRef = useRef(null)
   const dispatch = useDispatch()
 
 
-  outsideClick(userInfoRef, () => setShowUserDropdown(false))
+  outsideClick(userRef, () => setShowUserDropdownMenu(false))
   outsideClick(ordersRef, () => setShowOrdersDropdown(false))
   outsideClick(asideMenuRef, () => setShowAsideMenu(false))
 
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
-  console.log(loggedinUser);
+  const [isSignup, setIsSignup] = useState(true)
+  const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false)
 
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
@@ -53,9 +55,14 @@ export function AppHeader() {
   const isChatPage = location.pathname.startsWith("/chat/")
   const navigate = useNavigate()
 
-  const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false)
 
   const handleJoinClick = () => {
+    setIsSignup(true)
+    setIsLoginSignUpShow(true)
+  }
+
+  const handleLoginClick = () => {
+    setIsSignup(false)
     setIsLoginSignUpShow(true)
   }
 
@@ -223,15 +230,29 @@ export function AppHeader() {
                 <NavLink to="/orders">
                   <div className="sign-header-btn">Orders</div>
                 </NavLink>
-                <div className="user-circle">
-                  <img src={loggedinUser.imgUrl} alt="User avatar" />
+                <div className="user-container" ref={userRef}>
+                  <div
+                    className="user-circle"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setShowUserDropdownMenu((prev) => !prev)
+                    }}
+                  >
+                    <img src={loggedinUser.imgUrl} alt="User avatar" />
+                  </div>
+                  {showUserDropdownMenu && (
+                    <UserDropdownMenu
+                      loggedInUser={loggedinUser}
+                      onClose={() => setShowUserDropdownMenu(false)}
+                    />
+                  )}
                 </div>
               </>
             ) : (
               <>
                 <div className="signIn-btn" >
                   <button
-                    onClick={handleJoinClick}
+                    onClick={handleLoginClick}
                   >
                     Sign In
                   </button>
@@ -257,7 +278,13 @@ export function AppHeader() {
         setCatFilter={setCatFilter}
         style={navBarStyles}
       />
-      {isLoginSignUpShow && <LoginSignup isLoginSignUpShow={isLoginSignUpShow} setIsLoginSignUpShow={setIsLoginSignUpShow} />}
+      {isLoginSignUpShow && <LoginSignup
+        isLoginSignUpShow={isLoginSignUpShow}
+        setIsLoginSignUpShow={setIsLoginSignUpShow}
+        isSignup={isSignup}
+        setIsSignup={setIsSignup}
+
+      />}
     </header>
   )
 }

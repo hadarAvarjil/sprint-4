@@ -365,69 +365,77 @@
         }
       }
 
-      .user-info {
-        align-items: center;
-        width: 32px;
-        height: 32px;
-        margin: auto;
-        position: relative;
+      .user-container {
+        position: relative; // Ensures dropdown is positioned relative to this container
+        display: inline-block; // Keeps the container's width tight around its content
+      }
 
-        .user-dropdown {
-          position: absolute;
-          top: 151%;
-          right: 0;
-          background-color: $clrPrimary1;
-          border: 1px solid $clrSecondary2;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          z-index: 10;
-          width: max-content;
+        .user-circle {
+          width: 30px; 
+          height: 30px; 
+          border-radius: 50%; 
+          overflow: hidden; 
+          display: flex; 
+          justify-content: center;
+          align-items: center;
+          background-color: #f0f0f0; 
+          position: relative;
 
-          &::before {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 5px 17px 17px 17px;
-            border-color: transparent transparent $clrSecondary2 transparent;
+          .user-dropdown-menu {
             position: absolute;
-            top: -22px;
-            right: -1px;
-            z-index: -1;
-          }
-
-          &::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 4px 16px 16px 16px;
-            border-color: transparent transparent $clrPrimary1 transparent;
-            position: absolute;
-            top: -20px;
+            top: calc(100% + 10px); // Place below the avatar with a gap
             right: 0;
-            z-index: 0;
+            background-color: #ffffff; // Use white for the background
+            border: 1px solid #ddd; // Light border
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            border-radius: 8px; // Rounded corners
+            width: max-content;
+            min-width: 200px; // Consistent minimum width
+            display: flex;
+          
+            &::before {
+              content: '';
+              position: absolute;
+              top: -8px; // Position arrow above the dropdown
+              right: 16px; // Align arrow with dropdown
+              border-width: 0 8px 8px 8px; // Triangle shape
+              border-style: solid;
+              border-color: transparent transparent #ffffff transparent; // White arrow
+            }
+          
+            &::after {
+              content: '';
+              position: absolute;
+              top: -7px; // Slightly below the `::before` element
+              right: 17px; // Align slightly inside
+              border-width: 0 7px 7px 7px; // Triangle shape
+              border-style: solid;
+              border-color: transparent transparent #ddd transparent; // Border color
+            }
+          
+            a,
+            button {
+              display: block;
+              padding: 10px 15px;
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 400;
+              color: #333; // Dark text color
+              cursor: pointer;
+          
+              &:hover {
+                background-color: #f5f5f5; // Light gray hover effect
+              }
+            }
+          
+            button {
+              background: none;
+              border: none;
+              text-align: left;
+              border-top: 1px solid #ddd; // Divider between buttons
+            }
           }
-
-          a {
-            display: block;
-            padding: 10px 15px;
-            color: $clrSecondary5;
-            font-weight: 400;
-          }
-
-          button {
-            display: block;
-            padding: 12px 15px;
-            color: $clrSecondary6;
-            background: none;
-            font-family: 'macan-regular';
-            font-size: 16px;
-            font-weight: 400;
-            width: 100%;
-            border-top: 1.5px solid $clrSecondary2;
-            text-align: left;
-          }
-        }
 
         img {
           border-radius: 50%;
@@ -500,4 +508,129 @@
 .logo-search-bar-container {
   display: flex;
   flex: 3;
+}
+
+.app-header-explor,
+.container,
+.main-nav {
+  overflow: visible; // Allow dropdown to overflow
+}
+
+.user-container {
+  position: relative; // Positioning context for dropdown
+  display: inline-block;
+
+  .user-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    cursor: pointer;
+
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .user-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 10px); // Position below the avatar with spacing
+      right: 0;
+      background-color: #ffffff; // White background
+      border: 1px solid #ddd; // Light border
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Subtle shadow
+      z-index: 10; // Ensure it appears above other elements
+      border-radius: 8px; // Rounded corners
+      min-width: 200px; // Consistent dropdown width
+      padding: 10px 0; // Add vertical padding inside the dropdown
+      display: block; // Stack items vertically
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -8px; // Place arrow above the dropdown
+        right: 16px; // Align arrow with dropdown edge
+        border-width: 0 8px 8px 8px; // Triangle shape
+        border-style: solid;
+        border-color: transparent transparent #ffffff transparent; // White arrow
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -7px; // Slightly below `::before`
+        right: 17px; // Align inside
+        border-width: 0 7px 7px 7px; // Smaller triangle
+        border-style: solid;
+        border-color: transparent transparent #ddd transparent; // Border color
+      }
+
+      a,
+      button {
+        display: block; // Each item takes full width
+        padding: 10px 15px; // Add spacing for better usability
+        text-decoration: none; // Remove underline for links
+        color: #333; // Dark text color
+        font-size: 14px;
+        text-align: left; // Align text to the left
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f5f5f5; // Light gray hover effect
+        }
+      }
+
+      button {
+        background: none;
+        border: none;
+        width: 100%; // Match width with links
+        border-top: 1px solid #ddd; // Add a divider above the button
+      }
+    }
+  }
+}
+
+.main-nav,
+.main-nav-header,
+.user-container {
+  overflow: visible; // Ensure dropdown is not clipped
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px); // Below the avatar with spacing
+  right: 0; // Align to the right edge
+  background-color: #ffffff; // White background
+  border: 1px solid #ddd; // Light border
+  border-radius: 8px; // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow
+  z-index: 100; // Ensure it appears above other elements
+  width: max-content; // Fit to content
+  min-width: 200px; // Consistent dropdown width
+  padding: 10px 0; // Spacing inside the dropdown
+  display: block; // Stack items vertically
+}
+
+.user-dropdown-menu a,
+.user-dropdown-menu button {
+  display: block; // Full width for clickable area
+  padding: 10px 15px;
+  text-decoration: none; // Remove underline
+  color: #333; // Dark text
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5f5f5; // Light hover effect
+  }
+}
+
+.user-dropdown-menu button {
+  background: none;
+  border: none;
+  border-top: 1px solid #ddd; // Divider above the button
 }
