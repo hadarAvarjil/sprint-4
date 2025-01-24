@@ -63,7 +63,7 @@ import React, { useState } from "react";
            </div>
            </div>
          <div className="right-user-sign"> 
-           <h2>Sign In</h2>
+           <h2>Join Gigster</h2>
            <form
              onSubmit={(e) => {
                e.preventDefault(); // Prevents page reload
@@ -104,13 +104,15 @@ import React, { useState } from "react";
                />
              </div>
              <button type="submit">Submit</button>
-             <button
+             {/* <button
                type="button" // Ensure it's not treated as a submit button
                onClick={handleClose}
              >
                Close
-             </button>
+             </button> */}
            </form>
+           <p>By joining, you agree to the Gigster Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
+
          </div>
        </div>
      </>

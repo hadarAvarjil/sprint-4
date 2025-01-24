@@ -73,7 +73,7 @@ import React, { useState } from "react";
                <input
                  id="username"
                  type="text"
-                 style={{width:'100%', borderColor:'black'}}
+                 style={{width:'100%',}}
                  value={username}
                  onChange={(e) => setUsername(e.target.value)}
                  required
@@ -85,20 +85,20 @@ import React, { useState } from "react";
                <input
                  id="password"
                  type="password"
-                 style={{width:'100%', borderColor:'black'}}
+                 style={{width:'100%', }}
 
                  value={password}
                  onChange={(e) => setPassword(e.target.value)}
                  required
                />
              </div>
-             <button type="submit">Submit</button>
-             <button
+             <button type="submit">Continue</button>
+             {/* <button
                type="button" // Ensure it's not treated as a submit button
                onClick={handleClose}
              >
                Close
-             </button>
+             </button> */}
            </form>
            <p>By joining, you agree to the Gigster Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
          </div>
@@ -107,64 +107,3 @@ import React, { useState } from "react";
    );
  }
  
-
-
-
-
-
-
-
-// import React from "react";
-// import { AddImg } from './AddImg.jsx'
-
-
-
-// export function SignDiv({ onClose }) {
-//   return (
-//     <div className="modal-overlay" onClick={onClose}>
-//       <div className="sign-div" onClick={(e) => e.stopPropagation()}>
-//         <div className="left-purple-ad">
-//          <AddImg  picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736802265/standard.0638957_sespel.png'}/>
-
-//         </div>
-
-//         <div className="right-user-sign">
-//           <h3>Sign In</h3>
-//           <form>
-//             <label>
-//               Username:
-//               <input type="text" name="username" />
-//             </label>
-//             <label>
-//               Password:
-//               <input type="password" name="password" />
-//             </label>
-//             <button type="submit">Sign In</button>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// export function SignDiv(){
-//     return(
-//         <div className="sign-div">
-// <div style={{width:'200px', height:'350px'}} className="left-purple-ad">
-// <AddImg  picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1736802265/standard.0638957_sespel.png'}/>
-
-// </div>
-
-// <div className="right-user-sign"> user</div>
-
-//         </div>
-//     )
-// }
-
-
-// <div className="sign-div">
-// <h2>Sign In</h2>
-// <p>Welcome to the sign-in form!</p>
-// <button onClick={() => setIsSignDivVisible(false)}>Close</button>
-// </div>

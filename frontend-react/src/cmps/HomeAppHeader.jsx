@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { useNavigate } from "react-router"
-import { useSelector } from "react-redux"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
 import { NavBar } from "./NavBar"
@@ -10,15 +9,40 @@ import { JoinDiv } from "./JoinDiv"
 import SvgIcon from "./SvgIcon.jsx"
 import { setFilter } from "../store/actions/gig.actions.js"
 import { SearchBar } from "./SearchBar.jsx"
+import { category } from "../services/gig.service.js"
+import { useSelector, useDispatch } from "react-redux"
+import { AsideMenu } from "../cmps/AsideMenu.jsx"
+
+
+
+
 
 export function HomeAppHeader() {
   const [searchQuery, setSearchQuery] = useState("")
+  const [headerStage, setHeaderStage] = useState(0)
+  const [showUserDropdown, setShowUserDropdown] = useState(false)
+  const [showOrdersDropdown, setShowOrdersDropdown] = useState(false)
+  const [showAsideMenu, setShowAsideMenu] = useState(false)
+  const [notification, setNotification] = useState(false)
+  const [headerPlaceholderText, setHeaderPlaceholderText] = useState("")
   const user = useSelector((storeState) => storeState.userModule.user)
   const navigate = useNavigate()
 
   const [showMiniHeader, setShowMiniHeader] = useState(false)
   const [showCategories, setShowCategories] = useState(false)
+  const categories = category
 
+  const userInfoRef = useRef(null)
+  const ordersRef = useRef(null)
+  const asideMenuRef = useRef(null)
+  const dispatch = useDispatch()  
+
+    const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+    const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
+
+  function setCatFilter(category) {
+    dispatch(setFilter({ ...filterBy, cat: category }));
+  }
   async function onLogout() {
     try {
       await logout()
@@ -87,7 +111,43 @@ export function HomeAppHeader() {
     <>
       <header className="app-header-home full">
         <nav className="home-nav-bar">
-          <NavLink to="/">
+        <div
+            className={`dropdown flex ${notification ? "notification" : ""}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowAsideMenu(!showAsideMenu);
+              setNotification(false);
+            }}
+            ref={asideMenuRef}
+          >
+            <SvgIcon
+              iconName={
+                 "headerDropdownGray"
+              }
+            />
+            {showAsideMenu && (
+              <AsideMenu
+                loggedInUser={loggedinUser}
+                onClose={() => setShowAsideMenu(false)}
+              />
+            )}
+          </div>
+        <Link to="/" >
+              <h1  style={{
+                color: "#404145",
+                fontSize: "30px",
+                lineHeight: "24px",
+                fontWeight: "bold",
+                fontFamily: "$fiverr-defult-font",
+              }} className="logo flex row">
+                gigster
+                <span className=" dot-icon flex">
+                  <SvgIcon iconName={"greenDotIcon"} />
+                </span>
+              </h1>
+            </Link> 
+            {/* shinoi4 */}
+          {/* <NavLink to="/">
             <h1
               style={{
                 color: "#404145",
@@ -103,7 +163,7 @@ export function HomeAppHeader() {
                 <SvgIcon iconName={"greenDotIcon"} />
               </span>
             </h1>
-          </NavLink>
+          </NavLink> */}
 
           {showMiniHeader && (
             <div className="app-header-home-search-bar">
@@ -118,16 +178,16 @@ export function HomeAppHeader() {
 
           <div className="header-options">
             <NavLink to="/orders">
-              <div className="sign-header-btn">Orders</div>
+              <div className="sign-header-btn orders-btn">Orders</div>
             </NavLink>
-            <NavLink to="/profile">
-              <div className="sign-header-btn">my-profile</div>
-            </NavLink>
+            {/* <NavLink to="/profile"> */}
+              <div className="sign-header-btn profile-btn">profile</div>
+            {/* </NavLink> */}
             <NavLink to="gig">
-              <div className="sign-header-btn">Explore</div>
+              <div className="sign-header-btn explore-btn">Explore</div>
             </NavLink>
 
-            {isSignDivVisible && (
+            {isSignDivVisible && ( 
               <div className="modal-overlay" onClick={handleCloseSignDiv}>
                 <SignDiv />
               </div>
@@ -138,7 +198,7 @@ export function HomeAppHeader() {
               </div>
             )}
 
-            <div onClick={handleOpenSignDiv} className="sign-header-btn">
+            <div onClick={handleOpenSignDiv} className="sign-header-btn sign-btn">
               Sign in
             </div>
 
@@ -159,15 +219,19 @@ export function HomeAppHeader() {
         <div  className="header-inner-border"></div>
         {showCategories && (
           <NavBar
-            categories={[
-              "Graphics & Design",
-              "Programming & Tech",
-              "Digital Marketing",
-              "Video & Animation",
-              "Writing & Translation",
-              "Music & Audio",
-              "Business",
-            ]}
+          categories={categories}
+          setCatFilter={setCatFilter}
+
+
+            // categories={[
+            //   "Graphics & Design",
+            //   "Programming & Tech",
+            //   "Digital Marketing",
+            //   "Video & Animation",
+            //   "Writing & Translation",
+            //   "Music & Audio",
+            //   "Business",
+            // ]}
           />
         )}
       </header>

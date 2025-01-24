@@ -75,7 +75,7 @@ export function AsideMenu({ loggedInUser, onClose }) {
                 openSignup()
               }}
             >
-              Join
+              Join Gigster
             </button>
             <button
               className="login"
