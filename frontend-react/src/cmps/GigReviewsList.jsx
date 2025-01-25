@@ -20,7 +20,7 @@ export function GigReviewsList({ gig }) {
             const reviewsByUsers = await Promise.all(
                 gig.reviews.map(async (review) => {
                     try {
-                        const user = await userService.getById(review.userId);
+                        const user = await userService.getById(review.userId)
                         return {
                             ...review,
                             username: user.username,

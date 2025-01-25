@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { login, signup } from '../store/actions/user.actions.js'
 import { AddImg } from './AddImg.jsx'
+import { useNavigate } from 'react-router-dom';
 
 export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup, setIsSignup }) {
     const [credentials, setCredentials] = useState({
@@ -10,6 +11,7 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
         fullName: '',
         imgUrl: '',
     })
+    const navigate = useNavigate();
     
 
     const handleClose = () => {
@@ -37,6 +39,7 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
             await login(credentials)
             showSuccessMsg('Logged in successfully')
             handleClose()
+            navigate(`/gig`)
         } catch (error) {
             showErrorMsg('Oops, try again')
         }
@@ -51,6 +54,7 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
             await signup(credentials)
             showSuccessMsg('Signed up successfully')
             handleClose()
+            navigate(`/gig`)
         } catch (error) {
             showErrorMsg('Oops, try again')
         }

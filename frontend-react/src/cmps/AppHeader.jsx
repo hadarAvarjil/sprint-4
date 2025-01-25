@@ -6,7 +6,6 @@ import outsideClick from "../customHooks/outsideClick.js"
 import { loadGigs } from "../store/actions/gig.actions.js"
 import { SearchBar } from "./SearchBar.jsx"
 import { NavBar } from "./NavBar.jsx"
-import { UserDropdownMenu } from "./UserDropdownMenu.jsx"
 import { AsideMenu } from "../cmps/AsideMenu.jsx"
 import SvgIcon from "./SvgIcon.jsx"
 import { category } from "../services/gig.service.js"
@@ -14,6 +13,7 @@ import { setFilter } from "../store/actions/gig.actions.js"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
 import { LoginSignup } from "./LoginSignup.jsx"
+import { UserDropdownMenu } from "./UserDropdownMenu.jsx"
 
 
 export function AppHeader() {
@@ -28,14 +28,17 @@ export function AppHeader() {
 
 
   const userRef = useRef(null)
+  outsideClick(userRef, () => setShowUserDropdownMenu(false))
+
   const ordersRef = useRef(null)
+  outsideClick(ordersRef, () => setShowOrdersDropdown(false))
+
   const asideMenuRef = useRef(null)
+  outsideClick(asideMenuRef, () => setShowAsideMenu(false))
+  
   const dispatch = useDispatch()
 
 
-  outsideClick(userRef, () => setShowUserDropdownMenu(false))
-  outsideClick(ordersRef, () => setShowOrdersDropdown(false))
-  outsideClick(asideMenuRef, () => setShowAsideMenu(false))
 
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
   const [isSignup, setIsSignup] = useState(true)
@@ -201,9 +204,9 @@ export function AppHeader() {
             {/* <NavLink to="/orders">
               <div className="sign-header-btn">Orders</div>
             </NavLink> */}
-            <NavLink to="/profile">
+            {/* <NavLink to="/profile">
               <div className="sign-header-btn">my-profile</div>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>

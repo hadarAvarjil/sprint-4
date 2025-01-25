@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { useNavigate } from "react-router"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
-import { logout } from "../store/actions/user.actions"
 import { NavBar } from "./NavBar"
 import { SignDiv } from "./SignDiv"
 import { JoinDiv } from "./JoinDiv"
@@ -12,12 +11,17 @@ import { SearchBar } from "./SearchBar.jsx"
 import { category } from "../services/gig.service.js"
 import { useSelector, useDispatch } from "react-redux"
 import { AsideMenu } from "../cmps/AsideMenu.jsx"
+import { logout } from "../store/actions/user.actions"
+import { LoginSignup } from "./LoginSignup.jsx"
+import { UserDropdownMenu } from "./UserDropdownMenu.jsx"
+import outsideClick from "../customHooks/outsideClick.js"
 
 
 
 
 
 export function HomeAppHeader() {
+
   const [searchQuery, setSearchQuery] = useState("")
   const [headerStage, setHeaderStage] = useState(0)
   const [showUserDropdown, setShowUserDropdown] = useState(false)
@@ -28,17 +32,27 @@ export function HomeAppHeader() {
   const user = useSelector((storeState) => storeState.userModule.user)
   const navigate = useNavigate()
 
+
   const [showMiniHeader, setShowMiniHeader] = useState(false)
   const [showCategories, setShowCategories] = useState(false)
+  const [showUserDropdownMenu, setShowUserDropdownMenu] = useState(false)
+
+  const [isSignup, setIsSignup] = useState(true)
+  const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false)
+
   const categories = category
 
   const userInfoRef = useRef(null)
   const ordersRef = useRef(null)
   const asideMenuRef = useRef(null)
-  const dispatch = useDispatch()  
+  const dispatch = useDispatch()
 
-    const loggedinUser = useSelector((storeState) => storeState.userModule.user)
-    const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
+  const userRef = useRef(null)
+  outsideClick(userRef, () => setShowUserDropdownMenu(false))
+
+
+  const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
   function setCatFilter(category) {
     dispatch(setFilter({ ...filterBy, cat: category }));
@@ -57,7 +71,7 @@ export function HomeAppHeader() {
     const handleScroll = () => {
       const greenDiv = document.querySelector(".green-search-div")
       const greenDivOffset = greenDiv?.offsetTop || 0
-      const scrollPosition = window.scrollY-200
+      const scrollPosition = window.scrollY - 200
 
       setShowMiniHeader(scrollPosition > greenDivOffset)
 
@@ -107,11 +121,21 @@ export function HomeAppHeader() {
     setSearchQuery("")
   }
 
+  const handleJoinClick = () => {
+    setIsSignup(true)
+    setIsLoginSignUpShow(true)
+  }
+
+  const handleLoginClick = () => {
+    setIsSignup(false)
+    setIsLoginSignUpShow(true)
+  }
+
   return (
     <>
       <header className="app-header-home full">
         <nav className="home-nav-bar">
-        <div
+          <div
             className={`dropdown flex ${notification ? "notification" : ""}`}
             onClick={(e) => {
               e.stopPropagation();
@@ -122,7 +146,7 @@ export function HomeAppHeader() {
           >
             <SvgIcon
               iconName={
-                 "headerDropdownGray"
+                "headerDropdownGray"
               }
             />
             {showAsideMenu && (
@@ -132,21 +156,21 @@ export function HomeAppHeader() {
               />
             )}
           </div>
-        <Link to="/" >
-              <h1  style={{
-                color: "#404145",
-                fontSize: "30px",
-                lineHeight: "24px",
-                fontWeight: "bold",
-                fontFamily: "$fiverr-defult-font",
-              }} className="logo flex row">
-                gigster
-                <span className=" dot-icon flex">
-                  <SvgIcon iconName={"greenDotIcon"} />
-                </span>
-              </h1>
-            </Link> 
-            {/* shinoi4 */}
+          <Link to="/" >
+            <h1 style={{
+              color: "#404145",
+              fontSize: "30px",
+              lineHeight: "24px",
+              fontWeight: "bold",
+              fontFamily: "$fiverr-defult-font",
+            }} className="logo flex row">
+              gigster
+              <span className=" dot-icon flex">
+                <SvgIcon iconName={"greenDotIcon"} />
+              </span>
+            </h1>
+          </Link>
+          {/* shinoi4 */}
           {/* <NavLink to="/">
             <h1
               style={{
@@ -177,17 +201,53 @@ export function HomeAppHeader() {
           )}
 
           <div className="header-options">
-            <NavLink to="/orders">
-              <div className="sign-header-btn orders-btn">Orders</div>
-            </NavLink>
-            {/* <NavLink to="/profile"> */}
-              <div className="sign-header-btn profile-btn">profile</div>
-            {/* </NavLink> */}
             <NavLink to="gig">
               <div className="sign-header-btn explore-btn">Explore</div>
             </NavLink>
+            {loggedinUser ? (
+              <>
+                <NavLink to="/orders">
+                  <div className="sign-header-btn">Orders</div>
+                </NavLink>
+                <div className="user-container" ref={userRef}>
+                  <div
+                    className="user-circle"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setShowUserDropdownMenu((prev) => !prev)
+                    }}
+                  >
+                    <img src={loggedinUser.imgUrl} alt="User avatar" />
+                  </div>
+                  {showUserDropdownMenu && (
+                    <UserDropdownMenu
+                      loggedInUser={loggedinUser}
+                      onClose={() => setShowUserDropdownMenu(false)}
+                    />
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="signIn-btn" >
+                  <button
+                    onClick={handleLoginClick}
+                  >
+                    Sign In
+                  </button>
+                </div>
 
-            {isSignDivVisible && ( 
+                <div className="join-btn" >
+                  <button
+                    onClick={handleJoinClick}
+                  >
+                    Join
+                  </button>
+                </div>
+              </>
+            )}
+
+            {/* {isSignDivVisible && ( 
               <div className="modal-overlay" onClick={handleCloseSignDiv}>
                 <SignDiv />
               </div>
@@ -204,36 +264,36 @@ export function HomeAppHeader() {
 
             <div onClick={handleOpenJoinDiv} className="join-btn">
               Join
-            </div>
+            </div> */}
 
-            {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
           </div>
-          {user && (
-            <div className="user-info">
-              <Link to={`user/${user._id}`}>{user.fullname}</Link>
-              <button onClick={onLogout}>logout</button>
-            </div>
-          )}
         </nav>
         {/* shinoi4 */}
-        <div  className="header-inner-border"></div>
+        <div className="header-inner-border"></div>
         {showCategories && (
           <NavBar
-          categories={categories}
-          setCatFilter={setCatFilter}
+            categories={categories}
+            setCatFilter={setCatFilter}
 
 
-            // categories={[
-            //   "Graphics & Design",
-            //   "Programming & Tech",
-            //   "Digital Marketing",
-            //   "Video & Animation",
-            //   "Writing & Translation",
-            //   "Music & Audio",
-            //   "Business",
-            // ]}
+          // categories={[
+          //   "Graphics & Design",
+          //   "Programming & Tech",
+          //   "Digital Marketing",
+          //   "Video & Animation",
+          //   "Writing & Translation",
+          //   "Music & Audio",
+          //   "Business",
+          // ]}
           />
         )}
+        {isLoginSignUpShow && <LoginSignup
+          isLoginSignUpShow={isLoginSignUpShow}
+          setIsLoginSignUpShow={setIsLoginSignUpShow}
+          isSignup={isSignup}
+          setIsSignup={setIsSignup}
+
+        />}
       </header>
     </>
   )
