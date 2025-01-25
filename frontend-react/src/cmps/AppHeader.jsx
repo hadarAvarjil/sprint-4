@@ -91,7 +91,7 @@ export function AppHeader() {
     }
   }, [isHomePage, deviceType]);
 
-  function handleSearchChange(e) {
+  function handleSearchChange(e) { 
     const newSearchQuery = e.target.value;
     setSearchQuery(newSearchQuery);
   }
