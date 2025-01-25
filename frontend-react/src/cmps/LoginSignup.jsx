@@ -132,6 +132,8 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
                         <button className="form-submit-btn" type="submit">Submit</button>
                         {/* <button type="button" onClick={handleClose}>Close</button> */}
                     </form>
+                    <p>By joining, you agree to the Gigster Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
+
                 </div>
             </div>
         </section>
