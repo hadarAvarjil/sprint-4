@@ -471,8 +471,8 @@
 }
 
 .join-btn {
-  width: 62.5px;
-  height: 35.6px;
+  width: 62px;
+  height: 36px;
   color: $green-fiverr;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -493,11 +493,23 @@
   transition-duration: 0.2s;
   display: flex;
   justify-content: center;
+  button{
+    color:  #19a463;
+font-size: 14px;
+line-height: 14px;
+font-weight: 700;
+    background-color: white;
+  }
 }
 
 .join-btn:hover {
   color: white;
   background-color: #19a463;
+  button{
+    color: white;
+    background-color: #19a463;
+
+  }
 }
 
 .main-nav-header {
