@@ -1,4 +1,5 @@
 import { httpService } from '../http.service'
+const BASE_URL = 'review/'
 
 export const reviewService = {
 	add,
@@ -8,8 +9,8 @@ export const reviewService = {
 	save
 }
 
-async function getById(orderId) {
-    const order = await httpService.get(BASE_URL + orderId)
+async function getById(reviewId) {
+    const order = await httpService.get(BASE_URL + reviewId)
     return order
 }
 
