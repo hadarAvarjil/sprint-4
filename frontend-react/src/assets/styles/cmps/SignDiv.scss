@@ -220,3 +220,29 @@ letter-spacing:normal;
 //     width: 50%;
 //   }
   
+
+
+//shinoi6
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 0px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 875px;
+  max-width: 90%;
+  text-align: center;
+}
