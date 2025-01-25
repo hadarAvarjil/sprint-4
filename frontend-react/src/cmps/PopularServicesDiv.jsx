@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { AddImg } from './AddImg.jsx' 
+import { setFilter } from "../store/actions/gig.actions.js";
 
 
 export function PopularServices() {
+   function setCatFilter() {
+      dispatch(setFilter({ cat: category }));
+    }
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 6; // Number of items visible at a time
   const totalItems = 12; // Total number of divs
@@ -37,74 +41,75 @@ export function PopularServices() {
             }}
           >
             {/* Divs */}
-            <div className="popular-div light-green-div first-pop-div">
-              <h3>Website Development</h3>
+            <div onClick={() => setCatFilter('Programming & Tech')} to={`/gig`} 
+             className="popular-div light-green-div first-pop-div">
+              <h3 className="pop-div-title">Website Development</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551937/website-development_gig20i.webp" />
               </div>
             </div>
-            <div className="popular-div orange-div">
-              <h3>Logo Design</h3>
+            <div onClick={() => setCatFilter('Graphics & Design')} to={`/gig`} className="popular-div orange-div">
+              <h3 className="pop-div-title">Logo Design</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551938/logo-design_xgy1r3.webp" />
               </div>
             </div>
-            <div className="popular-div dark-green-div">
-              <h3>SEO</h3>
+            <div onClick={() => setCatFilter('AI Services')} to={`/gig`} className="popular-div dark-green-div"> 
+              <h3 className="pop-div-title">SEO</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551932/seo_dsq2bi.webp" />
               </div>
             </div>
-            <div className="popular-div purple-div">
-              <h3>Architecture & Interior Design</h3>
+            <div onClick={() => setCatFilter('Graphics & Design')} to={`/gig`} className="popular-div purple-div">
+              <h3 className="pop-div-title">Architecture & Interior Design</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551927/architecture-design_jrrbas.webp" />
               </div>
             </div>
-            <div className="popular-div green-shrek-div">
-              <h3>Social Media Marketing</h3>
+            <div onClick={() => setCatFilter('Digital Marketing')} to={`/gig`} className="popular-div green-shrek-div">
+              <h3 className="pop-div-title">Social Media Marketing</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551929/social-media-marketing_iqwnam.webp" />
               </div>
             </div>
-            <div className="popular-div brown-div">
-              <h3>Voice Over</h3>
+            <div onClick={() => setCatFilter('Music & Audio')} to={`/gig`} className="popular-div brown-div">
+              <h3 className="pop-div-title">Voice Over</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551933/voice-over_uhjbg2.webp" />
               </div>
             </div>
-            <div className="popular-div pink-div">
-              <h3>UGC Videos</h3>
+            <div onClick={() => setCatFilter('Digital Marketing')} to={`/gig`} className="popular-div pink-div">
+              <h3 className="pop-div-title">UGC Videos</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/UGC_Video_img_zhwx4i.webp" />
               </div>
             </div>
-            <div className="popular-div green-swamp-div">
-              <h3>Software Development</h3>
+            <div onClick={() => setCatFilter('Programming & Tech')} to={`/gig`} className="popular-div green-swamp-div">
+              <h3 className="pop-div-title">Software Development</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551928/software-development_y9qxvb.webp" />
               </div>
             </div>
-            <div className="popular-div light-brown-div">
-              <h3>Data Science & ML</h3>
+            <div onClick={() => setCatFilter('Data')} to={`/gig`} className="popular-div light-brown-div">
+              <h3 className="pop-div-title">Data Science & ML</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551930/data-science_nhnvos.webp" />
               </div>
             </div>
-            <div className="popular-div green-shrek-div">
-              <h3>Product Photography</h3>
+            <div onClick={() => setCatFilter('Photography')} to={`/gig`} className="popular-div green-shrek-div">
+              <h3 className="pop-div-title">Product Photography</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551931/product-photography_qofjrg.webp" />
               </div>
             </div>
-            <div className="popular-div light-green-div">
-              <h3>E-Commerce Marketing</h3>
+            <div onClick={() => setCatFilter('Digital Marketing')} to={`/gig`} className="popular-div light-green-div">
+              <h3 className="pop-div-title">E-Commerce Marketing</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551934/e-commerce_ozwc08.webp" />
               </div>
             </div>
-            <div className="popular-div pink-div">
-              <h3>Video Editing</h3>
+            <div onClick={() => setCatFilter('Video & Animation')} to={`/gig`} className="popular-div pink-div">
+              <h3 className="pop-div-title">Video Editing</h3>
               <div className="pop-inner-pic">
                 <img src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736551935/video-editing_xcfy43.webp" />
               </div>

@@ -1,43 +1,48 @@
 import { useEffect, useState, useRef } from "react"
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import { useModal } from "../customHooks/ModalContext.jsx"
 import { useDeviceType } from "../customHooks/DeviceTypeContext.jsx"
 import outsideClick from "../customHooks/outsideClick.js"
-import { loadGigs } from "../store/actions/gig.actions.js";
+import { loadGigs } from "../store/actions/gig.actions.js"
 import { SearchBar } from "./SearchBar.jsx"
 import { NavBar } from "./NavBar.jsx"
+import { UserDropdownMenu } from "./UserDropdownMenu.jsx"
 import { AsideMenu } from "../cmps/AsideMenu.jsx"
 import SvgIcon from "./SvgIcon.jsx"
 import { category } from "../services/gig.service.js"
 import { setFilter } from "../store/actions/gig.actions.js"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
+import { LoginSignup } from "./LoginSignup.jsx"
+
 
 export function AppHeader() {
+
   const [searchQuery, setSearchQuery] = useState("")
   const [headerStage, setHeaderStage] = useState(0)
-  const [showUserDropdown, setShowUserDropdown] = useState(false)
+  const [showUserDropdownMenu, setShowUserDropdownMenu] = useState(false)
   const [showOrdersDropdown, setShowOrdersDropdown] = useState(false)
   const [showAsideMenu, setShowAsideMenu] = useState(false)
   const [notification, setNotification] = useState(false)
   const [headerPlaceholderText, setHeaderPlaceholderText] = useState("")
 
 
-  const userInfoRef = useRef(null)
+  const userRef = useRef(null)
   const ordersRef = useRef(null)
   const asideMenuRef = useRef(null)
   const dispatch = useDispatch()
 
 
-  outsideClick(userInfoRef, () => setShowUserDropdown(false))
+  outsideClick(userRef, () => setShowUserDropdownMenu(false))
   outsideClick(ordersRef, () => setShowOrdersDropdown(false))
   outsideClick(asideMenuRef, () => setShowAsideMenu(false))
 
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+  const [isSignup, setIsSignup] = useState(true)
+  const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false)
+
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
-  const { openLogin, openSignup } = useModal()
   const deviceType = useDeviceType()
 
 
@@ -51,20 +56,30 @@ export function AppHeader() {
   const navigate = useNavigate()
 
 
+  const handleJoinClick = () => {
+    setIsSignup(true)
+    setIsLoginSignUpShow(true)
+  }
+
+  const handleLoginClick = () => {
+    setIsSignup(false)
+    setIsLoginSignUpShow(true)
+  }
+
   const logoColor = headerStage === 0 ? "#fff" : "#404145"
   const headerStyles = {
     backgroundColor: headerStage >= 1 ? "#fff" : "transparent",
     color: isHomePage && headerStage === 0 ? "#fff" : "#62646a",
-  };
+  }
   const navBarStyles = {
     borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
     borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
     display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
-  };
+  }
   const joinButtonStyles = {
     color: headerStage === 0 && isHomePage ? "#fff" : "#1dbf73",
     borderColor: headerStage === 0 && isHomePage ? "#fff" : "#1dbf73",
-  };
+  }
 
 
   useEffect(() => {
@@ -140,7 +155,7 @@ export function AppHeader() {
     // style={headerStyles}
     >
       <nav className="main-nav">
-        <div className="container flex row">
+        <div className="main-nav-header container flex row">
           <div
             className={`dropdown flex ${notification ? "notification" : ""}`}
             onClick={(e) => {
@@ -162,28 +177,30 @@ export function AppHeader() {
               />
             )}
           </div>
-          <Link to="/" style={{ color: headerStyles.color }}>
-            <h1 style={{ color: logoColor }} className="flex row">
-              gigster
-              <span className="flex">
-                <SvgIcon iconName={"greenDotIcon"} />
-              </span>
-            </h1>
-          </Link>
-          <SearchBar
-            placeholder={headerPlaceholderText}
-            searchQuery={searchQuery}
-            onSearchChange={handleSearchChange}
-            onSearchSubmit={handleSearchSubmit}
-            visibility={headerStage >= 1 ? "visible" : "hidden"}
-          />
+          <div className="logo-search-bar-container flex row">
+            <Link to="/" style={{ color: headerStyles.color }}>
+              <h1 style={{ color: logoColor }} className="logo flex row">
+                gigster
+                <span className=" dot-icon flex">
+                  <SvgIcon iconName={"greenDotIcon"} />
+                </span>
+              </h1>
+            </Link>
+            <SearchBar
+              placeholder={headerPlaceholderText}
+              searchQuery={searchQuery}
+              onSearchChange={handleSearchChange}
+              onSearchSubmit={handleSearchSubmit}
+              visibility={headerStage >= 1 ? "visible" : "hidden"}
+            />
+          </div>
           <div className="header-options">
             {/* <NavLink to="/become-seller">
               <div className="sign-header-btn">Become a Seller</div>
             </NavLink> */}
-            <NavLink to="/orders">
+            {/* <NavLink to="/orders">
               <div className="sign-header-btn">Orders</div>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/profile">
               <div className="sign-header-btn">my-profile</div>
             </NavLink>
@@ -208,16 +225,52 @@ export function AppHeader() {
               )}
 
             </div> */}
-            <NavLink to="gig">
-              <div className="sign-header-btn">Sign in</div>
-            </NavLink>
-            <NavLink to="gig">
-              <div className="join-btn">Join</div>
-            </NavLink>
+            {loggedinUser ? (
+              <>
+                <NavLink to="/orders">
+                  <div className="sign-header-btn">Orders</div>
+                </NavLink>
+                <div className="user-container" ref={userRef}>
+                  <div
+                    className="user-circle"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setShowUserDropdownMenu((prev) => !prev)
+                    }}
+                  >
+                    <img src={loggedinUser.imgUrl} alt="User avatar" />
+                  </div>
+                  {showUserDropdownMenu && (
+                    <UserDropdownMenu
+                      loggedInUser={loggedinUser}
+                      onClose={() => setShowUserDropdownMenu(false)}
+                    />
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="signIn-btn" >
+                  <button
+                    onClick={handleLoginClick}
+                  >
+                    Sign In
+                  </button>
+                </div>
 
+                <div className="join-btn" >
+                  <button
+                    onClick={handleJoinClick}
+                  >
+                    Join
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </nav>
+
       <NavBar
         categories={categories}
         display={headerStage === 2 ? "flex" : "none"}
@@ -225,6 +278,13 @@ export function AppHeader() {
         setCatFilter={setCatFilter}
         style={navBarStyles}
       />
+      {isLoginSignUpShow && <LoginSignup
+        isLoginSignUpShow={isLoginSignUpShow}
+        setIsLoginSignUpShow={setIsLoginSignUpShow}
+        isSignup={isSignup}
+        setIsSignup={setIsSignup}
+
+      />}
     </header>
-  );
+  )
 }

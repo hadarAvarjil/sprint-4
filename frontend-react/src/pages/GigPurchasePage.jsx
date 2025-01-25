@@ -46,7 +46,7 @@ export function GigPurchasePage() {
 
     const serviceFee = 30.62
     const vat = 105.63
-    const total = gig ? packages[Selectedpackage].price + serviceFee + vat : 0
+    const total = gig ? packages[Selectedpackage].price + serviceFee + vat + gig.price : 0
 
     async function createOrder(total) {
 
@@ -68,7 +68,7 @@ export function GigPurchasePage() {
     }
 
     return (
-        <section className="gig-purchase main flex ">
+        <section className="gig-purchase main grid ">
             <PurchaseMain
                 initPurchaseState={initPurchaseState}
                 setFormPaymentData={setFormPaymentData}

@@ -88,7 +88,7 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
       <div className="gig-category-title">
         <h1>{filterBy.cat || 'Discover Our Services'}</h1>
       </div>
-      <main className={`gig-filter ${isSticky ? 'shadow' : ''}`}>
+      <main className={`gig-filter ${isSticky ? 'shadow' : ''}`}> 
         <section className="floating-top-bar layout-row flex">
           <div className="filter-nav">
             {checkFilter() && (

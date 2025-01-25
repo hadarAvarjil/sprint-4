@@ -71,7 +71,16 @@ export function UserPreviewGigDetails({ owner, gig }) {
                                 {"☆".repeat(5 - Math.floor(user.rating))}
                             </span>
                             <span className="rating-score">{user.rating.toFixed(1)}</span>
-                            <span className="reviews-count">
+                            <span
+                                className="reviews-count"
+                                onClick={() => {
+                                    const reviewsSection = document.getElementById('reviews-section');
+                                    if (reviewsSection) {
+                                        reviewsSection.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 ({gig.reviews.length} {reviewsText})
                             </span>
                         </div>

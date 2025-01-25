@@ -81,11 +81,11 @@
 
         .radio-item.selected {
           .radio-btn {
-            border: 2px solid $clrPrimary2;
+            border: 2px solid black;
           }
 
           .radio-btn::after {
-            background: $clrPrimary2;
+            background: black;
           }
         }
       }

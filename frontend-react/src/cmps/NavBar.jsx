@@ -33,7 +33,7 @@ export function NavBar({ categories, display, headerStage, setCatFilter, style }
     }, [headerStage])
 
     return (
-        <nav className="category-nav" style={style}>
+        <nav className=" full category-nav" style={style}>
             {!isAtStart && (
                 <div className="carousel-btn left-side" onClick={() => scrollCarousel('left')}>
                     <SvgIcon iconName='leftArrow' />

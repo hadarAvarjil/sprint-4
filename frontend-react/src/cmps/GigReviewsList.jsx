@@ -46,7 +46,7 @@ export function GigReviewsList({ gig }) {
     }
 
     return (
-        <section className="gig-reviews">
+        <section className="gig-reviews" id="reviews-section">
             <h3>Reviews</h3>
             {gigReviews.length !== 0 && (
                 <ul className="reviews">

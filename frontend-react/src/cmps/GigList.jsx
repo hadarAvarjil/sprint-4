@@ -12,8 +12,10 @@ export function GigList({ gigs }) {
     }, 500)
     return () => clearTimeout(timeout)
   }, [])
-
-  return (
+ 
+  return (  
+    // shinoi4
+    <div className="grid-gig-list-container" >
     <div className="gig-list-container">
      
      <div className="results-count">
@@ -25,6 +27,7 @@ export function GigList({ gigs }) {
         ))}
         
       </ul>
+    </div>
     </div>
   )
 }
