@@ -98,13 +98,17 @@ color: #74767e;
   .right-user-sign form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap:8px
   }
   
   .right-user-sign form label {
     display: flex;
     flex-direction: column;
-    // font-size: 14px;
+    font-size:16px;
+    line-height: 24px;
+    color: #404145;
+    font-family: $fiverr-defult-font;
+    font-weight: 600;
   }
   
   .right-user-sign form button {
@@ -123,9 +127,13 @@ color: #74767e;
   }
   
   .right-user-sign form button:hover {
-    background-color: #45a049;
-  }
+    background-color: #404145;
+    color: white;}
+.form-submit-bt:hover{
+  background-color: #404145;
+  color: white;
 
+}
   .left-purple-ad .content {
     font-family: $fiverr-defult-font;
     position: absolute;
@@ -181,6 +189,17 @@ letter-spacing:normal;
     max-height: 50%; /* Ensure the image doesn't take too much space */
     object-fit: contain; /* Preserve aspect ratio */
     margin-top: auto; /* Push the image to the bottom if space allows */
+  }
+
+  .toggle-sign-join-span{
+margin-left: 1em;
+text-decoration: underline;
+font-size: 16px;
+line-height: 24px;
+font-weight: 400
+  }
+  .toggle-sign-join-span:hover{
+    cursor: pointer
   }
 
 

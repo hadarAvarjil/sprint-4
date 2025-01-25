@@ -471,6 +471,8 @@
 }
 
 .join-btn {
+  button{
+
   width: 62px;
   height: 36px;
   color: $green-fiverr;
@@ -493,7 +495,6 @@
   transition-duration: 0.2s;
   display: flex;
   justify-content: center;
-  button{
     color:  #19a463;
 font-size: 14px;
 line-height: 14px;
@@ -503,6 +504,8 @@ font-weight: 700;
 }
 
 .join-btn:hover {
+  border-radius: 4px;
+cursor: pointer;
   background-color: #19a463;
   button{
     background-color: #19a463;
