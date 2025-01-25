@@ -62,7 +62,7 @@ export function AppHeader() {
     }
   }; // shinoi6
 
-  const logoColor = headerStage === 0 ? "#fff" : "#404145";
+  const logoColor = headerStage === 0 ? "#fff" : "$fiverr-classic-dark-grey";
   const headerStyles = {
     backgroundColor: headerStage >= 1 ? "#fff" : "transparent",
     color: isHomePage && headerStage === 0 ? "#fff" : "#62646a",
@@ -313,7 +313,7 @@ export function AppHeader() {
 //     setIsLoginSignUpShow(true)
 //   }
 
-//   const logoColor = headerStage === 0 ? "#fff" : "#404145"
+//   const logoColor = headerStage === 0 ? "#fff" : "$fiverr-classic-dark-grey"
 //   const headerStyles = {
 //     backgroundColor: headerStage >= 1 ? "#fff" : "transparent",
 //     color: isHomePage && headerStage === 0 ? "#fff" : "#62646a",

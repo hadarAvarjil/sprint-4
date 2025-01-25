@@ -134,7 +134,7 @@ export function HomeAppHeader() {
           <Link to="/">
             <h1
               style={{
-                color: "#404145",
+                color: "$fiverr-classic-dark-grey",
                 fontSize: "30px",
                 lineHeight: "24px",
                 fontWeight: "bold",
@@ -398,7 +398,7 @@ export function HomeAppHeader() {
 //           </div>
 //           <Link to="/" >
 //             <h1 style={{
-//               color: "#404145",
+//               color: "$fiverr-classic-dark-grey",
 //               fontSize: "30px",
 //               lineHeight: "24px",
 //               fontWeight: "bold",
@@ -414,7 +414,7 @@ export function HomeAppHeader() {
 //           {/* <NavLink to="/">
 //             <h1
 //               style={{
-//                 color: "#404145",
+//                 color: "$fiverr-classic-dark-grey",
 //                 fontSize: "30px",
 //                 lineHeight: "24px",
 //                 fontWeight: "bold",

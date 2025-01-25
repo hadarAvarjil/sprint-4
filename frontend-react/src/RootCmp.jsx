@@ -24,6 +24,7 @@ import { UserMsg } from './cmps/UserMsg.jsx'
 // import { Signup } from './pages/Signup.jsx'
 import { AllOrders } from './pages/AllOrders.jsx';
 import { ProfilePage } from './pages/ProfilePage.jsx';
+import {TermsPage} from './pages/TermsPage.jsx';
 
  
 export function RootCmp() {
@@ -57,6 +58,8 @@ export function RootCmp() {
                     <Route path="admin" element={<AdminIndex />} />
                     <Route path="orders" element={<AllOrders />} />
                     <Route path="profile" element={<ProfilePage />} />
+                    <Route path="terms"element={<TermsPage/>} />
+                    
                     {/* <Route path="login" element={<LoginSignup />}>
                         <Route index element={<Login />} />
                         <Route path="signup" element={<Signup />} />
