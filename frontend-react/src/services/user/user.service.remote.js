@@ -1,6 +1,7 @@
 import { httpService } from '../http.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
+const BASE_URL = 'user/'
 
 export const userService = {
 	login,
@@ -19,7 +20,7 @@ function getUsers() {
 }
 
 async function getById(userId) {
-	const user = await httpService.get(`user/${userId}`)
+	const user = await httpService.get(BASE_URL + userId)
 	return user
 }
 

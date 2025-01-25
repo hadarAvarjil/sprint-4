@@ -21,7 +21,6 @@ export function GigReviewsList({ gig }) {
                 gig.reviews.map(async (review) => {
                     try {
                         const user = await userService.getById(review.userId)
-                        console.log('gigREview,',user)
                         return {
                             ...review,
                             username: user.username,

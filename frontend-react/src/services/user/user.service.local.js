@@ -3,6 +3,9 @@ import { utilService } from '../util.service.js'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 const BASE_URL = 'user'
+const STORAGE_KEY = 'user'
+_createUsers()
+
 
 export const userService = {
   login,
