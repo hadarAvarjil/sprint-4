@@ -32,8 +32,13 @@ async function query(filterBy = {}) {
 }
 
 async function getById(gigId) {
-  const gig = await httpService.get(BASE_URL + gigId)
-  return gig
+  try {
+    const gig = await httpService.get(`gig/${gigId}`)
+    return gig
+  } catch (err) {
+    console.error(`Failed to fetch gig with ID ${gigId}:`, err)
+    throw err
+  }
 }
 
 function remove(gigId) {
