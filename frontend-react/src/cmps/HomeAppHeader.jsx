@@ -49,6 +49,7 @@ export function HomeAppHeader() {
   function setCatFilter(category) {
     dispatch(setFilter({ ...filterBy, cat: category }));
   }
+
   async function onLogout() {
     try {
       await logout();
@@ -206,28 +207,27 @@ export function HomeAppHeader() {
       </header>
 
       {/* Modal logic */}
-      {isSignDivVisible &&
+      {(isSignDivVisible || isJoinDivVisible) &&
         ReactDOM.createPortal(
-          <div className="modal-overlay" onClick={handleCloseModal}> {/* shinoi6 */}
+          <div
+            className="modal-overlay"
+            onClick={handleCloseModal} // shinoi6
+          >
             <div className="modal-content">
-              <LoginSignup
-                isLoginSignUpShow={isSignDivVisible}
-                setIsLoginSignUpShow={setIsSignDivVisible}
-                isSignup={false} // Login mode
-              />
-            </div>
-          </div>,
-          document.body
-        )}
-      {isJoinDivVisible &&
-        ReactDOM.createPortal(
-          <div className="modal-overlay" onClick={handleCloseModal}> {/* shinoi6 */}
-            <div className="modal-content">
-              <LoginSignup
-                isLoginSignUpShow={isJoinDivVisible}
-                setIsLoginSignUpShow={setIsJoinDivVisible}
-                isSignup={true} // Signup mode
-              />
+              {isSignDivVisible && (
+                <LoginSignup
+                  isLoginSignUpShow={isSignDivVisible}
+                  setIsLoginSignUpShow={setIsSignDivVisible}
+                  isSignup={false} // Login mode
+                />
+              )}
+              {isJoinDivVisible && (
+                <LoginSignup
+                  isLoginSignUpShow={isJoinDivVisible}
+                  setIsLoginSignUpShow={setIsJoinDivVisible}
+                  isSignup={true} // Signup mode
+                />
+              )}
             </div>
           </div>,
           document.body
