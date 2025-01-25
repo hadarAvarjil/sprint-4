@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import { userService } from '../services/user'
+import { userService } from '../services/user.service.js'
 import { reviewService } from '../services/review'
 
 import { GigReview } from "../cmps/GigReview.jsx"
@@ -20,7 +20,8 @@ export function GigReviewsList({ gig }) {
             const reviewsByUsers = await Promise.all(
                 gig.reviews.map(async (review) => {
                     try {
-                        const user = await userService.getById(review.userId);
+                        const user = await userService.getById(review.userId)
+                        console.log('gigREview,',user)
                         return {
                             ...review,
                             username: user.username,

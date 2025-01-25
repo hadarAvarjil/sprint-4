@@ -10,6 +10,7 @@ export async function getUsers(req, res) {
         const sortBy = { [sort.by || 'name']: sortDirection }
 
         const users = await userService.query(filterBy, sortBy)
+        console.log('users from backend ', users)
         res.json(users)
     }
     catch (err) {

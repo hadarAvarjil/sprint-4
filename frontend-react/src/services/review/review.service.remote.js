@@ -1,4 +1,5 @@
 import { httpService } from '../http.service'
+const BASE_URL = 'review/'
 
 export const reviewService = {
 	add,
