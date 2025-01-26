@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { login, signup } from '../store/actions/user.actions.js'
 import { AddImg } from './AddImg.jsx'
+import { NavLink } from 'react-router-dom'
 
 export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
     const [credentials, setCredentials] = useState({
@@ -131,8 +132,9 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
 
                         <button className="form-submit-btn" type="submit">Submit</button>
                         {/* <button type="button" onClick={handleClose}>Close</button> */}
-                    </form>
-                    <p>By joining, you agree to the Gigster Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
+                    </form> 
+                          
+                    <p>By joining, you agree to the Gigster <NavLink to="/terms"><span onClick={handleClose}>Terms of Service</span></NavLink> and to occasionally receive emails from us. Please read our <NavLink to="/privacy"><span onClick={handleClose}>Privacy Policy</span></NavLink> to learn how we use your personal data.</p>
 
                 </div>
             </div>
