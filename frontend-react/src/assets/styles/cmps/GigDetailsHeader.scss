@@ -27,6 +27,11 @@
         margin-bottom: 20px;
         display: flex;
     }
+    h2.gig-title {
+line-height: 36px;   
+font-size: 28px;
+font-family: $fiverr-defult-font; 
+      }
 }
 
 .gig-tags {

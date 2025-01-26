@@ -111,7 +111,7 @@ export function ImageCarousel({
               key={index}
               className={`carousel-item ${isFrom === 'gig-details' ? 'gig-details' : ''}`}
               style={{
-                width: `${imageWidth}px`,
+                // width: `${imageWidth}px`,
               }}
             >
               {isFrom !== 'gig-details' ? (

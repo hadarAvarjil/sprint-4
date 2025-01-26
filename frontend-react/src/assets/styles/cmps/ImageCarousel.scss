@@ -1,3 +1,10 @@
+.gig-details-images{
+  width: 710px;
+  max-width: 710px;
+}
+.carousel-container.gig-details {
+  padding-bottom: 0px;
+}
 .carousel-container {
   overflow: hidden;
   position: relative;
@@ -12,15 +19,23 @@
   }
 
   .carousel-wrapper {
+    max-width: 710px;
     .carousel {
+      height: auto;
       display: flex;
       transition: transform 0.3s ease-in-out;
 
       .carousel-item {
         width: 100%;
+        max-width: 710px;
+        height: 425px;
         position: relative;
         background: linear-gradient(180deg, white, white);
         object-fit: contain;
+        img{
+          width: auto;
+          object-fit: cover;
+        }
       }
 
       .carousel-item::after {
