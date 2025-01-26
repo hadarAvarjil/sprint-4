@@ -19,6 +19,7 @@
   }
 
   .carousel-wrapper {
+    margin: auto;
     max-width: 710px;
     .carousel {
       height: auto;
@@ -68,6 +69,8 @@
   }
 
   .arrow {
+    width: 48px;
+    height: 48px;
     position: absolute;
     user-select: none;
     z-index:  9999;
@@ -83,6 +86,7 @@
     padding: 0.1em;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    // background-color: blue;
 
     i {
       display: block;
@@ -100,7 +104,10 @@
         width: 45%;
         height: 40%;
         fill: $clrPrimary5;
+        width: 16px;
+        height: 16px;
       }
+      
     }
 
     &.right {
@@ -118,19 +125,21 @@
   }
 
   .arrow-gig-details {
+    width: 48px;
+    height: 48px;
     position: absolute;
     user-select: none;
     z-index: 1;
     top: 50%;
-    background: #e0dfdf;
-    width: 40px;
-    height: 40px;
+    background: white;
     transform: translateY(-50%);
     color: #33333300;
     border-radius: 50%;
     font-size: 1em;
     padding: 0.20em;
-    box-shadow: 15px rgba(0, 0, 0, 0.903);    display: flex;
+    // box-shadow: 15px rgba(0, 0, 0, 0.903);  
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+      display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -141,25 +150,25 @@
     }
 
     &.left {
-      left: 15px;
+      left: 0px;
 
       svg {
         transform: rotate(90deg);
         fill: #333;
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
       }
     }
 
     &.right {
-      right: 15px;
+      right: 0px;
       
 
       svg {
         transform: rotate(-90deg);
         fill: #333;
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
       }
     }
   }
