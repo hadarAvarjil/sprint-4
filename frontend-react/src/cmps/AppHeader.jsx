@@ -246,7 +246,7 @@ export function AppHeader() {
           </div>,
           document.body
         )}
-        //       <NavBar
+        <NavBar
         categories={categories}
         display={headerStage === 2 ? "flex" : "none"}
         headerStage={headerStage}
