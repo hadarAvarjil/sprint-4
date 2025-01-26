@@ -27,6 +27,12 @@ export function AppHeader() {
   const [isSignDivVisible, setIsSignDivVisible] = useState(false); // shinoi6
   const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); // shinoi6
 
+  const navBarStyles = {
+        borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
+        borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
+        // display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
+      }
+
   const userRef = useRef(null);
   outsideClick(userRef, () => setShowUserDropdownMenu(false));
 
@@ -46,6 +52,8 @@ export function AppHeader() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const navigate = useNavigate();
+    // const isDashboardSellerPage = location.pathname === "/dashboard"
+
 
   const handleJoinClick = () => {
     setIsJoinDivVisible(true); // shinoi6
@@ -238,6 +246,13 @@ export function AppHeader() {
           </div>,
           document.body
         )}
+        //       <NavBar
+        categories={categories}
+        display={headerStage === 2 ? "flex" : "none"}
+        headerStage={headerStage}
+        setCatFilter={setCatFilter}
+        style={navBarStyles}
+      />
     </header>
   );
 }
