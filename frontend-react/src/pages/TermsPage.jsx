@@ -247,9 +247,99 @@ Seller Page is where Sellers can include all of their information, present a por
   <li>Work Samples are added to a Seller's Gig gallery on their Gig Page if the Buyer chooses to publish the Work Sample while providing a public feedback review. Work Samples are the delivered images and videos sent to a Buyer in a delivery message.</li>
 </ul>
 
+<h2>7. Gigster Logo Maker</h2>
+<p>Gigster Logo Maker allows certain Sellers to offer various original logo designs (each, a “Logo Design”) for Buyers to adjust and customize per their own specific needs, using special automated design tools. Through the Logo Maker, Buyers purchase full commercial use license (as further detailed below) to the Logo Design embedded with their brand name.</p>
+
+<p>Gigster Logo Maker Sellers are chosen manually by Gigster editors through an ongoing review process based on quality of designs, seniority, volume of sales, high ratings, exceptional customer care, high order completion rate and more. We may use automated systems that analyze Sellers uploaded Logo Design to help detect and prevent infringement or other illegal content, as well as limit the number of active Logo Designs each Seller can offer.</p>
+
+<p>By uploading a Logo Design to Gigster Logo Maker you represent and warrant that it is your original work, you exclusively own all rights to such design, and it does not infringe any third party rights. You further warrant that such design was never sold before to anyone and that you will not offer it for sale outside of Gigster Logo Maker.</p>
 
 
+<h3>7.1 Editing Tool Commercial Use License</h3>
+<p>In addition to purchasing a Logo Design, Buyers can purchase a package that allows them to create one or more Logo Design variations with the Logo Maker's editing tool. When purchasing a package that offers the Logo Maker's editing tool, Gigster grants Buyers a remunerable, non-exclusive, non-transferable, non-sublicensable, and personalized right to access the Logo Maker’s editing tool for the purpose of editing the Logo Design.</p>
 
+<p>Please note that reselling the Logo Design and/or Logo Design variations is forbidden and may result in restrictions to your account. Gigster reserves the right to provide you with generally available updates to the editing tool and/or terminate the service at its sole discretion.</p>
+
+
+<h3>7.2 Logo Design Commercial Use License</h3>
+
+<p>When an Order through the Logo Maker is completed, and subject to payment, the Seller grants the Buyer a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to use the Logo Design embedded with the Buyer’s brand name for any purpose, except for any illegal, immoral or defamatory purpose. There is no warranty, express or implied, with the grant of this license, including with respect to fitness for a particular purpose. Neither the Seller nor Gigster will be liable for any claims, or incidental, consequential or other damages arising out of this license, the Logo Design or the Buyers use of the Logo Design. For the avoidance of doubt, the Seller retains all ownership rights to the Logo Design, and no ownership or copyrights are granted to the Buyer.</p>
+<h2>8. User Conduct and Protection</h2>
+<p>In addition to purchasing a Logo Design, Buyers can purchase a package that allows them to create one or more Logo Design variations with the Logo Maker's editing tool. When purchasing a package that offers the Logo Maker's editing tool, Gigster grants Buyers a remunerable, non-exclusive, non-transferable, non-sublicensable, and personalized right to access the Logo Maker’s editing tool for the purpose of editing the Logo Design.</p>
+
+<p>Gigster enables people around the world to create, share, sell and purchase nearly any service they need at an unbeatable value.</p>
+
+<p>Gigster maintains a friendly, community spirited, and professional environment. Users should keep to that spirit while participating in any activity or extensions of Gigster. This section relates to the expected conduct users should adhere to while interacting with each other on Gigster.</p>
+
+<p>To report a violation of our Terms, User Misconduct, or inquiries regarding your account, please contact our Customer Support team here.</p>
+
+
+<h3>8.1 Basics</h3>
+<ul><li>Requesting or providing email addresses, third party messaging applications, telephone numbers or any other personal contact details to communicate outside of Gigster in order to circumvent or abuse the Gigster messaging system or Gigster platform is not permitted.</li>
+
+<li>Any necessary exchange of personal information required to continue a service may be exchanged within the Order Page.</li>
+
+<li>Gigster does not provide any guarantee of the level of service offered by Sellers to Buyers. You may use the dispute resolution tools provided to you in the Order Page.</li>
+
+<li>Gigster does not provide protection for users who interact outside of the Site.</li>
+
+<li>All information and file exchanges must be performed exclusively on the Site.</li>
+
+<li>Rude, abusive, or improper language, and violent or threatening messages will not be tolerated and may result in an account warning or the suspension/removal of your account.</li>
+
+<li>You undertake not to discriminate against any other user based on gender, race, age, religious affiliation, sexual orientation or otherwise and you acknowledge that such discrimination may result in the suspension/removal of your account.</li>
+
+<li>Users may not submit proposals or solicit parties introduced through Gigster to contract, engage with, or pay outside of Gigster.</li>
+</ul>
+<h3>8.2 Orders</h3>
+<ul>
+  <li>Users with the intention to defame competing Sellers by ordering from competing services will have their reviews removed or further account status related actions determined by review by our Trust & Safety team.</li>
+
+  <li>Users are to refrain from spamming or soliciting previous Buyers or Sellers to pursue removing/modifying reviews or cancelling Orders that do not align on Order Cancellation or Feedback policies.</li>
+</ul>
+
+<h3>8.3 Gigs & Seller Page</h3>
+<p>Sellers warrant that any content included in their Services, Gig Page and Seller Page, is original work conceived by the Seller and does not infringe any third party rights, including, without limitation, copyrights, trademarks or service marks. In the event that certain music or stock-footage media are incorporated within the Service, Gig Page or Seller Page, Sellers represent and warrant that they hold a valid license to use such music and/or footage and to include them in the Gigs.</p>
+
+<p>Users may report Gigs, that may be in violation of Gigster’s Terms based on the reported Gig’s replicated similarity to pre-existing services (copycat Gigs) through our reporting system or to Customer Support.</p>
+
+<p>Gigster will respond to clear and complete notices of alleged copyright or trademark infringement. To learn how to report IP violations click here. If you are reporting copyright or trademark infringement, see our designated Intellectual Property Claims Policy here.</p>
+
+
+<h3>8.4 Reporting Violations</h3>
+<p>If you come across any content that may violate our Terms and/or our Community Standards, you should report it to us through the appropriate channels created to handle those issues as outlined in our Terms. All cases are reviewed by our Trust & Safety team. Our decision, among others, may rely on the information that you provided to us . To protect individual privacy, the results of the investigation are not shared. You can review our Privacy Policy for more information. Any misuse of our reporting system, as further detailed here, may result in a restriction or a permanent suspension of the related accounts.</p>
+   <h3>8.5 Violations   </h3>
+   <ul>
+  <li>Users may receive a warning to their account for violations of our Terms or any user misconduct reported to our Trust and Safety team. A warning will be sent to the user's email address and will be displayed for such user on the Site. Warnings do not limit account activity, but can result in your account being placed on hold from progress in the leveling system, excluding your account from participation in the leveling system, affect your eligibility to certain benefits and tools, remove your Gigs from our listings or lead your account to becoming permanently disabled.</li>
+
+  <li>If we have taken action against a user’s account or a Gig(s), for the violation of our Terms, we will send the user an email explaining the reasons and basis for such actions as well as their options regarding an additional review. For more information see our Notices and Appeals section.</li>
+</ul>
+
+
+   <h3>Non-Permitted Usage   </h3>
+   <ul>
+  <li>Adult Services & Pornography - Gigster does not allow any exchange of adult oriented or pornographic materials and services.</li>
+
+  <li>Inappropriate Behavior & Language - Communication on Gigster should be friendly, constructive, and professional. Gigster condemns bullying, harassment, and hate speech towards others. We allow users a medium for which messages are exchanged between individuals, a system to rate orders, and to engage on larger platforms such as our Community Forum and Social Media pages.</li>
+
+  <li>Phishing and Spam - Members’ security is a top priority. Any attempts to publish or send malicious content with the intent to compromise another member’s account or computer environment is strictly prohibited. Please respect our members privacy by not contacting them with offers, questions, suggestions or anything which is not directly related to their Services or Orders.</li>
+
+  <li>Privacy & Identity - You may not publish or post other people's private and confidential information. Any exchange of personal information required for the completion of a service must be provided in the Order Page. Sellers further confirm that whatever information they receive from the Buyer, which is not public domain, shall not be used for any purpose whatsoever other than for the delivery of the work to the Buyer. Any users who engage and communicate off of Gigster will not be protected by our Terms of Service.</li>
+
+  <li>Authentic Gigster Profile - You may not create a false identity on Gigster, misrepresent your identity, create a Gigster profile for anyone other than yourself (a real person), or use or attempt to use another user’s account or information; Your profile information, including your description, skills, location, etc., must be accurate and complete and may not be misleading, illegal, offensive or otherwise harmful. Gigster reserves the right to require users to go through a verification process in order to use the Site (whether by using ID, phone, camera, register excerpts, documents, etc.).</li>
+
+  <li>Intellectual Property Claims - Gigster will respond to clear and complete notices of alleged copyright or trademark infringement, and/or violation of third party’s terms of service. Our Intellectual Property claims procedures can be reviewed here.</li>
+
+  <li>Fraud / Unlawful Use - You may not use Gigster for any unlawful purposes or to conduct illegal activities, including to bypass economic sanctions or trade restrictions imposed by the United States, European Union or any other applicable jurisdiction.</li>
+
+  <li>Multiple Accounts - To prevent fraud and abuse, users are limited to one active Gigster account and one active Gigster Pro account. Any additional account determined to be created to circumvent guidelines, promote competitive advantages, or mislead the Gigster community will be disabled. Mass account creation may result in disabling of all related accounts. Note: any violations of Gigster’s Terms may be a cause for permanent suspension of all accounts.</li>
+
+  <li>Targeted Abuse - We do not tolerate users who engage in targeted abuse or harassment towards other users on Gigster. This includes creating new multiple accounts to harass members through our message or ordering system.</li>
+
+  <li>Selling Accounts - You may not buy or sell Gigster accounts.</li>
+</ul>
+
+   
     </div>
     </div>
     )
