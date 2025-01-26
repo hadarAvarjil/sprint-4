@@ -198,7 +198,7 @@ export function AppHeader() {
                       setShowUserDropdownMenu((prev) => !prev);
                     }}
                   >
-                    <img src={loggedinUser.imgUrl} alt="User avatar" />
+                    <img src={loggedinUser.avatar} alt="User avatar" />
                   </div>
                   {showUserDropdownMenu && (
                     <UserDropdownMenu

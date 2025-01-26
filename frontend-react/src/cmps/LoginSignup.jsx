@@ -9,7 +9,7 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
         username: '',
         password: '',
         fullName: '',
-        imgUrl: '',
+        avatar: '',
     })
     const [isSignup, setIsSignup] = useState(true)
 
@@ -47,7 +47,7 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
         const text = credentials.fullName[0].toUpperCase()
         const purple = '800080'
         const white = 'ffffff'
-        credentials.imgUrl = `https://ui-avatars.com/api/?name=${text}&background=${purple}&color=${white}`
+        credentials.avatar = `https://ui-avatars.com/api/?name=${text}&background=${purple}&color=${white}`
         try {
             await signup(credentials)
             showSuccessMsg('Signed up successfully')

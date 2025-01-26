@@ -128,8 +128,7 @@ async function _createreviews() {
 (async () => {
     try {
         const review = await reviewService.getById("r101");
-        console.log("Fetched Review:", review);
     } catch (err) {
-        console.error("Error:", err.message);
+
     }
-})();
+})()

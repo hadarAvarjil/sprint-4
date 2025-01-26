@@ -23,7 +23,7 @@ import { UserMsg } from './cmps/UserMsg.jsx'
 // import { Login } from './pages/Login.jsx'
 // import { Signup } from './pages/Signup.jsx'
 import { AllOrders } from './pages/AllOrders.jsx';
-import { ProfilePage } from './pages/ProfilePage.jsx';
+import { UserProfile } from './pages/UserProfile.jsx';
 import {TermsPage} from './pages/TermsPage.jsx';
 import { PrivacyPage } from './pages/PrivacyPage.jsx';
 
@@ -58,7 +58,7 @@ export function RootCmp() {
                     <Route path="chat" element={<ChatApp />} />
                     <Route path="admin" element={<AdminIndex />} />
                     <Route path="orders" element={<AllOrders />} />
-                    <Route path="profile" element={<ProfilePage />} />
+                    <Route path="profile" element={<UserProfile />} />
                     <Route path="terms"element={<TermsPage/>} />
                     <Route path="privacy"element={<PrivacyPage/>}/>
                     

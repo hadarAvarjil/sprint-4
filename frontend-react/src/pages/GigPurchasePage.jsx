@@ -23,6 +23,10 @@ export function GigPurchasePage() {
 
     const queryParams = new URLSearchParams(window.location.search)
     const Selectedpackage = queryParams.get('package')
+    const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+    console.log(loggedInUser);
+
+
 
     const initPurchaseState = {
         crdNum: '',
@@ -52,12 +56,12 @@ export function GigPurchasePage() {
 
         try {
             const newOrder = await orderService.createOrder(
+                loggedInUser._id,
                 gig._id,
                 gig.ownerId,
-                gig.price,
+                gig.price = total,
                 gig.title,
                 gig.daysToMake,
-                total
             )
             await orderService.save(newOrder)
             navigate('/orders')

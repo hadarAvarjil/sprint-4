@@ -23,9 +23,6 @@ export function AllOrders() {
   const buyerUrl = 'https://res.cloudinary.com/dtffr5wya/image/upload/v1737198103/Admin_vxiwmi.webp'
   const buyerName = 'Percival Feathers III'
 
-  console.log(orders);
-
-
   function calculateDueOn(order) {
     const createdAtDate = new Date(order.createdAt)
     const dueOnDate = new Date(createdAtDate)
@@ -61,7 +58,7 @@ export function AllOrders() {
                 </Link>
                 </td>
                 <td>{dueOn}</td>
-                <td>${order.totalPrice}</td>
+                <td>${order.price}</td>
                 <td>{status}</td>
               </tr>
             )

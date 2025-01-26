@@ -173,11 +173,11 @@ export function HomeAppHeader() {
                   <div
                     className="user-circle"
                     onClick={(e) => {
-                      e.stopPropagation();
+                      e.stopPropagation()
                       setShowUserDropdownMenu((prev) => !prev);
                     }}
                   >
-                    <img src={loggedinUser.imgUrl} alt="User avatar" />
+                    <img src={loggedinUser.avatar} alt="User avatar" />
                   </div>
                   {showUserDropdownMenu && (
                     <UserDropdownMenu
