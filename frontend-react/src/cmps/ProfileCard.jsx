@@ -1,51 +1,47 @@
+import SvgIcon from './SvgIcon'
+
+{/* clockUser languageUser suitcaeUser personUser locationUser */ }
+
 export function ProfileCard({ user }) {
     return (
         <div className="profile-card">
-        
             <img
-              className="profile-avatar"
-              src={user?.avatar}
-              alt={`${user.fullName}'s avatar`}
+                className="profile-avatar"
+                src={user?.avatar || "https://via.placeholder.com/150"}
+                alt={`${user?.name || "User"}'s avatar`}
             />
-  
 
-     
-            <h2 className="profile-name">
-                {user?.name || "Your Fiverr Name"}
-            </h2>
-            <p className="profile-username">
-                @{user?.username || "username"}
-            </p>
+            <h2 className="profile-name">{user?.name || "Your Fiverr Name"}</h2>
+            <p className="profile-username">@{user?.username || "username"}</p>
 
-      
+            <hr className="divider" />
+
             <div className="profile-detail">
-                <span className="icon location-icon">📍</span>
+                <SvgIcon className="icon-user-profile" iconName="locationUser" />
                 {user?.from || "Located in Israel"}
             </div>
 
-   
             <div className="profile-detail">
-                <span className="icon join-date-icon">🗓️</span>
+                <SvgIcon className="icon-user-profile" iconName="personUser" />
                 {`Joined in ${user?.joinDate || "January 2025"}`}
             </div>
 
-            <ul className="profile-additional">
-                {user?.additionalInfo?.length > 0
-                    ? user.additionalInfo.map((info, idx) => (
-                          <li key={idx}>
-                              <span>📌</span> {info}
-                          </li>
-                      ))
-                    : [
-                          "Your industry",
-                          "Preferred languages",
-                          "Preferred working hours",
-                      ].map((item, idx) => (
-                          <li key={idx}>
-                              <span></span> {item}
-                          </li>
-                      ))}
-            </ul>
+            <hr className="divider" />
+
+            <div className="profile-detail">
+                <SvgIcon className="icon-user-profile" iconName="suitcaeUser" />
+                {user?.industry || "Your industry"}
+            </div>
+
+            <div className="profile-detail">
+                <SvgIcon className="icon-user-profile" iconName="languageUser" />
+                {user?.preferredLanguages || "Preferred languages"}
+            </div>
+
+            <div className="profile-detail">
+                <SvgIcon iconName="clockUser" className="icon-user-profile" />
+                {user?.workingHours || "Preferred working hours"}
+            </div>
         </div>
     )
 }
