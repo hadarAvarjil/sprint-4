@@ -54,7 +54,7 @@
     }
 
     .about-gig h3 {
-      color: #404145;
+      color: $fiverr-classic-dark-grey;
       font-family: macan-regular, Helvetica, Arial, sans-serif;
       font-weight: 700;
       line-height: 28px;
@@ -249,7 +249,7 @@
         }
 
         p {
-          color: #404145;
+          color: $fiverr-classic-dark-grey;
           line-height: 1.5em;
           word-break: break-word;
           font: 400 16px / 24px macan-light;
@@ -330,7 +330,7 @@
     h2 {
       font-size: 24px;
       margin-bottom: 20px;
-      color: #404145;
+      color: $fiverr-classic-dark-grey;
       font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
       font-weight: 700;
       line-height: 130%;
@@ -427,7 +427,7 @@
       input[type='text'] {
         width: 30%;
         padding: 10px 12px;
-        color: #404145;
+        color: $fiverr-classic-dark-grey;
         font-size: 1rem;
         border: 1px solid #ced1d6;
         border-radius: 5px 0 0 5px;
@@ -438,7 +438,7 @@
 
         &:focus {
           outline: none;
-          border-color: #404145;
+          border-color: $fiverr-classic-dark-grey;
         }
       }
 
@@ -460,7 +460,7 @@
         }
 
         &:hover {
-          background-color: #404145;
+          background-color: $fiverr-classic-dark-grey;
         }
       }
 
@@ -510,7 +510,7 @@
     .skill {
       display: inline-block;
       background-color: #ffffff;
-      color: #404145;
+      color: $fiverr-classic-dark-grey;
       font-size: 14px;
       font-weight: 500;
       padding: 8px 15px;

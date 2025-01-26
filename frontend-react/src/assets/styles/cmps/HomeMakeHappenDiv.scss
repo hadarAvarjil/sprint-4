@@ -12,7 +12,7 @@
   font-weight: 400;
   // margin-bottom: 64px;
   font-family: $fiverr-defult-font;
-  color: #404145;
+  color: $fiverr-classic-dark-grey;
   font-size: 40px;
   line-height: 50.4px;
   text-align: start;
@@ -27,6 +27,7 @@
 .icons-div {
   width: 30%;
   margin-bottom: 64px;
+  align-items: center;
 
 }
 

@@ -2,17 +2,16 @@ import { useState } from 'react'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { login, signup } from '../store/actions/user.actions.js'
 import { AddImg } from './AddImg.jsx'
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
-export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup, setIsSignup }) {
+export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
     const [credentials, setCredentials] = useState({
         username: '',
         password: '',
         fullName: '',
         imgUrl: '',
     })
-    const navigate = useNavigate();
-    
+    const [isSignup, setIsSignup] = useState(true)
 
     const handleClose = () => {
         setIsLoginSignUpShow(false)
@@ -39,7 +38,6 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
             await login(credentials)
             showSuccessMsg('Logged in successfully')
             handleClose()
-            navigate(`/gig`)
         } catch (error) {
             showErrorMsg('Oops, try again')
         }
@@ -54,7 +52,6 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
             await signup(credentials)
             showSuccessMsg('Signed up successfully')
             handleClose()
-            navigate(`/gig`)
         } catch (error) {
             showErrorMsg('Oops, try again')
         }
@@ -82,13 +79,20 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
                     <form onSubmit={onLogin}>
                         <section>
                             <h2>{isSignup ? 'Create a new account' : 'Sign in to your account'}</h2>
-                            <h5>{isSignup ? 'Already have an account?' : 'Don’t have an account?'}</h5>
-                            <button
+                            <h5>{isSignup ? 'Already have an account?' : 'Don’t have an account?'}
+                            <span className='toggle-sign-join-span'
                                 type="button"
                                 onClick={() => setIsSignup(!isSignup)}
                             >
                                 {isSignup ? 'Sign in' : 'Join here'}
-                            </button>
+                            </span>
+                            </h5>
+                            {/* <button
+                                type="button"
+                                onClick={() => setIsSignup(!isSignup)}
+                            >
+                                {isSignup ? 'Sign in' : 'Join here'}
+                            </button> */}
                         </section>
 
                         <label htmlFor="username">Username</label>
@@ -126,9 +130,12 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
                             </>
                         )}
 
-                        <button type="submit">Submit</button>
-                        <button type="button" onClick={handleClose}>Close</button>
-                    </form>
+                        <button className="form-submit-btn" type="submit">Submit</button>
+                        {/* <button type="button" onClick={handleClose}>Close</button> */}
+                    </form> 
+                          
+                    <p>By joining, you agree to the Gigster <NavLink to="/terms"><span onClick={handleClose}>Terms of Service</span></NavLink> and to occasionally receive emails from us. Please read our <NavLink to="/privacy"><span onClick={handleClose}>Privacy Policy</span></NavLink> to learn how we use your personal data.</p>
+
                 </div>
             </div>
         </section>
