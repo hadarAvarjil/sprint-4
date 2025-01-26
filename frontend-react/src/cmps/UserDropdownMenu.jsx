@@ -33,6 +33,7 @@ export function UserDropdownMenu({ loggedInUser, onClose }) {
             <Link to="/orders">Orders</Link>
             <Link to="/">Become a Seller</Link>
             <Link to="/terms">Terms Of Service</Link>
+            <Link to="/privacy">Privacy Policy</Link>
             <button onClick={onLogout}>Logout</button>
         </div>
     )
