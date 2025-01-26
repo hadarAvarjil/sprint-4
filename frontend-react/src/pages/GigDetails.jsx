@@ -9,6 +9,7 @@ import { loadUser } from '../store/actions/user.actions.js'
 import { GigDetailsHeader } from '../cmps/GigDetailsHeader'
 import { ImageCarousel } from '../cmps/ImageCarousel'
 import { AboutGigSeller } from '../cmps/AboutGigSeller'
+import { FAQAccordion } from '../cmps/FAQAccordion'
 import { GigReviewsList } from '../cmps/GigReviewsList'
 import { GigDetailsOrder } from '../cmps/GigDetailsOrder'
 import { GigDetailsLikeAndShare } from '../cmps/GigDetailsLikeAndShare'
@@ -90,6 +91,7 @@ export function GigDetails() {
             </div>
 
             <AboutGigSeller owner={gigOwner} />
+            <FAQAccordion />
             <GigReviewsList gig={gig} id="reviews-section" />
           </main>
           {/* shnoi4 */}
