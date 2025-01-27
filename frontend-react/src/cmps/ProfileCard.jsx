@@ -35,12 +35,12 @@ export function ProfileCard({ user }) {
 
             <div className="profile-detail">
                 <SvgIcon className="icon-user-profile" iconName="languageUser" />
-                {user?.preferredLanguages || "Preferred languages"}
+                { `Preferred languages ${user?.languages || "Hebrew"}`}
             </div>
 
             <div className="profile-detail">
-                <SvgIcon iconName="clockUser" className="icon-user-profile" />
-                {user?.workingHours || "Preferred working hours"}
+                <SvgIcon className="icon-user-profile" iconName="clockUser"  />
+                { `Preferred working hours ${user?.workingHours  || "08:00 - 17:00"}`}
             </div>
         </div>
     )

@@ -52,12 +52,12 @@
 
         // Icon styling
         .icon,
-        .icon-user-profile {
+        .icon-user-profile svg{
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 2rem; /* Icon width */
-            height: 2rem; /* Icon height */
+            width: .1rem; /* Icon width */
+            height: .1rem; /* Icon height */
             font-size: 1.5rem; /* Icon font size */
             color: #12b22f; /* Icon color */
         }
