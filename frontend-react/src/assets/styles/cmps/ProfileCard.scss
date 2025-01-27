@@ -1,35 +1,46 @@
 .profile-card {
-    max-width: 24rem;
-    margin: 0 auto;
-    padding: 2rem;
+    // max-width: 24rem;
+    // margin: 0 auto;
+    padding: 33px;
+    padding-bottom: 16px;
     border: 1px solid #e5e7eb;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     text-align: center;
     font-family: Arial, sans-serif;
+    width:500px;
 
     // Avatar styling
     .profile-avatar {
-        width: 6rem;
-        height: 6rem;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
-        margin: 0 auto 1rem;
+        // margin: 0 auto 1rem;
         object-fit: cover;
         border: 3px solid #0cb033;
     }
 
     // Name and username styling
     .profile-name {
-        font-size: 1.5rem;
+        color: #62646a;
+        font-size: 24px;
         font-weight: bold;
         margin-bottom: 0.5rem;
+        font-family: $fiverr-defult-font;
+        line-height:32px;
+        // margin-bottom: 16px;
     }
 
     .profile-username {
         color: #6b7280;
         font-size: 0.875rem;
         margin-bottom: 1rem;
+        font-family: $fiverr-defult-font;
+        line-height: 22px;
+        font-size: 14px;
+
+
     }
 
     // Divider styling
@@ -48,7 +59,13 @@
         gap: 1rem;
         font-size: 0.875rem;
         color: #6b7280;
-        margin-bottom: 1.5rem;
+        margin-bottom: 8px;
+        font-family: $fiverr-defult-font;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 18px;
+        text-align: start;
+
 
         // Icon styling
         .icon,
