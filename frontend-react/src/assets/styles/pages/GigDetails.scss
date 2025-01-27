@@ -83,8 +83,8 @@
   max-width: 1304px;
   height: auto;
   margin-inline: auto;
-  padding-inline: 32px;
-  padding-top: 44px;
+  // padding-inline: 32px;
+  padding-top: 12px;
 
   .user-details-wrapper {
     display: flex;
@@ -268,51 +268,64 @@
       text-align: center;
       border-radius: 4px;
       flex-direction: column;
-      margin-left: 10%;
       margin-top: 10%;
       background-color: white;
-      padding: 10px;
+      padding-left: 33px;
+      padding-bottom: 33px;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+      box-shadow:  0px 0px 16px rgba(0, 0, 0, 0.1);
+      // width: 423px;
+      // height: 250px;
 
       .contact-header {
         text-align: center;
+        margin-top: 30px;
 
         .avatar {
-          width: 80px;
-          height: 80px;
+          width: 48px;
+          height: 48px;
           border-radius: 50%;
           object-fit: cover;
           margin-bottom: 10px;
         }
 
         h3 {
-          font-size: 1.3rem;
+          font-size:18px;
           margin-bottom: 5px;
-        }
+        line-height: 25px;
+        font-family: $fiverr-defult-font;
+      }
 
         p {
-          font-size: 0.9rem;
-          color: $clrSecondary6;
+          font-size: 16px;
+          line-height: 24px;
+          color: #62646a;
+          margin-bottom: -2px;
+          font-family: $fiverr-defult-font;
         }
       }
 
       .contact-btn {
-        display: block;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
         // width: 20%;
-        background-color: black;
+        background-color: #222325;
         color: white;
         padding: 10px 0;
         text-align: center;
         margin: 20px 0;
         border-radius: 5px;
-        font-size: 1rem;
-        font-weight: bold;
+        font-size: 16px;
+        font-style: normal;
+        font-family: $fiverr-defult-font;
+        font-weight: 600;
+        height: 47px;
         cursor: pointer;
 
-        &:hover {
-          background-color: darken($clrPrimary1, 10%);
+        &:hover { 
+          background-color: $black-btn-hover
         }
       }
 
@@ -320,6 +333,7 @@
         font-size: 0.9rem;
         color: $clrSecondary6;
         text-align: center;
+        margin-bottom: 30px;
       }
     }
   }
@@ -488,7 +502,7 @@
   }
 
   .user-skills {
-    margin-top: -10%;
+    margin-top: -6.5%;
     margin-bottom: 5%;
 
     h2 {

@@ -10,6 +10,8 @@ import { UserSkills } from '../cmps/UserSkills.jsx'
 import SvgIcon from '../cmps/SvgIcon.jsx'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
+import { AddImg } from '../cmps/AddImg.jsx'
+
 import {
   socketService,
   SOCKET_EVENT_USER_UPDATED,
@@ -33,7 +35,8 @@ export function UserDetails() {
   const [filteredReviews, setFilteredReviews] = useState([])
   const [originalReviews, setOriginalReviews] = useState([])
   const [visibleCount, setVisibleCount] = useState(2)
-
+const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737985101/svg_xml_base64_PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iI2ZmZiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS40OC40MjNhLjc1Ljc1IDAgMCAxIC4_c9a6an.svg'}/>
+  
   useEffect(() => {
     if (reviews.length > 0) {
       setFilteredReviews(reviews)
@@ -249,10 +252,12 @@ export function UserDetails() {
         <div className="user-contact-card">
           <div className="contact-header">
             <img className="avatar" src={user.avatar} alt="user-avatar" />
+            <div className='contact-header-user-text-info'>
             <h3>{user.fullName}</h3>
             <p>Offline • {new Date().toLocaleTimeString()} local time</p>
           </div>
-          <button className="contact-btn">Contact me</button>
+          </div>
+          <button className="contact-btn"> {paperPlane} Contact me</button>
           <p className="response-time">Average response time: 1 hour</p>
         </div>
       </div>
