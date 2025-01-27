@@ -613,6 +613,14 @@
 // Explore page media query
 
 .gig-index {
+  @media (max-width:1440px){
+    .gig-filter {
+      .floating-top-bar {
+        padding: 32px;
+        margin: 0px;
+      }
+    }
+  }
   @media (max-width: 1400px) {
 
     .gig-results-title,
@@ -621,11 +629,7 @@
       padding: 0;
     }
 
-    .gig-filter {
-      .floating-top-bar {
-        padding: 0;
-      }
-    }
+
   }
 
   @media (max-width: 600px) {
