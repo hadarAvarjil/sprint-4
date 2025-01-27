@@ -1,14 +1,6 @@
 //shinoi4
 .grid-main-container{ 
     min-height: 35vw;
-    // display: grid;
-    // @media (max-width: 480px) {
-    //     grid-template-columns: 16px 1fr 16px;
-    // }
-
-    // @media (min-width: 481px) {
-    //     grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
-    // }
 }
 .aside-sticky-div{
     width: 415px;
@@ -44,6 +36,19 @@
     justify-content: space-between;
     gap: 20px;
   }
+  .contact-header{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
+  .contact-header-user-text-info{ 
+    display: flex;
+    flex-direction: column;
+text-align: start;   
+gap: 3px; 
+
+  }
   
   /* Media query for screen widths 900px and below */
   @media (max-width: 900px) {
@@ -59,7 +64,7 @@
     /* Make the user-contact-card a sticky footer */
     .user-contact-card {
         z-index: 99999;
-
+box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
       position: fixed;
       bottom: 0;
       left: 0;
@@ -70,6 +75,7 @@
       border-radius: 0;
       padding: 20px;
       margin-left: 0px;
+      height: 140px;
     }
   
     .user-contact-card .contact-header {
@@ -87,7 +93,7 @@
   
     /* Optional: you can also adjust the height of the contact card */
     .user-contact-card {
-      min-height: 120px; /* Make it taller for better UI */
+    //   min-height: 120px; /* Make it taller for better UI */
     }
   }
   @media(min-width:900px){
@@ -95,6 +101,8 @@
         .user-details-wrapper{
             .user-contact-card{
                 margin-left: 10%;
+                width: 423px;
+                height: 250px;
             }
         }
     }

@@ -252,8 +252,10 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
         <div className="user-contact-card">
           <div className="contact-header">
             <img className="avatar" src={user.avatar} alt="user-avatar" />
+            <div className='contact-header-user-text-info'>
             <h3>{user.fullName}</h3>
             <p>Offline • {new Date().toLocaleTimeString()} local time</p>
+          </div>
           </div>
           <button className="contact-btn"> {paperPlane} Contact me</button>
           <p className="response-time">Average response time: 1 hour</p>

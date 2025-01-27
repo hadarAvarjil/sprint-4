@@ -270,16 +270,20 @@
       flex-direction: column;
       margin-top: 10%;
       background-color: white;
-      padding: 10px;
+      padding-left: 33px;
+      padding-bottom: 33px;
       border-radius: 10px;
       box-shadow:  0px 0px 16px rgba(0, 0, 0, 0.1);
+      // width: 423px;
+      // height: 250px;
 
       .contact-header {
         text-align: center;
+        margin-top: 30px;
 
         .avatar {
-          width: 80px;
-          height: 80px;
+          width: 48px;
+          height: 48px;
           border-radius: 50%;
           object-fit: cover;
           margin-bottom: 10px;
@@ -296,6 +300,8 @@
           font-size: 16px;
           line-height: 24px;
           color: #62646a;
+          margin-bottom: -2px;
+          font-family: $fiverr-defult-font;
         }
       }
 
@@ -327,6 +333,7 @@
         font-size: 0.9rem;
         color: $clrSecondary6;
         text-align: center;
+        margin-bottom: 30px;
       }
     }
   }
