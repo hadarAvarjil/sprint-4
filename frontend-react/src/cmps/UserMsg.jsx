@@ -15,14 +15,14 @@ export function UserMsg() {
 			timeoutIdRef.current = setTimeout(closeMsg, 3000)
 		})
 
-		socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, review => {
-			showSuccessMsg(`New review about me ${review.txt}`)
-		})
+		// socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, review => {
+		// 	showSuccessMsg(`New review about me ${review.txt}`)
+		// })
 
-		return () => {
-			unsubscribe()
-			socketService.off(SOCKET_EVENT_REVIEW_ABOUT_YOU)
-		}
+		// return () => {
+		// 	unsubscribe()
+		// 	socketService.off(SOCKET_EVENT_REVIEW_ABOUT_YOU)
+		// }
 	}, [])
 
 	function closeMsg() {
@@ -35,12 +35,14 @@ export function UserMsg() {
 
 	return (
 		// Conditionally render the section only if `msg` exists
-		msg && (
-			<section className={`user-msg ${msg?.type} ${msgClass()}`}>
-				<button onClick={closeMsg}>x</button>
-				{msg?.txt}
-			</section>
-		)
+		// msg && (
+		// 	<section className={`user-msg ${msg?.type} ${msgClass()}`}>
+		// 		<button onClick={closeMsg}>x</button>
+		// 		{msg?.txt}
+		// 	</section>
+		// )
+		console.log('it is here')
+		
 	)
 }
 

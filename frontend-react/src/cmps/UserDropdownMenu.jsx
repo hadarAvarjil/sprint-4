@@ -28,8 +28,8 @@ export function UserDropdownMenu({ loggedInUser, onClose }) {
 
     return (
         <div className="user-dropdown-menu" onClick={onClose}>
-           <div className='dropdown-triangle'></div>
-            <Link to={`profile`}>Profile</Link>
+            <div className='dropdown-triangle'></div>
+            <Link to={`/profile/${loggedInUser._id}`}>Profile</Link>
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/orders">Orders</Link>
             <Link to="/">Become a Seller</Link>
