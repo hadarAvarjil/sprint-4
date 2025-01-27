@@ -50,7 +50,7 @@ export function UserProfile() {
     }
 
     return (
-        <section className="UserProfile">
+        <section className="user-profile-main">
             <div className="user-profile flex">
                 <ProfileCard user={user} />
                 <UserOwnerGigs loggedInUser={loggedInUser} gigs={userGigs} />
