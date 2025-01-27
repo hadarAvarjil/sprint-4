@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { loadUser } from "../store/actions/user.actions.js";
 import { loadGigs } from "../store/actions/gig.actions.js";
 import { useNavigate } from "react-router-dom";
@@ -28,23 +28,17 @@ export function UserProfile() {
         async function loadData() {
             try {
                 const userData = await loadUser(loggedInUser._id);
+                await loadGigs({})
                 setUser(userData);
-                await loadGigs()
             } catch (err) {
                 console.error("Error loading data: ", err);
             }
         }
 
-        loadData();
+        loadData()
     }, [loggedInUser, navigate, dispatch]);
 
-    useEffect(() => {
-        if (loggedInUser?._id && gigs?.length) {
-            const filteredGigs = gigs.filter((gig) => gig.ownerId === loggedInUser._id)
-            setUserGigs(filteredGigs)
-        }
-    }, [loggedInUser, gigs])
-
+  
     if (!user) {
         return <div>Loading...</div>;
     }
@@ -53,8 +47,8 @@ export function UserProfile() {
         <section className="UserProfile">
             <div className="user-profile flex">
                 <ProfileCard user={user} />
-                <UserOwnerGigs loggedInUser={loggedInUser} gigs={userGigs} />
+                <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />
             </div>
         </section>
-    );
+    )
 }

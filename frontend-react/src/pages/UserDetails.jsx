@@ -275,12 +275,12 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
             />
           ))}
         </ul>
-        <button
+        {/* <button
           className="create-gig-btn"
           onClick={() => navigate('/gig/edit')}
         >
           Create Gig
-        </button>
+        </button> */}
       </div>
       <div className="gig-reviews-section">
 

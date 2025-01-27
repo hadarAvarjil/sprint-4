@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
 
 import { useGigForm } from '../customHooks/useGigForm.js'
 import { saveGig } from '../store/actions/gig.actions.js'
@@ -12,38 +14,36 @@ import { ImgUploader } from '../cmps/ImgUploader.jsx'
 import SvgIcon from '../cmps/SvgIcon.jsx'
 
 export function GigEdit() {
-    const navigate = useNavigate();
-    const { id } = useParams();
+    const navigate = useNavigate()
+    const { id } = useParams()
+    const loggedInUser = useSelector(storeState => storeState.userModule.user)
+
 
     useEffect(() => {
-        if (!id || id === 'edit') return //if its about create new gig
-        async function checkGigOwner() {
-            try {
-                const editedGig = await gigService.getById(id)
-            } catch (err) {
-                console.error('Failed to load gig:', err)
-            }
+        if (!id || id === 'edit') return
+        else if (!loggedInUser || id.length !== 24) {
+            navigate('/explore')
+            return
         }
-        checkGigOwner()
-    }, [id])
+    }, [id, navigate, loggedInUser])
 
     const initialValues = {
-        title: '',
+        title: "Untitled Gig",
         category: category[0],
         tags: ['Logo & Brand Identity', 'Visual Design', 'Art & Illustration'],
         price: 0,
-        description: '',
+        description: "No description provided.",
         daysToMake: "Express 24H",
-        ownerId: null, 
+        ownerId: loggedInUser._id,
         imgUrls: defaultImgUrls,
         likedByUsers: [],
         reviews: [],
         createdAt: Date.now(),
-    };
+    }
 
     const { fields, handleChange, handleSubmit, availableTags,
         updateAvailableTags, setFields } = useGigForm(
-            initialValues, saveGig, navigate, null, 
+            initialValues, saveGig, navigate, loggedInUser,
             id, gigService, subcategories);
 
     function handleCategoryChange(e) {
@@ -68,7 +68,7 @@ export function GigEdit() {
                 <form className="flex column" onSubmit={handleSubmit}>
                     <div className="actions flex row">
                         <button type="button" className="flex row"
-                            onClick={() => navigate(`/user`)}>
+                            onClick={() => navigate(`/user/${loggedInUser._id}`)}>
                             <SvgIcon iconName={'arrowDown'} />
                             Cancel
                         </button>
@@ -199,8 +199,8 @@ export function GigEdit() {
                         </div>
                     </div>
                 </form>
-                <GigEditPreview gig={fields} /> 
+                <GigEditPreview gig={fields} loggedInUser={loggedInUser} />
             </section>
         </main>
-    );
+    )
 }

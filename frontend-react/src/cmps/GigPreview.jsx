@@ -1,31 +1,17 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-
 import { useState, useEffect } from 'react'
-
 import { useSelector } from 'react-redux'
-
 import { useModal } from '../customHooks/ModalContext.jsx'
-
 import { useDeviceType } from '../customHooks/DeviceTypeContext.jsx'
-
-
-
 import { gigService } from '../services/gig.service'
-
 import { userService } from '../services/user/user.service.local.js'
-
 import { removeGig } from '../store/actions/gig.actions.js'
 
 
-
 import SvgIcon from './SvgIcon.jsx'
-
 import { UserPreview } from './UserPreview.jsx'
-
 import { ImageCarousel } from './ImageCarousel.jsx'
-
 import { loadReviews } from '../store/actions/review.actions.js'
-
 import { utilService } from '../services/util.service.js'
 
 
@@ -130,17 +116,11 @@ export function GigPreview({ isFrom, gig, suppressOwner = false }) {
 
 
     try {
-
       await gigService.save(gigToSave);
-
       setUpdatedGig(gigToSave)
-
     } catch (err) {
-
       console.log("error save gig", err) //debug
-
     }
-
   }
 
 
