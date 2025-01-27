@@ -48,7 +48,7 @@ export function UserProfile() {
             <div className="user-profile flex">
                 <ProfileCard user={user} />
                 <div className="position-taker-UserOwnerGigs" style={{width:'772px'}}>
-                <UserOwnerGigs loggedInUser={loggedInUser} gigs={userGigs} />
+                <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />
             </div>
             </div>
         </section>

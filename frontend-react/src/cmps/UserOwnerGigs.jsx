@@ -8,6 +8,9 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
     const [userGigs, setUserGigs] = useState([])
     const navigate = useNavigate()
 
+    console.log(loggedInUser, gigs );
+    
+
 
     useEffect(() => {
         if (loggedInUser?._id && gigs?.length) {
