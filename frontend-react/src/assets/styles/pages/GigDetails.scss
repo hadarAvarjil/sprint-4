@@ -286,18 +286,24 @@
         }
 
         h3 {
-          font-size: 1.3rem;
+          font-size:18px;
           margin-bottom: 5px;
-        }
+        line-height: 25px;
+        font-family: $fiverr-defult-font;
+      }
 
         p {
-          font-size: 0.9rem;
-          color: $clrSecondary6;
+          font-size: 16px;
+          line-height: 24px;
+          color: #62646a;
         }
       }
 
       .contact-btn {
-        display: block;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
         // width: 20%;
         background-color: #222325;
         color: white;
@@ -305,8 +311,11 @@
         text-align: center;
         margin: 20px 0;
         border-radius: 5px;
-        font-size: 1rem;
-        font-weight: bold;
+        font-size: 16px;
+        font-style: normal;
+        font-family: $fiverr-defult-font;
+        font-weight: 600;
+        height: 47px;
         cursor: pointer;
 
         &:hover { 
