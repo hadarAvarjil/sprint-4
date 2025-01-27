@@ -70,6 +70,7 @@
 
     
     gap: 0.5em;
+
     .btn-mobile-filter {
       display: grid;
       grid-auto-flow: column;
@@ -99,6 +100,8 @@
 
     .filter-nav {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
 
       .btn {
         span {
@@ -213,7 +216,37 @@
   }
 }
 
-@media (max-width:801px){
+@media (max-width:901px){
+  .gig-list-container{
+    margin-top: 0px; 
+  }
+  .gig-index .gig-filter .floating-top-bar {
+    display: flex;
+    flex-direction: column;
+    .pro-services-toggle{
+      margin-top: 30px;
+    }
+  }
+  @media (max-width: 801px) {
+    .filter-nav {
+      // flex-direction: column; /* Stack the filter buttons vertically */
+      align-items: flex-start; /* Align items to the start of the container */
+    gap: 10px;
+  
+    .floating-menu {
+      // width: 100%; /* Ensure each menu takes full width */
+      margin-bottom: 10px; /* Add spacing between stacked menus */
+    
+  
+    .btn {
+      width: 100%; /* Make buttons take full width for mobile */
+      text-align: left; /* Align text to the left */
+    }
+  }
+}
+  }
+    
+
   @media (min-width:600px) {
     
   }
@@ -230,4 +263,11 @@
 min-width: 157px
 }
 }
+}
+
+@media (min-width:801px){
+  .gig-list-container{
+    margin-top: 1.5em;
+
+  }
 }
