@@ -443,6 +443,7 @@
         }
       }
     }
+  
   }
 }
 
@@ -674,4 +675,18 @@ cursor: pointer;
   background: none;
   border: none;
   border-top: 1px solid #ddd; // Divider above the button
+}
+
+
+.dropdown-triangle {
+  position: absolute; /* Position it relative to the parent */
+  top: -10px; /* Offset from the top */
+  right: 8px; /* Align to the right side of the parent */
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  z-index: 999;
+  transform: rotate(45deg); /* Makes it a diamond shape */
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
 }
