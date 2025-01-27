@@ -44,10 +44,12 @@ export function UserProfile() {
     }
 
     return (
-        <section className="UserProfile">
+        <section className="user-profile-main">
             <div className="user-profile flex">
                 <ProfileCard user={user} />
-                <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />
+                <div className="position-taker-UserOwnerGigs" style={{width:'772px'}}>
+                <UserOwnerGigs loggedInUser={loggedInUser} gigs={userGigs} />
+            </div>
             </div>
         </section>
     )

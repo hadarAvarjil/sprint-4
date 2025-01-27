@@ -110,32 +110,25 @@ box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
 
   }
   
+.user-profile-main{
+  display: grid;
+  grid-template-columns: minmax(32px, 1fr) minmax(auto, 1336px) minmax(32px, 1fr);
+padding-top: 33px;
+}
+.user-profile{
+  grid-column: 2;
+  display: flex;
+  justify-content: space-between;
+}
+.position-taker-UserOwnerGigs{
+  width:772px;
+  background-color: blue;
+}
 
+.profile-detail{
 
-
-
-//shinoi3
-
-// .main-container > main:not(.full) { /* Select the classless main */
-//     grid-column: 2 / 3; /* Places it in the second column */
-//     display: flex; /* Retains the flex behavior if needed */
-//   }
-
-//   .gig-category-title {
-//     text-align: left;
-//   }
-  
-//   .gig-category-title h1 {
-//     margin: 0; /* Ensure no additional spacing */
-//   }
-
-
-  
-//   .full {
-//     grid-column: 1 / -1; /* Spans all columns */
-//   }
-  
-//   .main-container > main:not(.full) { /* Select the classless main */
-//     grid-column: 2 / 3; /* Places it in the second column */
-//     display: flex; /* Retains the flex behavior if needed */
-//   }
+  img{
+  width: 16px;
+  height: 16px;
+}
+}
