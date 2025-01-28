@@ -20,7 +20,7 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
     }, [loggedInUser, gigs])
 
     return (
-        <div className="user-gigs">
+        // <div className="user-gigs">
             <div className="user-gigs">
                     <h2>My Gigs</h2>
                     <ul className="gigs-list">
@@ -40,6 +40,6 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
                       Create Gig
                     </button> */}
                   </div>
-        </div>
+        // </div>
     )
 }

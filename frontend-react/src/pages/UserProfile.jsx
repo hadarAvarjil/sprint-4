@@ -79,6 +79,7 @@ export function UserProfile() {
                     </button> */}
             {/* </div> */}
           </div>
+          
           <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />
         </div>
       </div>

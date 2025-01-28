@@ -311,7 +311,14 @@ padding-top: 33px;
 }
 
 .user-gigs{
+  margin-top: 25px;
+  border: solid 2px $fiverr-classic-dark-grey;
+  padding: 12px;
+  border-radius: 2rem;
+  box-shadow: inset 0em 0em 3em 0em #404145;
+
   h2{
-    margin-top: 25px;
+    margin-top: 15px;
+    margin-bottom: 5px;
   }
 }
