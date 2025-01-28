@@ -8,6 +8,9 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
     const [userGigs, setUserGigs] = useState([])
     const navigate = useNavigate()
 
+    console.log(loggedInUser, gigs );
+    
+
 
     useEffect(() => {
         if (loggedInUser?._id && gigs?.length) {
@@ -17,7 +20,7 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
     }, [loggedInUser, gigs])
 
     return (
-        <div className="user-gigs">
+        <div className="user-gigs-owner-container">
             <div className="user-gigs">
                     <h2>My Gigs</h2>
                     <ul className="gigs-list">
@@ -30,13 +33,13 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
                         />
                       ))}
                     </ul>
-                    <button
+                    {/* <button
                       className="create-gig-btn"
                       onClick={() => navigate('/gig/edit')}
                     >
                       Create Gig
-                    </button>
+                    </button> */}
                   </div>
-        </div>
+        // </div>
     )
 }

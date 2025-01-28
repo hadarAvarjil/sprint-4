@@ -443,6 +443,7 @@
         }
       }
     }
+  
   }
 }
 
@@ -638,7 +639,7 @@ cursor: pointer;
 
 .user-dropdown-menu {
   position: absolute;
-  top: calc(100% + 10px); // Below the avatar with spacing
+  top: calc(100% + 20px); // Below the avatar with spacing
   right: 0; // Align to the right edge
   background-color: #ffffff; // White background
   border: 1px solid #ddd; // Light border
@@ -674,4 +675,17 @@ cursor: pointer;
   background: none;
   border: none;
   border-top: 1px solid #ddd; // Divider above the button
+}
+
+
+.dropdown-triangle {
+  position: absolute; /* Position it relative to the parent */
+  top: -10px; /* Offset from the top */
+  right: 8px; /* Align to the right side of the parent */
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  transform: rotate(45deg); /* Makes it a diamond shape */
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
 }

@@ -690,7 +690,9 @@
 
   @media (max-width: 480px) {
     padding: 0;
-
+//       .floating-top-bar {
+// margin-top: 200px;      }
+  
     main {
       .gig-details-header {
         margin-block-end: 0px;
@@ -700,6 +702,7 @@
             display: none;
           }
         }
+      
 
         .gig-overview {
           margin-block-end: 0;
@@ -1518,3 +1521,4 @@
     }
   }
 }
+
