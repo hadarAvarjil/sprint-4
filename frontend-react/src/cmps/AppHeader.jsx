@@ -26,7 +26,6 @@ export function AppHeader() {
   const [notification, setNotification] = useState(false)
   const [headerPlaceholderText, setHeaderPlaceholderText] = useState("")
 
-
   const userRef = useRef(null)
   outsideClick(userRef, () => setShowUserDropdownMenu(false))
 
@@ -38,8 +37,6 @@ export function AppHeader() {
   
   const dispatch = useDispatch()
 
-
-
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
   const [isSignup, setIsSignup] = useState(true)
   const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false)
@@ -47,7 +44,6 @@ export function AppHeader() {
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
   const deviceType = useDeviceType()
-
 
   const categories = category
   const location = useLocation()
@@ -57,7 +53,6 @@ export function AppHeader() {
   const isGigPage = location.pathname.startsWith("/gig/")
   const isChatPage = location.pathname.startsWith("/chat/")
   const navigate = useNavigate()
-
 
   const handleJoinClick = () => {
     setIsSignup(true)
@@ -84,29 +79,43 @@ export function AppHeader() {
     borderColor: headerStage === 0 && isHomePage ? "#fff" : "#1dbf73",
   }
 
+  useEffect(() => {
+    if (filterBy.title || filterBy.cat) {
+        // console.log("Loading gigs with filter:", filterBy)
+        const loadFilteredGigs = async () => {
+            try {
+                await loadGigs(filterBy)
+            } catch (err) {
+                // console.error('Failed to load gigs:', err)
+            }
+        };
+        loadFilteredGigs()
+    }
+}, [filterBy])
+
 
   useEffect(() => {
     if (!isHomePage) {
-      setHeaderStage(2);
-      setHeaderPlaceholderText("What service are you looking for today?");
+      setHeaderStage(2)
+      setHeaderPlaceholderText("What service are you looking for today?")
     } else {
-      setHeaderStage(0);
-      setHeaderPlaceholderText("What service are you looking for today?");
+      setHeaderStage(0)
+      setHeaderPlaceholderText("What service are you looking for today?")
     }
-  }, [deviceType, isHomePage]);
+  }, [deviceType, isHomePage])
 
   useEffect(() => {
     const handleScroll = () => {
       if (deviceType !== "mini-tablet" && deviceType !== "mobile") {
-        const newStage = window.scrollY < 50 ? 0 : window.scrollY < 150 ? 1 : 2;
+        const newStage = window.scrollY < 50 ? 0 : window.scrollY < 150 ? 1 : 2
         setHeaderStage(newStage);
       }
-    };
-    if (isHomePage && deviceType !== "mini-tablet" && deviceType !== "mobile") {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
     }
-  }, [isHomePage, deviceType]);
+    if (isHomePage && deviceType !== "mini-tablet" && deviceType !== "mobile") {
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
+    }
+  }, [isHomePage, deviceType])
 
   function handleSearchChange(e) {
     const newSearchQuery = e.target.value
@@ -114,21 +123,15 @@ export function AppHeader() {
   }
 
   async function handleSearchSubmit(e) {
-    e.preventDefault()
-    if (!searchQuery) return
+    e.preventDefault();
+    if (!searchQuery) return;
 
-    const newFilterBy = { ...filterBy, txt: searchQuery }
+    const newFilterBy = { ...filterBy, search: searchQuery }
     console.log("Setting filter with:", newFilterBy)
     dispatch(setFilter(newFilterBy))
-
-    try {
-      await loadGigs(newFilterBy)
-      navigate(`/gig`)
-      setSearchQuery("")
-    } catch (err) {
-      console.error("Failed to load filtered gigs:", err)
-    }
-  }
+    navigate(`/gig`)
+    setSearchQuery("")
+}
 
   function setCatFilter(category) {
     dispatch(setFilter({ ...filterBy, cat: category }));
@@ -198,36 +201,7 @@ export function AppHeader() {
             />
           </div>
           <div className="header-options">
-            {/* <NavLink to="/become-seller">
-              <div className="sign-header-btn">Become a Seller</div>
-            </NavLink> */}
-            {/* <NavLink to="/orders">
-              <div className="sign-header-btn">Orders</div>
-            </NavLink> */}
-            {/* <NavLink to="/profile">
-              <div className="sign-header-btn">my-profile</div>
-            </NavLink> */}
-            <NavLink to="gig">
-              <div className="sign-header-btn">Explore</div>
-            </NavLink>
-
-            {/* <div className="orders-prereview">
-              <button className="btn-orders-prereview"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setOpenOrdersDropdown(!showOrdersDropdown)
-                }}
-                ref={ordersRef}
-              >
-                Orders
-              </button>
-              {showOrdersDropdown && (
-                <BuyerOrdersDropdown
-                  onClose={() => setOpenOrdersDropdown(false)}
-                />
-              )}
-
-            </div> */}
+            {/* ... שאר הקוד שלך ... */}
             {loggedinUser ? (
               <>
                 <NavLink to="/orders">

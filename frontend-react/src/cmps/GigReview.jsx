@@ -1,4 +1,3 @@
-
 export function GigReview({ review }) {
     const {
         username,

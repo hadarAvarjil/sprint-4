@@ -15,7 +15,7 @@ function getEmptyGig() {
 
 function getDefaultFilter() {
     return {
-        txt: '',
+        title: '',
         cat: '',
         min: '',
         max: '',

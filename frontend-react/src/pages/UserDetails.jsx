@@ -107,7 +107,7 @@ export function UserDetails() {
               return {
                 ...review,
                 username: user.username || "Unknown", 
-                imgUrl: user.avatar || "https://via.placeholder.com/50",
+                imgUrl: user.imgUrl || "https://via.placeholder.com/50",
                 country: user.from || "Unknown",
               }
             } catch (err) {
@@ -224,6 +224,8 @@ export function UserDetails() {
     const emptyStars = "✧".repeat(maxStars - rate)
     return filledStars + emptyStars
   }
+  const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
+
 
   if (!user) return <div>Loading...</div>
 
@@ -235,7 +237,7 @@ export function UserDetails() {
             <div className="user-header flex align-start">
               <img
                 className="user-avatar-specific"
-                src={user.avatar}
+                src={user.imgUrl}
                 alt={`${user.fullName}'s avatar`}
               />
               <div className="user-info">
@@ -258,14 +260,14 @@ export function UserDetails() {
                     {user.rating}
                   </span>
                   <span>({user.reviewsCount || 0})</span>
-                  {user.level === 3 && (
+                  {levelNumber === 3 && (
                     <span className="top-rated-badge">
                       Top Rated ✦✦✦
                     </span>
                   )}
-                  {user.level < 3 && (
+                  {levelNumber < 3 && (
                     <span className="level-badge">
-                      Level {user.level} {renderStars(user.level)}
+                      Level {levelNumber} {renderStars(levelNumber)}
                     </span>
                   )}
                 </div>
@@ -366,8 +368,8 @@ export function UserDetails() {
           </div>
           <h2>{reviews.length} Reviews</h2>
           <ul className="reviews">
-            {filteredReviews.slice(0, visibleCount).map((review) => (
-              <li key={review.id}>
+            {filteredReviews.slice(0, visibleCount).map((review,index) => (
+              <li key={index}>
                 <GigReview review={review} />
               </li>
             ))}

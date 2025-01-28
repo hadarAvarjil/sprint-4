@@ -15,10 +15,6 @@ export const gigService = {
 
 async function query(filterBy = {}) {
   try {
-    const page = filterBy.page || 1
-    const itemsPerPage = 12
-    const skipCount = (page - 1) * itemsPerPage
-
     const pipeline = _buildPipeline(filterBy)
     const collection = await dbService.getCollection(GIGS_COLLECTION)
     let gigs = await collection.aggregate(pipeline).toArray()
@@ -146,6 +142,7 @@ function _buildPipeline(filterBy) {
   if (time) {
     criteria.$match.daysToMake = { $regex: time, $options: 'i' }
   }
+  
 
   if (level) {
     pipeline.push({
@@ -162,6 +159,9 @@ function _buildPipeline(filterBy) {
       },
     })
   }
+
+  
+
 
   if (Object.keys(criteria.$match).length > 0) {
     pipeline.push(criteria)

@@ -54,7 +54,7 @@ function save(gig) {
 
 function getDefaultFilter() {
   return {
-    txt: '',
+    title: '',
     cat: '',
     min: '',
     max: '',
