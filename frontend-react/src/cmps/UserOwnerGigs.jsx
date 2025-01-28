@@ -33,12 +33,12 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
                         />
                       ))}
                     </ul>
-                    <button
+                    {/* <button
                       className="create-gig-btn"
                       onClick={() => navigate('/gig/edit')}
                     >
                       Create Gig
-                    </button>
+                    </button> */}
                   </div>
         </div>
     )

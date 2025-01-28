@@ -8,49 +8,80 @@ import { ProfileCard } from "../cmps/ProfileCard.jsx";
 import { UserOwnerGigs } from "../cmps/UserOwnerGigs.jsx";
 
 export function UserProfile() {
-    const loggedInUser = useSelector((storeState) => storeState.userModule.user);
-    const { gigs } = useSelector((storeState) => storeState.gigModule)
+  const loggedInUser = useSelector((storeState) => storeState.userModule.user);
+  const { gigs } = useSelector((storeState) => storeState.gigModule);
 
+  const [user, setUser] = useState(null);
+  const [userGigs, setUserGigs] = useState([]);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-    const [user, setUser] = useState(null);
-    const [userGigs, setUserGigs] = useState([]);
-    const navigate = useNavigate();
-    const dispatch = useDispatch()
-
-    // Load user and gigs data
-    useEffect(() => {
-        if (!loggedInUser?._id) {
-            navigate("/explore")
-            return;
-        }
-
-        // Load user data and gigs if not already loaded
-        async function loadData() {
-            try {
-                const userData = await loadUser(loggedInUser._id);
-                await loadGigs({})
-                setUser(userData);
-            } catch (err) {
-                console.error("Error loading data: ", err);
-            }
-        }
-
-        loadData()
-    }, [loggedInUser, navigate, dispatch]);
-
-  
-    if (!user) {
-        return <div>Loading...</div>;
+  // Load user and gigs data
+  useEffect(() => {
+    if (!loggedInUser?._id) {
+      navigate("/explore");
+      return;
     }
 
-    return (
-        <section className="user-profile-main">
-            <div className="user-profile flex">
-                <ProfileCard user={user} />
-                <div className="position-taker-UserOwnerGigs" style={{width:'772px'}}>
-                <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />
-            </div>
-            </div>
-        </section>
-    )
+    // Load user data and gigs if not already loaded
+    async function loadData() {
+      try {
+        const userData = await loadUser(loggedInUser._id);
+        await loadGigs({});
+        setUser(userData);
+      } catch (err) {
+        console.error("Error loading data: ", err);
+      }
+    }
+
+    loadData();
+  }, [loggedInUser, navigate, dispatch]);
+
+  if (!user) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <section className="user-profile-main">
+      <div className="user-profile flex">
+        <ProfileCard user={user} />
+        <div
+          className="position-taker-UserOwnerGigs"
+          style={{ width: "772px" }}
+        >
+          <div className="profile-become-seller-ad">
+            <h2>
+              Become a Seller and...{" "}
+              <span className="profile-become-seller-ad-span">
+                {" "}
+                Create a Gig{" "}
+                <span style={{ WebkitTextStroke: " 1px black" }}>!</span>
+              </span>{" "}
+            </h2>
+            {/* <div className="create-gig-btn-container"> */}
+            <button
+              onClick={() => navigate("/gig/edit")}
+              className="create-gig-btn"
+              style={{
+                "--slist": "#1dbf73, black,blue",
+                margin: "auto",
+                marginTop: "-6px",
+              }}
+            >
+              Create Gig
+            </button>
+
+            {/* <button
+                      className="create-gig-btn"
+                      onClick={() => navigate('/gig/edit')}
+                    >
+                      Create Gig
+                    </button> */}
+            {/* </div> */}
+          </div>
+          <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />
+        </div>
+      </div>
+    </section>
+  );
 }
