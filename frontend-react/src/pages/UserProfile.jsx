@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { loadUser } from "../store/actions/user.actions.js";
+import { loadUser } from "../store/actions/user.actions.js";
 import { loadGigs } from "../store/actions/gig.actions.js";
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +39,7 @@ export function UserProfile() {
   }, [loggedInUser, navigate, dispatch]);
 
   if (!user) {
-    return <div className="loading"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>;
+    return <div className="loading"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> Loading Profile...</div>;
   }
 
   return (
