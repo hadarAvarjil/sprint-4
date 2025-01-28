@@ -40,6 +40,6 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
                       Create Gig
                     </button> */}
                   </div>
-        // </div>
+         </div>
     )
 }

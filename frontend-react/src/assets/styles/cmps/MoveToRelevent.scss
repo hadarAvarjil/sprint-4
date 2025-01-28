@@ -1,6 +1,6 @@
-//shinoi4
-$b: .25em;
-$c: #393939;
+// //shinoi4
+// $b: .25em;
+// $c: #393939;
 
 .grid-main-container{ 
     min-height: 35vw;
@@ -125,183 +125,262 @@ padding-top: 33px;
   display: flex;
   flex-direction: column;
 
+  
   .profile-become-seller-ad{
-    box-shadow: inset 0em 0em 3em 0em #404145;
-    padding: 1px;
-    padding-bottom: 5px;
-    width: 772px;
-    height: 155px;
-    background-color: transparent;
-    border: solid 1px black;
+    display: flex;
+    flex-direction: row;
+
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// background-color: #F0F4FF;
+border: solid 1px #e5e7eb;
     border-radius: 1rem;
-    font-family: $fiverr-leaning-font;
-    align-items: center;
-    text-align: center;
-    background:rgb(117, 161, 244); /* Button background color */
-
-    .profile-become-seller-ad-span{
-      color: $green-fiverr;
-      -webkit-text-stroke: 0.1px black;
-      -webkit-text-fill-color:$green-fiverr ;
-      font-size: 48px;
-    }
-    .create-gig-btn-container{
-      position: relative;
-      z-index: 1;
-      width: 200px;
-      height: 50px;
-        //  background-image: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
-      display: flex; /* Align children in the center */
-      justify-content: center; /* Horizontally center the button */
-      align-items: center; /* Vertically center the button */
-      // border-radius: 9em; 
-
-      .create-gig-btn-container{
-        position: relative;
-
-        z-index: 2;
-        width: 198px;
-        background-color: #A2CFFE;
-     display: flex; /* Align children in the center */
-     justify-content: center; /* Horizontally center the button */
-     align-items: center; /* Vertically center the button */
-     border-radius: 9em; 
-     .create-gig-btn{
-      width: 100px;
-      height: 35px;
-      background-image: url('https://res.cloudinary.com/dtpewh2wk/image/upload/v1738024711/Screenshot_2025-01-28_023415_ho3cne.png');
-      .img-container{
-        width: 100px;
-        height: 35px;
-      border-radius: 20px; 
-      img{
-        width: 100px;
-        height: 35px;
-        border-radius: 20px; 
-
-      }
-      }
-     }
-      }
-    }
-  }
-
-  .create-gig-btn-container {
-    background-image: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
-    display: flex; /* Align children in the center */
-    justify-content: center; /* Horizontally center the button */
-    align-items: center; /* Vertically center the button */
-    height: calc(100% + 2px); /* Increase height by 2px */
-    width: calc(100% + 2px); /* Increase width by 2px */
-  }
-  
-  .create-gig-btn {
-    background: #A2CFFE; /* Button background color */
-    color: transparent;
-    background-image: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
-    -webkit-background-clip: text; /* Clip the gradient to the text */
-    background-clip: text;
-    border: 2px solid transparent;
-    border-radius: 9em;
-    padding: 10px 20px;
+    padding: 20px;
+    font-family: $green-fiverr;
+    color: #62646a;
+    font-size: 20px;
     font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    -webkit-text-stroke: 0.01px black;
-    text-align: center;
-    transition: transform 0.5s; /* Smooth hover scaling */
+    font-family: $fiverr-defult-font;
+    line-height: 32px;
+    padding:15px;
+              // -webkit-text-stroke: 0.001px black;
+              font-weight: 700;
+
+    // gap: 50px;
+    // justify-content: space-between;
+    // .profile-become-seller-ad-span{
+    //   display: flex;
+    //   flex-direction: row;
+    //         color: $green-fiverr;
+    //         -webkit-text-stroke: 0.1px #1D3369;
+    //         -webkit-text-fill-color:$green-fiverr ;
+    //         font-size: 52px;
+    //         img{
+    //           width:20px;
+    //           height: 30px;;
+    //         }
+    //       }
+          .create-gig-btn{
+            background-color: black;
+            color: white;
+            border-radius: 6px;
+            border: solid 1px black;
+            width: 125px;
+            height: 32px;
+            font-size: 16px;
+            line-height: 24px;
+            margin-left: 5px;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin: 0px;
+            img{
+              width: 20px;
+              height: 20px;
+            }
+            // background-color: $green-fiverr;
+            // color: black;
+            // color: #1D3369;
+            // -webkit-text-stroke: 0.05px black;
+            // -webkit-text-fill-color:#1D3369;
+          
+          //  box-shadow:  rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px, inset 0 0 10px white;
+          
+          }
+          .create-gig-btn:hover{
+            background-color: $black-btn-hover;
+            color: white;
+            // background:
+            // radial-gradient(circle, rgba(0, 255, 0, 0.09) 0%, rgba(0, 255, 0, 0.09) 25%, transparent 50%),
+            // radial-gradient(circle, rgba(0, 255, 0, 0.055) 0%, rgba(0, 255, 0, 0.055) 50%, transparent 75%),
+            // radial-gradient(circle, rgba(0, 255, 0, 0.03) 0%, rgba(0, 255, 0, 0.03) 75%, transparent 100%),
+            // radial-gradient(circle, rgba(0, 255, 0, 0.027) 0%, rgba(0, 255, 0, 0.027) 100%, transparent 125%),
   }
+}
+}
+//   .profile-become-seller-ad{
+//     box-shadow: inset 0em 0em 3em 0em #404145;
+//     padding: 1px;
+//     padding-bottom: 5px;
+//     width: 772px;
+//     height: 155px;
+//     background-color: transparent;
+//     border: solid 1px black;
+//     border-radius: 1rem;
+//     font-family: $fiverr-leaning-font;
+//     align-items: center;
+//     text-align: center;
+//     background:rgb(117, 161, 244); /* Button background color */
+
+//     .profile-become-seller-ad-span{
+//       color: $green-fiverr;
+//       -webkit-text-stroke: 0.1px black;
+//       -webkit-text-fill-color:$green-fiverr ;
+//       font-size: 48px;
+//     }
+//     .create-gig-btn-container{
+//       position: relative;
+//       z-index: 1;
+//       width: 200px;
+//       height: 50px;
+//         //  background-image: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
+//       display: flex; /* Align children in the center */
+//       justify-content: center; /* Horizontally center the button */
+//       align-items: center; /* Vertically center the button */
+//       // border-radius: 9em; 
+
+//       .create-gig-btn-container{
+//         position: relative;
+
+//         z-index: 2;
+//         width: 198px;
+//         background-color: #A2CFFE;
+//      display: flex; /* Align children in the center */
+//      justify-content: center; /* Horizontally center the button */
+//      align-items: center; /* Vertically center the button */
+//      border-radius: 9em; 
+//      .create-gig-btn{
+//       width: 100px;
+//       height: 35px;
+//       background-image: url('https://res.cloudinary.com/dtpewh2wk/image/upload/v1738024711/Screenshot_2025-01-28_023415_ho3cne.png');
+//       .img-container{
+//         width: 100px;
+//         height: 35px;
+//       border-radius: 20px; 
+//       img{
+//         width: 100px;
+//         height: 35px;
+//         border-radius: 20px; 
+
+//       }
+//       }
+//      }
+//       }
+//     }
+//   }
+
+//   .create-gig-btn-container {
+//     background-image: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
+//     display: flex; /* Align children in the center */
+//     justify-content: center; /* Horizontally center the button */
+//     align-items: center; /* Vertically center the button */
+//     height: calc(100% + 2px); /* Increase height by 2px */
+//     width: calc(100% + 2px); /* Increase width by 2px */
+//   }
   
-  .create-gig-btn:hover {
-    transform: scale(1.2); /* Enlarge on hover */
-  }
+//   .create-gig-btn {
+//     background: #A2CFFE; /* Button background color */
+//     color: transparent;
+//     background-image: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
+//     -webkit-background-clip: text; /* Clip the gradient to the text */
+//     background-clip: text;
+//     border: 2px solid transparent;
+//     border-radius: 9em;
+//     padding: 10px 20px;
+//     font-weight: bold;
+//     font-size: 18px;
+//     text-transform: uppercase;
+//     cursor: pointer;
+//     position: relative;
+//     overflow: hidden;
+//     display: inline-block;
+//     -webkit-text-stroke: 0.01px black;
+//     text-align: center;
+//     transition: transform 0.5s; /* Smooth hover scaling */
+//   }
   
-  .create-gig-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    border-radius: 9em;
-  }
+//   .create-gig-btn:hover {
+//     transform: scale(1.2); /* Enlarge on hover */
+//   }
+  
+//   .create-gig-btn::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     z-index: -1;
+//     border-radius: 9em;
+//   }
   
 
   
   
 
 
-.profile-detail{
-.img-container{
-  width: 16px;
-  height: 16px;
-  img{
-  width: 16px;
-  height: 16px;
-}
-}
-}
-.create-gig-btn {
- box-shadow:  0em 0em 1em 0em #404145;
-    z-index: 99;
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: .5em;
-  border: solid 0.5em transparent;
-  padding: 0.5em 0.75em;
-  border-radius: 9em;
-  background: 
-  linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black); 
-  font: 700 1.5em/ 1.25 ubuntu, sans-serif;
-  text-transform: uppercase;
-  --full: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
-  -webkit-mask: var(--full) padding-box, var(--full);
-  -webkit-mask-composite: xor;
-  mask: var(--full) padding-box exclude, var(--full);
-  -webkit-text-fill-color: transparent;
-  --full: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
-  -webkit-mask: var(--full) text, var(--full) padding-box, var(--full);
-  -webkit-mask-composite: xor;
-  /* sadly, still same result as before :( */
-  mask: var(--full) padding-box exclude, var(--full);
-  @supports (-webkit-mask-clip: text) {
-    -webkit-text-fill-color: transparent;
-    --full: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
-    -webkit-mask: var(--full) text, var(--full) padding-box, var(--full);
-    -webkit-mask-composite: xor;
-    background: 
-    linear-gradient(to right bottom, var(--slist)) 
-    border-box;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  border: solid 0.5rem transparent;
-  font-family: $fiverr-leaning-font;
-  &::before { 
-    position: absolute;
-    z-index: -1;
-    inset: -$b;
-    border: inherit;
-    border-radius: inherit;
-    background: inherit;
-    background-clip: border-box;
-    content: '';
-    --full: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
-    -webkit-mask: var(--full) padding-box, var(--full);
-    -webkit-mask-composite: xor;
-    mask: var(--full) padding-box exclude, var(--full);
-  }
-  &::after { content: attr(data-ico) }
-}
-}
+// .profile-detail{
+// .img-container{
+//   width: 16px;
+//   height: 16px;
+//   img{
+//   width: 16px;
+//   height: 16px;
+// }
+// }
+// }
+// .create-gig-btn {
+//  box-shadow:  0em 0em 1em 0em #404145;
+//     z-index: 99;
+//   display: grid;
+//   grid-auto-flow: column;
+//   grid-gap: .5em;
+//   border: solid 0.5em transparent;
+//   padding: 0.5em 0.75em;
+//   border-radius: 9em;
+//   background: 
+//   linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black); 
+//   font: 700 1.5em/ 1.25 ubuntu, sans-serif;
+//   text-transform: uppercase;
+//   --full: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
+//   -webkit-mask: var(--full) padding-box, var(--full);
+//   -webkit-mask-composite: xor;
+//   mask: var(--full) padding-box exclude, var(--full);
+//   -webkit-text-fill-color: transparent;
+//   --full: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
+//   -webkit-mask: var(--full) text, var(--full) padding-box, var(--full);
+//   -webkit-mask-composite: xor;
+//   /* sadly, still same result as before :( */
+//   mask: var(--full) padding-box exclude, var(--full);
+//   @supports (-webkit-mask-clip: text) {
+//     -webkit-text-fill-color: transparent;
+//     --full: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
+//     -webkit-mask: var(--full) text, var(--full) padding-box, var(--full);
+//     -webkit-mask-composite: xor;
+//     background: 
+//     linear-gradient(to right bottom, var(--slist)) 
+//     border-box;
+//   -webkit-background-clip: text;
+//   background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   position: relative;
+//   border: solid 0.5rem transparent;
+//   font-family: $fiverr-leaning-font;
+//   &::before { 
+//     position: absolute;
+//     z-index: -1;
+//     inset: -$b;
+//     border: inherit;
+//     border-radius: inherit;
+//     background: inherit;
+//     background-clip: border-box;
+//     content: '';
+//     --full: linear-gradient(to bottom right, #1dbf73, black, #1dbf73, black, #1dbf73, blue, #1dbf73, black, #1dbf73, black);
+//     -webkit-mask: var(--full) padding-box, var(--full);
+//     -webkit-mask-composite: xor;
+//     mask: var(--full) padding-box exclude, var(--full);
+//   }
+//   &::after { content: attr(data-ico) }
+// }
+// }
 
-}
+// }
 .profile-detail{
 
   img{
