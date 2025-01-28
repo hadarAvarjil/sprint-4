@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loadUser } from "../store/actions/user.actions.js";
+// import { loadUser } from "../store/actions/user.actions.js";
 import { loadGigs } from "../store/actions/gig.actions.js";
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +39,7 @@ export function UserProfile() {
   }, [loggedInUser, navigate, dispatch]);
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div className="loading"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>;
   }
 
   return (
@@ -52,25 +52,15 @@ export function UserProfile() {
         >
           <div className="profile-become-seller-ad">
             <h2>
-              {/* Ready To Earn?{" "} */}
-              {/* <span style={{fontSize:'20px'}}> */}
-              {/* <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738001580/svg_xml_base64_PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJ2YXIoLS1hOHJlMjUxaSkiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2R_eed29c.svg'></AddImg> */}
               Become a seller by creating your own gig
-              {/* </span> */}
-              {/* <span className="profile-become-seller-ad-span">
-                {" "}
-                Create a Gig{" "}
-                <span style={{ WebkitTextStroke: " 1px #1D3369" }}>!</span>
-              </span>{" "} */}
+             
             </h2>
             {/* <div className="create-gig-btn-container"> */}
             <button
               onClick={() => navigate("/gig/edit")}
               className="create-gig-btn"
               style={{
-                // "--slist": "#1dbf73, black,blue",
-                margin: "auto",
-                marginTop: "-6px",
+        
               }}
             >
               <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738100584/create-svgrepo-com_et16mj.svg'></AddImg>
