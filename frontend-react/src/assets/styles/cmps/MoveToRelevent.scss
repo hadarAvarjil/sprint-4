@@ -20,7 +20,24 @@
 .container-user-details-spesific{
     display: grid;
     grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
-
+    .user-gigs{
+      .gigs-list{
+        .gig-preview{
+          .carousel-wrapper{
+            width: 400px;
+            .carousel{
+    .carousel-item {
+      width: 100%;
+      position: relative;
+      background: linear-gradient(180deg, white, white);
+      object-fit: contain;
+      width:500px;
+    }
+  }
+}
+        }
+      }
+    }
 }
 
 /* General styles */
