@@ -20,8 +20,6 @@ export function AllOrders() {
     fetchOrders()
   }, [orders])
 
-  console.log(orders);
-  
 
   const buyerUrl = 'https://res.cloudinary.com/dtffr5wya/image/upload/v1737198103/Admin_vxiwmi.webp'
   const buyerName = 'Percival Feathers III'

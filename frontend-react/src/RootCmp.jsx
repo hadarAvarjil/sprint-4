@@ -24,6 +24,7 @@ import { AllOrders } from './pages/AllOrders.jsx';
 import { UserProfile } from './pages/UserProfile.jsx';
 import {TermsPage} from './pages/TermsPage.jsx';
 import { PrivacyPage } from './pages/PrivacyPage.jsx';
+import { SellerDashboard } from './pages/SellerDashboard.jsx';
 
  
 export function RootCmp() {
@@ -57,6 +58,7 @@ export function RootCmp() {
                     <Route path="admin" element={<AdminIndex />} />
                     <Route path="orders" element={<AllOrders />} />
                     <Route path="/profile/:id" element={<UserProfile />} />
+                    <Route path="/dashboard" element={<SellerDashboard />} />
                     <Route path="terms"element={<TermsPage/>} />
                     <Route path="privacy"element={<PrivacyPage/>}/>
                 </Routes>

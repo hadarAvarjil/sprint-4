@@ -6,11 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export function UserOwnerGigs({ loggedInUser, gigs }) {
     const [userGigs, setUserGigs] = useState([])
-    const navigate = useNavigate()
-
-    console.log("heloooo",loggedInUser, gigs );
-    
-
+    const navigate = useNavigate()    
 
     useEffect(() => {
         if (loggedInUser?._id && gigs?.length) {

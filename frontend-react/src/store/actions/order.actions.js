@@ -5,7 +5,7 @@ import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, SET_ORDER, UPDATE_ORDER, ADD_ORDER
 export async function loadOrders(filterBy = {}) {
     try {
         const orders = await orderService.query(filterBy)
-        console.log(orders);
+        console.log(orders, 'from action');
         
         store.dispatch(getCmdSetOrders(orders))
     } catch (err) {
