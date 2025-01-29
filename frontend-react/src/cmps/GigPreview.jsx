@@ -22,9 +22,9 @@ export function GigPreview({ isFrom, gig, suppressOwner = false }) {
 
   const params = useParams()
 
-  const loggedInUserId = params.id
+  // const loggedInUserId = params.id
 
-  // const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+  const loggedInUser = useSelector((storeState) => storeState.userModule.user)
 
   const { openLogin } = useModal()
 
@@ -154,82 +154,64 @@ export function GigPreview({ isFrom, gig, suppressOwner = false }) {
           </UserPreview>
         )}
 
-        {/* {isFrom === 'userProfile' && (
+        {/* <div className="preview-body">
+          {isFrom === 'user-profile-gigs-owner' && (
+            <UserPreview isFrom={isFrom} owner={owner} gig={updatedGig}>
+              <Link className="gig-title" to={`/gig/${updatedGig._id}`}>
+                {updatedGig.title}
+              </Link>
+            </UserPreview>
+          )}
+        </div> */}
+
+        {/* {isFrom === 'user-gigs' && (
           <>
             <div className="profile">
               {loggedInUserId !== loggedInUser?._id && (
-
                 <UserPreview isFrom="userProfile" owner={owner} />
-
               )}
-
               <Link className="gig-title" to={`/gig/${updatedGig._id}`}>
-
                 {updatedGig.title}
-
               </Link>
-
               <div className="rating">
-
                 <SvgIcon iconName={'star'} />
-
                 <span>{loggedInUser?.rating}</span>
-
                 <span className="reviews">
-
                   ({utilService.getRandomIntInclusive(100, 999)})
-
                 </span>
-
               </div>
-
             </div>
-
             <div
-
               className={`gig-changes ${loggedInUserId !== loggedInUser?._id ? 'right' : ''
-
                 }`}
-
             >
-
               {loggedInUserId === loggedInUser?._id && (
-
                 <div className="gig-btns">
-
                   <button className="gig-btn">
-
                     <Link to={`/gig/edit/${updatedGig._id}`}>
-
                       <SvgIcon iconName={'pencil'} />
-
                     </Link>
-
                   </button>
-
                   <button onClick={onRemoveGig} className="gig-btn">
-
                     <SvgIcon iconName={'trashIcon'} />
-
                   </button>
-
                 </div>
-
               )}
-
               <div className="price">
-
                 <span className="starting">Starting At</span>
-
                 <span>{`$${updatedGig.price}`}</span>
-
               </div>
-
             </div>
-
           </>
-
         )} */}
+
+        {isFrom === 'user-profile-gigs-owner' && (
+          <div className="gig-title flex">
+            <span className="gig-title b">{`${updatedGig.title}`}</span>
+          </div>
+        )}
+
+
 
         {isFrom !== 'userProfile' && (
           <div className="gig-price flex">
@@ -240,3 +222,6 @@ export function GigPreview({ isFrom, gig, suppressOwner = false }) {
     </li>
   )
 }
+
+
+

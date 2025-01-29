@@ -68,7 +68,7 @@ export function GigEdit() {
                 <form className="flex column" onSubmit={handleSubmit}>
                     <div className="actions flex row">
                         <button type="button" className="flex row"
-                            onClick={() => navigate(`/user/${loggedInUser._id}`)}>
+                            onClick={() => navigate(`/profile/${loggedInUser._id}`)}>
                             <SvgIcon iconName={'arrowDown'} />
                             Cancel
                         </button>
