@@ -8,7 +8,7 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
     const [userGigs, setUserGigs] = useState([])
     const navigate = useNavigate()
 
-    console.log(loggedInUser, gigs );
+    console.log("heloooo",loggedInUser, gigs );
     
 
 
@@ -22,7 +22,7 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
     return (
         <div className="user-gigs-owner-container">
             <div className="user-gigs">
-                    <h2>My Gigs</h2>
+                    <h2 style={{textDecoration:"underline"}}>My Gigs:</h2>
                     <ul className="gigs-list">
                       {userGigs.map((gig) => (
                         <GigPreview
@@ -40,6 +40,6 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
                       Create Gig
                     </button> */}
                   </div>
-        // </div>
+         </div>
     )
 }

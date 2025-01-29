@@ -1,8 +1,7 @@
 .gig-details-order {
     position: sticky;
     width: 100%;
-    // max-width: 430px; //shinoi4
-    width: 415px; //shinoi4
+    width: 415px; 
     font-family: macan-regular;
     border: 1px solid #ddd;
     max-height: 500px;
@@ -54,7 +53,7 @@
         p {
             margin: 6px 0;
             color: #555;
-            line-height: 21px; //shinoi4
+            line-height: 21px; 
 
             strong {
                 color: #333;
@@ -163,7 +162,6 @@
         .detail-item {
             display: flex;
             align-items: center;
-            // font-size: 0.9rem; //shinoi4
             font-size: 14px;
             line-height: 24px;
             color: #666;
@@ -214,9 +212,8 @@
         display: flex;
         align-items: center;
         color: #95979d;
-        // font-size: rem(14px); //shinoi4
-        font-size: 14px; //shinoi4
-        line-height: 24px; //shinoi4
+        font-size: 14px;
+        line-height: 24px; 
 
         svg {
             width: 20px;
@@ -228,4 +225,21 @@
             fill: #000;
         }
     }
+}
+
+@media(max-width:900px){
+    .aside-sticky-div{
+        width: 100vw;
+        margin-left: -32px;
+        margin-bottom: -100px;
+        .gig-details-likeAndShare{
+            display: none;
+        }
+    .gig-details-order {
+        width:100vw;
+        border-bottom: 0px;
+
+    }
+}
+
 }

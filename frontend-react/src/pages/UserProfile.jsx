@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 import { ProfileCard } from "../cmps/ProfileCard.jsx";
 import { UserOwnerGigs } from "../cmps/UserOwnerGigs.jsx";
+import { AddImg } from "../cmps/AddImg.jsx";
+
+import { UserOwnerReviews } from "../cmps/UserOwnerReviews.jsx";
 
 export function UserProfile() {
   const loggedInUser = useSelector((storeState) => storeState.userModule.user);
@@ -38,7 +41,7 @@ export function UserProfile() {
   }, [loggedInUser, navigate, dispatch]);
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div className="loading"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> Loading Profile...</div>;
   }
 
   return (
@@ -51,23 +54,18 @@ export function UserProfile() {
         >
           <div className="profile-become-seller-ad">
             <h2>
-              Become a Seller and...{" "}
-              <span className="profile-become-seller-ad-span">
-                {" "}
-                Create a Gig{" "}
-                <span style={{ WebkitTextStroke: " 1px black" }}>!</span>
-              </span>{" "}
+              Become a seller by creating your own gig
+             
             </h2>
             {/* <div className="create-gig-btn-container"> */}
             <button
               onClick={() => navigate("/gig/edit")}
               className="create-gig-btn"
               style={{
-                "--slist": "#1dbf73, black,blue",
-                margin: "auto",
-                marginTop: "-6px",
+        
               }}
             >
+              <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738100584/create-svgrepo-com_et16mj.svg'></AddImg>
               Create Gig
             </button>
 
@@ -81,6 +79,7 @@ export function UserProfile() {
           </div>
           
           <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />
+          <UserOwnerReviews loggedInUser={loggedInUser} gigs={gigs}/>
         </div>
       </div>
     </section>
