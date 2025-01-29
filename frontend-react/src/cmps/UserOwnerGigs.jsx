@@ -28,7 +28,7 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
                         <GigPreview
                           key={gig._id}
                           gig={gig}
-                          isFrom="userProfile"
+                          isFrom="user-profile-gigs-owner"
                           suppressOwner={true}
                         />
                       ))}

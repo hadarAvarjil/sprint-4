@@ -26,7 +26,7 @@ export function AboutGigSeller({ owner }) {
                 </div>
                 <div className="gig-seller-row-languages">
                     <strong>Languages</strong>
-                    <p>{owner.languages.join(', ')}</p>
+                    <p>{owner.languages?.length ? owner.languages.join(', ') : 'Not specified'}</p>
                 </div>
                 <div className='gig-seller-row-about'>
                 <p className='gig-seller-row-about'>{owner.about}</p>
