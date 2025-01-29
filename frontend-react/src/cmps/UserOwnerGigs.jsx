@@ -8,7 +8,7 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
     const [userGigs, setUserGigs] = useState([])
     const navigate = useNavigate()
 
-    console.log(loggedInUser, gigs );
+    console.log("heloooo",loggedInUser, gigs );
     
 
 

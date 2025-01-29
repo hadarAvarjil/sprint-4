@@ -8,6 +8,8 @@ import { ProfileCard } from "../cmps/ProfileCard.jsx";
 import { UserOwnerGigs } from "../cmps/UserOwnerGigs.jsx";
 import { AddImg } from "../cmps/AddImg.jsx";
 
+import { UserOwnerReviews } from "../cmps/UserOwnerReviews.jsx";
+
 export function UserProfile() {
   const loggedInUser = useSelector((storeState) => storeState.userModule.user);
   const { gigs } = useSelector((storeState) => storeState.gigModule);
@@ -77,6 +79,7 @@ export function UserProfile() {
           </div>
           
           <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />
+          <UserOwnerReviews loggedInUser={loggedInUser} gigs={gigs}/>
         </div>
       </div>
     </section>
