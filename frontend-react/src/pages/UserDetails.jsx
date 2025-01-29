@@ -286,6 +286,11 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
 
         {ratingStats.totalReviews > 0 && (
           <div className="reviews-summary">
+            <div className='rating-container' >
+              <div className='average-rating-container'>
+
+              
+               <h2>{reviews.length} Reviews</h2>
             <div className="average-rating">
               {/* <span className="rating-number">{ratingStats.averageRating.toFixed(1)}</span> */}
               <span className="stars">
@@ -294,6 +299,9 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
               </span>
               {/* <p>{ratingStats.totalReviews} Reviews</p> */}
             </div>
+            </div>
+
+            
             <div className="stars-breakdown">
               {ratingStats.starCounts.map((count, index) => (
                 <div key={index} className="star-row">
@@ -310,10 +318,12 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
                 </div>
               ))}
             </div>
+            </div>
           </div>
         )}
 
         <div className="reviews-filters">
+          
           <input
             type="text"
             placeholder="Search reviews"
@@ -332,7 +342,7 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
             Only show reviews with files
           </label>
         </div>
-        <h2>{reviews.length} Reviews</h2>
+     
         <ul className="reviews">
           {filteredReviews.slice(0, visibleCount).map((review) => (
             <li key={review.id}>
