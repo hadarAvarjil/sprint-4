@@ -84,7 +84,7 @@ gap: 3px;
     /* Make the user-contact-card a sticky footer */
     .user-contact-card {
         z-index: 99999;
-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+// box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
       position: fixed;
       bottom: 0;
       left: 0;
@@ -96,6 +96,8 @@ box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
       margin-left: 0px;
       height: 140px;
+      box-shadow: 0 1.2px 1.92251px rgba(0,0,0,.02),0 2px 3.68135px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.05);
+
     }
   
     .user-contact-card .contact-header {
