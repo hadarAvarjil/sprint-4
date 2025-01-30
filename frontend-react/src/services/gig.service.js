@@ -24,7 +24,9 @@ function getFilterFromParams(searchParams) {
 
 async function query(filterBy = {}) {
   try {
-    return await httpService.get(BASE_URL, filterBy)
+    const params = new URLSearchParams(filterBy).toString()
+    const gigs = await httpService.get(`${BASE_URL}?${params}`)
+    return gigs
   } catch (error) {
     console.error('Error querying gigs:', error)
     throw error

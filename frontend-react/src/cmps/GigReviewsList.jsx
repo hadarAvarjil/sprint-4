@@ -24,7 +24,7 @@ export function GigReviewsList({ gig }) {
                         return {
                             ...review,
                             username: user.username,
-                            imgUrl: user.avatar,
+                            imgUrl: user.imgUrl,
                             country: user.from,
                         };
                     } catch (err) {
