@@ -20,7 +20,7 @@ import { AppFooter } from './cmps/AppFooter'
 import { GigEdit } from './pages/GigEdit.jsx'
 import { UserMsg } from './cmps/UserMsg.jsx'
 
-import { AllOrders } from './pages/AllOrders.jsx';
+import { BuyerOrderPage } from './pages/BuyerOrderPage.jsx';
 import { UserProfile } from './pages/UserProfile.jsx';
 import {TermsPage} from './pages/TermsPage.jsx';
 import { PrivacyPage } from './pages/PrivacyPage.jsx';
@@ -56,7 +56,7 @@ export function RootCmp() {
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="chat" element={<ChatApp />} />
                     <Route path="admin" element={<AdminIndex />} />
-                    <Route path="orders" element={<AllOrders />} />
+                    <Route path="/orders" element={<BuyerOrderPage />} />
                     <Route path="/profile/:id" element={<UserProfile />} />
                     <Route path="/dashboard" element={<SellerDashboard />} />
                     <Route path="terms"element={<TermsPage/>} />

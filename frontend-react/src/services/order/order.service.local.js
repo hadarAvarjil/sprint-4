@@ -13,13 +13,14 @@ export const orderService = {
 window.cs = orderService
 
 async function query(filterBy) {
-    console.log('filterBy', filterBy);
-
 
     let orders = await storageService.query(STORAGE_KEY)
-    console.log('orders', orders);
-    if (filterBy) {
+    
+    if (filterBy.sellerId) {
         orders = orders.filter(order => order.sellerId === filterBy.sellerId)
+    }
+    if (filterBy.buyerId) {
+        orders = orders.filter(order => order.buyerId === filterBy.buyerId)
     }
     return orders
 }

@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 import { userService } from '../services/user'
 import { orderService } from '../services/order'
 
-
-export function SellerOrdersList({ loggedInUser, orders }) {
+export function BuyerOrdersList({ loggedInUser, orders }) {
     const [userOrders, setUserOrders] = useState([])
 
     useEffect(() => {
@@ -19,14 +18,14 @@ export function SellerOrdersList({ loggedInUser, orders }) {
             const ordersData = await Promise.all(
                 orders.map(async (order) => {
                     try {
-                        const user = await userService.getById(order.buyerId)
+                        const user = await userService.getById(order.sellerId)
                         return {
                             ...order,
                             fullName: user?.fullName || 'Unknown Buyer',
                             imgUrl: user?.avatar || '/default-avatar.png', // Use default if missing
-                        };
+                        }
                     } catch (err) {
-                        console.error(`Error fetching user with ID ${order.buyerId}:`, err);
+                        console.error(`Error fetching user with ID ${order.sellerId}:`, err);
                         return {
                             ...order,
                             fullName: 'Unknown Buyer',
@@ -53,11 +52,10 @@ export function SellerOrdersList({ loggedInUser, orders }) {
 
     return (
         <section className="orders-table-container">
-            <h4>Manage Orders</h4>
             <table className="orders-table">
                 <thead>
                     <tr>
-                        <th>Buyer</th>
+                        <th>Seller</th>
                         <th>Gig</th>
                         <th>Due On</th>
                         <th>Total</th>
@@ -68,12 +66,12 @@ export function SellerOrdersList({ loggedInUser, orders }) {
                     {userOrders.length > 0 ? (
                         userOrders.map((order, index) => {
                             const dueOn = calculateDueOn(order)
-                            const status = order.status || "Pending" // Use dynamic status
+                            const status = order.status || "Pending" 
 
                             return (
                                 <tr key={order._id || index}>
                                     <td>
-                                        <img src={order.imgUrl} alt="Buyer" className="buyer-pic" />
+                                        <img src={order.imgUrl} alt="Seller" className="seller" />
                                         <span>{order.fullName}</span>
                                     </td>
                                     <td>
