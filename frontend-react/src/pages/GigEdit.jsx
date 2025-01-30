@@ -184,7 +184,7 @@ export function GigEdit() {
                             </div>
                         </div>
 
-                        <div className="input-group grid">
+                        <div className="input-group grid gallery-input-group">
                         <h3>Showcase Your Services In A Gig Gallery </h3>
 
                             <div className="info grid">
