@@ -282,7 +282,7 @@ export function UserDetails() {
 
             <div className="user-about">
               <h2>About me</h2>
-              <p>{user.about || 'No additional details provided.'}</p>
+              <p>{user.description || 'No additional details provided.'}</p>
             </div>
           </div>
           <div className="user-contact-card">

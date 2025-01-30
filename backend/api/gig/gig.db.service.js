@@ -108,7 +108,7 @@ function _buildPipeline(filterBy) {
     $match: {},
   }
   console.log('FILTERBY: ', filterBy)
-  const { search, cat, level, min, max, tag, time } = filterBy
+  const { search, cat, level, min, max, tag, time,proOnly } = filterBy
 
   if (search) {
     criteria.$match.$or = [
@@ -160,6 +160,22 @@ function _buildPipeline(filterBy) {
     })
   }
 
+  if (proOnly === 'true') {
+    pipeline.push({
+      $lookup: {
+        from: 'user',
+        localField: 'ownerId',
+        foreignField: '_id',
+        as: 'userDetails'
+      }
+    })
+    pipeline.push({
+      $match: {
+        'userDetails.level': { $regex: '^Pro Talent$', $options: 'i' }
+      }
+    })
+  }
+  
   
 
 

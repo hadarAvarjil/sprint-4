@@ -10,8 +10,8 @@ export async function getGigs(req, res) {
     if (user) filterBy = { user }
 
     else {
-      const { search, cat, tag, time, level, min, max, page } = req.query
-      filterBy = { search, cat, tag, time, level, min, max, page }
+      const { search, cat, tag, time, level, min, max, page, proOnly } = req.query
+      filterBy = { search, cat, tag, time, level, min, max, page, proOnly }
     }
     // loggerService.debug('Getting Gigs', filterBy)
     const gigs = await gigService.query(filterBy)
