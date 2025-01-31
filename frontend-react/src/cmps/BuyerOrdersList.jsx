@@ -42,7 +42,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
             console.error('Unexpected error while loading user orders:', err)
         }
     }
-
+ 
     function calculateDueOn(order) {
         if (!order?.createdAt || !order?.daysToMake) return 'N/A'
 

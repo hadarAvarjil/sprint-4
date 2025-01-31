@@ -16,6 +16,11 @@ import { LoginSignup } from "./LoginSignup.jsx";
 import { UserDropdownMenu } from "./UserDropdownMenu.jsx";
 import ReactDOM from "react-dom"; // shinoi6
 
+import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
+import { TestDrop } from "./TestDrop.jsx";
+
+<cmp></cmp>
+
 export function AppHeader() {
   const [searchQuery, setSearchQuery] = useState("");
   const [headerStage, setHeaderStage] = useState(0);
@@ -26,12 +31,13 @@ export function AppHeader() {
   const [headerPlaceholderText, setHeaderPlaceholderText] = useState("");
   const [isSignDivVisible, setIsSignDivVisible] = useState(false); // shinoi6
   const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); // shinoi6
+  const [isHovered, setIsHovered] = useState(false);
 
   const navBarStyles = {
-        borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
-        borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
-        // display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
-      }
+    borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
+    borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
+    // display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
+  };
 
   const userRef = useRef(null);
   outsideClick(userRef, () => setShowUserDropdownMenu(false));
@@ -48,12 +54,14 @@ export function AppHeader() {
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy);
   const deviceType = useDeviceType();
 
+  console.log(loggedinUser, 'userrrrrr');
+  
+
   const categories = category;
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const navigate = useNavigate();
-    // const isDashboardSellerPage = location.pathname === "/dashboard"
-
+  // const isDashboardSellerPage = location.pathname === "/dashboard"
 
   const handleJoinClick = () => {
     setIsJoinDivVisible(true); // shinoi6
@@ -99,7 +107,7 @@ export function AppHeader() {
     }
   }, [isHomePage, deviceType]);
 
-  function handleSearchChange(e) { 
+  function handleSearchChange(e) {
     const newSearchQuery = e.target.value;
     setSearchQuery(newSearchQuery);
   }
@@ -138,7 +146,9 @@ export function AppHeader() {
 
   return (
     <header
-      className={`app-header flex column full main-container ${isHomePage ? "home-page" : ""}`}
+      className={`app-header flex column full main-container ${
+        isHomePage ? "home-page" : ""
+      }`}
     >
       <nav className="main-nav">
         <div className="main-nav-header container flex row">
@@ -165,8 +175,8 @@ export function AppHeader() {
           </div>
           <div className="logo-search-bar-container flex row">
             <Link to="/" style={{ color: headerStyles.color }}>
-              <h1 style={{  color: '#404145'}} className="logo flex row">
-              {/* <h1 style={{ color: logoColor }} className="logo flex row"> */}
+              <h1 style={{ color: "#404145" }} className="logo flex row">
+                {/* <h1 style={{ color: logoColor }} className="logo flex row"> */}
                 gigster
                 <span className=" dot-icon flex">
                   <SvgIcon iconName={"greenDotIcon"} />
@@ -187,9 +197,16 @@ export function AppHeader() {
             </NavLink>
             {loggedinUser ? (
               <>
-                <NavLink to="/orders">
-                  <div className="sign-header-btn">Orders</div>
-                </NavLink>
+                <div className="orders-container" ref={userRef}>
+                  <NavLink to="/orders">
+                    <div className="sign-header-btn"       onMouseEnter={() => setIsHovered(true)}
+                      onMouseLeave={() => setIsHovered(false)}>Orders</div>
+                  </NavLink>
+
+        
+                  <TestDrop loggedInUser={loggedinUser} isHovered={isHovered} />
+                </div>
+
                 <div className="user-container" ref={userRef}>
                   <div
                     className="user-circle"
@@ -211,17 +228,18 @@ export function AppHeader() {
             ) : (
               <>
                 <div className="signIn-btn">
-                  <button onClick={handleLoginClick}>Sign In</button> {/* shinoi6 */}
+                  <button onClick={handleLoginClick}>Sign In</button>{" "}
+                  {/* shinoi6 */}
                 </div>
                 <div className="join-btn">
-                  <button onClick={handleJoinClick}>Join</button> {/* shinoi6 */}
+                  <button onClick={handleJoinClick}>Join</button>{" "}
+                  {/* shinoi6 */}
                 </div>
               </>
             )}
           </div>
         </div>
       </nav>
-
       {/* Modal logic */} {/* shinoi6 */}
       {(isSignDivVisible || isJoinDivVisible) &&
         ReactDOM.createPortal(
@@ -246,7 +264,7 @@ export function AppHeader() {
           </div>,
           document.body
         )}
-        <NavBar
+      <NavBar
         categories={categories}
         display={headerStage === 2 ? "flex" : "none"}
         headerStage={headerStage}
@@ -256,7 +274,6 @@ export function AppHeader() {
     </header>
   );
 }
-
 
 // import { useEffect, useState, useRef } from "react"
 // import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"
@@ -275,7 +292,6 @@ export function AppHeader() {
 // import { LoginSignup } from "./LoginSignup.jsx"
 // import { UserDropdownMenu } from "./UserDropdownMenu.jsx"
 
-
 // export function AppHeader() {
 
 //   const [searchQuery, setSearchQuery] = useState("")
@@ -286,7 +302,6 @@ export function AppHeader() {
 //   const [notification, setNotification] = useState(false)
 //   const [headerPlaceholderText, setHeaderPlaceholderText] = useState("")
 
-
 //   const userRef = useRef(null)
 //   outsideClick(userRef, () => setShowUserDropdownMenu(false))
 
@@ -295,10 +310,8 @@ export function AppHeader() {
 
 //   const asideMenuRef = useRef(null)
 //   outsideClick(asideMenuRef, () => setShowAsideMenu(false))
-  
+
 //   const dispatch = useDispatch()
-
-
 
 //   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
 //   const [isSignup, setIsSignup] = useState(true)
@@ -308,7 +321,6 @@ export function AppHeader() {
 
 //   const deviceType = useDeviceType()
 
-
 //   const categories = category
 //   const location = useLocation()
 //   const isHomePage = location.pathname === "/"
@@ -317,7 +329,6 @@ export function AppHeader() {
 //   const isGigPage = location.pathname.startsWith("/gig/")
 //   const isChatPage = location.pathname.startsWith("/chat/")
 //   const navigate = useNavigate()
-
 
 //   const handleJoinClick = () => {
 //     setIsSignup(true)
@@ -343,7 +354,6 @@ export function AppHeader() {
 //     color: headerStage === 0 && isHomePage ? "#fff" : "#1dbf73",
 //     borderColor: headerStage === 0 && isHomePage ? "#fff" : "#1dbf73",
 //   }
-
 
 //   useEffect(() => {
 //     if (!isHomePage) {
@@ -393,7 +403,6 @@ export function AppHeader() {
 //   function setCatFilter(category) {
 //     dispatch(setFilter({ ...filterBy, cat: category }));
 //   }
-
 
 //   async function onLogout() {
 //     try {
