@@ -49,7 +49,7 @@ function getEmptyOrder() {
         sellerId: '',
         price: 0,
         createdAt: Date.now(),
-        orderState: 'pending'
+        orderState: 'Pending'
     }
 }
 
