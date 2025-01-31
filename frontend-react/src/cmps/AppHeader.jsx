@@ -51,9 +51,9 @@ export function AppHeader() {
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
   const deviceType = useDeviceType()
-  const loggedinUser = useSelector((storeState) => storeState.userModule.user);
-  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy);
-  const deviceType = useDeviceType();
+
+
+
 
   const categories = category;
   const location = useLocation();
@@ -115,7 +115,7 @@ export function AppHeader() {
     e.preventDefault();
     if (!searchQuery) return;
 
-    const newFilterBy = { ...filterBy, txt: searchQuery };
+    const newFilterBy = { ...filterBy, search: searchQuery };
     console.log("Setting filter with:", newFilterBy);
     dispatch(setFilter(newFilterBy));
 

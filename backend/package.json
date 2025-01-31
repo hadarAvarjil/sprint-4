@@ -26,6 +26,7 @@
   },
   "description": "",
   "devDependencies": {
+    "@ljharb/tsconfig": "^0.2.3",
     "cross-env": "^7.0.3"
   }
 }

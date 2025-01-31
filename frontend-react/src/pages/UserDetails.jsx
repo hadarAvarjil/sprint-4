@@ -290,7 +290,7 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
         </div>
         <div className="user-contact-card">
           <div className="contact-header">
-            <img className="avatar" src={user.avatar} alt="user-avatar" />
+            <img className="avatar" src={user.imgUrl} alt="user-avatar" />
             <div className='contact-header-user-text-info'>
             <h3>{user.fullName}</h3>
             <p>Offline • {new Date().toLocaleTimeString()} local time</p>
