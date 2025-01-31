@@ -49,6 +49,11 @@ export function ProfileCard({ user }) {
                 <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738001580/svg_xml_base64_PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJ2YXIoLS1hOHJlMjUxaSkiPjxwYXRoIGQ9Ik04IC4yNUE3Ljc0OSA3Ljc0OSAwIDAgMCAuMjUgOCA3Ljc_owvldn.svg' className="icon-user-profile"  />
                 { `Preferred working hours ${user?.workingHours  || "08:00 - 17:00"}`}
             </div>
+            <hr className="divider" />
+
+            <div className='profile-card-bottom-img'>
+                <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738337869/unavailable.86dea5d_dmgqrm.svg'></AddImg>
+            </div>
         </div>
     )
 }
