@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { SellerOrdersList } from '../cmps/SellerOrdersList.jsx'
+import { SellerFinanceSumup } from '../cmps/SellerFinanceSumup.jsx'
 
 import { loadOrders } from '../store/actions/order.actions.js'
 
@@ -37,10 +38,13 @@ export function SellerDashboard() {
     }
 
     return (
-        <main className="seller-dashboard-page full flex column">
-            <section className="dashboard-container layout-row">
-               
-                <h3>Manage Your Orders</h3>
+        <main className="seller-dashboard-page full">
+            <section className="dashboard-container flex">
+               <SellerFinanceSumup
+                 loggedInUser={loggedInUser}
+                 orders={orders}
+               />
+                
                 <SellerOrdersList
                     loggedInUser={loggedInUser}
                     orders={orders}
