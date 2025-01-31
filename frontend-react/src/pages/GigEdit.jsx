@@ -25,7 +25,18 @@ export function GigEdit() {
             navigate('/explore')
             return
         }
+        loadGig()
     }, [id, navigate, loggedInUser])
+
+    async function loadGig() {
+        try {
+          const gig = await gigService.getById(id)
+          setFields(gig)
+        } catch (err) {
+          console.error('Failed to load gig', err)
+          navigate('/explore')
+        }
+      }
 
     const initialValues = {
         title: "Untitled Gig",

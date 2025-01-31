@@ -31,6 +31,56 @@
     user-select: none;
   }
 
+  .gig-changes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625em 0.75em;
+    border-block-start: 1px solid $clrSecondary14;
+
+    .gig-btns {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      .gig-btn {
+        background-color: white;
+
+        svg {
+          width: 16px;
+          height: 16px;
+          background-color: white;
+          fill: $clrSecondary4;
+        }
+
+        :hover svg {
+          fill: $bgColor3;
+        }
+      }
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: end;
+      font-size: 18px;
+      height: 100%;
+      color: $clrSecondary8;
+
+      .starting {
+        font-size: 10px;
+        font-weight: 700;
+        color: $clrSecondary5;
+        text-transform: uppercase;
+      }
+    }
+
+    &.right {
+      justify-content: end;
+    }
+  }
+
   .ad-by {
     color: #62646a; 
     font-size: 14px; 

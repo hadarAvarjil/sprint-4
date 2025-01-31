@@ -15,115 +15,66 @@ import { loadReviews } from '../store/actions/review.actions.js'
 import { utilService } from '../services/util.service.js'
 
 
-
 export function GigPreview({ isFrom, gig, suppressOwner = false }) {
-
   const navigate = useNavigate()
-
   const params = useParams()
-
-  // const loggedInUserId = params.id
-
+  const loggedInUserId = params.id
   const loggedInUser = useSelector((storeState) => storeState.userModule.user)
-
   const { openLogin } = useModal()
-
   const deviceType = useDeviceType()
 
 
-
   const [newImgIndex, setNewImgIndex] = useState(0)
-
   const [owner, setOwner] = useState(null)
-
   const [updatedGig, setUpdatedGig] = useState(gig)
-
   const [isLiked, setIsLiked] = useState(false);
 
 
-
   useEffect(() => {
-
     if (!suppressOwner) {
-
       async function fetchOwnerDetails() {
-
         const ownerData = await userService.getById(updatedGig.ownerId)
-
         setOwner(ownerData)
-
       }
-
       fetchOwnerDetails()
-
     }
-
     loadReviews()
-
   }, [updatedGig.ownerId, suppressOwner])
 
 
-
-
   useEffect(() => {
-
     setIsLiked(gig.likedByUsers || false);
-
   }, []);
 
 
-
   async function onRemoveGig() {
-
     try {
-
       await removeGig(updatedGig._id)
-
       console.log('Gig removed successfully:')
-
       navigate(`/user/${owner._id}`)
-
     } catch (err) {
-
       console.error('Failed to save gig:', err)
-
     }
-
   }
 
   async function likeGig(e) {
-
     e.preventDefault()
-
     const gigToSave = { ...updatedGig }
-
-
-
     if (isLiked) {
-
       gigToSave.likedByUsers = false
-
       setIsLiked(false)
-
     } else {
-
       gigToSave.likedByUsers = true
-
       setIsLiked(true)
-
     }
 
-
-
     try {
-      await gigService.save(gigToSave);
+      await gigService.save(gigToSave)
       setUpdatedGig(gigToSave)
     } catch (err) {
       console.log("error save gig", err) //debug
     }
   }
-
-
 
   return (
     <li className="gig-preview">
@@ -154,34 +105,13 @@ export function GigPreview({ isFrom, gig, suppressOwner = false }) {
           </UserPreview>
         )}
 
-        {/* <div className="preview-body">
-          {isFrom === 'user-profile-gigs-owner' && (
-            <UserPreview isFrom={isFrom} owner={owner} gig={updatedGig}>
-              <Link className="gig-title" to={`/gig/${updatedGig._id}`}>
-                {updatedGig.title}
-              </Link>
-            </UserPreview>
-          )}
-        </div> */}
+        {isFrom === 'user-profile-gigs-owner' && (
+          <div className="gig-title flex">
+            <span className="gig-title b">{`${updatedGig.title}`}</span>
+          </div>
+        )}
 
-        {/* {isFrom === 'user-gigs' && (
-          <>
-            <div className="profile">
-              {loggedInUserId !== loggedInUser?._id && (
-                <UserPreview isFrom="userProfile" owner={owner} />
-              )}
-              <Link className="gig-title" to={`/gig/${updatedGig._id}`}>
-                {updatedGig.title}
-              </Link>
-              <div className="rating">
-                <SvgIcon iconName={'star'} />
-                <span>{loggedInUser?.rating}</span>
-                <span className="reviews">
-                  ({utilService.getRandomIntInclusive(100, 999)})
-                </span>
-              </div>
-            </div>
-            <div
+<div
               className={`gig-changes ${loggedInUserId !== loggedInUser?._id ? 'right' : ''
                 }`}
             >
@@ -197,25 +127,15 @@ export function GigPreview({ isFrom, gig, suppressOwner = false }) {
                   </button>
                 </div>
               )}
-              <div className="price">
+              {/* <div className="price">
                 <span className="starting">Starting At</span>
                 <span>{`$${updatedGig.price}`}</span>
-              </div>
+              </div> */}
             </div>
-          </>
-        )} */}
-
-        {isFrom === 'user-profile-gigs-owner' && (
-          <div className="gig-title flex">
-            <span className="gig-title b">{`${updatedGig.title}`}</span>
-          </div>
-        )}
-
-
 
         {isFrom !== 'userProfile' && (
           <div className="gig-price flex">
-            <span className="price b">{`From $${updatedGig.price}`}</span>
+            <span className="price b">{`price $${updatedGig.price}`}</span>
           </div>
         )}
       </div>
