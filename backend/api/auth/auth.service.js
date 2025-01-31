@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
 import { userService } from '../user/user.db.service.js'
 import { loggerService } from '../../services/logger.service.js'
@@ -19,8 +18,9 @@ async function login(username, password) {
   const user = await userService.getByUsername(username)
   if (!user) throw new Error('Invalid username or password')
 
-  const match = await bcrypt.compare(password, user.password)
-  if (!match) throw new Error('Invalid username or password')
+  if (password !== user.password) {
+    throw new Error('Invalid username or password')
+  }
 
   return user
 }
@@ -42,16 +42,14 @@ async function signup(
   isAdmin = false
 ) {
   console.log(`Attempting to signup user: ${username}`)
-  const saltRounds = 10
 
   if (!username || !password || !fullName) {
     throw new Error('Missing required details')
   }
 
-  const hash = await bcrypt.hash(password, saltRounds)
   return userService.save({
     username,
-    password: hash,
+    password, // שמירת הסיסמה כטקסט רגיל
     fullName,
     description,
     balance,

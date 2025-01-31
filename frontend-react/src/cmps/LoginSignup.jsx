@@ -8,8 +8,8 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
     const [credentials, setCredentials] = useState({
         username: '',
         password: '',
-        fullName: '',
-        avatar: '',
+        // fullName: '',
+        // imgUrl: '',
     })
     const [isSignup, setIsSignup] = useState(true)
 
@@ -21,33 +21,36 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
         setCredentials((prev) => ({ ...prev, [name]: value }))
 
     const onLogin = (e) => {
-        e.preventDefault()
-
+        e.preventDefault();
+    
         // Validation for required fields
-        if (!credentials.username || !credentials.password || (isSignup && !credentials.fullName)) {
-            showErrorMsg('All fields are required.')
-            return
+        if (!credentials.username || !credentials.password) {
+            showErrorMsg('All fields are required.');
+            return;
         }
-
+    
         // Call the appropriate function based on the mode
-        isSignup ? _signup(credentials) : _login(credentials)
+        isSignup ? _signup(credentials) : _login(credentials);
     }
 
     const _login = async (credentials) => {
         try {
-            await login(credentials)
-            showSuccessMsg('Logged in successfully')
-            handleClose()
+            const loginData = {
+                username: credentials.username,
+                password: credentials.password,
+            };
+            await login(loginData);
+            showSuccessMsg('Logged in successfully');
+            handleClose();
         } catch (error) {
-            showErrorMsg('Oops, try again')
+            showErrorMsg('Oops, try again');
         }
     }
-
     const _signup = async (credentials) => {
         const text = credentials.fullName[0].toUpperCase()
         const purple = '800080'
         const white = 'ffffff'
-        credentials.avatar = `https://ui-avatars.com/api/?name=${text}&background=${purple}&color=${white}`
+        credentials.imgUrl = `https://ui-avatars.com/api/?name=${text}&background=${purple}&color=${white}`
         try {
             await signup(credentials)
             showSuccessMsg('Signed up successfully')
