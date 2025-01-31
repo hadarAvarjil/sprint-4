@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
 import { userService } from '../services/user'
-import { orderService } from '../services/order'
+import { saveOrder } from '../store/actions/order.actions.js'
 
-
-export function SellerOrdersList({ loggedInUser, orders }) {
+export function SellerOrdersList({ loggedInUser, orders = [] }) {
     const [userOrders, setUserOrders] = useState([])
 
     useEffect(() => {
@@ -23,7 +21,7 @@ export function SellerOrdersList({ loggedInUser, orders }) {
                         return {
                             ...order,
                             fullName: user?.fullName || 'Unknown Buyer',
-                            imgUrl: user?.avatar || '/default-avatar.png', // Use default if missing
+                            imgUrl: user?.avatar || '/default-avatar.png',
                         };
                     } catch (err) {
                         console.error(`Error fetching user with ID ${order.buyerId}:`, err);
@@ -35,7 +33,6 @@ export function SellerOrdersList({ loggedInUser, orders }) {
                     }
                 })
             )
-
             setUserOrders(ordersData);
         } catch (err) {
             console.error('Unexpected error while loading user orders:', err)
@@ -44,11 +41,41 @@ export function SellerOrdersList({ loggedInUser, orders }) {
 
     function calculateDueOn(order) {
         if (!order?.createdAt || !order?.daysToMake) return 'N/A'
-
         const createdAtDate = new Date(order.createdAt)
         const dueOnDate = new Date(createdAtDate)
         dueOnDate.setDate(dueOnDate.getDate() + order.daysToMake)
         return dueOnDate.toDateString()
+    }
+
+    async function changeOrderState(orderId, newState) {
+        try {
+            const updatedOrders = userOrders.map(order =>
+                order._id === orderId ? { ...order, orderState: newState } : order
+            )
+            setUserOrders(updatedOrders)
+
+            // Update the backend
+            const updatedOrder = updatedOrders.find(order => order._id === orderId)
+            await saveOrder(updatedOrder)
+        } catch (err) {
+            console.error(`Error updating order ${orderId}:`, err)
+        }
+    }
+
+    const statusColors = {
+        "Pending": "#F1C40F",      // Yellow
+        "In Progress": "#3498DB",  // Blue
+        "Completed": "#2ECC71",    // Green
+        "Delivered": "#9B59B6",    // Purple
+        "Rejected": "#E74C3C"      // Red
+    }
+
+    const allowedTransitions = {
+        "Pending": ["In Progress", "Rejected"],
+        "In Progress": ["Completed", "Rejected"],
+        "Completed": ["Delivered"],
+        "Delivered": [], // No further changes
+        "Rejected": [] // No further changes
     }
 
     return (
@@ -65,13 +92,11 @@ export function SellerOrdersList({ loggedInUser, orders }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {userOrders.length > 0 ? (
-                        userOrders.map((order, index) => {
+                    {userOrders?.length > 0 ? ( 
+                        userOrders.map((order) => {
                             const dueOn = calculateDueOn(order)
-                            const status = order.status || "Pending" // Use dynamic status
-
                             return (
-                                <tr key={order._id || index}>
+                                <tr key={order._id}>
                                     <td>
                                         <img src={order.imgUrl} alt="Buyer" className="buyer-pic" />
                                         <span>{order.fullName}</span>
@@ -83,7 +108,20 @@ export function SellerOrdersList({ loggedInUser, orders }) {
                                     </td>
                                     <td>{dueOn}</td>
                                     <td>${order.price?.toFixed(2) || '0.00'}</td>
-                                    <td>{status}</td>
+                                    <td>
+                                        <select
+                                            className="order-status"
+                                            style={{ backgroundColor: statusColors[order.orderState] || '#ccc' }}
+                                            value={order.orderState}
+                                            onChange={(e) => changeOrderState(order._id, e.target.value)}
+                                            disabled={!allowedTransitions[order.orderState]?.length} // ✅ Safe check
+                                        >
+                                            <option value={order.orderState}>{order.orderState}</option>
+                                            {(allowedTransitions[order.orderState] || []).map(status => ( // ✅ Ensures .map() always runs on an array
+                                                <option key={status} value={status}>{status}</option>
+                                            ))}
+                                        </select>
+                                    </td>
                                 </tr>
                             )
                         })

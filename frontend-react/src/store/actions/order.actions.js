@@ -15,6 +15,18 @@ export async function loadOrders(filterBy = {}) {
     }
 }
 
+export async function saveOrder(order) {
+    try {
+        const savedOrder = await orderService.save(order)
+        const actionType = savedOrder._id ? UPDATE_ORDER : ADD_ORDER
+        store.dispatch({ type: actionType, order: savedOrder })
+        return savedOrder
+    } catch (err) {
+        console.error('Cannot save order', err)
+        throw err
+    }
+}
+
 export async function loadOrder(orderId) {
     try {
         const order = await orderService.getById(orderId)
@@ -25,7 +37,6 @@ export async function loadOrder(orderId) {
     }
 }
 
-console.log('Hi order')
 export async function removeOrder(orderId) {
     try {
         await orderService.remove(orderId)
