@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { useModal } from '../customHooks/ModalContext.jsx'
 import { useDeviceType } from '../customHooks/DeviceTypeContext.jsx'
 import { gigService } from '../services/gig.service'
-import { userService } from '../services/user/user.service.local.js'
+import { userService } from '../services/user.service.js' // save it and delete local storage
 import { removeGig } from '../store/actions/gig.actions.js'
 
 
