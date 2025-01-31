@@ -52,7 +52,7 @@ export function RootCmp() {
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="purchase/:gigId" element={<GigPurchasePage />} />
                     <Route path="user/:id" element={<UserDetails />} />
-                    <Route path="/gig/edit" element={<GigEdit />} />
+                    <Route path="/gig/edit/:id?" element={<GigEdit />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="chat" element={<ChatApp />} />
                     <Route path="admin" element={<AdminIndex />} />
