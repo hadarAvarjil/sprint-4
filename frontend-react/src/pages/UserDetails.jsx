@@ -11,6 +11,8 @@ import { UserSkills } from '../cmps/UserSkills.jsx'
 import SvgIcon from '../cmps/SvgIcon.jsx'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
+import { AddImg } from '../cmps/AddImg.jsx'
+
 import {
   socketService,
   SOCKET_EVENT_USER_UPDATED,
@@ -34,7 +36,8 @@ export function UserDetails() {
   const [filteredReviews, setFilteredReviews] = useState([])
   const [originalReviews, setOriginalReviews] = useState([])
   const [visibleCount, setVisibleCount] = useState(2)
-
+const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737985101/svg_xml_base64_PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0iI2ZmZiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS40OC40MjNhLjc1Ljc1IDAgMCAxIC4_c9a6an.svg'}/>
+  
   useEffect(() => {
     if (reviews.length > 0) {
       setFilteredReviews(reviews)
@@ -280,105 +283,117 @@ export function UserDetails() {
               </div>
             </div>
 
-            <div className="user-about">
-              <h2>About me</h2>
-              <p>{user.description || 'No additional details provided.'}</p>
-            </div>
-          </div>
-          <div className="user-contact-card">
-            <div className="contact-header">
-              <img className="avatar" src={user.avatar} alt="user-avatar" />
-              <h3>{user.fullName}</h3>
-              <p>Offline • {new Date().toLocaleTimeString()} local time</p>
-            </div>
-            <button className="contact-btn">Contact me</button>
-            <p className="response-time">Average response time: 1 hour</p>
+          <div className="user-about">
+            <h2>About me</h2>
+            <p>{user.about || 'No additional details provided.'}</p>
           </div>
         </div>
-
-        <UserSkills skills={user.skills} />
-        <div className="user-gigs">
-          <h2>My Gigs</h2>
-          <ul className="gigs-list">
-            {userGigs.map((gig) => (
-              <GigPreview
-                key={gig._id}
-                gig={gig}
-                isFrom="userProfile"
-                suppressOwner={true}
-              />
-            ))}
-          </ul>
-          <button
-            className="create-gig-btn"
-            onClick={() => navigate('/gig/edit')}
-          >
-            Create Gig
-          </button>
+        <div className="user-contact-card">
+          <div className="contact-header">
+            <img className="avatar" src={user.avatar} alt="user-avatar" />
+            <div className='contact-header-user-text-info'>
+            <h3>{user.fullName}</h3>
+            <p>Offline • {new Date().toLocaleTimeString()} local time</p>
+          </div>
+          </div>
+          <button className="contact-btn"> {paperPlane} Contact me</button>
+          <p className="response-time">Average response time: 1 hour</p>
         </div>
-        <div className="gig-reviews-section">
+      </div>
 
-          {ratingStats.totalReviews > 0 && (
-            <div className="reviews-summary">
-              <div className="average-rating">
-                {/* <span className="rating-number">{ratingStats.averageRating.toFixed(1)}</span> */}
-                <span className="stars">
-                  {'★'.repeat(Math.round(ratingStats.averageRating))}
-                  {'☆'.repeat(5 - Math.round(ratingStats.averageRating))}
-                </span>
-                {/* <p>{ratingStats.totalReviews} Reviews</p> */}
-              </div>
-              <div className="stars-breakdown">
-                {ratingStats.starCounts.map((count, index) => (
-                  <div key={index} className="star-row">
-                    <span>{5 - index} Stars</span>
-                    <div className="progress-bar">
-                      <div
-                        className="progress"
-                        style={{
-                          width: `${(count / ratingStats.totalReviews) * 100}%`,
-                        }}
-                      ></div>
-                    </div>
-                    <span>({count})</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          <div className="reviews-filters">
-            <input
-              type="text"
-              placeholder="Search reviews"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
+      <UserSkills skills={user.skills} />
+      <div className="user-gigs">
+        <h2>My Gigs</h2>
+        <ul className="gigs-list">
+          {userGigs.map((gig) => (
+            <GigPreview
+              key={gig._id}
+              gig={gig}
+              isFrom="userProfile"
+              suppressOwner={true}
             />
-            <button className="search-icon">
-              <SvgIcon iconName="search" />
-            </button>
-            <label>
-              <input
-                type="checkbox"
-                checked={showOnlyWithFiles}
-                onChange={(e) => setShowOnlyWithFiles(e.target.checked)}
-              />
-              Only show reviews with files
-            </label>
+          ))}
+        </ul>
+        {/* <button
+          className="create-gig-btn"
+          onClick={() => navigate('/gig/edit')}
+        >
+          Create Gig
+        </button> */}
+      </div>
+      <div className="gig-reviews-section">
+
+        {ratingStats.totalReviews > 0 && (
+          <div className="reviews-summary">
+            <div className='rating-container' >
+              <div className='average-rating-container'>
+
+              
+               <h2>{reviews.length} Reviews</h2>
+            <div className="average-rating">
+              {/* <span className="rating-number">{ratingStats.averageRating.toFixed(1)}</span> */}
+              <span className="stars">
+                {'★'.repeat(Math.round(ratingStats.averageRating))}
+                {'☆'.repeat(5 - Math.round(ratingStats.averageRating))}
+              </span>
+              {/* <p>{ratingStats.totalReviews} Reviews</p> */}
+            </div>
+            </div>
+
+            
+            <div className="stars-breakdown">
+              {ratingStats.starCounts.map((count, index) => (
+                <div key={index} className="star-row">
+                  <span>{5 - index} Stars</span>
+                  <div className="progress-bar">
+                    <div
+                      className="progress"
+                      style={{
+                        width: `${(count / ratingStats.totalReviews) * 100}%`,
+                      }}
+                    ></div>
+                  </div>
+                  <span>({count})</span>
+                </div>
+              ))}
+            </div>
+            </div>
           </div>
-          <h2>{reviews.length} Reviews</h2>
-          <ul className="reviews">
-            {filteredReviews.slice(0, visibleCount).map((review,index) => (
-              <li key={index}>
-                <GigReview review={review} />
-              </li>
-            ))}
-          </ul>
-          {visibleCount < filteredReviews.length && (
-            <div className="loading-indicator">Loading more reviews...</div>
-          )}
+        )}
+
+        <div className="reviews-filters">
+          
+          <input
+            type="text"
+            placeholder="Search reviews"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button className="search-icon">
+            <SvgIcon iconName="search" />
+          </button>
+          <label>
+            <input
+              type="checkbox"
+              checked={showOnlyWithFiles}
+              onChange={(e) => setShowOnlyWithFiles(e.target.checked)}
+            />
+            Only show reviews with files
+          </label>
         </div>
-      </section>
+     
+        <ul className="reviews">
+          {filteredReviews.slice(0, visibleCount).map((review) => (
+            <li key={review.id}>
+              <GigReview review={review} />
+            </li>
+          ))}
+        </ul>
+        {visibleCount < filteredReviews.length && (
+          <div className="loading-indicator">Loading more reviews...</div>
+        )}
+      </div>
+    </section>
     </div>
   )
 }

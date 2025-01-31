@@ -98,13 +98,17 @@ color: #74767e;
   .right-user-sign form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap:8px
   }
   
   .right-user-sign form label {
     display: flex;
     flex-direction: column;
-    // font-size: 14px;
+    font-size:16px;
+    line-height: 24px;
+    color: $fiverr-classic-dark-grey;
+    font-family: $fiverr-defult-font;
+    font-weight: 600;
   }
   
   .right-user-sign form button {
@@ -123,9 +127,13 @@ color: #74767e;
   }
   
   .right-user-sign form button:hover {
-    background-color: #45a049;
-  }
+    background-color: $fiverr-classic-dark-grey;
+    color: white;}
+.form-submit-bt:hover{
+  background-color: $fiverr-classic-dark-grey;
+  color: white;
 
+}
   .left-purple-ad .content {
     font-family: $fiverr-defult-font;
     position: absolute;
@@ -183,6 +191,17 @@ letter-spacing:normal;
     margin-top: auto; /* Push the image to the bottom if space allows */
   }
 
+  .toggle-sign-join-span{
+margin-left: 1em;
+text-decoration: underline;
+font-size: 16px;
+line-height: 24px;
+font-weight: 400
+  }
+  .toggle-sign-join-span:hover{
+    cursor: pointer
+  }
+
 
 /* The sign-in div */
 //   .sign-in {
@@ -220,3 +239,32 @@ letter-spacing:normal;
 //     width: 50%;
 //   }
   
+
+
+//shinoi6
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 0px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 875px;
+  max-width: 90%;
+  text-align: center;
+}
+
+ 
+

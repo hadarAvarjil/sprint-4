@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { UserPreview } from "./UserPreview.jsx"
 import { ImageCarousel } from './ImageCarousel.jsx'
 
-export function GigEditPreview({ gig }) {
+export function GigEditPreview({ gig, loggedInUser }) {
     const [newImgIndex, setNewImgIndex] = useState(0)
 
     return (
@@ -12,7 +12,7 @@ export function GigEditPreview({ gig }) {
                 <h3>{gig.title || "I will perform a freelancer service of an X type for a fee..."}</h3>
                 <p>${gig.price}</p>
             </div>
-            <UserPreview isFrom={'gig-details'} />
+            <UserPreview isFrom={'gig-details'} owner={loggedInUser} />
 
             <div className="gig-preview-images grid">
                 {gig.imgUrls && (<ImageCarousel

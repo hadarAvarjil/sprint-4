@@ -31,8 +31,8 @@
 @import "cmps/GigReview"; //HA
 @import "cmps/PurchaseAside"; //HA
 @import "cmps/GigDetailsLikeAndShare"; //HA
-
-@import "cmps/ReviewBreakdown";
+@import "cmps/FAQAccordion"; //HA
+@import "cmps/ProfileCard";
 
 
 @import "cmps/ReviewModal";
@@ -50,6 +50,9 @@
 @import "cmps/ImageCarousel";
 @import "cmps/UserMsg";
 @import "cmps/Loader";
+
+@import "cmps/LoadingIcon.scss";
+@import "cmps/UserOwnerReviews.scss";
 
 //home page cmps
 @import "cmps/HomeGreenDiv";
@@ -73,5 +76,8 @@
 @import "pages/AllOrders.scss";
 @import "pages/ProfilePage.scss";
 @import "pages/GigPurchase.scss";
+
+@import "pages/TermsPage.scss";
+@import "pages/PrivacyPage.scss";
 
 @import "cmps/MoveToRelevent.scss"

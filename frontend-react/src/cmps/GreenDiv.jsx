@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React  from "react";
+import { useState } from "react";
 import { AddImg } from "../cmps/AddImg.jsx";
 import { setFilter } from "../store/actions/gig.actions.js";
 import { useNavigate } from "react-router";
 import { useModal } from '../customHooks/ModalContext'
+
 
 
 
@@ -92,9 +94,9 @@ export function GreenDiv() {
               type="search"
               className="long-placeholder"
               placeholder="Search for any service..."
-              searchQuery={searchQuery}
-              onSearchChange={handleSearchChange}
-              onSearchSubmit={handleSearchSubmit}
+              // searchQuery={searchQuery}
+              // onSearchChange={handleSearchChange}
+              // onSearchSubmit={handleSearchSubmit}
               onFocus={() => controlDimming && setIsDimmed(true)}
               onBlur={() => controlDimming && setIsDimmed(false)}
               onKeyPress={handleKeyPress}

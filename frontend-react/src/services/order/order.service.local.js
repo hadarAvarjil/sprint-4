@@ -12,8 +12,16 @@ export const orderService = {
 }
 window.cs = orderService
 
-async function query() {
+async function query(filterBy) {
+
     let orders = await storageService.query(STORAGE_KEY)
+    
+    if (filterBy.sellerId) {
+        orders = orders.filter(order => order.sellerId === filterBy.sellerId)
+    }
+    if (filterBy.buyerId) {
+        orders = orders.filter(order => order.buyerId === filterBy.buyerId)
+    }
     return orders
 }
 
@@ -37,8 +45,7 @@ async function save(order) {
 function getEmptyOrder() {
     return {
         gigId: '',
-        // buyerId: '',
-        // buyerName: '',
+        buyerId: '',
         sellerId: '',
         price: 0,
         createdAt: Date.now(),
@@ -46,20 +53,15 @@ function getEmptyOrder() {
     }
 }
 
-async function createOrder(gigId, sellerId, price, title, daysToMake, total) {
-    console.log(total);
-
+async function createOrder(buyerId, gigId, sellerId, price, title, daysToMake) {
     const order = getEmptyOrder()
-    // order.buyerId = buyerId
-    // order.buyerName = buyerName
+
+    order.buyerId = buyerId
     order.gigId = gigId
     order.sellerId = sellerId
     order.price = price
     order.title = title
     order.daysToMake = daysToMake
-    order.totalPrice = total
-    console.log('order', order);
-
     return order
 }
 

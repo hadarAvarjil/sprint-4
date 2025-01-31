@@ -54,7 +54,7 @@
     }
 
     .about-gig h3 {
-      color: #404145;
+      color: $fiverr-classic-dark-grey;
       font-family: macan-regular, Helvetica, Arial, sans-serif;
       font-weight: 700;
       line-height: 28px;
@@ -83,8 +83,8 @@
   max-width: 1304px;
   height: auto;
   margin-inline: auto;
-  padding-inline: 32px;
-  padding-top: 44px;
+  // padding-inline: 32px;
+  padding-top: 12px;
 
   .user-details-wrapper {
     display: flex;
@@ -249,7 +249,7 @@
         }
 
         p {
-          color: #404145;
+          color: $fiverr-classic-dark-grey;
           line-height: 1.5em;
           word-break: break-word;
           font: 400 16px / 24px macan-light;
@@ -268,51 +268,65 @@
       text-align: center;
       border-radius: 4px;
       flex-direction: column;
-      margin-left: 10%;
       margin-top: 10%;
       background-color: white;
-      padding: 10px;
+      padding-left: 33px;
+      padding-bottom: 33px;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+      box-shadow:  0px 0px 16px rgba(0, 0, 0, 0.1);
+      // width: 423px;
+      // height: 250px;
+      box-shadow: 0 1.2px 1.92251px rgba(0,0,0,.02),0 2px 3.68135px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.05);
 
       .contact-header {
         text-align: center;
+        margin-top: 30px;
 
         .avatar {
-          width: 80px;
-          height: 80px;
+          width: 48px;
+          height: 48px;
           border-radius: 50%;
           object-fit: cover;
           margin-bottom: 10px;
         }
 
         h3 {
-          font-size: 1.3rem;
+          font-size:18px;
           margin-bottom: 5px;
-        }
+        line-height: 25px;
+        font-family: $fiverr-defult-font;
+      }
 
         p {
-          font-size: 0.9rem;
-          color: $clrSecondary6;
+          font-size: 16px;
+          line-height: 24px;
+          color: #62646a;
+          margin-bottom: -2px;
+          font-family: $fiverr-defult-font;
         }
       }
 
       .contact-btn {
-        display: block;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
         // width: 20%;
-        background-color: black;
+        background-color: #222325;
         color: white;
         padding: 10px 0;
         text-align: center;
         margin: 20px 0;
         border-radius: 5px;
-        font-size: 1rem;
-        font-weight: bold;
+        font-size: 16px;
+        font-style: normal;
+        font-family: $fiverr-defult-font;
+        font-weight: 600;
+        height: 47px;
         cursor: pointer;
 
-        &:hover {
-          background-color: darken($clrPrimary1, 10%);
+        &:hover { 
+          background-color: $black-btn-hover
         }
       }
 
@@ -320,6 +334,7 @@
         font-size: 0.9rem;
         color: $clrSecondary6;
         text-align: center;
+        margin-bottom: 30px;
       }
     }
   }
@@ -330,7 +345,7 @@
     h2 {
       font-size: 24px;
       margin-bottom: 20px;
-      color: #404145;
+      color: $fiverr-classic-dark-grey;
       font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
       font-weight: 700;
       line-height: 130%;
@@ -361,6 +376,35 @@
       align-items: flex-start;
       margin-bottom: 30px;
       flex-direction: row-reverse;
+
+.rating-container{
+  // border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+flex: 1;
+.average-rating-container{
+  display: flex;
+  flex-direction: row;
+  gap: 250px;
+  // width: 200px;
+  // border: solid 1px black;
+  width: fit-content;
+  justify-content: space-between;
+  @media(max-width:1270px) {
+     @media(min-width: 900px){
+      gap: 120px;
+
+  }
+  @media(max-width:900px){
+    gap: 20px;
+
+  }
+}
+
+}
+}
 
       .average-rating {
         text-align: center;
@@ -427,7 +471,7 @@
       input[type='text'] {
         width: 30%;
         padding: 10px 12px;
-        color: #404145;
+        color: $fiverr-classic-dark-grey;
         font-size: 1rem;
         border: 1px solid #ced1d6;
         border-radius: 5px 0 0 5px;
@@ -438,7 +482,7 @@
 
         &:focus {
           outline: none;
-          border-color: #404145;
+          border-color: $fiverr-classic-dark-grey;
         }
       }
 
@@ -460,7 +504,7 @@
         }
 
         &:hover {
-          background-color: #404145;
+          background-color: $fiverr-classic-dark-grey;
         }
       }
 
@@ -488,7 +532,7 @@
   }
 
   .user-skills {
-    margin-top: -10%;
+    margin-top: -6.5%;
     margin-bottom: 5%;
 
     h2 {
@@ -510,7 +554,7 @@
     .skill {
       display: inline-block;
       background-color: #ffffff;
-      color: #404145;
+      color: $fiverr-classic-dark-grey;
       font-size: 14px;
       font-weight: 500;
       padding: 8px 15px;

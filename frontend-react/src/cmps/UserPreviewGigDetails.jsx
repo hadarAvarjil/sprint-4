@@ -70,7 +70,7 @@ export function UserPreviewGigDetails({ owner, gig }) {
                                 {"★".repeat(Math.floor(user.rating))}
                                 {"☆".repeat(5 - Math.floor(user.rating))}
                             </span>
-                            <span className="rating-score">{user.rating.toFixed(1)}</span>
+                            <span className="rating-score"> {(user.rating || 0).toFixed(1)}</span>
                             <span
                                 className="reviews-count"
                                 onClick={() => {

@@ -1,14 +1,9 @@
-//shinoi4
+// //shinoi4
+// $b: .25em;
+// $c: #393939;
+
 .grid-main-container{ 
     min-height: 35vw;
-    // display: grid;
-    // @media (max-width: 480px) {
-    //     grid-template-columns: 16px 1fr 16px;
-    // }
-
-    // @media (min-width: 481px) {
-    //     grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
-    // }
 }
 .aside-sticky-div{
     width: 415px;
@@ -25,34 +20,110 @@
 .container-user-details-spesific{
     display: grid;
     grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
-
+    .user-gigs{
+      .gigs-list{
+        .gig-preview{
+          .carousel-wrapper{
+            width: 400px;
+            .carousel{
+    .carousel-item {
+      width: 100%;
+      position: relative;
+      background: linear-gradient(180deg, white, white);
+      object-fit: contain;
+      width:500px;
+    }
+  }
+}
+        }
+      }
+    }
 }
 
-
-
-
-//shinoi3
-
-// .main-container > main:not(.full) { /* Select the classless main */
-//     grid-column: 2 / 3; /* Places it in the second column */
-//     display: flex; /* Retains the flex behavior if needed */
-//   }
-
-//   .gig-category-title {
-//     text-align: left;
-//   }
+/* General styles */
+.user-contact-card {
+    /* Add some basic styling for the user-contact-card */
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Add position relative for normal layout */
+  }
   
-//   .gig-category-title h1 {
-//     margin: 0; /* Ensure no additional spacing */
-//   }
+  .container-user-details-spesific {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .contact-header{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
+  .contact-header-user-text-info{ 
+    display: flex;
+    flex-direction: column;
+text-align: start;   
+gap: 3px; 
+
+  }
+  
+  /* Media query for screen widths 900px and below */
+  @media (max-width: 900px) {
+    
+    .container-user-details-spesific {
+      display: block; /* Stacks elements vertically */
+    }
+  
+    .user-main-info {
+      margin-bottom: 20px; /* Adds some space between main info and contact card */
+    }
+  
+    /* Make the user-contact-card a sticky footer */
+    .user-contact-card {
+        z-index: 99999;
+// box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #fff; /* Ensures background covers the footer */
+      border-radius: 0;
+      padding: 20px;
+      margin-left: 0px;
+      height: 140px;
+      box-shadow: 0 1.2px 1.92251px rgba(0,0,0,.02),0 2px 3.68135px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.05);
+
+    }
+  
+    .user-contact-card .contact-header {
+  display: none;
+    }
+  
+    .user-contact-card .contact-btn {
+      width: 100%;
+    }
+  
+    .user-details-wrapper {
+      padding-bottom: 100px; 
+    }
+  
+  }
+  @media(min-width:900px){
+    .user-details-specific{
+        .user-details-wrapper{
+            .user-contact-card{
+                margin-left: 10%;
+                width: 423px;
+                height: 250px;
+            }
+        }
+    }
 
 
+  }
   
-//   .full {
-//     grid-column: 1 / -1; /* Spans all columns */
-//   }
-  
-//   .main-container > main:not(.full) { /* Select the classless main */
-//     grid-column: 2 / 3; /* Places it in the second column */
-//     display: flex; /* Retains the flex behavior if needed */
-//   }

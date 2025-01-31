@@ -16,9 +16,23 @@ export function GigReview({ review }) {
         Germany: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736502946/flag_Germany_yebov4.png',
         France: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736503610/Flag_France_s39umw.png',
         Italy: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1736503614/Flag_Italy_ws6uah.png',
-        Japan:'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144994/Flag_of_Japan.svg_pmozsw.webp',
-        Israel:'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144932/Israel_jr4jnd.png',
-        Argentina: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144994/Flag_of_Argentina.svg_whdtwz.png'
+        Japan: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144994/Flag_of_Japan.svg_pmozsw.webp',
+        Israel: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144932/Israel_jr4jnd.png',
+        Argentina: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1737144994/Flag_of_Argentina.svg_whdtwz.png',
+        Spain: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190117/Flag_of_Spain_fms23r.svg',
+        Colombia: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190117/Flag_of_Colombia.svg_dkgc5d.png',
+        China: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190117/Flag_of_the_People_s_Republic_of_China.svg_jt7c5t.png',
+        Brazil: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190103/brazil_fbakic.png',
+        Hungary: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190103/hungary_vwyptx.png',
+        India: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190102/india_lo1t0a.webp',
+        Canada: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190102/canada_gx2ahk.png',
+        Mexico: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190102/mexico_flag_wnrgie.png',
+        Australia: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190103/Australia_prpqhk.jpg',
+        Chile: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190102/chile_qs8f5m.png',
+        Mongolia: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190103/mongolia_lllghz.png',
+        Ethiopia: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190780/ethiopia_h2k6hd.png',
+        Bulgaria: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190720/bulgaria_cs5g56.png',
+        Ghana: 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738190719/ghana_vrbelb.png'
     }
 
     return (
