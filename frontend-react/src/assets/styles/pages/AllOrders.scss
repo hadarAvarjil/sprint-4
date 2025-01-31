@@ -5,19 +5,22 @@
   border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
 
   h4 {
     font-family: macan-bold;
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #333333; 
-    margin-bottom: 1.5rem; 
-    border-bottom: 2px solid #eaeaea; 
-    padding-bottom: 0.5rem; 
+    color: #333333;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 0.5rem;
   }
 
 
   .orders-table {
+    grid-column: 2;
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
@@ -47,9 +50,24 @@
           background-color: #f1f1f1;
         }
 
+        td.seller-td {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          text-align: center;
+          font-family: $fiverr-defult-font;
+        }
+
         td {
           padding: 1rem;
           border-bottom: 1px solid #eaeaea;
+          font-family: $fiverr-defult-font;
+
+
+
+          img.seller {
+            width: 50px;
+          }
 
           img.buyer-pic {
             width: 40px;

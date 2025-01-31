@@ -19,6 +19,8 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                 orders.map(async (order) => {
                     try {
                         const user = await userService.getById(order.sellerId)
+                        console.log(order,'uouououou');
+                        
                         return {
                             ...order,
                             fullName: user?.fullName || 'Unknown Buyer',
@@ -50,15 +52,20 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
         return dueOnDate.toDateString()
     }
 
+    console.log('what',userOrders);
+
+
     return (
         <section className="orders-table-container">
             <table className="orders-table">
                 <thead>
                     <tr>
-                        <th>Seller</th>
+                       
                         <th>Gig</th>
+                        <th>Gig Title</th>
                         <th>Due On</th>
                         <th>Total</th>
+                        <th>Seller</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -66,14 +73,21 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                     {userOrders.length > 0 ? (
                         userOrders.map((order, index) => {
                             const dueOn = calculateDueOn(order)
-                            const status = order.status || "Pending" 
+                            // const status = order.status || "Pending" 
+
+                            const getStatusElement = (status) => {
+                                if (status === "approved") {
+                                  return <div style={{ backgroundColor: "green", color: "white", padding: "5px", borderRadius: "4px" }}>Approved</div>;
+                                } else if (status === "declined") {
+                                  return <div style={{ backgroundColor: "red", color: "white", padding: "5px", borderRadius: "4px" }}>Declined</div>;
+                                } else {
+                                  return <div style={{ backgroundColor: "yellow", color: "black", padding: "5px", borderRadius: "4px" }}>Pending</div>;
+                                }
+                              };
 
                             return (
                                 <tr key={order._id || index}>
-                                    <td>
-                                        <img src={order.imgUrl} alt="Seller" className="seller" />
-                                        <span>{order.fullName}</span>
-                                    </td>
+                                    <td><img src={order.gigUrl} alt="Seller" className="seller" /></td>
                                     <td>
                                         <Link to={`/gig/${order.gigId}`}>
                                             {order.title || 'Unknown Gig'}
@@ -81,7 +95,13 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                     </td>
                                     <td>{dueOn}</td>
                                     <td>${order.price?.toFixed(2) || '0.00'}</td>
-                                    <td>{status}</td>
+                                    <td className='seller-td'>
+                                        <img src={order.imgUrl} alt="Seller" className="seller" />
+                                        <span>{order.fullName}</span>
+                                    </td>
+                                    <td>{getStatusElement('order.status' || "pending")}</td>
+
+                                    {/* <td>{status}</td> */}
                                 </tr>
                             )
                         })
