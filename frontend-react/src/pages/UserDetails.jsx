@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { GigPreview } from '../cmps/GigPreview.jsx'
 import { GigReview } from '../cmps/GigReview.jsx'
-import { gigService } from '../services/gig/gig.service.local.js'
+import { gigService } from '../services/gig.service.js'
+import { userService } from '../services/user.service.js' 
 import { loadUser } from '../store/actions/user.actions'
 import { UserSkills } from '../cmps/UserSkills.jsx'
 import SvgIcon from '../cmps/SvgIcon.jsx'
@@ -40,7 +41,8 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
   useEffect(() => {
     if (reviews.length > 0) {
       setFilteredReviews(reviews)
-      setOriginalReviews(reviews);
+      setOriginalReviews(reviews)
+      console.log('Filtered Reviews set:', reviews)
     }
   }, [reviews])
 
@@ -49,6 +51,7 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
       try {
         const gigs = await gigService.query()
         setAllGigs(gigs)
+        console.log('Fetched and normalized gigs:', gigs)
       } catch (err) {
         console.error('Failed to load gigs:', err)
       }
@@ -65,38 +68,62 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
       }
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [visibleCount, filteredReviews]);
-
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [visibleCount, filteredReviews])
 
   useEffect(() => {
     async function fetchReviewsWithUserData() {
-      if (!userGigs.length) return
+      if (!userGigs.length) {
+        console.log('No user gigs available to fetch reviews.')
+        return
+      }
 
       try {
         const allReviews = userGigs.flatMap((gig) => gig.reviews || [])
+        console.log('All Reviews from Gigs:', allReviews)
+
         const reviewsWithUserData = await Promise.all(
           allReviews.map(async (review) => {
-            if (review.username && review.imgUrl && review.country) {
+            if (review.username && review.imgUrl) {
+              console.log(`Review ${review.id} already has username and imgUrl`)
               return review
             }
+            console.log(`Fetching user data for review ID: ${review.id}, userId: ${review.userId}`)
+
+            const userId = typeof review.userId === 'object' && review.userId.$oid ? review.userId.$oid : review.userId
+
             try {
-              const user = await userService.getById(review.userId)
+              const user = await userService.getById(userId)
+              if (!user) {
+                console.warn(`User with ID ${userId} not found.`)
+                return {
+                  ...review,
+                  username: 'Unknown',
+                  imgUrl: 'https://via.placeholder.com/50',
+                  country: 'Unknown', 
+                }
+              }
+              console.log(`Fetched user for review ${review.id}:`, user)
               return {
                 ...review,
-                username: user?.fullName || "Unknown",
-                imgUrl: user?.avatar || "https://via.placeholder.com/50",
-                country: user?.from || "Unknown",
-              };
+                username: user.username || "Unknown", 
+                imgUrl: user.imgUrl || "https://via.placeholder.com/50",
+                country: user.from || "Unknown",
+              }
             } catch (err) {
               console.error(`Failed to fetch user data for review ${review.id}`, err)
-              return review
+              return {
+                ...review,
+                username: 'Unknown',
+                imgUrl: 'https://via.placeholder.com/50',
+                country: 'Unknown',
+              }
             }
           })
-        );
+        )
         console.log("Enriched reviews:", reviewsWithUserData)
         setReviews(reviewsWithUserData)
         setOriginalReviews(reviewsWithUserData)
@@ -108,17 +135,21 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
     fetchReviewsWithUserData()
   }, [userGigs])
 
-
-
   useEffect(() => {
     if (user && user._id) {
-      const filteredGigs = allGigs.filter((gig) => gig.ownerId === user._id)
+      const userId = typeof user._id === 'object' && user._id.$oid ? user._id.$oid : user._id
+      console.log('User ID:', userId) 
+
+      const filteredGigs = allGigs.filter((gig) => gig.ownerId === userId)
+      console.log('Gig ownerIds:', allGigs.map(gig => gig.ownerId)) 
+      console.log('Filtered Gigs for User:', filteredGigs) 
+
       setUserGigs(filteredGigs)
     }
   }, [user, allGigs])
 
   useEffect(() => {
-    applyFilters(reviews)
+    applyFilters()
   }, [searchText, showOnlyWithFiles, reviews])
 
   useEffect(() => {
@@ -135,14 +166,15 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
   useEffect(() => {
     if (userGigs.length > 0) {
       const allReviews = userGigs.flatMap((gig) => gig.reviews || [])
+      console.log('All Reviews for Rating Stats:', allReviews)
       calculateRatingStats(allReviews)
       applyFilters(allReviews)
     }
   }, [userGigs, searchText, showOnlyWithFiles])
 
-  function onUserUpdate(user) {
-    showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
-    store.dispatch({ type: 'SET_WATCHED_USER', user })
+  function onUserUpdate(updatedUser) {
+    showSuccessMsg(`This user ${updatedUser.fullName} just got updated from socket, new score: ${updatedUser.score}`)
+    store.dispatch({ type: 'SET_WATCHED_USER', user: updatedUser })
   }
 
   function calculateRatingStats(reviews) {
@@ -153,11 +185,19 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
     reviews.forEach((review) => {
       if (review.rating) {
         totalRating += review.rating
-        starCounts[review.rating - 1]++
+        const index = Math.floor(review.rating) - 1
+        if (index >= 0 && index < 5) {
+          starCounts[index]++
+        }
       }
     })
 
     setRatingStats({
+      totalReviews,
+      starCounts,
+      averageRating: totalRating / totalReviews || 0,
+    })
+    console.log('Rating Stats:', {
       totalReviews,
       starCounts,
       averageRating: totalRating / totalReviews || 0,
@@ -170,7 +210,7 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
     if (searchText.trim()) {
       filtered = filtered.filter((review) =>
         review.text?.toLowerCase().includes(searchText.toLowerCase())
-      );
+      )
     }
 
     if (showOnlyWithFiles) {
@@ -178,71 +218,70 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
     }
 
     setFilteredReviews(filtered)
+    console.log('Filtered Reviews after applying filters:', filtered)
   }
 
   function renderStars(rate) {
-    const maxStars = 3; // Total number of stars
-    const filledStars = "✦".repeat(rate);
-    const emptyStars = "✧".repeat(maxStars - rate);
-    return filledStars + emptyStars;
+    const maxStars = 3
+    const filledStars = "✦".repeat(rate)
+    const emptyStars = "✧".repeat(maxStars - rate)
+    return filledStars + emptyStars
   }
+  const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
 
 
-
- 
   if (!user) return <div>Loading...</div>
 
   return (
-    <div className='container-user-details-spesific'>
-    <section className="user-details-specific">
-      <div className="user-details-wrapper">
-        <div className="user-main-info">
-          <div className="user-header flex align-start">
-            <img
-              className="user-avatar-specific"
-              src={user.avatar}
-              alt={`${user.fullName}'s avatar`}
-            />
-            <div className="user-info">
-              <h1>{user.fullName} <span className="username">@{user.username}</span></h1>
-              {user.level === 'Pro Talent' && (
-                <span className="pro-badge">
-                  <SvgIcon iconName="customCheckMarkSunIcon" />
-                  Pro
-                </span>
-              )}
-              {user.level === 'New Seller' && (
-                <span className="new-seller-badge">
-                  <SvgIcon iconName="newSeedlingIcon" />
-                  New Seller
-                </span>
-              )}
-              <div className="rating">
-                <span>
-                  <SvgIcon iconName="blackStar" />
-                  {user.rating}
-                </span>
-                <span>({user.reviewsCount || 0})</span>
-                {user.level === 3 && (
-                <span className="top-rated-badge">
-                  Top Rated ✦✦✦
-                </span>
-              )}
-                {user.level < 3 && (
-                  <span className="level-badge">
-                    Level {user.level} {renderStars(user.level)}
+    <div className='container-user-details-specific'>
+      <section className="user-details-specific">
+        <div className="user-details-wrapper">
+          <div className="user-main-info">
+            <div className="user-header flex align-start">
+              <img
+                className="user-avatar-specific"
+                src={user.imgUrl}
+                alt={`${user.fullName}'s avatar`}
+              />
+              <div className="user-info">
+                <h1>{user.fullName} <span className="username">@{user.username}</span></h1>
+                {user.level === 'Pro Talent' && (
+                  <span className="pro-badge">
+                    <SvgIcon iconName="customCheckMarkSunIcon" />
+                    Pro
                   </span>
                 )}
+                {user.level === 'New Seller' && (
+                  <span className="new-seller-badge">
+                    <SvgIcon iconName="newSeedlingIcon" />
+                    New Seller
+                  </span>
+                )}
+                <div className="rating">
+                  <span>
+                    <SvgIcon iconName="blackStar" />
+                    {user.rating}
+                  </span>
+                  <span>({user.reviewsCount || 0})</span>
+                  {levelNumber === 3 && (
+                    <span className="top-rated-badge">
+                      Top Rated ✦✦✦
+                    </span>
+                  )}
+                  {levelNumber < 3 && (
+                    <span className="level-badge">
+                      Level {levelNumber} {renderStars(levelNumber)}
+                    </span>
+                  )}
+                </div>
+                <p className="user-bio">{user.bio || 'Spokesperson, actress and video producer'}</p>
+                <p className="user-location">
+                  <SvgIcon iconName="locationUser" />
+                  {user.from}<SvgIcon iconName="languageIcon" />
+                  <span className="languages-text">{user.languages.join(', ')} </span>
+                </p>
               </div>
-              <p className="user-bio">{user.bio || 'Spokesperson, actress and video producer'}</p>
-              <p className="user-location">
-                <SvgIcon iconName="locationUser" />
-                {user.from}<SvgIcon iconName="languageIcon" />
-                <span className="languages-text">{user.languages.join(', ')} </span>
-              </p>
             </div>
-
-          </div>
 
           <div className="user-about">
             <h2>About me</h2>
@@ -251,7 +290,7 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
         </div>
         <div className="user-contact-card">
           <div className="contact-header">
-            <img className="avatar" src={user.avatar} alt="user-avatar" />
+            <img className="avatar" src={user.imgUrl} alt="user-avatar" />
             <div className='contact-header-user-text-info'>
             <h3>{user.fullName}</h3>
             <p>Offline • {new Date().toLocaleTimeString()} local time</p>
@@ -356,5 +395,5 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
       </div>
     </section>
     </div>
-  );
+  )
 }

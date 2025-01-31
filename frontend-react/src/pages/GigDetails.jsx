@@ -13,7 +13,7 @@ import { FAQAccordion } from '../cmps/FAQAccordion'
 import { GigReviewsList } from '../cmps/GigReviewsList'
 import { GigDetailsOrder } from '../cmps/GigDetailsOrder'
 import { GigDetailsLikeAndShare } from '../cmps/GigDetailsLikeAndShare'
-
+import { gigService } from '../services/gig.service.js' 
 
 
 export function GigDetails() {

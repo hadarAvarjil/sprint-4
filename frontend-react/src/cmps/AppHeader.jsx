@@ -44,9 +44,16 @@ export function AppHeader() {
 
   const dispatch = useDispatch();
 
-  const loggedinUser = useSelector((storeState) => storeState.userModule.user);
-  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy);
-  const deviceType = useDeviceType();
+  const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+  const [isSignup, setIsSignup] = useState(true)
+  const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false)
+
+  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
+
+  const deviceType = useDeviceType()
+
+
+
 
   const categories = category;
   const location = useLocation();
@@ -78,26 +85,26 @@ export function AppHeader() {
 
   useEffect(() => {
     if (!isHomePage) {
-      setHeaderStage(2);
-      setHeaderPlaceholderText("What service are you looking for today?");
+      setHeaderStage(2)
+      setHeaderPlaceholderText("What service are you looking for today?")
     } else {
-      setHeaderStage(0);
-      setHeaderPlaceholderText("What service are you looking for today?");
+      setHeaderStage(0)
+      setHeaderPlaceholderText("What service are you looking for today?")
     }
-  }, [deviceType, isHomePage]);
+  }, [deviceType, isHomePage])
 
   useEffect(() => {
     const handleScroll = () => {
       if (deviceType !== "mini-tablet" && deviceType !== "mobile") {
-        const newStage = window.scrollY < 50 ? 0 : window.scrollY < 150 ? 1 : 2;
+        const newStage = window.scrollY < 50 ? 0 : window.scrollY < 150 ? 1 : 2
         setHeaderStage(newStage);
       }
-    };
-    if (isHomePage && deviceType !== "mini-tablet" && deviceType !== "mobile") {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
     }
-  }, [isHomePage, deviceType]);
+    if (isHomePage && deviceType !== "mini-tablet" && deviceType !== "mobile") {
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
+    }
+  }, [isHomePage, deviceType])
 
   function handleSearchChange(e) { 
     const newSearchQuery = e.target.value;
@@ -108,7 +115,7 @@ export function AppHeader() {
     e.preventDefault();
     if (!searchQuery) return;
 
-    const newFilterBy = { ...filterBy, txt: searchQuery };
+    const newFilterBy = { ...filterBy, search: searchQuery };
     console.log("Setting filter with:", newFilterBy);
     dispatch(setFilter(newFilterBy));
 
@@ -198,7 +205,7 @@ export function AppHeader() {
                       setShowUserDropdownMenu((prev) => !prev);
                     }}
                   >
-                    <img src={loggedinUser.avatar} alt="User avatar" />
+                    <img src={loggedinUser.imgUrl} alt="User avatar" />
                   </div>
                   {showUserDropdownMenu && (
                     <UserDropdownMenu

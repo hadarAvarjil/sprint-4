@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { userService } from '../services/user'
+import { userService } from '../services/user.service.js'
 import { orderService } from '../services/order'
 
 export function BuyerOrdersList({ loggedInUser, orders }) {
@@ -21,8 +21,8 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                         const user = await userService.getById(order.sellerId)
                         return {
                             ...order,
-                            fullName: user?.fullName || 'Unknown Buyer',
-                            imgUrl: user?.avatar || '/default-avatar.png', // Use default if missing
+                            fullName: user.fullName || 'Unknown Buyer',
+                            imgUrl: user?.imgUrl || '/default-avatar.png', // Use default if missing
                         }
                     } catch (err) {
                         console.error(`Error fetching user with ID ${order.sellerId}:`, err);
