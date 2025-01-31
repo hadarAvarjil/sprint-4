@@ -21,11 +21,7 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                         return {
                             ...order,
                             fullName: user?.fullName || 'Unknown Buyer',
-<<<<<<< HEAD
-                            imgUrl: user?.imgUrl || '/default-avatar.png', // Use default if missing
-=======
                             imgUrl: user?.avatar || '/default-avatar.png',
->>>>>>> b-order-filter
                         };
                     } catch (err) {
                         console.error(`Error fetching user with ID ${order.buyerId}:`, err);
