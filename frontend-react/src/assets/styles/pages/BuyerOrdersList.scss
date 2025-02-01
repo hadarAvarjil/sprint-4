@@ -1,11 +1,12 @@
-.orders-table-container {
+.buyer-my-orders-table{
+    .orders-table-container {
     .orders-table {
 
             thead{
                 tr{
                    
                     th{
-                        color: #1dbf73;
+                        color: #404145;
                         align-items: center;
                         text-align: center;
                         justify-content: center;
@@ -28,4 +29,5 @@
             }
         }
     }
+}
 }
