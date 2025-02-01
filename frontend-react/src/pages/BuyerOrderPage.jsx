@@ -18,7 +18,6 @@ export function BuyerOrderPage() {
         async function fetchOrders() {
             if (loggedInUser) {
                 try {
-                    console.log(loggedInUser);
                     await loadOrders({ buyerId: loggedInUser._id })
                 } catch (err) {
                     console.error("Error loading orders:", err)
