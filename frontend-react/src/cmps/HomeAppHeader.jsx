@@ -36,7 +36,7 @@ export function HomeAppHeader() {
   const [isSignup, setIsSignup] = useState(true);
   const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false);
 
-  const [showUserOrdersDropdownMenu,  setShowUserOrdersDropdownMenu] = useState(false);
+  const [showUserOrdersDropdownMenu, setShowUserOrdersDropdownMenu] = useState(false);
   const handleJoinClick = () => {
     setIsJoinDivVisible(true); // shinoi6
   };
@@ -59,7 +59,7 @@ export function HomeAppHeader() {
   const loggedinUser = useSelector((storeState) => storeState.userModule.user);
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy);
 
-  
+
 
   function setCatFilter(category) {
     dispatch(setFilter({ ...filterBy, cat: category }));
@@ -179,57 +179,57 @@ export function HomeAppHeader() {
             <NavLink to="gig">
               <div className="sign-header-btn explore-btn">Explore</div>
             </NavLink>
-         {loggedinUser ? (
-                    <>
-                      <div className="orders-container" ref={ordersRef}>
-                        {/* <NavLink to="/orders"> */}
-                          <div className="sign-header-btn"  onClick={(e) => {
-                            e.stopPropagation();
-                            setShowUserOrdersDropdownMenu((prev) => !prev);
-                          }}      
-                    >Orders</div>
-                        {/* </NavLink> */}
-      
-                        {showUserOrdersDropdownMenu && (
-                          <UserOrdersDropdownMenu
-                          topOffset={'calc(6% + 60px'}
+            {loggedinUser ? (
+              <>
+                <div className="orders-container" ref={ordersRef}>
+                  {/* <NavLink to="/orders"> */}
+                  <div className="sign-header-btn" onClick={(e) => {
+                    e.stopPropagation();
+                    setShowUserOrdersDropdownMenu((prev) => !prev);
+                  }}
+                  >Orders</div>
+                  {/* </NavLink> */}
 
-                            loggedInUser={loggedinUser}
-                            onClose={() => setShowUserDropdownMenu(false)}
-                          />
-                        )}
-                      </div>
-      
-                      <div className="user-container" ref={userRef}>
-                        <div
-                          className="user-circle"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setShowUserDropdownMenu((prev) => !prev);
-                          }}
-                        >
-                          <img src={loggedinUser.avatar} alt="User avatar" />
-                        </div>
-                        {showUserDropdownMenu && (
-                          <UserDropdownMenu
-                            loggedInUser={loggedinUser}
-                            onClose={() => setShowUserDropdownMenu(false)}
-                          />
-                        )}
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="signIn-btn">
-                        <button onClick={handleLoginClick}>Sign In</button>{" "}
-                        {/* shinoi6 */}
-                      </div>
-                      <div className="join-btn">
-                        <button onClick={handleJoinClick}>Join</button>{" "}
-                        {/* shinoi6 */}
-                      </div>
-                    </>
+                  {showUserOrdersDropdownMenu && (
+                    <UserOrdersDropdownMenu
+                      topOffset={'calc(6% + 60px'}
+
+                      loggedInUser={loggedinUser}
+                      onClose={() => setShowUserDropdownMenu(false)}
+                    />
                   )}
+                </div>
+
+                <div className="user-container" ref={userRef}>
+                  <div
+                    className="user-circle"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setShowUserDropdownMenu((prev) => !prev);
+                    }}
+                  >
+                    <img src={loggedinUser.imgUrl} alt="User avatar" />
+                  </div>
+                  {showUserDropdownMenu && (
+                    <UserDropdownMenu
+                      loggedInUser={loggedinUser}
+                      onClose={() => setShowUserDropdownMenu(false)}
+                    />
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="signIn-btn">
+                  <button onClick={handleLoginClick}>Sign In</button>{" "}
+                  {/* shinoi6 */}
+                </div>
+                <div className="join-btn">
+                  <button onClick={handleJoinClick}>Join</button>{" "}
+                  {/* shinoi6 */}
+                </div>
+              </>
+            )}
           </div>
         </nav>
         <div className="header-inner-border"></div>
@@ -519,7 +519,7 @@ export function HomeAppHeader() {
 //               </>
 //             )}
 
-//             {/* {isSignDivVisible && ( 
+//             {/* {isSignDivVisible && (
 //               <div className="modal-overlay" onClick={handleCloseSignDiv}>
 //                 <SignDiv />
 //               </div>
