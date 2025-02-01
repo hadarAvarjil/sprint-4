@@ -22,7 +22,6 @@
 
 
     .sign-header-btn {
-      // background-color: blue;
       font-size: 16px;
       font-family: $fiverr-defult-font;
       line-height: 24px;
@@ -30,9 +29,7 @@
       letter-spacing: normal;
       color: $black-btn;
       transition-duration: 0.2s;
-
     }
-
     .sign-header-btn:hover {
       color: $green-fiverr;
     }

@@ -1,6 +1,6 @@
 import { gigService } from '../../services/gig.service'
 import { store } from '../store'
-import { ADD_GIG, REMOVE_GIG, SET_GIGS, SET_GIG, UPDATE_GIG, ADD_GIG_MSG, SET_FILTER } from '../reducers/gig.reducer'
+import { ADD_GIG, REMOVE_GIG, SET_GIGS, SET_GIG, UPDATE_GIG, ADD_GIG_MSG, SET_FILTER, SET_LIKED_GIGS, SET_RECOMMENDED_GIGS } from '../reducers/gig.reducer'
 
 export async function loadGigs(filterBy = {}) {
     try {
@@ -85,6 +85,61 @@ export async function addGigMsg(gigId, txt) {
         throw err
     }
 }
+export async function toggleGigLike(gigId) {
+    return async (dispatch, getState) => {
+        try {
+            const loggedInUser = getState().userModule.user;
+            if (!loggedInUser) throw new Error('User not logged in');
+
+            const gigs = getState().gigModule.gigs;
+            const gig = gigs.find(gig => gig._id === gigId);
+            if (!gig) throw new Error('Gig not found');
+
+            const updatedGig = { ...gig };
+            updatedGig.likedByUsers = Array.isArray(updatedGig.likedByUsers) ? [...updatedGig.likedByUsers] : [];
+
+            if (updatedGig.likedByUsers.includes(loggedInUser._id)) {
+                updatedGig.likedByUsers = updatedGig.likedByUsers.filter(userId => userId !== loggedInUser._id);
+            } else {
+                updatedGig.likedByUsers.push(loggedInUser._id);
+            }
+            await gigService.save(updatedGig);
+
+            dispatch({ type: 'UPDATE_GIG', gig: updatedGig });
+        } catch (err) {
+            console.error('Failed to toggle like on gig:', err);
+        }
+    };
+}
+
+
+export async function loadLikedGigs() {
+    try {
+        const loggedInUser = store.getState().userModule.user;
+        if (!loggedInUser) throw new Error('User not logged in');
+
+        const gigs = await gigService.query();
+        const likedGigs = gigs.filter((gig) =>
+            gig.likedByUsers?.includes(loggedInUser._id)
+        );
+
+        store.dispatch({ type: 'SET_LIKED_GIGS', likedGigs });
+    } catch (err) {
+        console.error('Cannot load liked gigs:', err);
+        throw err;
+    }
+}
+
+export async function loadRecommendedGigs(category) {
+    try {
+        const gigs = await gigService.query({ category });
+        store.dispatch({ type: 'SET_RECOMMENDED_GIGS', gigs });
+    } catch (err) {
+        console.error('Cannot load recommended gigs:', err);
+        throw err;
+    }
+}
+
 
 // Command Creators:
 function getCmdSetGigs(gigs) {
