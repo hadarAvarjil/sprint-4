@@ -77,7 +77,7 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
     }
 
     return (
-        <section className="orders-table-container">
+        <section className="seller-orders-list">
             <h4>Manage Your Orders</h4>
             <table className="orders-table">
                 <thead>
