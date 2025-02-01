@@ -11,6 +11,7 @@ import { ImageCarousel } from '../cmps/ImageCarousel'
 import { AboutGigSeller } from '../cmps/AboutGigSeller'
 import { FAQAccordion } from '../cmps/FAQAccordion'
 import { GigReviewsList } from '../cmps/GigReviewsList'
+import { GigReviewsListCarousel } from '../cmps/GigReviewsListCarousel'
 import { GigDetailsOrder } from '../cmps/GigDetailsOrder'
 import { GigDetailsLikeAndShare } from '../cmps/GigDetailsLikeAndShare'
 import { gigService } from '../services/gig/gig.service.local.js' 
@@ -84,6 +85,8 @@ export function GigDetails() {
                 ))}
               </div>
             </section>
+
+            <GigReviewsListCarousel gig={gig} id="reviews-section" />
 
             <div className='about-gig'>
               <h3 className='gig-details-header-About-Gig'>About this gig</h3>

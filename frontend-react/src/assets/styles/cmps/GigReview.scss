@@ -44,7 +44,7 @@
                     font-size: 0.9rem;
                     color: #888;
                     vertical-align: middle;
-                    padding-top:2px ;
+                    padding-top: 2px;
                 }
 
                 .reviewer-country-img {
@@ -177,4 +177,49 @@
     line-height: 28px;
     margin-top: rem(66px);
     margin-bottom: rem(10px);
-  }
+}
+
+.gig-reviews-list-carousel {
+    position: relative;
+    padding-top: 20px; // Add padding above the reviews section if needed
+
+    h3 {
+        position: relative; // Ensures alignment for the arrows
+    }
+
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        top: -40px;
+        transform: translateY(50%);
+        z-index: 2;
+        cursor: pointer;
+
+        // Remove default slick arrow styling
+        &::before {
+            content: '';
+        }
+    }
+
+    .slick-prev {
+        left: 580px; // Adjust this value for arrow positioning on the left
+    }
+
+    .slick-next {
+        right: 10px; // Adjust this value for arrow positioning on the right
+    }
+
+    // Optional styling for arrows
+    .slick-prev,
+    .slick-next {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ebeff3; // Custom arrow background color
+        color: white; // Arrow icon color
+        border-radius: 50%; // Circular shape
+        height: 40px;
+        width: 40px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
