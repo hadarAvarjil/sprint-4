@@ -87,7 +87,12 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
 
                             return (
                                 <tr key={order._id || index}>
-                                    <td><img src={order.gigUrl} alt="Seller" className="seller" /></td>
+                                   <td>
+                                        <img src={order.gigFirstImgUrl} alt="gigFirstImgUrl" className="gigFirstImgUrl" />
+                                        <Link to={`/gig/${order.gigId}`}>
+                                            {order.title || 'Unknown Gig'}
+                                        </Link>
+                                    </td>
                                     <td>
                                         <Link to={`/gig/${order.gigId}`}>
                                             {order.title || 'Unknown Gig'}
