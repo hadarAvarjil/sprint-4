@@ -111,33 +111,27 @@ export function GigPreview({ isFrom, gig, suppressOwner = false }) {
           </div>
         )}
 
-<div
-              className={`gig-changes ${loggedInUserId !== loggedInUser?._id ? 'right' : ''
-                }`}
-            >
-              {loggedInUserId === loggedInUser?._id && (
-                <div className="gig-btns">
-                  <button className="gig-btn">
-                    <Link to={`/gig/edit/${updatedGig._id}`}>
-                      <SvgIcon iconName={'pencil'} />
-                    </Link>
-                  </button>
-                  <button onClick={onRemoveGig} className="gig-btn">
-                    <SvgIcon iconName={'trashIcon'} />
-                  </button>
-                </div>
-              )}
-              {/* <div className="price">
-                <span className="starting">Starting At</span>
-                <span>{`$${updatedGig.price}`}</span>
-              </div> */}
-            </div>
-
         {isFrom !== 'userProfile' && (
           <div className="gig-price flex">
             <span className="price b">{`price $${updatedGig.price}`}</span>
           </div>
         )}
+
+        <div className="gig-changes">
+          {loggedInUser && loggedInUser._id === gig.ownerId && (
+            <div className="gig-btns">
+              <Link to={`/gig/edit/${gig._id}`}>
+                <button className="gig-btn">
+                  <SvgIcon iconName={'pencil'} />
+                </button>
+              </Link>
+
+              <button onClick={onRemoveGig} className="gig-btn">
+                <SvgIcon iconName={'trashIcon'} />
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </li>
   )
