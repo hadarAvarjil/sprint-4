@@ -2,7 +2,7 @@ const { DEV, VITE_LOCAL } = import.meta.env
 
 import { getRandomIntInclusive, makeId } from '../util.service'
 
-import { gigService as local } from '../gig.service.js'
+import { gigService as local } from '../gig/gig.service.local'
 import { gigService as remote } from './gig.service.remote'
 
 function getEmptyGig() {

@@ -1,4 +1,4 @@
-import { reviewService } from '../../services/review.service.js'
+import { reviewService } from '../../services/review/review.service.local'
 
 import { store } from '../store'
 import { ADD_REVIEW, REMOVE_REVIEW, SET_REVIEWS } from '../reducers/review.reducer'

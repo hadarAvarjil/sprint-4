@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import { userService } from '../services/user.service.js'
+import { userService } from '../services/user/user.service.local.js'
 import { reviewService } from '../services/review'
 
 import { GigReview } from "../cmps/GigReview.jsx"
