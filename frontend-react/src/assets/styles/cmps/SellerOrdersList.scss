@@ -31,7 +31,7 @@
             text-align: left;
             font-weight: bold;
             color: #555;
-            border-bottom: 2px solid #ddd;
+            // border-bottom: 2px solid #ddd;
           }
         }
       }
@@ -44,7 +44,7 @@
   
           td {
             padding: 10px 15px;
-            border-bottom: 1px solid #eee;
+            // border-bottom: 1px solid #eee;
             vertical-align: middle;
   
             &:first-child {
@@ -96,7 +96,7 @@
   
         tr:last-child {
           td {
-            border-bottom: none;
+            // border-bottom: none;
           }
         }
   

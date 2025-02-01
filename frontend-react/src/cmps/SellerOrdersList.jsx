@@ -94,7 +94,7 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                         userOrders.map((order) => {
                             const dueOn = calculateDueOn(order)
                             return (
-                                <tr className='tr-order-line' key={order._id}>
+                                <tr style={{ borderBottom: '1px solid #ddd'}} className='tr-order-line' key={order._id}>
                                     <td className='td-buyer'>
                                         <img src={order.imgUrl} alt="Buyer" className="buyer-pic" />
                                         <span>{order.fullName}</span>
