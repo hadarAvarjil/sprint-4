@@ -23,8 +23,8 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                         
                         return {
                             ...order,
-                            fullName: user?.fullName || 'Unknown Buyer',
-                            imgUrl: user?.avatar || '/default-avatar.png', // Use default if missing
+                            fullName: user.fullName || 'Unknown Buyer',
+                            imgUrl: user?.imgUrl || '/default-avatar.png', // Use default if missing
                         }
                     } catch (err) {
                         console.error(`Error fetching user with ID ${order.sellerId}:`, err);

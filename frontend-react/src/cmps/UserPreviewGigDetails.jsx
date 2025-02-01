@@ -14,7 +14,7 @@ export function UserPreviewGigDetails({ owner, gig }) {
     function loadUserDetails() {
         setUser(owner)
     }
-
+    const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
     if (!user) return null
 
     const reviewsText = gig.reviews.length === 1 ? 'Review' : 'Reviews';
@@ -29,7 +29,7 @@ export function UserPreviewGigDetails({ owner, gig }) {
             <div className="user-info flex align-start">
                 <img
                     className="avatar"
-                    src={user.avatar}
+                    src={user.imgUrl}
                     alt={`${user.fullName} avatar`}
                 />
                 <div className="user-details flex column">
@@ -47,11 +47,11 @@ export function UserPreviewGigDetails({ owner, gig }) {
                                 <SvgIcon iconName="newSeedlingIcon" />
                                 New Seller
                             </span>
-                        ) : user.level < 3 ? (
+                        ) : levelNumber < 3 ? (
                             <span className="level-badge">
-                                Level {user.level} {renderStars(user.level)}
+                                Level {levelNumber} {renderStars(levelNumber)}
                             </span>
-                        ) : user.level === 3 ? (
+                        ) : levelNumber === 3 ? (
                             <span className="top-rated-badge">
                                 Top Rated ✦✦✦
                             </span>

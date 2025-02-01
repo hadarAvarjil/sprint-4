@@ -8,7 +8,7 @@ export function ProfileCard({ user }) {
         <div className="profile-card">
             <img
                 className="profile-avatar"
-                src={user?.avatar || "https://via.placeholder.com/150"}
+                src={user?.imgUrl || "https://via.placeholder.com/150"}
                 alt={`${user?.name || "User"}'s avatar`}
             />
 

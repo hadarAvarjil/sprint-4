@@ -38,7 +38,8 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
       filterBy.level !== '' ||
       filterBy.min != null ||
       filterBy.max != null ||
-      filterBy.time !== ''
+      filterBy.time !== '' || 
+      filterBy.proOnly 
     );
   }
 

@@ -4,7 +4,7 @@ import { userService } from '../user'
 import { utilService } from '../util.service.js'
 
 const STORAGE_KEY = 'gig'
-_createGigs()
+// _createGigs()
 
 export const gigService = {
   query,
@@ -116,7 +116,7 @@ function getEmptyGig() {
     price: utilService.getRandomIntInclusive(30, 600),
   }
 }
-
+_createGigs()
 function _createGigs() {
   let gigs = utilService.loadFromStorage(STORAGE_KEY);
   if (!gigs || !gigs.length) {

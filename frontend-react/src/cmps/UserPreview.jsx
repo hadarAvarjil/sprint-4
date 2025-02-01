@@ -31,12 +31,12 @@ export function UserPreview({ isFrom, owner, children }) {
     setUser(owner)
   }
   function renderStars(rate) {
-    const maxStars = 3; // Total number of stars
+    const maxStars = 3 // Total number of stars
     const filledStars = "✦".repeat(rate);
     const emptyStars = "✧".repeat(maxStars - rate);
     return filledStars + emptyStars;
   }
-
+ const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
   if (!user) return null
 
   return (
@@ -47,7 +47,7 @@ export function UserPreview({ isFrom, owner, children }) {
       >
         <img
           className={`avatar-${isFrom}`}
-          src={user.avatar}
+          src={user.imgUrl}
           alt={`${user.fullName} gig avatar`}
         />
         <div className={`user-${isFrom}-wrapper`}>
@@ -67,17 +67,27 @@ export function UserPreview({ isFrom, owner, children }) {
           </span>
         </div>
         {isFrom === 'explore' && (
-          <span className="level flex row" data-level={user.level} title="user level">
-            {!isNaN(Number(user.level)) && Number(user.level) <= 3 ?
-              (<> {user.level === 3 ? (<span className="top-rated-badge"> Top Rated ✦✦✦ </span>
-              ) : (
-                <>Level {renderStars(Number(user.level))}</>)} </>
-              ) : (
-                <>
-                  {user.level === 'Pro Talent' && <SvgIcon iconName="customCheckMarkSunIcon" />}
-                  {user.level === 'New Seller' && <SvgIcon iconName="newSeedlingIcon" />}
-                  {user.level === 'Pro Talent' ? 'Pro' : user.level === 'New Seller' ? 'New' : user.level} </>)}
-          </span>
+      <span className="level flex row" data-level={user.level} title="user level">
+      {levelNumber > 0 && levelNumber <= 3 ? (
+        <>
+          {levelNumber === 3 ? (
+            <span className="top-rated-badge">Top Rated ✦✦✦</span>
+          ) : (
+            <>Level {renderStars(levelNumber)}</>
+          )}
+        </>
+      ) : user.level === 'Pro Talent' ? (
+        <span className="pro-level">
+          <SvgIcon iconName="customCheckMarkSunIcon" /> Pro
+        </span>
+      ) : user.level === 'New Seller' ? (
+        <span className="new-seller-level">
+          <SvgIcon iconName="newSeedlingIcon" /> New
+        </span>
+      ) : (
+        <>{user.level}</>
+      )}
+    </span>
         )}
       </div>
       {isFrom === 'explore' && children}

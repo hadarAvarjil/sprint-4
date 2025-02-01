@@ -24,7 +24,9 @@ function getFilterFromParams(searchParams) {
 
 async function query(filterBy = {}) {
   try {
-    return await httpService.get(BASE_URL, filterBy)
+    const params = new URLSearchParams(filterBy).toString()
+    const gigs = await httpService.get(`${BASE_URL}?${params}`)
+    return gigs
   } catch (error) {
     console.error('Error querying gigs:', error)
     throw error
@@ -32,8 +34,13 @@ async function query(filterBy = {}) {
 }
 
 async function getById(gigId) {
-  const gig = await httpService.get(BASE_URL + gigId)
-  return gig
+  try {
+    const gig = await httpService.get(`gig/${gigId}`)
+    return gig
+  } catch (err) {
+    console.error(`Failed to fetch gig with ID ${gigId}:`, err)
+    throw err
+  }
 }
 
 function remove(gigId) {
@@ -49,7 +56,7 @@ function save(gig) {
 
 function getDefaultFilter() {
   return {
-    txt: '',
+    title: '',
     cat: '',
     min: '',
     max: '',

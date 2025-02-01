@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import { userService } from '../services/user'
+import { userService } from '../services/user/user.service.local.js'
 import { reviewService } from '../services/review'
 
 import { GigReview } from "../cmps/GigReview.jsx"
@@ -24,7 +24,7 @@ export function GigReviewsList({ gig }) {
                         return {
                             ...review,
                             username: user.username,
-                            imgUrl: user.avatar,
+                            imgUrl: user.imgUrl,
                             country: user.from,
                         };
                     } catch (err) {
