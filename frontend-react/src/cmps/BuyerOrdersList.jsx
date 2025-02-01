@@ -62,7 +62,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                     <tr>
                        
                         <th>Gig</th>
-                        <th>Gig Title</th>
+                        <th></th>
                         <th>Due On</th>
                         <th>Total</th>
                         <th>Seller</th>
@@ -77,11 +77,11 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
 
                             const getStatusElement = (status) => {
                                 if (status === "approved") {
-                                  return <div style={{ backgroundColor: "#E7FBF4", color: "#2C7055", padding: "5px", borderRadius: "4px" }}>Approved</div>;
+                                  return <div style={{ backgroundColor: "none", color: "#2C7055", padding: "5px", borderRadius: "4px" }}>Approved</div>;
                                 } else if (status === "declined") {
-                                  return <div style={{ backgroundColor: "#bb0000", color: "white", padding: "5px", borderRadius: "4px" }}>Declined</div>;
+                                  return <div style={{ backgroundColor: "none", color: "white", padding: "5px", borderRadius: "4px" }}>Declined</div>;
                                 } else {
-                                  return <div style={{ backgroundColor: "#d9e62b4d", color: "orange", padding: "5px", borderRadius: "4px" }}>Pending</div>;
+                                  return <div style={{ backgroundColor: "none", color: "orange", padding: "5px", borderRadius: "4px" }}>Pending</div>;
                                 }
                               };
  
