@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { GigPreview } from '../cmps/GigPreview.jsx'
 import { useNavigate } from "react-router-dom";
+import  { AddImg } from '../cmps/AddImg.jsx'
 
 
 
@@ -18,7 +19,22 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
             setUserGigs(filteredGigs)
         }
     }, [loggedInUser, gigs])
+    console.log('helololololo', userGigs)
 
+    if (userGigs.length === 0) {
+      return(
+        <div className="user-gigs-owner-container">
+        <div className="user-gigs">
+                <h2>My Gigs</h2>
+          <div className="no-gigs-div"> 
+            <h3>You dont have any gigs...</h3>
+<AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738336463/bc9ae1fd5c38fdc7fda900212ba10319504284ec_1_igeq5v.svg'></AddImg>
+
+          </div>
+              </div>
+     </div>
+      )
+    }
     return (
         <div className="user-gigs-owner-container">
             <div className="user-gigs">
@@ -33,12 +49,6 @@ export function UserOwnerGigs({ loggedInUser, gigs }) {
                         />
                       ))}
                     </ul>
-                    {/* <button
-                      className="create-gig-btn"
-                      onClick={() => navigate('/gig/edit')}
-                    >
-                      Create Gig
-                    </button> */}
                   </div>
          </div>
     )

@@ -109,6 +109,18 @@ border: solid 1px #e5e7eb;
   }
   
 }
+.no-gigs-div{
+display: flex;
+flex-direction: row;
+text-align: center;
+align-items: center;
+justify-content: space-between;
+padding-right: 30px;
+padding-left: 30px;
+font-family: $fiverr-defult-font;
+color: #62646a;
+
+}
 }
 
 
