@@ -1,25 +1,26 @@
 import { useState, useEffect } from "react";
 import { userService } from "../services/user";
 import { AddImg } from "./AddImg";
-import { loadOrders } from "../store/actions/order.actions.js";
+import { loadOrdersForDropDown } from "../store/actions/order.actions.js";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
-  const orders = useSelector((storeState) => storeState.orderModule.orders);
+  const dropdownOrders = useSelector((storeState) => storeState.orderModule.dropdownOrders) || [];
   const [userOrders, setUserOrders] = useState([]);
 
   useEffect(() => {
-    if (orders?.length) {
+    if (dropdownOrders.length) {
       loadOrderData();
     }
-  }, [orders]);
+}, [dropdownOrders]);
+ 
 
   async function loadOrderData() {
     try {
       const ordersData = await Promise.all(
-        orders.map(async (order) => {
+        dropdownOrders.map(async (order)=> {
           try {
             const user = await userService.getById(order.sellerId);
             console.log(order, "uouououou");
@@ -54,7 +55,7 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
       if (loggedInUser) {
         try {
           console.log(loggedInUser);
-          await loadOrders({ buyerId: loggedInUser._id });
+          await loadOrdersForDropDown({ buyerId: loggedInUser._id });
         } catch (err) {
           console.error("Error loading orders:", err);
         }
@@ -63,9 +64,8 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
     fetchOrders();
   }, [loggedInUser]);
 
-  console.log("yyyyyyyyyyyyyyyyy", orders);
 
-  if (orders.length === 0)
+  if (dropdownOrders.length === 0)
     return (
       <div
         className="user-orders-dropdown-menu"
@@ -86,7 +86,6 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
         </div>
       </div>
     );
-
   return (
     <div
       className="user-orders-dropdown-menu"

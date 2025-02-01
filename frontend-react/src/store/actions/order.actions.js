@@ -1,12 +1,12 @@
 import { orderService } from '../../services/order'
 import { store } from '../store'
-import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, SET_ORDER, UPDATE_ORDER, ADD_ORDER_MSG, SET_FILTER } from '../reducers/order.reducer'
+import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, SET_ORDER, UPDATE_ORDER, ADD_ORDER_MSG, SET_FILTER, SET_DROPDOWN_ORDERS } from '../reducers/order.reducer'
 
 export async function loadOrders(filterBy = {}) {
     try {
-        console.log(filterBy, 'filterBy');
+        console.log(filterBy, 'filterBy')
         const orders = await orderService.query(filterBy)
-        console.log(orders, 'from action');
+        console.log(orders, 'from action')
         
         store.dispatch(getCmdSetOrders(orders))
     } catch (err) {
@@ -14,6 +14,17 @@ export async function loadOrders(filterBy = {}) {
         throw err
     }
 }
+
+export async function loadOrdersForDropDown(filterBy = {}) {
+    try {
+        const orders = await orderService.query(filterBy)
+        store.dispatch(getCmdSetDropdownOrders(orders))
+    } catch (err) {
+        console.log('Cannot load orders', err)
+        throw err
+    }
+}
+
 
 export async function saveOrder(order) {
     try {
@@ -100,6 +111,13 @@ function getCmdSetOrder(order) {
         order
     }
 }
+function getCmdSetDropdownOrders(orders) {
+    return {
+        type: SET_DROPDOWN_ORDERS,
+        orders,
+    }
+}
+
 function getCmdremoveOrder(orderId) {
     return {
         type: REMOVE_ORDER,
