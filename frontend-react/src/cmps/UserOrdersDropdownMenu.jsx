@@ -4,10 +4,9 @@ import { AddImg } from "./AddImg";
 import { loadOrders } from "../store/actions/order.actions.js";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
-
-export function UserOrdersDropdownMenu({  loggedInUser,topOffset }) {
+export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
   const orders = useSelector((storeState) => storeState.orderModule.orders);
   const [userOrders, setUserOrders] = useState([]);
 
@@ -71,7 +70,8 @@ export function UserOrdersDropdownMenu({  loggedInUser,topOffset }) {
       <div
         className="user-orders-dropdown-menu"
         style={{
-            top: `${topOffset}`}}
+          top: `${topOffset}`,
+        }}
       >
         <div className="dropdown-triangle"></div>
         <div className="no-orders-dropdown-container">
@@ -91,7 +91,8 @@ export function UserOrdersDropdownMenu({  loggedInUser,topOffset }) {
     <div
       className="user-orders-dropdown-menu"
       style={{
-        top: `${topOffset}`}}
+        top: `${topOffset}`,
+      }}
     >
       <div className="dropdown-triangle"></div>
       <div className="user-orders-container">
@@ -142,12 +143,15 @@ export function UserOrdersDropdownMenu({  loggedInUser,topOffset }) {
             <div className="user-orders-gig">
               <div className="orders-wrap">
                 <div className="order-img">
-                  {" "}
-                  <img
-                    src={order.gigUrl}
-                    alt="Seller"
-                    className="seller"
-                  />{" "}
+                  <Link to={`/gig/${order.gigId}`}>
+                    <img
+                      src={order.gigFirstImgUrl}
+                      alt="gigFirstImgUrl"
+                      className="gigFirstImgUrl"
+                    />
+                    {/* {order.title || "Unknown Gig"} */}
+                  </Link>{" "}
+                  {/* <img src={order.gigUrl} alt="Seller" className="seller" />{" "} */}
                 </div>
 
                 <div className="order-details">
@@ -167,14 +171,12 @@ export function UserOrdersDropdownMenu({  loggedInUser,topOffset }) {
               </div>
               <hr className="divider" />
             </div>
-
           );
         })}
-
       </div>
       <NavLink to="/orders">
-           <div className="view-all-orders" >View all orders {">"} </div>
-          </NavLink>
-      </div>
+        <div className="view-all-orders">View all orders {">"} </div>
+      </NavLink>
+    </div>
   );
 }
