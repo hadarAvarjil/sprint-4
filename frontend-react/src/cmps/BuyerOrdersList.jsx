@@ -86,7 +86,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                               };
  
                             return (
-                                <tr key={order._id || index}>
+                                <tr style={{ borderBottom: '1px solid #ddd'}} key={order._id || index}>
                                    <td className='td-gig-img'>
                                         <img src={order.gigFirstImgUrl} alt="gigFirstImgUrl" className="gigFirstImgUrl" />
                                         <Link to={`/gig/${order.gigId}`}>
