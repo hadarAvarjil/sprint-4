@@ -1,17 +1,22 @@
-.orders-table-container {
+.buyer-my-orders-table{
+    .orders-table-container {
     .orders-table {
 
             thead{
                 tr{
+                  
                    
                     th{
-                        color: #1dbf73;
+                        color: #404145;
                         align-items: center;
                         text-align: center;
                         justify-content: center;
                     }
                 }}
         tbody {
+            td{
+                text-align: center;
+            }
 
             img.gigFirstImgUrl {
                 width: 80px;
@@ -23,7 +28,10 @@
                 align-items: center;
                 text-align: center;
                 gap: 10px;
+                height: 120px;
+                margin-bottom: 0px;
             }
         }
     }
+}
 }

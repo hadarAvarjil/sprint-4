@@ -219,7 +219,9 @@ export function AppHeader() {
 
                   {showUserOrdersDropdownMenu && (
                     <UserOrdersDropdownMenu
-                    topOffset={'calc(6% + 20px'}
+                    topOffset={'calc(8%)'}
+                    // rightOffset={'calc(13%)'}
+
                       loggedInUser={loggedinUser}
                       onClose={() => setShowUserDropdownMenu(false)}
                     />

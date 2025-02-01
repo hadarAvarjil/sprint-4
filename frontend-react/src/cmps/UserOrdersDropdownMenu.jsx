@@ -91,6 +91,7 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
       className="user-orders-dropdown-menu"
       style={{
         top: `${topOffset}`,
+        // right:`${rightOffset}`,
       }}
     >
       <div className="dropdown-triangle"></div>

@@ -42,8 +42,14 @@
     }
 
     .dashboard-container {
+
         width: 100%;
-        max-width: 1200px;
+        max-width: 1300px;
+        margin: auto;
+        display: flex;
+        gap: 50px;
+
+    
 
         h3,
         #orders-info-header>div:nth-child(1)>h6:nth-child(1),
@@ -646,6 +652,29 @@
                 }
             }
         }
+
+        .td-buyer {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            gap: 5px;
+
+            img {
+                margin-right: 0px;
+            }
+        }
+        .my-chart {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            border-radius: 10px;
+            height: fit-content;
+           
+           
+        }
     }
 }
 
@@ -663,7 +692,7 @@
 .orders-table td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    // border-bottom: 1px solid #ddd;
 }
 
 .buyer-pic {
