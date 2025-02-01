@@ -91,6 +91,7 @@ export function SellerFinanceSumup({ loggedInUser, orders = [] }) {
 
     return (
         <section className="my-chart">
+            <h4>Orders Information</h4>
             {totalOrders > 0 ? (
                 <>
                     <Doughnut data={data} />

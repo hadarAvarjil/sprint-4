@@ -78,7 +78,7 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
 
     return (
         <section className="orders-table-container">
-            <h4>Manage Orders</h4>
+            <h4>Manage Your Orders</h4>
             <table className="orders-table">
                 <thead>
                     <tr>
@@ -100,6 +100,7 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                                         <span>{order.fullName}</span>
                                     </td>
                                     <td>
+                                        <img src={order.gigFirstImgUrl} alt="gigFirstImgUrl" className="gigFirstImgUrl" />
                                         <Link to={`/gig/${order.gigId}`}>
                                             {order.title || 'Unknown Gig'}
                                         </Link>
@@ -112,10 +113,10 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                                             style={{ backgroundColor: statusColors[order.orderState] || '#ccc' }}
                                             value={order.orderState}
                                             onChange={(e) => changeOrderState(order._id, e.target.value)}
-                                            disabled={!allowedTransitions[order.orderState]?.length} // ✅ Safe check
+                                            disabled={!allowedTransitions[order.orderState]?.length} 
                                         >
                                             <option value={order.orderState}>{order.orderState}</option>
-                                            {(allowedTransitions[order.orderState] || []).map(status => ( // ✅ Ensures .map() always runs on an array
+                                            {(allowedTransitions[order.orderState] || []).map(status => ( 
                                                 <option key={status} value={status}>{status}</option>
                                             ))}
                                         </select>
