@@ -25,7 +25,7 @@ ChartJS.register( ArcElement,
     LineElement,
     Title,
     Filler);
-
+ 
 export function SellerFinanceSumup({ loggedInUser, orders = [] }) {
     let totalOrders = orders.length;
     let pendingOrdersNum = orders.filter(order => order.orderState === 'Pending').length;
