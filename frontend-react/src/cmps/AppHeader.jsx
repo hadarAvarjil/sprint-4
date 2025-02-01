@@ -16,7 +16,6 @@ import { LoginSignup } from "./LoginSignup.jsx";
 import { UserDropdownMenu } from "./UserDropdownMenu.jsx";
 import ReactDOM from "react-dom"; // shinoi6
 
-// import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
 import { TestDrop } from "./TestDrop.jsx";
 
 <cmp></cmp>
@@ -25,6 +24,7 @@ export function AppHeader() {
   const [searchQuery, setSearchQuery] = useState("");
   const [headerStage, setHeaderStage] = useState(0);
   const [showUserDropdownMenu, setShowUserDropdownMenu] = useState(false);
+  const [showUserOrdersDropdownMenu,  setShowUserOrdersDropdownMenu] = useState(false);
   const [showOrdersDropdown, setShowOrdersDropdown] = useState(false);
   const [showAsideMenu, setShowAsideMenu] = useState(false);
   const [notification, setNotification] = useState(false);
@@ -54,7 +54,7 @@ export function AppHeader() {
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy);
   const deviceType = useDeviceType();
 
-  console.log(loggedinUser, 'userrrrrr');
+  // console.log(loggedinUser, 'userrrrrr');
   
 
   const categories = category;
@@ -197,14 +197,22 @@ export function AppHeader() {
             </NavLink>
             {loggedinUser ? (
               <>
-                <div className="orders-container" ref={userRef}>
-                  <NavLink to="/orders">
-                    <div className="sign-header-btn"       onMouseEnter={() => setIsHovered(true)}
-                      onMouseLeave={() => setIsHovered(false)}>Orders</div>
-                  </NavLink>
+                <div className="orders-container" ref={ordersRef}>
+                  {/* <NavLink to="/orders"> */}
+                    <div className="sign-header-btn"  onClick={(e) => {
+                      e.stopPropagation();
+                      setShowUserOrdersDropdownMenu((prev) => !prev);
+                    }}      
+              >Orders</div>
+                  {/* </NavLink> */}
 
-        
-                  <TestDrop loggedInUser={loggedinUser} isHovered={isHovered} />
+                  {showUserOrdersDropdownMenu && (
+                    <TestDrop
+                      loggedInUser={loggedinUser}
+                      onClose={() => setShowUserDropdownMenu(false)}
+                    />
+                  )}
+                  {/* <TestDrop loggedInUser={loggedinUser} isHovered={isHovered} /> */}
                 </div>
 
                 <div className="user-container" ref={userRef}>
