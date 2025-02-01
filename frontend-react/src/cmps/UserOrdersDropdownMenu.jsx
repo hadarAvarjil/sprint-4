@@ -174,9 +174,9 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
           );
         })}
       </div>
-      <NavLink to="/orders">
-        <div className="view-all-orders">View all orders {">"} </div>
-      </NavLink>
+      <Link to="/dashboard">
+        <div className="view-all-orders">  <Link to="/orders"></Link>View all orders {">"} </div>
+      </Link>
     </div>
   );
 }
