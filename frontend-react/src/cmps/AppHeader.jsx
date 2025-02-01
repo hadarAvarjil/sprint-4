@@ -199,11 +199,15 @@ export function AppHeader() {
             />
           </div>
           <div className="header-options">
+            
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
             {loggedinUser ? (
               <>
+                           <NavLink to="/my-lists">
+    <SvgIcon className="sign-header-btn" iconName="heartIcon" />
+</NavLink>
                 <div className="orders-container" ref={ordersRef}>
                   {/* <NavLink to="/orders"> */}
                     <div className="sign-header-btn"  onClick={(e) => {

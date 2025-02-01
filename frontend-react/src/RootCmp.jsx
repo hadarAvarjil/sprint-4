@@ -25,7 +25,7 @@ import { UserProfile } from './pages/UserProfile.jsx';
 import {TermsPage} from './pages/TermsPage.jsx';
 import { PrivacyPage } from './pages/PrivacyPage.jsx';
 import { SellerDashboard } from './pages/SellerDashboard.jsx';
-
+import { MyLists } from './pages/MyLists.jsx'
  
 export function RootCmp() {
     const location = useLocation();
@@ -57,6 +57,7 @@ export function RootCmp() {
                     <Route path="chat" element={<ChatApp />} />
                     <Route path="admin" element={<AdminIndex />} />
                     <Route path="/orders" element={<BuyerOrderPage />} />
+                    <Route path="/my-lists" element={<MyLists />} />
                     <Route path="/profile/:id" element={<UserProfile />} />
                     <Route path="/dashboard" element={<SellerDashboard />} />
                     <Route path="terms"element={<TermsPage/>} />
