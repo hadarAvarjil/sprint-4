@@ -15,6 +15,9 @@ import { UserDropdownMenu } from "./UserDropdownMenu.jsx";
 import outsideClick from "../customHooks/outsideClick.js";
 import ReactDOM from "react-dom"; // shinoi6
 
+import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
+
+
 export function HomeAppHeader() {
   const [searchQuery, setSearchQuery] = useState("");
   const [headerStage, setHeaderStage] = useState(0);
@@ -33,6 +36,16 @@ export function HomeAppHeader() {
   const [isSignup, setIsSignup] = useState(true);
   const [isLoginSignUpShow, setIsLoginSignUpShow] = useState(false);
 
+  const [showUserOrdersDropdownMenu,  setShowUserOrdersDropdownMenu] = useState(false);
+  const handleJoinClick = () => {
+    setIsJoinDivVisible(true); // shinoi6
+  };
+
+  const handleLoginClick = () => {
+    setIsSignDivVisible(true); // shinoi6
+  };
+
+
   const categories = category;
 
   const userInfoRef = useRef(null);
@@ -45,6 +58,8 @@ export function HomeAppHeader() {
 
   const loggedinUser = useSelector((storeState) => storeState.userModule.user);
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy);
+
+  
 
   function setCatFilter(category) {
     dispatch(setFilter({ ...filterBy, cat: category }));
@@ -164,40 +179,57 @@ export function HomeAppHeader() {
             <NavLink to="gig">
               <div className="sign-header-btn explore-btn">Explore</div>
             </NavLink>
-            {loggedinUser ? (
-              <>
-                <NavLink to="/orders">
-                  <div className="sign-header-btn">Orders</div>
-                </NavLink>
-                <div className="user-container" ref={userRef}>
-                  <div
-                    className="user-circle"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      setShowUserDropdownMenu((prev) => !prev);
-                    }}
-                  >
-                    <img src={loggedinUser.avatar} alt="User avatar" />
-                  </div>
-                  {showUserDropdownMenu && (
-                    <UserDropdownMenu
-                      loggedInUser={loggedinUser}
-                      onClose={() => setShowUserDropdownMenu(false)}
-                    />
-                  )}
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="signIn-btn">
-                  <button onClick={handleOpenSignDiv}>Sign In</button> {/* shinoi6 */}
-                </div>
+         {loggedinUser ? (
+                    <>
+                      <div className="orders-container" ref={ordersRef}>
+                        {/* <NavLink to="/orders"> */}
+                          <div className="sign-header-btn"  onClick={(e) => {
+                            e.stopPropagation();
+                            setShowUserOrdersDropdownMenu((prev) => !prev);
+                          }}      
+                    >Orders</div>
+                        {/* </NavLink> */}
+      
+                        {showUserOrdersDropdownMenu && (
+                          <UserOrdersDropdownMenu
+                          topOffset={'calc(6% + 60px'}
 
-                <div className="join-btn">
-                  <button onClick={handleOpenJoinDiv}>Join</button> {/* shinoi6 */}
-                </div>
-              </>
-            )}
+                            loggedInUser={loggedinUser}
+                            onClose={() => setShowUserDropdownMenu(false)}
+                          />
+                        )}
+                      </div>
+      
+                      <div className="user-container" ref={userRef}>
+                        <div
+                          className="user-circle"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setShowUserDropdownMenu((prev) => !prev);
+                          }}
+                        >
+                          <img src={loggedinUser.avatar} alt="User avatar" />
+                        </div>
+                        {showUserDropdownMenu && (
+                          <UserDropdownMenu
+                            loggedInUser={loggedinUser}
+                            onClose={() => setShowUserDropdownMenu(false)}
+                          />
+                        )}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="signIn-btn">
+                        <button onClick={handleLoginClick}>Sign In</button>{" "}
+                        {/* shinoi6 */}
+                      </div>
+                      <div className="join-btn">
+                        <button onClick={handleJoinClick}>Join</button>{" "}
+                        {/* shinoi6 */}
+                      </div>
+                    </>
+                  )}
           </div>
         </nav>
         <div className="header-inner-border"></div>

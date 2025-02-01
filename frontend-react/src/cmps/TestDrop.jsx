@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom";
 // }
 
 
-export function TestDrop({ isHovered, loggedInUser }) {
+export function TestDrop({  loggedInUser }) {
   const orders = useSelector((storeState) => storeState.orderModule.orders);
   const [userOrders, setUserOrders] = useState([]);
 
@@ -77,11 +77,6 @@ export function TestDrop({ isHovered, loggedInUser }) {
     return (
       <div
         className="user-orders-dropdown-menu"
-        style={{
-          display: isHovered ? "block" : "none",
-        }} 
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
         <div className="dropdown-triangle"></div>
         <div className="no-orders-dropdown-container">
@@ -100,11 +95,7 @@ export function TestDrop({ isHovered, loggedInUser }) {
   return (
     <div
       className="user-orders-dropdown-menu"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        display: isHovered ? "block" : "none",
-      }}
+
     >
       <div className="dropdown-triangle"></div>
       <div className="user-orders-container">

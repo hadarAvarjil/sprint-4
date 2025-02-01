@@ -16,7 +16,7 @@ import { LoginSignup } from "./LoginSignup.jsx";
 import { UserDropdownMenu } from "./UserDropdownMenu.jsx";
 import ReactDOM from "react-dom"; // shinoi6
 
-import { TestDrop } from "./TestDrop.jsx";
+import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
 
 <cmp></cmp>
 
@@ -207,12 +207,12 @@ export function AppHeader() {
                   {/* </NavLink> */}
 
                   {showUserOrdersDropdownMenu && (
-                    <TestDrop
+                    <UserOrdersDropdownMenu
+                    topOffset={'calc(6% + 20px'}
                       loggedInUser={loggedinUser}
                       onClose={() => setShowUserDropdownMenu(false)}
                     />
                   )}
-                  {/* <TestDrop loggedInUser={loggedinUser} isHovered={isHovered} /> */}
                 </div>
 
                 <div className="user-container" ref={userRef}>
