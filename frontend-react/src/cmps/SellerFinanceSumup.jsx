@@ -1,8 +1,30 @@
 import React from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, RadialLinearScale } from 'chart.js';
-import { Doughnut, PolarArea } from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    ArcElement,
+    Tooltip,
+    Legend,
+    RadialLinearScale,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Filler,
+  } from 'chart.js';
+import { Doughnut, PolarArea, Line } from 'react-chartjs-2';
+import { utilService } from "../services/util.service.js"
 
-ChartJS.register(ArcElement, RadialLinearScale, Tooltip, Legend);
+ChartJS.register( ArcElement,
+    RadialLinearScale,
+    Tooltip,
+    Legend,
+    CategoryScale,  // Register CategoryScale
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Filler);
 
 export function SellerFinanceSumup({ loggedInUser, orders = [] }) {
     let totalOrders = orders.length;
@@ -38,11 +60,41 @@ export function SellerFinanceSumup({ loggedInUser, orders = [] }) {
         ],
     };
 
+    const currentMonth = new Date().getMonth();
+    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    
+  
+    const monthlyEarnings = labels.map((_, index) => {
+        if (index === currentMonth) {
+            return orders.filter(order => order.orderState === 'Delivered')
+                .reduce((sum, order) => sum + order.price, 0);
+        } else if (index < currentMonth) {
+            return utilService.getRandomIntInclusive(500, 5000);
+        } else {
+            return 0
+        }
+    })
+
+    const earningsData = {
+        labels,
+        datasets: [
+            {
+                label: 'Monthly Earnings',
+                data: monthlyEarnings,
+                borderColor: 'rgb(144, 51, 215)',
+                backgroundColor: 'rgba(148, 22, 221, 0.5)',
+                fill: true,
+            },
+        ],
+    };
+
+
     return (
         <section className="my-chart">
             {totalOrders > 0 ? (
                 <>
                     <Doughnut data={data} />
+                    <Line data={earningsData} options={{ scales: { x: { type: 'category' }, y: { beginAtZero: true } } }} />
                 </>
             ) : (
                 <p>No orders available</p>

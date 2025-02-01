@@ -51,6 +51,7 @@ export function GigPurchasePage() {
     const serviceFee = 30.62
     const vat = 105.63
     const total = gig ? packages[Selectedpackage].price + serviceFee + vat + gig.price : 0
+    const gigFirstImgUrl = gig.imgUrls[0]
 
     async function createOrder(total) {
 
@@ -62,6 +63,8 @@ export function GigPurchasePage() {
                 gig.price = total,
                 gig.title,
                 gig.daysToMake,
+                gigFirstImgUrl
+
             )
             await orderService.save(newOrder)
             navigate('/orders')

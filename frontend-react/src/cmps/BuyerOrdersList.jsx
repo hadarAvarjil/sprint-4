@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { userService } from '../services/user.service.js'
+import { userService } from '../services/user'
 import { orderService } from '../services/order'
 
 export function BuyerOrdersList({ loggedInUser, orders }) {
@@ -19,6 +19,8 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                 orders.map(async (order) => {
                     try {
                         const user = await userService.getById(order.sellerId)
+                        console.log(user, 'user');
+
                         return {
                             ...order,
                             fullName: user.fullName || 'Unknown Buyer',
@@ -66,7 +68,8 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                     {userOrders.length > 0 ? (
                         userOrders.map((order, index) => {
                             const dueOn = calculateDueOn(order)
-                            const status = order.status || "Pending" 
+                            const status = order.orderState
+                                || "Pending"
 
                             return (
                                 <tr key={order._id || index}>
@@ -75,6 +78,8 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                         <span>{order.fullName}</span>
                                     </td>
                                     <td>
+                                        <img src={order.gigFirstImgUrl
+                                        } alt="gigFirstImgUrl" className="gigFirstImgUrl" />
                                         <Link to={`/gig/${order.gigId}`}>
                                             {order.title || 'Unknown Gig'}
                                         </Link>

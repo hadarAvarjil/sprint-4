@@ -21,7 +21,7 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                         return {
                             ...order,
                             fullName: user?.fullName || 'Unknown Buyer',
-                            imgUrl: user?.avatar || '/default-avatar.png',
+                            imgUrl: user?.imgUrl || '/default-avatar.png',
                         };
                     } catch (err) {
                         console.error(`Error fetching user with ID ${order.buyerId}:`, err);
@@ -53,8 +53,6 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                 order._id === orderId ? { ...order, orderState: newState } : order
             )
             setUserOrders(updatedOrders)
-
-            // Update the backend
             const updatedOrder = updatedOrders.find(order => order._id === orderId)
             await saveOrder(updatedOrder)
         } catch (err) {
@@ -63,19 +61,19 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
     }
 
     const statusColors = {
-        "Pending": "#F1C40F",      // Yellow
-        "In Progress": "#3498DB",  // Blue
-        "Completed": "#2ECC71",    // Green
-        "Delivered": "#9B59B6",    // Purple
-        "Rejected": "#E74C3C"      // Red
+        "Pending": "#F1C40F",     
+        "In Progress": "#3498DB",  
+        "Completed": "#2ECC71",   
+        "Delivered": "#9B59B6",    
+        "Rejected": "#E74C3C"      
     }
 
     const allowedTransitions = {
         "Pending": ["In Progress", "Rejected"],
         "In Progress": ["Completed", "Rejected"],
         "Completed": ["Delivered"],
-        "Delivered": [], // No further changes
-        "Rejected": [] // No further changes
+        "Delivered": [], 
+        "Rejected": [] 
     }
 
     return (
