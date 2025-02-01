@@ -45,7 +45,7 @@ export function BuyerOrderPage() {
         <main className="seller-dashboard-page full flex column">
             <section className="dashboard-container layout-row">
                
-                <h3>My Order</h3>
+                <h3>My Orders</h3>
                 <BuyerOrdersList
                     loggedInUser={loggedInUser}
                     orders={orders}
