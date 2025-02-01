@@ -78,8 +78,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                         <span>{order.fullName}</span>
                                     </td>
                                     <td>
-                                        <img src={order.gigFirstImgUrl
-                                        } alt="gigFirstImgUrl" className="gigFirstImgUrl" />
+                                        <img src={order.gigFirstImgUrl} alt="gigFirstImgUrl" className="gigFirstImgUrl" />
                                         <Link to={`/gig/${order.gigId}`}>
                                             {order.title || 'Unknown Gig'}
                                         </Link>
