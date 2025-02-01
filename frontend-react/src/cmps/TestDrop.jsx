@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { userService } from "../services/user";
-import { orderService } from "../services/order";
 import { AddImg } from "./AddImg";
 import { loadOrders } from "../store/actions/order.actions.js";
 import { useSelector } from "react-redux";
