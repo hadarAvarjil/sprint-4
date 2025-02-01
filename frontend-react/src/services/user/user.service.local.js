@@ -17,9 +17,26 @@ export const userService = {
   update,
   getLoggedinUser,
   saveLoggedinUser,
+  toggleLike
 }
 window.userService = userService
+async function toggleLike(gigId, userId) {
+  try {
+    const gig = await getById(gigId);
+    if (!Array.isArray(gig.likedByUsers)) gig.likedByUsers = [];
 
+    if (gig.likedByUsers.includes(userId)) {
+      gig.likedByUsers = gig.likedByUsers.filter((id) => id !== userId);
+    } else {
+      gig.likedByUsers.push(userId);
+    }
+
+    return await save(gig);
+  } catch (err) {
+    console.error('Failed to toggle like:', err);
+    throw err;
+  }
+}
 async function getUsers() {
   const users = await storageService.query(BASE_URL)
   return users.map(user => {

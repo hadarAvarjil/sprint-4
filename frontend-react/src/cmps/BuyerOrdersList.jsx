@@ -62,7 +62,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                     <tr>
                        
                         <th>Gig</th>
-                        <th>Gig Title</th>
+                        <th></th>
                         <th>Due On</th>
                         <th>Total</th>
                         <th>Seller</th>
@@ -77,20 +77,20 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
 
                             const getStatusElement = (status) => {
                                 if (status === "approved") {
-                                  return <div style={{ backgroundColor: "green", color: "white", padding: "5px", borderRadius: "4px" }}>Approved</div>;
+                                  return <div style={{ backgroundColor: "none", color: "#2C7055", padding: "5px", borderRadius: "4px" }}>Approved</div>;
                                 } else if (status === "declined") {
-                                  return <div style={{ backgroundColor: "red", color: "white", padding: "5px", borderRadius: "4px" }}>Declined</div>;
+                                  return <div style={{ backgroundColor: "none", color: "white", padding: "5px", borderRadius: "4px" }}>Declined</div>;
                                 } else {
-                                  return <div style={{ backgroundColor: "yellow", color: "black", padding: "5px", borderRadius: "4px" }}>Pending</div>;
+                                  return <div style={{ backgroundColor: "none", color: "orange", padding: "5px", borderRadius: "4px" }}>Pending</div>;
                                 }
                               };
-
+ 
                             return (
-                                <tr key={order._id || index}>
-                                   <td>
+                                <tr style={{ borderBottom: '1px solid #ddd'}} key={order._id || index}>
+                                   <td className='td-gig-img'>
                                         <img src={order.gigFirstImgUrl} alt="gigFirstImgUrl" className="gigFirstImgUrl" />
                                         <Link to={`/gig/${order.gigId}`}>
-                                            {order.title || 'Unknown Gig'}
+                                            {/* {order.title || 'Unknown Gig'} */}
                                         </Link>
                                     </td>
                                     <td>
@@ -100,11 +100,11 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                     </td>
                                     <td>{dueOn}</td>
                                     <td>${order.price?.toFixed(2) || '0.00'}</td>
-                                    <td className='seller-td'>
+                                    <td className='buyer-orders-seller-td'>
                                         <img src={order.imgUrl} alt="Seller" className="seller" />
                                         <span>{order.fullName}</span>
                                     </td>
-                                    <td>{getStatusElement('order.status' || "pending")}</td>
+                                    <td>{getStatusElement(order.status || "pending")}</td>
 
                                     {/* <td>{status}</td> */}
                                 </tr>

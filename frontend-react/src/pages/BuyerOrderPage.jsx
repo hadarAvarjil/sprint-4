@@ -43,12 +43,13 @@ export function BuyerOrderPage() {
     return (
         <main className="seller-dashboard-page full flex column">
             <section className="dashboard-container layout-row">
-               
-                <h3>My Order</h3>
+               <div className='buyer-my-orders-table'>
+                <h3>My Orders</h3>
                 <BuyerOrdersList
                     loggedInUser={loggedInUser}
                     orders={orders}
                 />
+                </div>
             </section>
         </main>
     )

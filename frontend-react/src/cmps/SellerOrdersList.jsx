@@ -81,8 +81,8 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
             <h4>Manage Your Orders</h4>
             <table className="orders-table">
                 <thead>
-                    <tr>
-                        <th>Buyer</th>
+                    <tr >
+                        <th >Buyer</th>
                         <th>Gig</th>
                         <th>Due On</th>
                         <th>Total</th>
@@ -94,15 +94,15 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                         userOrders.map((order) => {
                             const dueOn = calculateDueOn(order)
                             return (
-                                <tr key={order._id}>
-                                    <td>
+                                <tr style={{ borderBottom: '1px solid #ddd'}} className='tr-order-line' key={order._id}>
+                                    <td className='td-buyer'>
                                         <img src={order.imgUrl} alt="Buyer" className="buyer-pic" />
                                         <span>{order.fullName}</span>
                                     </td>
-                                    <td>
+                                    <td className='td-gig'>
                                         <img src={order.gigFirstImgUrl} alt="gigFirstImgUrl" className="gigFirstImgUrl" />
                                         <Link to={`/gig/${order.gigId}`}>
-                                            {order.title || 'Unknown Gig'}
+                                            <div>{order.title || 'Unknown Gig'}</div>
                                         </Link>
                                     </td>
                                     <td>{dueOn}</td>

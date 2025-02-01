@@ -13,8 +13,27 @@ export const gigService = {
   remove,
   getEmptyGig,
   addGigMsg,
+  toggleLike
 }
 window.cs = gigService
+
+async function toggleLike(gigId, userId) {
+  try {
+    const gig = await getById(gigId);
+    if (!Array.isArray(gig.likedByUsers)) gig.likedByUsers = [];
+
+    if (gig.likedByUsers.includes(userId)) {
+      gig.likedByUsers = gig.likedByUsers.filter((id) => id !== userId);
+    } else {
+      gig.likedByUsers.push(userId);
+    }
+
+    return await save(gig);
+  } catch (err) {
+    console.error('Failed to toggle like:', err);
+    throw err;
+  }
+}
 
 async function query(filterBy = { txt: '', price: 0, cat: '' }) {
   var gigs = await storageService.query(STORAGE_KEY)

@@ -5,10 +5,13 @@ export const ADD_GIG = 'ADD_GIG'
 export const UPDATE_GIG = 'UPDATE_GIG'
 export const ADD_GIG_MSG = 'ADD_GIG_MSG'
 export const SET_FILTER = 'SET_FILTER'
+export const SET_LIKED_GIGS = 'SET_LIKED_GIGS';
+export const SET_RECOMMENDED_GIGS = 'SET_RECOMMENDED_GIGS';
 import { gigService } from '../../services/gig.service.js'
 const initialState = {
     gigs: [],
-    gig: null,
+    gig: null, likedGigs: [], 
+    recommendedGigs: [], 
     filterBy: gigService.getFilterFromParams(new URLSearchParams(window.location.search)),
 }
 
@@ -38,9 +41,15 @@ export function gigReducer(state = initialState, action) {
         case ADD_GIG_MSG:
             newState = { ...state, gig: { ...state.gig, msgs: [...state.gig.msgs || [], action.msg] } }
             break
-        case SET_FILTER: 
+        case SET_FILTER:
             newState = { ...state, filterBy: action.filterBy }
             break
+        case SET_LIKED_GIGS: 
+            newState = { ...state, likedGigs: action.likedGigs };
+            break;
+        case SET_RECOMMENDED_GIGS: 
+            newState = { ...state, recommendedGigs: action.gigs };
+            break;
         default:
     }
     return newState
