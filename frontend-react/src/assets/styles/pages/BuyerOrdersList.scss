@@ -1,0 +1,29 @@
+.orders-table-container {
+    .orders-table {
+
+            thead{
+                tr{
+                   
+                    th{
+                        color: #1dbf73;
+                        align-items: center;
+                        text-align: center;
+                        justify-content: center;
+                    }
+                }}
+        tbody {
+
+            img.gigFirstImgUrl {
+                width: 80px;
+            }
+            .buyer-orders-seller-td{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    }
+}
