@@ -4,6 +4,7 @@
 
             thead{
                 tr{
+                  
                    
                     th{
                         color: #404145;
@@ -13,6 +14,9 @@
                     }
                 }}
         tbody {
+            td{
+                text-align: center;
+            }
 
             img.gigFirstImgUrl {
                 width: 80px;
