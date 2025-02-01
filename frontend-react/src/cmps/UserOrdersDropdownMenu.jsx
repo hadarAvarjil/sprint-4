@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
+export function UserOrdersDropdownMenu({ loggedInUser, topOffset}) {
   const orders = useSelector((storeState) => storeState.orderModule.orders);
   const [userOrders, setUserOrders] = useState([]);
 
@@ -92,6 +92,7 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset }) {
       className="user-orders-dropdown-menu"
       style={{
         top: `${topOffset}`,
+        // right:`${rightOffset}`,
       }}
     >
       <div className="dropdown-triangle"></div>
