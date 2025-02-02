@@ -146,12 +146,14 @@
   gap: 1em;
 }
 
-.checked {}
-
 .mobileStyles {
   padding: 0 !important;
 
   &:after {
     height: 0 !important;
   }
+}
+
+.sign-header-btn {
+  cursor: pointer; 
 }
