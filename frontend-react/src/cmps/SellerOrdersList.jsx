@@ -39,13 +39,34 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
         }
     }
 
+    // ---****WORK WITH CLIENT****---
+    // function calculateDueOn(order) {     
+    //     if (!order?.createdAt || !order?.daysToMake) return 'N/A'
+    //     const createdAtDate = new Date(order.createdAt)
+    //     const dueOnDate = new Date(createdAtDate)
+    //     dueOnDate.setDate(dueOnDate.getDate() + order.daysToMake)
+    //     return dueOnDate.toDateString()
+    // }
+
+    /// ---****WORK WITH SERVER****---
     function calculateDueOn(order) {
         if (!order?.createdAt || !order?.daysToMake) return 'N/A'
+
         const createdAtDate = new Date(order.createdAt)
+        if (isNaN(createdAtDate.getTime())) return 'Invalid Date'
+    
+        const daysMatch = order.daysToMake.match(/\d+/)
+        const daysToAdd = daysMatch ? parseInt(daysMatch[0], 10) : 0
+
         const dueOnDate = new Date(createdAtDate)
-        dueOnDate.setDate(dueOnDate.getDate() + order.daysToMake)
-        return dueOnDate.toDateString()
+        dueOnDate.setDate(dueOnDate.getDate() + daysToAdd)
+
+        return dueOnDate.toDateString(); 
     }
+    
+
+
+    
 
     async function changeOrderState(orderId, newState) {
         try {

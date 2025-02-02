@@ -50,7 +50,7 @@ export function GigReviewsList({ gig }) {
             <h3>Reviews</h3>
             {gigReviews.length !== 0 && (
                 <ul className="reviews">
-                    {gigReviews.map((review) => (
+                    {gigReviews.map((review,) => (
                         <li key={review.id}>
                             <GigReview review={review} />
                         </li>

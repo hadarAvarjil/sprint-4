@@ -13,16 +13,19 @@ export async function getOrder(req, res) {
 
 export async function getOrders(req, res) {
     try {
+
         const filterBy = {
-            id: req.query?.id || '',
+            buyerId: req.query?.buyerId || ''
         }
         const orders = await orderService.query(filterBy)
         res.send(orders)
-    } catch (err) {
-        loggerService.error('Failed to get orders', err)
+    }
+    catch (err) {
+        loggerService.error('Cannot get orders', err)
         res.status(500).send({ err: 'Failed to get orders' })
     }
 }
+
 
 export async function deleteOrder(req, res) {
     try {
@@ -39,11 +42,13 @@ export async function updateOrder(req, res) {
         const order = req.body
         const savedOrder = await orderService.save(order)
         res.send(savedOrder)
-    } catch (err) {
+    }
+    catch (err) {
         loggerService.error('Failed to update order', err)
         res.status(500).send({ err: 'Failed to update order' })
     }
 }
+
 
 export async function addOrder(req, res) {
     try {

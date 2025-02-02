@@ -1,4 +1,4 @@
-import { gigService } from '../../services/gig/gig.service.local.js'
+import { gigService } from '../../services/gig.service.js'
 import { store } from '../store'
 import { ADD_GIG, REMOVE_GIG, SET_GIGS, SET_GIG, UPDATE_GIG, ADD_GIG_MSG, SET_FILTER, SET_LIKED_GIGS, SET_RECOMMENDED_GIGS } from '../reducers/gig.reducer'
 

@@ -30,7 +30,7 @@ async function query(filterBy = {}) {
 async function getById(orderId) {
     try {
         const collection = await dbService.getCollection(ORDERS_COLLECTION)
-        const order = collection.findOne({ _id: new ObjectId(orderId) })
+        const order = await collection.findOne({ _id: new ObjectId(orderId) })
         return order
     }
     catch (err) {
@@ -62,11 +62,11 @@ async function save(order) {
 
         if (order._id) {
             const id = new ObjectId(order._id)
-            delete orderToSave._id
+            orderToSave._id = id
 
             _convertIdsToObjectIds(orderToSave)
 
-            const response = await collection.updateOne({ _id: id }, { $set: orderToSave })
+            const response = await collection.updateOne({ _id: id }, { $set: {...orderToSave} })
             if (response.matchedCount === 0) {
                 throw new Error(`Order with id ${id.toHexString()} was not found`)
             }
@@ -93,6 +93,9 @@ function _convertIdsToObjectIds(orderData) {
 
 function _buildCriteria(filterBy) {
     const criteria = {}
-    if (filterBy._id) criteria._id = filterBy._id
+    if (filterBy._id) criteria._id = new ObjectId(filterBy._id)
+    if (filterBy.buyerId) criteria.buyerId = new ObjectId(filterBy.buyerId)
+    if (filterBy.sellerId) criteria.sellerId = new ObjectId(filterBy.sellerId)
+    if (filterBy.orderedGigId) criteria.orderedGigId = new ObjectId(filterBy.orderedGigId)
     return criteria
 }

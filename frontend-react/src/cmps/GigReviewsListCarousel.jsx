@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import SvgIcon from './SvgIcon.jsx'
 
 
-import { userService } from "../services/user/user.service.local.js";
+import { userService } from "../services/user.service.js";
 import { GigReview } from "../cmps/GigReview.jsx";
 
 export function GigReviewsListCarousel({ gig }) {

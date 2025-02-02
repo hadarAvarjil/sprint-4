@@ -1,59 +1,61 @@
-import { storageService } from '../async-storage.service'
+import { httpService } from '../http.service'
 
-const STORAGE_KEY = 'order'
+const BASE_URL = 'order/'
 
 export const orderService = {
-    query,
-    getById,
-    save,
-    remove,
-    getEmptyOrder,
-    addOrder,
+  query,
+  getById,
+  save,
+  remove,
+  getEmptyOrder,
+  createOrder,
 }
-window.cs = orderService
 
-async function query() {
-    let orders = await storageService.query(STORAGE_KEY)
+async function query(filterBy = {}) {
+    const orders = await httpService.get(BASE_URL, filterBy)
     return orders
 }
 
-function getById(orderId) {
-    return storageService.get(STORAGE_KEY, orderId)
+async function getById(orderId) {
+    const order = await httpService.get(BASE_URL + orderId)
+    return order
 }
 
-async function remove(orderId) {
-    await storageService.remove(STORAGE_KEY, orderId)
+function remove(orderId) {
+    return httpService.delete(BASE_URL + orderId)
 }
 
 async function save(order) {
-    let savedOrder
+    let savedOrder;
     if (order._id) {
-        savedOrder = await storageService.put(STORAGE_KEY, order)
+      savedOrder = await httpService.put(BASE_URL, order); // לא שולח את ה-ID ב-URL, אלא בגוף הבקשה
     } else {
-        order.owner = userService.getLoggedinUser()
-        savedOrder = await storageService.post(STORAGE_KEY, order)
+      savedOrder = await httpService.post(BASE_URL, order);
     }
-    return savedOrder
-}
+    return savedOrder;
+  }
+  
 
 function getEmptyOrder() {
-    return {
-        gigId: '',
-        buyerId: '',
-        buyerName: '',
-        sellerId: '',
-        price: 0,
-        createdAt: Date.now(),
-        orderState: 'Pending'
-    }
+  return {
+    gigId: '',
+    buyerId: '',
+    sellerId: '',
+    price: 0,
+    createdAt: Date.now(),
+    orderState: 'Pending'
+  }
 }
 
-async function addOrder(gigId, buyerId, buyerName, sellerId, price) {
-    let order = getEmptyOrder()
-    order.buyerId = buyerId
-    order.buyerName = buyerName
-    order.sellerId = sellerId
-    order.orderedGigId = gigId
-    order.price = price
-    return order
+async function createOrder(buyerId, gigId, sellerId, price, title, daysToMake, gigFirstImgUrl) {
+  const order = getEmptyOrder()
+
+  order.buyerId = buyerId
+  order.gigId = gigId
+  order.sellerId = sellerId
+  order.price = price
+  order.title = title
+  order.daysToMake = daysToMake
+  order.gigFirstImgUrl = gigFirstImgUrl
+  return order
 }
