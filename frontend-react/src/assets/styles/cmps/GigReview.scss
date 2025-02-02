@@ -87,9 +87,14 @@
         .review-rating {
             display: flex;
             align-items: center;
+            text-align: center;
             gap: 8px;
             margin-bottom: 8px;
-
+            .review-rating-span{
+                padding-top: 3px;
+font-size: 18px;
+line-height: 18px;
+            }
             .review-rating-label {
                 font-size: 1rem;
                 color: #333;
