@@ -18,13 +18,11 @@ import ReactDOM from "react-dom"; // shinoi6
 
 import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
 
-<cmp></cmp>
-
 export function AppHeader() {
   const [searchQuery, setSearchQuery] = useState("");
   const [headerStage, setHeaderStage] = useState(0);
   const [showUserDropdownMenu, setShowUserDropdownMenu] = useState(false);
-  const [showUserOrdersDropdownMenu,  setShowUserOrdersDropdownMenu] = useState(false);
+  const [showUserOrdersDropdownMenu, setShowUserOrdersDropdownMenu] = useState(false);
   const [showOrdersDropdown, setShowOrdersDropdown] = useState(false);
   const [showAsideMenu, setShowAsideMenu] = useState(false);
   const [notification, setNotification] = useState(false);
@@ -39,11 +37,11 @@ export function AppHeader() {
     // display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
   };
 
-  const userRef = useRef(null);
-  outsideClick(userRef, () => setShowUserDropdownMenu(false));
+  const userRef = useRef(null)
+  outsideClick(userRef, () => setShowUserDropdownMenu(false))
 
-  const ordersRef = useRef(null);
-  outsideClick(ordersRef, () => setShowOrdersDropdown(false));
+  const ordersRef = useRef(null)
+  outsideClick(ordersRef, () => setShowUserOrdersDropdownMenu(false));
 
   const asideMenuRef = useRef(null);
   outsideClick(asideMenuRef, () => setShowAsideMenu(false));
@@ -57,12 +55,6 @@ export function AppHeader() {
   const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
   const deviceType = useDeviceType()
-
-
-
-
-  // console.log(loggedinUser, 'userrrrrr');
-  
 
   const categories = category;
   const location = useLocation();
@@ -89,7 +81,7 @@ export function AppHeader() {
   const headerStyles = {
     backgroundColor: headerStage >= 1 ? "#fff" : "transparent",
     color: isHomePage && headerStage === 0 ? "#fff" : "#62646a",
-  };
+  }
 
   useEffect(() => {
     if (!isHomePage) {
@@ -153,9 +145,8 @@ export function AppHeader() {
 
   return (
     <header
-      className={`app-header flex column full main-container ${
-        isHomePage ? "home-page" : ""
-      }`}
+      className={`app-header flex column full main-container ${isHomePage ? "home-page" : ""
+        }`}
     >
       <nav className="main-nav">
         <div className="main-nav-header container flex row">
@@ -199,34 +190,36 @@ export function AppHeader() {
             />
           </div>
           <div className="header-options">
-            
+
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
             {loggedinUser ? (
               <>
-                           <NavLink to="/my-lists">
-    <SvgIcon className="sign-header-btn" iconName="heartIcon" />
-</NavLink>
+                <NavLink to="/my-lists">
+                  <SvgIcon className="sign-header-btn" iconName="heartIcon" />
+                </NavLink>
+
+
                 <div className="orders-container" ref={ordersRef}>
-                  {/* <NavLink to="/orders"> */}
-                    <div className="sign-header-btn"  onClick={(e) => {
+                  <div
+                    className="sign-header-btn"
+                    onClick={(e) => {
                       e.stopPropagation();
                       setShowUserOrdersDropdownMenu((prev) => !prev);
-                    }}      
-              >Orders</div>
-                  {/* </NavLink> */}
+                    }}
+                  >
+                    Orders
+                  </div>
 
                   {showUserOrdersDropdownMenu && (
                     <UserOrdersDropdownMenu
-                    topOffset={'calc(8%)'}
-                    // rightOffset={'calc(13%)'}
-
                       loggedInUser={loggedinUser}
                       onClose={() => setShowUserDropdownMenu(false)}
                     />
                   )}
                 </div>
+
 
                 <div className="user-container" ref={userRef}>
                   <div
@@ -238,6 +231,7 @@ export function AppHeader() {
                   >
                     <img src={loggedinUser.imgUrl} alt="User avatar" />
                   </div>
+
                   {showUserDropdownMenu && (
                     <UserDropdownMenu
                       loggedInUser={loggedinUser}

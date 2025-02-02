@@ -41,7 +41,12 @@ export function UserProfile() {
   }, [loggedInUser, navigate, dispatch]);
 
   if (!user) {
-    return <div className="loading"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> Loading Profile...</div>;
+    return (
+      <div className="loading-container">
+        <div className="loader"></div>
+        <p className="loading-text">Loading Profile...</p>
+      </div>
+    )
   }
 
   return (
