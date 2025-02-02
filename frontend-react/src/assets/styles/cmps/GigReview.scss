@@ -22,8 +22,10 @@
         margin-bottom: 16px;
 
         .reviewer-info {
+    
             display: flex;
             align-items: center;
+            
 
             .reviewer-img {
                 width: 50px;
@@ -38,7 +40,10 @@
                 font-size: 1.2rem;
                 font-weight: bold;
                 margin: 0;
-                color: #333;
+                font-size:16px ;
+                line-height: 24px;
+                font-family: $fiverr-defult-font;
+                color:#222325 ;
             }
 
             .country-info {
@@ -51,6 +56,10 @@
                     color: #888;
                     vertical-align: middle;
                     padding-top: 2px;
+                    font-family: $fiverr-defult-font;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color:#74767e ;
                 }
 
                 .reviewer-country-img {
