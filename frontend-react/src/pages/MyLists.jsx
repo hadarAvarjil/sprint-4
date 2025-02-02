@@ -74,7 +74,7 @@ export function MyLists() {
 
   return (
     <div className="my-lists-page">
-      <h1>My Lists</h1>
+      <h1 className='my-lists-title'>My Lists</h1>
       <section className="recommended-gigs-section">
         {likedGigs.length ? (
           <ul className="gigs-list recommended-gigs-list liked-gigs-list">
@@ -92,7 +92,7 @@ export function MyLists() {
           <p>No liked gigs yet.</p>
         )}
       </section>
-      <section className="recommended-gigs-section">
+      <section className="recommended-gigs-section recommended-liked-gigs-section">
         <div className="flex-row">
           <h2 className="gig-title">
             {likedGigs.length > 0 ? (

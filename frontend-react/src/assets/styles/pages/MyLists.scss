@@ -268,20 +268,31 @@
   
 
   .my-lists-page{
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Centers the list horizontally */
+flex-direction: column;
+.my-lists-title{
+  margin: auto;
+  margin-bottom: 40px;
+}
 .recommended-gigs-section{
-  margin-top: 41px;
+  margin: auto;
 .liked-gigs-list{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;  /* Allows items to move to a new row */
-
   gap: 26px;
+  justify-content: center; /* Ensures items are centered inside */
+
   .liked-gig-item{
     // margin-bottom: 60px;
     width: 332px;
-    height: 350px;
+    height: 400px;
     .recommended{
-      height: 350px;
+      height: 400px;
       .image-wrapper{
     img{
       border-radius: 0px;
@@ -347,7 +358,9 @@ padding-left: 12px;
 
 }
 
-
+.recommended-liked-gigs-section{
+  margin-top: 60px;
+}
 
 
 
