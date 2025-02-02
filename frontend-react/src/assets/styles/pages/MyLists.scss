@@ -333,11 +333,12 @@ padding-left: 12px;
   margin-top: 0px;
   .gig-title{
     font-family: $fiverr-defult-font;
-
+position: relative;
   font-size: 16px;
   line-height: 22px;
   }
   .gig-price{
+    position: absolute;
     font-family: $fiverr-defult-font;
     color: #74767e;
     line-height: 20px;
