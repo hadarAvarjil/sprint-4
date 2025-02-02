@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useModal } from '../customHooks/ModalContext.jsx'
 import { useDeviceType } from '../customHooks/DeviceTypeContext.jsx'
-import { gigService } from '../services/gig.service.js'
+import { gigService } from '../services/gig/gig.service.local.js'
 import { userService } from '../services/user/user.service.local.js'
 import { removeGig } from '../store/actions/gig.actions.js'
 
