@@ -169,8 +169,10 @@ line-height: 18px;
 
     .review-duration span {
         font-weight: bold;
-        font-size: 1rem;
-        color: #333;
+        font-size: 14px;
+        line-height: 22px;
+        color: #222325;
+        font-family: $fiverr-defult-font;
     }
 }
 
