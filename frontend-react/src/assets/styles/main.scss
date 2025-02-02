@@ -29,10 +29,12 @@
 @import "cmps/GigDetailsOrder"; //HA
 @import "cmps/UserPreviewGigDetails"; //HA
 @import "cmps/GigReview"; //HA
+@import "cmps/MoveToRelevent.scss";
 @import "cmps/PurchaseAside"; //HA
 @import "cmps/GigDetailsLikeAndShare"; //HA
 @import "cmps/FAQAccordion"; //HA
 @import "cmps/ProfileCard";
+@import "cmps/SellerOrdersList";
 
 
 @import "cmps/ReviewModal";
@@ -63,6 +65,8 @@
 @import "cmps/HomePopServicesDiv";
 @import "cmps/HomeMakeHappenDiv";
 
+@import "cmps/UserOrdersDropdownMenu.scss";
+
 // Pages
 @import "pages/HomePage";
 @import "pages/About";
@@ -80,5 +84,6 @@
 
 @import "pages/TermsPage.scss";
 @import "pages/PrivacyPage.scss";
+@import "pages/BuyerOrdersList.scss";
 
 @import "cmps/MoveToRelevent.scss"

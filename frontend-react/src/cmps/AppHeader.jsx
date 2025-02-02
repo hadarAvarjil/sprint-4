@@ -16,22 +16,28 @@ import { LoginSignup } from "./LoginSignup.jsx";
 import { UserDropdownMenu } from "./UserDropdownMenu.jsx";
 import ReactDOM from "react-dom"; // shinoi6
 
+import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
+
+<cmp></cmp>
+
 export function AppHeader() {
   const [searchQuery, setSearchQuery] = useState("");
   const [headerStage, setHeaderStage] = useState(0);
   const [showUserDropdownMenu, setShowUserDropdownMenu] = useState(false);
+  const [showUserOrdersDropdownMenu,  setShowUserOrdersDropdownMenu] = useState(false);
   const [showOrdersDropdown, setShowOrdersDropdown] = useState(false);
   const [showAsideMenu, setShowAsideMenu] = useState(false);
   const [notification, setNotification] = useState(false);
   const [headerPlaceholderText, setHeaderPlaceholderText] = useState("");
   const [isSignDivVisible, setIsSignDivVisible] = useState(false); // shinoi6
   const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); // shinoi6
+  const [isHovered, setIsHovered] = useState(false);
 
   const navBarStyles = {
-        borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
-        borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
-        // display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
-      }
+    borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
+    borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
+    // display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
+  };
 
   const userRef = useRef(null);
   outsideClick(userRef, () => setShowUserDropdownMenu(false));
@@ -55,12 +61,14 @@ export function AppHeader() {
 
 
 
+  // console.log(loggedinUser, 'userrrrrr');
+  
+
   const categories = category;
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const navigate = useNavigate();
-    // const isDashboardSellerPage = location.pathname === "/dashboard"
-
+  // const isDashboardSellerPage = location.pathname === "/dashboard"
 
   const handleJoinClick = () => {
     setIsJoinDivVisible(true); // shinoi6
@@ -106,7 +114,7 @@ export function AppHeader() {
     }
   }, [isHomePage, deviceType])
 
-  function handleSearchChange(e) { 
+  function handleSearchChange(e) {
     const newSearchQuery = e.target.value;
     setSearchQuery(newSearchQuery);
   }
@@ -145,7 +153,9 @@ export function AppHeader() {
 
   return (
     <header
-      className={`app-header flex column full main-container ${isHomePage ? "home-page" : ""}`}
+      className={`app-header flex column full main-container ${
+        isHomePage ? "home-page" : ""
+      }`}
     >
       <nav className="main-nav">
         <div className="main-nav-header container flex row">
@@ -172,8 +182,8 @@ export function AppHeader() {
           </div>
           <div className="logo-search-bar-container flex row">
             <Link to="/" style={{ color: headerStyles.color }}>
-              <h1 style={{  color: '#404145'}} className="logo flex row">
-              {/* <h1 style={{ color: logoColor }} className="logo flex row"> */}
+              <h1 style={{ color: "#404145" }} className="logo flex row">
+                {/* <h1 style={{ color: logoColor }} className="logo flex row"> */}
                 gigster
                 <span className=" dot-icon flex">
                   <SvgIcon iconName={"greenDotIcon"} />
@@ -189,6 +199,7 @@ export function AppHeader() {
             />
           </div>
           <div className="header-options">
+            
             <NavLink to="gig">
               <div className="sign-header-btn">Explore</div>
             </NavLink>
@@ -224,17 +235,18 @@ export function AppHeader() {
             ) : (
               <>
                 <div className="signIn-btn">
-                  <button onClick={handleLoginClick}>Sign In</button> {/* shinoi6 */}
+                  <button onClick={handleLoginClick}>Sign In</button>{" "}
+                  {/* shinoi6 */}
                 </div>
                 <div className="join-btn">
-                  <button onClick={handleJoinClick}>Join</button> {/* shinoi6 */}
+                  <button onClick={handleJoinClick}>Join</button>{" "}
+                  {/* shinoi6 */}
                 </div>
               </>
             )}
           </div>
         </div>
       </nav>
-
       {/* Modal logic */} {/* shinoi6 */}
       {(isSignDivVisible || isJoinDivVisible) &&
         ReactDOM.createPortal(
@@ -259,7 +271,7 @@ export function AppHeader() {
           </div>,
           document.body
         )}
-        <NavBar
+      <NavBar
         categories={categories}
         display={headerStage === 2 ? "flex" : "none"}
         headerStage={headerStage}
@@ -269,5 +281,4 @@ export function AppHeader() {
     </header>
   );
 }
-
 

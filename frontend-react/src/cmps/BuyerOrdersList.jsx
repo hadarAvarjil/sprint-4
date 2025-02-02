@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { userService } from '../services/user.service.js'
+import { userService } from '../services/user'
 import { orderService } from '../services/order'
 
 export function BuyerOrdersList({ loggedInUser, orders }) {
@@ -19,6 +19,8 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                 orders.map(async (order) => {
                     try {
                         const user = await userService.getById(order.sellerId)
+                        console.log(order,'uouououou');
+                        
                         return {
                             ...order,
                             fullName: user.fullName || 'Unknown Buyer',
@@ -40,7 +42,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
             console.error('Unexpected error while loading user orders:', err)
         }
     }
-
+ 
     function calculateDueOn(order) {
         if (!order?.createdAt || !order?.daysToMake) return 'N/A'
 
@@ -50,15 +52,20 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
         return dueOnDate.toDateString()
     }
 
+    console.log('what',userOrders);
+
+
     return (
         <section className="orders-table-container">
             <table className="orders-table">
                 <thead>
                     <tr>
-                        <th>Seller</th>
+                       
                         <th>Gig</th>
+                        <th></th>
                         <th>Due On</th>
                         <th>Total</th>
+                        <th>Seller</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -66,13 +73,25 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                     {userOrders.length > 0 ? (
                         userOrders.map((order, index) => {
                             const dueOn = calculateDueOn(order)
-                            const status = order.status || "Pending" 
+                            // const status = order.status || "Pending" 
 
+                            const getStatusElement = (status) => {
+                                if (status === "approved") {
+                                  return <div style={{ backgroundColor: "none", color: "#2C7055", padding: "5px", borderRadius: "4px" }}>Approved</div>;
+                                } else if (status === "declined") {
+                                  return <div style={{ backgroundColor: "none", color: "white", padding: "5px", borderRadius: "4px" }}>Declined</div>;
+                                } else {
+                                  return <div style={{ backgroundColor: "none", color: "orange", padding: "5px", borderRadius: "4px" }}>Pending</div>;
+                                }
+                              };
+ 
                             return (
-                                <tr key={order._id || index}>
-                                    <td>
-                                        <img src={order.imgUrl} alt="Seller" className="seller" />
-                                        <span>{order.fullName}</span>
+                                <tr style={{ borderBottom: '1px solid #ddd'}} key={order._id || index}>
+                                   <td className='td-gig-img'>
+                                        <img src={order.gigFirstImgUrl} alt="gigFirstImgUrl" className="gigFirstImgUrl" />
+                                        <Link to={`/gig/${order.gigId}`}>
+                                            {/* {order.title || 'Unknown Gig'} */}
+                                        </Link>
                                     </td>
                                     <td>
                                         <Link to={`/gig/${order.gigId}`}>
@@ -81,7 +100,13 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                     </td>
                                     <td>{dueOn}</td>
                                     <td>${order.price?.toFixed(2) || '0.00'}</td>
-                                    <td>{status}</td>
+                                    <td className='buyer-orders-seller-td'>
+                                        <img src={order.imgUrl} alt="Seller" className="seller" />
+                                        <span>{order.fullName}</span>
+                                    </td>
+                                    <td>{getStatusElement(order.status || "pending")}</td>
+
+                                    {/* <td>{status}</td> */}
                                 </tr>
                             )
                         })
