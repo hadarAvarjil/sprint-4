@@ -10,26 +10,8 @@ export const gigService = {
   getDefaultFilter,
   getFilterFromParams,
   toggleLike
-  toggleLike
 }
 
-async function toggleLike(gigId, userId) {
-  try {
-    const gig = await getById(gigId);
-    if (!Array.isArray(gig.likedByUsers)) gig.likedByUsers = [];
-
-    if (gig.likedByUsers.includes(userId)) {
-      gig.likedByUsers = gig.likedByUsers.filter((id) => id !== userId);
-    } else {
-      gig.likedByUsers.push(userId);
-    }
-
-    return await save(gig);
-  } catch (err) {
-    console.error('Failed to toggle like:', err);
-    throw err;
-  }
-}
 
 function getFilterFromParams(searchParams) {
   const newFilterBy = gigService.getDefaultFilter()

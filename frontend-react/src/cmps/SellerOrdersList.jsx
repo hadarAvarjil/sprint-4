@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { userService } from '../services/user'
+import { userService } from '../services/user.service.js'
 import { saveOrder } from '../store/actions/order.actions.js'
 
 export function SellerOrdersList({ loggedInUser, orders = [] }) {

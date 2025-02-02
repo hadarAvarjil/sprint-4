@@ -14,7 +14,7 @@ import { GigReviewsList } from '../cmps/GigReviewsList'
 import { GigReviewsListCarousel } from '../cmps/GigReviewsListCarousel'
 import { GigDetailsOrder } from '../cmps/GigDetailsOrder'
 import { GigDetailsLikeAndShare } from '../cmps/GigDetailsLikeAndShare'
-import { gigService } from '../services/gig/gig.service.local.js' 
+import { gigService } from '../services/gig.service.js' 
 
 
 export function GigDetails() {

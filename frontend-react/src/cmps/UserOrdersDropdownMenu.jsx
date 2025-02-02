@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { userService } from "../services/user";
+import { userService } from "../services/user.service.js";
 import { AddImg } from "./AddImg";
 import { loadOrdersForDropDown } from "../store/actions/order.actions.js";
 import { useSelector } from "react-redux";
