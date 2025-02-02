@@ -20,6 +20,10 @@ import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
 
 <cmp></cmp>
 
+import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
+
+<cmp></cmp>
+
 export function AppHeader() {
   const [searchQuery, setSearchQuery] = useState("");
   const [headerStage, setHeaderStage] = useState(0);
@@ -32,8 +36,13 @@ export function AppHeader() {
   const [isSignDivVisible, setIsSignDivVisible] = useState(false); // shinoi6
   const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); // shinoi6
   const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const navBarStyles = {
+    borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
+    borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
+    // display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
+  };
     borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
     borderTop: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
     // display: isDashboardSellerPage || isDashboardBuyerPage ? "none" : "",
@@ -68,6 +77,7 @@ export function AppHeader() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const navigate = useNavigate();
+  // const isDashboardSellerPage = location.pathname === "/dashboard"
   // const isDashboardSellerPage = location.pathname === "/dashboard"
 
   const handleJoinClick = () => {
@@ -114,6 +124,7 @@ export function AppHeader() {
     }
   }, [isHomePage, deviceType])
 
+  function handleSearchChange(e) {
   function handleSearchChange(e) {
     const newSearchQuery = e.target.value;
     setSearchQuery(newSearchQuery);
@@ -183,6 +194,8 @@ export function AppHeader() {
             <Link to="/" style={{ color: headerStyles.color }}>
               <h1 style={{ color: "#404145" }} className="logo flex row">
                 {/* <h1 style={{ color: logoColor }} className="logo flex row"> */}
+              <h1 style={{ color: "#404145" }} className="logo flex row">
+                {/* <h1 style={{ color: logoColor }} className="logo flex row"> */}
                 gigster
                 <span className=" dot-icon flex">
                   <SvgIcon iconName={"greenDotIcon"} />
@@ -250,8 +263,12 @@ export function AppHeader() {
                 <div className="signIn-btn">
                   <button onClick={handleLoginClick}>Sign In</button>{" "}
                   {/* shinoi6 */}
+                  <button onClick={handleLoginClick}>Sign In</button>{" "}
+                  {/* shinoi6 */}
                 </div>
                 <div className="join-btn">
+                  <button onClick={handleJoinClick}>Join</button>{" "}
+                  {/* shinoi6 */}
                   <button onClick={handleJoinClick}>Join</button>{" "}
                   {/* shinoi6 */}
                 </div>
@@ -284,6 +301,7 @@ export function AppHeader() {
           </div>,
           document.body
         )}
+      <NavBar
       <NavBar
         categories={categories}
         display={headerStage === 2 ? "flex" : "none"}
@@ -330,6 +348,7 @@ export function AppHeader() {
 
 //   const asideMenuRef = useRef(null)
 //   outsideClick(asideMenuRef, () => setShowAsideMenu(false))
+
 
 //   const dispatch = useDispatch()
 

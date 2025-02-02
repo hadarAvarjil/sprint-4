@@ -49,11 +49,11 @@ function getEmptyOrder() {
         sellerId: '',
         price: 0,
         createdAt: Date.now(),
-        orderState: 'pending'
+        orderState: 'Pending'
     }
 }
 
-async function createOrder(buyerId, gigId, sellerId, price, title, daysToMake) {
+async function createOrder(buyerId, gigId, sellerId, price, title, daysToMake, gigFirstImgUrl ) {
     const order = getEmptyOrder()
 
     order.buyerId = buyerId
@@ -62,6 +62,7 @@ async function createOrder(buyerId, gigId, sellerId, price, title, daysToMake) {
     order.price = price
     order.title = title
     order.daysToMake = daysToMake
+    order.gigFirstImgUrl = gigFirstImgUrl
     return order
 }
 

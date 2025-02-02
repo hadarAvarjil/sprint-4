@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { userService } from '../services/user.service.js'
-import { orderService } from '../services/order.service.js'
+import { userService } from '../services/user'
+import { orderService } from '../services/order'
 
 export function BuyerOrdersList({ loggedInUser, orders }) {
     const [userOrders, setUserOrders] = useState([])
