@@ -221,6 +221,9 @@ line-height: 18px;
 
     h3 {
         position: relative; // Ensures alignment for the arrows
+    font-size: 20px;
+    line-height: 28px;
+    color: #404145;
     }
 
     .slick-prev,
@@ -258,4 +261,39 @@ line-height: 18px;
         width: 40px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
+.reviews-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 65px;
+    align-items: center;
+    .reviews-count{
+font-size:16px ;  
+line-height: 16px;
+color:#222325 ;
+  }
+  .reviews-count:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+}
+// .slick-slider{
+//     .slick-initialized{
+//     .slick-arrow{
+//         .slick-prev{
+//             i{
+//                 padding: 5px;
+//                 svg{
+//                 width: 5px;
+//                 height: 5px;
+               
+//                 }
+//             }
+//         }
+//     }
+// }
+// }
+
+
+
 }
