@@ -77,7 +77,7 @@ export function MyLists() {
       <h1>My Lists</h1>
       <section className="recommended-gigs-section">
         {likedGigs.length ? (
-          <ul className="gigs-list recommended-gigs-list">
+          <ul className="gigs-list recommended-gigs-list liked-gigs-list">
             {likedGigs.map((gig) => (
               <li className="liked-gig-item" key={gig._id}>
                 <GigPreview
