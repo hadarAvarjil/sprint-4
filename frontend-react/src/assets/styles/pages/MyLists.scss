@@ -104,7 +104,7 @@
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-family: 'macan-light', sans-serif;
+      font-family: $fiverr-defult-font;
       font-size: 1.2rem;
       line-height: 1.5;
       margin: 1rem 0 0.5rem;
@@ -145,7 +145,7 @@
 
         .rate-count {
           color: #62646a;
-          font-family: 'macan-light', sans-serif;
+          font-family: $fiverr-defult-font;
           font-size: 0.875rem;
         }
       }
@@ -226,7 +226,7 @@
 
       .gig-title {
         font-size: 1.0rem;
-        font-family: 'macan-regular';
+        font-family: $fiverr-defult-font;
         margin-bottom: 10px;
         
       }
@@ -248,7 +248,7 @@
       .h1 {
 
         /* font-size: 2.5rem; */
-        font-family: 'macan-regular';
+        font-family: $fiverr-defult-font;
         /* font-weight: bold; */
         font-size: 14px;
         margin-bottom: 2rem;
