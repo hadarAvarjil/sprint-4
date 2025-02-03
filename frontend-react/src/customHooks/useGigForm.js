@@ -13,7 +13,6 @@ export function useGigForm(initialValues, saveGig, navigate, loggedInUser, id, g
         if (name === 'title' && value.length > 80) return // Limits title length to 80 characters
         if (name === 'description' && value.length > 1200) return // Limits description length to 1200 characters
         setFields(prevFields => ({ ...prevFields, [name]: updatedValue })) // Updates the form field
-        console.log('Updated fields:', updatedFields)
     }
 
     // Handles form submission

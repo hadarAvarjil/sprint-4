@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { userService } from '../services/user.service.js'
 import { saveOrder } from '../store/actions/order.actions.js'
+import { socketService } from '../services/socket.service.js'
 
 export function SellerOrdersList({ loggedInUser, orders = [] }) {
     const [userOrders, setUserOrders] = useState([])
@@ -11,6 +12,22 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
             loadOrderData()
         }
     }, [orders])
+
+    useEffect(() => {
+        socketService.on('notify-buyer-accepted', (data) => {
+            showSuccessMsg(`ההזמנה שלך עודכנה ל-${data.newState}`)
+        })
+    
+        socketService.on('notify-seller-updated', (data) => {
+            showSuccessMsg(`הזמנה ${data.orderId} שונתה ל-${data.newState}`)
+        })
+    
+        return () => {
+            socketService.off('notify-buyer-accepted')
+            socketService.off('notify-seller-updated')
+        }
+    }, [])
+    
 
     async function loadOrderData() {
         try {
@@ -76,12 +93,31 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                 order._id === orderId ? { ...order, orderState: newState } : order
             )
             setUserOrders(updatedOrders)
+    
             const updatedOrder = updatedOrders.find(order => order._id === orderId)
             await saveOrder(updatedOrder)
+    
+            // שולח הודעה לקונה
+            socketService.emit('notify_buyer_accepted', { 
+                userId: updatedOrder.buyerId, 
+                user: loggedInUser,
+                orderId,
+                newState 
+            })
+    
+            // שולח הודעה למוכר
+            socketService.emit('notify_seller_updated', { 
+                userId: updatedOrder.sellerId, 
+                user: loggedInUser,
+                orderId,
+                newState 
+            })
+    
         } catch (err) {
             console.error(`Error updating order ${orderId}:`, err)
         }
     }
+    
 
     const statusColors = {
         "Pending": "#F1C40F",     
