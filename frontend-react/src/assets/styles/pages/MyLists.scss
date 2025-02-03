@@ -300,8 +300,11 @@ flex-direction: column;
   }
   .gig-user{
 display: flex;
-flex-direction: row;  
+flex-direction: column;  
 padding-left: 12px;
+.gig-owner-details{
+  display: flex;
+  flex-direction: row;
 .user-info{
  
   h1{
@@ -319,12 +322,12 @@ padding-left: 12px;
     line-height: 21px;
   }
 
-  
+}
 }
 }
 .preview-body{
   font-family: $fiverr-defult-font;
-  padding-left: 12px;
+  // padding-left: 12px;
   color: #222325;
   margin-top: 0px;
   height: 100px;
@@ -393,7 +396,10 @@ position: relative;
       border-style: none;
       .gig-user{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        .gig-owner-details{
+          display: flex;
+          flex-direction: row;
         .user-info{
           display: flex;
           flex-direction: column;
@@ -411,6 +417,7 @@ position: relative;
           }
         }
       }
+    }
       .preview-body{
         .rating{
           .star{
