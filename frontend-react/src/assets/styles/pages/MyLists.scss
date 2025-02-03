@@ -385,8 +385,11 @@ position: relative;
   margin-top: 60px;
     .recommended-gigs-list{
     // background-color: #555;
-    width: 330px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
     .recommended{
+      width: 330px;
       border-style: none;
       .gig-user{
         display: flex;
