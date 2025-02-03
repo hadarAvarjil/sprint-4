@@ -22,7 +22,8 @@
             color: $clrPrimary1;
             border-radius: 5px;
             text-transform: uppercase;
-            font-family: "macan-bold";
+            font-family: $fiverr-defult-font;
+            font-weight: bold;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s, transform 0.3s;
 
@@ -41,7 +42,8 @@
     h3 {
         text-align: left;
         font-size: 20px;
-        font-family: "macan-bold";
+        font-family: $fiverr-defult-font;
+        font-weight: bold;
         color: $clrSecondary6;
         margin: auto;
         max-width: 1200px;

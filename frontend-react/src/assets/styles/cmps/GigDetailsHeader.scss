@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    font-family: macan-light;
+    font-family: $fiverr-defult-font;
+    font-weight: 400;
 
     .gig-title h2 {
         font-size: rem(28px);

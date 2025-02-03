@@ -59,7 +59,7 @@
         span {
           color: $clrSecondary8;
           align-self: center;
-          font-family: 'macan-bold';
+          font-family: $fiverr-defult-font;
         }
       }
 
@@ -106,7 +106,7 @@
       background: none;
       font-size: 16px;
       padding: 0;
-      font-family: 'macan-regular';
+      font-family: $fiverr-defult-font;
       text-align: left;
     }
 
@@ -115,7 +115,7 @@
       padding: 12px 0;
       color: $clrSecondary6;
       background: none;
-      font-family: 'macan-regular';
+      font-family: $fiverr-defult-font;
       font-size: 16px;
       font-weight: 400;
       width: 100%;

@@ -198,7 +198,7 @@
           }
 
           .level-badge {
-            font-family: 'macan-regular';
+            font-family: $fiverr-defult-font;
             display: inline-flex; 
             align-items: center;
             margin-left: 8px; 
@@ -214,7 +214,7 @@
             margin-bottom: -3%;
             font: 400 16px / 28px macan-light;
             ;
-            font-family: macan-light;
+            font-family: $fiverr-defult-font;
             line-height: 24px;
             font-size: 15px;
             font-weight: 400;
@@ -242,6 +242,7 @@
         margin-top: 50px;
         margin-bottom: 20px;
         font: 400 16px/24px macan-bold;
+        font-family: $fiverr-defult-font;
 
         h2 {
           font-size: 16px;
@@ -253,8 +254,8 @@
           line-height: 1.5em;
           word-break: break-word;
           font: 400 16px / 24px macan-light;
-          ;
-          // font-weight: 300;
+          font-family: $fiverr-defult-font;
+
         }
       }
 
@@ -540,7 +541,7 @@ flex: 1;
       font-weight: 600;
       color: #222325;
       margin-bottom: 15px;
-      font-family: macan-bold;
+      font-family: $fiverr-defult-font;
     }
 
     .skills-list {

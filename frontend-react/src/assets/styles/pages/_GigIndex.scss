@@ -19,7 +19,8 @@
       color: $clrPrimary1;
       border-radius: 0.25em;
       text-transform: uppercase;
-      font-family: 'macan-bold';
+      font-family: $fiverr-defult-font;
+      font-weight: bold;
       box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s, transform 0.3s;
 

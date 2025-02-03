@@ -25,7 +25,8 @@
                         gap: 0.25em;
 
                         label {
-                            font-family: 'macan-bold';
+                            font-family: $fiverr-defult-font;
+                            font-weight: bold;
                         }
 
                         p {
@@ -213,7 +214,8 @@
                 justify-content: space-between;
 
                 p {
-                    font-family: 'macan-bold';
+                    font-family: $fiverr-defult-font;
+                    font-weight: bold;
                 }
 
                 h3 {

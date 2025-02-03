@@ -84,7 +84,8 @@
   .ad-by {
     color: #62646a; 
     font-size: 14px; 
-    font-family: macan-light;
+    font-family: $fiverr-defult-font;
+    font-weight: lighter;
   }
 
   .gig-title {
@@ -92,7 +93,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     // min-height: 2.4em;
-    font-family: macan-light;
+    font-family: $fiverr-defult-font;
+    font-weight: lighter;
     line-height: 1.2;
     max-height: 2.4em;
     padding: 0 0 0.25em 0;
@@ -112,7 +114,8 @@
 
       .rate-count {
         color: $clrSecondary5;
-        font-family: 'macan-light';
+        font-family: $fiverr-defult-font;
+        font-weight: lighter;
       }
     }
   }
