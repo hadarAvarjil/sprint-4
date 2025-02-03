@@ -15,6 +15,8 @@ export function GetToKnow({ owner, gig }) {
         setUser(owner)
     }
     console.log(gig);
+    console.log('yoooooooo', gig);
+    
 
     const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
     if (!user) return null
@@ -28,7 +30,8 @@ export function GetToKnow({ owner, gig }) {
     }
     return (
         <>
-            <h3>Get to know {user.fullName}</h3>
+        <div className='g-t-k-container'>
+            <h3 className='g-t-k-title'>Get to know {user.fullName}</h3>
             <div className="get-to-know user-preview-gig-details flex">
                 <div className="user-info flex align-start">
                     <div className="avatar-container">
@@ -59,7 +62,7 @@ export function GetToKnow({ owner, gig }) {
                                 <span className="rating-score">
                                     {(user.rating || 0).toFixed(1)}
                                 </span>
-                                <span> (589)</span>
+                                <span> ({gig.reviews.length})</span>
                                 <div className="line-divider"></div>
                                 {user.level === "Pro Talent" ? (
                                     <span className="pro-talent-badge">
@@ -81,6 +84,7 @@ export function GetToKnow({ owner, gig }) {
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>

@@ -1,0 +1,74 @@
+.g-t-k-container {
+    margin-top: 60px;
+
+    h3.g-t-k-title {
+        font-family: $fiverr-defult-font;
+        font-size: 20px;
+        line-height: 28px;
+        color: #404145;
+        margin-bottom: 30px;
+    }
+
+    .get-to-know.user-preview-gig-details {
+margin-bottom: 24px;
+        .user-info.align-start {
+
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            .avatar-container {
+                background-color: aqua;
+                width: 96px;
+                img.avatar-get-to-know {
+                    width: 96px;
+                }
+                .verified-badge {
+                    img {}
+                }
+            }
+
+            .user-details {
+                gap: 0px;
+                justify-content: center;
+                .user-header {
+                    span.fullname {
+                        a{
+                            font-size: 16px;
+                            line-height: 20.8px;
+                            color: #404145;
+                            font-family: $fiverr-defult-font;
+                        }
+                    }
+                    span.user-role{
+                        color: #62646a;
+                        font-size:16px ;
+                        line-height: 20.8px;
+                        font-family: $fiverr-defult-font;
+                    }
+                }
+                .user-info-row.align-center{
+                    .rating{
+                        .stars{}
+                        .rating-score{
+                            color: #222325;
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                        .level-badge{
+                            color: #222325;
+                            font-size: 14px;
+                            line-height: 18px;
+                        }
+                    }
+                }
+
+                span.user-role {
+                    margin-bottom: 0px;
+                }
+
+                .user-info-row.align-center {}
+            }
+        }
+    }
+}
