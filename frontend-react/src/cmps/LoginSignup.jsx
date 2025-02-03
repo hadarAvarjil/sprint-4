@@ -4,14 +4,14 @@ import { login, signup } from '../store/actions/user.actions.js'
 import { AddImg } from './AddImg.jsx'
 import { NavLink } from 'react-router-dom'
 
-export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow }) {
+export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup, setIsSignup }) {
     const [credentials, setCredentials] = useState({
         username: '',
         password: '',
         // fullName: '',
         // imgUrl: '',
     })
-    const [isSignup, setIsSignup] = useState(true)
+    // const [isSignup, setIsSignup] = useState(true)
 
     const handleClose = () => {
         setIsLoginSignUpShow(false)

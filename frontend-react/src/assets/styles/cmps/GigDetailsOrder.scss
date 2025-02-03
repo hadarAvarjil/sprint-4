@@ -13,7 +13,7 @@
         background-color: #f8f9fa;
 
         .tab-button {
-            font-family: macan-regular;
+            font-family: $fiverr-defult-font;
             flex: 1;
             padding: 12px 0;
             text-align: center;
@@ -151,6 +151,8 @@
         color: #555;
         margin-bottom: 16px;
         line-height: 1.5;
+        font-family: $fiverr-defult-font;
+
     }
 
     .details-container {
@@ -165,6 +167,8 @@
             font-size: 14px;
             line-height: 24px;
             color: #666;
+            font-family: $fiverr-defult-font;
+
 
             svg {
                 margin-right: 8px;
@@ -214,6 +218,8 @@
         color: #95979d;
         font-size: 14px;
         line-height: 24px; 
+        font-family: $fiverr-defult-font;
+
 
         svg {
             width: 20px;

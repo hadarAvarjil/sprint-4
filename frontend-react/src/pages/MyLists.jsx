@@ -74,10 +74,10 @@ export function MyLists() {
 
   return (
     <div className="my-lists-page">
-      <h1>My Lists</h1>
+      <h1 className='my-lists-title'>My Lists</h1>
       <section className="recommended-gigs-section">
         {likedGigs.length ? (
-          <ul className="gigs-list recommended-gigs-list">
+          <ul className="gigs-list recommended-gigs-list liked-gigs-list">
             {likedGigs.map((gig) => (
               <li className="liked-gig-item" key={gig._id}>
                 <GigPreview
@@ -92,15 +92,15 @@ export function MyLists() {
           <p>No liked gigs yet.</p>
         )}
       </section>
-      <section className="recommended-gigs-section">
+      <section className="recommended-gigs-section recommended-liked-gigs-section">
         <div className="flex-row">
-          <h2 className="gig-title">
+          <h2 className="gig-title" style={{color:'#404145'}}>
             {likedGigs.length > 0 ? (
               <>
                 Because you've saved -{' '}
-                <span style={{ color: '#446ee7' }}>
+                <span style={{ color: 'rgb(29, 191, 115)' }}>
                   {likedGigs[0].category}
-                </span>
+                </span> you might also like
               </>
             ) : (
               'Recommended Gigs'

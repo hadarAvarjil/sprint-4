@@ -9,6 +9,12 @@
     margin-block-end: 3em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    width: 710px;
+    height: 270;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 
     .review-header {
         display: flex;
@@ -16,8 +22,10 @@
         margin-bottom: 16px;
 
         .reviewer-info {
+    
             display: flex;
             align-items: center;
+            
 
             .reviewer-img {
                 width: 50px;
@@ -32,7 +40,10 @@
                 font-size: 1.2rem;
                 font-weight: bold;
                 margin: 0;
-                color: #333;
+                font-size:16px ;
+                line-height: 24px;
+                font-family: $fiverr-defult-font;
+                color:#222325 ;
             }
 
             .country-info {
@@ -44,7 +55,11 @@
                     font-size: 0.9rem;
                     color: #888;
                     vertical-align: middle;
-                    padding-top: 2px;
+                    padding-top: 4px;
+                    font-family: $fiverr-defult-font;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color:#74767e ;
                 }
 
                 .reviewer-country-img {
@@ -60,7 +75,8 @@
     }
 
     .review-content {
-        margin-bottom: 16px;
+        margin-bottom: 12px;
+        
 
         .rating-line {
             width: 100%;
@@ -72,9 +88,14 @@
         .review-rating {
             display: flex;
             align-items: center;
+            text-align: center;
             gap: 8px;
             margin-bottom: 8px;
-
+            .review-rating-span{
+                padding-top: 3px;
+font-size: 18px;
+line-height: 18px;
+            }
             .review-rating-label {
                 font-size: 1rem;
                 color: #333;
@@ -94,8 +115,12 @@
             }
 
             .review-date {
-                font-size: 0.9rem;
+                font-size: 12px;
+                line-height: 18px;
                 color: #888;
+                margin-left: 12px;
+                font-family: $fiverr-defult-font;
+
             }
         }
 
@@ -103,6 +128,9 @@
             font-size: 1rem;
             line-height: 1.5;
             color: #555;
+            font-family: $fiverr-defult-font;
+
+            
         }
     }
 
@@ -130,21 +158,29 @@
 
     .review-price {
         font-weight: bold;
-        font-size: 1rem;
-        color: #333;
+        font-size: 14px;
+        line-height: 22px;
+        color: #222325;
+        font-family: $fiverr-defult-font;
+
     }
 
     .price-label,
     .duration-label {
-        font-size: 0.9rem;
-        color: #888;
+        font-size: 12px;
+        line-height: 18px;
+        color: #74767e;
         margin-top: 4px;
+        font-family: $fiverr-defult-font;
+
     }
 
     .review-duration span {
         font-weight: bold;
-        font-size: 1rem;
-        color: #333;
+        font-size: 14px;
+        line-height: 22px;
+        color: #222325;
+        font-family: $fiverr-defult-font;
     }
 }
 
@@ -182,9 +218,12 @@
 .gig-reviews-list-carousel {
     position: relative;
     padding-top: 20px; // Add padding above the reviews section if needed
-
+margin-top: 50px;
     h3 {
         position: relative; // Ensures alignment for the arrows
+    font-size: 20px;
+    line-height: 28px;
+    color: #404145;
     }
 
     .slick-prev,
@@ -222,4 +261,39 @@
         width: 40px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
+.reviews-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 65px;
+    align-items: center;
+    .reviews-count{
+font-size:16px ;  
+line-height: 16px;
+color:#222325 ;
+  }
+  .reviews-count:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+}
+// .slick-slider{
+//     .slick-initialized{
+//     .slick-arrow{
+//         .slick-prev{
+//             i{
+//                 padding: 5px;
+//                 svg{
+//                 width: 5px;
+//                 height: 5px;
+               
+//                 }
+//             }
+//         }
+//     }
+// }
+// }
+
+
+
 }
