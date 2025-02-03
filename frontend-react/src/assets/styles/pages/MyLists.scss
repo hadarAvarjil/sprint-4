@@ -355,6 +355,9 @@ position: relative;
     
   }
   .rating{
+    position: absolute;
+    bottom: -5px;
+    
     .star{
       padding-top: 2px;
     }
