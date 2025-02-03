@@ -30,6 +30,8 @@ export function AppHeader() {
   const [isSignDivVisible, setIsSignDivVisible] = useState(false); // shinoi6
   const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); // shinoi6
   const [isHovered, setIsHovered] = useState(false);
+  // const [isSignup, setIsSignup] = useState(false);
+
 
   const navBarStyles = {
     borderBottom: headerStage >= 2 ? "1px solid #e4e5e7" : "none",
@@ -62,13 +64,39 @@ export function AppHeader() {
   const navigate = useNavigate();
   // const isDashboardSellerPage = location.pathname === "/dashboard"
 
-  const handleJoinClick = () => {
-    setIsJoinDivVisible(true); // shinoi6
-  };
+  //   const handleJoinClick = () => {
+  //   setIsSignup(true)//
+  //   setIsLoginSignUpShow(true) 
+  //   setIsJoinDivVisible(true);
+  // }
 
+  // const handleLoginClick = () => {
+  //   setIsSignup(false)
+  //   setIsLoginSignUpShow(true)
+  //   setIsSignDivVisible(true);
+  // }
+  // const handleJoinClick = () => {
+  //   setIsJoinDivVisible(true); // shinoi6
+  //   setIsSignDivVisible(false);
+
+  // };
+
+  // const handleLoginClick = () => {
+  //   setIsSignDivVisible(true); // shinoi6
+  //   setIsJoinDivVisible(false);
+  // };
   const handleLoginClick = () => {
-    setIsSignDivVisible(true); // shinoi6
+    setIsSignup(false);
+    setIsSignDivVisible(true);
+    setIsJoinDivVisible(false);
   };
+  
+  const handleJoinClick = () => {
+    setIsSignup(true);
+    setIsJoinDivVisible(true);
+    setIsSignDivVisible(false);
+  };
+  
 
   const handleCloseModal = (e) => {
     if (e.target.className === "modal-overlay") {
@@ -263,16 +291,24 @@ export function AppHeader() {
             <div className="modal-content">
               {isSignDivVisible && (
                 <LoginSignup
-                  isLoginSignUpShow={isSignDivVisible}
-                  setIsLoginSignUpShow={setIsSignDivVisible}
-                  isSignup={false} // Login mode
+                isLoginSignUpShow={isSignDivVisible || isJoinDivVisible}
+                setIsLoginSignUpShow={setIsSignDivVisible}
+                isSignup={isSignup}
+                setIsSignup={setIsSignup}
+                  // isLoginSignUpShow={isSignDivVisible}
+                  // setIsLoginSignUpShow={setIsSignDivVisible}
+                  // isSignup={false} // Login mode
                 />
               )}
-              {isJoinDivVisible && (
+              {isJoinDivVisible && ( 
                 <LoginSignup
-                  isLoginSignUpShow={isJoinDivVisible}
-                  setIsLoginSignUpShow={setIsJoinDivVisible}
-                  isSignup={true} // Signup mode
+                isLoginSignUpShow={isSignDivVisible || isJoinDivVisible}
+                setIsLoginSignUpShow={setIsSignDivVisible}
+                isSignup={isSignup}
+                setIsSignup={setIsSignup}
+                  // isLoginSignUpShow={isJoinDivVisible}
+                  // setIsLoginSignUpShow={setIsJoinDivVisible}
+                  // isSignup={true} // Signup mode
                 />
               )}
             </div>
@@ -289,6 +325,7 @@ export function AppHeader() {
     </header>
   );
 }
+
 
 // import { useEffect, useState, useRef } from "react"
 // import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"
