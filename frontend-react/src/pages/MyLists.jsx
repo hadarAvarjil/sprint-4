@@ -100,7 +100,7 @@ export function MyLists() {
                 Because you've saved -{' '}
                 <span style={{ color: 'rgb(29, 191, 115)' }}>
                   {likedGigs[0].category}
-                </span> you might also like
+                </span> 
               </>
             ) : (
               'Recommended Gigs'
