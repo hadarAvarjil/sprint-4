@@ -30,13 +30,13 @@ export function GigEdit() {
 
     async function loadGig() {
         try {
-          const gig = await gigService.getById(id)
-          setFields(gig)
+            const gig = await gigService.getById(id)
+            setFields(gig)
         } catch (err) {
-          console.error('Failed to load gig', err)
-          navigate('/explore')
+            console.error('Failed to load gig', err)
+            navigate('/explore')
         }
-      }
+    }
 
     const initialValues = {
         title: "Untitled Gig",
@@ -55,7 +55,7 @@ export function GigEdit() {
     const { fields, handleChange, handleSubmit, availableTags,
         updateAvailableTags, setFields } = useGigForm(
             initialValues, saveGig, navigate, loggedInUser,
-            id, gigService, subcategories);
+            id, gigService, subcategories)
 
     function handleCategoryChange(e) {
         handleChange(e);
@@ -67,24 +67,35 @@ export function GigEdit() {
         setFields(prevFields => ({ ...prevFields, tags: selectedTags }))
     }
 
+
     function handleImageUpload(newImgUrl, index) {
-        const updatedImgUrls = [...fields.imgUrls]
-        updatedImgUrls[index] = newImgUrl;
-        setFields({ ...fields, imgUrls: updatedImgUrls })
+        if (!newImgUrl) {
+            console.error("No image URL received from uploader.")
+            return
+        }
+        setFields(prevFields => {
+            const updatedImgUrls = [...prevFields.imgUrls]
+            if (index !== undefined && index < updatedImgUrls.length) {
+                updatedImgUrls[index] = newImgUrl
+            } else {
+                updatedImgUrls.push(newImgUrl)
+            }
+            return { ...prevFields, imgUrls: updatedImgUrls }
+        })
     }
 
     return (
         <main className="gig-edit-container flex full">
             <section className="gig-edit flex layout-row">
                 <form className="flex column" onSubmit={handleSubmit}>
-         
+
 
                     <div className="form-inputs flex column">
                         <div className="input-group grid title-input-group">
                             <div className=" add-title info flex column">
-                                <div className='add-title-text'> 
-                                <label htmlFor="title">Gig Title</label>
-                                <p>As your gig storefront,<strong> your title is the most important place</strong> to include keywords that buyers would likely use to search for a service like yours.</p>
+                                <div className='add-title-text'>
+                                    <label htmlFor="title">Gig Title</label>
+                                    <p>As your gig storefront,<strong> your title is the most important place</strong> to include keywords that buyers would likely use to search for a service like yours.</p>
                                 </div>
                                 <input
                                     id="title"
@@ -102,10 +113,10 @@ export function GigEdit() {
                         <div className="input-group grid description-input-group">
                             <div className="info flex column description-container">
                                 <div className='Description-form-text'>
-                                <label htmlFor="description">Description</label>
-                                {/* <p>Provide a detailed description of your gig, highlighting what you offer and the ideal customer for your services. To enhance the buyer experience, it's important to be as informative and transparent as possible in your description.</p> */}
-                               <p>Briefly Describe Your Gig</p>
-                               </div>
+                                    <label htmlFor="description">Description</label>
+                                    {/* <p>Provide a detailed description of your gig, highlighting what you offer and the ideal customer for your services. To enhance the buyer experience, it's important to be as informative and transparent as possible in your description.</p> */}
+                                    <p>Briefly Describe Your Gig</p>
+                                </div>
                                 <textarea
                                     id="description"
                                     name="description"
@@ -119,7 +130,7 @@ export function GigEdit() {
                         </div>
 
                         <div className="input-group grid input-group-category">
-                            <div className="info flex column" style={{width:'242px', paddingRight:"32px"}}>
+                            <div className="info flex column" style={{ width: '242px', paddingRight: "32px" }}>
                                 <label htmlFor="category">Category</label>
                                 {/* <p>Choose the category most suitable for your gig, with which thousands of users will be able to find it.</p> */}
                                 <p>Choose the category most suitable for your Gig.</p>
@@ -129,7 +140,7 @@ export function GigEdit() {
                                     name="category"
                                     value={fields.category}
                                     onChange={handleCategoryChange}
-                                
+
                                 >
                                     {category.map((cat, idx) => (
                                         <option key={idx} value={cat}>
@@ -196,7 +207,7 @@ export function GigEdit() {
                         </div>
 
                         <div className="input-group grid gallery-input-group">
-                        <h3>Showcase Your Services In A Gig Gallery </h3>
+                            <h3>Showcase Your Services In A Gig Gallery </h3>
 
                             <div className="info grid">
                                 {/* <p>Show the world the quality of your gig, by uploading images that explain your service the best. By default, we provide you with 5 images to use. Select one of the slots below to change a certain image of a gig:</p> */}
@@ -217,7 +228,7 @@ export function GigEdit() {
                         <button type="button" className="flex row"
                             onClick={() => navigate(`/profile/${loggedInUser._id}`)}>
                             <SvgIcon iconName={'arrowDown'} />
-                           Back
+                            Back
                         </button>
                         <button type="submit" className="flex row">
                             Save & Continue
