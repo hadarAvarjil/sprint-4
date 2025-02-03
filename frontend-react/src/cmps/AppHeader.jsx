@@ -15,6 +15,7 @@ import { logout } from "../store/actions/user.actions";
 import { LoginSignup } from "./LoginSignup.jsx";
 import { UserDropdownMenu } from "./UserDropdownMenu.jsx";
 import ReactDOM from "react-dom"; // shinoi6
+import { AddImg } from "./AddImg.jsx";
 
 import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
 
@@ -225,7 +226,7 @@ export function AppHeader() {
             {loggedinUser ? (
               <>
                 <NavLink to="/my-lists">
-                  <SvgIcon className="sign-header-btn" iconName="heartIcon" />
+                  <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738583678/heart-svgrepo-com_cramwf.svg'/> 
                 </NavLink>
 
 
