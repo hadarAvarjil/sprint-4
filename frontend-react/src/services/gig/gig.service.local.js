@@ -37,6 +37,8 @@ async function toggleLike(gigId, userId) {
 
 async function query(filterBy = { txt: '', price: 0, cat: '' }) {
   var gigs = await storageService.query(STORAGE_KEY)
+  console.log(filterBy,' this ish= erer');
+  
 
   if (filterBy.txt) {
     const regex = new RegExp(filterBy.txt, 'i')

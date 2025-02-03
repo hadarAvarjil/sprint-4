@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { AddImg } from './AddImg.jsx' 
 import { setFilter } from "../store/actions/gig.actions.js";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+
 
 
 export function PopularServices() {
-   function setCatFilter() {
-      dispatch(setFilter({ cat: category }));
+    const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    
+    function setCatFilter( category) {
+    dispatch(setFilter({ ...filterBy, cat: category }))
+    navigate('/gig');
     }
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 6; // Number of items visible at a time
@@ -41,6 +49,7 @@ export function PopularServices() {
             }}
           >
             {/* Divs */}
+            
             <div onClick={() => setCatFilter('Programming & Tech')} to={`/gig`} 
              className="popular-div light-green-div first-pop-div">
               <h3 className="pop-div-title">Website Development</h3>

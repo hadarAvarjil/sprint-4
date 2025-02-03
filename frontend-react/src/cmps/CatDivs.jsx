@@ -9,7 +9,7 @@ export function CatDivsContainer(){
 
     const handleNavigation = (destination) => {
       navigate(destination); // Navigate to the specified destination
-    };
+    }; 
     return(
 <div className="cat-divs-container">
             <div className="cat-div" onClick={() => handleNavigation("/gig")}>

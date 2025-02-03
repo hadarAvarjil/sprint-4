@@ -130,7 +130,7 @@ export function MenuFilterContent({
                       selectedOption={selectedOption}
                     />
                   </>
-                )
+                ) 
               case 'Graphics & Design':
               case 'Programming & Tech':
               case 'Digital Marketing':
