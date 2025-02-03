@@ -93,7 +93,7 @@ export function GigDetails() {
               <p className='gig-description' > {gig.description}</p>
             </div>
 
-            <AboutGigSeller owner={gigOwner} />
+            <AboutGigSeller owner={gigOwner} gig={gig} />
             <FAQAccordion />
             <GigReviewsList gig={gig} id="reviews-section" />
           </main>
