@@ -123,7 +123,7 @@ export function HomeAppHeader() {
     //Important  *****!@!@!@!#!!@!@!@!@#
     //when switch to server and build 
     // switch this { ...filterBy, txt: searchQuery } to this { ...filterBy, search: searchQuery }
-    const newFilterBy = { ...filterBy, txt: searchQuery }
+    const newFilterBy = { ...filterBy, search: searchQuery }
     console.error('NEED TO SWITCH FIELD IN NEW FILTERBY TO SEARCH INSTEAD OF TXT',newFilterBy)
     dispatch(setFilter(newFilterBy))
 
