@@ -28,13 +28,14 @@ function remove(orderId) {
 async function save(order) {
     let savedOrder;
     if (order._id) {
-      savedOrder = await httpService.put(BASE_URL, order); // לא שולח את ה-ID ב-URL, אלא בגוף הבקשה
+      savedOrder = await httpService.put(`order/${order._id}`, order)
     } else {
       savedOrder = await httpService.post(BASE_URL, order);
     }
     return savedOrder;
   }
   
+
 
 function getEmptyOrder() {
   return {

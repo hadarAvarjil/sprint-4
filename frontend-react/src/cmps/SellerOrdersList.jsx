@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { userService } from '../services/user.service.js'
 import { saveOrder } from '../store/actions/order.actions.js'
 import { socketService } from '../services/socket.service.js'
+import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
 
 export function SellerOrdersList({ loggedInUser, orders = [] }) {
     const [userOrders, setUserOrders] = useState([])
@@ -112,7 +113,7 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                 orderId,
                 newState 
             })
-    
+            showSuccessMsg(`ההזמנה שלך עודכנה ל-${newState}`)
         } catch (err) {
             console.error(`Error updating order ${orderId}:`, err)
         }
