@@ -168,7 +168,7 @@ export function GigPreview({
                     <SvgIcon iconName="blackStar" />
                   </div>
                   <span>{owner.rating}</span>
-                  <span>({owner.reviewsCount || 0})</span>
+                  <div className="reviews-count">({owner.reviewsCount || 0})</div>
                 </div>
               </div>
             </div>
