@@ -150,13 +150,7 @@ export function GigPreview({ isFrom, gig, suppressOwner = false, onLikeToggle })
                   <>{owner.level}</>
                 )}
               </span>
-              <div className="rating">
-                <span>
-                  <SvgIcon iconName="blackStar" />
-                  {owner.rating}
-                </span>
-                <span>({owner.reviewsCount || 0})</span>
-              </div>
+   
             </div>
           </div>
         )}
@@ -166,6 +160,15 @@ export function GigPreview({ isFrom, gig, suppressOwner = false, onLikeToggle })
               {updatedGig.title}
             </Link>
           </div>
+          <div className="rating">
+                <div className="star">
+                  <SvgIcon iconName="blackStar" />
+                </div>
+                <span>
+                  {owner.rating}
+                </span>
+                <span>({owner.reviewsCount || 0})</span>
+              </div>
           <div className="gig-price">
             price ${updatedGig.price}
           </div>
