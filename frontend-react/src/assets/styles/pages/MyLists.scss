@@ -290,9 +290,9 @@ flex-direction: column;
   .liked-gig-item{
     // margin-bottom: 60px;
     width: 332px;
-    height: 400px;
+    height: 350px;
     .recommended{
-      height: 400px;
+      height: 350px;
       .image-wrapper{
     img{
       border-radius: 0px;
@@ -331,6 +331,9 @@ padding-left: 12px;
   padding-left: 12px;
   color: #222325;
   margin-top: 0px;
+  height: 100px;
+  position: relative;
+
   .gig-title{
     font-family: $fiverr-defult-font;
 position: relative;
@@ -349,6 +352,9 @@ position: relative;
     // text-align: end;
     justify-content: end;
     padding-right: 12px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 
     
   }
