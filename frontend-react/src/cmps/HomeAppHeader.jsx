@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { useNavigate } from "react-router";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
 import { NavBar } from "./NavBar";
 import SvgIcon from "./SvgIcon.jsx";
@@ -14,6 +13,7 @@ import { LoginSignup } from "./LoginSignup.jsx";
 import { UserDropdownMenu } from "./UserDropdownMenu.jsx";
 import outsideClick from "../customHooks/outsideClick.js";
 import ReactDOM from "react-dom"; // shinoi6
+import { AddImg } from "./AddImg.jsx";
 
 import { UserOrdersDropdownMenu } from "./UserOrdersDropdownMenu.jsx";
 
@@ -180,7 +180,11 @@ export function HomeAppHeader() {
               <div className="sign-header-btn explore-btn">Explore</div>
             </NavLink>
             {loggedinUser ? (
+              
               <>
+              <NavLink to="/my-lists">
+                                <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738583678/heart-svgrepo-com_cramwf.svg'/> 
+                              </NavLink>
                 <div className="orders-container" ref={ordersRef}>
                   {/* <NavLink to="/orders"> */}
                   <div className="sign-header-btn" onClick={(e) => {
