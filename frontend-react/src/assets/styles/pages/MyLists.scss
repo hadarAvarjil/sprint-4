@@ -369,8 +369,28 @@ position: relative;
   margin-top: 60px;
     .recommended-gigs-list{
     // background-color: #555;
+    width: 330px;
     .recommended{
       border-style: none;
+      // .gig-user{
+      //   display: grid;
+      //   grid-template-columns: 1fr 1fr;
+      //   grid-template-rows: 1fr 1fr;
+      //   img{
+      //     grid-row: 1;
+      //     grid-column: 1;
+      //   }
+      //   .user-info{
+      //     h1{
+      //       grid-row: 1;
+      //       grid-column: 2;
+      //     }
+      //     .level{
+      //       grid-row: 2;
+      //       grid-column: 2;
+      //     }
+      //   }
+      // }
     }
   }
 //   .recommended-gigs-list{
