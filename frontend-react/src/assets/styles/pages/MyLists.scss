@@ -1,6 +1,6 @@
 .my-lists-page {
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
   
     .my-lists-page h1 {
@@ -149,12 +149,15 @@
           }
         }
       }
-    }
+    } 
   }
+
+
   .recommended-gigs-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+  
 
     .liked-gig-item{
         width: 25%;
@@ -164,7 +167,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       background-color: #fff;
-      padding: 20px;
+      // padding: 20px;
       transition: box-shadow 0.2s ease-in-out;
   
 
@@ -263,3 +266,143 @@
     }
   }
   
+
+  .my-lists-page{
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    // justify-content: center; /* Centers the list horizontally */
+flex-direction: column;
+.my-lists-title{
+  // margin: auto;
+  margin-bottom: 40px;
+}
+.recommended-gigs-section{
+  // margin: auto;
+.liked-gigs-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  /* Allows items to move to a new row */
+  gap: 26px;
+  // justify-content: center; /* Ensures items are centered inside */
+
+  .liked-gig-item{
+    // margin-bottom: 60px;
+    width: 332px;
+    height: 400px;
+    .recommended{
+      height: 400px;
+      .image-wrapper{
+    img{
+      border-radius: 0px;
+    }
+  }
+  .gig-user{
+display: flex;
+flex-direction: row;  
+padding-left: 12px;
+.user-info{
+ 
+  h1{
+    font-family: $fiverr-defult-font;
+
+    color: #222325;
+    font-size: 14px;
+    line-height: 18px; 
+  }
+  span.level{
+    font-family: $fiverr-defult-font;
+
+    color: #74767e;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .rating{
+    font-family: $fiverr-defult-font;
+
+    display: none;
+  }
+  
+}
+}
+.preview-body{
+  font-family: $fiverr-defult-font;
+  padding-left: 12px;
+  color: #222325;
+  margin-top: 0px;
+  .gig-title{
+    font-family: $fiverr-defult-font;
+position: relative;
+  font-size: 16px;
+  line-height: 22px;
+  }
+  .gig-price{
+    // position: absolute;
+    font-family: $fiverr-defult-font;
+    color: #74767e;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-top: 7px;
+    display: flex;
+    // text-align: end;
+    justify-content: end;
+    padding-right: 12px;
+
+    
+  }
+}
+  }
+}
+}
+
+}
+
+.recommended-liked-gigs-section{
+  margin-top: 60px;
+    .recommended-gigs-list{
+    // background-color: #555;
+    .recommended{
+      border-style: none;
+    }
+  }
+//   .recommended-gigs-list{
+//     // background-color: #555;
+//     .recommended{
+//       width: 267px;
+//       border-style: none ;
+//       display: grid;
+//       grid-template-columns: 1fr 1fr;
+//       grid-template-rows: 160px 24px 1fr 24px 24px;
+//       .image-wrapper{
+// grid-column: 1/-1;
+//       }
+//       .gig-user{
+//         // grid-row: 2;
+//         // display: flex;
+//         // flex-direction: row;
+//       }
+//       .user-info{
+//         h1{
+//           grid-column: 1;
+//           grid-row: 2;
+//         }
+//         .level{
+//           grid-column: 1;
+//           grid-row: 4;
+//         }
+//       }
+//       .preview-body{
+// grid-column: 1/-1;
+// grid-row: 3;
+
+//       }
+//     }
+//   }
+}
+
+
+
+
+  }

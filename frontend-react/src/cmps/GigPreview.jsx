@@ -91,7 +91,7 @@ export function GigPreview({ isFrom, gig, suppressOwner = false, onLikeToggle })
       const emptyStars = '✧'.repeat(maxStars - level)
       return filledStars + emptyStars
     }
-  
+
     return (
       <li className="recommended">
         <div className="image-wrapper">
@@ -150,26 +150,29 @@ export function GigPreview({ isFrom, gig, suppressOwner = false, onLikeToggle })
                   <>{owner.level}</>
                 )}
               </span>
-              <div className="rating">
-                <span>
-                  <SvgIcon iconName="blackStar" />
-                  {owner.rating}
-                </span>
-                <span>({owner.reviewsCount || 0})</span>
+              <div className="preview-body">
+                <div className="gig-title">
+                  <Link to={`/gig/${updatedGig._id}`}>
+                    {updatedGig.title}
+                  </Link>
+                </div>
+                <div className="gig-price">
+                  price ${updatedGig.price}
+                </div>
+                <div className="rating">
+                  <span>
+                    <SvgIcon iconName="blackStar" />
+                    {owner.rating}
+                  </span>
+                  <span>({owner.reviewsCount || 0})</span>
+                </div>
               </div>
             </div>
           </div>
         )}
-        <div className="preview-body">
-          <div className="gig-title">
-            <Link to={`/gig/${updatedGig._id}`}>
-              {updatedGig.title}
-            </Link>
-          </div>
-          <div className="gig-price">
-            price ${updatedGig.price}
-          </div>
-        </div>
+
+
+
       </li>
     )
   }

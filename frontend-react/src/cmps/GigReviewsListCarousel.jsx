@@ -72,8 +72,8 @@ export function GigReviewsListCarousel({ gig }) {
                     }}
                     style={{ cursor: 'pointer' }}
                 >
-                    (See all reviews)
-                </span>
+                    See all reviews
+                </span> 
             </section>
             {gigReviews.length !== 0 ? (
                 <Slider {...settings}>
@@ -99,15 +99,19 @@ function NextArrow(props) {
                 ...style,
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
-                background: "#ebeff3",
+                alignItems: "center", 
+                background: "white",
                 color: "black",
                 borderRadius: "50%",
-                height: "25px",
-                width: "25px",
+                height: "32px",
+                width: "32px",
                 zIndex: 1,
                 cursor: "pointer",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
+                boxShadow:'rgba(0, 0, 0, 0.02) 0px 1.2px 1.92251px 0px, rgba(0, 0, 0, 0.04) 0px 2px', 
+                marginRight:'-12px',
+                marginTop:'-14px'
+                
+               
             }}
             onClick={onClick}
         >
@@ -120,24 +124,25 @@ function PrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <div
-            className={className}
+            className={className} 
             style={{
                 ...style,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                background: "#ebeff3",
-                color: "white",
+                background: "white",
+                color: "black",
                 borderRadius: "50%",
-                height: "25px",
-                width: "25px",
+                height: "32px",
+                width: "32px",
                 zIndex: 1,
                 cursor: "pointer",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
+                boxShadow:'rgba(0, 0, 0, 0.02) 0px 1.2px 1.92251px 0px, rgba(0, 0, 0, 0.04) 0px 2px',
+                marginTop:'-14px',
             }}
             onClick={onClick}
         >
-            <SvgIcon iconName={'leftArrow'} />
+            <SvgIcon  iconName={'leftArrow'} />
         </div>
     )
 }
