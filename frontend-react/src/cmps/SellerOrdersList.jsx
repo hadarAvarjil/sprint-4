@@ -18,6 +18,8 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
                 orders.map(async (order) => {
                     try {
                         const user = await userService.getById(order.buyerId)
+                        console.log(user);
+                        
                         return {
                             ...order,
                             fullName: user?.fullName || 'Unknown Buyer',
