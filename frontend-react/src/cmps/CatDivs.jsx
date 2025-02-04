@@ -13,7 +13,7 @@ export function CatDivsContainer(){
     function setCatFilter( category) {
     dispatch(setFilter({ ...filterBy, cat: category }))
     navigate('/gig');
-    }
+    } 
     const handleNavigation = (destination) => {
       navigate(destination); // Navigate to the specified destination
     }; 
