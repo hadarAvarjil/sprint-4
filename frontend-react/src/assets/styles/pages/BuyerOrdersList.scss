@@ -1,4 +1,6 @@
 .buyer-my-orders-table{
+    width: -webkit-fill-available;
+    margin: auto;
     .orders-table-container {
     .orders-table {
 
@@ -30,7 +32,21 @@
                 gap: 10px;
                 height: 120px;
                 margin-bottom: 0px;
+                @media(max-width:720px){
+                    font-size: 14px;
+                    line-height: 14px;
+                    }
             }
+            .order-state{
+                @media(max-width:720px){
+                width: 60px;
+                div{
+                    width:60px;
+                    font-size: 10px;
+                    
+                }
+            }
+        }
         }
     }
 }

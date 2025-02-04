@@ -6,8 +6,10 @@
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: grid;
-  grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
-
+@media(max-width:700px){
+  padding-left: 0px;
+  padding-right: 0px;
+}
   h4 {
     font-family: $fiverr-defult-font;
     font-size: 1.5rem;
@@ -18,16 +20,16 @@
     padding-bottom: 0.5rem;
   }
 
-
   .orders-table {
     grid-column: 2;
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
-    font-size: 0.9rem;
+    // font-size: 0.9rem;
     text-align: left;
 
     thead {
+      width: 100%;
       tr {
         background-color: #f5f5f5;
 
@@ -36,12 +38,21 @@
           font-weight: bold;
           color: #555555;
           border-bottom: 2px solid #eaeaea;
+          @media(max-width:650px){
+            @media(min-width:400px){
+              padding-right: 0.6rem;
+              padding-left: 0.6rem;
+
+              font-size: 12px;
+              line-height: 14px;
+            }
+          }
         }
       }
     }
 
     tbody {
-      tr { 
+      tr {
         &:nth-child(even) {
           background-color: #f9f9f9;
         }
@@ -58,10 +69,62 @@
           font-family: $fiverr-defult-font;
         }
 
+        .due-on {
+          @media(max-width:720px){
+@media(min-width:650px){
+          font-size: 14px;
+          line-height: 14px;
+          }
+        }
+        @media(max-width:650px){
+          @media(min-width:400px){
+            font-size: 12px;
+            line-height: 12px;
+          }
+        }
+        }
+
+        .total {
+          @media(max-width:720px){
+            @media(min-width:650px){
+
+          font-size: 14px;
+          line-height: 14px;
+          }
+        }
+        @media(max-width:650px){
+          @media(min-width:400px){
+            font-size: 12px;
+            line-height: 12px;
+          }
+        }
+        }
+
         td {
           padding: 1rem;
-          // border-bottom: 1px solid #eaeaea;
           font-family: $fiverr-defult-font;
+          @media(max-width:720px){
+            @media(min-width:650px){
+
+            height: 100px;
+            }
+          }
+          a {
+            @media(max-width:720px){
+              @media(min-width:650px){
+
+            font-size: 14px;
+            line-height: 12px;
+              }
+          }
+          @media(max-width:650px){
+            @media(min-width:400px){
+              font-size: 12px;
+              line-height: 12px;
+            }
+          }
+        }
+
 
 
 

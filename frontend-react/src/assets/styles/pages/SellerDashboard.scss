@@ -2,8 +2,20 @@
     text-align: center;
     justify-content: center;
     background: $clrSecondary12;
-    min-height: 55vh;
+    min-height: calc(100% + 90px);
 
+    @media (max-width: 600px) {
+        padding: 1.25em 1.5em 5em 1.5em;
+      }
+    
+      @media (max-width: 480px) {
+        padding: 1.25em 1em 5em 1em;
+      }
+    
+      @media (min-width: 601px) {
+        padding: 5em 2em 10em 2em;
+        min-height: calc(100% + 90px);
+    }
     .no-results {
         img {
             max-width: 500px;
