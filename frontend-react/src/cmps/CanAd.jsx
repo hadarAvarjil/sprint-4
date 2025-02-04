@@ -2,6 +2,7 @@ import React from "react";
 import { setFilter } from "../store/actions/gig.actions.js";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { AddImg } from "./AddImg.jsx";
 
 
 export function CanAd(){ 
@@ -35,12 +36,14 @@ export function CanAd(){
            Try Gigster Logo Maker
          </button>
        </div>
-
-       <img
+<div className="canAd-pic">
+  <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738686848/canAd_ob7kl4.png' />
+</div>
+       {/* <img
          className="canAd-pic"
          src="src\services\imgs\design.imgs\canAd.png"
          alt=""
-       />
+       /> */}
      </div>
     )
 }
