@@ -56,7 +56,7 @@ export function PopularServices() {
               <div className="pop-inner-pic">
               <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.56_1_pyspmu.jpg'}/>
               </div>
-            </div>
+            </div> 
             <div onClick={() => setCatFilter('Graphics & Design')} to={`/gig`} className="popular-div orange-div">
               <h3 className="pop-div-title">Graphics & Design</h3>
               <div className="pop-inner-pic">
