@@ -103,7 +103,7 @@ export function ImageCarousel({
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           style={{
-            width: `${imageWidth * numImages}px`,
+            width: `${imageWidth * numImages}px`, 
           }}
         >
           {images.map((image, index) => (
@@ -111,7 +111,6 @@ export function ImageCarousel({
               key={index}
               className={`carousel-item ${isFrom === 'gig-details' ? 'gig-details' : ''}`}
               style={{
-                // width: `${imageWidth}px`,
                 width: `${imageWidth}px`,
               }}
             >

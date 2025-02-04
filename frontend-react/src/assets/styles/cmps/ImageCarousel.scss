@@ -12,9 +12,6 @@
   }
 
   .carousel-wrapper {
-    @media (max-width:900px){
-      width: 715px;
-    }
     .carousel {
       display: flex;
       transition: transform 0.3s ease-in-out;

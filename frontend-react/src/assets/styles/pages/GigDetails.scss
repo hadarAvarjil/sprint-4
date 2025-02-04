@@ -679,3 +679,14 @@ flex: 1;
     }
   }
 }
+
+@media (max-width:900px){
+
+.gig-details-images.flex.column{
+  .carousel-container.gig-details{
+  .carousel-wrapper{
+    max-width:719px
+  }
+}
+}
+}
