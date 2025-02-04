@@ -101,7 +101,7 @@
     width: 85%;
     height: 12%;
     display: flex;
-    justify-content: center;
+    // justify-content: space-between;
     flex-direction: row;
     text-align: center;
     justify-items: center;
@@ -137,6 +137,24 @@
       justify-content: center;
       overflow: hidden;
 
+    }
+    .search-bar{
+display: flex;
+text-align: start;
+align-items: center;
+width: 100%;
+padding-right: 5px;
+      button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #003912;
+        width:40px;
+        height: 40px;
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 15px;
+        border-radius: 10px;      }
     }
   }
 }
@@ -966,6 +984,7 @@ align-items: center;
   
         .search-btn {
           width: 55px;
+          
         }
   
         .long-placeholder {

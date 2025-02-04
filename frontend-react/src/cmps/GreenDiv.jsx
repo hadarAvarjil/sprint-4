@@ -40,9 +40,6 @@ export function GreenDiv() {
       async function handleSearchSubmit(e) {
         e.preventDefault()
         if (!searchQuery) return
-        //Important  *****!@!@!@!#!!@!@!@!@#
-        //when switch to server and build 
-        // switch this { ...filterBy, txt: searchQuery } to this { ...filterBy, search: searchQuery }
         const newFilterBy = { ...filterBy, txt: searchQuery }
         console.error('NEED TO SWITCH FIELD IN NEW FILTERBY TO SEARCH INSTEAD OF TXT',newFilterBy)
         dispatch(setFilter(newFilterBy))
@@ -129,7 +126,7 @@ export function GreenDiv() {
                 onSearchChange={handleSearchChange}
                 onSearchSubmit={handleSearchSubmit}
               />
-            <div className="search-btn">
+            {/* <div className="search-btn">
               <div className="big-search-img">
                 <AddImg
                   picUrl={
@@ -137,7 +134,7 @@ export function GreenDiv() {
                   }
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
