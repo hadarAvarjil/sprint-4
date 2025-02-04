@@ -4,7 +4,7 @@ import { setFilter } from "../store/actions/gig.actions.js";
 import { useSelector, useDispatch } from "react-redux";
 import { AddImg } from "./AddImg.jsx";
  
-
+ 
 export function CatDivsContainer(){
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const dispatch = useDispatch();
