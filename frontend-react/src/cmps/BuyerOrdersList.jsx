@@ -106,7 +106,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                             borderRadius: "4px",
                                             fontWeight: "bold",
                                             textAlign: "center",
-                                            width: "100px",
+                                            // width: "100px", //shinoi
                                         }}
                                     >
                                         {status}
@@ -123,13 +123,13 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                     <td>
                                         <Link to={`/gig/${order.gigId}`}>{order.title || "Unknown Gig"}</Link>
                                     </td>
-                                    <td>{dueOn}</td>
-                                    <td>${order.price?.toFixed(2) || "0.00"}</td>
+                                    <td className='due-on'>{dueOn}</td>
+                                    <td className='total'>${order.price?.toFixed(2) || "0.00"}</td>
                                     <td className="buyer-orders-seller-td">
                                         <img src={order.imgUrl} alt="Seller" className="seller" />
                                         <span>{order.fullName}</span>
                                     </td>
-                                    <td>{getStatusElement(order.orderState || "Pending")}</td>
+                                    <td className='order-state'>{getStatusElement(order.orderState || "Pending")}</td>
                                 </tr>
                             );
                         })}
