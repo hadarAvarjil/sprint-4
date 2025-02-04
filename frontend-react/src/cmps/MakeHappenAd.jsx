@@ -1,20 +1,22 @@
 import React from "react";
 import { useState } from 'react'
-import { JoinDiv } from "./JoinDiv"; 
+import { LoginSignup } from "./LoginSignup";
+import ReactDOM from "react-dom"; // SHINOI6: Import ReactDOM
 
 
 
 export function MakeHappenAd(){
-    const [isJoinDivVisible, setIsJoinDivVisible] = useState(false);
-  
-    const handleOpenJoinDiv = () => {
-      setIsJoinDivVisible(true);
-    };
-    const handleCloseJoinDiv = (e) => {
-      if (e.target.className === "modal-overlay") {
-        setIsJoinDivVisible(false);
-      }
-    };
+ const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); // SHINOI6: State for Join modal
+
+  const handleJoinClick = () => {
+    setIsJoinDivVisible(true); // SHINOI6
+  };
+
+  const handleCloseModal = (e) => { 
+    if (e.target.classList.contains("modal-overlay")) { // SHINOI6: Ensure only clicking outside closes modal
+      setIsJoinDivVisible(false);
+    }
+  };
     return(
         
    
@@ -60,17 +62,27 @@ export function MakeHappenAd(){
         </div>
 
         <button
-        onClick={handleOpenJoinDiv}
+        onClick={handleJoinClick} // SHINOI6: Open Join modal
         className="blk-join-btn"
         >
           join now
         </button>
-           {isJoinDivVisible && (
-                <div className="modal-overlay" onClick={handleCloseJoinDiv}>
-                  <JoinDiv />
-                </div>
-                      )}
-
+      {isJoinDivVisible &&
+        ReactDOM.createPortal(
+          <div
+            className="modal-overlay"
+            onClick={handleCloseModal} // SHINOI6
+          >
+            <div className="modal-content">
+              <LoginSignup
+                isLoginSignUpShow={isJoinDivVisible}
+                setIsLoginSignUpShow={setIsJoinDivVisible}
+                isSignup={true} // Signup mode (Join)
+              />
+            </div>
+          </div>,
+          document.body
+        )}
       </div>
     )
 }
