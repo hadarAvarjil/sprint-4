@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useModal } from "../customHooks/ModalContext.jsx";
 import { useDeviceType } from "../customHooks/DeviceTypeContext.jsx";
-import { gigService } from "../services/gig/gig.service.local.js";
-import { userService } from "../services/user/user.service.local.js";
+import { gigService } from "../services/gig.service.js";
+import { userService } from "../services/user.service.js";
 import { removeGig } from "../store/actions/gig.actions.js";
 
 import SvgIcon from "./SvgIcon.jsx";
@@ -209,7 +209,7 @@ export function GigPreview({
           <div className="gig-title flex">
             <span className="gig-title b">{updatedGig.title}</span>
           </div>
-        )}
+        )}x§
 
         {isFrom !== "userProfile" && (
           <div className="gig-price flex">
