@@ -1,8 +1,18 @@
-
 import React from "react";
+import { setFilter } from "../store/actions/gig.actions.js";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 
-export function CanAd(){
+export function CanAd(){ 
+  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
+      const dispatch = useDispatch();
+      const navigate = useNavigate();
+      
+      function setCatFilter( category) {
+      dispatch(setFilter({ ...filterBy, cat: category }))
+      navigate('/gig');
+      }
     return(
         <div style={{ backgroundColor: "#FFF6F2" }} className="canAd-container">
         <div className="canAd-text-container">
@@ -20,8 +30,7 @@ export function CanAd(){
 
           <button
            className="can-blk-btn"
-           onClick={() => handleNavigation("/gig")}
-         >
+           onClick={() => setCatFilter('Graphics & Design')} to={`/gig`}         >
            
            Try Gigster Logo Maker
          </button>

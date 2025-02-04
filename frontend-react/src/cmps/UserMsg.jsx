@@ -9,24 +9,23 @@ export function UserMsg() {
   const [isActive, setIsActive] = useState(false)
   const [isSlidingOut, setIsSlidingOut] = useState(false)
 
-  
-
   useEffect(() => {
     const unsubscribe = eventBusService.on('show-user-msg', (data) => {
-        console.log('📢 Showing user message:', data); 
-        setMsg(data);
-        setIsActive(true);
-        setTimeout(() => {
-            setIsActive(false);
-            setIsSlidingOut(true);
-            setTimeout(onCloseMsg, 500);
-        }, 5000);
-    });
+      const { title, body, type, styles } = data
+      setMsg({ title, body, type, styles })
+
+      setIsActive(true)
+      setTimeout(() => {
+        setIsActive(false)
+        setIsSlidingOut(true)
+        setTimeout(onCloseMsg, 500) // Kushili
+      }, 50000)
+    })
 
     return () => {
-        unsubscribe();
-    };
-}, []);
+      unsubscribe()
+    }
+  }, [])
 
   useEffect(() => {
     socketService.on('notify-buyer-accepted', orderAcceptedNotification)
@@ -38,7 +37,7 @@ export function UserMsg() {
       socketService.off('notify-buyer-accepted', orderAcceptedNotification)
       socketService.off('notify-buyer-denied', orderDeniedNotification)
       socketService.off('notify-buyer-completed', orderCompletedNotification)
-      socketService.off('notify-seller-order-reviewed', orderReviewedNotification)
+      socketService.on('notify-seller-order-reviewed', orderReviewedNotification)
       socketService.off('notify-seller-new-order', newOrderNotification)
     }
   }, [])
@@ -50,7 +49,7 @@ export function UserMsg() {
         body: `${user.username} has accepted your order!`,
       },
       {
-        userMsgLeft: '50%',
+        userMsgLeft: '80%',
         messageAreaPadding: '2em 1.5em 2em 7em',
         msgStatusTranslateX: '-14em',
       }
@@ -76,7 +75,7 @@ export function UserMsg() {
         body: `${user.username} has completed your order!`,
       },
       {
-        userMsgLeft: '50%',
+        userMsgLeft: '80%',
         messageAreaPadding: '2em 1.5em 2em 7em',
         msgStatusTranslateX: '-14em',
       }
@@ -89,7 +88,7 @@ export function UserMsg() {
         body: `${user.username} has reviewed your order!`,
       },
       {
-        userMsgLeft: '50%',
+        userMsgLeft: '80%',
         messageAreaPadding: '2em 1.5em 2em 7em',
         msgStatusTranslateX: '-14em',
       }
@@ -102,7 +101,7 @@ export function UserMsg() {
         body: `${user.username} just purchased a gig from you!`,
       },
       {
-        userMsgLeft: '50%',
+        userMsgLeft: '90%',
         messageAreaPadding: '2em 1.5em 2em 7em',
         msgStatusTranslateX: '-15em',
       }

@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import { useEffect, useState } from "react";
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { login, signup } from '../store/actions/user.actions.js'
 import { AddImg } from './AddImg.jsx'
@@ -12,31 +12,10 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
         // fullName: '',
         // imgUrl: '',
     })
-    // const [isSignup, setIsSignup] = useState(true)
-
-    useEffect(() => {
-        socketService.on('user_logged_in', (data) => {
-            console.log(`📢 Client received login event for: ${data.username}`);
-            // showSuccessMsg(`${data.username} has logged in!`);
-        });
-    
-        socketService.on('user_signed_up', (data) => {
-            console.log(`🎉 Client received signup event for: ${data.username}`);
-            showSuccessMsg(`🎉 ${data.username} just signed up!`);
-        });
-    
-        socketService.on('user_logged_out', (data) => {
-            console.log(`👋 Client received logout event for: ${data.username}`);
-            showSuccessMsg(`👋 ${data.username} has logged out.`);
-        });
-    
-        return () => {
-            socketService.off('user_logged_in');
-            socketService.off('user_signed_up');
-            socketService.off('user_logged_out');
-        };
-    }, []);
-    
+const [localIsSignup, setLocalIsSignup] = useState(isSignup);
+useEffect(() => {
+    setLocalIsSignup(isSignup);
+}, [isSignup]); // SHINOI
 
     const handleClose = () => {
         setIsLoginSignUpShow(false)
@@ -55,7 +34,9 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
         }
     
         // Call the appropriate function based on the mode
-        isSignup ? _signup(credentials) : _login(credentials);
+        // isSignup ? _signup(credentials) : _login(credentials); ////
+        localIsSignup ? _signup(credentials) : _login(credentials); // SHINOI
+
     }
 
     const _login = async (credentials) => {
@@ -77,6 +58,8 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
         const purple = '800080'
         const white = 'ffffff'
         credentials.imgUrl = `https://ui-avatars.com/api/?name=${text}&background=${purple}&color=${white}`
+        credentials.imgUrl = `https://ui-avatars.com/api/?name=${credentials.fullName[0].toUpperCase()}&background=800080&color=ffffff`; // SHINOI
+
         try {
             const user = await signup(credentials);
 
@@ -90,7 +73,9 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
     }
 
     if (!isLoginSignUpShow) return null
-
+    const toggleSignupMode = () => {
+        setLocalIsSignup((prev) => !prev); // SHINOI
+    }
     return (
         <section className="login-signup">
             <div className="sign-div">
@@ -110,14 +95,16 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
                 <div className="right-user-sign">
                     <form onSubmit={onLogin}>
                         <section>
-                            <h2>{isSignup ? 'Create a new account' : 'Sign in to your account'}</h2>
-                            <h5>{isSignup ? 'Already have an account?' : 'Don’t have an account?'}
+                        <h2>{localIsSignup ? 'Create a new account' : 'Sign in to your account'}</h2> {/* SHINOI */}
+                            <h5>
+                                {localIsSignup ? 'Already have an account?' : 'Don’t have an account?'} {/* SHINOI */}
+                               
                             <span className='toggle-sign-join-span'
                                 type="button"
-                                onClick={() => setIsSignup(!isSignup)}
-                            >
-                                {isSignup ? 'Sign in' : 'Join here'}
-                            </span>
+                                onClick={toggleSignupMode} // SHINOI
+                                >
+                                    {localIsSignup ? 'Sign in' : 'Join here'} {/* SHINOI */}
+                                    </span>
                             </h5>
                             {/* <button
                                 type="button"
@@ -148,14 +135,14 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
                             required
                         />
 
-                        {isSignup && (
+{localIsSignup && ( // SHINOI
                             <>
                                 <label htmlFor="fullName">Full name</label>
                                 <input
                                     id="fullName"
                                     name="fullName"
                                     type="text"
-                                    value={credentials.fullName}
+                                    value={credentials.fullName || ''} // SHINOI
                                     onChange={handleChange}
                                     required
                                 />

@@ -139,7 +139,7 @@
         padding: 9px 16px;
         border-radius: 5px;
         font-size: 14px;
-        font-family: 'macan-bold';
+        font-family: $fiverr-defult-font;
         background: transparent;
         border: 1px solid;
 
@@ -156,7 +156,7 @@
         font-size: 16px;
         font-weight: bold;
         padding: 0;
-        font-family: 'macan-regular';
+        font-family: $fiverr-defult-font;
       }
 
       .orders-info {
@@ -467,7 +467,7 @@
   letter-spacing: normal;
   color: #74767e;
   font-weight: 600;
-  font-family: 'macan-regular';
+  font-family: $fiverr-defult-font;
   transition-duration: 0.2s;
 
 }
@@ -530,8 +530,11 @@ cursor: pointer;
   letter-spacing: normal;
   color: #74767e;
   font-weight: 600;
-  font-family: 'macan-regular';
+  font-family: $fiverr-defult-font;
   transition-duration: 0.2s;
+  }
+  @media(max-width:600px){
+    display: none;
   }
 }
 
@@ -548,6 +551,7 @@ cursor: pointer;
 }
 
 .logo-search-bar-container {
+  
   display: flex;
   flex: 3;
 }

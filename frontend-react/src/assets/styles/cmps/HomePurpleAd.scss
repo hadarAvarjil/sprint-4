@@ -24,7 +24,9 @@
     font-family: $fiverr-defult-font;
     // line-height: 38px;
     // justify-content: space-between;
-    
+    @media(max-width:870px){
+      margin-right: 32px;
+    }
     h1{
       font-size: 62px;
       font-stretch: 100%;
@@ -35,6 +37,22 @@
     }
     h1 span {
       color: $orange;
+      font-family: 'DomaineDispNar-Regular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-style: normal;
+      font-weight: 100;
+    }
+  }
+
+  @media(max-width:480px){
+    .purple-signup-ad{
+      width: 100vw;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      h1{
+        font-size: 40px;
+        line-height: 38px;
+      }
     }
   }
 

@@ -187,7 +187,7 @@ export function HomeAppHeader() {
                 onSearchChange={handleSearchChange}
                 onSearchSubmit={handleSearchSubmit}
               />
-            </div>
+            </div> 
           )}
 
           <div className="header-options">

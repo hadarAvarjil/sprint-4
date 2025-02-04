@@ -7,6 +7,17 @@
 }
 .aside-sticky-div{
     width: 415px;
+    @media (max-width:900px){
+      width: 100%;
+      position: absolute;
+      top: 1050px;
+    }
+}
+.gig-reviews-list-carousel{
+  @media (max-width:900px){
+
+  margin-top: 400px;
+  }
 }
 
  .home-body{ 

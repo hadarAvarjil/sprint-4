@@ -55,7 +55,7 @@ export function UserProfile() {
         <ProfileCard user={user} />
         <div
           className="position-taker-UserOwnerGigs"
-          style={{ width: "772px" }}
+          // style={{ width: "772px" }}
         >
           <div className="profile-become-seller-ad">
             <h2>

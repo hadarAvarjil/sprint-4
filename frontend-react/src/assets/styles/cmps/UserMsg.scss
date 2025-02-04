@@ -100,7 +100,7 @@
             font-size: 16px;
             text-align: left;
             width: 100%;
-            font-family: 'macan-bold';
+            font-family: $fiverr-defult-font;
             font-weight: 100;
 
             &.success {
@@ -125,7 +125,8 @@
                 font-size: 14px;
                 align-items: center;
                 display: flex;
-                font-family: 'macan-bold';
+                font-family: $fiverr-defult-font;
+                font-weight: bold;
                 letter-spacing: 2px;
                 width: fit-content;
             }

@@ -12,7 +12,6 @@ body {
     height: 100%;
     margin: 0;
     overflow-x: hidden; 
-    // font-family: macan-regular;
     font-family: $fiverr-defult-font;
 }
 
@@ -25,10 +24,6 @@ h6 {
   margin: 0;
 }
 
-// img {
-//   width: 100%;
-//   height: 100%;
-// }
 
 p {
   margin: 0 0 1em;
@@ -57,7 +52,7 @@ a {
 button {
   border: 0;
   cursor: pointer;
-  font-family: macan-regular;
+  font-family: $fiverr-defult-font;
 }
 
 input[type='radio'] {
@@ -129,7 +124,7 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0 rem(6px) 0 0;
   min-height: rem(48px);
   padding: rem(12px) rem(16px);
-  font-family: 'macan-regular';
+  font-family: $fiverr-defult-font;
   transition: border-color 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 

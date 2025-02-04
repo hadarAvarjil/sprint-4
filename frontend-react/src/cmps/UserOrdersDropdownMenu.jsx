@@ -169,7 +169,7 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset, onClose }) {
         </div>
 
         <div className="view-all-orders flex">
-          <Link to="/orders">View all orders</Link>
+          <Link to="/orders" style={{color:'blue'}}>View all orders</Link>
           <SvgIcon iconName={"rightArrow"} />
         </div>
       </div>

@@ -16,7 +16,8 @@ grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
   line-height: 24px;
   color: #74767e;
   margin-bottom: 1%;
-  font-family: macan-light;
+  font-family: $fiverr-defult-font;
+  font-weight: 400;
 
   @media screen and (max-width: 600px) {
     

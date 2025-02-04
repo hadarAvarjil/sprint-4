@@ -68,6 +68,8 @@ export async function updateGig(gig) {
     }
 }
 export function setFilter(filterBy) {
+ 
+    
     return {
         type: SET_FILTER,
         filterBy,

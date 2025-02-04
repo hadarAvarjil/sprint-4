@@ -21,6 +21,9 @@
 //         }
 //     }, [])
 
+//     useEffect(() => {
+//         socketService.emit(SOCKET_EMIT_SET_TOPIC, topic)
+//     }, [topic])
 
 //     function addMsg(newMsg) {
 //         setMsgs(prevMsgs => [...prevMsgs, newMsg])
