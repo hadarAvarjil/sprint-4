@@ -24,7 +24,9 @@
     font-family: $fiverr-defult-font;
     // line-height: 38px;
     // justify-content: space-between;
-    
+    @media(max-width:870px){
+      margin-right: 32px;
+    }
     h1{
       font-size: 62px;
       font-stretch: 100%;
