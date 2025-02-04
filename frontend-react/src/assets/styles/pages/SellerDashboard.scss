@@ -6,16 +6,17 @@
 
     @media (max-width: 600px) {
         padding: 1.25em 1.5em 5em 1.5em;
-      }
-    
-      @media (max-width: 480px) {
+    }
+
+    @media (max-width: 480px) {
         padding: 1.25em 1em 5em 1em;
-      }
-    
-      @media (min-width: 601px) {
+    }
+
+    @media (min-width: 601px) {
         padding: 5em 2em 10em 2em;
         min-height: calc(100% + 90px);
     }
+
     .no-results {
         img {
             max-width: 500px;
@@ -733,4 +734,57 @@
     font-weight: bold;
     border: none;
     cursor: pointer;
+}
+
+
+
+@media(min-width:1050px) {
+    .seller-dashboard-page {
+        .dashboard-container {
+            width: 100%;
+            max-width: 1300px;
+            margin: auto;
+            display: flex;
+            gap: 50px;
+        }
+    }
+}
+
+@media(max-width:1050px) {
+    .seller-dashboard-page {
+        .dashboard-container {
+            flex-direction: column-reverse;
+
+            @media(min-width:700px) {
+
+                .seller-orders-list {
+                    margin: 0;
+                }
+
+            }
+
+            @media(max-width:700px) {
+                @media(min-width:400px) {
+                    .order-status {
+                        width: 90px;
+                        font-size: 12px;
+                        padding: 0;
+                        padding-left: 1px;
+                    }
+
+                    .seller-orders-list {
+                        width: 100%;
+
+                        .orders-tables {
+                            width: 100%;
+
+                            .order-status {
+                                width: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
