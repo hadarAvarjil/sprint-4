@@ -817,6 +817,10 @@
 
 .gig-edit-container {
   .gig-edit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
     @media (max-width: 1400px) {
       flex-direction: column-reverse;
       justify-content: center;
@@ -863,7 +867,6 @@ max-width: 100vw;
       .add-title{ 
         width: 100%;
         input{
-          background-color: aqua;
           width: 100%;
         }
     }
