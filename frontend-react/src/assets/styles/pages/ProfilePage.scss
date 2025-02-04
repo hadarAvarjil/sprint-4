@@ -24,7 +24,6 @@ padding-top: 33px;
   text-align: center;
   align-items: center;
   
-    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 border: solid 1px #e5e7eb;
     border-radius: 1rem;
     padding: 20px;
@@ -123,10 +122,62 @@ color: #62646a;
 }
 }
 
-
 }
 
+@media(max-width:900px){
+.user-profile-main{
+  .user-profile{
+    flex-direction: column;
+    max-width: 100vw;
+    .profile-card{
+      width:100%;
+    
+      .profile-detail{
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  .position-taker-UserOwnerGigs{
+    width: 100%;
+    .profile-become-seller-ad{
+      width: 100%;
+      margin-top: 32px;
+      @media(min-width:680px){
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        font-size: 14px;
+      }
+      @media(max-width:680px){
+        @media(min-width:500px){
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          font-size: 9px;
+          button{
+            font-size: 14px;
+          }
+        }
+      }
+      @media(max-width:500px){
+        display: none;
+      }
 
+
+    }
+    .user-gigs-owner-container{
+      width: 100%;
+
+    }
+    .user-owener-reviews{
+      width: 100%;
+
+    }
+  }
+  }
+}
+}
 
 
 // .profile-page-container{
