@@ -3,6 +3,7 @@
     background-color: #F7F7F7;
 
     .gig-edit {
+        
         p {
             margin: 0;
         }
@@ -312,6 +313,11 @@
                             flex-direction: column;
                             width: 242px;
                             padding-right: 32px;
+                            @media(max-width:750px){
+                                p{
+                                display: none;
+                                }
+                            }
 
                             label {
                                 font-size: 16px;
@@ -334,7 +340,7 @@
 
                         input {
                             font-family: $fiverr-defult-font;
-                            width: 400px;
+                            // width: 400px;
                             height: 82px;
                             padding-left: 16px;
                             padding-right: 16px;
@@ -353,7 +359,7 @@
 
                 .description-input-group {
                     margin-bottom: 36px;
-                    padding-right: 32px;
+                    margin-top: 15px;
 
                     .description-container {
                         display: flex;
@@ -372,7 +378,7 @@
                         }
 
                         textarea {
-                            width: 400px;
+                            // width: 400px;
                         }
 
                     }
@@ -383,7 +389,7 @@
 
 
                     .Subcategories-info{
-                        width: 400px;
+                        width: 100%;
                         // padding-right: 20px;
                         select{
                             // margin-top: 30px;
@@ -407,6 +413,7 @@
                             justify-content: center;
                             align-items: center;
                             text-align: center;
+                            max-width:fit-content;
                             img{
                                 width: 110px;
                                 height: 120px;

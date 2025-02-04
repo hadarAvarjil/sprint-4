@@ -818,11 +818,15 @@
 .gig-edit-container {
   .gig-edit {
     @media (max-width: 1400px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       justify-content: center;
       gap: 1em;
-      // padding: 1em 2em;
+max-width: 100vw;
 
+}
+.carousel-item.gig-details{
+  margin: 0;
+}
       form,
       .gig-preview-container {
         width: 100%;
@@ -856,6 +860,12 @@
           grid-template-rows: 383px 100px;
         }
       }
+      .add-title{ 
+        width: 100%;
+        input{
+          background-color: aqua;
+          width: 100%;
+        }
     }
 
     @media (max-width: 600px) {
