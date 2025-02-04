@@ -40,7 +40,7 @@ function save(review) {
     }
 }
 
-const reviews = [
+var reviews = [
     {
         id: "r101",
         imgUrl: "https://res.cloudinary.com/dtffr5wya/image/upload/v1736451803/user9_hfn4yf.webp",
