@@ -7,7 +7,7 @@ import { HomePage } from './pages/HomePage'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
 import { GigIndex } from './pages/GigIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
-import { ChatApp } from './pages/Chat.jsx'
+// import { ChatApp } from './pages/Chat.jsx'
 import { AdminIndex } from './pages/AdminIndex.jsx'
 
 import { GigDetails } from './pages/GigDetails.jsx'
@@ -54,7 +54,7 @@ export function RootCmp() {
                     <Route path="user/:id" element={<UserDetails />} />
                     <Route path="/gig/edit/:id?" element={<GigEdit />} />
                     <Route path="review" element={<ReviewIndex />} />
-                    <Route path="chat" element={<ChatApp />} />
+                    {/* <Route path="chat" element={<ChatApp />} /> */}
                     <Route path="admin" element={<AdminIndex />} />
                     <Route path="/orders" element={<BuyerOrderPage />} />
                     <Route path="/my-lists" element={<MyLists />} />

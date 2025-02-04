@@ -13,11 +13,11 @@ import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 import { AddImg } from '../cmps/AddImg.jsx'
 
-import {
-  socketService,
-  SOCKET_EVENT_USER_UPDATED,
-  SOCKET_EMIT_USER_WATCH,
-} from '../services/socket.service'
+// import {
+//   socketService,
+//   SOCKET_EVENT_USER_UPDATED,
+//   SOCKET_EMIT_USER_WATCH,
+// } from '../services/socket.service'
 
 export function UserDetails() {
   const params = useParams()

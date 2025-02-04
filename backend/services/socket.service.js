@@ -64,17 +64,17 @@ export function setupSocketAPI(http) {
     })
 
     // User-msg
-    socket.on('notify_buyer_accepted', (data) => {
-      const { userId, user } = data
-      loggerService.info(
-        `notify_buyer_accepted from socket [id: ${socket.id}], on user ${userId}`
-      )
-      emitToUser({
-        type: 'notify-buyer-accepted',
-        data: user,
-        userId,
-      })
-    })
+    // socket.on('notify_buyer_accepted', (data) => {
+    //   const { userId, user } = data
+    //   loggerService.info(
+    //     `notify_buyer_accepted from socket [id: ${socket.id}], on user ${userId}`
+    //   )
+    //   emitToUser({
+    //     type: 'notify-buyer-accepted',
+    //     data,
+    //     userId: data.userId
+    //   })
+    // })
 
     socket.on('notify_buyer_denied', (data) => {
       const { userId, user } = data
@@ -83,8 +83,8 @@ export function setupSocketAPI(http) {
       )
       emitToUser({
         type: 'notify-buyer-denied',
-        data: user,
-        userId,
+        data,
+        userId: data.userId
       })
     })
 
@@ -95,22 +95,56 @@ export function setupSocketAPI(http) {
       )
       emitToUser({
         type: 'notify-buyer-completed',
-        data: user,
-        userId,
+        data,
+        userId: data.userId
       })
     })
 
-    socket.on('notify_seller_new_order', (data) => {
-      const { userId, user } = data
-      loggerService.info(
-        `notify_seller_new_order from socket [id: ${socket.id}], on user ${userId}`
-      )
+    socket.on('notify_seller_updated', (data) => {
+      console.log('SERVER: got notify_seller_updated:', data)
+      // שולח למוכר
       emitToUser({
-        type: 'notify-seller-new-order',
-        data: user,
-        userId,
+          type: 'notify-seller-updated',
+          data,
+          userId: data.userId
       })
+  })
+
+  socket.on('notify_buyer_accepted', (data) => {
+    const { buyerId, orderState } = data;
+    loggerService.info(
+      `notify_buyer_accepted from socket [id: ${socket.id}], to buyer ${buyerId}`
+    );
+    emitToUser({
+      type: 'notify-buyer-accepted',
+      data: { orderState },
+      userId: buyerId
+    });
+  });
+
+socket.on('notify_seller_new_order', (data) => {
+  const { sellerId, gigId, price, title, daysToMake, gigFirstImgUrl } = data;
+  loggerService.info(
+    `notify_seller_new_order from socket [id: ${socket.id}], to seller ${sellerId}`
+  );
+  emitToUser({
+    type: 'notify-seller-new-order',
+    data: { gigId, price, title, daysToMake, gigFirstImgUrl },
+    userId: sellerId
+  });
+});
+
+    socket.on('user_logged_in', (data) => {
+      console.log(`📢 Server received login event for: ${data.username}`)
+
+
+      gIo.emit('user_logged_in', data)
     })
+    socket.on('user_logged_out', (data) => {
+      console.log(`👋 Server received logout event for: ${data.username}`);
+      gIo.emit('user_logged_out', data); // שולח לכל המשתמשים את ההודעה
+    });
+
 
     socket.on('notify_seller_order_reviewed', (data) => {
       const { userId, user } = data
@@ -119,8 +153,8 @@ export function setupSocketAPI(http) {
       )
       emitToUser({
         type: 'notify-seller-order-reviewed',
-        data: user,
-        userId,
+        data,
+        userId: data.userId
       })
     })
 
@@ -135,57 +169,6 @@ export function setupSocketAPI(http) {
       loggerService.info(`Removing socket.userId for socket [id: ${socket.id}]`)
       delete socket.userId
     })
-
-    socket.on('notify_buyer_accepted', (data) => {
-      const { userId, user, orderId, newState } = data
-      loggerService.info(
-        `notify_buyer_accepted from socket [id: ${socket.id}], on user ${userId}`
-      )
-      emitToUser({
-        type: 'notify-buyer-accepted',
-        data: { user, orderId, newState },
-        userId,
-      })
-    })
-
-    socket.on('notify_seller_updated', (data) => {
-      const { userId, user, orderId, newState } = data
-      loggerService.info(
-        `notify_seller_updated from socket [id: ${socket.id}], on user ${userId}`
-      )
-      emitToUser({
-        type: 'notify-seller-updated',
-        data: { user, orderId, newState },
-        userId,
-      })
-    })
-
-    socket.on('user_logged_in', (data) => {
-      loggerService.info(`🔹 User logged in: ${data.username}`);
-
-      // שידור לכל המחוברים
-      broadcast({
-        type: 'user_logged_in',
-        data,
-      });
-    });
-
-    socket.on('user_logged_in', (data) => {
-      loggerService.info(`🔹 User logged in: ${data.username}`);
-      broadcast({ type: 'user_logged_in', data });
-  });
-  
-  socket.on('user_signed_up', (data) => {
-      loggerService.info(`🎉 User signed up: ${data.username}`);
-      broadcast({ type: 'user_signed_up', data });
-  });
-  
-  socket.on('user_logged_out', (data) => {
-      loggerService.info(`👋 User logged out: ${data.username}`);
-      broadcast({ type: 'user_logged_out', data });
-  });
-  
-
   })
 }
 
@@ -214,7 +197,7 @@ async function emitToUser({ type, data, userId }) {
 // If possible, send to all sockets BUT not the current socket
 // Optionally, broadcast to a room / to all
 async function broadcast({ type, data, room = null, userId }) {
- 
+
   loggerService.info(`Broadcasting event: ${type}`)
   const excludedSocket = await _getUserSocket(userId)
   if (room && excludedSocket) {
