@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React  from "react";
+import { useState, useEffect } from "react";
 import { AddImg } from "../cmps/AddImg.jsx";
 import { setFilter } from "../store/actions/gig.actions.js";
 import { useNavigate } from "react-router";
 import { useModal } from '../customHooks/ModalContext'
+import { SearchBar } from "./SearchBar.jsx";
+import { useSelector, useDispatch } from "react-redux";
+import { loadGigs } from "../store/actions/gig.actions.js";
+
+
 
 
 
 export function GreenDiv() {
+  const filterBy = useSelector((storeState) => storeState.gigModule.filterBy);
+  const dispatch = useDispatch();
+
     const { setIsDimmed } = useModal()
+    useEffect(() => {
+      console.log("Filter changed:", filterBy);
+      loadGigs(filterBy);
+    }, [filterBy]);
   
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
@@ -19,7 +32,26 @@ export function GreenDiv() {
       setIsDimmed(false)
       onSearchSubmit(e)
     }
+    function handleSearchChange(e) {
+        const newSearchQuery = e.target.value;
+        setSearchQuery(newSearchQuery);
+      }
     
+      async function handleSearchSubmit(e) {
+        e.preventDefault()
+        if (!searchQuery) return
+        const newFilterBy = { ...filterBy, txt: searchQuery }
+        console.error('NEED TO SWITCH FIELD IN NEW FILTERBY TO SEARCH INSTEAD OF TXT',newFilterBy)
+        dispatch(setFilter(newFilterBy))
+    
+        try {
+          await loadGigs(newFilterBy)
+          navigate(`/gig`)
+          setSearchQuery("")
+        } catch (err) {
+          console.error("Failed to load filtered gigs:", err)
+        }
+      }
     const navigate = useNavigate();
   
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,15 +61,15 @@ export function GreenDiv() {
     setSearchQuery(newSearchQuery);
   }
 
-  function handleSearchSubmit(e) {
-    e.preventDefault();
-    if (!searchQuery) return;
-    setFilter({ ...filterBy, search: searchQuery });
-    navigate(`/gig`);
-    setSearchQuery("");
-  }
+  // function handleSearchSubmit(e) {
+  //   e.preventDefault();
+  //   if (!searchQuery) return;
+  //   setFilter({ ...filterBy, search: searchQuery });
+  //   navigate(`/gig`);
+  //   setSearchQuery("");
+  // }
   return (
-    <section>
+    <section className="green-div-container">
       <div className="green-search-div">
         <div className="pinkGuy-img">
           <AddImg
@@ -77,30 +109,24 @@ export function GreenDiv() {
         <div className="trustedBy-img">
           <AddImg
             picUrl={
-              "https://res.cloudinary.com/dtpewh2wk/image/upload/v1736548563/trustedBy-img_q3gqes.png"
+              "https://res.cloudinary.com/dtpewh2wk/image/upload/v1737495634/Screenshot_2025-01-21_233929_rmooee.png"
             }
           />
         </div>
 
         <div className="green-search-div-inner-box">
           <h1>
-            Scale your<br className="small-resp-br"/> professional <br className="big-resp-br" /> workforce <br className="small-resp-br"/> with{" "}
-            <span>freelancers</span>
+            Scale your <br className="small-resp-br" /> professional <br className="big-resp-br"/> <br className=" massive-resp-br" /> workforce<br className="small-resp-br " /> with 
+            <span> freelancers</span>
           </h1>
           <div className="search-bar-div">
-            <input
-              type="search"
-              className="long-placeholder"
-              placeholder="Search for any service..."
-              searchQuery={searchQuery}
-              onSearchChange={handleSearchChange}
-              onSearchSubmit={handleSearchSubmit}
-              onFocus={() => controlDimming && setIsDimmed(true)}
-              onBlur={() => controlDimming && setIsDimmed(false)}
-              onKeyPress={handleKeyPress}
-
-            ></input>
-            <div className="search-btn">
+            <SearchBar
+                placeholder="Search for services..."
+                searchQuery={searchQuery}
+                onSearchChange={handleSearchChange}
+                onSearchSubmit={handleSearchSubmit}
+              />
+            {/* <div className="search-btn">
               <div className="big-search-img">
                 <AddImg
                   picUrl={
@@ -108,7 +134,7 @@ export function GreenDiv() {
                   }
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 .gig-edit-container {
     width: 100%;
+    background-color: #F7F7F7;
 
     .gig-edit {
         p {
@@ -10,7 +11,8 @@
             .form-inputs {
                 gap: 1em;
                 width: 100%;
-                background: $clrSecondary0;
+                // background: $clrSecondary0;
+                background-color: white;
                 border: 1px solid $clrSecondary4;
                 border-radius: 0.5em;
 
@@ -23,7 +25,8 @@
                         gap: 0.25em;
 
                         label {
-                            font-family: 'macan-bold';
+                            font-family: $fiverr-defult-font;
+                            font-weight: bold;
                         }
 
                         p {
@@ -122,51 +125,74 @@
                     align-items: center;
 
                     &:first-child {
-                        background: $clrSecondary3;
-                        color: $clrPrimary2;
+                        margin-top: 33px;
+
+                        width: 33px;
+                        height: 14px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: normal;
+                        background: none;
+                        color: $green-fiverr;
 
                         i {
                             transform: rotate(90deg);
                             margin-block-end: 2px;
 
                             svg {
-                                fill: $clrPrimary2;
+                                fill: $green-fiverr;
                                 transition: all 0.3s;
                             }
                         }
 
                         &:hover {
-                            background: $clrSecondary6;
-                            color: $clrPrimary1;
+                            // background: $black-btn-hover;
+                            // color: white;
 
                             i {
                                 svg {
-                                    fill: $clr4;
+                                    // fill: white;
                                 }
                             }
                         }
                     }
 
                     &:last-child {
-                        background: $bgColor2;
-                        color: $clrPrimary1;
+                        align-items: center;
+                        text-align: center;
+                        justify-content: center;
+                        margin-top: 33px;
+                        width: 185px;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        padding-top: 11px;
+                        padding-bottom: 11px;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 600;
+                        font-family: $fiverr-defult-font;
+                        background: $black-btn;
+                        color: white;
+                        border: solid 1px $black-btn-hover;
+                        letter-spacing: 0.8px;
 
                         i {
                             margin-block-end: 2px;
 
                             svg {
-                                fill: $clrPrimary1;
+                                fill: white;
                                 transition: all 0.3s;
                             }
                         }
 
                         &:hover {
-                            color: $bgColor2;
-                            background: $clrSecondary1;
+                            color: white;
+                            background: $green-fiverr;
+                            ;
 
                             i {
                                 svg {
-                                    fill: $clrPrimary2;
+                                    fill: $green-fiverr;
                                 }
                             }
                         }
@@ -176,7 +202,9 @@
         }
 
         .gig-preview-container {
-            background: $clrSecondary0;
+            // background: $clrSecondary0;
+            background-color: white;
+
             border: 1px solid $clrSecondary4;
             border-radius: 0.5em;
             gap: 0.5em;
@@ -186,7 +214,8 @@
                 justify-content: space-between;
 
                 p {
-                    font-family: 'macan-bold';
+                    font-family: $fiverr-defult-font;
+                    font-weight: bold;
                 }
 
                 h3 {
@@ -257,5 +286,139 @@
                 color: $clrSecondary8;
             }
         }
+    }
+}
+
+.gig-edit-container {
+
+    section.gig-edit {
+        form {
+            .form-inputs {
+                padding-top: 33px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 60px;
+                gap: 0px;
+
+                .title-input-group {
+                    .add-title {
+                        // background-color: blue;
+                        display: flex;
+                        flex-direction: row;
+                        margin-bottom: 36px;
+
+                        .add-title-text {
+                            display: flex;
+                            flex-direction: column;
+                            width: 242px;
+                            padding-right: 32px;
+
+                            label {
+                                font-size: 16px;
+                                line-height: 24px;
+                                font-family: $fiverr-defult-font;
+                                color: #222325;
+                                margin-bottom: 12px;
+                                font-weight: 600;
+                            }
+
+                            p {
+                                font-size: 14px;
+                                line-height: 21px;
+                                font-family: $fiverr-defult-font;
+                                color: #404145;
+                                max-width: 210px;
+                                height: 105px;
+                            }
+                        }
+
+                        input {
+                            font-family: $fiverr-defult-font;
+                            width: 400px;
+                            height: 82px;
+                            padding-left: 16px;
+                            padding-right: 16px;
+                            // padding-top: 9px;
+                            padding-bottom: 9px;
+                            font-size: 18px;
+                            line-height: 25px;
+                            color: #62646a;
+                        }
+
+                        .character-counter {
+                            margin-top: 0px;
+                        }
+                    }
+                }
+
+                .description-input-group {
+                    margin-bottom: 36px;
+                    padding-right: 32px;
+
+                    .description-container {
+                        display: flex;
+                        flex-direction: row;
+
+                        .Description-form-text {
+                            width: 242px;
+                            padding-right: 32px;
+                            display: flex;
+                            flex-direction: column;
+                                    font-family: $fiverr-defult-font;
+
+                            label{
+                                margin-bottom:12px ;
+                            }
+                        }
+
+                        textarea {
+                            width: 400px;
+                        }
+
+                    }
+                }
+                .input-group-category{
+                    margin-bottom: 32px;
+                    gap: 0px;
+
+
+                    .Subcategories-info{
+                        width: 400px;
+                        // padding-right: 20px;
+                        select{
+                            // margin-top: 30px;
+                        }
+                    }
+                }
+                .delivery-price-container{
+                    margin-bottom: 32px;
+                .delivery-container{
+                    width: 242px;
+                    padding-right: 32px;
+                }
+                }
+                .gallery-input-group{
+                    gap: 0px;
+                    h3{
+                        margin-bottom:12px ;
+                    }
+                    div.info.grid{
+                        .upload-preview{
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            img{
+                                width: 110px;
+                                height: 120px;
+                                object-fit: contain;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+
     }
 }

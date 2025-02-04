@@ -4,7 +4,7 @@ import { userService } from '../user'
 import { utilService } from '../util.service.js'
 
 const STORAGE_KEY = 'gig'
-_createGigs()
+// _createGigs()
 
 export const gigService = {
   query,
@@ -13,11 +13,32 @@ export const gigService = {
   remove,
   getEmptyGig,
   addGigMsg,
+  toggleLike
 }
 window.cs = gigService
 
+async function toggleLike(gigId, userId) {
+  try {
+    const gig = await getById(gigId);
+    if (!Array.isArray(gig.likedByUsers)) gig.likedByUsers = [];
+
+    if (gig.likedByUsers.includes(userId)) {
+      gig.likedByUsers = gig.likedByUsers.filter((id) => id !== userId);
+    } else {
+      gig.likedByUsers.push(userId);
+    }
+
+    return await save(gig);
+  } catch (err) {
+    console.error('Failed to toggle like:', err);
+    throw err;
+  }
+}
+
 async function query(filterBy = { txt: '', price: 0, cat: '' }) {
   var gigs = await storageService.query(STORAGE_KEY)
+  console.log(filterBy,' this ish= erer');
+  
 
   if (filterBy.txt) {
     const regex = new RegExp(filterBy.txt, 'i')
@@ -48,14 +69,16 @@ async function query(filterBy = { txt: '', price: 0, cat: '' }) {
           console.warn(`Seller not found for gig ${gig._id}, ownerId: ${gig.ownerId}`)
           return null
         }
-        const sellerLevel = seller.level ? seller.level.toLowerCase().trim() : ''
-        const filterLevel = filterBy.level.toLowerCase().trim()
+        const sellerLevel = seller.level !== undefined ? String(seller.level).toLowerCase().trim() : '';
+        const filterLevel = filterBy.level.toLowerCase().replace('level', '').trim();
         console.log(`Gig ${gig._id} - Seller Level: ${sellerLevel}, Filter Level: ${filterLevel}`)
         return sellerLevel === filterLevel ? gig : null
       })
     )
     gigs = gigs.filter(gig => gig !== null)
   }
+  
+  
 
   if (filterBy.time) {
     gigs = gigs.filter(gig => gig.daysToMake === filterBy.time)
@@ -114,7 +137,7 @@ function getEmptyGig() {
     price: utilService.getRandomIntInclusive(30, 600),
   }
 }
-
+_createGigs()
 function _createGigs() {
   let gigs = utilService.loadFromStorage(STORAGE_KEY);
   if (!gigs || !gigs.length) {

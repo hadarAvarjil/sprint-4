@@ -9,6 +9,25 @@ export const gigService = {
   getById,
   getDefaultFilter,
   getFilterFromParams,
+  toggleLike
+}
+
+async function toggleLike(gigId, userId) {
+  try {
+    const gig = await getById(gigId);
+    if (!Array.isArray(gig.likedByUsers)) gig.likedByUsers = [];
+
+    if (gig.likedByUsers.includes(userId)) {
+      gig.likedByUsers = gig.likedByUsers.filter((id) => id !== userId);
+    } else {
+      gig.likedByUsers.push(userId);
+    }
+
+    return await save(gig);
+  } catch (err) {
+    console.error('Failed to toggle like:', err);
+    throw err;
+  }
 }
 
 function getFilterFromParams(searchParams) {
@@ -24,7 +43,9 @@ function getFilterFromParams(searchParams) {
 
 async function query(filterBy = {}) {
   try {
-    return await httpService.get(BASE_URL, filterBy)
+    const params = new URLSearchParams(filterBy).toString()
+    const gigs = await httpService.get(`${BASE_URL}?${params}`)
+    return gigs
   } catch (error) {
     console.error('Error querying gigs:', error)
     throw error
@@ -32,8 +53,13 @@ async function query(filterBy = {}) {
 }
 
 async function getById(gigId) {
-  const gig = await httpService.get(BASE_URL + gigId)
-  return gig
+  try {
+    const gig = await httpService.get(`gig/${gigId}`)
+    return gig
+  } catch (err) {
+    console.error(`Failed to fetch gig with ID ${gigId}:`, err)
+    throw err
+  }
 }
 
 function remove(gigId) {
@@ -49,7 +75,7 @@ function save(gig) {
 
 function getDefaultFilter() {
   return {
-    txt: '',
+    title: '',
     cat: '',
     min: '',
     max: '',

@@ -23,15 +23,19 @@
 @import "cmps/ServicesCarousel";
 @import "cmps/CategoryNavbar";
 @import "cmps/AsideMenu";
+@import "cmps/LoaderGigster";
 
 @import "cmps/AboutGigSeller"; //HA
 @import "cmps/GigDetailsHeader"; //HA
 @import "cmps/GigDetailsOrder"; //HA
 @import "cmps/UserPreviewGigDetails"; //HA
 @import "cmps/GigReview"; //HA
+@import "cmps/MoveToRelevent.scss";
 @import "cmps/PurchaseAside"; //HA
-
-@import "cmps/ReviewBreakdown";
+@import "cmps/GigDetailsLikeAndShare"; //HA
+@import "cmps/FAQAccordion"; //HA
+@import "cmps/ProfileCard";
+@import "cmps/SellerOrdersList";
 
 
 @import "cmps/ReviewModal";
@@ -50,6 +54,9 @@
 @import "cmps/UserMsg";
 @import "cmps/Loader";
 
+@import "cmps/LoadingIcon.scss";
+@import "cmps/UserOwnerReviews.scss";
+
 //home page cmps
 @import "cmps/HomeGreenDiv";
 @import "cmps/HomeCanAd";
@@ -58,6 +65,9 @@
 @import "cmps/HomeVideo";
 @import "cmps/HomePopServicesDiv";
 @import "cmps/HomeMakeHappenDiv";
+
+@import "cmps/UserOrdersDropdownMenu.scss";
+@import "cmps/GetToKnow.scss";
 
 // Pages
 @import "pages/HomePage";
@@ -72,4 +82,10 @@
 @import "pages/AllOrders.scss";
 @import "pages/ProfilePage.scss";
 @import "pages/GigPurchase.scss";
+@import "pages/MyLists.scss";
 
+@import "pages/TermsPage.scss";
+@import "pages/PrivacyPage.scss";
+@import "pages/BuyerOrdersList.scss";
+
+@import "cmps/MoveToRelevent.scss"

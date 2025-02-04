@@ -6,7 +6,7 @@
 
 .vid-h1{
     font-family:$fiverr-defult-font;
-    color: #404145;
+    color: $fiverr-classic-dark-grey;
     font-size: 48px;
     line-height: 50.4px;
   text-align:start;
@@ -16,9 +16,15 @@
   margin-bottom: 40px;
   }
 
-  @media(max-width:480px){
+  @media (max-width:900px){
     .vid-container{
-
       display: none;
     }
   }
+
+  @media (min-width:900px){
+    .vid-container{
+      margin-left: 32px;
+    }
+  }
+ 

@@ -8,7 +8,7 @@ export const gigService = {
     addGigMsg
 }
 
-async function query(filterBy = { txt: '', price: 0 }) {
+async function query(filterBy = { title: '', price: 0 }) {
     return httpService.get(`gig`, filterBy)
 }
 

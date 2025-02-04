@@ -30,23 +30,14 @@ export function UserPreview({ isFrom, owner, children }) {
   function loadUserData() {
     setUser(owner)
   }
-  
-  if (!user) return null
-
-  if (isFrom === 'mobile') {
-    return (
-      <div className="user-mobile-preview grid">
-        <div className="user-rating-order flex">
-          <span className="rating-score flex">
-            <SvgIcon iconName={'star'} tag={'span'} />
-            <span className="rate b" title='user rating'>{user.rating}</span>
-            <span className="rate-count">{`(${ratingCount})`}</span>
-          </span>
-        </div>
-        {children}
-      </div>
-    )
+  function renderStars(rate) {
+    const maxStars = 3 // Total number of stars
+    const filledStars = "✦".repeat(rate);
+    const emptyStars = "✧".repeat(maxStars - rate);
+    return filledStars + emptyStars;
   }
+ const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
+  if (!user) return null
 
   return (
     <>
@@ -56,7 +47,7 @@ export function UserPreview({ isFrom, owner, children }) {
       >
         <img
           className={`avatar-${isFrom}`}
-          src={user.avatar}
+          src={user.imgUrl}
           alt={`${user.fullName} gig avatar`}
         />
         <div className={`user-${isFrom}-wrapper`}>
@@ -64,25 +55,40 @@ export function UserPreview({ isFrom, owner, children }) {
             {(isFrom === 'gig-details' || isFrom === 'gig-details-2') && (
               <span className="fullname b">{user.fullName}</span>
             )}
-        <Link to={`/user/${user._id}`}
+            <Link to={`/user/${user._id}`}
               className={`username ${isFrom === 'explore' ? 'b' : ''}`}>
-          {isFrom === 'gig-details' || isFrom === 'gig-details-2' ? '@' : ''}
-          <span className="ad-by">Ad by</span> {user.fullName}
-        </Link>
+              {isFrom === 'gig-details' || isFrom === 'gig-details-2' ? '@' : ''}
+              <span className="ad-by">Ad by</span> {user.fullName}
+            </Link>
             {isFrom === 'userProfile' &&
               <span className={`user-level ${user.level === 'level 3' ? 'top' : ''}`} title='user level'>
-                {user.level}
+                Level {user.level}
               </span>}
-           </span>
-              </div>
-        {isFrom === 'explore' &&
-          <span className="level flex row" data-level={user.level} title='user level'>
-            {user.level === 'Pro Talent' && <SvgIcon iconName="customCheckMarkSunIcon" />}
-            {user.level === 'New Seller' && <SvgIcon iconName="newSeedlingIcon" />}
-
-            {user.level === 'Pro Talent' ? 'Pro' :
-              user.level === 'New Seller' ? 'New' : user.level}
-          </span>}
+          </span>
+        </div>
+        {isFrom === 'explore' && (
+      <span className="level flex row" data-level={user.level} title="user level">
+      {levelNumber > 0 && levelNumber <= 3 ? (
+        <>
+          {levelNumber === 3 ? (
+            <span className="top-rated-badge">Top Rated ✦✦✦</span>
+          ) : (
+            <>Level {renderStars(levelNumber)}</>
+          )}
+        </>
+      ) : user.level === 'Pro Talent' ? (
+        <span className="pro-level">
+          <SvgIcon iconName="customCheckMarkSunIcon" /> Pro
+        </span>
+      ) : user.level === 'New Seller' ? (
+        <span className="new-seller-level">
+          <SvgIcon iconName="newSeedlingIcon" /> New
+        </span>
+      ) : (
+        <>{user.level}</>
+      )}
+    </span>
+        )}
       </div>
       {isFrom === 'explore' && children}
       {isFrom === 'explore' && (

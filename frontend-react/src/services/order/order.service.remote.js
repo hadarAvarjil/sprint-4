@@ -1,5 +1,3 @@
-console.log("hey brother");
-
 import { storageService } from '../async-storage.service'
 
 const STORAGE_KEY = 'order'
@@ -46,7 +44,7 @@ function getEmptyOrder() {
         sellerId: '',
         price: 0,
         createdAt: Date.now(),
-        orderState: 'pending'
+        orderState: 'Pending'
     }
 }
 

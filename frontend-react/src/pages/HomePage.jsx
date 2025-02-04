@@ -11,6 +11,7 @@ export function HomePage() {
  
   return (
     <div className="home-body">
+      <div className="home-body-main"> 
       <GreenDiv />
       <CatDivsContainer />
       <PopularServices />
@@ -18,6 +19,7 @@ export function HomePage() {
       <VideoDiv />
       <CanAd />
       <PurpleAd />
+    </div>
     </div>
   );
 }

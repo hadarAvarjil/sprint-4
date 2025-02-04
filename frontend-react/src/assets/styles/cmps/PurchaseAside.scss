@@ -1,13 +1,12 @@
 .purchase-aside {
     border: 1px solid #ccc;
-    border-radius: 10px;
     padding: 15px;
     width: 350px;
-    font-family: Arial, sans-serif;
+    font-family: $fiverr-defult-font;
+
 
     .package-details {
         margin-bottom: 20px;
-        // background-color: #fafafa;
         border-radius: 1px;
 
         .gig-title {
@@ -33,7 +32,7 @@
         .package-name {
             margin-bottom: 15px;
             justify-content: space-between;
-          
+
             h4 {
                 font-size: 16px;
                 font-weight: bold;
@@ -54,16 +53,16 @@
             margin: 0;
             display: flex;
             flex-direction: column;
+            display: flex;
+            align-items: start;
 
-            li {
-                display: flex;
-                align-items: center;
-                margin-bottom: 10px;
+            .package-includes-li {
+                margin-bottom: 5px;
                 margin: 0;
                 padding: 0;
 
                 svg {
-                    margin-right: 8px;
+                    // margin-right: 8px;
                     height: 15px;
                     margin: 0;
                 }
@@ -81,7 +80,6 @@
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 5px;
             font-size: 14px;
             margin-bottom: 20px;
         }
@@ -122,22 +120,33 @@
         font-weight: bold;
         cursor: pointer;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 15px;
 
         &:hover {
             background-color: #333;
         }
     }
-
+    
     .ssl-notice {
         display: flex;
-        align-items: center;
-        font-size: 12px;
-        color: #666;
-        margin-top: 10px;
+        justify-content: center;
+        font-size: 14px;
+        color: #555;
+        margin-top: 15px;
+        gap: 10px;
+        
+            p {
+                padding: 0; 
+                font-size: inherit; 
+                color: inherit; 
+                line-height: 1.5;
+            }
 
-        svg {
-            margin-right: 5px;
+        svg,
+        .icon {
+            width: 20px;
+            height: 20px;
+            color: #555;
         }
     }
 }

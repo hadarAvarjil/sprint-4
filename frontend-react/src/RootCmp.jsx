@@ -19,13 +19,14 @@ import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { GigEdit } from './pages/GigEdit.jsx'
 import { UserMsg } from './cmps/UserMsg.jsx'
-import { LoginSignup } from './pages/LoginSignup.jsx'
-import { Login } from './pages/Login.jsx'
-import { Signup } from './pages/Signup.jsx'
-import { AllOrders } from './pages/AllOrders.jsx';
-import { ProfilePage } from './pages/ProfilePage.jsx';
 
-
+import { BuyerOrderPage } from './pages/BuyerOrderPage.jsx';
+import { UserProfile } from './pages/UserProfile.jsx';
+import {TermsPage} from './pages/TermsPage.jsx';
+import { PrivacyPage } from './pages/PrivacyPage.jsx';
+import { SellerDashboard } from './pages/SellerDashboard.jsx';
+import { MyLists } from './pages/MyLists.jsx'
+ 
 export function RootCmp() {
     const location = useLocation();
     return (
@@ -37,7 +38,10 @@ export function RootCmp() {
             {/* <AppHeader /> */}
             <UserMsg />
 
-            <main>
+{/* shinoi3 */}
+{/* shinoi4 */}   
+            {/* <main className='full'>  */}
+            <main className=' full grid-main-container'> 
                 <Routes>
                     <Route path="" element={<HomePage />} />
                     <Route path="about" element={<AboutUs />}>
@@ -48,16 +52,16 @@ export function RootCmp() {
                     <Route path="gig/:gigId" element={<GigDetails />} />
                     <Route path="purchase/:gigId" element={<GigPurchasePage />} />
                     <Route path="user/:id" element={<UserDetails />} />
-                    <Route path="/gig/edit" element={<GigEdit />} />
+                    <Route path="/gig/edit/:id?" element={<GigEdit />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="chat" element={<ChatApp />} />
                     <Route path="admin" element={<AdminIndex />} />
-                    <Route path="orders" element={<AllOrders />} />
-                    <Route path="profile" element={<ProfilePage />} />
-                    <Route path="login" element={<LoginSignup />}>
-                        <Route index element={<Login />} />
-                        <Route path="signup" element={<Signup />} />
-                    </Route>
+                    <Route path="/orders" element={<BuyerOrderPage />} />
+                    <Route path="/my-lists" element={<MyLists />} />
+                    <Route path="/profile/:id" element={<UserProfile />} />
+                    <Route path="/dashboard" element={<SellerDashboard />} />
+                    <Route path="terms"element={<TermsPage/>} />
+                    <Route path="privacy"element={<PrivacyPage/>}/>
                 </Routes>
             </main>
             <AppFooter />

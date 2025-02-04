@@ -13,46 +13,50 @@ export function useGigForm(initialValues, saveGig, navigate, loggedInUser, id, g
         if (name === 'title' && value.length > 80) return // Limits title length to 80 characters
         if (name === 'description' && value.length > 1200) return // Limits description length to 1200 characters
         setFields(prevFields => ({ ...prevFields, [name]: updatedValue })) // Updates the form field
+        console.log('Updated fields:', updatedFields)
     }
 
     // Handles form submission
-    async function handleSubmit(e) {
-        e.preventDefault()
-        try {
-            // Prepares gig data for saving
-            const gigToSave = (!id || id === 'edit') ?
-                { ...fields, ownerId: loggedInUser._id } : fields
-
-            await saveGig(gigToSave) // Calls the saveGig function to save the gig
-            navigate(`/user/${loggedInUser._id}`) // Navigates to the user's profile
-
-            // Displays success message
-            showSuccessMsg(
-                {
-                    title: 'GIG SAVED',
-                    body: `Gig saved successfully!`,
-                },
-                {
-                    userMsgLeft: '55%',
-                    messageAreaPadding: '2em 1.5em 2em 8em',
-                    msgStatusTranslateX: '-12em',
-                }
-            )
-        } catch (err) {
-            // Displays error message
-            showErrorMsg(
-                {
-                    title: 'FAILED TO SAVE',
-                    body: `Please try again later.`,
-                },
-                {
-                    userMsgLeft: '55%',
-                    messageAreaPadding: '2em 1.5em 2em 8em',
-                    msgStatusTranslateX: '-12em',
-                }
-            )
+ async function handleSubmit(e) {
+    e.preventDefault()
+    try {    
+        // Prepares gig data for saving
+        const gigToSave = (!id || id === 'edit') ?
+            { ...fields, ownerId: loggedInUser._id } : fields
+        if (!gigToSave.imgUrls || gigToSave.imgUrls.length === 0) {
         }
+
+        console.log('Gig to save:', gigToSave);
+        await saveGig(gigToSave) // Calls the saveGig function to save the gig
+        navigate(`/profile/${loggedInUser._id}`) // Navigates to the user's profile
+        // Displays success message
+        showSuccessMsg(
+            {
+                title: 'GIG SAVED',
+                body: `Gig saved successfully!`,
+            },
+            {
+                userMsgLeft: '55%',
+                messageAreaPadding: '2em 1.5em 2em 8em',
+                msgStatusTranslateX: '-12em',
+            }
+        )
+    } catch (err) {
+        // Displays error message
+        showErrorMsg(
+            {
+                title: 'FAILED TO SAVE',
+                body: `Please try again later.`,
+            },
+            {
+                userMsgLeft: '55%',
+                messageAreaPadding: '2em 1.5em 2em 8em',
+                msgStatusTranslateX: '-12em',
+            }
+        )
     }
+}
+
 
     // Updates the available tags based on the selected category
     function updateAvailableTags(selectedCategory) {
@@ -65,6 +69,7 @@ export function useGigForm(initialValues, saveGig, navigate, loggedInUser, id, g
         async function fetchGig() {
             if (id) {
                 try {
+                    console.log('Fetched gig:', gig)
                     const gig = await gigService.getById(id)
                     if (gig) setFields(gig) // Sets the fetched gig details in the form
                 } catch (err) {

@@ -25,6 +25,9 @@
     color: $clrSecondary8;
     padding: 0 0.5em;
     font-weight: 600;
+    font-family: $fiverr-defult-font;
+    font-weight: lighter;
+    font-size: 14px;
     border-radius: 4px;
     margin-inline-start: auto;
     gap: 0.25em;
@@ -38,6 +41,15 @@
     &[data-level="New Seller"] {
       color: white;
       background-color: $bgColor5;
+    }
+
+    .top-rated-badge {
+      background-color: #ffebcd;
+      color: #a0522d;
+      font-size: rem(12px);
+      font-weight: bold;
+      padding: 0.2rem 0.2rem;
+      border-radius: 5px;
     }
   }
 
@@ -62,7 +74,7 @@
 
     .name-wrapper {
       .fullname {
-        color: $clrSecondary8;
+        color: #222325;
         font-size: 18px;
         line-height: 26px;
         cursor: pointer;

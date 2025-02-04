@@ -70,5 +70,184 @@ margin-bottom: 40px;
   
   .canAd-pic {
     margin-right: 80px;
+  } 
+
+@media (max-width:500px){
+  @media (max-width:900px){
+    .canAd-container {
+          flex-direction: column;
+          /* Stack elements in a column */
+          align-items: center;
+          /* Center items horizontally */
+      //     /* Reduce padding for smaller screens */
+          height: 651px;
+          padding-left: 24px;
+          padding-right: 24px;
+          margin-top: 20px;
+          margin: 32px;
+    
+          .canAd-text-container {
+            height: 252px;
+            // width: 100vw;
+            padding: 24px;
+            /* Reduce padding for smaller screens */
+            font-size: 16px;
+            /* Adjust text size for readability */
+            line-height: 24px;
+            margin: 32px;
+    
+            /* Adjust line spacing for smaller font size */
+            h1 {
+              font-size: 32px;
+              /* Adjust font size */
+              line-height: 32px;
+              /* Adjust line height */
+              margin-bottom: 16px;
+              /* Reduce spacing for better fit */
+            }
+    
+            p {
+              font-size: 32px;
+              /* Adjust font size */
+              line-height: 32px;
+    
+              span {
+                font-size: 32px;
+              }
+            }
+    
+            h2 {
+              font-size: 20px;
+              /* Slightly smaller font */
+              line-height: 28px;
+              margin-bottom: 16px;
+              font-weight: 400;
+            }
+    
+            .can-blk-btn {
+              height: 40px;
+              width: 215px;
+              /* Make the button full width with some margin */
+              // max-width: 320px; /* Optional: Limit the maximum width */
+              padding-left: 16px;
+              padding-right: 16px;
+              // margin: 20px auto 0 auto; /* Center the button with some margin on top */
+              padding-top: 8px;
+              /* Adjust padding for smaller buttons */
+              padding-bottom: 8px;
+              /* Adjust padding for smaller buttons */
+              font-size: 16px;
+              /* Adjust font size */
+              border-radius: 8px;
+              /* Keep rounded corners */
+              font-size: 16px;
+            }
+          }
+    
+          .canAd-pic {
+            margin-top: 40px;
+            /* Remove side margin, add bottom margin */
+            width: 100%;
+            /* Make the image take full width */
+            max-width: 320px;
+            /* Optional: Limit the maximum width for better scaling */
+            text-align: center;
+            /* Center the image */
+          }
+        }    
+        //  width: 100vw;
+        //   /* Full width for smaller screens */
+        //   padding: 16px;
+     
   }
-  
+}
+
+  @media (min-width:500px){
+  @media (max-width:900px){
+    .canAd-container {
+          flex-direction: column;
+          /* Stack elements in a column */
+          align-items: center;
+          /* Center items horizontally */
+      //     /* Reduce padding for smaller screens */
+          height: 551px;
+          padding-left: 24px;
+          padding-right: 24px;
+          margin-top: 20px;
+          margin: 32px;
+    
+          .canAd-text-container {
+            height: 252px;
+            // width: 100vw;
+            padding: 24px;
+            /* Reduce padding for smaller screens */
+            font-size: 16px;
+            /* Adjust text size for readability */
+            line-height: 24px;
+            margin: 32px;
+    
+            /* Adjust line spacing for smaller font size */
+            h1 {
+              font-size: 32px;
+              /* Adjust font size */
+              line-height: 32px;
+              /* Adjust line height */
+              margin-bottom: 16px;
+              /* Reduce spacing for better fit */
+            }
+    
+            p {
+              font-size: 32px;
+              /* Adjust font size */
+              line-height: 32px;
+    
+              span {
+                font-size: 32px;
+              }
+            }
+    
+            h2 {
+              font-size: 20px;
+              /* Slightly smaller font */
+              line-height: 28px;
+              margin-bottom: 16px;
+              font-weight: 400;
+            }
+    
+            .can-blk-btn {
+              height: 40px;
+              width: 215px;
+              /* Make the button full width with some margin */
+              // max-width: 320px; /* Optional: Limit the maximum width */
+              padding-left: 16px;
+              padding-right: 16px;
+              // margin: 20px auto 0 auto; /* Center the button with some margin on top */
+              padding-top: 8px;
+              /* Adjust padding for smaller buttons */
+              padding-bottom: 8px;
+              /* Adjust padding for smaller buttons */
+              font-size: 16px;
+              /* Adjust font size */
+              border-radius: 8px;
+              /* Keep rounded corners */
+              font-size: 16px;
+            }
+          }
+    
+          .canAd-pic {
+            margin-top: 40px;
+            /* Remove side margin, add bottom margin */
+            width: 100%;
+            /* Make the image take full width */
+            max-width: 320px;
+            /* Optional: Limit the maximum width for better scaling */
+            text-align: center;
+            /* Center the image */
+          }
+        }    
+        //  width: 100vw;
+        //   /* Full width for smaller screens */
+        //   padding: 16px;
+     
+  }
+}

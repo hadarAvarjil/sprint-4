@@ -9,9 +9,12 @@ import { loadUser } from '../store/actions/user.actions.js'
 import { GigDetailsHeader } from '../cmps/GigDetailsHeader'
 import { ImageCarousel } from '../cmps/ImageCarousel'
 import { AboutGigSeller } from '../cmps/AboutGigSeller'
+import { FAQAccordion } from '../cmps/FAQAccordion'
 import { GigReviewsList } from '../cmps/GigReviewsList'
+import { GigReviewsListCarousel } from '../cmps/GigReviewsListCarousel'
 import { GigDetailsOrder } from '../cmps/GigDetailsOrder'
-
+import { GigDetailsLikeAndShare } from '../cmps/GigDetailsLikeAndShare'
+import { gigService } from '../services/gig/gig.service.local.js' 
 
 
 export function GigDetails() {
@@ -61,22 +64,46 @@ export function GigDetails() {
               gig={gig}
               owner={gigOwner}
             />
-            <ImageCarousel
-              images={gig.imgUrls || []}
-              gigId={gig._id}
-              newImgIndex={newImgIndex}
-              setNewImgIndex={setNewImgIndex}
-            />
+            <section className="gig-details-images flex column">
+              <ImageCarousel
+                images={gig.imgUrls || []}
+                gigId={gig._id}
+                newImgIndex={newImgIndex}
+                setNewImgIndex={setNewImgIndex}
+                isFrom={'gig-details'}
+              />
+              <div className="gig-thumbnail">
+                {gig.imgUrls.map((imgUrl, idx) => (
+                  <img
+                    isFrom={'gig-details'}
+                    className={`${idx === newImgIndex ? 'selected' : ''}`}
+                    onClick={() => setNewImgIndex(idx)}
+                    src={imgUrl}
+                    key={idx}
+                    alt={`Gig image ${idx}`}
+                  />
+                ))}
+              </div>
+            </section>
+
+            <GigReviewsListCarousel gig={gig} id="reviews-section" />
 
             <div className='about-gig'>
               <h3 className='gig-details-header-About-Gig'>About this gig</h3>
               <p className='gig-description' > {gig.description}</p>
             </div>
 
-            <AboutGigSeller owner={gigOwner} />
-            <GigReviewsList gig={gig} />
+            <AboutGigSeller owner={gigOwner} gig={gig} />
+            <FAQAccordion />
+            <GigReviewsList gig={gig} id="reviews-section" />
           </main>
-          <GigDetailsOrder owner={gigOwner} gig={gig} />
+          {/* shnoi4 */}
+          <aside className='aside-sticky-div'>
+            <GigDetailsLikeAndShare
+              gig={gig}
+            />
+            <GigDetailsOrder owner={gigOwner} gig={gig} />
+          </aside>
         </>
       )}
     </section>

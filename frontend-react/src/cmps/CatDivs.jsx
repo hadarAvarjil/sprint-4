@@ -1,168 +1,104 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-export function CatDivsContainer() {
-  const navigate = useNavigate();
-  const [showMore, setShowMore] = useState(false); // State for toggling the third row of categories
-
-  const handleNavigation = (destination) => {
-    navigate(destination); // Navigate to the specified destination
-  };
-
-  const toggleMore = () => {
-    setShowMore(!showMore); // Toggle the visibility of the third row
-  };
-
-  return (
-    <div className="cat-divs-container">
-      {/* First Row */}
-      <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-       <div className="cat-img-container"> <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\programming.svg" alt="" /></div>
-       <h2> <strong>Programming <br /> & Tech</strong></h2>
-      </div>
-      <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-      <div className="cat-img-container"> <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\graphics.svg" alt="" /></div>
-      <h2> <strong>Graphics & Design</strong></h2>
-      </div>
-      <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-      <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\marketing.svg" alt="" /></div>
-      <h2> <strong>Digital Marketing</strong></h2>
-      </div>
-
-      {/* Second Row */}
-      <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-      <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\translation.svg" alt="" /></div>
-      <h2>  <strong>Writing & Translation</strong></h2>
-      </div>
-      <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-      <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\animation.svg" alt="" /></div>
-       <h2> <strong>Video & <br />Animation</strong></h2>
-      </div>
-      <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-      <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\ai.svg" alt="" /></div>
-      <h2> <strong>AI Services</strong></h2>
-      </div>
-
-      {/* Third Row - Initially hidden, will show when toggled */}
-      <div className={`cat-divs-container third-row ${showMore ? "show" : ""}`}>
-        <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <div className="cat-img-container"> <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\music.svg" alt="" /></div>
-        <h2>  <strong>Music & Audio</strong></h2>
-        </div>
-        <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <div className="cat-img-container">  <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\business.svg" alt="" /></div>
-        <h2>  <strong>Business</strong></h2>
-        </div>
-        <div className="cat-div" onClick={() => handleNavigation("/gig")}>
-        <div className="cat-img-container"> <img style={{ width: "29px" }} src="src\services\imgs\design.imgs\consulting.svg" alt="" /></div>
-        <h2>  <strong>Consulting</strong></h2>
-        </div>
-      </div>
-<div className="cat-divs-bottom-border"></div>
-      {/* Button to toggle the third row */}
-      <button className="view-more-btn" onClick={toggleMore}>
-        {showMore ? "View Less" : "View 3 More"}
-      </button>
-    </div>
-  );
-}
-
-
-// import React from "react"; 
-// import { AddImg } from "../cmps/AddImg.jsx";
-// import { useNavigate } from "react-router-dom";
-
+import { setFilter } from "../store/actions/gig.actions.js";
+import { useSelector, useDispatch } from "react-redux";
  
 
-// export function CatDivsContainer(){
-//     const navigate = useNavigate();
-
-//     const handleNavigation = (destination) => {
-//       navigate(destination); // Navigate to the specified destination
-//     };
-//     return(
-// <div className="cat-divs-container">
-//             <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+export function CatDivsContainer(){
+    const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    
+    function setCatFilter( category) {
+    dispatch(setFilter({ ...filterBy, cat: category }))
+    navigate('/gig');
+    }
+    const handleNavigation = (destination) => {
+      navigate(destination); // Navigate to the specified destination
+    }; 
+    return(
+<div className="cat-divs-container">
+            <div className="cat-div" onClick={() => setCatFilter('Programming & Tech')} to={`/gig`}>
              
-//               <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\programming.svg"
-//                alt=""
-//              />
-//              <strong>Programming <br /> &  Tech</strong>
-//            </div>
-//            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+              <img
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\programming.svg"
+               alt=""
+             />
+             <strong>Programming <br /> &  Tech</strong>
+           </div>
+           <div className="cat-div" onClick={() => setCatFilter('Graphics & Design')} to={`/gig`}>
              
-//              <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\graphics.svg"
-//                alt=""
-//              />
-//             <strong> Graphics & Design</strong>
-//            </div>
-//            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+             <img
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\graphics.svg"
+               alt=""
+             />
+            <strong> Graphics & Design</strong>
+           </div>
+           <div className="cat-div" onClick={() => setCatFilter('Digital Marketing')} to={`/gig`}>
              
-//               <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\marketing.svg"
-//                alt=""
-//              />
-//             <strong> Digital Marketing</strong>
-//            </div>
-//            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+              <img
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\marketing.svg"
+               alt=""
+             />
+            <strong> Digital Marketing</strong>
+           </div>
+           <div className="cat-div" onClick={() => setCatFilter('Writing & Translation')} to={`/gig`}>
              
-//              <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\translation.svg"
-//                alt=""
-//              />
-//             <strong> Writing & Translation</strong>
-//            </div>
-//            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+             <img
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\translation.svg"
+               alt=""
+             />
+            <strong> Writing & Translation</strong>
+           </div>
+           <div className="cat-div" onClick={() => setCatFilter('Video & Animation')} to={`/gig`}>
              
-//              <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\animation.svg"
-//                alt=""
-//              />
-//             <strong> Video & <br />Animation</strong>
-//            </div>
-//            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+             <img
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\animation.svg"
+               alt=""
+             />
+            <strong> Video & <br />Animation</strong>
+           </div>
+           <div className="cat-div" onClick={() => setCatFilter('AI Services')} to={`/gig`}>
              
-//              <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\ai.svg"
-//                alt=""
-//              />
-//            <strong>  AI Services</strong>
-//            </div>
-//            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+             <img
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\ai.svg"
+               alt=""
+             />
+           <strong>  AI Services</strong>
+           </div>
+           <div className="cat-div" onClick={() => setCatFilter('Music & Audio')} to={`/gig`}>
              
-//              <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\music.svg"
-//                alt=""
-//              />
-//             <strong> Music & Audio</strong>
-//            </div>
-//            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+             <img
+              //  style={{ width: "29px" }}
+               src="src\services\imgs\design.imgs\music.svg"
+               alt=""
+             />
+            <strong> Music & Audio</strong>
+           </div>
+           <div className="cat-div" onClick={() => setCatFilter('Business')} to={`/gig`}>
              
-//              <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\business.svg"
-//                alt=""
-//              />
-//              <strong>Business</strong>
-//             </div>
-//            <div className="cat-div" onClick={() => handleNavigation("/gig")}>
+             <img
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\business.svg"
+               alt=""
+             />
+             <strong>Business</strong>
+            </div>
+           <div className="cat-div" onClick={() => setCatFilter('Data')} to={`/gig`}>
              
-//              <img
-//                style={{ width: "29px" }}
-//                src="src\services\imgs\design.imgs\consulting.svg"
-//                alt=""
-//              />
-//             <strong> Consulting</strong>
-//            </div>
-//           </div>
-//     )
-// }
+             <img
+              //  style={{ width: "29px" }}
+              src="src\services\imgs\design.imgs\consulting.svg"
+               alt=""
+             />
+            <strong> Data</strong>
+           </div>
+          </div>
+    )
+}

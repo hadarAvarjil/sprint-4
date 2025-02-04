@@ -23,6 +23,10 @@ export function GigPurchasePage() {
 
     const queryParams = new URLSearchParams(window.location.search)
     const Selectedpackage = queryParams.get('package')
+    const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+    console.log(loggedInUser);
+
+
 
     const initPurchaseState = {
         crdNum: '',
@@ -46,21 +50,24 @@ export function GigPurchasePage() {
 
     const serviceFee = 30.62
     const vat = 105.63
-    const total = gig ? packages[Selectedpackage].price + serviceFee + vat : 0
+    const total = gig ? packages[Selectedpackage].price + serviceFee + vat + gig.price : 0
+    const gigFirstImgUrl = gig.imgUrls[0]
 
     async function createOrder(total) {
 
         try {
             const newOrder = await orderService.createOrder(
+                loggedInUser._id,
                 gig._id,
                 gig.ownerId,
-                gig.price,
+                gig.price = total,
                 gig.title,
                 gig.daysToMake,
-                total
+                gigFirstImgUrl
+
             )
             await orderService.save(newOrder)
-            navigate('/gig')
+            navigate('/orders')
         } catch (err) {
             console.error('Error Saving Order:', err);
             showErrorMsg('FAILED TO ORDER');
@@ -68,7 +75,7 @@ export function GigPurchasePage() {
     }
 
     return (
-        <section className="gig-purchase flex">
+        <section className="gig-purchase main grid ">
             <PurchaseMain
                 initPurchaseState={initPurchaseState}
                 setFormPaymentData={setFormPaymentData}

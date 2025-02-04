@@ -3,6 +3,7 @@
   // background-color: $clrPrimary1;
   border-radius: 0.5em;
   min-width: rem(245px);
+  // width: 100%;
   width: 100%;
   height: fit-content;
   position: relative;
@@ -18,6 +19,7 @@
   .carousel-container:hover~.preview-body .gig-title {
     text-decoration: underline;
   }
+ 
 
   .heart {
     position: absolute;
@@ -30,10 +32,62 @@
     user-select: none;
   }
 
+  .gig-changes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625em 0.75em;
+    // border-block-start: 1px solid $clrSecondary14;
+
+    .gig-btns {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      .gig-btn {
+        background-color: white;
+
+        svg {
+          width: 16px;
+          height: 16px;
+          background-color: white;
+          fill: $clrSecondary4;
+        }
+
+        :hover svg {
+          fill: $bgColor3;
+        }
+      }
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: end;
+      font-size: 18px;
+      height: 100%;
+      color: $clrSecondary8;
+
+      .starting {
+        font-size: 10px;
+        font-weight: 700;
+        color: $clrSecondary5;
+        text-transform: uppercase;
+      }
+    }
+
+
+    &.right {
+      justify-content: end;
+    }
+  }
+
   .ad-by {
     color: #62646a; 
     font-size: 14px; 
-    font-family: macan-light;
+    font-family: $fiverr-defult-font;
+    font-weight: lighter;
   }
 
   .gig-title {
@@ -41,12 +95,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
     // min-height: 2.4em;
-    font-family: macan-light;
+    font-family: $fiverr-defult-font;
+    font-weight: lighter;
     line-height: 1.2;
     max-height: 2.4em;
     padding: 0 0 0.25em 0;
     margin-top: 1rem;
   }
+  .gig-title:hover{
+text-decoration: underline;  }
 
   .user-rating-order {
     padding: 0.5em 0 0;
@@ -55,12 +112,14 @@
       align-items: baseline;
 
       .rate {
+        color: #222325; //shinoi4
         padding: 0 0.25em;
       }
 
       .rate-count {
         color: $clrSecondary5;
-        font-family: 'macan-light';
+        font-family: $fiverr-defult-font;
+        font-weight: lighter;
       }
     }
   }
@@ -95,8 +154,12 @@
         display: flex;
       }
     }
+    
   }
+ 
+ 
 }
+
 
 .mobile-gig-preview {
   border-radius: 0.5em;
@@ -131,6 +194,7 @@
         color: $clrPrimary1;
         background-color: $bgColor5;
       }
+      
 
       i {
         svg {
@@ -211,6 +275,7 @@
             margin-inline-end: 0.5em;
           }
         }
+        
       }
     }
   }

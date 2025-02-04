@@ -1,14 +1,15 @@
 .gig-details {
   max-width: 1304px;
-  // color: $clrPrimary2;
-  margin-left: 17%;
   height: auto;
+  margin-inline: auto;
+  padding-inline: 32px;
+  padding-top: 44px;
 
 
 
   main {
-    // background-color: $clrPrimary1;
     height: fit-content;
+    padding-inline: 32px;
 
     .explore-category {
       align-items: center;
@@ -53,7 +54,7 @@
     }
 
     .about-gig h3 {
-      color: #404145;
+      color: $fiverr-classic-dark-grey;
       font-family: macan-regular, Helvetica, Arial, sans-serif;
       font-weight: 700;
       line-height: 28px;
@@ -73,18 +74,17 @@
       font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
       display: block;
       margin-top: 1em;
-      // margin-block-start: 1em;
-      // margin-block-end: 1em;
-      // margin-inline-start: 0px;
-      // margin-inline-end: 0px;
     }
   }
 }
 
 .user-details-specific {
-  max-width: 1435px;
-  margin-left: 17.5%;
-  padding: 20px;
+  grid-column: 2;
+  max-width: 1304px;
+  height: auto;
+  margin-inline: auto;
+  // padding-inline: 32px;
+  padding-top: 12px;
 
   .user-details-wrapper {
     display: flex;
@@ -112,7 +112,6 @@
           h1 {
             font-size: 24px;
             line-height: 32px;
-            // font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
             font: 400 27px/45px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
             color: #222325;
             display: inline-flex;
@@ -149,25 +148,7 @@
               fill: currentColor;
             }
 
-            .top-rated-badge {
-              background-color: rgb(255, 224, 179);
-              color: rgb(128, 67, 23);
-              border-radius: 3px;
-              padding: 1px 3px;
-              // font-size: 14px;
-              display: inline-flex;
-              align-items: center;
-              gap: 4px;
-              font-weight: 600;
 
-              .active-star {
-                color: #000;
-              }
-
-              .inactive-star {
-                color: #ccc;
-              }
-            }
           }
 
           .pro-badge {
@@ -181,13 +162,15 @@
             align-items: center;
             gap: 5px;
             margin-left: 8px;
+
             svg {
               width: 14px;
               height: 14px;
             }
           }
-          .new-seller-badge{
-            background-color:#19a463;
+
+          .new-seller-badge {
+            background-color: #19a463;
             color: white;
             font-size: 12px;
             font-weight: bold;
@@ -197,31 +180,41 @@
             align-items: center;
             gap: 5px;
             margin-left: 8px;
+
             svg {
               width: 14px;
               height: 14px;
             }
           }
-          
+
           .top-rated-badge {
             background-color: rgb(255, 224, 179);
             color: rgb(128, 67, 23);
             font-size: 12px;
             font-weight: bold;
-            padding: 2px 6px;
+            padding: 1px 3px;
             border-radius: 3px;
             margin-left: 10px;
           }
-          
 
+          .level-badge {
+            font-family: $fiverr-defult-font;
+            display: inline-flex; 
+            align-items: center;
+            margin-left: 8px; 
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+          }
 
           .user-bio,
           .user-location {
             margin-top: 10px;
             color: #222325;
             margin-bottom: -3%;
-            font: 400 16px / 28px macan-light;;
-            font-family: macan-light;
+            font: 400 16px / 28px macan-light;
+            ;
+            font-family: $fiverr-defult-font;
             line-height: 24px;
             font-size: 15px;
             font-weight: 400;
@@ -247,8 +240,9 @@
 
       .user-about {
         margin-top: 50px;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
         font: 400 16px/24px macan-bold;
+        font-family: $fiverr-defult-font;
 
         h2 {
           font-size: 16px;
@@ -256,11 +250,12 @@
         }
 
         p {
-          color: #404145;
+          color: $fiverr-classic-dark-grey;
           line-height: 1.5em;
           word-break: break-word;
-          font: 400 16px / 24px macan-light;;
-          // font-weight: 300;
+          font: 400 16px / 24px macan-light;
+          font-family: $fiverr-defult-font;
+
         }
       }
 
@@ -274,51 +269,65 @@
       text-align: center;
       border-radius: 4px;
       flex-direction: column;
-      margin-left: 10%;
       margin-top: 10%;
       background-color: white;
-      padding: 10px;
+      padding-left: 33px;
+      padding-bottom: 33px;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+      box-shadow:  0px 0px 16px rgba(0, 0, 0, 0.1);
+      // width: 423px;
+      // height: 250px;
+      box-shadow: 0 1.2px 1.92251px rgba(0,0,0,.02),0 2px 3.68135px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.05);
 
       .contact-header {
         text-align: center;
+        margin-top: 30px;
 
         .avatar {
-          width: 80px;
-          height: 80px;
+          width: 48px;
+          height: 48px;
           border-radius: 50%;
           object-fit: cover;
           margin-bottom: 10px;
         }
 
         h3 {
-          font-size: 1.3rem;
+          font-size:18px;
           margin-bottom: 5px;
-        }
+        line-height: 25px;
+        font-family: $fiverr-defult-font;
+      }
 
         p {
-          font-size: 0.9rem;
-          color: $clrSecondary6;
+          font-size: 16px;
+          line-height: 24px;
+          color: #62646a;
+          margin-bottom: -2px;
+          font-family: $fiverr-defult-font;
         }
       }
 
       .contact-btn {
-        display: block;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
         // width: 20%;
-        background-color: black;
+        background-color: #222325;
         color: white;
         padding: 10px 0;
         text-align: center;
         margin: 20px 0;
         border-radius: 5px;
-        font-size: 1rem;
-        font-weight: bold;
+        font-size: 16px;
+        font-style: normal;
+        font-family: $fiverr-defult-font;
+        font-weight: 600;
+        height: 47px;
         cursor: pointer;
 
-        &:hover {
-          background-color: darken($clrPrimary1, 10%);
+        &:hover { 
+          background-color: $black-btn-hover
         }
       }
 
@@ -326,6 +335,7 @@
         font-size: 0.9rem;
         color: $clrSecondary6;
         text-align: center;
+        margin-bottom: 30px;
       }
     }
   }
@@ -336,7 +346,7 @@
     h2 {
       font-size: 24px;
       margin-bottom: 20px;
-      color: #404145;
+      color: $fiverr-classic-dark-grey;
       font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
       font-weight: 700;
       line-height: 130%;
@@ -367,6 +377,35 @@
       align-items: flex-start;
       margin-bottom: 30px;
       flex-direction: row-reverse;
+
+.rating-container{
+  // border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+flex: 1;
+.average-rating-container{
+  display: flex;
+  flex-direction: row;
+  gap: 250px;
+  // width: 200px;
+  // border: solid 1px black;
+  width: fit-content;
+  justify-content: space-between;
+  @media(max-width:1270px) {
+     @media(min-width: 900px){
+      gap: 120px;
+
+  }
+  @media(max-width:900px){
+    gap: 20px;
+
+  }
+}
+
+}
+}
 
       .average-rating {
         text-align: center;
@@ -428,31 +467,60 @@
     .reviews-filters {
       display: flex;
       align-items: center;
-      gap: 20px;
       margin-bottom: 20px;
 
       input[type='text'] {
-        flex: 1;
-        padding: 10px;
+        width: 30%;
+        padding: 10px 12px;
+        color: $fiverr-classic-dark-grey;
         font-size: 1rem;
-        border: 1px solid $clrSecondary3;
-        border-radius: 5px;
+        border: 1px solid #ced1d6;
+        border-radius: 5px 0 0 5px;
+        background-color: #fff;
+        box-shadow: none;
+        transition: 0.15s ease-in-out;
+        height: 42px;
 
         &:focus {
           outline: none;
-          border-color: $clrPrimary1;
+          border-color: $fiverr-classic-dark-grey;
+        }
+      }
+
+      .search-icon {
+        height: 42px;
+        background-color: #222325;
+        border-radius: 0 5px 5px 0;
+        padding: 0;
+        width: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        svg {
+          fill: #fff;
+          width: 16px;
+          height: 16px;
+        }
+
+        &:hover {
+          background-color: $fiverr-classic-dark-grey;
         }
       }
 
       label {
+        align-items: center;
+        gap: 5px;
         font-size: 1rem;
-        color: $clrSecondary8;
+        color: #74768e;
 
         input {
-          margin-right: 10px;
+          margin-right: 5px;
         }
       }
     }
+
 
     .reviews-list {
       list-style: none;
@@ -465,51 +533,51 @@
   }
 
   .user-skills {
-    margin-top: -10%;
+    margin-top: -6.5%;
     margin-bottom: 5%;
-  
+
     h2 {
       font-size: 16px;
       font-weight: 600;
       color: #222325;
-      margin-bottom: 15px; 
-      font-family: macan-bold;
+      margin-bottom: 15px;
+      font-family: $fiverr-defult-font;
     }
-  
+
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 20px; 
-      row-gap: 15px; 
+      gap: 10px 20px;
+      row-gap: 15px;
       width: 60%;
     }
-  
+
     .skill {
       display: inline-block;
-      background-color: #ffffff; 
-      color: #404145; 
+      background-color: #ffffff;
+      color: $fiverr-classic-dark-grey;
       font-size: 14px;
       font-weight: 500;
-      padding: 8px 15px; 
-      border-radius: 20px; 
-      border: 1px solid #e4e5e7; 
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid #e4e5e7;
       white-space: nowrap;
       cursor: default;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
       transition: all 0.2s ease;
-  
+
       &:hover {
-        background-color: #f3f3f3; 
+        background-color: #f3f3f3;
       }
     }
-  
+
     .more-skills {
-      color: #1dbf73; 
+      color: #1dbf73;
       font-weight: 600;
       cursor: pointer;
-  
+
       &:hover {
-        text-decoration: underline; 
+        text-decoration: underline;
       }
     }
   }
@@ -592,4 +660,22 @@
     }
   }
 
+}
+
+
+.gig-thumbnail {
+  width: fit-content;
+
+  img {
+    object-fit: cover;
+    aspect-ratio: 5/3;
+    width: 20%;
+    opacity: 0.6;
+    padding: 1% 1% 1% 0;
+    cursor: pointer;
+
+    &:last-child {
+      padding-inline-end: 0;
+    }
+  }
 }

@@ -33,7 +33,7 @@ export function PurchaseAside({
                 </div>
                 <ul className="package-includes">
                     {packages[Selectedpackage].features.map((feature, idx) => (
-                        <li key={idx}>
+                        <li className='package-includes-li flex' key={idx}>
                             <SvgIcon iconName="checkmarkBlackIcon" />
                             {feature}
                         </li>
@@ -68,7 +68,7 @@ export function PurchaseAside({
                 Confirm & Pay
             </button>
             <p className="ssl-notice">
-                <SvgIcon iconName="lock" />
+                <SvgIcon iconName="password" />
                 SSL Secure Payment
             </p>
         </aside>

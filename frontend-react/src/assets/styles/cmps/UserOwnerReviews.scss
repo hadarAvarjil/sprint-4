@@ -1,0 +1,35 @@
+.user-owener-reviews{
+    margin-top: 32px;
+    width:772px;
+    height:319px;
+    padding: 32px;
+    font-family: $fiverr-defult-font;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    h2{
+      color:$black-btn-hover ;  
+      font-size: 16px;
+      line-height: 22.4px;
+      margin-bottom: 52px;
+    }
+    .no-reviews-msg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 140px;
+            height: 63px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            
+        }
+        h2{
+            font-family: $fiverr-defult-font;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            color: #95979d;
+        }
+    }
+}

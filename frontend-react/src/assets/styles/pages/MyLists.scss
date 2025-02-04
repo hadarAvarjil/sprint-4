@@ -1,0 +1,639 @@
+.my-lists-page {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .my-lists-page h1 {
+    font-family: $fiverr-defult-font;
+
+    font-size: 14px;
+    margin-bottom: 2rem;
+  }
+
+  section {
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+
+      @media(max-width:1089px) {
+        @media(min-width:850px) {
+          font-size: 28px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      @media(max-width:850px) {
+        @media(min-width:510px) {
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          text-align: left;
+
+          .liked-also-like {
+            display: none;
+          }
+        }
+      }
+
+      @media(max-width:510px) {
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+
+        .liked-also-like {
+          display: none;
+        }
+      }
+    }
+
+    .gigs-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .gig-preview {
+    display: grid;
+    border-radius: 0.5em;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      height: 150px;
+      /* או גודל אחר לפי הצורך */
+      object-fit: cover;
+      /* אפשר להגדיר גם max-width/width במידת הצורך */
+    }
+
+    .heart {
+      position: absolute;
+      background: none;
+      right: 10px;
+      top: 10px;
+      height: 34px;
+      width: 32px;
+      cursor: pointer;
+      user-select: none;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .gig-title {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: $fiverr-defult-font;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin: 1rem 0 0.5rem;
+      padding: 0 0.75rem;
+      font-weight: bold;
+
+    }
+
+    .gig-price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0.5rem 0 1rem;
+      padding: 0 0.75rem;
+
+      span {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+
+    .user-rating-order {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.75rem;
+
+      .rating-score {
+        display: flex;
+        align-items: center;
+
+        .rate {
+          color: #222325;
+          padding: 0 0.25em;
+          font-size: 1rem;
+        }
+
+        .rate-count {
+          color: #62646a;
+          font-family: $fiverr-defult-font;
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .gig-changes {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.625em 0.75em;
+      border-top: 1px solid #ddd;
+
+      .gig-btns {
+        display: flex;
+        align-items: center;
+
+        .gig-btn {
+          background-color: white;
+          padding: 0.5rem;
+
+          svg {
+            width: 16px;
+            height: 16px;
+            fill: #888;
+
+            &:hover {
+              fill: #555;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.recommended-gigs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+
+
+  .liked-gig-item {
+    width: 25%;
+  }
+
+  .recommended {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    // padding: 20px;
+    transition: box-shadow 0.2s ease-in-out;
+    padding-right: 2px;
+
+
+
+
+    .image-wrapper {
+      position: relative;
+
+      img {
+        width: 100%;
+        border-radius: 8px;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
+
+      .heart {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .preview-body {
+      padding: 10px 0;
+
+      .gig-title {
+        font-size: 1.0rem;
+        font-family: $fiverr-defult-font;
+        margin-bottom: 10px;
+
+      }
+
+      .gig-description {
+        font-size: 0.9rem;
+        color: #62646a;
+        margin-bottom: 10px;
+      }
+
+      .gig-level,
+      .gig-user,
+      .gig-rating {
+        font-size: -3.85rem;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .h1 {
+
+        /* font-size: 2.5rem; */
+        font-family: $fiverr-defult-font;
+        /* font-weight: bold; */
+        font-size: 14px;
+        margin-bottom: 2rem;
+
+      }
+
+      .gig-price {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #222;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+
+
+
+.my-lists-page {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  // justify-content: center; /* Centers the list horizontally */
+  flex-direction: column;
+
+  .my-lists-title {
+    color: $black-btn-hover;
+
+    // margin: auto;
+    @media (min-width:1089px) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width:1089px) {
+      margin-bottom: 20px;
+
+    }
+  }
+
+  .recommended-gigs-section {
+
+    // margin: auto;
+    .liked-gigs-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      /* Allows items to move to a new row */
+      gap: 26px;
+      // justify-content: center; /* Ensures items are centered inside */
+
+      .liked-gig-item {
+        // margin-bottom: 60px;
+        width: 332px;
+        height: 370px;
+
+        @media (max-width:1088px) {
+          @media (min-width:768px) {
+            height: 370px;
+
+            .recommended {
+              padding-bottom: 10px;
+
+            }
+          }
+        }
+
+        @media (max-width:709px) {
+          @media(min-width:446px) {
+            width: 200px;
+            height: 300px;
+
+            .recommended {
+              height: 300px;
+            }
+          }
+        }
+
+        @media (max-width:445px) {
+          width: 150px;
+          height: auto;
+
+          .recommended {
+            height: auto;
+
+            .gig-user {
+              .preview-body {
+                .gig-price {
+                  display: none;
+                }
+
+                .rating {
+                  display: none;
+                }
+              }
+            }
+          }
+
+        }
+
+        .recommended {
+          @media (min-width:1088px) {
+            height: 350px;
+          }
+
+          @media (max-width:768px) {
+            @media (min-width:709px) {
+              height: 350px;
+            }
+          }
+
+          @media (max-width:709px) {
+            @media(min-width:446px) {
+
+              height: 300px;
+            }
+          }
+
+          .image-wrapper {
+            img {
+              border-radius: 0px;
+            }
+          }
+
+          .gig-user {
+            display: flex;
+            flex-direction: column;
+            padding-left: 12px;
+
+            .gig-owner-details {
+              display: flex;
+              flex-direction: row;
+
+              .user-info {
+
+                h1 {
+                  font-family: $fiverr-defult-font;
+
+                  color: #222325;
+                  font-size: 14px;
+                  line-height: 18px;
+                }
+
+                span.level {
+                  font-family: $fiverr-defult-font;
+
+                  color: #74767e;
+                  font-size: 14px;
+                  line-height: 21px;
+                }
+
+              }
+            }
+          }
+
+          .preview-body {
+            font-family: $fiverr-defult-font;
+            // padding-left: 12px;
+            color: #222325;
+            margin-top: 0px;
+            height: 100px;
+            position: relative;
+
+            @media (max-width:709px) {
+              height: 130px;
+
+            }
+
+            .gig-title {
+              font-family: $fiverr-defult-font;
+              position: relative;
+              font-size: 16px;
+              line-height: 22px;
+
+
+            }
+
+            .gig-price {
+              // position: absolute;
+              font-family: $fiverr-defult-font;
+              color: #74767e;
+              line-height: 20px;
+              font-size: 18px;
+              font-weight: lighter;
+              margin-top: 7px;
+              display: flex;
+              // text-align: end;
+              justify-content: end;
+              padding-right: 12px;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+
+
+            }
+
+            .rating {
+              position: absolute;
+              bottom: -5px;
+
+              .reviews-count {
+                @media (max-width:709px) {
+                  display: none;
+                }
+              }
+
+              .star {
+                padding-top: 2px;
+              }
+
+              span {
+                display: flex;
+                flex-direction: row;
+                gap: 3px;
+                text-align: center;
+                align-items: center;
+
+              }
+
+              display: flex;
+              flex-direction: row;
+              gap: 3px;
+
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .recommended-liked-gigs-section {
+    margin-top: 60px;
+
+    .recommended-gigs-list {
+      // background-color: #555;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      .recommended {
+        width: 330px;
+        border-style: none;
+
+        .gig-user {
+          display: flex;
+          flex-direction: column;
+
+          .gig-owner-details {
+            display: flex;
+            flex-direction: row;
+
+            .user-info {
+              display: flex;
+              flex-direction: column;
+
+              h1 {
+                font-size: 14px;
+                line-height: 21px;
+                color: #222325;
+                font-family: $fiverr-defult-font;
+              }
+
+              .level {
+                font-size: 14px;
+                line-height: 21px;
+                color: rgb(116, 118, 126);
+                font-family: $fiverr-defult-font;
+              }
+            }
+          }
+        }
+
+        .preview-body {
+          .rating {
+            .star {
+              padding-top: 2px;
+            }
+
+            span {
+              display: flex;
+              flex-direction: row;
+              gap: 3px;
+              text-align: center;
+              align-items: center;
+
+            }
+
+            display: flex;
+            flex-direction: row;
+            gap: 3px;
+
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media (min-width:768px) {
+  @media (max-width:1088px) {
+    .my-lists-page {
+      padding: 10px;
+
+      h1 {
+        font-size: 2rem;
+        margin: auto;
+        // margin-bottom: 20px;
+      }
+
+      .recommended-gigs-list {
+        display: flex;
+        justify-content: center;
+
+        // align-items: center;
+        h2.gig-title {
+          margin: auto;
+
+        }
+
+        // margin: auto;
+      }
+    }
+
+  }
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+
+  .my-lists-page {
+    padding: 10px;
+
+    h1 {
+      font-size: 2rem;
+      margin: auto;
+    }
+
+    .recommended-gigs-list {
+      display: flex;
+      justify-content: center;
+      // align-items: center;
+
+      // margin: auto;
+    }
+
+    section {
+      h2 {
+        font-size: 1.5rem;
+
+      }
+
+      .gigs-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+      }
+    }
+
+    .gig-preview {
+      .gig-title {
+        font-size: 1rem;
+      }
+
+      .gig-price {
+        span {
+          font-size: 0.875rem;
+        }
+      }
+
+    }
+  }
+
+  @media(max-width:570px) {
+    .my-lists-page {
+      section {
+        h2 {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,19 @@
 import { httpService } from '../http.service'
+const BASE_URL = 'review/'
 
 export const reviewService = {
 	add,
 	query,
 	remove,
+	getById,
+	save
 }
+
+async function getById(reviewId) {
+    const order = await httpService.get(BASE_URL + reviewId)
+    return order
+}
+
 
 function query(filterBy) {
 	var queryStr = !filterBy ? '' : `?name=${filterBy.name}&sort=anaAref`
@@ -17,4 +26,9 @@ async function remove(reviewId) {
 
 async function add({ txt, aboutUserId }) {
 	return await httpService.post(`review`, { txt, aboutUserId })
+}
+
+function save(order) {
+    if (order._id) return httpService.put(BASE_URL, order)
+    else return httpService.post(BASE_URL, order)
 }

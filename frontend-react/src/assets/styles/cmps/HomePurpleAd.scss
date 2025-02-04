@@ -53,3 +53,31 @@
       }
     }
   }
+
+  @media(max-width:900px){
+    .purple-signup-ad{
+      width: 100vw;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      h1{
+        font-size: 40px;
+        line-height: 38px;
+      }
+    }
+  }
+
+
+@media(min-width:900px){
+  .purple-signup-ad{
+    max-width: 100%;
+
+    h1{
+      font-size: 64px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  }
+  

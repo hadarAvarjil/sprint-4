@@ -19,16 +19,10 @@ function query(filterBy = {}) {
 async function getById(reviewId) {
     console.log("Fetching review with ID:", reviewId);
 
-    const reviews = JSON.parse(localStorage.getItem(STORAGE_KEY_R)) || [];
-    const review = reviews.find((r) => r.id === reviewId);
+    return reviews = await httpService.get(BASE_URL + reviewId)
+    // const review = reviews.find((r) => r.id === reviewId);
 
-    if (!review) {
-        throw new Error(`Get failed, cannot find entity with id: ${reviewId} in: ${STORAGE_KEY_R}`);
-    }
-
-    return review
 }
-
 
 
 

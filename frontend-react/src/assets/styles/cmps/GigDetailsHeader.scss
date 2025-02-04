@@ -1,26 +1,27 @@
 .gig-details-header {
-    padding: 1.5rem;
-    // border-bottom: 1px solid #ddd;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    font-family: 'macan-bold', sans-serif;
+    font-family: $fiverr-defult-font;
+    font-weight: 400;
 
     .gig-title h2 {
         font-size: rem(28px);
         font-weight: bold;
-        color: #1c1e1e;
+        color: #222325;
         margin-top: 2rem;
         word-break: break-word;
         overflow-wrap: break-word;
         white-space: normal;
+        line-height: 36px; //shnoi4
+        font-family: $fiverr-defult-font;
     }
 
     .gig-details a {
         text-decoration: none;
         color: white;
-        padding: 10px 20px;
+        padding: 10px 5px;
         background: #222325;
         border-radius: 5px;
         display: inline-block;
@@ -35,13 +36,37 @@
     flex-wrap: nowrap;
     font-size: rem(14px);
     gap: 4px;
-    color: #222325;
+    span.tag{
+        font-size: 14px;
+line-height:24px ;
+font-weight: 400;
+font-family: $fiverr-defult-font;
+}
+span.tag:hover{
+    text-decoration: underline;
+}
+
 }
 
 .home-icon {
     display: flex;
     align-items: center;
+    // margin-left: 15px;
+    margin-right: 5px; 
+    a{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5px; 
+
+    }
 }
+
+.home-icon a:hover {
+    background-color: #f2f2f2;
+    border-radius: 50%;
+
+  }
 
 .separator {
     margin: 0 4px;
@@ -49,6 +74,7 @@
 }
 
 .tag {
+    color: #222325;
     white-space: nowrap;
-    font-weight: 400;
+    font-weight: 300;
 }

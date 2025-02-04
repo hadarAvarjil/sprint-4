@@ -5,10 +5,13 @@ export const ADD_ORDER = 'ADD_ORDER'
 export const UPDATE_ORDER = 'UPDATE_ORDER'
 export const ADD_ORDER_MSG = 'ADD_ORDER_MSG'
 export const SET_FILTER = 'SET_FILTER'
+export const SET_DROPDOWN_ORDERS = 'SET_DROPDOWN_ORDERS';
 
 const initialState = {
     orders: [],
-    order: null
+    order: null,
+    dropdownOrders: [],
+    filterBy: null
 }
 
 
@@ -40,6 +43,10 @@ export function orderReducer(state = initialState, action) {
         case SET_FILTER:
             newState = { ...state, filterBy: action.filterBy }
             break
+        case SET_DROPDOWN_ORDERS: 
+            newState = { ...state, dropdownOrders: action.orders }
+            break;
+
         default:
     }
     return newState
