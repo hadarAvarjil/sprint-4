@@ -30,8 +30,12 @@
             text-align: left;
             font-weight: bold;
             color: #555;
+            @media(max-width:700px){
+              font-size: 12px;
+padding: 10px;
           }
         }
+      }
       }
   
       tbody {
@@ -41,7 +45,11 @@
           }
   
           td {
-            padding: 10px 15px;
+            @media(max-width:700px){
+font-size: 10px;
+padding: 5px;
+            }
+            // padding: 10px 15px;
             vertical-align: middle;
   
             &:first-child {
@@ -49,18 +57,28 @@
               align-items: center;
   
               .buyer-pic {
-                width: 40px;
-                height: 40px;
+                // width: 40px;
+                // height: 40px;
                 border-radius: 50%;
                 object-fit: cover;
               }
             }
   
             .gigFirstImgUrl {
-              width: 60px;
-              height: 40px;
-              object-fit: cover;
-              margin-right: 10px;
+
+              @media(min-width:700px){
+                width: 60px;
+                height: 40px;
+                object-fit: cover;
+                margin-right: 10px;
+              }
+              @media(max-width:700px){
+                margin-right: 0px;
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+
+              }
               border-radius: 4px;
             }
   
@@ -81,6 +99,11 @@
               font-weight: bold;
               cursor: pointer;
               text-transform: capitalize;
+              @media(max-width:700px){
+padding: 5px;
+font-size: 10px;
+width: 75px;
+              }
   
               &:disabled {
                 cursor: not-allowed;
