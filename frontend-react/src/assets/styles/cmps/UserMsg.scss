@@ -20,10 +20,11 @@
 
 .user-msg {
     position: fixed;
-    right: 0;
+    right: 6em;
+    left: auto;
     bottom: 4em;
     z-index: 999;
-    width: fit-content;
+    width: auto;
     margin: auto;
 
     &::before {
