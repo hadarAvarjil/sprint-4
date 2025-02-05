@@ -141,24 +141,17 @@
 }
 
 
-/* Default styles for the home-carousel */
 .home-carousel-container {
   width: 100vw;
-  /* Full viewport width */
   overflow-x: hidden;
-  /* Hide any horizontal overflow */
 }
 
 .home-carousel {
   display: flex;
   overflow-x: auto;
-  /* Enable horizontal scrolling */
   gap: 16px;
-  /* Add spacing between items */
   padding: 10px;
-  /* Add padding for better spacing */
   scroll-behavior: smooth;
-  /* Smooth scrolling effect */
 }
 
 

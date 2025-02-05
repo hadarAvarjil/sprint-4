@@ -314,12 +314,7 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
             />
           ))}
         </ul>
-        {/* <button
-          className="create-gig-btn"
-          onClick={() => navigate('/gig/edit')}
-        >
-          Create Gig
-        </button> */}
+ 
       </div>
       <div className="gig-reviews-section">
 
@@ -331,12 +326,10 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
               
                <h2>{reviews.length} Reviews</h2>
             <div className="average-rating">
-              {/* <span className="rating-number">{ratingStats.averageRating.toFixed(1)}</span> */}
               <span className="stars">
                 {'★'.repeat(Math.round(ratingStats.averageRating))}
                 {'☆'.repeat(5 - Math.round(ratingStats.averageRating))}
               </span>
-              {/* <p>{ratingStats.totalReviews} Reviews</p> */}
             </div>
             </div>
 

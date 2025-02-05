@@ -31,16 +31,10 @@ export function RootCmp() {
     const location = useLocation();
     return (
         <div className="main-container">
-            {/* Conditionally render the AppHeader based on the current route */}
             {location.pathname === '/' ? <HomeAppHeader /> : <AppHeader />}
 
-            {/* <HomeAppHeader/> */}
-            {/* <AppHeader /> */}
             <UserMsg />
-
-{/* shinoi3 */}
-{/* shinoi4 */}   
-            {/* <main className='full'>  */}
+  
             <main className=' full grid-main-container'> 
                 <Routes>
                     <Route path="" element={<HomePage />} />

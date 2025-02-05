@@ -126,14 +126,12 @@
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
-    /* הופך ריבוע למעוין */
     border: 1px solid #ccc;
     background-color: transparent;
     margin-right: 5px;
 
     &.filled {
       background-color: #222;
-      /* מעוין מלא */
       border-color: #222;
     }
 

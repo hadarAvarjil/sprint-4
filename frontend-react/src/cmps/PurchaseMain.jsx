@@ -140,9 +140,6 @@ export function PurchaseMain({ setFormPaymentData, formPaymentData }) {
                                 />
                             </label>
                         </div>
-
-                        {/* <button type="submit" disabled={isSubmitting}>
-                        </button> */}
                     </Form>
                 )}
             </Formik>
