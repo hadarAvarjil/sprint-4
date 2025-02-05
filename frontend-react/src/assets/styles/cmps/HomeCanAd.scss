@@ -7,6 +7,11 @@
     padding-left: 40px;
     padding-right: 40px;
     border-radius: 15px;
+    height: fit-content;
+    @media (min-width:900px){
+        margin-right: 32px;
+
+    }
   }
   
   .canAd-text-container {
@@ -69,7 +74,11 @@ margin-bottom: 40px;
   }
   
   .canAd-pic {
-    margin-right: 80px;
+   .img-container{
+    img{
+    width: -webkit-fill-available;
+   }
+  }
   } 
 
 @media (max-width:500px){

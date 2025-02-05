@@ -24,7 +24,11 @@
 
   @media (min-width:900px){
     .vid-container{
-      margin-left: 32px;
+      margin-right: 32px;
     }
   }
- 
+  @media (min-width:1200px){
+    .vid-container{
+      margin-right: 32px;
+    }
+  }

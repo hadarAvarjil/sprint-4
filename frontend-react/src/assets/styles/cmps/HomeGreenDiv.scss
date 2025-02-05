@@ -302,8 +302,12 @@ padding-right: 5px;
 }
 
 @media (min-width: 481px) {
+  .home-body{
+    // padding-right: 32px;
+  }
   @media (max-width:899px){
     .home-body{
+      // padding-right: 32px;
       width: 100%;
     }
   .green-div-container {
