@@ -16,6 +16,15 @@
                     }
                 }}
         tbody {
+            tr{
+                .td-gig-img{
+            img{
+                width:70px;
+                height: 60px;
+                object-fit: cover;
+            }
+            }
+        }
             td{
                 text-align: center;
             }
