@@ -10,21 +10,21 @@ import { loadOrders } from '../store/actions/order.actions.js'
 export function SellerDashboard() {
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
-    const [isLoading, setIsLoading] = useState(true) // Add loading state
+    const [isLoading, setIsLoading] = useState(true) 
 
     useEffect(() => {
         async function fetchOrders() {
             if (loggedInUser) {
                 try {
-                    setIsLoading(true) // Start loading
+                    setIsLoading(true) 
                     await loadOrders({ sellerId: loggedInUser._id })
                 } catch (err) {
                     console.error("Error loading orders:", err)
                 } finally {
-                    setIsLoading(false) // Stop loading
+                    setIsLoading(false) 
                 }
             } else {
-                setIsLoading(false) // Stop loading if no user is logged in
+                setIsLoading(false) 
             }
         }
         fetchOrders()
@@ -33,7 +33,6 @@ export function SellerDashboard() {
     const NO_RESULT_IMG = 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738089073/no-results_i0l51z.png'
 
     if (isLoading) {
-        // Loader while orders are being fetched
         return (
             <div className="loader-container">
                 <div className="loader"></div>

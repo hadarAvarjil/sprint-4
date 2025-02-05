@@ -1,7 +1,6 @@
 import SvgIcon from './SvgIcon'
 import { AddImg } from './AddImg' 
 
-{/* clockUser languageUser suitcaeUser personUser locationUser */ }
 
 export function ProfileCard({ user }) {
     return (
@@ -18,13 +17,11 @@ export function ProfileCard({ user }) {
             <hr className="divider" />
 
             <div className="profile-detail" style={{color:'black'}}>
-                {/* <SvgIcon className="icon-user-profile" iconName="locationUser" /> */}
                 <AddImg picUrl="https://res.cloudinary.com/dtpewh2wk/image/upload/v1738001580/svg_xml_base64_PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxMyAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJ2YXIoLS1hOHJlMjUxaSkiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2R_z83hoh.svg" className="icon-user-profile" />
                 {user?.from || "Located in Israel"}
             </div>
 
             <div className="profile-detail" style={{color:'black'}}>
-                {/* <SvgIcon className="icon-user-profile" iconName="personUser" /> */}
                 <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738001580/svg_xml_base64_PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJ2YXIoLS1hOHJlMjUxaSkiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2R_eed29c.svg' className="icon-user-profile" />
                 {`Joined in ${user?.joinDate || "January 2025"}`}
             </div>
@@ -32,7 +29,6 @@ export function ProfileCard({ user }) {
             <hr className="divider" />
 
             <div className="profile-detail">
-                {/* <SvgIcon className="icon-user-profile" iconName="suitcaeUser" /> */}
                 <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738002447/briefcase-svgrepo-com_1_b2zjna.svg' className="icon-user-profile" />
                 {user?.industry || "Your industry"}
             </div>
@@ -45,7 +41,6 @@ export function ProfileCard({ user }) {
             <hr className="divider" />
 
             <div className="profile-detail">
-                {/* <SvgIcon className="icon-user-profile" iconName="clockUser"  /> */}
                 <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738001580/svg_xml_base64_PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJ2YXIoLS1hOHJlMjUxaSkiPjxwYXRoIGQ9Ik04IC4yNUE3Ljc0OSA3Ljc0OSAwIDAgMCAuMjUgOCA3Ljc_owvldn.svg' className="icon-user-profile"  />
                 { `Preferred working hours ${user?.workingHours  || "08:00 - 17:00"}`}
             </div>

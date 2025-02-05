@@ -19,7 +19,7 @@ ChartJS.register( ArcElement,
     RadialLinearScale,
     Tooltip,
     Legend,
-    CategoryScale,  // Register CategoryScale
+    CategoryScale,
     LinearScale,
     PointElement,
     LineElement,
@@ -34,7 +34,6 @@ export function SellerFinanceSumup({ loggedInUser, orders = [] }) {
     let deliveredOrdersNum = orders.filter(order => order.orderState === 'Delivered').length;
     let rejectedOrdersNum = orders.filter(order => order.orderState === 'Rejected').length;
 
-    // Labels and Data with correct color order
     const data = {
         labels: ['Pending', 'In Progress', 'Completed', 'Delivered', 'Rejected'],
         datasets: [
@@ -42,18 +41,18 @@ export function SellerFinanceSumup({ loggedInUser, orders = [] }) {
                 label: 'Order Status Summary',
                 data: [pendingOrdersNum, inProgressOrdersNum, completedOrdersNum, deliveredOrdersNum, rejectedOrdersNum],
                 backgroundColor: [
-                    '#F1C40F', // Pending (Yellow)
-                    '#3498DB', // In Progress (Blue)
-                    '#2ECC71', // Completed (Green)
-                    '#9B59B6', // Delivered (Purple)
-                    '#E74C3C', // Rejected (Red)
+                    '#F1C40F', 
+                    '#3498DB', 
+                    '#2ECC71', 
+                    '#9B59B6', 
+                    '#E74C3C', 
                 ],
                 borderColor: [
-                    '#D4AC0D', // Darker Yellow
-                    '#2980B9', // Darker Blue
-                    '#27AE60', // Darker Green
-                    '#8E44AD', // Darker Purple
-                    '#C0392B', // Darker Red
+                    '#D4AC0D', 
+                    '#2980B9', 
+                    '#27AE60', 
+                    '#8E44AD', 
+                    '#C0392B', 
                 ],
                 borderWidth: 1,
             },

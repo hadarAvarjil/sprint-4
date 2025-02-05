@@ -76,9 +76,9 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                     <thead>
                         <tr>
                             <th>Gig</th>
-                            <th></th>
-                            <th>Due On</th>
-                            <th>Total</th>
+                            <th style={{textAlign:"start"}}>Title</th>
+                            <th style={{textAlign:"start"}}>Due On</th>
+                            <th style={{textAlign:"start"}}>Total</th>
                             <th>Seller</th>
                             <th>Status</th>
                         </tr>
@@ -106,7 +106,6 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                             borderRadius: "4px",
                                             fontWeight: "bold",
                                             textAlign: "center",
-                                            // width: "100px", //shinoi
                                         }}
                                     >
                                         {status}
@@ -120,11 +119,11 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                         <img src={order.gigFirstImgUrl} alt="Gig" className="gigFirstImgUrl" />
                                         <Link to={`/gig/${order.gigId}`}></Link>
                                     </td>
-                                    <td>
+                                    <td style={{textAlign:"start"}}>
                                         <Link to={`/gig/${order.gigId}`}>{order.title || "Unknown Gig"}</Link>
                                     </td>
-                                    <td className='due-on'>{dueOn}</td>
-                                    <td className='total'>${order.price?.toFixed(2) || "0.00"}</td>
+                                    <td className='due-on' style={{textAlign:"start"}}>{dueOn}</td>
+                                    <td className='total' style={{textAlign:"start"}}>${order.price?.toFixed(2) || "0.00"}</td>
                                     <td className="buyer-orders-seller-td">
                                         <img src={order.imgUrl} alt="Seller" className="seller" />
                                         <span>{order.fullName}</span>

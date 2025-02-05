@@ -1,16 +1,6 @@
-// button {
-// 	border: 0;
-// 	background-color: $clr1;
-// 	color: whitesmoke;
-// 	padding: 5px 10px;
-// 	margin: 5px;
-// 	cursor: pointer;
-// }
-
 .btn-link {
 	border: 0;
 	background-color: transparent;
-	// text-decoration: underline;
 	transition: 0.5s;
 }
 
@@ -34,7 +24,6 @@
 
 .white-join-btn {
 	display: flex;
-	// height: 15px;
 	color: rgba(0, 0, 0, 0.822);
 	background-color: white;
 	padding-top: 8px;
@@ -42,14 +31,12 @@
 	border-radius: 5px;
 	padding-left: 10.5px;
 	padding-right: 10.5px;
-	// position: absolute;
 	bottom: 10%;
 	left: 43%;
 	align-items: center;
 	justify-content: center;
 	font-weight: bold;
 	box-sizing: border-box;
-	/* Ensures padding is included in size calculations */
 	font-size: 16px;
 	line-height: 24px;
 	text-align: start;

@@ -20,7 +20,6 @@ async function getById(reviewId) {
     console.log("Fetching review with ID:", reviewId);
 
     return reviews = await httpService.get(BASE_URL + reviewId)
-    // const review = reviews.find((r) => r.id === reviewId);
 
 }
 

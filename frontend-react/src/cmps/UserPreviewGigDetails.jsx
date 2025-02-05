@@ -19,7 +19,7 @@ export function UserPreviewGigDetails({ owner, gig }) {
 
     const reviewsText = gig.reviews.length === 1 ? 'Review' : 'Reviews';
     function renderStars(rate) {
-        const maxStars = 3; // Total number of stars
+        const maxStars = 3; 
         const filledStars = "✦".repeat(rate);
         const emptyStars = "✧".repeat(maxStars - rate);
         return filledStars + emptyStars;

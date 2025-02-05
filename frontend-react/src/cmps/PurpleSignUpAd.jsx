@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom"; // SHINOI6: Import ReactDOM
+import ReactDOM from "react-dom"; 
 import { LoginSignup } from "./LoginSignup";
 
 export function PurpleAd() {
-  const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); // SHINOI6: State for Join modal
+  const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); 
 
   const handleJoinClick = () => {
-    setIsJoinDivVisible(true); // SHINOI6
+    setIsJoinDivVisible(true); 
   };
 
   const handleCloseModal = (e) => { 
-    if (e.target.classList.contains("modal-overlay")) { // SHINOI6: Ensure only clicking outside closes modal
+    if (e.target.classList.contains("modal-overlay")) { 
       setIsJoinDivVisible(false);
     }
   };
@@ -24,23 +24,22 @@ export function PurpleAd() {
       <button
         style={{ width: "115px" }}
         className="white-join-btn"
-        onClick={handleJoinClick} // SHINOI6: Open Join modal
+        onClick={handleJoinClick} 
       >
         Join Gigster
       </button>
 
-      {/* SHINOI6: Only renders Join option */}
       {isJoinDivVisible &&
         ReactDOM.createPortal(
           <div
             className="modal-overlay"
-            onClick={handleCloseModal} // SHINOI6
+            onClick={handleCloseModal} 
           >
             <div className="modal-content">
               <LoginSignup
                 isLoginSignUpShow={isJoinDivVisible}
                 setIsLoginSignUpShow={setIsJoinDivVisible}
-                isSignup={true} // Signup mode (Join)
+                isSignup={true} 
               />
             </div>
           </div>,

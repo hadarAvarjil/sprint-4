@@ -61,13 +61,6 @@ export function GreenDiv() {
     setSearchQuery(newSearchQuery);
   }
 
-  // function handleSearchSubmit(e) {
-  //   e.preventDefault();
-  //   if (!searchQuery) return;
-  //   setFilter({ ...filterBy, search: searchQuery });
-  //   navigate(`/gig`);
-  //   setSearchQuery("");
-  // }
   return (
     <section className="green-div-container">
       <div className="green-search-div">

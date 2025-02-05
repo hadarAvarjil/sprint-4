@@ -12,7 +12,7 @@ import { logout } from "../store/actions/user.actions";
 import { LoginSignup } from "./LoginSignup.jsx";
 import { UserDropdownMenu } from "./UserDropdownMenu.jsx";
 import outsideClick from "../customHooks/outsideClick.js";
-import ReactDOM from "react-dom"; // shinoi6
+import ReactDOM from "react-dom"; 
 import { AddImg } from "./AddImg.jsx";
 import { loadGigs } from "../store/actions/gig.actions.js";
 
@@ -39,11 +39,11 @@ export function HomeAppHeader() {
 
   const [showUserOrdersDropdownMenu, setShowUserOrdersDropdownMenu] = useState(false);
   const handleJoinClick = () => {
-    setIsJoinDivVisible(true); // shinoi6
+    setIsJoinDivVisible(true); 
   };
 
   const handleLoginClick = () => {
-    setIsSignDivVisible(true); // shinoi6
+    setIsSignDivVisible(true); 
   };
 
 
@@ -94,21 +94,21 @@ export function HomeAppHeader() {
     };
   }, []);
 
-  const [isSignDivVisible, setIsSignDivVisible] = useState(false); // shinoi6: State for Sign modal
-  const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); // shinoi6: State for Join modal
+  const [isSignDivVisible, setIsSignDivVisible] = useState(false); 
+  const [isJoinDivVisible, setIsJoinDivVisible] = useState(false); 
 
   const handleOpenSignDiv = () => {
-    setIsSignDivVisible(true); // shinoi6
+    setIsSignDivVisible(true); 
   };
 
   const handleOpenJoinDiv = () => {
-    setIsJoinDivVisible(true); // shinoi6
+    setIsJoinDivVisible(true); 
   };
 
   const handleCloseModal = (e) => {
     if (e.target.className === "modal-overlay") {
-      setIsSignDivVisible(false); // shinoi6
-      setIsJoinDivVisible(false); // shinoi6
+      setIsSignDivVisible(false); 
+      setIsJoinDivVisible(false); 
     }
   };
 
@@ -120,9 +120,6 @@ export function HomeAppHeader() {
   async function handleSearchSubmit(e) {
     e.preventDefault()
     if (!searchQuery) return
-    //Important  *****!@!@!@!#!!@!@!@!@#
-    //when switch to server and build 
-    // switch this { ...filterBy, txt: searchQuery } to this { ...filterBy, search: searchQuery }
     const newFilterBy = { ...filterBy, txt: searchQuery }
     console.error('NEED TO SWITCH FIELD IN NEW FILTERBY TO SEARCH INSTEAD OF TXT',newFilterBy)
     dispatch(setFilter(newFilterBy))
@@ -201,13 +198,11 @@ export function HomeAppHeader() {
                   <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738583678/heart-svgrepo-com_cramwf.svg' />
                 </NavLink>
                 <div className="orders-container" ref={ordersRef}>
-                  {/* <NavLink to="/orders"> */}
                   <div className="sign-header-btn" onClick={(e) => {
                     e.stopPropagation();
                     setShowUserOrdersDropdownMenu((prev) => !prev);
                   }}
                   >Orders</div>
-                  {/* </NavLink> */}
 
                   {showUserOrdersDropdownMenu && (
                     <UserOrdersDropdownMenu
@@ -241,11 +236,9 @@ export function HomeAppHeader() {
               <>
                 <div className="signIn-btn">
                   <button onClick={handleLoginClick}>Sign In</button>{" "}
-                  {/* shinoi6 */}
                 </div>
                 <div className="join-btn">
                   <button onClick={handleJoinClick}>Join</button>{" "}
-                  {/* shinoi6 */}
                 </div>
               </>
             )}
@@ -259,26 +252,25 @@ export function HomeAppHeader() {
         )}
       </header>
 
-      {/* Modal logic */}
       {(isSignDivVisible || isJoinDivVisible) &&
         ReactDOM.createPortal(
           <div
             className="modal-overlay"
-            onClick={handleCloseModal} // shinoi6
+            onClick={handleCloseModal} 
           >
             <div className="modal-content">
               {isSignDivVisible && (
                 <LoginSignup
                   isLoginSignUpShow={isSignDivVisible}
                   setIsLoginSignUpShow={setIsSignDivVisible}
-                  isSignup={false} // Login mode
+                  isSignup={false} 
                 />
               )}
               {isJoinDivVisible && (
                 <LoginSignup
                   isLoginSignUpShow={isJoinDivVisible}
                   setIsLoginSignUpShow={setIsJoinDivVisible}
-                  isSignup={true} // Signup mode
+                  isSignup={true} 
                 />
               )}
             </div>

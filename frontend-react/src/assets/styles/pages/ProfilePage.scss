@@ -1,296 +1,240 @@
-.user-profile-main{
+.user-profile-main {
   display: grid;
   grid-template-columns: minmax(32px, 1fr) minmax(auto, 1336px) minmax(32px, 1fr);
-padding-top: 33px;
+  padding-top: 33px;
 
-.user-profile{
-  grid-column: 2;
-  display: flex;
-  justify-content: space-between;
-}
-.position-taker-UserOwnerGigs{
-  z-index: 0;
-  width:772px;
-  display: flex;
-  flex-direction: column;
-
-  
-  .profile-become-seller-ad{
-    height: 100px;
+  .user-profile {
+    grid-column: 2;
     display: flex;
-    flex-direction: row;
-
-  justify-content: space-between;
-  text-align: center;
-  align-items: center;
-  
-border: solid 1px #e5e7eb;
-    border-radius: 1rem;
-    padding: 20px;
-    font-family: $green-fiverr;
-    color: #62646a;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: $fiverr-defult-font;
-    line-height: 32px;
-    padding:15px;
-              font-weight: 700;
-
-          .create-gig-btn{
-            background-color: black;
-            color: white;
-            border-radius: 6px;
-            border: solid 1px black;
-            width: 125px;
-            height: 32px;
-            font-size: 16px;
-            line-height: 24px;
-            margin-left: 5px;
-            display: flex;
-            flex-direction: row;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            margin: 0px;
-            img{
-              width: 20px;
-              height: 20px;
-            }
-           
-          }
-          .create-gig-btn:hover{
-            background-color: $black-btn-hover;
-            color: white;
-            }
-}
-}
-.profile-detail{
-
-  img{
-  width: 16px;
-  height: 16px;
-}
-}
-
-.user-gigs-owner-container{
-.user-gigs{
-  margin-top: 25px;
-  border: solid 1px #e5e7eb;
-  padding: 12px;
-  border-radius: 2rem;
-  // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-  h2{
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-family: $fiverr-defult-font;
-    color: #62646a;
-    font-size: 30px;
+    justify-content: space-between;
   }
 
-  .gigs-list {
+  .position-taker-UserOwnerGigs {
+    z-index: 0;
+    width: 772px;
     display: flex;
-    flex-wrap: wrap;  
-    gap: 5px;
-  padding-bottom: 15px;
-  .gig-preview{
-   border: 1px solid #e5e7eb; 
-   padding: 10px;
-    span.heart{
-      display: none;
-   }
-  }
-  }
-  
-  .gigs-list li {
-    width: 245px; 
-  }
-  
-}
-.no-gigs-div{
-display: flex;
-flex-direction: row;
-text-align: center;
-align-items: center;
-justify-content: space-between;
-padding-right: 30px;
-padding-left: 30px;
-font-family: $fiverr-defult-font;
-color: #62646a;
-
-}
-}
-
-}
-
-@media(max-width:980px){
-.user-profile-main{
-  .user-profile{
     flex-direction: column;
-    max-width: 100vw;
-    .profile-card{
-      width:100%;
-    
-      .profile-detail{
-      align-items: center;
+
+
+    .profile-become-seller-ad {
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+
+      justify-content: space-between;
       text-align: center;
-      justify-content: center;
+      align-items: center;
+
+      border: solid 1px #e5e7eb;
+      border-radius: 1rem;
+      padding: 20px;
+      font-family: $green-fiverr;
+      color: #62646a;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: $fiverr-defult-font;
+      line-height: 32px;
+      padding: 15px;
+      font-weight: 700;
+
+      .create-gig-btn {
+        background-color: black;
+        color: white;
+        border-radius: 6px;
+        border: solid 1px black;
+        width: 125px;
+        height: 32px;
+        font-size: 16px;
+        line-height: 24px;
+        margin-left: 5px;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin: 0px;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+      }
+
+      .create-gig-btn:hover {
+        background-color: $black-btn-hover;
+        color: white;
+      }
     }
   }
-  .position-taker-UserOwnerGigs{
-    width: 100%;
-    .profile-become-seller-ad{
-      width: 100%;
-      margin-top: 32px;
-      @media(min-width:680px){
-        display: flex;
-        gap: 50px;
-        justify-content: center;
-        font-size: 14px;
+
+  .profile-detail {
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .user-gigs-owner-container {
+    .user-gigs {
+      margin-top: 25px;
+      border: solid 1px #e5e7eb;
+      padding: 12px;
+      border-radius: 2rem;
+
+      h2 {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-family: $fiverr-defult-font;
+        color: #62646a;
+        font-size: 30px;
       }
-      @media(max-width:680px){
-        @media(min-width:500px){
-          display: flex;
-          gap: 20px;
-          justify-content: center;
-          font-size: 9px;
-          button{
-            font-size: 14px;
+
+      .gigs-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding-bottom: 15px;
+
+        .gig-preview {
+          border: 1px solid #e5e7eb;
+          padding: 10px;
+
+          span.heart {
+            display: none;
           }
         }
       }
-      @media(max-width:500px){
-        display: none;
+
+      .gigs-list li {
+        width: 245px;
       }
 
-
     }
-    .user-gigs-owner-container{
-      width: 100%;
 
-    }
-    .user-owener-reviews{
-      width: 100%;
+    .no-gigs-div {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 30px;
+      padding-left: 30px;
+      font-family: $fiverr-defult-font;
+      color: #62646a;
 
     }
   }
-  }
+
 }
-}
 
-@media(min-width:980px){
-  @media(max-width:1370px){
-.user-profile-main{
+@media(max-width:980px) {
+  .user-profile-main {
+    .user-profile {
+      flex-direction: column;
+      max-width: 100vw;
 
-.user-profile{
- 
-  .profile-card{
-    width:320px
-  }
+      .profile-card {
+        width: 100%;
 
-.position-taker-UserOwnerGigs{
-  width: 660px;
-  .profile-become-seller-ad{
-    width: 640px;
-    font-size: 16px;
-    .create-gig-btn{
-      font-size: 18px;
-height: 50px;
-      width:80px;
-      margin-right: 5px;
-      .img-container{
-          display: none;
-      }
+        .profile-detail {
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+        }
       }
 
+      .position-taker-UserOwnerGigs {
+        width: 100%;
+
+        .profile-become-seller-ad {
+          width: 100%;
+          margin-top: 32px;
+
+          @media(min-width:680px) {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            font-size: 14px;
+          }
+
+          @media(max-width:680px) {
+            @media(min-width:500px) {
+              display: flex;
+              gap: 20px;
+              justify-content: center;
+              font-size: 9px;
+
+              button {
+                font-size: 14px;
+              }
+            }
+          }
+
+          @media(max-width:500px) {
+            display: none;
+          }
+
+
+        }
+
+        .user-gigs-owner-container {
+          width: 100%;
+
+        }
+
+        .user-owener-reviews {
+          width: 100%;
+
+        }
+      }
+    }
   }
-  .user-gigs-owner-container{
-    width: 640px;
+}
 
+@media(min-width:980px) {
+  @media(max-width:1370px) {
+    .user-profile-main {
+
+      .user-profile {
+
+        .profile-card {
+          width: 320px
+        }
+
+        .position-taker-UserOwnerGigs {
+          width: 660px;
+
+          .profile-become-seller-ad {
+            width: 640px;
+            font-size: 16px;
+
+            .create-gig-btn {
+              font-size: 18px;
+              height: 50px;
+              width: 80px;
+              margin-right: 5px;
+
+              .img-container {
+                display: none;
+              }
+            }
+
+          }
+
+          .user-gigs-owner-container {
+            width: 640px;
+
+          }
+
+          .user-owener-reviews {
+            width: 640px;
+
+          }
+        }
+      }
+    }
   }
-  .user-owener-reviews{
-    width: 640px;
-
-  }
 }
-}
-}
-}
-}
-
-
-// .profile-page-container{
-// display: flex;
-// flex-direction: row;
-// // background-color: black;
-// justify-content: space-between;
-// width: 100%;
-// }
-
-// .profile-layout {
-//     display: flex;
-//     gap: 20px;
-//     padding: 20px;
-// width: 100%;
-//     justify-content: space-between;
-
-//   }
-  
-//   .profile-info {
-//     flex: 0 0 250px; /* Fixed width for the profile section */
-//     // width: 800px;
-//     background-color: #f9f9f9;
-//     border: 1px solid #ddd;
-//     border-radius: 8px;
-//     padding: 20px;
-//     text-align: center;
-//   }
-  
-//   .profile-info img {
-//     width: 100px;
-//     height: 100px;
-//     border-radius: 50%;
-//     margin-bottom: 10px;
-//   }
-  
-//   .profile-orders {
-//     flex: 1; /* Take the remaining space */
-//     display: flex;
-//     flex-direction: column;
-//     gap: 50px;
-//   }
-  
-//   .orders-section {
-//     background-color: #fff;
-//     border: 1px solid #ddd;
-//     border-radius: 8px;
-//     padding: 20px;
-//   }
-  
-//   .orders-section h3 {
-//     margin-bottom: 10px;
-//   }
-  
-//   .orders-table {
-//     width: 100%;
-//     border-collapse: collapse;
-//   }
-  
-//   .orders-table th,
-//   .orders-table td {
-//     padding: 10px;
-//     text-align: left;
-//     border: 1px solid #ddd;
-//   }
-  
-//   .orders-table th {
-//     // background-color: #f5f5f5;
-//   }
-  
-//   .orders-table img {
-//     width: 40px;
-//     height: 40px;
-//     border-radius: 50%;
-//   }
-  

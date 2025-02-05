@@ -139,7 +139,6 @@ export function ImageCarousel({
       <button
         className={`arrow${isFrom === 'gig-details' ? '-gig-details' : ''
           } right`}
-        // className={"arrow right"}
         onClick={(e) => nextImage(e)}
       >
         <SvgIcon iconName={'arrowDown'} />

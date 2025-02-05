@@ -1,247 +1,205 @@
-
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .sign-div {
-    width: 875px; /* 50% of the viewport width */
-    height: 645px; /* Optional height, adjust as needed */
-    background: white;
-    border-radius: 10px;
-    display: flex;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-  }
-  
-  .left-purple-ad {
-    width: 50%;
-    background: #9c27b0;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // justify-content: center;
-    // padding: 20px;
-    // text-align: center;
-    overflow: hidden; /* Ensures content doesn't overflow */
-    position: relative;
-
-  }
-  
-  .left-purple-ad .img-container {
-    width: 100%; /* Ensure the container doesn't exceed its parent's width */
-    height: 100%; /* Prevents overflowing in height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .left-purple-ad .img-container img {
-    width: 100%; /* Make the image responsive */
-    height: 100%; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevents it from being larger than its container */
-    max-height: 100%; /* Ensures the image fits within the container */
-    object-fit: contain; /* Ensures the entire image is visible */
-  }
-  
-  
-  .right-user-sign {
-    width: 50%; /* 50% of the parent (sign-div) width */
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 69px;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    font-size:18px;
-line-height:31.2px;
-text-align:left;
-letter-spacing:normal;
-h2{
-  font-size: 24px;
-  font-weight: 700 ;
-  margin-bottom: 32px;
-}
-label{
-  font-size: 16px ;
-  line-height: 24px;
-}
-input{
-  font-size: 16px ;
-  line-height: 24px;
-border-color: #858688;
-color: #858688;
-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-    
-    p{
-      margin-top: auto;
-      margin-bottom: 32px;
-      font-size:12px;
-line-height:20px;
-text-align:start;
-letter-spacing:normal;
-color: #74767e;
-    }
+.sign-div {
+  width: 875px;
+  height: 645px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.left-purple-ad {
+  width: 50%;
+  background: #9c27b0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.left-purple-ad .img-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-purple-ad .img-container img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+.right-user-sign {
+  width: 50%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 69px;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 31.2px;
+  text-align: left;
+  letter-spacing: normal;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 32px;
   }
-  
-  .right-user-sign form {
-    display: flex;
-    flex-direction: column;
-    gap:8px
-  }
-  
-  .right-user-sign form label {
-    display: flex;
-    flex-direction: column;
-    font-size:16px;
+
+  label {
+    font-size: 16px;
     line-height: 24px;
-    color: $fiverr-classic-dark-grey;
-    font-family: $fiverr-defult-font;
-    font-weight: 600;
   }
-  
-  .right-user-sign form button {
-    width: 356px;
-    height: 40px;
-    margin-top: 44px;
-    padding-left: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 24px;
-    background-color: #F5F5F5;
-    color:#C5C6C9;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+  input {
+    font-size: 16px;
+    line-height: 24px;
+    border-color: #858688;
+    color: #858688;
+    width: 100%;
   }
-  
-  .right-user-sign form button:hover {
-    background-color: $fiverr-classic-dark-grey;
-    color: white;}
-.form-submit-bt:hover{
+
+
+  p {
+    margin-top: auto;
+    margin-bottom: 32px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #74767e;
+  }
+}
+
+.right-user-sign form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+.right-user-sign form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 24px;
+  color: $fiverr-classic-dark-grey;
+  font-family: $fiverr-defult-font;
+  font-weight: 600;
+}
+
+.right-user-sign form button {
+  width: 356px;
+  height: 40px;
+  margin-top: 44px;
+  padding-left: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 24px;
+  background-color: #F5F5F5;
+  color: #C5C6C9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.right-user-sign form button:hover {
+  background-color: $fiverr-classic-dark-grey;
+  color: white;
+}
+
+.form-submit-bt:hover {
   background-color: $fiverr-classic-dark-grey;
   color: white;
 
 }
-  .left-purple-ad .content {
-    font-family: $fiverr-defult-font;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-    // text-align: center;
-    height: 50%;
-    width: 100%;
-    padding-top:  54px;
-    // padding-bottom:  54px;
-    padding-left: 40px;
-    padding-right: 40px;
-    // margin-top: 54px;
-    top: 0;
-    left: 0;
-  }
-  
-  .left-purple-ad h2 {
-    // margin-top: 54px; /* Space from the top of the parent */
-    margin-bottom: 24px; /* Space between the h2 and the ul */
-    font-size:32px;
-line-height:38.4px;
-text-align:start;
-letter-spacing:normal;
-  }
-  
-  .left-purple-ad ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Space between list items */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    list-style-type: none; /* Remove bullet points */
-    max-height: 50%; /* Ensure it doesn't go past the middle */
-    font-size:18px;
-line-height:26px;
-text-align:left;
-letter-spacing:normal;
 
-  }
-  
-  .left-purple-ad ul li {
-    font-size: 1rem;
-    font-size:18px;
-    line-height:26px;
-    text-align:left;
-    letter-spacing:normal;
-    
-  }
-  
-  .left-purple-ad img {
-    max-height: 50%; /* Ensure the image doesn't take too much space */
-    object-fit: contain; /* Preserve aspect ratio */
-    margin-top: auto; /* Push the image to the bottom if space allows */
-  }
+.left-purple-ad .content {
+  font-family: $fiverr-defult-font;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+  padding-top: 54px;
+  padding-left: 40px;
+  padding-right: 40px;
+  top: 0;
+  left: 0;
+}
 
-  .toggle-sign-join-span{
-margin-left: 1em;
-text-decoration: underline;
-font-size: 16px;
-line-height: 24px;
-font-weight: 400
-  }
-  .toggle-sign-join-span:hover{
-    cursor: pointer
-  }
+.left-purple-ad h2 {
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: 38.4px;
+  text-align: start;
+  letter-spacing: normal;
+}
+
+.left-purple-ad ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  max-height: 50%;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: left;
+  letter-spacing: normal;
+
+}
+
+.left-purple-ad ul li {
+  font-size: 1rem;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: left;
+  letter-spacing: normal;
+
+}
+
+.left-purple-ad img {
+  max-height: 50%;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+.toggle-sign-join-span {
+  margin-left: 1em;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400
+}
+
+.toggle-sign-join-span:hover {
+  cursor: pointer
+}
 
 
-/* The sign-in div */
-//   .sign-in {
-//     cursor: pointer;
-//     padding: 10px 20px;
-//     background-color: #007bff;
-//     color: #fff;
-//     border-radius: 5px;
-//     text-align: center;
-//     width: 100px;
-//     margin: 20px auto;
-//   }
-  
-//   /* Modal overlay */
-//   .modal-overlay {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100vw;
-//     height: 100vh;
-//     background-color: rgba(0, 0, 0, 0.5);
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     z-index: 1000;
-//   }
-  
-//   /* The sign-div (modal content) */
-//   .sign-div {
-//     background-color: #fff;
-//     padding: 20px;
-//     border-radius: 10px;
-//     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-//     text-align: center;
-//     width: 50%;
-//   }
-  
-
-
-//shinoi6
 
 .modal-overlay {
   position: fixed;
@@ -249,7 +207,7 @@ font-weight: 400
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,6 +223,3 @@ font-weight: 400
   max-width: 90%;
   text-align: center;
 }
-
- 
-

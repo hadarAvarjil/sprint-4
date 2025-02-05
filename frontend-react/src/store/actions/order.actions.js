@@ -98,7 +98,6 @@ export async function addOrderMsg(orderId, txt) {
     }
 }
 
-// Command Creators:
 function getCmdSetOrders(orders) {
     return {
         type: SET_ORDERS,
@@ -143,7 +142,6 @@ function getCmdaddOrderMsg(msg) {
     }
 }
 
-// unitTestActions()
 async function unitTestActions() {
     await loadOrders()
     await addOrder(orderService.getEmptyOrder())
@@ -152,5 +150,4 @@ async function unitTestActions() {
         title: 'Order-Good',
     })
     await removeOrder('m1oC7')
-    // TODO unit test addOrderMsg
 }

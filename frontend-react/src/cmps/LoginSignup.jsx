@@ -8,13 +8,12 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
     const [credentials, setCredentials] = useState({
         username: '',
         password: '',
-        // fullName: '',
-        // imgUrl: '',
+
     })
 const [localIsSignup, setLocalIsSignup] = useState(isSignup);
 useEffect(() => {
     setLocalIsSignup(isSignup);
-}, [isSignup]); // SHINOI
+}, [isSignup]); 
 
     const handleClose = () => {
         setIsLoginSignUpShow(false)
@@ -26,15 +25,12 @@ useEffect(() => {
     const onLogin = (e) => {
         e.preventDefault();
     
-        // Validation for required fields
         if (!credentials.username || !credentials.password) {
             showErrorMsg('All fields are required.');
             return;
         }
     
-        // Call the appropriate function based on the mode
-        // isSignup ? _signup(credentials) : _login(credentials); ////
-        localIsSignup ? _signup(credentials) : _login(credentials); // SHINOI
+        localIsSignup ? _signup(credentials) : _login(credentials);
 
     }
 
@@ -69,7 +65,7 @@ useEffect(() => {
 
     if (!isLoginSignUpShow) return null
     const toggleSignupMode = () => {
-        setLocalIsSignup((prev) => !prev); // SHINOI
+        setLocalIsSignup((prev) => !prev); 
     }
     return (
         <section className="login-signup">
@@ -90,23 +86,18 @@ useEffect(() => {
                 <div className="right-user-sign">
                     <form onSubmit={onLogin}>
                         <section>
-                        <h2>{localIsSignup ? 'Create a new account' : 'Sign in to your account'}</h2> {/* SHINOI */}
+                        <h2>{localIsSignup ? 'Create a new account' : 'Sign in to your account'}</h2> 
                             <h5>
-                                {localIsSignup ? 'Already have an account?' : 'Don’t have an account?'} {/* SHINOI */}
+                                {localIsSignup ? 'Already have an account?' : 'Don’t have an account?'} 
                                
                             <span className='toggle-sign-join-span'
                                 type="button"
-                                onClick={toggleSignupMode} // SHINOI
+                                onClick={toggleSignupMode} 
                                 >
-                                    {localIsSignup ? 'Sign in' : 'Join here'} {/* SHINOI */}
+                                    {localIsSignup ? 'Sign in' : 'Join here'} 
                                     </span>
                             </h5>
-                            {/* <button
-                                type="button"
-                                onClick={() => setIsSignup(!isSignup)}
-                            >
-                                {isSignup ? 'Sign in' : 'Join here'}
-                            </button> */}
+             
                         </section>
 
                         <label htmlFor="username">Username</label>
@@ -130,14 +121,14 @@ useEffect(() => {
                             required
                         />
 
-{localIsSignup && ( // SHINOI
+{localIsSignup && ( 
                             <>
                                 <label htmlFor="fullName">Full name</label>
                                 <input
                                     id="fullName"
                                     name="fullName"
                                     type="text"
-                                    value={credentials.fullName || ''} // SHINOI
+                                    value={credentials.fullName || ''} 
                                     onChange={handleChange}
                                     required
                                 />
@@ -145,7 +136,6 @@ useEffect(() => {
                         )}
 
                         <button className="form-submit-btn" type="submit">Submit</button>
-                        {/* <button type="button" onClick={handleClose}>Close</button> */}
                     </form> 
                           
                     <p>By joining, you agree to the Gigster <NavLink to="/terms"><span onClick={handleClose}>Terms of Service</span></NavLink> and to occasionally receive emails from us. Please read our <NavLink to="/privacy"><span onClick={handleClose}>Privacy Policy</span></NavLink> to learn how we use your personal data.</p>

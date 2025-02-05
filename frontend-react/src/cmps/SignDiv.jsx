@@ -4,37 +4,33 @@ import React, { useState } from "react";
  export function SignDiv() {
    const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");
-   const [isSignDivVisible, setIsSignDivVisible] = useState(true); // State to control visibility
+   const [isSignDivVisible, setIsSignDivVisible] = useState(true);
  
    const handleClose = () => {
-     setIsSignDivVisible(false); // Hide both the modal and the overlay
+     setIsSignDivVisible(false); 
    };
  
    const handleSubmit = () => {
      console.log("Username:", username);
      console.log("Password:", password);
  
-     // Save to localStorage if needed
      localStorage.setItem("username", username);
      localStorage.setItem("password", password);
  
-     // Clear inputs after submission
      setUsername("");
      setPassword("");
-     handleClose(); // Optionally close the modal after submit
+     handleClose(); 
    };
  
-   if (!isSignDivVisible) return null; // Hide the modal and overlay if not visible
+   if (!isSignDivVisible) return null; 
  
    return (
      <>
-       {/* Overlay */}
        <div
          className="overlay"
-         onClick={handleClose} // Close the modal if the overlay is clicked
+         onClick={handleClose} 
        ></div>
  
-       {/* Modal */}
        <div className="sign-div">
          <div className="left-purple-ad">
 
@@ -63,7 +59,7 @@ import React, { useState } from "react";
            <h2>Sign in to your account</h2>
            <form
              onSubmit={(e) => {
-               e.preventDefault(); // Prevents page reload
+               e.preventDefault(); 
                handleSubmit();
              }}
            >
@@ -93,12 +89,6 @@ import React, { useState } from "react";
                />
              </div>
              <button type="submit">Continue</button>
-             {/* <button
-               type="button" // Ensure it's not treated as a submit button
-               onClick={handleClose}
-             >
-               Close
-             </button> */}
            </form>
            <p>By joining, you agree to the Gigster Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
          </div>

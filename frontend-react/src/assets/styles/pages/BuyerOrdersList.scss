@@ -16,8 +16,17 @@
                     }
                 }}
         tbody {
+            tr{
+                .td-gig-img{
+            img{
+                width:70px;
+                height: 60px;
+                object-fit: cover;
+            }
+            }
+        }
             td{
-                text-align: center;
+                text-align: start;
             }
 
             img.gigFirstImgUrl {
@@ -32,6 +41,10 @@
                 gap: 10px;
                 height: 120px;
                 margin-bottom: 0px;
+                img.seller{
+                    width: 50px;
+                    border-radius: 50%;
+                }
                 @media(max-width:720px){
                     font-size: 14px;
                     line-height: 14px;

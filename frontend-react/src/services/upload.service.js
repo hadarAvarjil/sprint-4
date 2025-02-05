@@ -17,12 +17,10 @@ async function uploadImg(ev) {
 
 	const formData = new FormData()
 	
-    // Building the request body
 	formData.append('file', file)
 
 	formData.append('upload_preset', UPLOAD_PRESET)
 	
-    // Sending a post method request to Cloudinary API
 	try {
 		const res = await fetch(UPLOAD_URL, { 
 			method: 'POST', 
