@@ -52,7 +52,6 @@ export function orderReducer(state = initialState, action) {
     return newState
 }
 
-// unitTestReducer()
 
 function unitTestReducer() {
     var state = initialState

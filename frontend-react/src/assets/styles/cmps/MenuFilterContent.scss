@@ -25,7 +25,7 @@
     transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
     transition-delay: 0.24s;
 
-    min-height: 150px; // only if .grouped
+    min-height: 150px;
 
     .radio-list {
       .radio-item-wrapper {
@@ -40,7 +40,6 @@
           border-radius: 8px;
           color: $clrSecondary8;
           cursor: pointer;
-          // font-size: 14px;
           font-weight: 600;
           line-height: 22px;
           padding: 12px;

@@ -14,7 +14,6 @@ export function GigList({ gigs }) {
   }, [])
  
   return (  
-    // shinoi4
     <div className="grid-gig-list-container" >
     <div className="gig-list-container">
      

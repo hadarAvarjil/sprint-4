@@ -106,7 +106,6 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                             borderRadius: "4px",
                                             fontWeight: "bold",
                                             textAlign: "center",
-                                            // width: "100px", //shinoi
                                         }}
                                     >
                                         {status}

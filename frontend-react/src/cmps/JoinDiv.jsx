@@ -5,10 +5,10 @@ import React, { useState } from "react";
    const [NewUsername, setNewUsername] = useState("");
    const [NewFullname, setNewFullname] = useState("");
    const [NewPassword, setNewPassword] = useState("");
-   const [isJoinDivVisible, setIsJoinDivVisible] = useState(true); // State to control visibility
+   const [isJoinDivVisible, setIsJoinDivVisible] = useState(true);
  
    const handleClose = () => {
-     setIsJoinDivVisible(false); // Hide both the modal and the overlay
+     setIsJoinDivVisible(false); 
    };
  
    const handleSubmit = () => {
@@ -16,29 +16,25 @@ import React, { useState } from "react";
      console.log("NewFullname:", NewFullname);
      console.log("NewPassword:", NewPassword);
  
-     // Save to localStorage if needed
      localStorage.setItem("NewUsername", NewUsername);
      localStorage.setItem("NewFullname", NewFullname);
      localStorage.setItem("NewPassword", NewPassword);
  
-     // Clear inputs after submission
      setNewUsername("");
      setNewFullname("");
      setNewPassword("");
-     handleClose(); // Optionally close the modal after submit
+     handleClose(); 
    };
  
-   if (!isJoinDivVisible) return null; // Hide the modal and overlay if not visible
+   if (!isJoinDivVisible) return null; 
  
    return (
      <>
-       {/* Overlay */}
        <div
          className="overlay"
-         onClick={handleClose} // Close the modal if the overlay is clicked
+         onClick={handleClose} 
        ></div>
  
-       {/* Modal */}
        <div className="sign-div">
          <div className="left-purple-ad">
   
@@ -66,7 +62,7 @@ import React, { useState } from "react";
            <h2>Join Gigster</h2>
            <form
              onSubmit={(e) => {
-               e.preventDefault(); // Prevents page reload
+               e.preventDefault(); 
                handleSubmit();
              }}
            > 
@@ -104,12 +100,7 @@ import React, { useState } from "react";
                />
              </div>
              <button type="submit">Submit</button>
-             {/* <button
-               type="button" // Ensure it's not treated as a submit button
-               onClick={handleClose}
-             >
-               Close
-             </button> */}
+
            </form>
            <p>By joining, you agree to the Gigster Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.</p>
 

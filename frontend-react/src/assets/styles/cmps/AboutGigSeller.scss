@@ -1,9 +1,4 @@
 .about-gig-seller {
-    // width: 100%;
-    // display: flex;
-    // align-items: stretch; // Ensure all rows stretch to the same height
-    // // padding: 20px;
-    // // background-color: #f9f9f9;
 
     .gig-seller-details {
         display: grid;
@@ -85,14 +80,14 @@
 
 .avatar-container {
     position: relative;
-    width: 100px; // Adjust the size
+    width: 100px;  
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid transparent;
     border-radius: 50%;
-    background: linear-gradient(15deg, #32c787, #28a745); // Green gradient
+    background: linear-gradient(15deg, #32c787, #28a745);
     padding: 5px;
     animation: shine 2s infinite; 
 
@@ -133,7 +128,7 @@
 
         .rating {
             .stars {
-                color: #0b0b0b; // Gold color for stars
+                color: #0b0b0b;
                 font-size: 14px;
             }
 

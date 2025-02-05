@@ -4,7 +4,6 @@ import SvgIcon from './SvgIcon.jsx';
 export function FAQAccordion() {
     const [activeIndex, setActiveIndex] = useState(null)
 
-    // Function to toggle the accordion state
     function toggleAccordion(index) {
         setActiveIndex(activeIndex === index ? null : index)
     }

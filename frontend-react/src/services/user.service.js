@@ -24,7 +24,6 @@ async function getUsers() {
 
 async function getById(userId) {
   const user = await httpService.get(BASE_URL + userId)
-  // console.log('from user.service',user)/// for debugg
   return user
 }
 
@@ -52,7 +51,6 @@ async function signup(userCred) {
 }
 
 async function logout() {
-  //socket tag
   socketService.emit('unset-user-socket')
   try {
     await httpService.post('auth/logout')
@@ -64,7 +62,6 @@ async function logout() {
 }
 
 function setLoggedinUser(user) {
-  //socket tag
   socketService.emit('set-user-socket', user._id)
   sessionStorage.setItem(SESSION_KEY_LOGGEDIN_USER, JSON.stringify(user))
   return user
@@ -90,11 +87,8 @@ function getUserRatingCount(user) {
     case 'Pro Talent':
       countMin = 501
       break
-    // case 'Pro Talent':
-    //   return '+1k'
 
     default:
-      // console.log('NO LEVEL! :(')
       break
   }
   return utilService.getRandomIntInclusive(countMin, countMax)

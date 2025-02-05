@@ -11,19 +11,19 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset, onClose }) {
     (storeState) => storeState.orderModule.dropdownOrders
   ) || [];
   const [userOrders, setUserOrders] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Loader state
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     if (dropdownOrders.length) {
       loadOrderData();
     } else {
-      setIsLoading(false); // Stop loading if there are no orders
+      setIsLoading(false); 
     }
   }, [dropdownOrders]);
 
   async function loadOrderData() {
     try {
-      setIsLoading(true); // Start loading
+      setIsLoading(true); 
       const ordersData = await Promise.all(
         dropdownOrders.map(async (order) => {
           try {
@@ -49,7 +49,7 @@ export function UserOrdersDropdownMenu({ loggedInUser, topOffset, onClose }) {
     } catch (err) {
       console.error("Unexpected error while loading user orders:", err);
     } finally {
-      setIsLoading(false); // Stop loading
+      setIsLoading(false); 
     }
   }
 

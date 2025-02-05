@@ -1,6 +1,6 @@
 .app-header-home {
-  display: grid; //shinoi4
-  grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr); //shinoi4
+  display: grid; 
+  grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr); 
   position: fixed;
   top: 0;
   left: 0;
@@ -65,7 +65,7 @@
     border-style: solid;
     border-width: 1px;
     border-color: #b5b6ba76;
-    border-style: none; //shnoi4
+    border-style: none; 
   }
 
   .category-nav .container {
@@ -94,26 +94,22 @@
     content: '';
     position: absolute;
     bottom: 0;
-    /* Position the line at the bottom of the link */
     left: 0;
     width: 0;
     height: 3px;
-    /* Thickness of the line */
     background-color: $bgColor2;
-    /* Green color for the line */
   }
 
   .category-nav a:hover::after {
     width: 100%;
-    /* Make the line fully visible without animation */
+    
   }
 }
 
 .header-inner-border {
-  //shinoi4
-  grid-column: 1/-1; //shinoi4
-  height: 1px; //shinoi4
-  background-color: #CCCCCC; //shinoi4
+  grid-column: 1/-1; 
+  height: 1px; 
+  background-color: #CCCCCC; 
 }
 
 
@@ -135,27 +131,17 @@
 
 .app-header-home-search-bar {
   .search-bar {
-    // height: 42px;
     align-self: center;
     flex: 1;
     width: 100%;
-    // margin-left:25em;
-    // margin-right: 3em;
-    // border-color: black;
-    // padding-left: 2px;
     font-family: $fiverr-defult-font;
 
 
     input[type="text"] {
-      // padding: 10px 2px 10px 16px;
       border: 1px solid $clrSecondary45;
       font-size: 16px;
       font-family: $fiverr-defult-font;
-      // max-width: 600px;
       border-color: black;
-      // margin-right: -2px;
-      // width: 100%;
-
 
       &:focus {
         outline: none;
@@ -166,7 +152,6 @@
     }
 
     button {
-      // margin: 0;
       padding: 8px 16px;
       border-radius: 0px 5px 5px 0px;
       border-left: none;

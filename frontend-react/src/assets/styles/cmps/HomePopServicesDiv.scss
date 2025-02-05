@@ -2,11 +2,12 @@
   max-width: 100%;
   margin-top: 78px;
   position: relative;
+
   h1 {
     color: $fiverr-classic-dark-grey;
     font-size: 48px;
     margin-bottom: 44px;
-    line-height:50.4px;
+    line-height: 50.4px;
   }
 }
 
@@ -21,28 +22,27 @@
   width: 100%;
   overflow: hidden;
   height: auto;
-  // gap: 30px;
 }
+
 .popular-div {
   display: flex;
   flex-direction: column;
-  flex: 0 0 calc(16.666% - 35px); /* 16.666% for 6 items per row, minus margin */
+  flex: 0 0 calc(16.666% - 35px);
   margin: 0 13px;
-  // text-align: center;
   background-color: #f0f0f0;
   border-radius: 15px;
   color: white;
   padding: 25px 6px 0px 6px;
   justify-content: space-between;
-  // max-height: 280px;
   height: 266px;
   width: 92px;
-  // height: auto;
-  h3{
+
+  h3 {
     padding-left: 10px;
   }
 }
-.popular-div :hover{
+
+.popular-div :hover {
   cursor: pointer;
 }
 
@@ -60,8 +60,8 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background:white;
-  color:black;
+  background: white;
+  color: black;
   font-size: 24px;
   border: none;
   cursor: pointer;
@@ -74,8 +74,8 @@
   padding-left: 10px;
 
   box-shadow:
-  rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px,
-  
+    rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px,
+
 }
 
 .arrow-btn.left-arrow {
@@ -123,14 +123,15 @@
 }
 
 .green-swamp-div {
-  background-color:$green-swamp;
+  background-color: $green-swamp;
 }
 
 .pink-div {
   background-color: $pink;
-  
+
 }
-.first-pop-div{
+
+.first-pop-div {
   margin-left: 0;
 }
 
@@ -142,16 +143,22 @@
 
 /* Default styles for the home-carousel */
 .home-carousel-container {
-  width: 100vw; /* Full viewport width */
-  overflow-x: hidden; /* Hide any horizontal overflow */
+  width: 100vw;
+  /* Full viewport width */
+  overflow-x: hidden;
+  /* Hide any horizontal overflow */
 }
 
 .home-carousel {
   display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  gap: 16px; /* Add spacing between items */
-  padding: 10px; /* Add padding for better spacing */
-  scroll-behavior: smooth; /* Smooth scrolling effect */
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  gap: 16px;
+  /* Add spacing between items */
+  padding: 10px;
+  /* Add padding for better spacing */
+  scroll-behavior: smooth;
+  /* Smooth scrolling effect */
 }
 
 
@@ -185,48 +192,49 @@
 
 @media (max-width: 900px) {
   .popular-div {
-    flex: 0 0 180px; /* Slightly smaller on medium screens */
+    flex: 0 0 180px;
     height: 188px;
     max-width: 138px;
-padding-left: 4px;
-padding-right: 4px;
-padding-bottom: 4px;
-padding-top: 12px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-top: 12px;
     justify-content: space-between;
-    // gap: 30px;
-    h3{
+
+    h3 {
       font-size: 14px
     }
- 
 
-    }
-}
-@media (max-width:600px){
-  .home-carousel-container {
-    width: 100vw; /* Full viewport width */
-    overflow-x: hidden; /* Hide any horizontal overflow */
-  }
-  
-  .home-carousel {
-    display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 16px; /* Add spacing between items */
-    padding: 10px; /* Add padding for better spacing */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-  }
-}
-@media (min-width:600px){
-  .home-carousel-container {
-    width: 100vw; /* Full viewport width */
-    overflow-x: hidden; /* Hide any horizontal overflow */
-  }
-  
-  .home-carousel {
-    display: flex;
-    overflow-x: hidden; /* Enable horizontal scrolling */
-    gap: 16px; /* Add spacing between items */
-    padding: 10px; /* Add padding for better spacing */
-    scroll-behavior:auto; /* Smooth scrolling effect */
+
   }
 }
 
+@media (max-width:600px) {
+  .home-carousel-container {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .home-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px;
+    scroll-behavior: smooth;
+  }
+}
+
+@media (min-width:600px) {
+  .home-carousel-container {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .home-carousel {
+    display: flex;
+    overflow-x: hidden;
+    gap: 16px;
+    padding: 10px;
+    scroll-behavior: auto;
+  }
+}

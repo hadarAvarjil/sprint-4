@@ -1,6 +1,4 @@
-// //shinoi4
-// $b: .25em;
-// $c: #393939;
+
 
 .grid-main-container{ 
     min-height: 35vw;
@@ -51,15 +49,13 @@
     }
 }
 
-/* General styles */
 .user-contact-card {
-    /* Add some basic styling for the user-contact-card */
     width: 300px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; /* Add position relative for normal layout */
+    position: relative; 
   }
   
   .container-user-details-spesific {
@@ -81,28 +77,26 @@ gap: 3px;
 
   }
   
-  /* Media query for screen widths 900px and below */
   @media (max-width: 900px) {
     
     .container-user-details-spesific {
-      display: block; /* Stacks elements vertically */
+      display: block; 
     }
   
     .user-main-info {
-      margin-bottom: 20px; /* Adds some space between main info and contact card */
+      margin-bottom: 20px; 
     }
   
-    /* Make the user-contact-card a sticky footer */
+   
     .user-contact-card {
         z-index: 99999;
-// box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
       width: 100%;
       box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-      background-color: #fff; /* Ensures background covers the footer */
+      background-color: #fff; 
       border-radius: 0;
       padding: 20px;
       margin-left: 0px;

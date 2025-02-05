@@ -1,29 +1,21 @@
 .purple-signup-ad {
-    // color: white;
     background-color: $purple;
     margin-top: 130px;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 24px;
     padding-right: 24px;
-    // height: 246px;
     width: 100%;
     max-width: 1400px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    /* Ensures padding is included in size calculations */
   
     column-gap: 40px;
     align-items: center;
     border-radius: 12px;
     position: relative;
-    // font-size: 30px;
-    // font-stretch: 100%;
-    // font-weight: 200;
     font-family: $fiverr-defult-font;
-    // line-height: 38px;
-    // justify-content: space-between;
     @media(max-width:870px){
       margin-right: 32px;
     }

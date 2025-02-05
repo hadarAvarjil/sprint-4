@@ -37,14 +37,11 @@
         }
 
         .user-orders-container {
-            // background: blue;
             width: 370px;
             height: 410px;
             display: flex;
             flex-direction: column;
-            // gap: 20px;
             overflow-y: auto;
-            /* Enables vertical scrolling when content overflows */
 
 
             .user-orders-gig {

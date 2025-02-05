@@ -20,12 +20,12 @@ export function VideoDiv(){
        bottom: "20px",
        left: "35%",
        zIndex: 2,
-       background: "rgba(255, 255, 255, 0.37)", // Optional semi-transparent background
+       background: "rgba(255, 255, 255, 0.37)", 
        padding: "5px",
        borderRadius: "5px",
        width:'15%',
        height:'15%',
-       alignItems: "center", // Centers vertically
+       alignItems: "center", 
        justifyContent: "center",        }}
    >
       <img
