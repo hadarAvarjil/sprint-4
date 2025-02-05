@@ -32,6 +32,10 @@
                 gap: 10px;
                 height: 120px;
                 margin-bottom: 0px;
+                img.seller{
+                    width: 50px;
+                    border-radius: 50%;
+                }
                 @media(max-width:720px){
                     font-size: 14px;
                     line-height: 14px;
