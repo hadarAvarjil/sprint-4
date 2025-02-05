@@ -209,7 +209,7 @@ export function GigPreview({
           <div className="gig-title flex">
             <span className="gig-title b">{updatedGig.title}</span>
           </div>
-        )}x§
+        )}
 
         {isFrom !== "userProfile" && (
           <div className="gig-price flex">
