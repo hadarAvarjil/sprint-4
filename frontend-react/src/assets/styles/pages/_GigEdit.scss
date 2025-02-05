@@ -12,7 +12,6 @@
             .form-inputs {
                 gap: 1em;
                 width: 100%;
-                // background: $clrSecondary0;
                 background-color: white;
                 border: 1px solid $clrSecondary4;
                 border-radius: 0.5em;
@@ -37,7 +36,6 @@
 
                         .character-counter {
                             position: absolute;
-                            // bottom: 5px;
                             top: 55px;
                             right: 25px;
                         }
@@ -147,16 +145,6 @@
                             }
                         }
 
-                        &:hover {
-                            // background: $black-btn-hover;
-                            // color: white;
-
-                            i {
-                                svg {
-                                    // fill: white;
-                                }
-                            }
-                        }
                     }
 
                     &:last-child {
@@ -204,7 +192,6 @@
         }
 
         .gig-preview-container {
-            // background: $clrSecondary0;
             background-color: white;
 
             border: 1px solid $clrSecondary4;
@@ -312,7 +299,6 @@
 
                 .title-input-group {
                     .add-title {
-                        // background-color: blue;
                         display: flex;
                         flex-direction: row;
                         margin-bottom: 36px;
@@ -351,11 +337,9 @@
 
                         input {
                             font-family: $fiverr-defult-font;
-                            // width: 400px;
                             height: 82px;
                             padding-left: 16px;
                             padding-right: 16px;
-                            // padding-top: 9px;
                             padding-bottom: 9px;
                             font-size: 18px;
                             line-height: 25px;
@@ -403,11 +387,6 @@
 
                     .Subcategories-info {
                         width: 100%;
-
-                        // padding-right: 20px;
-                        select {
-                            // margin-top: 30px;
-                        }
                     }
                 }
 

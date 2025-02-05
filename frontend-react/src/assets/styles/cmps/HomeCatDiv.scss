@@ -10,10 +10,8 @@
 
 .cat-div {
   display: flex;
-  // box-shadow: rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px;
   box-shadow:
     rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px,
-    /* Outer shadow */
     inset 0 0 10px white;
   border-radius: 16px;
   width: 130px;
@@ -55,20 +53,14 @@
 @media (max-width: 900px) {
   .cat-divs-container {
     display: grid;
-    /* Switch to grid layout for wrapping */
     grid-template-columns: repeat(auto-fit, 111px);
-    /* Fixed width for each column */
     justify-content: center;
-    /* Center the grid items horizontally */
     gap: 36px;
-    /* Space between items */
   }
 
   .cat-div {
     width: 152px;
-    /* Fixed width */
     height: 152px;
-    /* Fixed height */
     padding: 0px;
     box-shadow: none;
     justify-content: space-between;
@@ -86,7 +78,6 @@
       object-fit: cover;
       box-shadow:
         rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px, rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px, rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px, rgba(0, 0, 0, 0.09) 0px 0px 11px 0px,
-        /* Outer shadow */
         inset 0 0 10px white;
     }
 
@@ -97,29 +88,19 @@
   @media(max-width: 1250px) {
     .cat-divs-container {
       display: flex;
-      /* Use flexbox for horizontal alignment */
       flex-wrap: nowrap;
-      /* Prevent wrapping */
       overflow-x: auto;
-      /* Allow horizontal scrolling */
       gap: 16px;
-      /* Space between items */
       padding: 12px;
-      /* Optional padding for better appearance */
       box-sizing: border-box;
-      /* Ensure padding doesn't affect width */
       max-width: 100vw;
-      /* Ensure it doesn't exceed the viewport */
       height: 154px
     }
 
     .cat-div {
       width: 124px;
-      /* Fixed width for each div */
       height: 124px;
-      /* Fixed height for each div */
       flex: 0 0 auto;
-      /* Prevent shrinking or growing */
     }
   }
 }

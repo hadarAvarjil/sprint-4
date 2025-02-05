@@ -4,7 +4,6 @@ import { userService } from '../user'
 import { utilService } from '../util.service.js'
 
 const STORAGE_KEY = 'gig'
-// _createGigs()
 
 export const gigService = {
   query,
@@ -783,10 +782,3 @@ function getEmptyGig() {
 //   }
 // }
 
-// id: "r101",
-//             userId: "u107",
-//             rating: 5,
-//             text: "Fantastic work! Highly recommended.",
-//             duration: "5 days",
-//             price: '$100 - $200',
-//             createAt: new Date().toLocaleString('en-US', { month: 'short', year: 'numeric' })

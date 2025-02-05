@@ -57,16 +57,16 @@
 
         &::before {
             border-color: transparent $clrSecondary2 transparent transparent;
-            border-width: 6px 9px 6px 0; // Adjusted to match the background triangle
-            left: -9px; // Align with the border of the box
+            border-width: 6px 9px 6px 0; 
+            left: -9px; 
             top: 50%;
             transform: translateY(-50%);
         }
 
         &::after {
             border-color: transparent #fff transparent transparent;
-            border-width: 5px 8px 5px 0; // Proportional to the border triangle
-            left: -8px; // Align inside the border
+            border-width: 5px 8px 5px 0; 
+            left: -8px; 
             top: 50%;
             transform: translateY(-50%);
             z-index: 1;
@@ -85,14 +85,14 @@
         transition: all 0.2s ease;
 
         &:hover {
-            background-color: #f0f0f0; // Slightly darker background on hover
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Shadow on hover
+            background-color: #f0f0f0; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         svg {
             width: 20px;
             height: 20px;
-            color: #555; // Icon color
+            color: #555;
         }
     }
 }

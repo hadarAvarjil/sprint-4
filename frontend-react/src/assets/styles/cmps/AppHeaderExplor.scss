@@ -10,8 +10,6 @@
 
   .container {
     display: flex;
-    // max-width: 1400px;
-    // margin: auto;
     justify-content: space-between;
 
   }
@@ -363,76 +361,76 @@
       }
 
       .user-container {
-        position: relative; // Ensures dropdown is positioned relative to this container
-        display: inline-block; // Keeps the container's width tight around its content
+        position: relative;
+        display: inline-block;
       }
 
-        .user-circle {
-          width: 30px; 
-          height: 30px; 
-          border-radius: 50%; 
-          overflow: hidden; 
-          display: flex; 
-          justify-content: center;
-          align-items: center;
-          background-color: #f0f0f0; 
-          position: relative;
+      .user-circle {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        position: relative;
 
-          .user-dropdown-menu {
+        .user-dropdown-menu {
+          position: absolute;
+          top: calc(100% + 10px);
+          right: 0;
+          background-color: #ffffff;
+          border: 1px solid #ddd;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          z-index: 10;
+          border-radius: 8px;
+          width: max-content;
+          min-width: 200px;
+          display: flex;
+
+          &::before {
+            content: '';
             position: absolute;
-            top: calc(100% + 10px); // Place below the avatar with a gap
-            right: 0;
-            background-color: #ffffff; // Use white for the background
-            border: 1px solid #ddd; // Light border
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-            border-radius: 8px; // Rounded corners
-            width: max-content;
-            min-width: 200px; // Consistent minimum width
-            display: flex;
-          
-            &::before {
-              content: '';
-              position: absolute;
-              top: -8px; // Position arrow above the dropdown
-              right: 16px; // Align arrow with dropdown
-              border-width: 0 8px 8px 8px; // Triangle shape
-              border-style: solid;
-              border-color: transparent transparent #ffffff transparent; // White arrow
-            }
-          
-            &::after {
-              content: '';
-              position: absolute;
-              top: -7px; // Slightly below the `::before` element
-              right: 17px; // Align slightly inside
-              border-width: 0 7px 7px 7px; // Triangle shape
-              border-style: solid;
-              border-color: transparent transparent #ddd transparent; // Border color
-            }
-          
-            a,
-            button {
-              display: block;
-              padding: 10px 15px;
-              text-decoration: none;
-              font-size: 14px;
-              font-weight: 400;
-              color: #333; // Dark text color
-              cursor: pointer;
-          
-              &:hover {
-                background-color: #f5f5f5; // Light gray hover effect
-              }
-            }
-          
-            button {
-              background: none;
-              border: none;
-              text-align: left;
-              border-top: 1px solid #ddd; // Divider between buttons
+            top: -8px;
+            right: 16px;
+            border-width: 0 8px 8px 8px;
+            border-style: solid;
+            border-color: transparent transparent #ffffff transparent;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: -7px;
+            right: 17px;
+            border-width: 0 7px 7px 7px;
+            border-style: solid;
+            border-color: transparent transparent #ddd transparent;
+          }
+
+          a,
+          button {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #f5f5f5;
             }
           }
+
+          button {
+            background: none;
+            border: none;
+            text-align: left;
+            border-top: 1px solid #ddd;
+          }
+        }
 
         img {
           border-radius: 50%;
@@ -440,7 +438,7 @@
         }
       }
     }
-  
+
   }
 }
 
@@ -450,10 +448,10 @@
   align-items: center;
   gap: 20px;
 
-  a{
-    .img-container{
-      img{
-        width:20px;
+  a {
+    .img-container {
+      img {
+        width: 20px;
       }
     }
   }
@@ -477,70 +475,70 @@
 }
 
 .join-btn {
-  button{
+  button {
 
-  width: 62px;
-  height: 36px;
-  color: $green-fiverr;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 16px;
-  padding-left: 16px;
-  // margin-right: 59px;
-  border-style: solid;
-  border-width: 0.8px;
-  border-color: rgb(29, 191, 115);
-  border-radius: 4px;
-  font-size: 14px;
-  font-stretch: 100%;
-  font-family: Macan, "Helvetica Neue", Helvetica, Arial, ;
-  font-weight: 700;
-  line-height: 14px;
-  // padding-right: 24px;
-  transition-timing-function: ease;
-  transition-duration: 0.2s;
-  display: flex;
-  justify-content: center;
-    color:  #19a463;
-font-size: 14px;
-line-height: 14px;
-font-weight: 700;
+    width: 62px;
+    height: 36px;
+    color: $green-fiverr;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-style: solid;
+    border-width: 0.8px;
+    border-color: rgb(29, 191, 115);
+    border-radius: 4px;
+    font-size: 14px;
+    font-stretch: 100%;
+    font-family: Macan, "Helvetica Neue", Helvetica, Arial, ;
+    font-weight: 700;
+    line-height: 14px;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+    display: flex;
+    justify-content: center;
+    color: #19a463;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
     background-color: white;
   }
 }
 
 .join-btn:hover {
   border-radius: 4px;
-cursor: pointer;
+  cursor: pointer;
   background-color: #19a463;
-  button{
+
+  button {
     background-color: #19a463;
     color: white;
 
   }
 }
 
-.signIn-btn{
-  button{
-  background-color:white;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: left;
-  text-decoration: none;
-  letter-spacing: normal;
-  color: #74767e;
-  font-weight: 600;
-  font-family: $fiverr-defult-font;
-  transition-duration: 0.2s;
+.signIn-btn {
+  button {
+    background-color: white;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+    letter-spacing: normal;
+    color: #74767e;
+    font-weight: 600;
+    font-family: $fiverr-defult-font;
+    transition-duration: 0.2s;
   }
-  @media(max-width:600px){
+
+  @media(max-width:600px) {
     display: none;
   }
 }
 
-.signIn-btn:hover{
-  button{
-  color: $green-fiverr;
+.signIn-btn:hover {
+  button {
+    color: $green-fiverr;
   }
 
 }
@@ -551,7 +549,7 @@ cursor: pointer;
 }
 
 .logo-search-bar-container {
-  
+
   display: flex;
   flex: 3;
 }
@@ -559,11 +557,11 @@ cursor: pointer;
 .app-header-explor,
 .container,
 .main-nav {
-  overflow: visible; // Allow dropdown to overflow
+  overflow: visible;
 }
 
 .user-container {
-  position: relative; // Positioning context for dropdown
+  position: relative;
   display: inline-block;
 
   .user-circle {
@@ -584,57 +582,56 @@ cursor: pointer;
 
     .user-dropdown-menu {
       position: absolute;
-      top: calc(100% + 10px); // Position below the avatar with spacing
+      top: calc(100% + 10px);
       right: 0;
-      background-color: #ffffff; // White background
-      border: 1px solid #ddd; // Light border
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Subtle shadow
-      z-index: 10; // Ensure it appears above other elements
-      border-radius: 8px; // Rounded corners
-      min-width: 200px; // Consistent dropdown width
-      // padding: 10px 0; // Add vertical padding inside the dropdown
-      display: block; // Stack items vertically
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      border-radius: 8px;
+      min-width: 200px;
+      display: block;
 
       &::before {
         content: '';
         position: absolute;
-        top: -8px; // Place arrow above the dropdown
-        right: 16px; // Align arrow with dropdown edge
-        border-width: 0 8px 8px 8px; // Triangle shape
+        top: -8px;
+        right: 16px;
+        border-width: 0 8px 8px 8px;
         border-style: solid;
-        border-color: transparent transparent #ffffff transparent; // White arrow
+        border-color: transparent transparent #ffffff transparent;
       }
 
       &::after {
         content: '';
         position: absolute;
-        top: -7px; // Slightly below `::before`
-        right: 17px; // Align inside
-        border-width: 0 7px 7px 7px; // Smaller triangle
+        top: -7px;
+        right: 17px;
+        border-width: 0 7px 7px 7px;
         border-style: solid;
-        border-color: transparent transparent #ddd transparent; // Border color
+        border-color: transparent transparent #ddd transparent;
       }
 
       a,
       button {
-        display: block; // Each item takes full width
-        padding: 10px 15px; // Add spacing for better usability
-        text-decoration: none; // Remove underline for links
-        color: #333; // Dark text color
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
         font-size: 14px;
-        text-align: left; // Align text to the left
+        text-align: left;
         cursor: pointer;
 
         &:hover {
-          background-color: #f5f5f5; // Light gray hover effect
+          background-color: #f5f5f5;
         }
       }
 
       button {
         background: none;
         border: none;
-        width: 100%; // Match width with links
-        border-top: 1px solid #ddd; // Add a divider above the button
+        width: 100%;
+        border-top: 1px solid #ddd;
       }
     }
   }
@@ -643,30 +640,29 @@ cursor: pointer;
 .main-nav,
 .main-nav-header,
 .user-container {
-  overflow: visible; // Ensure dropdown is not clipped
+  overflow: visible;
 }
 
 .user-dropdown-menu {
   position: absolute;
-  top: calc(100% + 20px); // Below the avatar with spacing
-  right: 0; // Align to the right edge
-  background-color: #ffffff; // White background
-  border: 1px solid #ddd; // Light border
-  border-radius: 8px; // Rounded corners
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow
-  z-index: 100; // Ensure it appears above other elements
-  width: max-content; // Fit to content
-  min-width: 200px; // Consistent dropdown width
-  // padding: 10px 0; // Spacing inside the dropdown
-  display: block; // Stack items vertically
+  top: calc(100% + 20px);
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  width: max-content;
+  min-width: 200px;
+  display: block;
 }
 
 .user-dropdown-menu a,
 .user-dropdown-menu button {
-  display: block; // Full width for clickable area
+  display: block;
   padding: 10px 15px;
-  text-decoration: none; // Remove underline
-  color: #82848B; // Dark text
+  text-decoration: none;
+  color: #82848B;
   text-align: left;
   cursor: pointer;
   font-size: 16px;
@@ -674,27 +670,26 @@ cursor: pointer;
   font-family: $fiverr-defult-font;
 
   &:hover {
-    // background-color: white; // Light hover effect
     color: $green-fiverr;
   }
 }
 
 .user-dropdown-menu button {
-  width:100%;
+  width: 100%;
   background: none;
   border: none;
-  border-top: 1px solid #ddd; // Divider above the button
+  border-top: 1px solid #ddd;
 }
 
 
 .dropdown-triangle {
-  position: absolute; /* Position it relative to the parent */
-  top: -10px; /* Offset from the top */
-  right: 8px; /* Align to the right side of the parent */
+  position: absolute;
+  top: -10px;
+  right: 8px;
   width: 20px;
   height: 20px;
   background-color: white;
-  transform: rotate(45deg); /* Makes it a diamond shape */
+  transform: rotate(45deg);
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
 }

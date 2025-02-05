@@ -31,7 +31,6 @@ export function GigIndex() {
 
   async function loadsGigs() {
     try {
-      // console.log('Loading gigs with filter:', filterBy);// Debugging
       await loadGigs(filterBy)
     } catch (err) {
       console.error('Error getting gigs to GigIndex: ', err)
@@ -88,7 +87,7 @@ export function GigIndex() {
       default:
         break;
     }
-    console.log('Updated filterBy:', updatedFilterBy) // Debugging
+    console.log('Updated filterBy:', updatedFilterBy)
     dispatch(setFilter(updatedFilterBy))
     setIsRenderedChoice([false, ''])
   }

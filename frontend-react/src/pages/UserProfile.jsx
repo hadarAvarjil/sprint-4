@@ -19,14 +19,12 @@ export function UserProfile() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Load user and gigs data
   useEffect(() => {
     if (!loggedInUser?._id) {
       navigate("/explore");
       return;
     }
 
-    // Load user data and gigs if not already loaded
     async function loadData() {
       try {
         const userData = await loadUser(loggedInUser._id);
@@ -55,14 +53,12 @@ export function UserProfile() {
         <ProfileCard user={user} />
         <div
           className="position-taker-UserOwnerGigs"
-          // style={{ width: "772px" }}
         >
           <div className="profile-become-seller-ad">
             <h2>
               Become a seller by creating your own gig
              
             </h2>
-            {/* <div className="create-gig-btn-container"> */}
             <button
               onClick={() => navigate("/gig/edit")}
               className="create-gig-btn"
@@ -74,13 +70,6 @@ export function UserProfile() {
               Create Gig
             </button>
 
-            {/* <button
-                      className="create-gig-btn"
-                      onClick={() => navigate('/gig/edit')}
-                    >
-                      Create Gig
-                    </button> */}
-            {/* </div> */}
           </div>
           
           <UserOwnerGigs loggedInUser={loggedInUser} gigs={gigs} />

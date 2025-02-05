@@ -15,14 +15,7 @@ export function AppFooter() {
 				<AddImg picUrl="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736973928/R-icon_rlohg0.png" />
                 </span>
               </h1>
-			{/* <h1 style={{ color: '#7A7D85' }} className="flex row">
-  gigster
-  <span className="small-img">
-    <AddImg picUrl="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736973928/R-icon_rlohg0.png" />
-  </span>
-</h1> */}
 
-			{/* <p>Count: {count}</p> */}
 		  <div className='copy-rights-div'>© gigster International Ltd. 2025</div>
 		  </div>
 

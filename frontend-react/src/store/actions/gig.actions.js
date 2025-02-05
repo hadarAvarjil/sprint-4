@@ -21,7 +21,6 @@ export async function loadGig(gigId) {
         throw err
     }
 }
-console.log('Hi')
 
 export async function removeGig(gigId) {
     try {
@@ -143,7 +142,6 @@ export async function loadRecommendedGigs(category) {
 }
 
 
-// Command Creators:
 function getCmdSetGigs(gigs) {
     return {
         type: SET_GIGS,
@@ -181,7 +179,6 @@ function getCmdaddGigMsg(msg) {
     }
 }
 
-// unitTestActions()
 async function unitTestActions() {
     await loadGigs()
     await addGig(gigService.getEmptyGig())
@@ -190,5 +187,4 @@ async function unitTestActions() {
         title: 'Gig-Good',
     })
     await removeGig('m1oC7')
-    // TODO unit test addGigMsg
 }

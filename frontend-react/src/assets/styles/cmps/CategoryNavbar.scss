@@ -35,13 +35,10 @@
                     width: 100%;
                     height: 3px;
                     background: $green-fiverr;
-                    // background: $bgColor2; shinoi
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     transform: scaleX(0);
-                    // transition: transform 0.3s ease-in-out;
-                    // transform-origin: bottom right;
                 }
 
                 &:hover::after {
@@ -60,17 +57,14 @@
             top: 30%;
             cursor: pointer;
             z-index: 1;
-            // background: $clrPrimary1;
             width: 15px;
 
             &.left-side {
                 left: 30px;
-                // box-shadow: 0px 0px 20px 20px $clrPrimary1;
             }
 
             &.right-side {
                 right: 30px;
-                // box-shadow: 0px 0px 20px 20px $clrPrimary1;
             }
         }
     }

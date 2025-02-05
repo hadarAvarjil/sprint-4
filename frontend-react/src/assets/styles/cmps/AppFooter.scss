@@ -1,5 +1,4 @@
 .app-footer {
-    // display: flex; //shinoi4
     display: grid;
     grid-template-columns: minmax(32px, 1fr) minmax(auto, 1400px) minmax(32px, 1fr);
     align-items: center;
@@ -11,7 +10,6 @@
     max-height: 65px;
 
     background-color: white;
-    // padding: rem(10px) 1rem; //shinoi4
     width: 100%;
     margin-top: 80px;
     
@@ -27,18 +25,13 @@
 
     .grey-icon img {
         width: 100%;
-        /* Ensures the image scales to match its parent */
         height: 100%;
-        /* Ensures the image scales proportionally */
         object-fit: contain;
-        /* Keeps the aspect ratio of the image */
     }
 
     .logo {
         font-size: 1.4em;
         font-weight: bold;
-        // margin-inline-end: 2em;
-        // margin-left: 59px;
     }
 
     p {
@@ -49,12 +42,10 @@
         font-size: .8em;
 
         &.local-services {
-            // color: $clr1;
             color: black;
         }
 
         &.remote-services {
-            // color: $clr5;
             color: black;
         }
     }
@@ -80,7 +71,6 @@
     justify-content: space-between;
     text-align: center;
     align-items: center;
-    // padding-left: 5.4%; 
 
     img {
         margin-right: 0px;
@@ -98,24 +88,18 @@
         text-align: center;
         padding-top: 21px;
         padding-bottom: 5px;
-        //    align-items: center;
-
-
     }
 }
 
 .small-img {
     display: inline-block;
     vertical-align: baseline;
-    /* Aligns with the baseline of the text */
 }
 
 .small-img img {
     width: 10px;
-    /* Adjust the size as needed */
     height: 10px;
     vertical-align: baseline;
-    /* Aligns the image with the text baseline */
     margin-bottom: -2px;
 }
 

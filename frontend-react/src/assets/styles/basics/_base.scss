@@ -33,9 +33,6 @@ a {
     text-decoration: none;
 }
 
-// a:hover {
-// text-decoration: underline;
-// }
 
 ul,
 ol {
@@ -83,7 +80,6 @@ input[type='time'],
 input[type='url'],
 input[type='week'],
 textarea {
-  // background-color: $clrPrimary1;
   border: 1px solid $clrSecondary1;
   border-radius: 4px;
   box-shadow: none;
@@ -117,7 +113,6 @@ input[type='number']::-webkit-outer-spin-button {
   border: 1px solid $clrSecondary10;
   border-radius: rem(8px);
   box-sizing: border-box;
-  // color: $clrPrimary2;
   font-weight: 600;
   font-size: 1rem;
   background: none;

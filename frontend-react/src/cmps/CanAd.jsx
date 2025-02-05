@@ -39,11 +39,7 @@ export function CanAd(){
 <div className="canAd-pic">
   <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738686848/canAd_ob7kl4.png' />
 </div>
-       {/* <img
-         className="canAd-pic"
-         src="src\services\imgs\design.imgs\canAd.png"
-         alt=""
-       /> */}
+
      </div>
     )
 }

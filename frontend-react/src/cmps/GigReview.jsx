@@ -1,5 +1,4 @@
 export function GigReview({ review }) {
-    console.log('gigReview',review)
     const {
         username,
         imgUrl,

@@ -5,16 +5,9 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 export function UserPreview({ isFrom, owner, children }) {
-  // const orders = useSelector((storeState) => storeState.orderModule.orders)
   const [user, setUser] = useState(null)
   const [ratingCount, setRatingCount] = useState(null)
-  // let completedOrders = []
-  // if (isFrom === 'gigDetailsTop' || isFrom === 'gigDetailsBottom') {
-  //   completedOrders = orders
-  //     .filter((order) => order.sellerId === owner._id)
-  //     .filter((order) => order.deniedAt || order.acceptedAt)
-  // }
-  // completedOrders = completedOrders.length
+
 
   useEffect(() => {
     loadUserData()
@@ -31,7 +24,7 @@ export function UserPreview({ isFrom, owner, children }) {
     setUser(owner)
   }
   function renderStars(rate) {
-    const maxStars = 3 // Total number of stars
+    const maxStars = 3 
     const filledStars = "✦".repeat(rate);
     const emptyStars = "✧".repeat(maxStars - rate);
     return filledStars + emptyStars;

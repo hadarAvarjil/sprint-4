@@ -4,7 +4,6 @@ import { utilService } from '../util.service.js'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 const BASE_URL = 'user'
 const STORAGE_KEY = 'user'
-// _createUsers()
 
 
 export const userService = {
@@ -41,7 +40,6 @@ async function update({ _id, score }) {
   user.score = score
   await storageService.put(BASE_URL, user)
 
-  // When admin updates other user's details, do not update loggedinUser
   const loggedinUser = getLoggedinUser()
   if (loggedinUser._id === user._id) saveLoggedinUser(user)
 
@@ -74,17 +72,17 @@ function getLoggedinUser() {
 function saveLoggedinUser(user) {
   user = {
     _id: user._id,
-    fullname: user.fullname,
+    // fullname: user.fullname,
     imgUrl: user.imgUrl,
     score: user.score,
-    isAdmin: user.isAdmin
+    isAdmin: user.isAdmin,
+    fullName: user.fullName
   }
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
   return user
 }
 
-// To quickly create an admin user, uncomment the next line
-// _createAdmin()
+
 async function _createAdmin() {
   const user = {
     username: 'admin',
@@ -95,7 +93,6 @@ async function _createAdmin() {
   }
 
   const newUser = await storageService.post(BASE_URL, userCred)
-  console.log('newUser: ', newUser)
 }
 
 function getUserRatingCount(user) {

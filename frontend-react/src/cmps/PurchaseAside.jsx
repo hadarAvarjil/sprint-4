@@ -16,7 +16,6 @@ export function PurchaseAside({
 
     const serviceFee = 30.62
     const vat = 105.63
-    // let total = packages[Selectedpackage].price + serviceFee + vat  
     const packagesType = "Wind - For Start Ups"
 
     return (

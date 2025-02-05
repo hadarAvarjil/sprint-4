@@ -1,4 +1,3 @@
-// Main page media query
 .home-wrapper {
   .welcome-wrapper {
     @media (max-width: 899px) {
@@ -302,7 +301,6 @@
   }
 }
 
-// Header media query
 
 .app-header {
   @media (min-width: 1250px) {
@@ -313,7 +311,6 @@
 
   .main-nav {
     @media (max-width: 1400px) {
-      // padding: 1em 2em;
     }
 
     @media (max-width: 600px) {
@@ -325,8 +322,6 @@
     }
 
     @media (min-width: 1401px) {
-      // padding: 1em 13em;
-      // margin-left: 11.5%;
     }
 
     .container {
@@ -424,7 +419,6 @@
   }
 }
 
-// Login / Signup modal media query
 
 .user-login-wrapper {
   @media (max-width: 900px) {
@@ -470,7 +464,6 @@
   }
 }
 
-// Page dimmer media query
 
 .dimmed-content {
   @media (max-width: 600px) {
@@ -482,7 +475,6 @@
   }
 }
 
-// Seller's orders page media query
 
 .seller-dashboard-page { 
 
@@ -576,7 +568,6 @@
 
     .user-orders {
 
-      // Desktop
       .user-order-container {
         &.desktop {
           .user-order {
@@ -600,7 +591,6 @@
   }
 }
 
-// Explore page media query
 
 .gig-index {
   @media (max-width:1440px){
@@ -644,7 +634,6 @@
   }
 }
 
-// Gig details page media query
 .gig-purchase {
   @media (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
@@ -680,8 +669,6 @@
 
   @media (max-width: 480px) {
     padding: 0;
-//       .floating-top-bar {
-// margin-top: 200px;      }
   
     main {
       .gig-details-header {
@@ -698,7 +685,6 @@
           margin-block-end: 0;
 
           .user-preview {
-            // border-bottom: 1px solid $clrSecondary2;
             padding: 8px 16px;
             background: $clrSecondary1;
             margin: 0;
@@ -813,7 +799,6 @@
   }
 }
 
-// Gig editing page media query
 
 .gig-edit-container {
   .gig-edit {
@@ -984,7 +969,6 @@ max-width: 100vw;
   }
 }
 
-// Profile page media query
 
 .profile-page {
   .user-profile {
@@ -1028,7 +1012,6 @@ max-width: 100vw;
   }
 }
 
-// Buyer's orders page media query
 
 .buyer-dashboard-page {
   @media (max-width: 600px) {
@@ -1083,7 +1066,6 @@ max-width: 100vw;
   }
 }
 
-// User notification / message media query
 
 .user-msg {
   @media (max-width: 600px) {
@@ -1109,7 +1091,6 @@ max-width: 100vw;
   }
 }
 
-// User chat media query
 
 .chats-page {
   @media (max-width: 600px) {
@@ -1174,8 +1155,6 @@ max-width: 100vw;
         .chat-container {
           .message-form {
             .message-container {
-              // height: 630px;
-              // min-height: 630px;
 
               .message {
                 .message-text {
@@ -1246,10 +1225,8 @@ max-width: 100vw;
   }
 }
 
-// Footer media query
 .desktop-footer {
   @media (max-width: 1400px) {
-    // padding: 1em 2em;
   }
 
   @media (max-width: 800px) {
@@ -1280,7 +1257,6 @@ max-width: 100vw;
   }
 }
 
-// Invoice, Review, Sharing a gig modals media query
 
 .modal-wrapper {
   @media(max-width: 600px) {

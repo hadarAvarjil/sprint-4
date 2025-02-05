@@ -21,9 +21,8 @@ export function GetToKnow({ owner, gig }) {
     const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
     if (!user) return null
 
-    // const reviewsText = gig.reviews.length === 1 ? 'Review' : 'Reviews';
     function renderStars(rate) {
-        const maxStars = 3; // Total number of stars
+        const maxStars = 3; 
         const filledStars = "✦".repeat(rate);
         const emptyStars = "✧".repeat(maxStars - rate);
         return filledStars + emptyStars;

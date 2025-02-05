@@ -2,7 +2,6 @@
 
 
 .orders-table-container {
-  // margin:auto;
   max-width: 1200px;
   padding: 1rem;
   border-radius: 8px;
@@ -24,11 +23,9 @@
   }
 
   .orders-table {
-    // grid-column: 2;
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
-    // font-size: 0.9rem;
     text-align: left;
 
     thead {

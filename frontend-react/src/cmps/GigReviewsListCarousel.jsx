@@ -48,12 +48,12 @@ export function GigReviewsListCarousel({ gig }) {
     }
 
     const settings = {
-        dots: false, // Disable dots
+        dots: false, 
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true, // Enable arrows
+        arrows: true, 
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
     };

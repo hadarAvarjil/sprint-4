@@ -13,8 +13,6 @@
   justify-content: center;
   color: white;
   margin-top: calc(70px + 41px);
-  /* Offset to avoid overlap */
-  // margin-top: 40px;
   text-align: center;
   overflow: hidden;
 
@@ -83,7 +81,6 @@
       font-weight: 100;
 
       span {
-        // background-color: black;
         font-size: 62px;
         line-height: 72px;
         letter-spacing: -1.55px;
@@ -97,11 +94,9 @@
 
   .search-bar-div {
     background-color: white;
-    // padding: 10px;
     width: 85%;
     height: 12%;
     display: flex;
-    // justify-content: space-between;
     flex-direction: row;
     text-align: center;
     justify-items: center;
@@ -126,12 +121,10 @@
       display: flex;
       width: 11%;
       background-color: white;
-      // margin-top: 40px;
       border: white;
       border-style: solid;
       border-radius: 10px;
       border-width: 5px;
-      // padding: 8px;
       text-align: center;
       justify-items: center;
       justify-content: center;
@@ -302,28 +295,27 @@ padding-right: 5px;
 }
 
 @media (min-width: 481px) {
+  .home-body{
+    // padding-right: 32px;
+  }
   @media (max-width:899px){
     .home-body{
+      // padding-right: 32px;
       width: 100%;
     }
   .green-div-container {
-    // background: linear-gradient(to top, #0F7D43, #01280d, #001708);
-    // grid-column: 1 / -1;
+
     width: 100%;
     height: 326px;
     max-width: 899px;
-
-    // padding-left: 40px;
-    // padding-right: 40px;
-    margin-top: 63px;
+    margin-top: 71px;
 
   }
 
   .green-search-div {
     background: linear-gradient(to top, #0F7D43, #01280d, #001708);
     width: 100vw;
-    // max-width: 900px;
-    // min-height: 200px;
+
     height: 100%;
     width: 100%;
     max-width: 899px;
@@ -362,11 +354,7 @@ padding-right: 5px;
     }
 
     .search-bar-div {
-      // height: 50px;
-      // width: 80%;
       max-width: 410px;
-      // padding-top: 20px;
-      // padding-bottom: 20px;
       padding-left: 0px;
       margin: 0;
       align-items: center;
@@ -378,7 +366,6 @@ padding-right: 5px;
       }
 
       .long-placeholder {
-        // background-color: black;
         padding-left: 15px;
         padding-right: 10px;
         font-size: 16px;
@@ -407,7 +394,6 @@ padding-right: 5px;
         line-height: 40px;
 
         span {
-          // font-size: 16px;
           font-weight: 300;
           font-size: 40px;
           letter-spacing: -1.6px;
@@ -466,7 +452,7 @@ padding-right: 5px;
     height: 420px;
     max-width: 1160px;
     width: 100vw;
-    margin-top: 63px;
+    margin-top: 71px;
     margin-right: 32px;
     margin-left: 32px;
     
@@ -494,7 +480,6 @@ padding-right: 5px;
       width: 12%;
       right: 0%;
       top: 15%;
-      // display: none;
       img{
        width: 100%;
 
@@ -507,7 +492,6 @@ padding-right: 5px;
       width: 60px;
       left: 7.5%;
       top: -0.1%;
-      // display: none;
 
       img{
         width: 12vw;
@@ -521,7 +505,6 @@ padding-right: 5px;
       left: 4%;
       bottom: 2%;
       z-index: 9;
-      // display: none;
 
       img{
         width: 12vw;
@@ -535,7 +518,6 @@ padding-right: 5px;
       right: 13%;
       bottom:-10%;
       z-index: 9;
-      // display: none;
 
       img{
 width: 13vw;
@@ -547,8 +529,6 @@ width: 13vw;
       width: 8%;
       right: 22.5%;
       top: 0%;
-      // display: none;
-
       img{
         width:10vw;
       }
@@ -557,15 +537,10 @@ width: 13vw;
 
     .trustedBy-img {
       display: none;
-
     }
 
     .search-bar-div {
-      // height: 50px;
-      // width: 80%;
       max-width: 436px;
-      // padding-top: 20px;
-      // padding-bottom: 20px;
       padding-left: 0px;
       margin: 0;
       align-items: center;
@@ -606,7 +581,6 @@ align-items: center;
         line-height: 45px;
 
         span {
-          // font-size: 16px;
           font-weight: 300;
           font-size: 40px;
           letter-spacing: -1.6px;
@@ -678,12 +652,7 @@ align-items: center;
 }
     .green-div-container {
       height: 370px;
-      // max-width: 1160px;
-      // width: 100vw;
-      margin-top: 63px;
-      // margin-right: 32px;
-      // margin-left: 32px;
-      
+      margin-top: 71px;
     }
     
     .green-search-div {
@@ -693,9 +662,7 @@ align-items: center;
       width: 100vw;
   
       height: 100%;
-      width: 100%;
-      // max-width: 1160px;
-  
+      width: 100%;  
       padding-top: 40px ;
       padding-bottom: 40px ;
       justify-content: center;
@@ -703,12 +670,11 @@ align-items: center;
       text-align: center;
   
       margin-top: 0px;
-      background-size: cover; /* Ensures the image covers the entire div */
-      background-position: center; /* Centers the image */
-      background-repeat: no-repeat; /* Prevents the image from repeating */
-      background-size: cover ; //shinoi
-      width: 100%; /* Ensure the div spans the full width of its container */
-      // height: 100vh; /* Adjust height as needed, or set a fixed height */
+      background-size: cover; 
+      background-position: center;
+      background-repeat: no-repeat; 
+      background-size: cover ; 
+      width: 100%; 
       height: 438px;
   
       .pinkGuy-img {
@@ -784,11 +750,7 @@ align-items: center;
       }
   
       .search-bar-div {
-        // height: 50px;
-        // width: 80%;
         max-width: 550px;
-        // padding-top: 20px;
-        // padding-bottom: 20px;
         padding-left: 0px;
         margin: 0;
         align-items: center;
@@ -800,7 +762,6 @@ align-items: center;
         }
   
         .long-placeholder {
-          // background-color: black;
           padding-left: 10px;
           padding-right: 10px;
           font-size: 16px;
@@ -829,7 +790,6 @@ align-items: center;
           line-height: 69px;
   
           span {
-            // font-size: 16px;
             font-weight: 300;
             font-size: 60px;
             letter-spacing: -1.6px;
@@ -877,23 +837,17 @@ align-items: center;
 @media (min-width: 1400px){
   .green-div-container {
     height: 580px;
-    // max-width: 1160px;
-    // width: 100vw;
-    margin-top: 63px;
-    // margin-right: 32px;
-    // margin-left: 32px;
-    
+    margin-top: 71px;
   }
   .green-search-div {
     background-image: url('https://res.cloudinary.com/dtpewh2wk/image/upload/v1737408626/hero-1608x740_wsqtac.webp');
   
     margin-top: 0px;
-      background-size: cover; /* Ensures the image covers the entire div */
-      background-position: center; /* Centers the image */
-      background-repeat: no-repeat; /* Prevents the image from repeating */
-      background-size: cover ; //shinoi
-      width: 100%; /* Ensure the div spans the full width of its container */
-      // height: 100vh; /* Adjust height as needed, or set a fixed height */
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+      background-size: cover;
+      width: 100%; 
       height: 580px;
   justify-content: center;
   align-items: center;
@@ -988,7 +942,6 @@ align-items: center;
         }
   
         .long-placeholder {
-          // background-color: black;
           padding-left: 10px;
           padding-right: 10px;
           font-size: 16px;
@@ -1016,7 +969,6 @@ align-items: center;
           letter-spacing: -1.6px;
   
           span {
-            // font-size: 16px;
             font-weight: 300;
             font-size: 60px;
             letter-spacing: -1.6px;

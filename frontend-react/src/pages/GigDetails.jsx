@@ -97,7 +97,6 @@ export function GigDetails() {
             <FAQAccordion />
             <GigReviewsList gig={gig} id="reviews-section" />
           </main>
-          {/* shnoi4 */}
           <aside className='aside-sticky-div'>
             <GigDetailsLikeAndShare
               gig={gig}

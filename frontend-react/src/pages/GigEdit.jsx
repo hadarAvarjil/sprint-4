@@ -114,7 +114,6 @@ export function GigEdit() {
                             <div className="info flex column description-container">
                                 <div className='Description-form-text'>
                                     <label htmlFor="description">Description</label>
-                                    {/* <p>Provide a detailed description of your gig, highlighting what you offer and the ideal customer for your services. To enhance the buyer experience, it's important to be as informative and transparent as possible in your description.</p> */}
                                     <p>Briefly Describe Your Gig</p>
                                 </div>
                                 <textarea
@@ -132,7 +131,6 @@ export function GigEdit() {
                         <div className="input-group grid input-group-category">
                             <div className="info flex column" style={{ width: '242px', paddingRight: "32px" }}>
                                 <label htmlFor="category">Category</label>
-                                {/* <p>Choose the category most suitable for your gig, with which thousands of users will be able to find it.</p> */}
                                 <p>Choose the category most suitable for your Gig.</p>
 
                                 <select
@@ -154,7 +152,6 @@ export function GigEdit() {
                                 <label htmlFor="tags">Subcategories</label>
                                 <p>Choose the sub-category most suitable for your Gig.</p>
 
-                                {/* <p>Precision is key, select the most relevant subcategories for your gig (we recommend picking 3 at least).</p> */}
                                 <select
                                     id="tags"
                                     name="tags"
@@ -175,7 +172,6 @@ export function GigEdit() {
                         <div className="input-group grid delivery-price-container">
                             <div className="info flex column delivery-container">
                                 <label htmlFor="days">Delivery Time</label>
-                                {/* <p>Days it will take you on average to finish this gig.</p> */}
                                 <select
                                     id="days"
                                     name="daysToMake"
@@ -192,7 +188,6 @@ export function GigEdit() {
 
                             <div className="info flex column">
                                 <label htmlFor="price">Price</label>
-                                {/* <p>Define a price, that you believe the gig is worth the effort.</p> */}
                                 <input
                                     id="price"
                                     type="number"
@@ -210,7 +205,6 @@ export function GigEdit() {
                             <h3>Showcase Your Services In A Gig Gallery </h3>
 
                             <div className="info grid">
-                                {/* <p>Show the world the quality of your gig, by uploading images that explain your service the best. By default, we provide you with 5 images to use. Select one of the slots below to change a certain image of a gig:</p> */}
                                 <p>Encourage buyers to choose your Gig by featuring a variety of your work.
                                 </p>
                                 {fields.imgUrls.map((url, index) => (
@@ -232,7 +226,6 @@ export function GigEdit() {
                         </button>
                         <button type="submit" className="flex row">
                             Save & Continue
-                            {/* <SvgIcon iconName={'checkmarkBlackIcon'} /> */}
                         </button>
                     </div>
                 </form>
