@@ -76,7 +76,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                     <thead>
                         <tr>
                             <th>Gig</th>
-                            <th></th>
+                            <th>Title</th>
                             <th>Due On</th>
                             <th>Total</th>
                             <th>Seller</th>
@@ -120,7 +120,7 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                                         <img src={order.gigFirstImgUrl} alt="Gig" className="gigFirstImgUrl" />
                                         <Link to={`/gig/${order.gigId}`}></Link>
                                     </td>
-                                    <td>
+                                    <td style={{textAlign:"start"}}>
                                         <Link to={`/gig/${order.gigId}`}>{order.title || "Unknown Gig"}</Link>
                                     </td>
                                     <td className='due-on'>{dueOn}</td>
