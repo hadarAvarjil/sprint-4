@@ -9,6 +9,7 @@ import { orderService } from '../services/order'
 import { userService } from '../services/user'
 import { packages } from '../services/gig.service'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
+import { socketService } from '../services/socket.service.js'
 
 
 import { loadGigs } from '../store/actions/gig.actions.js'
