@@ -3,6 +3,7 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { login, signup } from '../store/actions/user.actions.js'
 import { AddImg } from './AddImg.jsx'
 import { NavLink } from 'react-router-dom'
+import SvgIcon from "./SvgIcon.jsx";
 
 export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup, setIsSignup }) {
     const [credentials, setCredentials] = useState({
@@ -86,7 +87,15 @@ useEffect(() => {
                 <div className="right-user-sign">
                     <form onSubmit={onLogin}>
                         <section>
-                        <h2>{localIsSignup ? 'Create a new account' : 'Sign in to your account'}</h2> 
+                        <h1 style={{ color: '#404145' }} className="logo flex row login-logo">
+                gigster
+                <span className="small-img">
+                <SvgIcon iconName={"greenDotIcon"} />
+                </span>
+              </h1>
+              
+                        <h2 className="join-big-title-h2">{localIsSignup ? 'Create a new account' : 'Sign in to your account'}</h2> 
+                        <h2 className="join-small-title-h2" >Success <span style={{color:'#ff62ad'}}>starts</span><br/> here. </h2>
                             <h5>
                                 {localIsSignup ? 'Already have an account?' : 'Don’t have an account?'} 
                                
