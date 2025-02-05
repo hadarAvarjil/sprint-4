@@ -7,10 +7,7 @@ import SvgIcon from './SvgIcon.jsx'
 
 
 export function GigDetailsLikeAndShare({gig}) {
-
-    console.log(gig.likedByUsers);
-    console.log('heyyy');
-    
+  
     return (
         <div className="gig-details-likeAndShare flex">
             <span className="heart" onClick={(e) => likeGig(e)} title='like the gig'>

@@ -8,12 +8,13 @@ export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup,
     const [credentials, setCredentials] = useState({
         username: '',
         password: '',
-
+        fullName: '',
+        imgUrl: '',
     })
-const [localIsSignup, setLocalIsSignup] = useState(isSignup);
-useEffect(() => {
-    setLocalIsSignup(isSignup);
-}, [isSignup]); 
+    const [localIsSignup, setLocalIsSignup] = useState(isSignup);
+    useEffect(() => {
+        setLocalIsSignup(isSignup);
+    }, [isSignup]);
 
     const handleClose = () => {
         setIsLoginSignUpShow(false)
@@ -24,12 +25,12 @@ useEffect(() => {
 
     const onLogin = (e) => {
         e.preventDefault();
-    
+
         if (!credentials.username || !credentials.password) {
             showErrorMsg('All fields are required.');
             return;
         }
-    
+
         localIsSignup ? _signup(credentials) : _login(credentials);
 
     }
@@ -47,15 +48,15 @@ useEffect(() => {
             showErrorMsg('Oops, try again');
         }
     }
-    const _signup = async (credentials) => {
+    const _signup = async ({...credentials}) => {
         const text = credentials.fullName[0].toUpperCase()
         const purple = '800080'
         const white = 'ffffff'
-        credentials.imgUrl = `https://ui-avatars.com/api/?name=${text}&background=${purple}&color=${white}`
-        credentials.imgUrl = `https://ui-avatars.com/api/?name=${credentials.fullName[0].toUpperCase()}&background=800080&color=ffffff`; // SHINOI
 
+        // credentials.imgUrl = `https://ui-avatars.com/api/?name=${text}&background=${purple}&color=${white}`
+        credentials.imgUrl = `https://ui-avatars.com/api/?name=${credentials.fullName[0].toUpperCase()}&background=800080&color=ffffff`; // SHINOI
         try {
-            await signup(credentials)
+            await signup({...credentials})
             showSuccessMsg('Signed up successfully')
             handleClose()
         } catch (error) {
@@ -65,7 +66,7 @@ useEffect(() => {
 
     if (!isLoginSignUpShow) return null
     const toggleSignupMode = () => {
-        setLocalIsSignup((prev) => !prev); 
+        setLocalIsSignup((prev) => !prev);
     }
     return (
         <section className="login-signup">
@@ -86,18 +87,18 @@ useEffect(() => {
                 <div className="right-user-sign">
                     <form onSubmit={onLogin}>
                         <section>
-                        <h2>{localIsSignup ? 'Create a new account' : 'Sign in to your account'}</h2> 
+                            <h2>{localIsSignup ? 'Create a new account' : 'Sign in to your account'}</h2>
                             <h5>
-                                {localIsSignup ? 'Already have an account?' : 'Don’t have an account?'} 
-                               
-                            <span className='toggle-sign-join-span'
-                                type="button"
-                                onClick={toggleSignupMode} 
+                                {localIsSignup ? 'Already have an account?' : 'Don’t have an account?'}
+
+                                <span className='toggle-sign-join-span'
+                                    type="button"
+                                    onClick={toggleSignupMode}
                                 >
-                                    {localIsSignup ? 'Sign in' : 'Join here'} 
-                                    </span>
+                                    {localIsSignup ? 'Sign in' : 'Join here'}
+                                </span>
                             </h5>
-             
+
                         </section>
 
                         <label htmlFor="username">Username</label>
@@ -121,14 +122,14 @@ useEffect(() => {
                             required
                         />
 
-{localIsSignup && ( 
+                        {localIsSignup && (
                             <>
                                 <label htmlFor="fullName">Full name</label>
                                 <input
                                     id="fullName"
                                     name="fullName"
                                     type="text"
-                                    value={credentials.fullName || ''} 
+                                    value={credentials.fullName || ''}
                                     onChange={handleChange}
                                     required
                                 />
@@ -136,8 +137,8 @@ useEffect(() => {
                         )}
 
                         <button className="form-submit-btn" type="submit">Submit</button>
-                    </form> 
-                          
+                    </form>
+
                     <p>By joining, you agree to the Gigster <NavLink to="/terms"><span onClick={handleClose}>Terms of Service</span></NavLink> and to occasionally receive emails from us. Please read our <NavLink to="/privacy"><span onClick={handleClose}>Privacy Policy</span></NavLink> to learn how we use your personal data.</p>
 
                 </div>

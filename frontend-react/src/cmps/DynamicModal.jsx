@@ -9,7 +9,6 @@ export function DynamicModal() {
 		onToggleModal()
 	}
 
-	console.log('modalData', modalData)
 	if (!modalData) return <></>
 	const Cmp = modalData.cmp
 	return (

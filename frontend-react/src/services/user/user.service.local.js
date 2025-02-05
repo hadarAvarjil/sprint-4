@@ -89,10 +89,11 @@ function getLoggedinUser() {
 function saveLoggedinUser(user) {
   user = {
     _id: user._id,
-    fullname: user.fullname,
+    // fullname: user.fullname,
     imgUrl: user.imgUrl,
     score: user.score,
-    isAdmin: user.isAdmin
+    isAdmin: user.isAdmin,
+    fullName: user.fullName
   }
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
   return user
@@ -109,7 +110,6 @@ async function _createAdmin() {
   }
 
   const newUser = await storageService.post(BASE_URL, userCred)
-  console.log('newUser: ', newUser)
 }
 
 function getUserRatingCount(user) {

@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux'
 import { PurchaseMain } from '../cmps/PurchaseMain.jsx'
 import { PurchaseAside } from '../cmps/PurchaseAside.jsx'
 
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { orderService } from '../services/order'
 import { userService } from '../services/user'
 import { packages } from '../services/gig.service'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 
 
 import { loadGigs } from '../store/actions/gig.actions.js'
@@ -66,7 +66,19 @@ export function GigPurchasePage() {
                 gigFirstImgUrl
 
             )
-            await orderService.save(newOrder)
+            await orderService.save(newOrder)            
+            socketService.emit('notify_seller_new_order', { userId: newOrder.sellerId, user: loggedInUser })
+            showSuccessMsg(
+                {
+                    title: 'ORDER ADDED',
+                    body: `Find your next order!`,
+                },
+                {
+                    userMsgLeft: '55%',
+                    messageAreaPadding: '2em 1.5em 2em 7em',
+                    msgStatusTranslateX: '-12em',
+                }
+            )
             navigate('/orders')
         } catch (err) {
             console.error('Error Saving Order:', err);
