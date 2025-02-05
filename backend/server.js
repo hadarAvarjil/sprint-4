@@ -49,8 +49,9 @@ app.use('/api/order', orderRoutes)
 app.use('/api/review', reviewRoutes)
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public'))
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
 })
+
 
 const port = process.env.PORT || 3030
 const server = http.createServer(app)
