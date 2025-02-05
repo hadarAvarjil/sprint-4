@@ -481,7 +481,7 @@
       flex-wrap: wrap;
 
       .recommended {
-        width: 330px;
+        // width: 330px;
         border-style: none;
 
         .gig-user {
@@ -541,6 +541,12 @@
 }
 
 @media (min-width:768px) {
+  .recommended-gigs-list {
+.recommended{
+width: 330px;
+}
+  }
+
   @media (max-width:1088px) {
     .my-lists-page {
       padding: 10px;
@@ -578,6 +584,9 @@
     .recommended-gigs-list {
       display: flex;
       justify-content: center;
+      .recommended{
+        width: 200px;
+      }
     }
 
     section {
