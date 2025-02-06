@@ -23,6 +23,8 @@ export function GigDetails() {
   const { gigId } = useParams()
   const navigate = useNavigate()
   const [newImgIndex, setNewImgIndex] = useState(0)
+  const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+
 
   useEffect(() => {
     loadGigDetails()
@@ -101,7 +103,7 @@ export function GigDetails() {
             <GigDetailsLikeAndShare
               gig={gig}
             />
-            <GigDetailsOrder owner={gigOwner} gig={gig} />
+            <GigDetailsOrder owner={gigOwner} gig={gig} loggedInUser={loggedInUser} />
           </aside>
         </>
       )}

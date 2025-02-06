@@ -18,8 +18,8 @@ export function UserMsg() {
       setTimeout(() => {
         setIsActive(false)
         setIsSlidingOut(true)
-        setTimeout(onCloseMsg, 500) // Kushili
-      }, 50000)
+        setTimeout(onCloseMsg, 500) 
+      }, 5000)
     })
 
     return () => {

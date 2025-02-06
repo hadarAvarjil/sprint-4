@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { showErrorMsg } from '../services/event-bus.service.js'
 
 import SvgIcon from './SvgIcon.jsx'
 
-export function GigDetailsOrder({ gig, owner }) {
+export function GigDetailsOrder({ gig, owner, loggedInUser }) {
 
     const [activeTab, setActiveTab] = useState('basic')
     const navigate = useNavigate()
@@ -33,6 +34,18 @@ export function GigDetailsOrder({ gig, owner }) {
     }
 
     function onContinue() {
+        if (!loggedInUser)
+            showErrorMsg(
+                {
+                  title: 'ORDER DENIED',
+                  body: `You need to login!`,
+                },
+                {
+                  userMsgLeft: '50%',
+                  messageAreaPadding: '2em 1em 2em 6em',
+                  msgStatusTranslateX: '-12em',
+                }
+              )
         navigate(`/purchase/${gig._id}/?package=${activeTab}`)
     }
 
