@@ -245,24 +245,23 @@ font-weight: 700;
   }
 
   .sign-div {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; 
     width: 100%;
     box-shadow: none;
   }
 
   .right-user-sign {
-    width: 100%; /* Take up full width */
-    padding-left: 0; /* Remove padding */
-    padding-right: 0; /* Remove padding */
+    width: 100%; 
+    padding-left: 0; 
+    padding-right: 0; 
     height: -webkit-fill-available;
   }
 
   .right-user-sign {
-    padding-top: 20px; /* Adjust for space */
+    padding-top: 20px; 
   }
 
   .right-user-sign h2 {
-    // font-size: 18px; /* Adjust heading font size */
     margin-top: 60px;
   }
 
@@ -271,7 +270,7 @@ font-weight: 700;
   }
 
   .right-user-sign form button {
-    width: 100%; /* Make button full width */
+    width: 100%;
   }
 }
 
