@@ -25,9 +25,6 @@ export function GigPurchasePage() {
     const queryParams = new URLSearchParams(window.location.search)
     const Selectedpackage = queryParams.get('package')
     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
-    console.log(loggedInUser);
-
-
 
     const initPurchaseState = {
         crdNum: '',
@@ -47,7 +44,7 @@ export function GigPurchasePage() {
             }
         }
         loadGigsInfo()
-    }, [gig, navigate])
+    }, [gigId])
 
     const serviceFee = 30.62
     const vat = 105.63
@@ -67,7 +64,9 @@ export function GigPurchasePage() {
                 gigFirstImgUrl
 
             )
-            await orderService.save(newOrder)            
+            await orderService.save(newOrder)
+            console.log('newOrder.sellerId',newOrder.sellerId);
+                        
             socketService.emit('notify_seller_new_order', { userId: newOrder.sellerId, user: loggedInUser })
             showSuccessMsg(
                 {

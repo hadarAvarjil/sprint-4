@@ -37,7 +37,7 @@ export function UserMsg() {
       socketService.off('notify-buyer-accepted', orderAcceptedNotification)
       socketService.off('notify-buyer-denied', orderDeniedNotification)
       socketService.off('notify-buyer-completed', orderCompletedNotification)
-      socketService.on('notify-seller-order-reviewed', orderReviewedNotification)
+      socketService.off('notify-seller-order-reviewed', orderReviewedNotification)
       socketService.off('notify-seller-new-order', newOrderNotification)
     }
   }, [])
