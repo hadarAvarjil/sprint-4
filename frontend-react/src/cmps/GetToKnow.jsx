@@ -14,10 +14,8 @@ export function GetToKnow({ owner, gig }) {
     function loadUserDetails() {
         setUser(owner)
     }
-    console.log(gig);
-    console.log('yoooooooo', gig);
-    
-
+  
+  
     const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
     if (!user) return null
 
