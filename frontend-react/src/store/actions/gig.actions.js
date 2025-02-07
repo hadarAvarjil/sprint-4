@@ -21,7 +21,6 @@ export async function loadGig(gigId) {
         throw err
     }
 }
-console.log('Hi')
 
 export async function removeGig(gigId) {
     try {

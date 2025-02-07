@@ -23,7 +23,6 @@ export function BuyerOrdersList({ loggedInUser, orders }) {
                 orders.map(async (order) => {
                     try {
                         const user = await userService.getById(order.sellerId)
-                        console.log(order, 'uouououou');
 
                         return {
                             ...order,

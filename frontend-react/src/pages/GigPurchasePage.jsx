@@ -5,10 +5,11 @@ import { useSelector } from 'react-redux'
 import { PurchaseMain } from '../cmps/PurchaseMain.jsx'
 import { PurchaseAside } from '../cmps/PurchaseAside.jsx'
 
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { orderService } from '../services/order'
 import { userService } from '../services/user'
 import { packages } from '../services/gig.service'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
+import { socketService } from '../services/socket.service.js'
 
 
 import { loadGigs } from '../store/actions/gig.actions.js'
@@ -24,9 +25,6 @@ export function GigPurchasePage() {
     const queryParams = new URLSearchParams(window.location.search)
     const Selectedpackage = queryParams.get('package')
     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
-    console.log(loggedInUser);
-
-
 
     const initPurchaseState = {
         crdNum: '',
@@ -46,7 +44,7 @@ export function GigPurchasePage() {
             }
         }
         loadGigsInfo()
-    }, [gig, navigate])
+    }, [gigId])
 
     const serviceFee = 30.62
     const vat = 105.63
@@ -67,6 +65,20 @@ export function GigPurchasePage() {
 
             )
             await orderService.save(newOrder)
+            console.log('newOrder.sellerId',newOrder.sellerId);
+                        
+            socketService.emit('notify_seller_new_order', { userId: newOrder.sellerId, user: loggedInUser })
+            showSuccessMsg(
+                {
+                    title: 'ORDER ADDED',
+                    body: `Find your next order!`,
+                },
+                {
+                    userMsgLeft: '55%',
+                    messageAreaPadding: '2em 1.5em 2em 7em',
+                    msgStatusTranslateX: '-12em',
+                }
+            )
             navigate('/orders')
         } catch (err) {
             console.error('Error Saving Order:', err);

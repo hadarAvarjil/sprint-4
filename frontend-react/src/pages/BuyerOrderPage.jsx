@@ -31,7 +31,6 @@ export function BuyerOrderPage() {
     }, [loggedInUser,])
 
     const NO_RESULT_IMG = 'https://res.cloudinary.com/dtffr5wya/image/upload/v1738089073/no-results_i0l51z.png'
-    console.log(orders);
 
     if (isLoading) {
         return (
