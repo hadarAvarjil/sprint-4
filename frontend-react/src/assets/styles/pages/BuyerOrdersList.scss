@@ -22,8 +22,24 @@
                 width:70px;
                 height: 60px;
                 object-fit: cover;
+                @media(max-width:600px){
+                    width:40px;
+                    height: 30px;
+                }
             }
             }
+            @media(max-width:600px){
+                td.due-on{
+                    font-size:0.6em ;
+                }     
+            
+            td{
+                a {                     
+                        font-size:0.6em ;
+                }
+              
+            }
+        }
         }
             td{
                 text-align: start;
@@ -41,10 +57,22 @@
                 gap: 10px;
                 height: 120px;
                 margin-bottom: 0px;
+                @media(max-width:600px){
+                    gap: 5px;
+                    span{
+                        font-size: 0.6em;
+                }
+                }
+           
                 img.seller{
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
+                    @media(max-width:600px){
+                        width:30px;
+                        height: 30px;
+                        font-size: 0.6em;
+                    }
                 }
                 @media(max-width:720px){
                     font-size: 14px;
@@ -53,9 +81,9 @@
             }
             .order-state{
                 @media(max-width:720px){
-                width: 60px;
+                width: 80px;
                 div{
-                    width:60px;
+                    width:80px;
                     font-size: 10px;
                     
                 }

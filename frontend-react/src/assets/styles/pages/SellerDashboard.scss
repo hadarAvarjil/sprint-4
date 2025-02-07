@@ -848,3 +848,12 @@
         }
     }
 }
+
+@media(max-width:700px){
+    td.td-buyer{
+        img.buyer-pic{
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

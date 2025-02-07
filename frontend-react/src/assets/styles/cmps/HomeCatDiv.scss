@@ -52,10 +52,14 @@
 
 @media (max-width: 900px) {
   .cat-divs-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 111px);
-    justify-content: center;
-    gap: 36px;
+    display: flex;
+    justify-content: center;  /* Centers items */
+    flex-wrap: wrap;  /* Allows items to wrap */
+    padding: 12px;
+    width: 100%;
+    // gap: 20px;
+    margin-top: 10px;
+
   }
 
   .cat-div {
@@ -66,6 +70,10 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    @media(max-width:520px){
+      width: 112px;
+      height: 152px;
+    }
 
     img {
       width: 100px;
