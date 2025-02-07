@@ -33,7 +33,7 @@ export function CanAd(){
            className="can-blk-btn"
            onClick={() => setCatFilter('Graphics & Design')} to={`/gig`}         >
            
-           Try Gigster Logo Maker
+           Try Gigster Graphics
          </button>
        </div>
 <div className="canAd-pic">
