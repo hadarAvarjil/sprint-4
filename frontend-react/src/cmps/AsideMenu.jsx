@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { logout } from "../store/actions/user.actions.js";
 import { showErrorMsg } from "../services/event-bus.service.js";
 import SvgIcon from "./SvgIcon.jsx";
+import { AddImg } from "./AddImg.jsx";
 
 export function AsideMenu({ loggedInUser, onClose }) {
   const navigate = useNavigate();
@@ -75,6 +76,9 @@ export function AsideMenu({ loggedInUser, onClose }) {
                 Explore
               </div>
             </NavLink>
+                    <NavLink to="/my-lists" onClick={onClose}>
+                              Liked Gigs
+                            </NavLink>
 
             <Link to="/dashboard" onClick={onClose}>
               Dashboard

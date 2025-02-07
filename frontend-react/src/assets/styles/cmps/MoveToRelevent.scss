@@ -140,6 +140,9 @@
 }
 
 @media(max-width:600px) {
+  .liked-heart{
+    display: none;
+  }
   .main-container {
     .app-header {
       nav.main-nav {
