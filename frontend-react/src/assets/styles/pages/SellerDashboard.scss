@@ -764,7 +764,7 @@
                 @media(min-width:400px) {
                     .order-status {
                         width: 90px;
-                        font-size: 12px;
+                        font-size: 10px;
                         padding: 0;
                         padding-left: 1px;
                     }
@@ -775,7 +775,7 @@
                         padding-right: 5px;
 
                         .orders-tables {
-                            width: 100%;
+                            width: 120px;
 
                             tbody {
                                 tr.tr-order-line {
@@ -786,8 +786,8 @@
                                         align-items: center;
                                         img.gigFirstImgUrl{
                                             // margin-right: 0px;
-                                            // width: 20px;
-                                            // height: 20px;
+                                            width: 30px;
+                                            height: 30px;
                                         }
 
 
@@ -796,8 +796,8 @@
                                         padding: 1px;
 
                                         img.buyer-pic {
-                                            width: 20px;
-                                            height: 20px;
+                                            width: 30px;
+                                            height: 30px;
                                         }
                                     }
                                 }
@@ -817,12 +817,24 @@
 
 @media(min-width:700px) {
     .dashboard-container {
+        .my-chart{
+            width:400px
+        }
+        .seller-orders-list{
+            max-width: 650px;
+            width:max-content;
+        }
         .orders-table th,
 .orders-table td {
     text-align: left;
 }
+.orders-table{
+    .order-status {
+        width: 120px;
+    }
+} 
         td {
-            padding: 10px 15px;
+            padding: 5px 10px;
 
         }
 
