@@ -43,27 +43,27 @@ export function GigFilter({ filterBy, setMenuFilter, onHandleChoice,
     );
   }
 
-  if (deviceType === 'mini-tablet' || deviceType === 'mobile') {
-    return (
-      <>
-        <main className={`gig-filter ${deviceType === 'mini-tablet'
-          || deviceType === 'mobile' ? 'mobileStyles' : ''}`}>
-          <section className="floating-top-bar layout-row">
-            {checkFilter() && (
-              <button
-                onClick={() => onHandleChoice('clear')}
-                className="btn clear-filter"
-                title="Clear all filters"
-              >
-                Clear filter
-              </button>
-            )}
+  // if (deviceType === 'mini-tablet' || deviceType === 'mobile') {
+  //   return (
+  //     <>
+  //       <main className={`gig-filter ${deviceType === 'mini-tablet'
+  //         || deviceType === 'mobile' ? 'mobileStyles' : ''}`}>
+  //         <section className="floating-top-bar layout-row">
+  //           {checkFilter() && (
+  //             <button
+  //               onClick={() => onHandleChoice('clear')}
+  //               className="btn clear-filter"
+  //               title="Clear all filters"
+  //             >
+  //               Clear filter
+  //             </button>
+  //           )}
 
-          </section>
-        </main>
-      </>
-    )
-  }
+  //         </section>
+  //       </main>
+  //     </>
+  //   )
+  // }
 
   return (
     <>

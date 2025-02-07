@@ -413,9 +413,9 @@
   .category-nav {
     @media (max-width: 1400px) {}
 
-    @media (max-width: 600px) {
-      display: none;
-    }
+    // @media (max-width: 600px) {
+    //   display: none;    //למחוק??
+    // }
   }
 }
 

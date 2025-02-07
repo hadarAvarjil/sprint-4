@@ -65,7 +65,7 @@
 
 @media(min-width:900px){
   .purple-signup-ad{
-    max-width:fit-content;
+    max-width:-webkit-fill-available;
 margin-right: 32px;
 
     h1{
