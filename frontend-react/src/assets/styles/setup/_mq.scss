@@ -326,7 +326,7 @@
 
     .container {
       @media (max-width: 600px) {
-        display: grid;
+        display: flex;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 0.25em;

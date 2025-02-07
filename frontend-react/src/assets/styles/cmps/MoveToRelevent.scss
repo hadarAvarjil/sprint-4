@@ -131,4 +131,20 @@ gap: 3px;
 
 
   }
+
+  @media(max-width:600px){
+    .main-container{
+      .app-header{
+        nav.main-nav{
+         padding: 10px;
+         div.dropdown.flex{
+          position: absolute;
+          left: 10px;
+          top:23px
+          ;
+         }
+        }
+      }
+    }
+  }
   
