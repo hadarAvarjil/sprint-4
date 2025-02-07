@@ -1,29 +1,30 @@
-import { Link, useNavigate } from 'react-router-dom'
-import { useModal } from '../customHooks/ModalContext.jsx'
+import { Link, useNavigate } from "react-router-dom";
+import { useModal } from "../customHooks/ModalContext.jsx";
+import { NavLink } from "react-router-dom";
 
-import { logout } from '../store/actions/user.actions.js'
-import { showErrorMsg } from '../services/event-bus.service.js'
+import { logout } from "../store/actions/user.actions.js";
+import { showErrorMsg } from "../services/event-bus.service.js";
 
 export function AsideMenu({ loggedInUser, onClose }) {
-  const navigate = useNavigate()
-  const { openLogin, openSignup } = useModal()
+  const navigate = useNavigate();
+  const { openLogin, openSignup } = useModal();
 
   async function onLogout() {
     try {
-      navigate('/')
-      await logout()
+      navigate("/");
+      await logout();
     } catch (err) {
       showErrorMsg(
         {
-          title: 'FAILED TO LOGOUT',
+          title: "FAILED TO LOGOUT",
           body: `This is awkward...`,
         },
         {
-          userMsgLeft: '55%',
-          messageAreaPadding: '2em 1.5em 2em 8em',
-          msgStatusTranslateX: '-12em',
+          userMsgLeft: "55%",
+          messageAreaPadding: "2em 1.5em 2em 8em",
+          msgStatusTranslateX: "-12em",
         }
-      )
+      );
     }
   }
 
@@ -41,27 +42,19 @@ export function AsideMenu({ loggedInUser, onClose }) {
                 <span>{loggedInUser.username}</span>
               </div>
             </div>
-            <Link to={`/user/${loggedInUser._id}`} onClick={onClose}>
+            <Link to={`/profile/${loggedInUser._id}`} onClick={onClose}>
               Profile
             </Link>
 
-            <Link to="/gig" onClick={onClose}>
-              {' '}
-              Explore{' '}
-            </Link>
+            <NavLink to="gig">
+              <div className="sign-burger-header-btn burger-explore-btn" onClick={onClose}>Explore</div>
+            </NavLink>
 
-            <Link to="/" onClick={onClose}>
-              Become a Seller
-            </Link>
+            <Link to="/dashboard" onClick={onClose}>Dashboard</Link>
 
-            <Link to="/dashboard" onClick={onClose}>
-              Dashboard
-            </Link>
-
-            <Link to="/orders" onClick={onClose}>
-              Orders
-            </Link>
-
+            <Link to="/orders" onClick={onClose}>Orders</Link>
+            <Link to="/terms" onClick={onClose}>Terms Of Service</Link>
+            <Link to="/privacy" onClick={onClose}>Privacy Policy</Link>
             <button className="logout" onClick={onLogout}>
               Logout
             </button>
@@ -71,8 +64,8 @@ export function AsideMenu({ loggedInUser, onClose }) {
             <button
               className="join"
               onClick={() => {
-                onClose()
-                openSignup()
+                onClose();
+                openSignup();
               }}
             >
               Join Gigster
@@ -80,15 +73,15 @@ export function AsideMenu({ loggedInUser, onClose }) {
             <button
               className="login"
               onClick={() => {
-                onClose()
-                openLogin()
+                onClose();
+                openLogin();
               }}
             >
               Sign In
             </button>
             <Link to="/gig" onClick={onClose}>
-              {' '}
-              Explore{' '}
+              {" "}
+              Explore{" "}
             </Link>
             <Link to="/" onClick={onClose}>
               Become a Seller
@@ -97,5 +90,5 @@ export function AsideMenu({ loggedInUser, onClose }) {
         )}
       </section>
     </main>
-  )
+  );
 }
