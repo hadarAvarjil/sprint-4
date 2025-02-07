@@ -221,12 +221,12 @@ export function GigPreview({
           {loggedInUser && loggedInUser._id === gig.ownerId && (
             <div className="gig-btns">
               <Link to={`/gig/edit/${gig._id}`}>
-                <button className="gig-btn">
+                <button className="gig-btn" style={{paddingTop:'5px'}}>
                   <SvgIcon iconName={"pencil"} />
                 </button>
               </Link>
 
-              <button onClick={onRemoveGig} className="gig-btn">
+              <button onClick={onRemoveGig} className="gig-btn"style={{paddingTop:'5px'}}>
                 <SvgIcon iconName={"trashIcon"} />
               </button>
             </div>
