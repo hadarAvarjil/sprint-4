@@ -1,13 +1,34 @@
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 import { useModal } from "../customHooks/ModalContext.jsx";
 import { NavLink } from "react-router-dom";
 
 import { logout } from "../store/actions/user.actions.js";
 import { showErrorMsg } from "../services/event-bus.service.js";
+import SvgIcon from "./SvgIcon.jsx";
 
 export function AsideMenu({ loggedInUser, onClose }) {
   const navigate = useNavigate();
   const { openLogin, openSignup } = useModal();
+  const handleLoginClick = () => {
+    setIsSignDivVisible(true);
+  };
+  const [isSignDivVisible, setIsSignDivVisible] = useState(false);
+  const [isJoinDivVisible, setIsJoinDivVisible] = useState(false);
+  const handleOpenSignDiv = () => {
+    setIsSignDivVisible(true);
+  };
+
+  const handleOpenJoinDiv = () => {
+    setIsJoinDivVisible(true);
+  };
+  const handleCloseModal = (e) => {
+    if (e.target.className === "modal-overlay") {
+      setIsSignDivVisible(false);
+      setIsJoinDivVisible(false);
+    }
+  };
 
   async function onLogout() {
     try {
@@ -47,44 +68,54 @@ export function AsideMenu({ loggedInUser, onClose }) {
             </Link>
 
             <NavLink to="gig">
-              <div className="sign-burger-header-btn burger-explore-btn" onClick={onClose}>Explore</div>
+              <div
+                className="sign-burger-header-btn burger-explore-btn"
+                onClick={onClose}
+              >
+                Explore
+              </div>
             </NavLink>
 
-            <Link to="/dashboard" onClick={onClose}>Dashboard</Link>
+            <Link to="/dashboard" onClick={onClose}>
+              Dashboard
+            </Link>
 
-            <Link to="/orders" onClick={onClose}>Orders</Link>
-            <Link to="/terms" onClick={onClose}>Terms Of Service</Link>
-            <Link to="/privacy" onClick={onClose}>Privacy Policy</Link>
+            <Link to="/orders" onClick={onClose}>
+              Orders
+            </Link>
+            <Link to="/terms" onClick={onClose}>
+              Terms Of Service
+            </Link>
+            <Link to="/privacy" onClick={onClose}>
+              Privacy Policy
+            </Link>
             <button className="logout" onClick={onLogout}>
               Logout
             </button>
           </>
         ) : (
           <>
-            <button
-              className="join"
-              onClick={() => {
-                onClose();
-                openSignup();
-              }}
-            >
-              Join Gigster
-            </button>
-            <button
-              className="login"
-              onClick={() => {
-                onClose();
-                openLogin();
-              }}
-            >
-              Sign In
-            </button>
-            <Link to="/gig" onClick={onClose}>
-              {" "}
-              Explore{" "}
+       <Link to="/" >
+              <h1 style={{ color: "#404145",marginBottom:'30px' }} className="logo flex row">
+                gigster
+                <span className=" dot-icon flex">
+                  <SvgIcon iconName={"greenDotIcon"} />
+                </span>
+              </h1>
             </Link>
-            <Link to="/" onClick={onClose}>
-              Become a Seller
+            <NavLink to="gig">
+              <div
+                className="sign-burger-header-btn burger-explore-btn"
+                onClick={onClose}
+              >
+                Explore
+              </div>
+            </NavLink>
+            <Link to="/terms" onClick={onClose}>
+              Terms Of Service
+            </Link>
+            <Link to="/privacy" onClick={onClose}>
+              Privacy Policy
             </Link>
           </>
         )}

@@ -158,23 +158,14 @@ export function HomeAppHeader() {
               />
             )}
           </div>
-          <Link to="/">
-            <h1
-              style={{
-                color: "$fiverr-classic-dark-grey",
-                fontSize: "30px",
-                lineHeight: "24px",
-                fontWeight: "bold",
-                fontFamily: "$fiverr-defult-font",
-              }}
-              className="logo flex row"
-            >
-              gigster
-              <span className="dot-icon flex">
-                <SvgIcon iconName={"greenDotIcon"} />
-              </span>
-            </h1>
-          </Link>
+          <Link to="/" >
+              <h1 style={{ color: "#404145" }} className="logo flex row">
+                gigster
+                <span className=" dot-icon flex">
+                  <SvgIcon iconName={"greenDotIcon"} />
+                </span>
+              </h1>
+            </Link>
 
           {showMiniHeader && (
             <div className="app-header-home-search-bar">
