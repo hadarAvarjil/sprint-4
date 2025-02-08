@@ -63,11 +63,11 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
     }
 
     const statusColors = {
-        "Pending": "#F1C40F",     
-        "In Progress": "#3498DB",  
-        "Completed": "#2ECC71",   
-        "Delivered": "#9B59B6",    
-        "Rejected": "#E74C3C"      
+        "Pending": "#1dbf73",     
+        "In Progress": "#1dbf73",  
+        "Completed": "#1dbf73",   
+        "Delivered": "#1dbf73",    
+        "Rejected": "#1dbf73"      
     }
 
     const allowedTransitions = {

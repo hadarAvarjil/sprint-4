@@ -692,9 +692,9 @@
         .my-chart {
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 50px;
             border-radius: 10px;
             height: fit-content;
+            margin-bottom: 50px;
 
 
         }
@@ -856,4 +856,10 @@
             height: 30px;
         }
     }
+}
+
+.orders-information{
+    padding-top: 15px;
+    font-size: 1.2em;
+
 }
