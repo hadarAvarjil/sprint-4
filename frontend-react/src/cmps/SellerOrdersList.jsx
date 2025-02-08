@@ -14,22 +14,6 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
         }
     }, [orders])
 
-    useEffect(() => {
-        socketService.on('notify-buyer-accepted', (data) => {
-            showSuccessMsg(`ההזמנה שלך עודכנה ל-${data.newState}`)
-        })
-    
-        socketService.on('notify-seller-updated', (data) => {
-            showSuccessMsg(`הזמנה ${data.orderId} שונתה ל-${data.newState}`)
-        })
-    
-        return () => {
-            socketService.off('notify-buyer-accepted')
-            socketService.off('notify-seller-updated')
-        }
-    }, [])
-    
-
     async function loadOrderData() {
         try {
             const ordersData = await Promise.all(
@@ -97,23 +81,7 @@ export function SellerOrdersList({ loggedInUser, orders = [] }) {
     
             const updatedOrder = updatedOrders.find(order => order._id === orderId)
             await saveOrder(updatedOrder)
-    
-            // שולח הודעה לקונה
-            socketService.emit('notify_buyer_accepted', { 
-                userId: updatedOrder.buyerId, 
-                user: loggedInUser,
-                orderId,
-                newState 
-            })
-    
-            // שולח הודעה למוכר
-            socketService.emit('notify_seller_updated', { 
-                userId: updatedOrder.sellerId, 
-                user: loggedInUser,
-                orderId,
-                newState 
-            })
-            showSuccessMsg(`ההזמנה שלך עודכנה ל-${newState}`)
+            socketService.emit('notify_buyer_accepted', { userId: updatedOrder.buyerId, user: loggedInUser })
         } catch (err) {
             console.error(`Error updating order ${orderId}:`, err)
         }

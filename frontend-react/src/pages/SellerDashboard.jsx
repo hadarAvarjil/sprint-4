@@ -10,21 +10,31 @@ import { loadOrders } from '../store/actions/order.actions.js'
 export function SellerDashboard() {
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
-    const [isLoading, setIsLoading] = useState(true) 
+    const [isLoading, setIsLoading] = useState(true)
+
+
+    useEffect(() => {
+        if (loggedInUser && loggedInUser._id) {
+            socketService.login('set-user-socket', loggedInUser._id)
+        }
+    }, [loggedInUser])
+
+    // ... שאר הקוד
+
 
     useEffect(() => {
         async function fetchOrders() {
             if (loggedInUser) {
                 try {
-                    setIsLoading(true) 
+                    setIsLoading(true)
                     await loadOrders({ sellerId: loggedInUser._id })
                 } catch (err) {
                     console.error("Error loading orders:", err)
                 } finally {
-                    setIsLoading(false) 
+                    setIsLoading(false)
                 }
             } else {
-                setIsLoading(false) 
+                setIsLoading(false)
             }
         }
         fetchOrders()
