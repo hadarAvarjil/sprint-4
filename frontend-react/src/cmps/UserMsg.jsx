@@ -15,11 +15,11 @@ export function UserMsg() {
       setMsg({ title, body, type, styles })
 
       setIsActive(true)
-      // setTimeout(() => {
-      //   setIsActive(false)
-      //   setIsSlidingOut(true)
-      //   setTimeout(onCloseMsg, 500) // Kushili
-      // }, 50000)
+      setTimeout(() => {
+        setIsActive(false)
+        setIsSlidingOut(true)
+        setTimeout(onCloseMsg, 500) // Kushili
+      }, 50000)
     })
 
     return () => {
