@@ -52,10 +52,12 @@
 
 @media (max-width: 900px) {
   .cat-divs-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 111px);
-    justify-content: center;
-    gap: 36px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 111px);
+      justify-content: center;
+      gap: 36px;
+      margin-left: -20px;
+
   }
 
   .cat-div {
@@ -66,6 +68,10 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    @media(max-width:520px){
+      width: 112px;
+      height: 152px;
+    }
 
     img {
       width: 100px;

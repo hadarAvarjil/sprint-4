@@ -467,7 +467,9 @@
   font-weight: 600;
   font-family: $fiverr-defult-font;
   transition-duration: 0.2s;
-
+@media(max-width: 600px){
+display: none;
+}
 }
 
 .sign-header-btn:hover {

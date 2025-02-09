@@ -14,19 +14,21 @@ export function VideoDiv(){
       Your browser does not support the video tag.
     </video>
 
-    <div
+    <div className="vid-logo"
      style={{
        position: "absolute",
        bottom: "20px",
-       left: "35%",
+       left: "5%",
        zIndex: 2,
        background: "rgba(255, 255, 255, 0.37)", 
        padding: "5px",
        borderRadius: "5px",
        width:'15%',
-       height:'15%',
+       height:'12%',
        alignItems: "center", 
-       justifyContent: "center",        }}
+       justifyContent: "center",  
+      display:'flex',
+    textAlign:'center'      }}
    >
       <img
        src="https://res.cloudinary.com/dtpewh2wk/image/upload/v1736688661/logo_pwhgid.png"

@@ -90,6 +90,7 @@ margin-bottom: 40px;
       height: 651px;
       padding-left: 24px;
       padding-right: 24px;
+      padding-bottom: 32px;
       margin-top: 20px;
       margin: 32px;
 
@@ -152,9 +153,10 @@ margin-bottom: 40px;
     .canAd-container {
       flex-direction: column;
       align-items: center;
-      height: 551px;
+      height: fit-content;
       padding-left: 24px;
       padding-right: 24px;
+      padding-bottom: 32px;
       margin-top: 20px;
       margin: 32px;
 

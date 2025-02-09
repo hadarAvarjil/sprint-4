@@ -326,13 +326,13 @@
 
     .container {
       @media (max-width: 600px) {
-        display: grid;
+        display: flex;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 0.25em;
 
         .dropdown {
-          grid-column: 1;
+          grid-column: 1; 
           grid-row: 1;
         }
 
@@ -413,9 +413,9 @@
   .category-nav {
     @media (max-width: 1400px) {}
 
-    @media (max-width: 600px) {
-      display: none;
-    }
+    // @media (max-width: 600px) {
+    //   display: none;    //למחוק??
+    // }
   }
 }
 

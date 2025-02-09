@@ -294,18 +294,19 @@ padding-right: 5px;
 
 }
 
-@media (min-width: 481px) {
-  .home-body{
-    // padding-right: 32px;
-  }
+
   @media (max-width:899px){
+    .green-div-container {
+      margin-left: -32px;
+      width: calc(100% + 32px);
+    }
+    @media (min-width: 481px) {
     .home-body{
-      // padding-right: 32px;
       width: 100%;
     }
   .green-div-container {
 
-    width: 100%;
+    width: calc(100% + 32px);
     height: 326px;
     max-width: 899px;
     margin-top: 71px;

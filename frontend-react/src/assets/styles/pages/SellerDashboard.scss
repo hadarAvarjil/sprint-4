@@ -5,15 +5,15 @@
     min-height: calc(100% + 90px);
 
     @media (max-width: 600px) {
-        padding: 1.25em 1.5em 5em 1.5em;
+        padding: 0em 1.5em 5em 1.5em;
     }
 
     @media (max-width: 480px) {
-        padding: 1.25em 1em 5em 1em;
+        padding: 0em 1em 5em 1em;
     }
 
     @media (min-width: 601px) {
-        padding: 5em 2em 10em 2em;
+        padding: 0em 2em 10em 2em;
         min-height: calc(100% + 90px);
     }
 
@@ -692,9 +692,9 @@
         .my-chart {
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 50px;
             border-radius: 10px;
             height: fit-content;
+            margin-bottom: 50px;
 
 
         }
@@ -764,7 +764,7 @@
                 @media(min-width:400px) {
                     .order-status {
                         width: 90px;
-                        font-size: 12px;
+                        font-size: 10px;
                         padding: 0;
                         padding-left: 1px;
                     }
@@ -775,7 +775,7 @@
                         padding-right: 5px;
 
                         .orders-tables {
-                            width: 100%;
+                            width: 120px;
 
                             tbody {
                                 tr.tr-order-line {
@@ -786,8 +786,8 @@
                                         align-items: center;
                                         img.gigFirstImgUrl{
                                             // margin-right: 0px;
-                                            // width: 20px;
-                                            // height: 20px;
+                                            width: 30px;
+                                            height: 30px;
                                         }
 
 
@@ -796,8 +796,8 @@
                                         padding: 1px;
 
                                         img.buyer-pic {
-                                            width: 20px;
-                                            height: 20px;
+                                            width: 30px;
+                                            height: 30px;
                                         }
                                     }
                                 }
@@ -817,12 +817,24 @@
 
 @media(min-width:700px) {
     .dashboard-container {
+        .my-chart{
+            width:400px
+        }
+        .seller-orders-list{
+            max-width: 650px;
+            width:max-content;
+        }
         .orders-table th,
 .orders-table td {
     text-align: left;
 }
+.orders-table{
+    .order-status {
+        width: 120px;
+    }
+} 
         td {
-            padding: 10px 15px;
+            padding: 5px 10px;
 
         }
 
@@ -835,4 +847,19 @@
             }
         }
     }
+}
+
+@media(max-width:700px){
+    td.td-buyer{
+        img.buyer-pic{
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.orders-information{
+    padding-top: 15px;
+    font-size: 1.2em;
+
 }

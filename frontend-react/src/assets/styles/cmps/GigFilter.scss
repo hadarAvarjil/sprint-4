@@ -250,7 +250,7 @@
   
     .btn {
       width: 100%; 
-      text-align: left; 
+      text-align: left;  
     }
   }
 }
@@ -273,12 +273,41 @@
 min-width: 157px
 }
 }
-}
+} 
 }
 
 @media (min-width:801px){
   .gig-list-container{
     margin-top: 1.5em;
 
+  }
+} 
+
+@media(max-width:600px) {
+  .gig-filter {
+    .floating-top-bar {
+      .filter-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0px;
+        
+        .btn {
+          flex: 0 1 auto;
+          margin: 0.25em;
+        }
+
+        .floating-menu {
+          width: auto;
+          .filtered-sl,
+          .filtered-sc,
+          .filtered-bg,
+          .filtered-dt {
+            width: auto;
+          }
+        }
+      }
+    }
   }
 }

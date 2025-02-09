@@ -161,23 +161,14 @@ export function HomeAppHeader() {
               />
             )}
           </div>
-          <Link to="/">
-            <h1
-              style={{
-                color: "$fiverr-classic-dark-grey",
-                fontSize: "30px",
-                lineHeight: "24px",
-                fontWeight: "bold",
-                fontFamily: "$fiverr-defult-font",
-              }}
-              className="logo flex row"
-            >
-              gigster
-              <span className="dot-icon flex">
-                <SvgIcon iconName={"greenDotIcon"} />
-              </span>
-            </h1>
-          </Link>
+          <Link to="/" >
+              <h1 style={{ color: "#404145" }} className="logo flex row">
+                gigster
+                <span className=" dot-icon flex">
+                  <SvgIcon iconName={"greenDotIcon"} />
+                </span>
+              </h1>
+            </Link>
 
           {showMiniHeader && (
             <div className="app-header-home-search-bar">
@@ -187,7 +178,7 @@ export function HomeAppHeader() {
                 onSearchChange={handleSearchChange}
                 onSearchSubmit={handleSearchSubmit}
               />
-            </div> 
+            </div>  
           )}
 
           <div className="header-options">
@@ -197,7 +188,7 @@ export function HomeAppHeader() {
             {loggedinUser ? (
 
               <>
-                <NavLink to="/my-lists">
+                <NavLink to="/my-lists" className='liked-heart'>
                   <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738583678/heart-svgrepo-com_cramwf.svg' />
                 </NavLink>
                 <div className="orders-container" ref={ordersRef}>

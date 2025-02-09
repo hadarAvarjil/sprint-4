@@ -203,7 +203,7 @@ export function AppHeader() {
             </NavLink>
             {loggedinUser ? (
               <>
-                <NavLink to="/my-lists">
+                <NavLink  to="/my-lists" className='liked-heart'>
                   <AddImg picUrl='https://res.cloudinary.com/dtpewh2wk/image/upload/v1738583678/heart-svgrepo-com_cramwf.svg'/> 
                 </NavLink>
 

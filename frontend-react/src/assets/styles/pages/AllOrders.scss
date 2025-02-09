@@ -108,6 +108,9 @@
 
             height: 100px;
             }
+            @media(max-width:600px){
+              padding: 5px;
+          }
           }
           a {
             @media(max-width:720px){

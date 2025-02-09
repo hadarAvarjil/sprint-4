@@ -137,7 +137,9 @@
       max-width: 100vw;
 
       .profile-card {
+        @media(min-width:450px){
         width: 100%;
+        }
 
         .profile-detail {
           align-items: center;
@@ -186,7 +188,10 @@
         }
 
         .user-owener-reviews {
+          @media(min-width:450px){
+
           width: 100%;
+          }
 
         }
       }
@@ -237,4 +242,23 @@
       }
     }
   }
+}
+@media(max-width:450px){
+.user-profile-main{
+  .profile-card{
+width:400px;
+margin-right: 32px;
+  }
+  .user-gigs{
+    width:400px;
+margin-right: 32px;
+  }
+  .user-owener-reviews{
+    width:400px;
+    margin-right: 32px;
+  }
+  .img-container{
+    width: 250px;
+  }
+}
 }
