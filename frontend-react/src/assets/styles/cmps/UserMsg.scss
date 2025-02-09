@@ -40,14 +40,14 @@
     }
 
     &.success::before {
-        background: linear-gradient(45deg, $bgColor5, $bgColor3);
+        // background: linear-gradient(45deg, $bgColor5, $bgColor3);
         @media(max-width:500px){
             display: none;
         }
     }
 
     &.error::before {
-        background: linear-gradient(45deg, $bgColor6, $bgColor7);
+        // background: linear-gradient(45deg, $bgColor6, $bgColor7);
         @media(max-width:500px){
             display: none;
         }

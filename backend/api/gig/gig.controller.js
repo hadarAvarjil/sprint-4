@@ -30,10 +30,7 @@ export async function getGigById(req, res) {
 export async function addGig(req, res) {
     try {
         const gig = req.body
-        console.log("Before sending to service:", gig)
         const addedGig = await gigService.save(gig)
-        console.log("After service returned:", addedGig)
-
         res.json(addedGig)
     }
     catch (err) {
@@ -45,7 +42,6 @@ export async function addGig(req, res) {
 export async function updateGig(req, res) {
     try {
         const gig = req.body
-        console.log("Updating gig:", gig)
         const updatedGig = await gigService.save(gig)
         res.send(updatedGig)
     }
