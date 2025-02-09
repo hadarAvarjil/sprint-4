@@ -233,3 +233,9 @@
     background-color: $clrPrimary1;
   }
 }
+
+@media(max-width:415px){
+  .user-profile{
+    margin-left: -16px;
+  }
+}
