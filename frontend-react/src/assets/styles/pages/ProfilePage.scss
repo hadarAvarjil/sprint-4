@@ -259,6 +259,18 @@ margin-right: 32px;
   }
   .img-container{
     width: 250px;
+ 
   }
+}
+}
+@media(max-width:450px){
+.position-taker-UserOwnerGigs{
+  .user-gigs{
+    .img-container{
+img{
+  width: 200px;
+}
+  }
+}
 }
 }
