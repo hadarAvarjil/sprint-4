@@ -286,12 +286,17 @@ min-width: 157px
 @media(max-width:600px) {
   .gig-filter {
     .floating-top-bar {
+      gap:0px;
       .filter-nav {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
         gap: 0px;
+        .filtered-clr{
+          font-size: 0.8rem;
+
+        }
         
         .btn {
           flex: 0 1 auto;
@@ -299,6 +304,10 @@ min-width: 157px
         }
 
         .floating-menu {
+      
+          .btn{
+            font-size: 0.8rem;
+          }
           width: auto;
           .filtered-sl,
           .filtered-sc,
