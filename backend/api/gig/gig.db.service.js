@@ -107,7 +107,7 @@ function _buildPipeline(filterBy) {
   const criteria = {
     $match: {},
   }
-  console.log('FILTERBY: ', filterBy)
+  // console.log('FILTERBY: ', filterBy)
   const { search, cat, level, min, max, tag, time,proOnly } = filterBy
 
   if (search) {
