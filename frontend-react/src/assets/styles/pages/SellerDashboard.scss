@@ -823,6 +823,9 @@
         .seller-orders-list{
             max-width: 650px;
             width:max-content;
+          @media (max-width:250px){
+margin-top: 20pxs;
+          } 
         }
         .orders-table th,
 .orders-table td {

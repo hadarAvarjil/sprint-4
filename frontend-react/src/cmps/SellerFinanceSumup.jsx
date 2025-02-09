@@ -113,7 +113,7 @@ export function SellerFinanceSumup({ loggedInUser, orders = [] }) {
 
     return (
         <section>
-            <div style={{ width: '100%', height: 400 }}>
+            <div style={{ width: '100%'}}>
 
                 {/* Pie Chart Container */}
                 <div className="my-chart">
