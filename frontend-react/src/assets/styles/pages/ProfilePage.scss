@@ -11,10 +11,12 @@
 
   .position-taker-UserOwnerGigs {
     z-index: 0;
-    width: 772px;
     display: flex;
     flex-direction: column;
+    @media(min-width:450px){
 
+    width: 772px;
+    }
 
     .profile-become-seller-ad {
       height: 100px;
@@ -44,7 +46,10 @@
         border: solid 1px black;
         width: 125px;
         height: 32px;
+        @media(min-width:450px){
+
         font-size: 16px;
+        }
         line-height: 24px;
         margin-left: 5px;
         display: flex;
@@ -131,6 +136,7 @@
 }
 
 @media(max-width:980px) {
+  
   .user-profile-main {
     .user-profile {
       flex-direction: column;
@@ -149,11 +155,17 @@
       }
 
       .position-taker-UserOwnerGigs {
+        @media(min-width:450px){
+
         width: 100%;
+        }
 
         .profile-become-seller-ad {
+          @media(min-width:450px){
+
           width: 100%;
           margin-top: 32px;
+          }
 
           @media(min-width:680px) {
             display: flex;
@@ -175,9 +187,7 @@
             }
           }
 
-          @media(max-width:500px) {
-            display: none;
-          }
+
 
 
         }
@@ -215,6 +225,10 @@
           .profile-become-seller-ad {
             width: 640px;
             font-size: 16px;
+            @media(max-width:500px){
+          
+              width:100vw;
+            }
 
             .create-gig-btn {
               font-size: 18px;
@@ -223,7 +237,7 @@
               margin-right: 5px;
 
               .img-container {
-                display: none;
+                // display: none;
               }
             }
 
@@ -246,16 +260,17 @@
 @media(max-width:450px){
 .user-profile-main{
   .profile-card{
-width:400px;
-margin-right: 32px;
+    width: 383px;
+
+margin-right: 15px;
   }
   .user-gigs{
     width:400px;
-margin-right: 32px;
+margin-right: 15px;
   }
   .user-owener-reviews{
-    width:400px;
-    margin-right: 32px;
+    width: 383px;
+    margin-right: 15px;
   }
   .img-container{
     width: 250px;
@@ -264,7 +279,38 @@ margin-right: 32px;
 }
 }
 @media(max-width:450px){
+  .user-profile{
+    width:414px;
+    padding-right: 16px;
+    .profile-card{
+      width:-webkit-fill-available;
+    }
+  }
 .position-taker-UserOwnerGigs{
+ width: 383px;
+  margin-right: 16px;
+  padding-right: 16px;
+  .user-gigs{
+    width: 383px;
+.user-owener-reviews{
+  width: 383px;
+
+}
+  }
+  .profile-become-seller-ad{
+    width: 383px;
+    margin-top: 20px;
+    h2{
+    font-size: 14px;
+    }
+    button.create-gig-btn{
+      font-size: 12px;
+.img-container{
+  width:25px;
+}
+    }
+    
+  }
   .user-gigs{
     .img-container{
 img{
