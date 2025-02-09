@@ -3,6 +3,7 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { login, signup } from '../store/actions/user.actions.js'
 import { AddImg } from './AddImg.jsx'
 import { NavLink } from 'react-router-dom'
+import SvgIcon from "./SvgIcon.jsx";
 import { socketService } from '../services/socket.service.js'
 
 export function LoginSignup({ isLoginSignUpShow, setIsLoginSignUpShow, isSignup, setIsSignup }) {
