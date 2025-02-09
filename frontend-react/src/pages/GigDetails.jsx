@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -14,7 +15,7 @@ import { GigReviewsList } from '../cmps/GigReviewsList'
 import { GigReviewsListCarousel } from '../cmps/GigReviewsListCarousel'
 import { GigDetailsOrder } from '../cmps/GigDetailsOrder'
 import { GigDetailsLikeAndShare } from '../cmps/GigDetailsLikeAndShare'
-import { gigService } from '../services/gig.service.js' 
+import { gigService } from '../services/gig.service.js'
 
 
 export function GigDetails() {
@@ -90,8 +91,20 @@ export function GigDetails() {
 
             <div className='about-gig'>
               <h3 className='gig-details-header-About-Gig'>About this gig</h3>
-              <p className='gig-description' > {gig.description}</p>
+              <div className='gig-description'>
+                {gig.description.split("\n\n").map((paragraph, index) => (
+                  <p key={index}>
+                    {paragraph.split("\n").map((line, lineIndex) => (
+                      <React.Fragment key={lineIndex}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
+                  </p>
+                ))}
+              </div>
             </div>
+
 
             <AboutGigSeller owner={gigOwner} gig={gig} />
             <FAQAccordion />
