@@ -41,10 +41,16 @@
 
     &.success::before {
         background: linear-gradient(45deg, $bgColor5, $bgColor3);
+        @media(max-width:500px){
+            display: none;
+        }
     }
 
     &.error::before {
         background: linear-gradient(45deg, $bgColor6, $bgColor7);
+        @media(max-width:500px){
+            display: none;
+        }
     }
 
     &.slide-in {
@@ -69,7 +75,10 @@
         background: $clrSecondary12;
         border-radius: 0.5em 0.5em 0 0;
         @media(max-width:500px){
-            width:180px
+            width:180px;
+            box-shadow: none;
+            background: none;
+            border: none;
         }
 
         button {
