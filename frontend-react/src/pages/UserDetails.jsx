@@ -222,7 +222,15 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
     const emptyStars = "✧".repeat(maxStars - rate)
     return filledStars + emptyStars
   }
-  const levelNumber = user?.level ? parseInt(user.level.split(' ')[1], 10) || 0 : 0
+  const levelMap = {
+    "New Seller": 1,
+    "Level 1": 1,
+    "Level 2": 2,
+    "Top Rated": 3,
+    "Pro Talent": 4
+  };
+  
+  const levelNumber = levelMap[user?.level] || 0;
 
 
   if (!user) return <div>Loading...</div>
