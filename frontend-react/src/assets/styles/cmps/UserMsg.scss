@@ -20,8 +20,7 @@
 
 .user-msg {
     position: fixed;
-    right: 6em;
-    left: auto;
+    right: 10%;
     bottom: 4em;
     z-index: 999;
     width: auto;
@@ -42,10 +41,16 @@
 
     &.success::before {
         background: linear-gradient(45deg, $bgColor5, $bgColor3);
+        @media(max-width:500px){
+            display: none;
+        }
     }
 
     &.error::before {
         background: linear-gradient(45deg, $bgColor6, $bgColor7);
+        @media(max-width:500px){
+            display: none;
+        }
     }
 
     &.slide-in {
@@ -69,6 +74,12 @@
         transition: all 0.3s ease;
         background: $clrSecondary12;
         border-radius: 0.5em 0.5em 0 0;
+        @media(max-width:500px){
+            width:180px;
+            box-shadow: none;
+            background: none;
+            border: none;
+        }
 
         button {
             position: absolute;
@@ -120,7 +131,11 @@
             align-items: center;
             box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.2);
             margin-top: 0.25em;
-
+            @media(max-width:500px){
+left:15%;
+                bottom: -3em;
+            }
+ 
             p {
                 text-transform: uppercase;
                 font-size: 14px;

@@ -24,7 +24,7 @@ export function UserMsg() {
 
     return () => {
       unsubscribe()
-    }
+    } 
   }, [])
 
   useEffect(() => {
