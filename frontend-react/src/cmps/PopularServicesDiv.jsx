@@ -70,13 +70,13 @@ export function PopularServices() {
               </div>
             </div>
             <div onClick={() => setCatFilter('Graphics & Design')} to={`/gig`} className="popular-div purple-div">
-              <h3 className="pop-div-title">Graphics & Design</h3>
+              <h3 className="pop-div-title">Digital Marketing</h3>
               <div className="pop-inner-pic">
               <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.54_eofkkc.jpg'}/>
               </div>
             </div>
             <div onClick={() => setCatFilter('Digital Marketing')} to={`/gig`} className="popular-div green-shrek-div">
-              <h3 className="pop-div-title">Digital Marketing</h3>
+              <h3 className="pop-div-title">Video & Animation</h3>
               <div className="pop-inner-pic">
               <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.55_1_pxgamn.jpg'}/>
               </div>
@@ -88,19 +88,19 @@ export function PopularServices() {
               </div>
             </div>
             <div onClick={() => setCatFilter('Digital Marketing')} to={`/gig`} className="popular-div pink-div">
-              <h3 className="pop-div-title">Digital Marketing</h3>
+              <h3 className="pop-div-title">Data Science</h3>
               <div className="pop-inner-pic">
               <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.53_1_r1e8aj.jpg'}/>
               </div>
             </div>
             <div onClick={() => setCatFilter('Programming & Tech')} to={`/gig`} className="popular-div green-swamp-div">
-              <h3 className="pop-div-title">Programming & Tech</h3>
+              <h3 className="pop-div-title">Data</h3>
               <div className="pop-inner-pic">
               <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.53_2_ndgpxw.jpg'}/>
               </div>
             </div>
             <div onClick={() => setCatFilter('Data')} to={`/gig`} className="popular-div light-brown-div">
-              <h3 className="pop-div-title">Data</h3>
+              <h3 className="pop-div-title">Business</h3>
               <div className="pop-inner-pic">
               <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.55_zcb4lf.jpg'}/>
               </div>
@@ -112,13 +112,13 @@ export function PopularServices() {
               </div>
             </div>
             <div onClick={() => setCatFilter('Digital Marketing')} to={`/gig`} className="popular-div light-green-div">
-              <h3 className="pop-div-title">Digital Marketing</h3>
+              <h3 className="pop-div-title">Writing & Translation</h3>
               <div className="pop-inner-pic">
               <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.55_3_aagztg.jpg'}/>
               </div>
             </div>
             <div onClick={() => setCatFilter('Video & Animation')} to={`/gig`} className="popular-div pink-div">
-              <h3 className="pop-div-title">Video & Animation</h3>
+              <h3 className="pop-div-title">SEO & Advertising</h3>
               <div className="pop-inner-pic">
               <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/upload/v1737284056/WhatsApp_Image_2025-01-19_at_12.51.56_zhxfha.jpg'}/>
               </div>
