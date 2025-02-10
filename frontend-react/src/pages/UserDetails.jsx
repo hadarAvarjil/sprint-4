@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -230,7 +231,7 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
     "Pro Talent": 4
   };
   
-  const levelNumber = levelMap[user?.level] || 0;
+  const levelNumber = levelMap[user?.level] || 0
 
 
   if (!user) return <div>Loading...</div>
@@ -265,7 +266,7 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
                     <SvgIcon iconName="blackStar" />
                     {user.rating}
                   </span>
-                  <span>({user.reviewsCount || 0})</span>
+                  <span>{user.reviewsCount}</span>
                   {levelNumber === 3 && (
                     <span className="top-rated-badge">
                       Top Rated ✦✦✦
@@ -286,10 +287,25 @@ const paperPlane = <AddImg picUrl={'https://res.cloudinary.com/dtpewh2wk/image/u
               </div>
             </div>
 
-          <div className="user-about">
-            <h2>About me</h2>
-            <p>{user.description || 'No additional details provided.'}</p>
-          </div>
+            <div className="user-about">
+  <h2>About me</h2>
+  <div className="user-description">
+    {user.description
+      ? user.description.split(/\n\s*\n/).map((paragraph, index) => (
+          <p key={index}>
+            {paragraph.split("\n").map((line, lineIndex) => (
+              <React.Fragment key={lineIndex}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
+        ))
+      : <p>No additional details provided.</p>
+    }
+  </div>
+</div>
+
         </div>
         <div className="user-contact-card">
           <div className="contact-header">
